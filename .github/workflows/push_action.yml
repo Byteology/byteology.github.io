@@ -9,7 +9,7 @@ jobs:
   build-and-analyze:
     runs-on: ubuntu-latest
     env:
-      sonar_project_key: Byteology_website
+      sonar_project_key: Byteology_byteology.github.io
       
     steps:
       - name: Setup .NET
