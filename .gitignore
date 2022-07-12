@@ -1,0 +1,5 @@
+bin
+obj
+.vs
+
+src/Byteology.Website/wwwroot/css/style.css

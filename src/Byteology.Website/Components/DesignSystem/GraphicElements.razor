@@ -1,0 +1,41 @@
+﻿@namespace Byteology.Website.Components.DesignSystem
+
+<section class="space-y-8">
+    <h2 class="text-h1 text-accent font-bold">Graphic Elements</h2>
+    <div class="flex flex-wrap gap-32">
+        <div class="w-40 h-40 bg-accent intersection-observable">
+            <div class="bg-dark absolute bottom-0 right-0 w-8 h-8"></div>
+            <div class="absolute bottom-0 right-0 w-8 h-8 bg-accent animated parent-enter:bg-secondary parent-enter:translate-x-full" />
+        </div>
+
+        <div class="relative w-40 h-40 bg-accent intersection-observable">
+            <div class="absolute bottom-0 right-0 w-8 h-8 bg-dark" />
+            <div class="absolute bottom-0 right-0 w-8 h-8 bg-accent 
+                        animated origin-top-right parent-enter:scale-0" />
+            <div class="absolute bottom-8 -right-8 w-8 h-8 bg-secondary scale-0
+                        animated origin-bottom-left parent-enter:scale-100" />
+        </div>
+
+        <div class="relative w-40 h-40 bg-accent intersection-observable">
+            <div class="absolute bottom-0 right-0 w-8 h-8 bg-dark" />
+            <div class="absolute bottom-0 right-0 w-8 h-8 bg-accent 
+                        animated origin-right parent-enter:scale-x-0" />
+            <div class="absolute bottom-0 -right-8 w-8 h-8 bg-secondary scale-x-0
+                        animated origin-left parent-enter:scale-x-100" />
+        </div>
+        <div class="relative w-40 h-40 bg-accent intersection-observable">
+            <div class="absolute bottom-0 right-0 w-8 h-8 bg-dark" />
+            <div class="absolute bottom-0 right-0 w-8 h-8 bg-accent 
+                        animated parent-enter:scale-0" />
+            <div class="absolute bottom-0 -right-8 w-8 h-8 bg-secondary scale-0
+                        animated parent-enter:scale-100" />
+        </div>
+        <div class="relative w-40 h-40 bg-accent intersection-observable">
+            <div class="absolute bottom-0 right-0 w-8 h-8 bg-dark" />
+            <div class="absolute bottom-0 right-0 w-8 h-8 bg-accent opacity-1 
+                        parent-enter:animate-flash-out" />
+            <div class="absolute bottom-0 -right-8 w-8 h-8 bg-secondary opacity-0
+                        parent-enter:animate-flash-in" />
+        </div>
+    </div>
+</section>

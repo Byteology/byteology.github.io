@@ -1,0 +1,53 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    html, body {
+        @apply h-full; /* Makes vh correspond to the visible viewport height on mobile (exludes the address bar) */
+    }
+
+    html {
+        @apply snap-y;
+        @apply snap-mandatory;
+    }
+
+    body {
+        @apply bg-dark;
+        @apply text-light;
+        @apply text-body;
+        @apply font-sans;
+        @apply break-words;
+    }
+
+    * {
+        @apply relative;
+    }
+}
+
+@layer components {
+    .container {
+        @apply w-full;
+        @apply px-8;
+        @apply mx-auto;
+        @apply max-w-[1360px]
+    }
+}
+
+@layer utilities {
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    .uppercase {
+        letter-spacing: 0.15em;
+    }
+}

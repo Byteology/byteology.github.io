@@ -1,0 +1,16 @@
+﻿.timeline {
+    counter-reset: timeline-counter;
+}
+
+.timeline > li > .bullet::before {
+    counter-increment: timeline-counter;
+    content: counter(timeline-counter);
+}
+
+.timeline > li:nth-child(-n+9) > .bullet::before {
+    content: '0'counter(timeline-counter);
+}
+
+.timeline > li:last-child > .line {
+    display: none;
+}

@@ -1,0 +1,59 @@
+[*.cs]
+
+######################################
+# Naming Styles
+######################################
+dotnet_naming_symbols.private_methods.applicable_kinds           = method
+dotnet_naming_symbols.private_methods.applicable_accessibilities = private
+
+dotnet_naming_symbols.private_fields.applicable_kinds           = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+dotnet_naming_symbols.private_properties.applicable_kinds           = property
+dotnet_naming_symbols.private_properties.applicable_accessibilities = private
+
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+dotnet_naming_style.underscore_camel_case.capitalization	= camel_case
+dotnet_naming_style.underscore_camel_case.required_prefix	= _
+
+dotnet_naming_rule.private_methods_camel_case.symbols = private_methods
+dotnet_naming_rule.private_methods_camel_case.style    = camel_case_style
+dotnet_naming_rule.private_methods_camel_case.severity = suggestion
+
+dotnet_naming_rule.private_fields_underscore_camel_case.symbols = private_fields
+dotnet_naming_rule.private_fields_underscore_camel_case.style    = underscore_camel_case
+dotnet_naming_rule.private_fields_underscore_camel_case.severity = suggestion
+
+dotnet_naming_rule.private_properties_underscore_camel_case.symbols = private_properties
+dotnet_naming_rule.private_properties_underscore_camel_case.style    = underscore_camel_case
+dotnet_naming_rule.private_properties_underscore_camel_case.severity = suggestion
+
+######################################
+# Code style
+######################################
+csharp_using_directive_placement = inside_namespace
+csharp_style_namespace_declarations = file_scoped
+
+######################################
+# IDE Rules
+######################################
+
+# Remove this or Me qualification
+dotnet_diagnostic.IDE0003.severity = none 
+
+# Convert to file scoped namespace
+dotnet_diagnostic.IDE0161.severity = suggestion
+
+######################################
+# Sonar Rules
+######################################
+
+# Reflection should not be used to increase accessibility of classes, methods, or fields
+dotnet_diagnostic.S3011.severity = none
+
+# Loops should be simplified with "LINQ" expressions
+dotnet_diagnostic.S3267.severity = none
+
+# Types should be defined in named namespaces
+dotnet_diagnostic.S3903.severity = none

@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byteology.Website", "Byteology.Website\Byteology.Website.csproj", "{3F52242E-4343-4F0E-8CCA-81AD8F4D221D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{327931B4-127A-4855-95C2-DFE246915472}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{162EF393-71AD-4CEE-A443-B54F3C1FDA7C}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\CODEOWNERS = ..\.github\CODEOWNERS
+		..\.github\README.md = ..\.github\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{F882C1EF-1ABE-4166-8EA7-F34E6C09E26A}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\push_action.yml = ..\.github\workflows\push_action.yml
+		..\.github\workflows\release_action.yml = ..\.github\workflows\release_action.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".sonar", ".sonar", "{8D963893-2CD1-4AF5-A1BB-65D0E64F64E6}"
+	ProjectSection(SolutionItems) = preProject
+		..\.sonar\coverlet.runsettings = ..\.sonar\coverlet.runsettings
+		..\.sonar\SonarQube.Analysis.xml = ..\.sonar\SonarQube.Analysis.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F52242E-4343-4F0E-8CCA-81AD8F4D221D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F52242E-4343-4F0E-8CCA-81AD8F4D221D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F52242E-4343-4F0E-8CCA-81AD8F4D221D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F52242E-4343-4F0E-8CCA-81AD8F4D221D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{162EF393-71AD-4CEE-A443-B54F3C1FDA7C} = {327931B4-127A-4855-95C2-DFE246915472}
+		{F882C1EF-1ABE-4166-8EA7-F34E6C09E26A} = {162EF393-71AD-4CEE-A443-B54F3C1FDA7C}
+		{8D963893-2CD1-4AF5-A1BB-65D0E64F64E6} = {327931B4-127A-4855-95C2-DFE246915472}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FA7B255-4ECD-4FE6-B31C-DE0CD64CABCD}
+	EndGlobalSection
+EndGlobal

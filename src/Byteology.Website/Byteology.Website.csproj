@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <BlazorWasmPrerenderingDeleteLoadingContents>true</BlazorWasmPrerenderingDeleteLoadingContents>
+    <BlazorWasmPrerenderingUrlPathToExplicitFetch>/notfound</BlazorWasmPrerenderingUrlPathToExplicitFetch>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BlazorWasmPreRendering.Build" Version="1.0.0-preview.24.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.6" PrivateAssets="all" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.40.0.48530">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Include="Tailwind\tailwind.config.js" />
+    <UpToDateCheckInput Include="Tailwind\tailwind.css" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="tailwindcss -c $(ProjectDir)Tailwind\tailwind.config.js -i $(ProjectDir)Tailwind\tailwind.css -o $(ProjectDir)wwwroot\css\style.css -m" ContinueOnError="true" />
+  </Target>
+
+</Project>

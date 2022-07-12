@@ -1,0 +1,67 @@
+﻿@inherits BasePage
+
+<PageTitle>Byteology - a moment of science</PageTitle>
+
+<div class="space-y-16">
+    <LogoBanner class="snap-start snap-always h-screen" FadeIn=true />
+
+    <CascadingValue Name="Dark" Value="true">
+    <section class="snap-start snap-always h-screen overflow-auto no-scrollbar
+                    container p-8
+                    bg-dark text-light">
+
+        <div class="min-h-full grid grid-cols-1 tablet:grid-cols-2 gap-8 content-center">
+
+            <h1 class="text-h3 font-bold col-start-1">By introducing <span class="text-secondary">scientific generalization</span> to software engineering, <span class="text-secondary">Byteology</span> helps businesses tackle software complexity and grow.</h1>
+            <Timeline @ref=_scientificGeneralizationTimeline class="tablet:col-start-2 tablet:row-span-2"/>
+            <a class="col-start-1 text-center border-2 border-secondary px-4 py-2 text-secondary uppercase font-bold text-detail self-end
+                hover:bg-accent hover:text-light hover:border-accent transition-colors duration-500" href="/about-us">Learn more</a>
+        </div>
+
+    </section>
+    </CascadingValue>
+
+
+
+    <section class="snap-start snap-always h-screen bg-light text-dark">
+        <div class="container py-8 space-y-8">
+            <h1 class="text-h1 text-accent">Here’s an overview of our services</h1>
+            <h2>Event Sourcing</h2>
+            <h2>Migration to Microservices</h2>
+            <h2>MVP and Application Development</h2>
+            <h2>Consulting & Training</h2>
+        </div>
+    </section>
+
+    
+    <section class="snap-start snap-always h-screen bg-light text-dark">
+        <h1>Here’s what you can expect with Byteology</h1>
+        <p>At Byteology we believe in crafting and providing flexible solutions that meet your specific business needs</p>
+        <p>Here’s the modular approach that we have adopted and that can be easily customized:</p>
+
+        <h2><span>01</span>Conducting a product discovery</h2>
+        <ul>
+            <li>Free of charge</li>
+            <li>Takes 1-2 weeks</li>
+        </ul>
+
+        <h2><span>02</span>Creation of custom offer</h2>
+        <p>The offer includes</p>
+        <ul>
+            <li>Technical development plan</li>
+            <li>Timeline</li>
+            <li>A month-to-month price offer</li>
+        </ul>
+
+        <h2><span>03</span>Delivery of demo</h2>
+        <p>At the end of every month, you will be presented with a demo</p>
+
+        <p>If you are NOT satisfied with the demo, we end our relationship without you having to pay</p>
+        <p>If you ARE satisfied with the demo, we continue our partnership</p>
+
+    </section>
+
+    <section class="snap-start snap-always h-screen bg-light text-dark">
+        <h1>Here's to working together</h1>
+    </section>
+</div>
