@@ -1,0 +1,13 @@
+﻿<CascadingValue Name="Theme" Value="Theme">
+    <section class="snap-start snap-always h-screen overflow-auto no-scrollbar
+                    container p-8
+                    @_sectionThemedClasses.Value">
+
+        @ChildContent
+
+    </section>
+</CascadingValue>
+
+@code {
+    private ThemedValue _sectionThemedClasses => new(() => Theme, light: "bg-light text-dark", dark: "bg-dark text-light");
+}

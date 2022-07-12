@@ -17,12 +17,12 @@ module.exports = {
             accent: {
                 DEFAULT: '#583be2',
                 dark: '#352fd3',
-                lignt: '#9177ec',
+                light: '#9177ec',
             },
             secondary: {
                 DEFAULT: '#60caef',
                 dark: '#2ab1ed',
-                lignt: '#b7e8f8',
+                light: '#b7e8f8',
             },
             grey: {
                 DEFAULT: '#d9d9d9',

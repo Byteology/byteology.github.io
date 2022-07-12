@@ -1,0 +1,10 @@
+﻿<div @attributes="InputAttributes">
+    <a class="block h-full px-4 py-2 uppercase text-center font-bold text-detail border-2 transition-colors duration-500 @_themedClasses.Value" href="@Url">@Text</a>
+</div>
+
+@code {
+    private ThemedValue _themedClasses => new(
+        () => Theme, 
+        light: "border-accent text-light bg-accent hover:text-light hover:bg-accent-light hover:border-accent-light", 
+        dark: "border-secondary text-secondary hover:bg-accent hover:text-light hover:border-accent");
+}
