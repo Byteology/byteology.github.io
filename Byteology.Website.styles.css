@@ -1,0 +1,17 @@
+/* /Components/Timeline.razor.rz.scp.css */
+.timeline[b-5gqou3bbw5] {
+    counter-reset: timeline-counter;
+}
+
+.timeline > li > .bullet[b-5gqou3bbw5]::before {
+    counter-increment: timeline-counter;
+    content: counter(timeline-counter);
+}
+
+.timeline > li:nth-child(-n+9) > .bullet[b-5gqou3bbw5]::before {
+    content: '0'counter(timeline-counter);
+}
+
+.timeline > li:last-child > .line[b-5gqou3bbw5] {
+    display: none;
+}
