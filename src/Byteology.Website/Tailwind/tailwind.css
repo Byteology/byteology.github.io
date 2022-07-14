@@ -19,6 +19,11 @@
         @apply text-body;
         @apply font-sans;
         @apply break-words;
+
+        @apply bg-cover;
+        @apply bg-fixed;
+        @apply bg-center;
+        @apply bg-[url('/images/background.jpeg')];
     }
 
     * {

@@ -1,7 +1,5 @@
 ﻿namespace Byteology.Website.Components;
 
-using Byteology.Website.Theming;
-
 public partial class LinkButton
 {
     [Parameter(CaptureUnmatchedValues = true)]
