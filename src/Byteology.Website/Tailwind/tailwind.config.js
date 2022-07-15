@@ -5,9 +5,9 @@ module.exports = {
 
     theme: {
         screens: {
-            tablet: '688px',
-            laptop: '992px',
-            desktop: '1360px',
+            tablet: '43rem',
+            laptop: '62rem',
+            desktop: '85rem',
         },
         colors: {
             transparent: 'transparent',

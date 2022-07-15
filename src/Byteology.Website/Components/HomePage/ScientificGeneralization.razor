@@ -1,8 +1,14 @@
-﻿<div class="min-h-full grid grid-cols-1 tablet:grid-cols-2 gap-8 content-center">
+﻿<div class="h-full 
+            grid grid-cols-1 landscape:grid-cols-2 gap-8 content-center">
 
-    <h1 class="text-h3 font-bold col-start-1">By introducing <strong class="@_strongTextClass.Value">scientific generalization</strong> to software engineering, <strong class="@_strongTextClass.Value">Byteology</strong> helps businesses tackle software complexity and grow.</h1>
+    <h1 class="col-start-1
+               text-h3 font-bold">
+        By introducing <strong class="@_strongTextClass.Value">scientific generalization</strong> 
+        to software engineering, <strong class="@_strongTextClass.Value">Byteology</strong> 
+        helps businesses tackle software complexity and grow.
+    </h1>
     
-    <Timeline class="tablet:col-start-2 tablet:row-span-2" Items="@(new MarkupString[]
+    <Timeline class="col-start-1 row-span-1 landscape:col-start-2 landscape:row-span-2" Items="@(new MarkupString[]
         {
             new ("We think deeply and <strong>analyze the building blocks</strong> of your software architecture"),
             new ("We extrapolate <strong>actionable data and insights</strong>"),
