@@ -1,26 +1,18 @@
-﻿<CascadingValue Name="Theme" Value="Theme">
-    <section class="h-screen
-                    snap-start snap-always 
-                    portrait:py-8 tablet:py-8
-                    landscape:px-8 tablet:px-8
-                    flex justify-items-center items-center
-                    overflow-y-auto overflow-x-hidden 
-                    no-scrollbar
-                    ">
+﻿<section class="h-screen
+                snap-start snap-always 
+                portrait:py-8 sm:py-8
+                landscape:px-8 sm:px-8
+                flex justify-items-center items-center
+                overflow-y-auto overflow-x-hidden 
+                no-scrollbar
+                ">
 
-        <div class="container
-                    m-auto
-                    p-8
-                    overflow-hidden
-                    @_sectionThemedClasses.Value">
+    <div class="container
+                m-auto
+                overflow-hidden">
                
-            @ChildContent
+        @ChildContent
 
-        </div>
+    </div>
 
-    </section>
-</CascadingValue>
-
-@code {
-    private ThemedValue _sectionThemedClasses => new(() => Theme, light: "bg-light text-dark", dark: "bg-dark text-light");
-}
+</section>
