@@ -1,0 +1,19 @@
+﻿.radio_input:checked + label {
+    /*left: 0;*/
+}
+
+
+.radio_input:not(:checked) + label {
+/*    transform: scale(0.5);
+    left: calc(25rem + 12.5rem * (var(--position)) + 10px)*/
+
+}
+
+label {
+    /*transform-origin: top left;*/
+
+    transform: translateX(-50%) scale(calc(1 - 0.4 * var(--absoffset)));
+    left: calc(50% + 23rem * var(--offset));
+    opacity: calc(1 - 0.4 * var(--absoffset));
+}
+

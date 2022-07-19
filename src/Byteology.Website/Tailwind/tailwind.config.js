@@ -68,7 +68,8 @@ module.exports = {
     plugins: [
         plugin(function ({ addVariant }) {
             addVariant('enter', '&.entered-screen');
-            addVariant('parent-enter', '.entered-screen > &')
+            addVariant('parent-enter', '.entered-screen > &');
+            addVariant('adjacent-checked', 'input[type=radio]:checked+&');
         }),
     ],
 }

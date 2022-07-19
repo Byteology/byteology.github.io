@@ -1,0 +1,75 @@
+﻿@using Microsoft.AspNetCore.Components.Forms;
+
+<div class="carousel bg-dark h-[30rem] p-8">
+    
+    @for (int i = 0; i < _services.Count; i++)
+    {
+        <input id=@("item_" + i) type="radio" name="group" class="hidden radio_input" Value=@i @attributes=GetDefaultCheckedAttribute(i) @onchange=OnChange/>
+        <label class="inline-block transition-all duration-500 absolute" style=@($"--offset:{i - _selected}; --absoffset:{Math.Abs(i - _selected)}; --position:{i};") for=@("item_"+i)>
+            <ServiceIntro class="w-[23rem] h-[23rem]" Title=@_services[i].Title Description=@_services[i].Description
+                            IconSrc=@_services[i].IconSrc DetailsUrl=@_services[i].DetailsUrl />
+        </label>
+    }
+
+</div>
+
+
+@code {
+
+    private void OnChange(ChangeEventArgs args)
+    {
+        _selected = int.Parse(args.Value.ToString());
+    }
+
+
+    private int _selected = 0;
+
+    private Dictionary<string,object> GetDefaultCheckedAttribute(int index)
+    {
+        Dictionary<string, object> attributes = new();
+        if (index == 0)
+            attributes.Add("checked", "checked");
+
+        return attributes;
+    }
+
+    private List<Service> _services = new()
+    {
+        new Service()
+        {
+            Title = "MVP & Application Development",
+            Description = "Byteology’s team will develop your application or minimum viable product (MVP) for you.",
+            IconSrc = "/images/application-development.png",
+            DetailsUrl = "/services/development"
+        },
+        new Service()
+        {
+            Title = "Migration to Microservices",
+            Description = "Byteology will provide you with a tailored technology, strategy and process to help your business successfully migrate to microservices.",
+            IconSrc = "/images/application-development.png",
+            DetailsUrl = "/services/microservices"
+        },
+        new Service()
+        {
+            Title = "Event Sourcing",
+            Description = "Standard software development methodologies store and utilize less than 50% of the data that runs through the system.",
+            IconSrc = "/images/application-development.png",
+            DetailsUrl = "/services/event-sourcing"
+        },
+        new Service()
+        {
+            Title = "Consulting & Training",
+            Description = "Byteology will provide you with tailored consulting services and training to help your business scale and grow.",
+            IconSrc = "/images/application-development.png",
+            DetailsUrl = "/services/consulting-and-training"
+        },
+    };
+
+    private class Service
+    {
+        public string Title { get; set; } = default!;
+        public string Description { get; set; } = default!;
+        public string IconSrc { get; set; } = default!;
+        public string DetailsUrl { get; set; } = default!;
+    }
+}
