@@ -2,7 +2,7 @@
 
 public partial class Timeline
 {
-    [Parameter]
+    [CascadingParameter]
     public Theme Theme { get; set; }
 
     [Parameter(CaptureUnmatchedValues = true)]

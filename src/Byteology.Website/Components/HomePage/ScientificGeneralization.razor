@@ -1,21 +1,35 @@
-﻿<div class="h-full max-w-[53rem] m-auto
-            bg-dark p-8
-            grid grid-cols-1 landscape:grid-cols-2 gap-8 content-center">
+﻿<div @attributes=InputAttributes>
+    <div class="p-8
+                grid grid-cols-1 landscape:grid-cols-2 gap-8 content-center
+                @_rootThemedClasses.Value">
 
-    <h1 class="col-start-1
-               text-h3 font-bold">
-        By introducing <strong class="text-secondary">scientific generalization</strong> 
-        to software engineering, <strong class="text-secondary">Byteology</strong> 
-        helps businesses tackle software complexity and grow.
-    </h1>
+        <h1 class="col-start-1
+                   text-[1.5em] font-bold">
+            By introducing <strong class="@_strongThemedClasses.Value">scientific generalization</strong> 
+            to software engineering, <strong class="@_strongThemedClasses.Value">Byteology</strong> 
+            helps businesses tackle software complexity and grow.
+        </h1>
     
-    <Timeline class="col-start-1 row-span-1 landscape:col-start-2 landscape:row-span-2" Theme="Theme.Dark" Items="@(new MarkupString[]
-        {
-            new ("We think deeply and <strong>analyze the building blocks</strong> of your software architecture"),
-            new ("We extrapolate <strong>actionable data and insights</strong>"),
-            new ("We design and implement <strong>tailored solutions</strong>"),
-            new ("We help your business <strong>scale and grow</strong>"),
-        })"/>
+        <Timeline class="col-start-1 row-span-1 landscape:col-start-2 landscape:row-span-2" Items="@(new MarkupString[]
+            {
+                new ("We think deeply and <strong>analyze the building blocks</strong> of your software architecture"),
+                new ("We extrapolate <strong>actionable data and insights</strong>"),
+                new ("We design and implement <strong>tailored solutions</strong>"),
+                new ("We help your business <strong>scale and grow</strong>"),
+            })"/>
 
-    <LinkButton class="col-start-1 self-end" Text="Learn more" Url="/about-us"/>
+        <LinkButton class="col-start-1 self-end text-[0.875em]" Text="Learn more" Url="/about-us" Primary=true />
+    </div>
 </div>
+
+@code
+{
+    [CascadingParameter]
+    public Theme Theme { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object>? InputAttributes { get; set; }
+
+    private ThemedValue _rootThemedClasses => new(() => Theme, "bg-light text-dark", "bg-dark text-light");
+    private ThemedValue _strongThemedClasses => new(() => Theme, "text-accent", "text-secondary");
+}

@@ -29,13 +29,9 @@
     * {
         @apply relative;
     }
-}
 
-@layer components {
-    .container {
-        @apply w-full;
-        @apply mx-auto;
-        @apply max-w-[1360px]
+    *:focus {
+        outline: none;
     }
 }
 

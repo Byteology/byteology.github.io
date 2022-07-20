@@ -1,4 +1,24 @@
 ﻿<div @attributes="InputAttributes">
-    <a class="block px-[1.25em] py-[0.75em] uppercase text-center font-bold text-detail transition duration-500
-              bg-accent text-light hover:text-light hover:bg-accent-light" href="@Url">@Text</a>
+    <div class="h-full flex items-center
+                border-solid border-[0.125em]
+                transition duration-500
+                @_themedClasses.Value">
+        <a class="w-full 
+                  px-[1.25em] py-[0.75em] 
+                  uppercase text-center font-bold" 
+           href="@Url">@Text</a>
+    </div>
 </div>
+
+
+@code 
+{
+    private ThemedValue _themedClasses => new(() => Theme, 
+        Primary ? 
+            "bg-accent border-accent text-light hocus:bg-accent-light hocus:border-accent-light" : 
+            "bg-transparent border-accent text-accent hocus:bg-accent-light hocus:text-light hocus:border-accent-light",
+        Primary ?
+            "bg-accent border-accent text-light hocus:bg-accent-light hocus:border-accent-light" : 
+            "bg-transparent border-secondary text-light hocus:bg-accent-light hocus:border-accent-light"
+    );
+}

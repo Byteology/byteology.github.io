@@ -6,15 +6,19 @@
 <PageTitle>Byteology - a moment of science</PageTitle>
 
 <div class="space-y-16">
-    <LogoBanner class="h-screen snap-start snap-always" FadeIn=true />
+    <CascadingValue Value="Theme.Dark">
 
-    <Slide>
-        <ScientificGeneralization/>
-    </Slide>
+        <Logo class="h-screen snap-start snap-always" FadeIn=true />
 
-    <Slide>
-        <ServicesList/>
-    </Slide>
+        <Slide>
+            <ScientificGeneralization class="max-w-[56rem] mx-auto text-body"/>
+        </Slide>
+
+        <Slide>
+            <ServicesList/>
+        </Slide>
+
+    </CascadingValue>
 
 @*
     <section class="snap-start snap-always h-screen bg-light text-dark">
