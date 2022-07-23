@@ -3,14 +3,14 @@
                 grid grid-cols-1 landscape:grid-cols-2 gap-8 content-center
                 @_rootThemedClasses.Value">
 
-        <h1 class="col-start-1
-                   text-[1.5em] font-bold">
+        <p class="col-start-1
+                   text-h3 font-bold">
             By introducing <strong class="@_strongThemedClasses.Value">scientific generalization</strong> 
             to software engineering, <strong class="@_strongThemedClasses.Value">Byteology</strong> 
             helps businesses tackle software complexity and grow.
-        </h1>
+        </p>
     
-        <Timeline class="col-start-1 row-span-1 landscape:col-start-2 landscape:row-span-2" Items="@(new MarkupString[]
+        <Timeline class="col-start-1 row-span-1 landscape:col-start-2 landscape:row-span-2 text-body" Items="@(new MarkupString[]
             {
                 new ("We think deeply and <strong>analyze the building blocks</strong> of your software architecture"),
                 new ("We extrapolate <strong>actionable data and insights</strong>"),
@@ -18,7 +18,7 @@
                 new ("We help your business <strong>scale and grow</strong>"),
             })"/>
 
-        <LinkButton class="col-start-1 self-end text-[0.875em]" Text="Learn more" Url="/about-us" Primary=true />
+        <LinkButton class="col-start-1 self-end text-detail" Text="Learn more" Url="/about-us" Primary=true />
     </div>
 </div>
 
