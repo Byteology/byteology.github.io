@@ -7,9 +7,9 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Byteology.Website.dll": "sha256-7wOf7b1odq32dnHTZ1UL228rmUKcTsun4YqZ7q+UWZg=",
-      "Microsoft.AspNetCore.Components.dll": "sha256-BxgydsHOltYQnPdLgMXfedFR9M3hzRmRyu7CpKWvxSo=",
-      "Microsoft.AspNetCore.Components.Web.dll": "sha256-kE96De54UijQra9Mh2M2\/GuIqlNfx2+EVtmcTincWFA=",
+      "Byteology.Website.dll": "sha256-yR5or9hiOqkmNEPvBETCPxS5WHRwQyN7X6DdEP68vDE=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-W9B5CwrQoMcktwV0UAyKsytHzyVue8QPTKs868ZXLE0=",
+      "Microsoft.AspNetCore.Components.Web.dll": "sha256-XkGvGxqx\/tCWbz6dJyDCh2+Ovy4wyOjaaDFx60p6ISA=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-\/Dy2ObLVYzJ6Xlan\/StjJDmeXXNbucbohR2dQMoH3Zo=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-zhFtW4kE16TdrpPne9I1Cu9o0KYzrS50VE9MVSifJg4=",
       "Microsoft.Extensions.Configuration.dll": "sha256-QPR+1IXNcA28b\/gXw3uZ8aRigHIZUJ1KWSH02kkCg7Q=",
@@ -29,11 +29,11 @@
       "System.Net.Http.dll": "sha256-EZd9Djak8J9axmxAUUSJxCPKHevKWmidnrzm1dkbP2g=",
       "System.Net.Http.Json.dll": "sha256-zeKMRL8J\/AcxWvG1lDa5hkvQ7Q\/KC2Z51jQAJTzJ6Lw=",
       "System.Net.Primitives.dll": "sha256-lqlZmHeYIh8aSjXm7fXEA1lKUiWSVPQVr6tPNmPe8yQ=",
-      "System.Private.CoreLib.dll": "sha256-2Jq2W6vPWU0KqkuHcmccWKYRbK+I4SlxH0S4L9ea1Ys=",
+      "System.Private.CoreLib.dll": "sha256-gBTXcVNAsIvPypp1Y0a57Z5rS7YCLZmOEyMQPhYBz5U=",
       "System.Private.Runtime.InteropServices.JavaScript.dll": "sha256-PYr8U838vqlA+lpTbVzpgpoVPv31DDkR77iXepR9Irc=",
       "System.Private.Uri.dll": "sha256-ieKIkQisjzVmAiNBpKeBn5Ksj1go\/9vtcBLRt9\/7mnk=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-MOTr7Zcm3cYDv7ypZ7mVi8SQ82a15iKQxd7nISZbWWc=",
-      "System.Runtime.dll": "sha256-IS3GOa56SeeXi4Ib8THI6l+ZCwM2nnct2oka7HFmzao=",
+      "System.Runtime.dll": "sha256-CmAqaTaie\/w\/MURlEMojWRg\/3RGPpK9TOLluYAmEvs8=",
       "System.Text.Encodings.Web.dll": "sha256-aGUUYYpDQhPFrY64BhZ+S8grJfGPYHypREN3r\/I+Duk=",
       "System.Text.Json.dll": "sha256-VMpyZrWL6amV4hoQYwC8Zkk8\/hkjjKSeSmM4TAqs0fE="
     },
