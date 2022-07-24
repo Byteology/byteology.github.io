@@ -12,11 +12,18 @@ public partial class LinkButton
     public string? Class { get; set; }
 
     [Parameter]
-    public bool Primary { get; set; }
-
-    [Parameter]
     public string? Text { get; set; }
 
     [Parameter]
     public string? Url { get; set; }
+
+    [Parameter]
+    public ButtonType Type { get; set; }
+
+    public enum ButtonType
+    {
+        Primary,
+        Secondary,
+        Tertiary
+    }
 }

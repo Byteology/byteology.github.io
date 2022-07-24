@@ -28,7 +28,7 @@
 
                     <p class="text-detail text-light">@_services[i].Description</p>
 
-                    <LinkButton Text="Learn more" Url="@_services[i].DetailsUrl"
+                    <LinkButton Text="Learn more" Url="@_services[i].DetailsUrl" Type="LinkButton.ButtonType.Secondary"
                                 class="text-detail p-1"
                                 tabindex=@(i == _checkedIndex ? 0 : -1)/>
                 </div>           
@@ -48,7 +48,7 @@
 
             <p>@_services[_checkedIndex].Description</p>
 
-            <LinkButton Text="Learn more" Url="@_services[_checkedIndex].DetailsUrl" Primary=true
+            <LinkButton Text="Learn more" Url="@_services[_checkedIndex].DetailsUrl" Type="LinkButton.ButtonType.Primary"
                         class="text-detail h-8 box-content"/>
         </div>    
 
