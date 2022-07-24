@@ -64,9 +64,8 @@ module.exports = {
     plugins: [
         plugin(function ({ addVariant }) {
             addVariant('enter', '&.entered-screen');
-            addVariant('hocus', ['&:hover', '&:focus-within']);
+            addVariant('hocus', ['&:hover', '&:focus', '&:focus-within']);
             addVariant('parent-enter', '.entered-screen > &');
-            addVariant('adjacent-checked', 'input[type=radio]:checked+&');
         }),
     ],
 }

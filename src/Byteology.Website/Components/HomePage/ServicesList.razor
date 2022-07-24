@@ -1,45 +1,64 @@
-﻿<div class="bg-dark max-w-[22rem] mx-auto p-8">
-    <h3 class="mb-8 text-h3 font-bold text-secondary text-center">Here's an overview of our services</h3>
+﻿<div class="bg-dark max-w-[22rem] landscape:md:max-w-[48rem] mx-auto p-8 space-y-8">
+    <h3 class="col-span-1 landscape:md:col-span-2 text-h3 font-bold text-secondary text-center">Here's an overview of our services</h3>
 
-    <div class="space-y-4">
-        @for(int i = 0; i < _services.Count; i++)
-        {
-            <input id=@($"service-{i}") type="radio" name="services-list" class="hidden" @attributes="@(i == 0 ? _checkedAttribute : null)" />
-            <div class="block h-8 box-content
-                        overflow-hidden
-                        transition-all duration-500
-                        bg-transparent text-light
-                        border-solid border-2 border-secondary
-                        hover:border-accent
-                        text-detail
-                        whitespace-nowrap
-                        adjacent-checked:whitespace-normal
-                        adjacent-checked:bg-accent
-                        adjacent-checked:border-accent
-                        adjacent-checked:h-[16rem]
-                        adjacent-checked:text-body
-                        adjacent-checked:p-4
-                        flex flex-col justify-between">
+    <div class="grid grid-cols-1 landscape:md:grid-cols-2 landscape:md:gap-x-16 landscape:md:py-4">
+        <div class="flex flex-col gap-4 justify-between">
+            @for(int i = 0; i < _services.Count; i++)
+            {
+                var j = i;
+                <div @onclick=@(args => _checkedIndex = j) @onkeydown=@(args => { if(args.Code == "Enter" || args.Code == "NumpadEnter") _checkedIndex = j; } )
+                     tabindex=@(i == _checkedIndex ? -1 : 0)
+                     class="
+                            box-content
+                            transition-all duration-500
+                            text-light
+                            border-solid border-2
+                            overflow-hidden
+                            flex flex-col justify-between
+                            @(_checkedIndex == i ? 
+                                "cursor-default bg-accent border-accent whitespace-normal h-64 p-4 text-body landscape:md:bg-transparent landscape:md:h-8 landscape:md:p-0 landscape:md:whitespace-nowrap landscape:md:text-detail" : 
+                                "cursor-pointer h-8 bg-transparent border-secondary hocus:border-accent-light whitespace-nowrap text-detail")
+                            ">
 
-                <label class="block -mx-[2px] -mt-[2px]
-                              border-solid border-2 border-transparent
-                              font-bold 
-                              items-center flex gap-[1em]" 
-                       for="@($"service-{i}")">
-                    <img class="h-6 m-1 square" src="@_services[i].IconSrc" alt="@_services[i].Title" /> <span class="">@_services[i].Title</span>
-                </label>
+                    <div class="font-bold 
+                                flex gap-[1em] items-center">
+                        <img class="h-6 m-1 square" src="@_services[i].IconSrc" alt="@_services[i].Title" /> 
+                        <p>@_services[i].Title</p>
+                    </div>
 
-                <p class="text-detail text-light">@_services[i].Description</p>
+                    <p class="text-detail text-light">@_services[i].Description</p>
 
-                <a class="block px-4 py-1 uppercase text-center font-bold text-detail transition duration-500 border-solid border-2 border-secondary
-                  bg-transparent text-light hover:text-light hover:bg-secondary" href="@_services[i].DetailsUrl">Learn more</a>
+                    <LinkButton Text="Learn more" Url="@_services[i].DetailsUrl"
+                                class="text-detail p-1"
+                                tabindex=@(i == _checkedIndex ? 0 : -1)/>
+                </div>           
+            }
+        </div>
+
+        <div class="hidden landscape:md:flex
+                    min-h-[16rem]
+                    text-light
+                    flex-col justify-between">
+
+            <div class="font-bold text-h2
+                        flex gap-4 items-center">
+                <img class="h-6 m-1 square" src="@_services[_checkedIndex].IconSrc" alt="@_services[_checkedIndex].Title" /> 
+                <p class="text-h3">@_services[_checkedIndex].Title</p>
             </div>
-            
-        }
+
+            <p>@_services[_checkedIndex].Description</p>
+
+            <LinkButton Text="Learn more" Url="@_services[_checkedIndex].DetailsUrl" Primary=true
+                        class="text-detail h-8 box-content"/>
+        </div>    
+
+        <div class="hidden landscape:md:block absolute bg-accent left-1/2 w-[2px] h-full"></div>
     </div>
 </div>
 
 @code {
+    private int _checkedIndex = 0;
+
     private Dictionary<string, object> _checkedAttribute = new()
     {
         { "checked", "checked" }

@@ -9,6 +9,9 @@ public partial class LinkButton
     public Dictionary<string, object>? InputAttributes { get; set; }
 
     [Parameter]
+    public string? Class { get; set; }
+
+    [Parameter]
     public bool Primary { get; set; }
 
     [Parameter]
