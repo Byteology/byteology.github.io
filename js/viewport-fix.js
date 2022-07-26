@@ -5,10 +5,11 @@ window.addEventListener('resize', () => {
 
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-    alert(window.scrollY);
+    alert("resize");
     //window.scrollBy(0, 0);
 });
 
 window.addEventListener('scroll', function (e) {
-    //console.log(e);
+    alert("scroll");
+    //console.log(this.window.scrollY);
 });
