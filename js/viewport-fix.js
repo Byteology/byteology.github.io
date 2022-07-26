@@ -10,6 +10,6 @@ window.addEventListener('resize', () => {
 });
 
 window.addEventListener('scroll', function (e) {
-    alert("scroll");
+    //alert("scroll");
     //console.log(this.window.scrollY);
 });
