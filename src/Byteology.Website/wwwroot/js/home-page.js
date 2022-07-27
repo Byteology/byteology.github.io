@@ -30,6 +30,7 @@ function setVh() {
 
 function onResize(e) {
     setVh();
+    resetScrollPosition();
 }
 
 function onScroll(e) {
