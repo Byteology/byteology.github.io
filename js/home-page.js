@@ -33,7 +33,7 @@ function onResize(e) {
 }
 
 function onScroll(e) {
-    console.log(scroller.scrollTop);
+    alert(scroller.scrollTop);
 
     let prevSlide = currentSlide;
 
