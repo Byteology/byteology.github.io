@@ -33,13 +33,12 @@ function onResize(e) {
 }
 
 function onScroll(e) {
-    alert(scroller.scrollTop);
 
     let prevSlide = currentSlide;
 
-    if (scroller.scrollTop >= 2) 
+    if (scroller.scrollTop > 1) 
         currentSlide++;
-    else if (scroller.scrollTop <= 0)
+    else if (scroller.scrollTop < 1)
         currentSlide--;
 
     currentSlide = Math.max(0, Math.min(slidesCount - 1, currentSlide));
