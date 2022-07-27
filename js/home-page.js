@@ -2,27 +2,25 @@
 var slidesCount;
 var page;
 var vh;
-var scrollPosition;
-let throttlePause = false;
+var scroller;
 
 export function init(currentSlideIndex, totalSlidesCount, pageObject) {
     currentSlide = currentSlideIndex;
     slidesCount = totalSlidesCount;
     page = pageObject;
-    document.body.classList.add("no-scrollbar");
+    scroller = document.getElementById("home-scroller")
 
     setVh();
-    setScrollPosition();
+    resetScrollPosition();
 
     window.addEventListener('resize', onResize);
-    window.addEventListener('scroll', onScroll);
+    scroller.addEventListener('scroll', onScroll);
 }
 
 export function dispose() {
     window.removeEventListener('resize', onResize);
-    window.removeEventListener('scroll', onScroll);
+    scroller.removeEventListener('scroll', onScroll);
     document.documentElement.style.removeProperty("--vh");
-    document.body.classList.remove("no-scrollbar");
 }
 
 function setVh() {
@@ -31,46 +29,32 @@ function setVh() {
 }
 
 function onResize(e) {
-    console.log("resize");
-
     setVh();
-    setScrollPosition();
 }
 
 function onScroll(e) {
+    console.log(scroller.scrollTop);
 
     let prevSlide = currentSlide;
 
-    throttle(() => {
-        if (this.window.scrollY > scrollPosition) {
-            currentSlide++;
-        }
-        else if (this.window.scrollY < scrollPosition) {
-            currentSlide--;
-        }
+    if (scroller.scrollTop == 2) 
+        currentSlide++;
+    else if (scroller.scrollTop == 0)
+        currentSlide--;
 
-        currentSlide = Math.max(0, Math.min(slidesCount - 1, currentSlide));
-    }, 500);
+    currentSlide = Math.max(0, Math.min(slidesCount - 1, currentSlide));
 
-    setScrollPosition();
-    if (prevSlide != currentSlide)
+    if (prevSlide != currentSlide) {
+        setTimeout(resetScrollPosition, 500);
         page.invokeMethodAsync("OnSlideChanged", currentSlide);
+    }
 }
 
-function setScrollPosition() {
-    scrollPosition = vh * 100 * currentSlide + 64 * currentSlide;
-    window.scrollTo(0, scrollPosition);
+function resetScrollPosition() {
+    if (currentSlide == 0)
+        scroller.scrollTo(0, 0);
+    else if (currentSlide == slidesCount - 1)
+        scroller.scrollTo(0, 2);
+    else
+        scroller.scrollTo(0, 1);
 }
-
-
-const throttle = (callback, time) => {
-    if (throttlePause)
-        return;
-
-    throttlePause = true;
-    callback();
-
-    setTimeout(() => {
-        throttlePause = false;
-    }, time);
-};
