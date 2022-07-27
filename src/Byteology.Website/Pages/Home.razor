@@ -1,14 +1,38 @@
 ﻿@page "/"
-@inherits BasePage
 
 @using Byteology.Website.Components.HomePage;
 
 <PageTitle>Byteology - a moment of science</PageTitle>
 
-<div class="space-y-16">
+<div id="home-page" style="height: calc(@_slidesCount * 100 * var(--vh, 1vh) + (@_slidesCount - 1) * 64px)">
+    <div class="fixed w-full 
+                bg-fixed bg-center bg-cover bg-[url('/images/background.jpeg')]
+                overflow-hidden" 
+        style="height: calc(100 * var(--vh, 1vh))">
+        <div class="absolute transition-all duration-1000 space-y-[64px]" style="top: calc(-@_currentSlide * (100 * var(--vh, 1vh) + 64px))">
+            <CascadingValue Value="Theme.Dark">
+
+                <Logo class="h-[calc(100_*_var(--vh,_1vh))]" FadeIn=true />
+
+                <Slide>
+                    <ScientificGeneralization class="max-w-4xl mx-auto"/>
+                </Slide>
+
+                <Slide>
+                    <ServicesList/>
+                </Slide>
+
+            </CascadingValue>
+        </div>
+    </div>
+</div>
+
+
+
+@*<div class="space-y-16">
     <CascadingValue Value="Theme.Dark">
 
-        <Logo class="h-[calc(100_*_var(--vh,_1vh))] snap-start snap-always" FadeIn=true />
+        <Logo class="h-[calc(100_*_var(--vh,_1vh))]" FadeIn=true />
 
         <Slide>
             <ScientificGeneralization class="max-w-4xl mx-auto"/>
@@ -50,5 +74,5 @@
 
     <section class="snap-start snap-always h-screen bg-light text-dark">
         <h1>Here's to working together</h1>
-    </section>*@
-</div>
+    </section>
+</div>*@
