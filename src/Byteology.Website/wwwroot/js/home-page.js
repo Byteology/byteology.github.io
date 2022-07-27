@@ -33,6 +33,8 @@ function onResize(e) {
 }
 
 function onScroll(e) {
+    alert(scroller.scrollTop);
+
     let prevSlide = currentSlide;
 
     if (scroller.scrollTop >= 2) 
