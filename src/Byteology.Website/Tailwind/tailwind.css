@@ -24,14 +24,14 @@
     *:focus {
         outline: none;
     }
-
+/*
     body {
         @apply bg-fixed;
         @apply bg-center;
         @apply bg-cover; 
         @apply bg-[url('/images/background.jpeg')];
         @apply bg-repeat;
-    }
+    }*/
 }
 
 @layer utilities {
