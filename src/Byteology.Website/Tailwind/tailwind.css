@@ -4,8 +4,6 @@
 
 @layer base {
 
-
-
     html {
         @apply snap-y;
         @apply snap-mandatory;
@@ -25,6 +23,14 @@
 
     *:focus {
         outline: none;
+    }
+
+    body {
+        @apply bg-fixed;
+        @apply bg-center;
+        @apply bg-cover; 
+        @apply bg-[url('/images/background.jpeg')];
+        @apply h-[calc(100_*_var(--oh,_1vh)_+_2px)];
     }
 }
 
