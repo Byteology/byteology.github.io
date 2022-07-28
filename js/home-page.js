@@ -10,7 +10,7 @@ export function init(currentSlideIndex, totalSlidesCount, pageObject) {
     page = pageObject;
     scroller = document.getElementById("home-scroller")
 
-    setVh();
+    //setVh();
     resetScrollPosition();
 
     window.addEventListener('resize', onResize);
@@ -43,9 +43,9 @@ function onScroll(e) {
 
     let prevSlide = currentSlide;
 
-    if (scroller.scrollTop > 1 && currentSlide != slidesCount - 1) 
+    if (scroller.scrollTop >= 2) 
         currentSlide++;
-    else if (scroller.scrollTop < 1 && currentSlide != 0)
+    else if (scroller.scrollTop <= 0)
         currentSlide--;
 
     currentSlide = Math.max(0, Math.min(slidesCount - 1, currentSlide));
