@@ -11,8 +11,6 @@ export function init(currentSlideIndex, totalSlidesCount, pageObject) {
     page = pageObject;
     scroller = document.getElementById("home-scroller")
 
-    window.scrollTo(0, 1);
-
     //setVh();
     printDebugData();
     resetScrollPosition();
@@ -33,13 +31,13 @@ function setVh() {
 }
 
 function onResize(e) {
-    lastEvent = "resize";
+    //lastEvent = "resize";
     //preventOnScroll = true;
     //setVh();
     //resetScrollPosition();
     //preventOnScroll = false;
 
-    resetScrollPosition();
+    //resetScrollPosition();
 }
 
 var preventOnScroll = false;
@@ -54,9 +52,9 @@ function onScroll(e) {
 
     let prevSlide = currentSlide;
 
-    if (scroller.scrollTop > getDesiredScrollPosition())
+    if (window.scrollY > getDesiredScrollPosition())
         currentSlide++;
-    else if (scroller.scrollTop < getDesiredScrollPosition())
+    else if (window.scrollY < getDesiredScrollPosition())
         currentSlide--;
 
     currentSlide = Math.max(0, Math.min(slidesCount - 1, currentSlide));
@@ -87,6 +85,6 @@ function getDesiredScrollPosition() {
 }
 
 function printDebugData() {
-    var text = `le: ${lastEvent} st: ${scroller.scrollTop} pos: ${preventOnScroll} cs: ${currentSlide}`;
+    var text = `le: ${lastEvent} st: ${window.scrollY} pos: ${preventOnScroll} cs: ${currentSlide}`;
     document.getElementById("test").innerHTML = text;
 }
