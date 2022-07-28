@@ -10,6 +10,8 @@ export function init(currentSlideIndex, totalSlidesCount, pageObject) {
     page = pageObject;
     scroller = document.getElementById("home-scroller")
 
+    window.scrollTo(0, 1);
+
     //setVh();
     resetScrollPosition();
 
