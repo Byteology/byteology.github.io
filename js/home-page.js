@@ -29,19 +29,23 @@ function setVh() {
 }
 
 function onResize(e) {
+    preventOnScroll = true;
     setVh();
     resetScrollPosition();
+    preventOnScroll = false;
 }
 
+var preventOnScroll = false;
 function onScroll(e) {
 
-    alert(scroller.scrollTop);
+    if (preventOnScroll)
+        return;
 
     let prevSlide = currentSlide;
 
-    if (scroller.scrollTop > 1) 
+    if (scroller.scrollTop > 1 && currentSlide != slidesCount - 1) 
         currentSlide++;
-    else if (scroller.scrollTop < 1)
+    else if (scroller.scrollTop < 1 && currentSlide != 0)
         currentSlide--;
 
     currentSlide = Math.max(0, Math.min(slidesCount - 1, currentSlide));
