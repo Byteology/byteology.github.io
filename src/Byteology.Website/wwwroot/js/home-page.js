@@ -3,6 +3,7 @@ var slidesCount;
 var page;
 var vh;
 var scroller;
+var lastEvent = "none";
 
 export function init(currentSlideIndex, totalSlidesCount, pageObject) {
     currentSlide = currentSlideIndex;
@@ -32,16 +33,19 @@ function setVh() {
 }
 
 function onResize(e) {
-    //preventOnScroll = true; 
+    lastEvent = "resize";
+    //preventOnScroll = true;
     //setVh();
     //resetScrollPosition();
     //preventOnScroll = false;
+
+    resetScrollPosition();
 }
 
 var preventOnScroll = false;
 function onScroll(e) {
 
-    
+    lastEvent = "scroll";
     
 
     if (preventOnScroll)
@@ -58,9 +62,10 @@ function onScroll(e) {
     currentSlide = Math.max(0, Math.min(slidesCount - 1, currentSlide));
 
     if (prevSlide != currentSlide) {
-        preventOnScroll = true;
-        resetScrollPosition();
-        page.invokeMethodAsync("OnSlideChanged", currentSlide);
+        //preventOnScroll = true;
+        //setTimeout(resetScrollPosition, 2000);
+        //resetScrollPosition();
+        //page.invokeMethodAsync("OnSlideChanged", currentSlide);
     }
     printDebugData();
 }
@@ -86,6 +91,6 @@ function getDesiredScrollPosition() {
 }
 
 function printDebugData() {
-    var text = `st: ${scroller.scrollTop} pos: ${preventOnScroll} cs: ${currentSlide}`;
+    var text = `le: ${lastEvent} st: ${scroller.scrollTop} pos: ${preventOnScroll} cs: ${currentSlide}`;
     document.getElementById("test").innerHTML = text;
 }
