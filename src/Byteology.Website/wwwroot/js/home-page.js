@@ -47,7 +47,6 @@ function onScroll(e) {
     if (preventOnScroll)
         return;
 
-    setTimeout(() => { preventOnScroll = false; resetScrollPosition(); }, 500);
 
     let prevSlide = currentSlide;
 
