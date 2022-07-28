@@ -33,10 +33,8 @@ function setVh() {
 
 function onResize(e) {
     //preventOnScroll = true;
-    //setVh();
-    setTimeout(resetScrollPosition, 1000)
-    //resetScrollPosition();
-    //preventOnScroll = false;
+    setVh();
+    //setTimeout(resetScrollPosition, 1000)
 }
 
 var preventOnScroll = false;
