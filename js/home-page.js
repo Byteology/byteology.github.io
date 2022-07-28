@@ -47,7 +47,6 @@ function onScroll(e) {
     if (preventOnScroll)
         return;
 
-    preventOnScroll = true;
     setTimeout(() => { preventOnScroll = false; resetScrollPosition(); }, 500);
 
     let prevSlide = currentSlide;
@@ -60,6 +59,7 @@ function onScroll(e) {
     currentSlide = Math.max(0, Math.min(slidesCount - 1, currentSlide));
 
     if (prevSlide != currentSlide) {
+        preventOnScroll = true;
         setTimeout(resetScrollPosition, 500);
         page.invokeMethodAsync("OnSlideChanged", currentSlide);
     }
@@ -68,6 +68,7 @@ function onScroll(e) {
 
 function resetScrollPosition() {
     scroller.scrollTo(0, getDesiredScrollPosition());
+    preventOnScroll = false;
 }
 
 function getDesiredScrollPosition() {
