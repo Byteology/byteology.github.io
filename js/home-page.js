@@ -3,13 +3,14 @@ var slidesCount;
 var page;
 var vh;
 var scroller;
-var lastEvent = "none";
+var lastScrollPosition;
 
 export function init(currentSlideIndex, totalSlidesCount, pageObject) {
     currentSlide = currentSlideIndex;
     slidesCount = totalSlidesCount;
     page = pageObject;
-    scroller = document.getElementById("home-scroller")
+    window.scrollTo(0, getDesiredScrollPosition());
+    lastScrollPosition = window.scrollY;
 
     //setVh();
     printDebugData();
@@ -31,33 +32,29 @@ function setVh() {
 }
 
 function onResize(e) {
-    //lastEvent = "resize";
     //preventOnScroll = true;
     //setVh();
+    setTimeout(resetScrollPosition, 1000)
     //resetScrollPosition();
     //preventOnScroll = false;
-
-    //resetScrollPosition();
 }
 
 var preventOnScroll = false;
 function onScroll(e) {
 
-    lastEvent = "scroll";
-    
-
     if (preventOnScroll)
         return;
 
-
     let prevSlide = currentSlide;
 
-    if (window.scrollY > getDesiredScrollPosition())
+    if (window.scrollY > lastScrollPosition)
         currentSlide++;
-    else if (window.scrollY < getDesiredScrollPosition())
+    else if (window.scrollY < lastScrollPosition)
         currentSlide--;
 
     currentSlide = Math.max(0, Math.min(slidesCount - 1, currentSlide));
+
+    lastScrollPosition = window.scrollY;
 
     if (prevSlide != currentSlide) {
         preventOnScroll = true;
@@ -69,6 +66,7 @@ function onScroll(e) {
 
 function resetScrollPosition() {
     window.scrollTo(0, getDesiredScrollPosition());
+    lastScrollPosition = window.scrollY;
     preventOnScroll = false;
 
     printDebugData();
@@ -85,6 +83,6 @@ function getDesiredScrollPosition() {
 }
 
 function printDebugData() {
-    var text = `le: ${lastEvent} st: ${window.scrollY} pos: ${preventOnScroll} cs: ${currentSlide}`;
+    var text = `st: ${window.scrollY} pos: ${preventOnScroll} cs: ${currentSlide}`;
     document.getElementById("test").innerHTML = text;
 }
