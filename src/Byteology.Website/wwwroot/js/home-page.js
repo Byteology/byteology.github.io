@@ -54,10 +54,14 @@ function onScroll(e) {
 
     let prevSlide = currentSlide;
 
-    if (scroller.scrollTop > getDesiredScrollPosition()) 
+    if (scroller.scrollTop > getDesiredScrollPosition()) {
         currentSlide++;
-    else if (scroller.scrollTop < getDesiredScrollPosition())
+        window.scrollTo(0, 500);
+    }
+    else if (scroller.scrollTop < getDesiredScrollPosition()) {
         currentSlide--;
+        window.scrollTo(0, 0);
+    }
 
     currentSlide = Math.max(0, Math.min(slidesCount - 1, currentSlide));
 

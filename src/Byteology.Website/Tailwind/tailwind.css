@@ -24,6 +24,7 @@
         @apply bg-center;
         @apply bg-cover;
         @apply bg-[url('/images/background.jpeg')];
+        @apply h-[200vh];
     }
 
     * {
