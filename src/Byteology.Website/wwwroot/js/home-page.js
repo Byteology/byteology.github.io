@@ -13,6 +13,7 @@ export function init(currentSlideIndex, totalSlidesCount, pageObject) {
     window.scrollTo(0, 1);
 
     //setVh();
+    printDebugData();
     resetScrollPosition();
 
     window.addEventListener('resize', onResize);
@@ -40,6 +41,9 @@ function onResize(e) {
 var preventOnScroll = false;
 function onScroll(e) {
 
+    
+    
+
     if (preventOnScroll)
         return;
 
@@ -59,6 +63,7 @@ function onScroll(e) {
         setTimeout(resetScrollPosition, 500);
         page.invokeMethodAsync("OnSlideChanged", currentSlide);
     }
+    printDebugData();
 }
 
 function resetScrollPosition() {
@@ -72,4 +77,9 @@ function getDesiredScrollPosition() {
         return 2;
     else
         return 1;
+}
+
+function printDebugData() {
+    var text = `st: ${scroller.scrollTop} pos: ${preventOnScroll} cs: ${currentSlide}`;
+    document.getElementById("test").innerHTML = text;
 }
