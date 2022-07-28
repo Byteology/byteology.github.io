@@ -59,14 +59,14 @@ function onScroll(e) {
 
     if (prevSlide != currentSlide) {
         preventOnScroll = true;
-        setTimeout(resetScrollPosition, 5000);
+        setTimeout(resetScrollPosition, 2000);
         page.invokeMethodAsync("OnSlideChanged", currentSlide);
     }
     printDebugData();
 }
 
 function resetScrollPosition() {
-    scroller.scrollTo({ left: 0, top: getDesiredScrollPosition(), behavior: "instant" });
+    //scroller.scrollTo({ left: 0, top: getDesiredScrollPosition(), behavior: "instant" });
     preventOnScroll = false;
 }
 
