@@ -29,17 +29,17 @@ function setVh() {
 }
 
 function onResize(e) {
-    preventOnScroll = true;
-    setVh();
-    resetScrollPosition();
-    preventOnScroll = false;
+    //preventOnScroll = true;
+    //setVh();
+    //resetScrollPosition();
+    //preventOnScroll = false;
 }
 
-var preventOnScroll = false;
+//var preventOnScroll = false;
 function onScroll(e) {
 
-    if (preventOnScroll)
-        return;
+    //if (preventOnScroll)
+    //    return;
 
     let prevSlide = currentSlide;
 
