@@ -37,19 +37,20 @@ function onResize(e) {
     //preventOnScroll = false;
 }
 
-//var preventOnScroll = false;
+var preventOnScroll = false;
 function onScroll(e) {
 
-    alert(scroller.scrollTop);
+    if (preventOnScroll)
+        return;
 
-    //if (preventOnScroll)
-    //    return;
+    preventOnScroll = true;
+    setTimeout(() => { preventOnScroll = false; resetScrollPosition(); }, 500);
 
     let prevSlide = currentSlide;
 
-    if (scroller.scrollTop >= 2) 
+    if (scroller.scrollTop > getDesiredScrollPosition()) 
         currentSlide++;
-    else if (scroller.scrollTop <= 0)
+    else if (scroller.scrollTop < getDesiredScrollPosition())
         currentSlide--;
 
     currentSlide = Math.max(0, Math.min(slidesCount - 1, currentSlide));
@@ -61,10 +62,14 @@ function onScroll(e) {
 }
 
 function resetScrollPosition() {
+    scroller.scrollTo(0, getDesiredScrollPosition());
+}
+
+function getDesiredScrollPosition() {
     if (currentSlide == 0)
-        scroller.scrollTo(0, 0);
+        return 0;
     else if (currentSlide == slidesCount - 1)
-        scroller.scrollTo(0, 2);
+        return 2;
     else
-        scroller.scrollTo(0, 1);
+        return 1;
 }
