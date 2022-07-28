@@ -1,7 +1,6 @@
 ﻿var currentSlide;
 var slidesCount;
 var page;
-var vh;
 var lastScrollPosition;
 
 export function init(currentSlideIndex, totalSlidesCount, pageObject) {
@@ -10,9 +9,9 @@ export function init(currentSlideIndex, totalSlidesCount, pageObject) {
     page = pageObject;
     window.scrollTo(0, getDesiredScrollPosition());
     lastScrollPosition = window.scrollY;
-    document.body.classList.add("home-body");
+    document.body.classList.add("no-scrollbar");
 
-    setVh();
+    setSizes();
     resetScrollPosition();
 
     window.addEventListener('resize', onResize);
@@ -23,16 +22,20 @@ export function dispose() {
     window.removeEventListener('resize', onResize);
     window.removeEventListener('scroll', onScroll);
     document.documentElement.style.removeProperty("--vh");
-    document.body.classList.remove("home-body");
+    document.documentElement.style.removeProperty("--oh");
+    document.body.classList.remove("no-scrollbar");
 }
 
-function setVh() {
-    vh = window.innerHeight * 0.01;
+function setSizes() {
+    let oh = window.outerHeight * 0.01;
+    let vh = window.innerHeight * 0.01;
+
+    document.documentElement.style.setProperty("--oh", `${oh}px`);
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
 
 function onResize(e) {
-    setVh();
+    setSizes();
 }
 
 var preventOnScroll = false;

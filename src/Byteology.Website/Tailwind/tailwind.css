@@ -4,9 +4,7 @@
 
 @layer base {
 
-    html, body {
-        @apply h-full; /* Makes vh correspond to the visible viewport height on mobile (exludes the address bar) */
-    }
+
 
     html {
         @apply snap-y;
@@ -27,18 +25,6 @@
 
     *:focus {
         outline: none;
-    }
-}
-
-@layer components {
-    .home-body {
-        @apply bg-fixed;
-        @apply bg-left-top;
-        @apply bg-cover;
-        @apply bg-[url('/images/background.jpeg')];
-        @apply h-[calc(100vh_+_2px)];
-        @apply no-scrollbar;
-        @apply transition-all 
     }
 }
 
