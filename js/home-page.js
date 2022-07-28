@@ -10,7 +10,7 @@ export function init(currentSlideIndex, totalSlidesCount, pageObject) {
     page = pageObject;
     window.scrollTo(0, getDesiredScrollPosition());
     lastScrollPosition = window.scrollY;
-    document.documentElement.classList.add("no-scrollbar");
+    document.body.classList.add("home-body");
 
     setVh();
     resetScrollPosition();
@@ -23,7 +23,7 @@ export function dispose() {
     window.removeEventListener('resize', onResize);
     window.removeEventListener('scroll', onScroll);
     document.documentElement.style.removeProperty("--vh");
-    document.documentElement.classList.remove("no-scrollbar");
+    document.body.classList.remove("home-body");
 }
 
 function setVh() {
