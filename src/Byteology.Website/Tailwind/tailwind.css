@@ -33,11 +33,12 @@
 @layer components {
     .home-body {
         @apply bg-fixed;
-        @apply bg-top;
+        @apply bg-left-top;
         @apply bg-cover;
         @apply bg-[url('/images/background.jpeg')];
         @apply h-[calc(100vh_+_2px)];
         @apply no-scrollbar;
+        @apply transition-all 
     }
 }
 
