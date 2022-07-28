@@ -2,7 +2,6 @@
 var slidesCount;
 var page;
 var vh;
-var scroller;
 var lastScrollPosition;
 
 export function init(currentSlideIndex, totalSlidesCount, pageObject) {
@@ -11,9 +10,9 @@ export function init(currentSlideIndex, totalSlidesCount, pageObject) {
     page = pageObject;
     window.scrollTo(0, getDesiredScrollPosition());
     lastScrollPosition = window.scrollY;
+    document.documentElement.classList.add("no-scrollbar");
 
-    //setVh();
-    printDebugData();
+    setVh();
     resetScrollPosition();
 
     window.addEventListener('resize', onResize);
@@ -24,6 +23,7 @@ export function dispose() {
     window.removeEventListener('resize', onResize);
     window.removeEventListener('scroll', onScroll);
     document.documentElement.style.removeProperty("--vh");
+    document.documentElement.classList.remove("no-scrollbar");
 }
 
 function setVh() {
@@ -32,9 +32,7 @@ function setVh() {
 }
 
 function onResize(e) {
-    //preventOnScroll = true;
     setVh();
-    //setTimeout(resetScrollPosition, 1000)
 }
 
 var preventOnScroll = false;
@@ -59,28 +57,19 @@ function onScroll(e) {
         setTimeout(resetScrollPosition, 1000);
         page.invokeMethodAsync("OnSlideChanged", currentSlide);
     }
-    printDebugData();
 }
 
 function resetScrollPosition() {
     window.scrollTo(0, getDesiredScrollPosition());
     lastScrollPosition = window.scrollY;
     preventOnScroll = false;
-
-    printDebugData();
-
 }
 
 function getDesiredScrollPosition() {
     if (currentSlide == 0)
         return 0;
     else if (currentSlide == slidesCount - 1)
-        return 2;
+        return document.documentElement.scrollHeight;
     else
         return 1;
-}
-
-function printDebugData() {
-    var text = `st: ${window.scrollY} pos: ${preventOnScroll} cs: ${currentSlide}`;
-    document.getElementById("test").innerHTML = text;
 }
