@@ -66,7 +66,7 @@ function onScroll(e) {
 }
 
 function resetScrollPosition() {
-    scroller.scrollTo(0, getDesiredScrollPosition());
+    scroller.scrollTo({ left: 0, top: getDesiredScrollPosition(), behavior: "instant" });
     preventOnScroll = false;
 }
 
