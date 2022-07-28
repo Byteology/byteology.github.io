@@ -29,7 +29,7 @@ function setVh() {
 }
 
 function onResize(e) {
-    //preventOnScroll = true;
+    //preventOnScroll = true; 
     //setVh();
     //resetScrollPosition();
     //preventOnScroll = false;
@@ -37,6 +37,8 @@ function onResize(e) {
 
 //var preventOnScroll = false;
 function onScroll(e) {
+
+    alert(scroller.scrollTop);
 
     //if (preventOnScroll)
     //    return;
