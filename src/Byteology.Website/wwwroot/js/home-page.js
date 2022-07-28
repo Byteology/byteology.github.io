@@ -71,6 +71,9 @@ function resetScrollPosition() {
 }
 
 function getDesiredScrollPosition() {
+    return 1;
+
+
     if (currentSlide == 0)
         return 0;
     else if (currentSlide == slidesCount - 1)
