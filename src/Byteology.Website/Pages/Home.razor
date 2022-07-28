@@ -6,37 +6,27 @@
 
 <div id="test" class="fixed h-8"></div>
 
-<div id="home-scroller" 
-     class="fixed w-full overflow-y-auto no-scrollbar scroll-auto" 
-     style="height: calc(100 * var(--vh, 1vh))">
+<div class="absolute 
+            transition-all duration-1000 
+            space-y-[64px]" 
+        style="top: calc(-@_currentSlide * (100 * var(--vh, 1vh) + 64px))">
 
-    <div class="overflow-hidden"
-         style="height: calc(100 * var(--vh, 1vh) + 2px)">
+    <CascadingValue Value="Theme.Dark">
 
-        <div class="absolute 
-                    transition-all duration-1000 
-                    space-y-[64px]" 
-             style="top: calc(-@_currentSlide * (100 * var(--vh, 1vh) + 64px))">
+        <Logo class="transition-all duration-1000 h-[calc(100_*_var(--vh,_1vh))]" FadeIn=true />
 
-            <CascadingValue Value="Theme.Dark">
+        <Slide>
+            <ScientificGeneralization class="max-w-4xl mx-auto"/>
+        </Slide>
 
-                <Logo class="transition-all duration-1000 h-[calc(100_*_var(--vh,_1vh))]" FadeIn=true />
+        <Slide>
+            <ServicesList/>
+        </Slide>
 
-                <Slide>
-                    <ScientificGeneralization class="max-w-4xl mx-auto"/>
-                </Slide>
-
-                <Slide>
-                    <ServicesList/>
-                </Slide>
-
-            </CascadingValue>
-
-        </div>
-
-    </div>
+    </CascadingValue>
 
 </div>
+
 
 
 

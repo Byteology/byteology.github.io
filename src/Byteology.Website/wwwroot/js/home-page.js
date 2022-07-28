@@ -18,12 +18,12 @@ export function init(currentSlideIndex, totalSlidesCount, pageObject) {
     resetScrollPosition();
 
     window.addEventListener('resize', onResize);
-    scroller.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll);
 }
 
 export function dispose() {
     window.removeEventListener('resize', onResize);
-    scroller.removeEventListener('scroll', onScroll);
+    window.removeEventListener('scroll', onScroll);
     document.documentElement.style.removeProperty("--vh");
 }
 
@@ -62,16 +62,15 @@ function onScroll(e) {
     currentSlide = Math.max(0, Math.min(slidesCount - 1, currentSlide));
 
     if (prevSlide != currentSlide) {
-        //preventOnScroll = true;
-        //setTimeout(resetScrollPosition, 2000);
-        //resetScrollPosition();
-        //page.invokeMethodAsync("OnSlideChanged", currentSlide);
+        preventOnScroll = true;
+        setTimeout(resetScrollPosition, 1000);
+        page.invokeMethodAsync("OnSlideChanged", currentSlide);
     }
     printDebugData();
 }
 
 function resetScrollPosition() {
-    //scroller.scrollTo({ left: 0, top: getDesiredScrollPosition(), behavior: "instant" });
+    window.scrollTo(0, getDesiredScrollPosition());
     preventOnScroll = false;
 
     printDebugData();
@@ -79,8 +78,6 @@ function resetScrollPosition() {
 }
 
 function getDesiredScrollPosition() {
-    return 1;
-
     if (currentSlide == 0)
         return 0;
     else if (currentSlide == slidesCount - 1)
