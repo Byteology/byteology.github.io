@@ -30,7 +30,7 @@
         @apply bg-center;
         @apply bg-cover; 
         @apply bg-[url('/images/background.jpeg')];
-        @apply h-[calc(100_*_var(--oh,_1vh)_+_2px)];
+        @apply bg-repeat;
     }
 }
 
