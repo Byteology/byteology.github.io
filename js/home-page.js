@@ -60,7 +60,7 @@ function onScroll(e) {
 
     if (prevSlide != currentSlide) {
         preventOnScroll = true;
-        setTimeout(resetScrollPosition, 500);
+        setTimeout(resetScrollPosition, 5000);
         page.invokeMethodAsync("OnSlideChanged", currentSlide);
     }
     printDebugData();
