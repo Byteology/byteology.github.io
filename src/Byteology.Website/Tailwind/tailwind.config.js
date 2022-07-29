@@ -10,7 +10,10 @@ module.exports = {
             md: '56rem',
             lg: '64rem',
             xl: '80rem',
-            '2xl': '96rem'
+            '2xl': '96rem',
+
+            touch: { 'raw': '(hover: none)' },
+            pointer: { 'raw': '(hover: hover)' }
         },
         colors: {
             transparent: 'transparent',

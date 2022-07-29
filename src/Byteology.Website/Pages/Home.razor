@@ -4,22 +4,25 @@
 
 <PageTitle>Byteology - a moment of science</PageTitle>
 
-<div class="space-y-16">
+<div class="h-vvp
+            bg-fixed bg-center bg-cover bg-[url('/images/background.jpeg')]
+            overflow-x-hidden overflow-y-auto
+            snap-y snap-mandatory no-scrollbar
+            space-y-64">
 
     <CascadingValue Value="Theme.Dark">
 
-        <Slide>
+        <section class="slide h-vvp">
             <Logo class="mx-auto" FadeIn=true />
-        </Slide>
+        </section>
 
-        <Slide>
-            <ScientificGeneralization class="max-w-4xl"/>
-        </Slide>
+        <section class="slide max-w-4xl">
+            <ScientificGeneralization/>
+        </section>
 
-        <Slide>
+        <section class="slide">
             <ServicesList/>
-        </Slide>
-
+        </section>
     </CascadingValue>
 
 </div>

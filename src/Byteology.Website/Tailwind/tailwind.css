@@ -4,19 +4,12 @@
 
 @layer base {
 
-    html {
-        @apply snap-y;
-        @apply snap-mandatory;
-    }
-
     body {
         @apply bg-dark;
         @apply text-light;
         @apply text-body;
         @apply font-sans;
         @apply break-words;
-
-        @apply snap-y;
     }
 
     * {
@@ -26,13 +19,25 @@
     *:focus {
         outline: none;
     }
+}
 
-    body {
-        @apply bg-fixed;
-        @apply bg-center;
-        @apply bg-cover; 
-        @apply bg-[url('/images/background.jpeg')];
-        @apply bg-repeat;
+@layer components {
+    .slide {
+        @apply h-vvp;
+        @apply snap-always;
+        @apply snap-center;
+
+        @apply container;
+        @apply mx-auto;
+
+        @apply overflow-x-hidden;
+        @apply overflow-y-auto;
+        @apply no-scrollbar;
+
+        @apply flex;
+        @apply flex-col;
+        @apply justify-center;
+        @apply items-center;
     }
 }
 
@@ -50,5 +55,9 @@
 
     .uppercase {
         letter-spacing: 0.15em;
+    }
+
+    .h-vvp {
+        height: calc(100 * var(--vh, 1vh));
     }
 }

@@ -1,34 +1,29 @@
-﻿<div @attributes=InputAttributes>
-    <div class="p-8
-                grid grid-cols-1 landscape:grid-cols-2 gap-8 content-center
-                @_rootThemedClasses.Value">
+﻿<div class="p-8
+            grid grid-cols-1 landscape:grid-cols-2 gap-8 content-center
+            @_rootThemedClasses.Value">
 
-        <p class="col-start-1
-                   text-h3 font-bold">
-            By introducing <strong class="@_strongThemedClasses.Value">scientific generalization</strong> 
-            to software engineering, <strong class="@_strongThemedClasses.Value">Byteology</strong> 
-            helps businesses tackle software complexity and grow.
-        </p>
+    <p class="col-start-1
+                text-h3 font-bold">
+        By introducing <strong class="@_strongThemedClasses.Value">scientific generalization</strong> 
+        to software engineering, <strong class="@_strongThemedClasses.Value">Byteology</strong> 
+        helps businesses tackle software complexity and grow.
+    </p>
     
-        <Timeline class="col-start-1 row-span-1 landscape:col-start-2 landscape:row-span-2 text-body" Items="@(new MarkupString[]
-            {
-                new ("We think deeply and <strong>analyze the building blocks</strong> of your software architecture"),
-                new ("We extrapolate <strong>actionable data and insights</strong>"),
-                new ("We design and implement <strong>tailored solutions</strong>"),
-                new ("We help your business <strong>scale and grow</strong>"),
-            })"/>
+    <Timeline class="col-start-1 row-span-1 landscape:col-start-2 landscape:row-span-2 text-body" Items="@(new MarkupString[]
+        {
+            new ("We think deeply and <strong>analyze the building blocks</strong> of your software architecture"),
+            new ("We extrapolate <strong>actionable data and insights</strong>"),
+            new ("We design and implement <strong>tailored solutions</strong>"),
+            new ("We help your business <strong>scale and grow</strong>"),
+        })"/>
 
-        <LinkButton class="col-start-1 self-end text-detail p-2" Text="Learn more" Url="/about-us" Type="LinkButton.ButtonType.Primary" />
-    </div>
+    <LinkButton class="col-start-1 self-end text-detail p-2" Text="Learn more" Url="/about-us" Type="LinkButton.ButtonType.Primary" />
 </div>
 
 @code
 {
     [CascadingParameter]
     public Theme Theme { get; set; }
-
-    [Parameter(CaptureUnmatchedValues = true)]
-    public Dictionary<string, object>? InputAttributes { get; set; }
 
     private ThemedValue _rootThemedClasses => new(() => Theme, "bg-light text-dark", "bg-dark text-light");
     private ThemedValue _strongThemedClasses => new(() => Theme, "text-accent", "text-secondary");
