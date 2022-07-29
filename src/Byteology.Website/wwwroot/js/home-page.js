@@ -4,33 +4,33 @@ var page;
 var lastScrollPosition;
 
 export function init(currentSlideIndex, totalSlidesCount, pageObject) {
-    currentSlide = currentSlideIndex;
-    slidesCount = totalSlidesCount;
-    page = pageObject;
-    window.scrollTo(0, getDesiredScrollPosition());
-    lastScrollPosition = window.scrollY;
-    document.body.classList.add("no-scrollbar");
+    //currentSlide = currentSlideIndex;
+    //slidesCount = totalSlidesCount;
+    //page = pageObject;
+    //window.scrollTo(0, getDesiredScrollPosition());
+    //lastScrollPosition = window.scrollY;
+    //document.body.classList.add("no-scrollbar");
 
     setSizes();
-    resetScrollPosition();
+    //resetScrollPosition();
 
     window.addEventListener('resize', onResize);
-    window.addEventListener('scroll', onScroll);
+    //window.addEventListener('scroll', onScroll);
 }
 
 export function dispose() {
-    window.removeEventListener('resize', onResize);
-    window.removeEventListener('scroll', onScroll);
+    //window.removeEventListener('resize', onResize);
+    //window.removeEventListener('scroll', onScroll);
     document.documentElement.style.removeProperty("--vh");
-    document.documentElement.style.removeProperty("--oh");
-    document.body.classList.remove("no-scrollbar");
+    //document.documentElement.style.removeProperty("--oh");
+    //document.body.classList.remove("no-scrollbar");
 }
 
 function setSizes() {
-    let oh = window.outerHeight * 0.01;
+    //let oh = window.outerHeight * 0.01;
     let vh = window.innerHeight * 0.01;
 
-    document.documentElement.style.setProperty("--oh", `${oh}px`);
+    //document.documentElement.style.setProperty("--oh", `${oh}px`);
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
 
