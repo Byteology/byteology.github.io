@@ -1,20 +1,18 @@
-﻿<div @attributes="InputAttributes">
-    <div class="h-full
-                flex justify-center items-center">
-        <img class=" 
-
-                    portrait:w-1/2 portrait:max-h-[50%]
-                    landscape:h-1/2 landscape:max-w-[50%]   
-                    portrait:content-[url(/images/logo-portrait.svg)] 
-                    landscape:content-[url(/images/logo-landscape.svg)]
-                    @fadeInAnimation"
-             alt="Byteology - a moment of science"/>
-    </div>
-</div>
+﻿<img class=" 
+            portrait:w-1/2 portrait:max-h-[50%]
+            landscape:h-1/2 landscape:max-w-[50%] 
+            object-center object-contain
+            portrait:content-[url(/images/logo-portrait.svg)] 
+            landscape:content-[url(/images/logo-landscape.svg)]
+            @fadeInAnimation @Class"
+        alt="Byteology - a moment of science"/>
 
 @code {
     [Parameter(CaptureUnmatchedValues = true)]
     public Dictionary<string, object>? InputAttributes { get; set; }
+
+    [Parameter]
+    public string? Class { get; set; }
 
     [Parameter]
     public bool FadeIn { get; set; }
