@@ -1,13 +1,17 @@
-﻿<section class="snap-always snap-start
-                h-[calc(100_*_var(--vh,_1vh))]
-                flex justify-center items-center
-                overflow-y-auto overflow-x-hidden 
+﻿<section class="
+                h-screen
+                transition-all duration-[10s]
+                snap-always snap-start
+                
                 ">
 
-    <div class="container max-h-full
+    <div class="
+                flex flex-col justify-center mx-auto
+                container h-[calc(100_*_var(--vh,_1vh))]
                 portrait:py-8 xs:py-8
                 landscape:px-8 xs:px-8
                 overflow-x-hidden
+                overflow-y-auto
                 no-scrollbar
                 ">
                
@@ -16,3 +20,6 @@
     </div>
 
 </section>
+
+@*<div class="transition-all duration-[10s]" style="height: calc((1vh - var(--vh, 1vh)) * 100)" />*@
+
