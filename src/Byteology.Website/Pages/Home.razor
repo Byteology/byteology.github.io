@@ -6,25 +6,28 @@
 
 <div class="h-vvp
             bg-fixed bg-center bg-cover bg-[url('/images/background.jpeg')]
-            overflow-x-hidden overflow-y-auto
-            snap-y snap-mandatory no-scrollbar
-            space-y-64">
+            overflow-hidden"
+     @onwheel=onWheel 
+     @ontouchstart=onTouchStart
+     @ontouchmove=onTouchMove 
+     @ontouchend=onTouchEnd >
 
     <CascadingValue Value="Theme.Dark">
+        <div class="space-y-64 transition-all duration-1000" style="top:calc(-@_currentSlide * (100 * var(--vh,1vh) + 16rem))">
+            <section class="slide">
+                <Logo class="mx-auto" FadeIn=true />
+            </section>
 
-        <section class="slide h-vvp">
-            <Logo class="mx-auto" FadeIn=true />
-        </section>
+            <section class="slide max-w-4xl">
+                <ScientificGeneralization/>
+            </section>
 
-        <section class="slide max-w-4xl">
-            <ScientificGeneralization/>
-        </section>
+            <section class="slide">
+                <ServicesList/>
+            </section>
+        </div>
 
-        <section class="slide">
-            <ServicesList/>
-        </section>
     </CascadingValue>
-
 </div>
 
 

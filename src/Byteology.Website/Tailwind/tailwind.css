@@ -24,9 +24,6 @@
 @layer components {
     .slide {
         @apply h-vvp;
-        @apply snap-always;
-        @apply snap-center;
-
         @apply container;
         @apply mx-auto;
 
