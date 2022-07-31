@@ -4,29 +4,30 @@
 
 <PageTitle>Byteology - a moment of science</PageTitle>
 
-<div class="h-[110vh]"></div>
+@*<div class="h-[110vh]"></div>*@
 
-<div class="h-vvp fixed top-0
+<div class="h-vvp w-full fixed top-0
             bg-fixed bg-center bg-cover bg-[url('/images/background.jpeg')]
             overflow-hidden"
      @onwheel=onWheel 
      @ontouchstart=onTouchStart
      @ontouchmove=onTouchMove 
-     @ontouchend=onTouchEnd >
+     @ontouchend=onTouchEnd
+     @ontouchcancel=onTouchEnd>
 
     <CascadingValue Value="Theme.Dark">
         <div class="space-y-64 transition-all duration-1000" style="top:calc(-@_currentSlide * (100 * var(--vh,1vh) + 16rem))">
-            <section class="slide">
+            <Slide @ref=_slides[0]>
                 <Logo class="mx-auto" FadeIn=true />
-            </section>
+            </Slide>
 
-            <section class="slide max-w-4xl">
+            <Slide @ref=_slides[1]>
                 <ScientificGeneralization/>
-            </section>
+            </Slide>
 
-            <section class="slide">
+            <Slide @ref=_slides[2]>
                 <ServicesList/>
-            </section>
+            </Slide>
         </div>
 
     </CascadingValue>

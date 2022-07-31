@@ -21,24 +21,7 @@
     }
 }
 
-@layer components {
-    .slide {
-        @apply h-vvp;
-        @apply container;
-        @apply mx-auto;
-
-        @apply overflow-x-hidden;
-        @apply overflow-y-auto;
-        @apply no-scrollbar;
-
-        @apply flex;
-        @apply flex-col;
-        @apply justify-center;
-        @apply items-center;
-    }
-}
-
-@layer utilities {
+    @layer utilities {
     .no-scrollbar {
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
