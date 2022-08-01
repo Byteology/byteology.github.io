@@ -1,14 +1,15 @@
-﻿<section class="h-vvp
-                overflow-x-hidden overflow-y-auto no-scrollbar
-                flex flex-col">
+﻿<section>
+    <div class="h-vvp
+                    overflow-x-hidden overflow-y-auto no-scrollbar
+                    flex flex-col">
 
-    <div class="min-h-[1rem] w-full" @ref=_startElement />
-    <div class="w-full grow
-                xs:px-8
-                flex flex-col justify-center items-center">
-        @ChildContent
+        <div class="min-h-[1rem] w-full" @ref=_startElement />
+        <div class="w-full grow
+                    xs:px-8
+                    flex flex-col justify-center items-center">
+            @ChildContent
+        </div>
+        <div class="min-h-[1rem] w-full" @ref=_endElement />
     </div>
-    <div class="min-h-[1rem] w-full" @ref=_endElement />
     <div class="w-full" style="min-height: calc(100 * (1vh - var(--vh, 1vh)) - 2rem);" />
-
 </section>
