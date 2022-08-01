@@ -2,9 +2,8 @@
 
 <CascadingValue Name="SlideLayout" Value="this">
     <VisualViewport @ref=VisualViewport>
-        <div class="h-vvp w-screen absolute
-                    bg-fixed bg-center bg-cover bg-[url('/images/background.jpeg')]
-                    overflow-hidden"
+        <div class="h-screen w-screen absolute
+                    bg-fixed bg-center bg-cover bg-[url('/images/background.jpeg')]"
              style="top:-@(VisualViewport.Top)px; left:-@(VisualViewport.Left)px;"
              @onwheel=onWheel 
              @ontouchstart=onTouchStart
@@ -12,7 +11,7 @@
              @ontouchend=onTouchEnd
              @ontouchcancel=onTouchEnd>
 
-            <div class="space-y-64 transition-all duration-1000" style="top:calc(-@_currentSlide * (100 * var(--vh,1vh) + 16rem))">
+            <div class="space-y-64 transition-all duration-1000" style="top:calc(-@_currentSlide * (100vh + 16rem))">
                 @Body
             </div>
 
