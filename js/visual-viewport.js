@@ -6,6 +6,8 @@ export function init(dotNetObjectReference) {
 
     window.visualViewport.addEventListener("resize", setValues);
     window.visualViewport.addEventListener("scroll", setValues);
+
+    document.getElementById("visual-viewport").addEventListener("click", myScript);
 }
 
 export function dispose() {
@@ -20,4 +22,11 @@ function setValues() {
     let height = window.visualViewport.height;
 
     dotNetObject.invokeMethodAsync("onChanged", top, left, width, height);
+}
+
+
+
+function myScript() {
+    var test = `ih: ${window.innerHeight}; vh: ${document.getElementById("test").clientHeight}`;
+    alert(test);
 }
