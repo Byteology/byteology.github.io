@@ -4,7 +4,6 @@ using Ljbc1994.Blazor.IntersectionObserver;
 
 public partial class Slide : ComponentBase, IAsyncDisposable
 {
-    private ElementReference _sectionElement;
     private ElementReference _startElement;
     private ElementReference _endElement;
 
@@ -16,8 +15,17 @@ public partial class Slide : ComponentBase, IAsyncDisposable
     [Parameter]
     public RenderFragment ChildContent { get; set; } = default!;
 
+    [CascadingParameter(Name = "SlideLayout")]
+    public SlideLayout SlideLayout { get; set; } = default!;
+
     public bool TopIsVisible { get; private set; }
     public bool BottomIsVisible { get; private set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        SlideLayout.RegisterSlide(this);
+    }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -33,7 +41,7 @@ public partial class Slide : ComponentBase, IAsyncDisposable
     {
         IntersectionObserverOptions options = new()
         {
-            Root = _sectionElement,
+            Root = SlideLayout.VisualViewport.DomReference,
             Threshold = new List<double>() { 0 }
         };
 

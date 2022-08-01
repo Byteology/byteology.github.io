@@ -1,40 +1,28 @@
 ﻿@page "/"
+@layout SlideLayout
 
 @using Byteology.Website.Components.HomePage;
 
 <PageTitle>Byteology - a moment of science</PageTitle>
 
-@*<div class="h-[110vh]"></div>*@
+<CascadingValue Value="Theme.Dark">
 
-<div class="h-vvp w-full fixed top-0
-            bg-fixed bg-center bg-cover bg-[url('/images/background.jpeg')]
-            overflow-hidden"
-     @onwheel=onWheel 
-     @ontouchstart=onTouchStart
-     @ontouchmove=onTouchMove 
-     @ontouchend=onTouchEnd
-     @ontouchcancel=onTouchEnd>
+        <Slide>
+            <Logo class="mx-auto" FadeIn=true />
+        </Slide>
 
-    <CascadingValue Value="Theme.Dark">
-        <div class="space-y-64 transition-all duration-1000" style="top:calc(-@_currentSlide * (100 * var(--vh,1vh) + 16rem))">
-            <Slide @ref=_slides[0]>
-                <Logo class="mx-auto" FadeIn=true />
-            </Slide>
+        <Slide>
+            <ScientificGeneralization/>
+        </Slide>
 
-            <Slide @ref=_slides[1]>
-                <ScientificGeneralization/>
-            </Slide>
-
-            <Slide @ref=_slides[2]>
-                <ServicesList/>
-            </Slide>
-        </div>
-
-    </CascadingValue>
-</div>
+        <Slide>
+            <ServicesList/>
+        </Slide>
+</CascadingValue>
 
 
 @*
+    
     <section class="snap-start snap-always h-screen bg-light text-dark">
         <h1>Here’s what you can expect with Byteology</h1>
         <p>At Byteology we believe in crafting and providing flexible solutions that meet your specific business needs</p>

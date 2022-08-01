@@ -1,8 +1,8 @@
-﻿namespace Byteology.Website.Pages;
+﻿namespace Byteology.Website.Layouts;
 
 using Microsoft.JSInterop;
 
-public partial class Home : ComponentBase, IAsyncDisposable
+public partial class SlideLayout : LayoutComponentBase, IAsyncDisposable
 {
     [Inject]
     private IJSRuntime _jsRuntime { get; set; } = default!;
@@ -10,7 +10,9 @@ public partial class Home : ComponentBase, IAsyncDisposable
     private IJSObjectReference? _module { get; set; }
 
     private int _currentSlide = 0;
-    private readonly Slide[] _slides = new Slide[3];
+    private readonly List<Slide> _slides = new();
+
+    public VisualViewport VisualViewport { get; private set; } = default!;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -18,9 +20,14 @@ public partial class Home : ComponentBase, IAsyncDisposable
 
         if (firstRender)
         {
-            _module = await _jsRuntime.InvokeAsync<IJSObjectReference>("import", "./js/home-page.js");
+            _module = await _jsRuntime.InvokeAsync<IJSObjectReference>("import", "./js/slide-layout.js");
             await _module.InvokeVoidAsync("init");
         }
+    }
+
+    public void RegisterSlide(Slide slide)
+    {
+        _slides.Add(slide);
     }
 
     private bool _wheelDownDisabled = false;
@@ -70,7 +77,11 @@ public partial class Home : ComponentBase, IAsyncDisposable
     private void onTouchMove(TouchEventArgs args)
     {
         if (args.Touches.Length != 1 || !_touchStartX.HasValue || !_touchStartY.HasValue)
+        {
+            _touchStartX = null;
+            _touchStartY = null;
             return;
+        }
 
         double newX = args.Touches.Single().ClientX;
         double newY = args.Touches.Single().ClientY;
@@ -98,7 +109,7 @@ public partial class Home : ComponentBase, IAsyncDisposable
 
     private void tryIncrementSlide()
     {
-        if (_currentSlide != _slides.Length - 1 && _slides[_currentSlide].BottomIsVisible)
+        if (_currentSlide != _slides.Count - 1 && _slides[_currentSlide].BottomIsVisible)
             _currentSlide++;
     }
 
