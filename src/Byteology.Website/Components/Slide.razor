@@ -2,12 +2,12 @@
                 overflow-x-hidden overflow-y-auto no-scrollbar
                 flex flex-col">
 
-    <div class="min-h-[2rem] w-full" @ref=_startElement />
+    <div class="min-h-[1px] w-full" @ref=_startElement />
     <div class="w-full grow
-                xs:px-8
+                xs:px-8 py-4
                 flex flex-col justify-center items-center">
         @ChildContent
     </div>
-    <div class="min-h-[2rem] w-full" @ref=_endElement />
+    <div class="min-h-[1px] w-full" @ref=_endElement />
 
 </section>

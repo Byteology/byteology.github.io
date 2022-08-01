@@ -42,7 +42,7 @@ public partial class Slide : ComponentBase, IAsyncDisposable
         IntersectionObserverOptions options = new()
         {
             Root = SlideLayout.VisualViewport.DomReference,
-            Threshold = new List<double>() { 1 }
+            Threshold = new List<double>() { 0 }
         };
 
         _startElementIntersectionObserver = await _intersectionService.Observe(_startElement, (e) =>
