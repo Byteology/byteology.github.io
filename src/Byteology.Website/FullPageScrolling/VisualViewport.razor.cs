@@ -1,4 +1,4 @@
-﻿namespace Byteology.Website.Components;
+﻿namespace Byteology.Website.FullPageScrolling;
 
 using Microsoft.JSInterop;
 

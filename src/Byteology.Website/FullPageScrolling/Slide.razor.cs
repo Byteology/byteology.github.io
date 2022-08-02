@@ -1,4 +1,4 @@
-﻿namespace Byteology.Website.Components;
+﻿namespace Byteology.Website.FullPageScrolling;
 
 using Ljbc1994.Blazor.IntersectionObserver;
 
@@ -15,8 +15,8 @@ public partial class Slide : ComponentBase, IAsyncDisposable
     [Parameter]
     public RenderFragment ChildContent { get; set; } = default!;
 
-    [CascadingParameter(Name = "SlideLayout")]
-    public SlideLayout SlideLayout { get; set; } = default!;
+    [CascadingParameter(Name = "Layout")]
+    public FullPageScrollingLayout Layout { get; set; } = default!;
 
     public bool TopIsVisible { get; private set; }
     public bool BottomIsVisible { get; private set; }
@@ -24,7 +24,7 @@ public partial class Slide : ComponentBase, IAsyncDisposable
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        SlideLayout.RegisterSlide(this);
+        Layout.RegisterSlide(this);
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -41,7 +41,7 @@ public partial class Slide : ComponentBase, IAsyncDisposable
     {
         IntersectionObserverOptions options = new()
         {
-            Root = SlideLayout.VisualViewport.DomReference,
+            Root = Layout.VisualViewport.DomReference,
             Threshold = new List<double>() { 0 }
         };
 

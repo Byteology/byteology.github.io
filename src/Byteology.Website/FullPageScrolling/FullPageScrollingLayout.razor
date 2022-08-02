@@ -5,7 +5,7 @@
 <div class="w-screen h-screen top-0
             fixed bg-center bg-cover bg-[url('/images/background.jpeg')]" />
 
-<CascadingValue Name="SlideLayout" Value="this">
+<CascadingValue Name="Layout" Value="this">
     <VisualViewport @ref=VisualViewport>
         <div class="h-screen w-screen absolute"
              style="top:-@(VisualViewport.Top)px; left:-@(VisualViewport.Left)px;"
@@ -15,7 +15,9 @@
              @ontouchend=onTouchEnd
              @ontouchcancel=onTouchEnd>
 
-            <div class="space-y-64 transition-all duration-1000" style="top:calc(-@_currentSlide * (100vh + 16rem))">
+            <div class="space-y-64 
+                        @(_swipeContext.SwipeStarted ? string.Empty : "transition-all duration-1000")" 
+                 style="top:calc(-@_currentSlide * (100vh + 16rem) + @(_swipeContext.DiffY)px)">
                 @Body
             </div>
 
