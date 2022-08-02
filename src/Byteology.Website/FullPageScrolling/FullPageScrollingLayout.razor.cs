@@ -11,7 +11,7 @@ public partial class FullPageScrollingLayout : LayoutComponentBase, IAsyncDispos
     private int _currentSlide = 0;
     private readonly List<Slide> _slides = new();
 
-    private readonly SwipeContext _swipeContext = new();
+    private readonly SwipeContext _swipeContext = new(100);
     private readonly WheelContext _wheelContext = new(TimeSpan.FromSeconds(1));
 
     public VisualViewport VisualViewport { get; private set; } = default!;
@@ -22,7 +22,7 @@ public partial class FullPageScrollingLayout : LayoutComponentBase, IAsyncDispos
 
         if (firstRender)
         {
-            _module = await _jsRuntime.InvokeAsync<IJSObjectReference>("import", "./js/slide-layout.js");
+            _module = await _jsRuntime.InvokeAsync<IJSObjectReference>("import", "./js/full-page-scrolling-layout.js");
             await _module.InvokeVoidAsync("init");
         }
     }

@@ -8,10 +8,17 @@ public class SwipeContext
     private double _initialTouchX;
     private double _initialTouchY;
 
+    private readonly int _threshold;
+
     public bool SwipeStarted { get; set; }
 
     public double DiffX { get; set; }
     public double DiffY { get; set; }
+
+    public SwipeContext(int threshold)
+    {
+        _threshold = threshold;
+    }
 
     public void Start(TouchEventArgs args, Slide currentSlide)
     {
@@ -56,9 +63,9 @@ public class SwipeContext
 
         if (SwipeStarted)
         {
-            if (DiffY >= 100 && _atTopOfSlide)
+            if (DiffY >= _threshold && _atTopOfSlide)
                 result = -1;
-            else if (DiffY <= -100 && _atBottomOfSlide)
+            else if (DiffY <= -_threshold && _atBottomOfSlide)
                 result = 1;
         }
 
