@@ -4,11 +4,6 @@
 
 @layer base {
 
-    html, body, #app {
-        @apply w-full;
-        @apply h-full;
-    }
-
     body {
         @apply bg-dark;
         @apply text-light;

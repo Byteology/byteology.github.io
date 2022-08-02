@@ -1,9 +1,11 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="h-[110%] 
-            bg-fixed bg-center bg-cover bg-[url('/images/background.jpeg')]" />
+<div class="h-[110vh]"></div>
 
-@*<CascadingValue Name="SlideLayout" Value="this">
+<div class="w-screen h-screen top-0
+            fixed bg-center bg-cover bg-[url('/images/background.jpeg')]" />
+
+<CascadingValue Name="SlideLayout" Value="this">
     <VisualViewport @ref=VisualViewport>
         <div class="h-screen w-screen absolute"
              style="top:-@(VisualViewport.Top)px; left:-@(VisualViewport.Left)px;"
@@ -20,4 +22,3 @@
         </div>
     </VisualViewport>
 </CascadingValue>
-*@
