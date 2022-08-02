@@ -4,7 +4,7 @@
 
 @layer base {
 
-    html {
+    html, body, #app {
         @apply w-full;
         @apply h-full;
     }
