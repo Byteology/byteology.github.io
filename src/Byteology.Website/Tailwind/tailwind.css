@@ -4,11 +4,6 @@
 
 @layer base {
 
-    html {
-        /*@apply snap-y;
-        @apply snap-mandatory;*/
-    }
-
     body {
         @apply bg-dark;
         @apply text-light;

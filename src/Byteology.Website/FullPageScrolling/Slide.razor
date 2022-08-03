@@ -1,11 +1,14 @@
-﻿<section class="w-full h-screen snap-start snap-always
+﻿<section class="w-full h-full 
+                snap-start snap-always
                 overflow-x-hidden overflow-y-auto no-scrollbar
+                xs:px-8 py-4 
+                flex flex-col  justify-between items-center
                 ">
 
-        <div class="xs:px-8 py-4 grow flex justify-center content-center items-center justify-items-center transition-all duration-500"
-             style="height: calc(100 * var(--vh, 1vh))">
-            @ChildContent
-        </div>
+    <div class="max-h-0"/>
+    @ChildContent
+    <div class="max-h-0"/>
+
 </section>
 
 @code {
