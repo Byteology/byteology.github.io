@@ -1,7 +1,7 @@
 ﻿export function init() {
-    document.documentElement.style.setProperty('position', `fixed`);
+    document.body.style.setProperty('position', `fixed`);
 }
 
 export function dispose() {
-    document.documentElement.style.removeProperty('position');
+    document.body.style.removeProperty('position');
 }
