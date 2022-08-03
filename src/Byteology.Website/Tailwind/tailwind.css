@@ -5,8 +5,8 @@
 @layer base {
 
     html {
-        @apply snap-y;
-        @apply snap-mandatory;
+        /*@apply snap-y;
+        @apply snap-mandatory;*/
     }
 
     body {
