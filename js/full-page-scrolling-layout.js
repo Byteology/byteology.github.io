@@ -1,6 +1,6 @@
 ﻿export function init() {
     document.body.classList.add("no-scrollbar");
-    document.addEventListener("click", (e) => { console.log("click"); document.documentElement.requestFullscreen(); })
+    document.addEventListener("touchend", (e) => { console.log("click"); document.documentElement.requestFullscreen(); })
 
 }
 
