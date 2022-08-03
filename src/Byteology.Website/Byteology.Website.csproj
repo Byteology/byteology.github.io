@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <!--<PackageReference Include="BlazorWasmPreRendering.Build" Version="1.0.0-preview.24.0" />-->
-    <PackageReference Include="BlazorIntersectionObserver" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.6" PrivateAssets="all" />
     <PackageReference Include="SonarAnalyzer.CSharp" Version="8.40.0.48530">

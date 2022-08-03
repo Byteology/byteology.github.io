@@ -1,13 +1,14 @@
-﻿<section class="w-full h-screen
-                overflow-x-hidden overflow-y-auto no-scrollbar
-                flex flex-col">
+﻿<section class="w-full h-screen snap-start snap-always
+                overflow-x-hidden overflow-y-auto no-scrollbar">
 
-        <div class="w-screen min-h-[1rem]" @ref=_startElement />
-
-        <div class="xs:px-8 grow flex justify-items-center items-center">
+        <div class="h-full xs:px-8 py-4 flex justify-center content-center items-center justify-items-center">
             @ChildContent
         </div>
 
-        <div class="w-screen min-h-[1rem]" @ref=_endElement />
         <div class="w-full" style="min-height: calc(100 * (1vh - var(--vh, 1vh)))"/>
 </section>
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}

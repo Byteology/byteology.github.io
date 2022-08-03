@@ -1,7 +1,7 @@
 ﻿export function init() {
-    document.body.style.setProperty("overscroll-behavior", "none");
+    document.body.classList.add("no-scrollbar");
 }
 
 export function dispose() {
-    document.body.style.removeProperty("overscroll-behavior");
+    document.body.classList.remove("no-scrollbar");
 }

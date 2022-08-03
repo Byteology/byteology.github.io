@@ -1,26 +1,12 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="h-[110vh]"></div>
-
 <div class="w-screen h-screen top-0
             fixed bg-center bg-cover bg-[url('/images/background.jpeg')]" />
 
 <CascadingValue Name="Layout" Value="this">
-    <VisualViewport @ref=VisualViewport>
-        <div class="h-screen w-screen absolute"
-             style="top:-@(VisualViewport.Top)px; left:-@(VisualViewport.Left)px;"
-             @onwheel=onWheel 
-             @ontouchstart=onTouchStart
-             @ontouchmove=onTouchMove 
-             @ontouchend=onTouchEnd
-             @ontouchcancel=onTouchEnd>
 
-            <div class="space-y-64 
-                        @(_swipeContext.SwipeStarted ? string.Empty : "transition-all duration-1000")" 
-                 style="top:calc(-@_currentSlide * (100vh + 16rem) + @(_swipeContext.DiffY)px)">
-                @Body
-            </div>
+    <div class="space-y-64">
+        @Body
+    </div>
 
-        </div>
-    </VisualViewport>
 </CascadingValue>
