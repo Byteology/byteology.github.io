@@ -8,6 +8,12 @@ public partial class FullPageScrollingLayout : LayoutComponentBase, IAsyncDispos
     private IJSRuntime _jsRuntime { get; set; } = default!;
     private IJSObjectReference? _module { get; set; }
 
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await _jsRuntime.InvokeVoidAsync("preventPitbarHiding");
+    }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
@@ -29,5 +35,7 @@ public partial class FullPageScrollingLayout : LayoutComponentBase, IAsyncDispos
     {
         if (_module != null)
             await _module.InvokeVoidAsync("dispose");
+
+        await _jsRuntime.InvokeVoidAsync("resetPitbarHiding");
     }
 }
