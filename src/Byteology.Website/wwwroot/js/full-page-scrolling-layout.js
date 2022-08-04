@@ -1,4 +1,5 @@
 ﻿export function init() {
+    document.getElementById("layout").focus();
     document.getElementById("layout").addEventListener("wheel", onLayoutWheel, { passive: false });
 
     let slides = document.getElementsByClassName("slide");
