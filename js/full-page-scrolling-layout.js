@@ -1,45 +1,72 @@
-﻿var preventSlideIncrement = false;
-var preventSlideDecrement = false;
+﻿export function init() {
+    document.getElementById("layout").addEventListener("wheel", onLayoutWheel, { passive: false });
 
-export function init() {
-    document.getElementById("layout").addEventListener("wheel", onWheel, { passive: false });
+    let slides = document.getElementsByClassName("slide");
+    for (var i = 0; i < slides.length; i++)
+        slides[i].addEventListener("wheel", onSlideWheel, { passive: false });
 }
 
 export function dispose() {
     preventSlideIncrement = false;
     preventSlideDecrement = false;
+    preventOverscroll = false;
 }
 
-function onWheel(e) {
+var layoutTimer;
+var preventSlideIncrement = false;
+var preventSlideDecrement = false;
+function onLayoutWheel(e) {
     e.preventDefault();
     e.stopPropagation();
 
     let slides = document.getElementsByClassName("slide");
+    let currentSlideIndex;
+    for (var i = 0; i < slides.length; i++) {
+        if (Math.abs(slides[i].getBoundingClientRect().y) < 100) {
+            currentSlideIndex = i;
+            break;
+        }
+    }
+
+    if (currentSlideIndex === undefined)
+        return;
 
     if (e.deltaY > 0 && !preventSlideIncrement) {
-
+        clearTimeout(layoutTimer);
         preventSlideIncrement = true;
         preventSlideDecrement = false;
-        setTimeout(() => { preventSlideIncrement = false; }, 500);
 
-        for (var i = 0; i < slides.length; i++) {
-            if (slides[i].getBoundingClientRect().y > 0) {
-                slides[i].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                return;
-            }
-        };
+        layoutTimer = setTimeout(() => { preventSlideIncrement = false; }, 500);
+
+        if (currentSlideIndex != slides.length - 1) {
+            slides[currentSlideIndex + 1].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        }
     }
     else if (e.deltaY < 0 && !preventSlideDecrement) {
 
+        clearTimeout(layoutTimer);
         preventSlideIncrement = false;
         preventSlideDecrement = true;
-        setTimeout(() => { preventSlideDecrement = false; }, 500);
+        layoutTimer = setTimeout(() => { preventSlideDecrement = false; }, 500);
 
-        for (var i = slides.length - 1; i >= 0; i--) {
-            if (slides[i].getBoundingClientRect().y < 0) {
-                slides[i].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                return;
-            }
-        };
+        if (currentSlideIndex != 0)
+            slides[currentSlideIndex - 1].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
     }
+}
+
+var slideTimer;
+var preventOverscroll = false;
+function onSlideWheel(e) {
+    var slide = e.currentTarget;
+    let atBottom = (slide.scrollHeight - slide.scrollTop - slide.clientHeight) < 1;
+    let atTop = slide.scrollTop < 1;
+
+    if ((e.deltaY > 0 && !atBottom) || (e.deltaY < 0 && !atTop)) {
+        clearTimeout(slideTimer);
+        preventOverscroll = true;
+        slideTimer = setTimeout(() => { preventOverscroll = false; }, 500);
+        e.stopPropagation();
+    }
+    else if (preventOverscroll)
+        e.stopPropagation();
 }
