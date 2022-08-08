@@ -37,11 +37,11 @@ module.exports = {
             }
         },
         fontSize: {
-            h1:     ['2.5rem', { letterSpacing: '0.05em', lineHeight: '1.1'} ],
-            h2:     ['2rem', { letterSpacing: '0.05em', lineHeight: '1.1'} ],
-            h3:     ['1.5rem', { letterSpacing: '0.05em', lineHeight: '1.1'} ],
-            body:   ['1rem', { letterSpacing: '0.05em', lineHeight: '1.5'} ],
-            detail: ['0.875rem', { letterSpacing: '0.05em', lineHeight: '1.5'} ],
+            h1:     ['2.5rem', { letterSpacing: '0.10rem', lineHeight: '1.1'} ],
+            h2:     ['2rem', { letterSpacing: '0.10rem', lineHeight: '1.1'} ],
+            h3:     ['1.5rem', { letterSpacing: '0.10rem', lineHeight: '1.1'} ],
+            body:   ['1rem', { letterSpacing: '0.10rem', lineHeight: '1.5'} ],
+            detail: ['0.875rem', { letterSpacing: '0.10rem', lineHeight: '1.5'} ],
         },
         extend: {
             fontFamily: {
