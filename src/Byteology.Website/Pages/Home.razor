@@ -1,10 +1,11 @@
 ﻿@page "/"
 @layout FullPageScrollingLayout
+@inherits BasePage<HomePageModel>
 
 @using Byteology.Website.Components.HomePage;
 @using Byteology.Website.FullPageScrolling;
 
-<PageTitle>Byteology - a moment of science</PageTitle>
+<PageTitle>@Model.Title</PageTitle>
 
 <CascadingValue Value="Theme.Dark">
         <Slide>
@@ -12,7 +13,7 @@
         </Slide>
 
         <Slide>
-            <ScientificGeneralization/>
+            <ScientificGeneralization Model="Model.ScientificGeneralization" />
         </Slide>
 
         <Slide>
@@ -53,3 +54,7 @@
         <h1>Here's to working together</h1>
     </section>
 </div>*@
+
+@code {
+    public Home() : base("home-page-data.json") { }
+}

@@ -2,20 +2,19 @@
             grid grid-cols-1 landscape:grid-cols-2 gap-8 content-center
             bg-dark text-light">
 
-    <p class="col-start-1
-                text-h3 font-bold">
-        By introducing <strong class="text-secondary">scientific generalization</strong> 
-        to software engineering, <strong class="text-secondary">Byteology</strong> 
-        helps businesses tackle software complexity and grow.
-    </p>
-    
-    <Timeline class="col-start-1 row-span-1 landscape:col-start-2 landscape:row-span-2 text-body" Items="@(new MarkupString[]
-        {
-            new ("We <strong>gather and detail</strong> the information defining your domain"),
-            new ("We derive <strong>actionable data and insights</strong>"),
-            new ("We design and implement <strong>tailored solutions</strong>"),
-            new ("We help your business <strong>scale and grow</strong>"),
-        })"/>
+    <div class="col-start-1
+                text-h3 font-bold
+                [&_strong]:text-secondary">
 
-    <LinkButton class="col-start-1 self-end text-detail p-2" Text="Learn more" Url="/about-us" Type="LinkButton.ButtonType.Primary" />
+        @(new MarkupString(Markdown.ToHtml(Model.Introduction!)))
+
+    </div>
+    
+    <Timeline Items="@Model.Timeline.Select(x => new MarkupString(Markdown.ToHtml(x))).ToArray()"
+              class="col-start-1 row-span-1 landscape:col-start-2 landscape:row-span-2 text-body"/>
+
+    <LinkButton Text="@Model.AdditionalInfoText" 
+                Url="@Model.AboutUsUrl" 
+                Type="LinkButton.ButtonType.Primary" 
+                class="col-start-1 self-end text-detail p-2" />
 </div>
