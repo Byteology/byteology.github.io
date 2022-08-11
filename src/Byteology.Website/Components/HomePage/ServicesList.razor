@@ -1,9 +1,29 @@
-﻿<div class="bg-dark max-w-[22rem] landscape:md:max-w-[48rem] mx-auto p-8 space-y-8">
-    <h3 class="col-span-1 landscape:md:col-span-2 text-h3 font-bold text-secondary text-center">Here's an overview of our services</h3>
+﻿<div class="landscape:hidden mx-auto max-w-[22rem]
+            bg-dark 
+            space-y-8 p-8">
+
+    <h3 class="text-h3 font-bold text-secondary text-center">Here's an overview of our services</h3>
+
+    <div class="flex flex-col gap-4 justify-between">
+        @for(int i = 0; i < Model.Services.Length; i++)
+        {
+            int j = i;
+            <ServiceSquare Expanded=@(_checkedIndex == i)
+                           Model=@Model.Services[i] 
+                           @onclick=@(args => _checkedIndex = j)
+                           @onkeydown=@(args => { if(args.Code == "Enter" || args.Code == "NumpadEnter") _checkedIndex = j; })
+                           tabindex="@(_checkedIndex == i ? -1 : 0)"/>
+        }
+    </div>
+
+</div>
+
+<div class="hidden bg-dark max-w-[22rem] landscape:md:max-w-[48rem] mx-auto p-8 space-y-8">
+    <h3 class="text-h3 font-bold text-secondary text-center">Here's an overview of our services</h3>
 
     <div class="grid grid-cols-1 landscape:md:grid-cols-2 landscape:md:gap-x-16 landscape:md:py-4">
         <div class="flex flex-col gap-4 justify-between">
-            @for(int i = 0; i < _services.Count; i++)
+            @for(int i = 0; i < Model.Services.Length; i++)
             {
                 var j = i;
                 <div @onclick=@(args => _checkedIndex = j) @onkeydown=@(args => { if(args.Code == "Enter" || args.Code == "NumpadEnter") _checkedIndex = j; } )
@@ -22,13 +42,13 @@
 
                     <div class="font-bold 
                                 flex gap-[1em] items-center">
-                        <img class="h-6 m-1 square" src="@_services[i].IconSrc" alt="@_services[i].Title" /> 
-                        <p>@_services[i].Title</p>
+                        <img class="h-6 m-1 square" src="@Model.Services[i].IconSrc" alt="@Model.Services[i].Title" /> 
+                        <p>@Model.Services[i].Title</p>
                     </div>
 
-                    <p class="text-detail text-light">@_services[i].Description</p>
+                    <p class="text-detail text-light">@Model.Services[i].Description</p>
 
-                    <LinkButton Text="Learn more" Url="@_services[i].DetailsUrl" Type="LinkButton.ButtonType.Secondary"
+                    <LinkButton Text="Learn more" Url="@Model.Services[i].DetailsUrl" Type="LinkButton.ButtonType.Secondary"
                                 class="text-detail p-1"
                                 tabindex=@(i == _checkedIndex ? 0 : -1)/>
                 </div>           
@@ -42,13 +62,13 @@
 
             <div class="font-bold text-h2
                         flex gap-4 items-center">
-                <img class="h-6 m-1 square" src="@_services[_checkedIndex].IconSrc" alt="@_services[_checkedIndex].Title" /> 
-                <p class="text-h3">@_services[_checkedIndex].Title</p>
+                <img class="h-6 m-1 square" src="@Model.Services[_checkedIndex].IconSrc" alt="@Model.Services[_checkedIndex].Title" /> 
+                <p class="text-h3">@Model.Services[_checkedIndex].Title</p>
             </div>
 
-            <p>@_services[_checkedIndex].Description</p>
+            <p>@Model.Services[_checkedIndex].Description</p>
 
-            <LinkButton Text="Learn more" Url="@_services[_checkedIndex].DetailsUrl" Type="LinkButton.ButtonType.Primary"
+            <LinkButton Text="Learn more" Url="@Model.Services[_checkedIndex].DetailsUrl" Type="LinkButton.ButtonType.Primary"
                         class="text-detail h-8 box-content"/>
         </div>    
 
@@ -56,51 +76,3 @@
     </div>
 </div>
 
-@code {
-    private int _checkedIndex = 0;
-
-    private Dictionary<string, object> _checkedAttribute = new()
-    {
-        { "checked", "checked" }
-    };
-
-    private List<Service> _services = new()
-    {
-        new Service()
-        {
-            Title = "MVP & Application Development",
-            Description = "Byteology’s team will develop your application or minimum viable product (MVP) for you.",
-            IconSrc = "/images/application-development-cropped.png",
-            DetailsUrl = "/services/development"
-        },
-        new Service()
-        {
-            Title = "Migration to Microservices",
-            Description = "Byteology will provide you with a tailored technology, strategy and process to help your business successfully migrate to microservices.",
-            IconSrc = "/images/application-development-cropped.png",
-            DetailsUrl = "/services/microservices"
-        },
-        new Service()
-        {
-            Title = "Event Sourcing",
-            Description = "Standard software development methodologies store and utilize less than 50% of the data that runs through the system.",
-            IconSrc = "/images/application-development-cropped.png",
-            DetailsUrl = "/services/event-sourcing"
-        },
-        new Service()
-        {
-            Title = "Consulting & Training",
-            Description = "Byteology will provide you with tailored consulting services and training to help your business scale and grow.",
-            IconSrc = "/images/application-development-cropped.png",
-            DetailsUrl = "/services/consulting-and-training"
-        },
-    };
-
-    private class Service
-    {
-        public string Title { get; set; } = default!;
-        public string Description { get; set; } = default!;
-        public string IconSrc { get; set; } = default!;
-        public string DetailsUrl { get; set; } = default!;
-    }
-}

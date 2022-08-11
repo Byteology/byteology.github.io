@@ -1,9 +1,11 @@
 ﻿namespace Byteology.Website.Components.HomePage;
 
-public partial class ScientificGeneralization : ComponentBase
+public partial class ServicesList : ComponentBase
 {
     [Parameter]
-    public ScientificGeneralizationModel Model { get; set; } = default!;
+    public ServicesListModel Model { get; set; } = default!;
+
+    private int _checkedIndex = 0;
 
     protected override void OnParametersSet()
     {

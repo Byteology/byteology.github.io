@@ -1,0 +1,23 @@
+﻿<div @attributes="InputAttributes"
+        class="box-content px-4
+               transition-all duration-500
+               text-light
+               border-solid border-2
+               overflow-hidden
+               flex flex-col justify-between
+               @(Expanded ? 
+                   "cursor-default bg-accent border-accent whitespace-normal h-64 py-4 text-body" : 
+                   "cursor-pointer bg-transparent border-secondary hocus:border-accent-light whitespace-nowrap h-8 text-detail")
+               ">
+
+    <div class="font-bold @(Expanded ? "" : "-mx-4")
+                flex gap-[1em] items-center">
+        <img class="h-6 m-1 square" src="@Model.IconSrc" alt="@Model.Title" /> 
+        <p>@Model.Title</p>
+    </div>
+
+    <p class="@(Expanded ? "" : "invisible") text-detail text-light">@Model.Description</p>
+
+    <LinkButton Text="@Model.AdditionalInfoText" Url="@Model.DetailsUrl" Type="LinkButton.ButtonType.Secondary"
+                class=@((Expanded ? "" : "invisible") + " text-detail p-1")/>
+</div>

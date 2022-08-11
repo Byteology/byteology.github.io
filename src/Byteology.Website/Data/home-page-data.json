@@ -10,5 +10,45 @@
     ],
     "additionalInfoText": "Learn More",
     "aboutUsUrl": "/about-us"
+  },
+  "servicesList": {
+    "title": "Here's an overview of our services",
+    "services": [
+      {
+        "title": "MVP & Application Development",
+        "description": "Byteology’s team will develop your application or minimum viable product (MVP) for you.",
+        "iconSrc": "/images/application-development-cropped.png",
+        "detailsUrl": "/services/development",
+        "additionalInfoText": "Learn More"
+      },
+      {
+        "title": "Migration to Microservices",
+        "description": "Byteology will provide you with a tailored technology, strategy and process to help your business successfully migrate to microservices.",
+        "iconSrc": "/images/application-development-cropped.png",
+        "detailsUrl": "/services/microservices",
+        "additionalInfoText": "Learn More"
+      },
+      {
+        "title": "Event Sourcing",
+        "description": "Standard software development methodologies store and utilize less than 50% of the data that runs through the system.",
+        "iconSrc": "/images/application-development-cropped.png",
+        "detailsUrl": "/services/event-sourcing",
+        "additionalInfoText": "Learn More"
+      },
+      {
+        "title": "Consulting & Training",
+        "description": "Byteology will provide you with tailored consulting services and training to help your business scale and grow.",
+        "iconSrc": "/images/application-development-cropped.png",
+        "detailsUrl": "/services/consulting-and-training",
+        "additionalInfoText": "Learn More"
+      },
+      {
+        "title": "Interviewing as a Service",
+        "description": "Byteology will conduct technical and social interviews on your behalf so you can focus of your core business.",
+        "iconSrc": "/images/application-development-cropped.png",
+        "detailsUrl": "/services/interviewing",
+        "additionalInfoText": "Learn More"
+      }
+    ]
   }
 }
