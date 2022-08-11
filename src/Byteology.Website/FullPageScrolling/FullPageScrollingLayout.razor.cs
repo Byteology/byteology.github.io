@@ -33,9 +33,6 @@ public partial class FullPageScrollingLayout : LayoutComponentBase, IAsyncDispos
 
     protected virtual async ValueTask DisposeAsyncCore()
     {
-        if (_module != null)
-            await _module.InvokeVoidAsync("dispose");
-
         await _jsRuntime.InvokeVoidAsync("resetPitbarHiding");
     }
 }

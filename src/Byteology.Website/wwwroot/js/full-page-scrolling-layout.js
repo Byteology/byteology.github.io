@@ -7,18 +7,19 @@
         slides[i].addEventListener("wheel", onSlideWheel, { passive: false });
 }
 
-export function dispose() {
-    preventSlideIncrement = false;
-    preventSlideDecrement = false;
-    preventOverscroll = false;
-}
-
-var layoutTimer;
-var preventSlideIncrement = false;
-var preventSlideDecrement = false;
 function onLayoutWheel(e) {
+    let layoutTimer;
+    let preventSlideIncrement;
+    let preventSlideDecrement;
+
+    if (e.ctrlKey)
+        return;
+
     e.preventDefault();
     e.stopPropagation();
+
+    if (isInertiaWheel(e))
+        return;
 
     let slides = document.getElementsByClassName("slide");
     let currentSlideIndex;
@@ -55,9 +56,14 @@ function onLayoutWheel(e) {
     }
 }
 
-var slideTimer;
-var preventOverscroll = false;
+
 function onSlideWheel(e) {
+    let slideTimer;
+    let preventOverscroll;
+
+    if (e.ctrlKey)
+        return;
+
     var slide = e.currentTarget;
     let atBottom = (slide.scrollHeight - slide.scrollTop - slide.clientHeight) < 1;
     let atTop = slide.scrollTop < 1;
@@ -70,4 +76,18 @@ function onSlideWheel(e) {
     }
     else if (preventOverscroll)
         e.stopPropagation();
+}
+
+function isInertiaWheel(e) {
+    let timer;
+
+    if (Math.abs(e.deltaY) < 50)
+        return true;
+
+    var result = timer != undefined;
+
+    clearTimeout(timer);
+    timer = setTimeout(() => { timer = undefined; }, 100);
+
+    return result;
 }
