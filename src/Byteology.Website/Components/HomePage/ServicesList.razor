@@ -1,78 +1,47 @@
-﻿<div class="landscape:hidden mx-auto max-w-[22rem]
+﻿<div class="block laptop:hidden
+            w-full max-w-[23rem]
             bg-dark 
             space-y-8 p-8">
 
     <h3 class="text-h3 font-bold text-secondary text-center">Here's an overview of our services</h3>
 
-    <div class="flex flex-col gap-4 justify-between">
+    <div class="mx-auto flex flex-col gap-4 justify-between">
         @for(int i = 0; i < Model.Services.Length; i++)
         {
             int j = i;
-            <ServiceSquare Expanded=@(_checkedIndex == i)
-                           Model=@Model.Services[i] 
-                           @onclick=@(args => _checkedIndex = j)
-                           @onkeydown=@(args => { if(args.Code == "Enter" || args.Code == "NumpadEnter") _checkedIndex = j; })
-                           tabindex="@(_checkedIndex == i ? -1 : 0)"/>
+            <Service Model=@Model.Services[j]
+                     Layout=@(serviceIsSelected(j) ? Service.ServiceLayout.Card : Service.ServiceLayout.Button)
+                     @onclick=@(() => onClicked(j))
+                     @onkeypress=@(args => onKeyPressed(args, j))/>
         }
     </div>
 
 </div>
 
-<div class="hidden bg-dark max-w-[22rem] landscape:md:max-w-[48rem] mx-auto p-8 space-y-8">
+
+<div class="hidden laptop:block
+            bg-dark 
+            p-8 space-y-8">
+
     <h3 class="text-h3 font-bold text-secondary text-center">Here's an overview of our services</h3>
 
-    <div class="grid grid-cols-1 landscape:md:grid-cols-2 landscape:md:gap-x-16 landscape:md:py-4">
-        <div class="flex flex-col gap-4 justify-between">
+    <div class="grid grid-cols-[max-content_2px_1fr] gap-x-8 py-4">
+        <div class="flex flex-col gap-[1.5rem] justify-between w-full">
             @for(int i = 0; i < Model.Services.Length; i++)
             {
                 var j = i;
-                <div @onclick=@(args => _checkedIndex = j) @onkeydown=@(args => { if(args.Code == "Enter" || args.Code == "NumpadEnter") _checkedIndex = j; } )
-                     tabindex=@(i == _checkedIndex ? -1 : 0)
-                     class="
-                            box-content
-                            transition-all duration-500
-                            text-light
-                            border-solid border-2
-                            overflow-hidden
-                            flex flex-col justify-between
-                            @(_checkedIndex == i ? 
-                                "cursor-default bg-accent border-accent whitespace-normal h-64 p-4 text-body landscape:md:bg-transparent landscape:md:h-8 landscape:md:p-0 landscape:md:whitespace-nowrap landscape:md:text-detail" : 
-                                "cursor-pointer h-8 bg-transparent border-secondary hocus:border-accent-light whitespace-nowrap text-detail")
-                            ">
-
-                    <div class="font-bold 
-                                flex gap-[1em] items-center">
-                        <img class="h-6 m-1 square" src="@Model.Services[i].IconSrc" alt="@Model.Services[i].Title" /> 
-                        <p>@Model.Services[i].Title</p>
-                    </div>
-
-                    <p class="text-detail text-light">@Model.Services[i].Description</p>
-
-                    <LinkButton Text="Learn more" Url="@Model.Services[i].DetailsUrl" Type="LinkButton.ButtonType.Secondary"
-                                class="text-detail p-1"
-                                tabindex=@(i == _checkedIndex ? 0 : -1)/>
-                </div>           
+                <Service Model=@Model.Services[j]
+                         Layout=@(serviceIsSelected(j) ? Service.ServiceLayout.ButtonSelected : Service.ServiceLayout.Button)
+                         @onclick=@(() => onClicked(j))
+                         @onkeypress=@(args => onKeyPressed(args, j))/>
             }
         </div>
 
-        <div class="hidden landscape:md:flex
-                    min-h-[16rem]
-                    text-light
-                    flex-col justify-between">
+        <div class="bg-accent h-full"></div>
 
-            <div class="font-bold text-h2
-                        flex gap-4 items-center">
-                <img class="h-6 m-1 square" src="@Model.Services[_checkedIndex].IconSrc" alt="@Model.Services[_checkedIndex].Title" /> 
-                <p class="text-h3">@Model.Services[_checkedIndex].Title</p>
-            </div>
+        <Service Model=@Model.Services[_checkedIndex]
+                 Layout=Service.ServiceLayout.Article />
 
-            <p>@Model.Services[_checkedIndex].Description</p>
-
-            <LinkButton Text="Learn more" Url="@Model.Services[_checkedIndex].DetailsUrl" Type="LinkButton.ButtonType.Primary"
-                        class="text-detail h-8 box-content"/>
-        </div>    
-
-        <div class="hidden landscape:md:block absolute bg-accent left-1/2 w-[2px] h-full"></div>
     </div>
 </div>
 

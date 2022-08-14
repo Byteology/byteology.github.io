@@ -15,7 +15,7 @@
     "title": "Here's an overview of our services",
     "services": [
       {
-        "title": "MVP & Application Development",
+        "title": "Software Development",
         "description": "Byteology’s team will develop your application or minimum viable product (MVP) for you.",
         "iconSrc": "/images/application-development-cropped.png",
         "detailsUrl": "/services/development",

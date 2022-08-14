@@ -5,15 +5,9 @@ module.exports = {
 
     theme: {
         screens: {
-            xs: '40rem',
-            sm: '48rem',
-            md: '56rem',
-            lg: '64rem',
-            xl: '80rem',
-            '2xl': '96rem',
-
-            touch: { 'raw': '(hover: none)' },
-            pointer: { 'raw': '(hover: hover)' }
+            tablet: '30rem',
+            laptop: '48rem',
+            desktop: '80rem',
         },
         colors: {
             transparent: 'transparent',

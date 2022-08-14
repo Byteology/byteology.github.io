@@ -1,12 +1,12 @@
 ﻿namespace Byteology.Website.Components.HomePage;
 
-public partial class ServiceSquare : ComponentBase
+public partial class Service : ComponentBase
 {
     [Parameter]
     public ServiceModel Model { get; set; } = default!;
 
     [Parameter]
-    public bool Expanded { get; set; }
+    public ServiceLayout Layout { get; set; }
 
     [Parameter(CaptureUnmatchedValues = true)]
     public Dictionary<string, object>? InputAttributes { get; set; }
@@ -17,6 +17,14 @@ public partial class ServiceSquare : ComponentBase
 
         if (Model == null)
             throw new ArgumentNullException(nameof(Model));
+    }
+
+    public enum ServiceLayout
+    {
+        Button,
+        ButtonSelected,
+        Card,
+        Article
     }
 }
 

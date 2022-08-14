@@ -14,4 +14,17 @@ public partial class ServicesList : ComponentBase
         if (Model == null)
             throw new ArgumentNullException(nameof(Model));
     }
+
+    private void onClicked(int serviceIndex)
+    {
+        _checkedIndex = serviceIndex;
+    }
+
+    private void onKeyPressed(KeyboardEventArgs args, int serviceIndex)
+    {
+        if (args.Code == "Enter" || args.Code == "NumpadEnter") 
+            _checkedIndex = serviceIndex;
+    }
+
+    private bool serviceIsSelected(int serviceIndex) => serviceIndex == _checkedIndex;
 }

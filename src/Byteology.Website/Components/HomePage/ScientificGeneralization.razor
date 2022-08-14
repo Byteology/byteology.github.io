@@ -1,6 +1,5 @@
-﻿<div class="p-8 max-w-[56rem]
-            grid grid-cols-1 landscape:grid-cols-2 gap-8 content-center
-            bg-dark text-light">
+﻿<div class="p-8 bg-dark text-light 
+            grid grid-cols-1 laptop:grid-cols-2 gap-8 content-center">
 
     <div class="col-start-1
                 text-h3 font-bold
@@ -11,7 +10,7 @@
     </div>
     
     <Timeline Items="@Model.Timeline.Select(x => new MarkupString(Markdown.ToHtml(x))).ToArray()"
-              class="col-start-1 row-span-1 landscape:col-start-2 landscape:row-span-2 text-body"/>
+              class="col-start-1 row-span-1 laptop:col-start-2 laptop:row-span-2 text-body"/>
 
     <LinkButton Text="@Model.AdditionalInfoText" 
                 Url="@Model.AboutUsUrl" 
