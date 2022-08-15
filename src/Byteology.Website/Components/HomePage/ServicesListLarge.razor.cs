@@ -1,15 +1,16 @@
 ﻿namespace Byteology.Website.Components.HomePage;
 
-public partial class Service : ComponentBase
+public partial class ServicesListLarge : ComponentBase
 {
     [Parameter]
-    public ServiceModel Model { get; set; } = default!;
+    public ServicesListModel Model { get; set; } = default!;
 
     [Parameter]
-    public ServiceLayout Layout { get; set; }
+    public string? Class { get; set; }
 
     [Parameter(CaptureUnmatchedValues = true)]
     public Dictionary<string, object>? InputAttributes { get; set; }
+
 
     protected override void OnParametersSet()
     {
@@ -18,13 +19,4 @@ public partial class Service : ComponentBase
         if (Model == null)
             throw new ArgumentNullException(nameof(Model));
     }
-
-    public enum ServiceLayout
-    {
-        Button,
-        ButtonSelected,
-        Card,
-        Article
-    }
 }
-
