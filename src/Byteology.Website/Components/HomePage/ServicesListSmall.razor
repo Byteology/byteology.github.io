@@ -6,40 +6,41 @@
     <h3 class="text-h3 font-bold text-secondary text-center">@Model.Title</h3>
 
     <div class="flex flex-col gap-4">
-        @for(int i = 0; i < Model.Services.Length; i++)
-        {
-            int j = i;
-            <div class="box-content w-full 
-                        transition-all duration-500
-                        border-solid border-2
-                        flex flex-col gap-8 justify-between overflow-auto no-scrollbar
-                        @(j == _selectedTabIndex ?
-                            "border-accent bg-accent h-64 py-4" :
-                            "cursor-pointer border-secondary hocus:border-accent-light h-8")"
-                 tabindex="@(j == _selectedTabIndex ? -1 : 0)"
-                 @onclick=@(() => onClicked(j))
-                 @onkeypress=@((args) => onKeyPressed(args, j))>
 
-                <div class="p-1
-                            transition-all duration-500 
-                            flex items-center gap-4  
-                            @(_selectedTabIndex == j ? 
-                                "px-4 text-body" :
-                                "h-8 text-detail")">
+        <RadioButtonsList Items="Model.Services" Context="item">
+            <ItemTemplate>
 
-                    <img class="transition-all duration-500 @(_selectedTabIndex == j ? "h-8" : "h-6")" src="@Model.Services[j].IconSrc" alt="@Model.Services[j].Title" /> 
-                    <p class="font-bold">@Model.Services[j].Title</p>
+                <div class="box-content w-full 
+                            transition-all duration-500
+                            border-solid border-2
+                            flex flex-col gap-8 justify-between overflow-auto no-scrollbar
+                            @(item.Selected ? 
+                                "border-accent bg-accent h-64 py-4" : 
+                                "cursor-pointer border-secondary group-focus:border-accent-light group-hover:border-accent-light h-8")">
 
+                    <div class="p-1
+                                transition-all duration-500 
+                                flex items-center gap-4  
+                                @(item.Selected ? 
+                                    "px-4 text-body" :
+                                    "h-8 text-detail")">
+
+                        <img class="transition-all duration-500 @(item.Selected ? "h-8" : "h-6")" src="@item.Value.IconSrc" alt="@item.Value.Title" /> 
+                        <p class="font-bold">@item.Value.Title</p>
+
+                    </div>
+
+                    <p class="text-detail mx-4">@item.Value.Description</p>
+
+                    <LinkButton Text="@item.Value.AdditionalInfoText" 
+                                Url="@item.Value.DetailsUrl" 
+                                Type=LinkButton.ButtonType.Secondary
+                                class="text-detail p-1 mx-4"
+                                tabindex="@(item.Selected ? 0 : -1)"/>
                 </div>
 
-                <p class="text-detail mx-4">@Model.Services[j].Description</p>
-
-                <LinkButton Text="@Model.Services[j].AdditionalInfoText" 
-                            Url="@Model.Services[j].DetailsUrl" 
-                            Type=LinkButton.ButtonType.Secondary
-                            class="text-detail p-1 mx-4" />
-            </div>
-        }
+            </ItemTemplate>
+        </RadioButtonsList>
     </div>
 
 </div>

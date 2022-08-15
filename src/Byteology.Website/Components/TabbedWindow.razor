@@ -4,23 +4,21 @@
      @attributes=InputAttributes>
 
     <div class="flex flex-col gap-[1.5rem] w-full">
-        @for(int i = 0; i < Items.Count; i++)
-        {
-            var j = i;
-            <div class="box-content 
-                        cursor-pointer whitespace-nowrap
-                        transition-all duration-500
-                        border-solid border-2
-                        overflow-hidden
-                        @getTabThemedClasses(j).Value"
-                 @onclick=@(() => onClicked(j))
-                 @onkeypress=@(args => onKeyPressed(args, j))
-                 tabindex="0">
 
-                @TabContent(new Context(Items[j], j == _selectedTabIndex))
+        <RadioButtonsList Items="Items" Context="item" TItem="TItem" OnChanged="onChanged">
+            <ItemTemplate>
+                <div class="box-content 
+                            cursor-pointer whitespace-nowrap
+                            transition-all duration-500
+                            border-solid border-2
+                            overflow-hidden
+                            @getTabThemedClasses(item.Selected).Value">
 
-            </div>
-        }
+                    @TabContent(new RadioButtonsList<TItem>.Context(item.Value, item.Selected))
+
+                </div>
+            </ItemTemplate>
+        </RadioButtonsList>
     </div>
 
     <div class="bg-accent h-full"></div>
@@ -28,10 +26,10 @@
     <div>
         @for(int i = 0; i < Items.Count; i++)
         {
-            <div class="@(_selectedTabIndex == i ?
+            <div class="@(_selectedIndex == i ?
                             "h-full transition-[opacity,_left] left-0 duration-[1s,_0.5s] opacity-100" :
                             "invisible absolute -left-8 opacity-0")">
-                @Body(new Context(Items[i], i == _selectedTabIndex))
+                @Body(Items[i])
             </div>
         }
     </div>
@@ -41,14 +39,15 @@
 @code 
 {
     private ThemedValue _gridThemedClasses => new(() => Theme, light: "bg-light text-dark", dark: "bg-dark text-light");
-    private ThemedValue getTabThemedClasses(int tabIndex) 
+    private ThemedValue getTabThemedClasses(bool selected) 
     {
         ThemedValue result;
 
-        if (tabIndex == _selectedTabIndex)
+        if (selected)
             result = new(() => Theme, light: "bg-accent text-light border-accent", dark: "border-accent");
         else
-            result = new(() => Theme, light: "border-accent hocus:border-accent-light", dark: "border-secondary hocus:border-accent-light");
+            result = new(() => Theme, light: "border-accent group-hover:border-accent-light group-focus:border-accent-light", 
+                                      dark: "border-secondary group-hover:border-accent-light group-focus:border-accent-light");
 
         return result;
     }

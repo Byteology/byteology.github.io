@@ -1,0 +1,14 @@
+﻿@typeparam TItem
+
+@for (int i = 0; i < Items.Count; i++)
+{
+    int j = i;
+    <div class="group" tabindex="@(j == _selectedItemIndex ? -1 : 0 )"
+            @onclick=@(() => onClicked(j))
+            @onkeypress=@((args) => onKeyPressed(args, j))>
+
+        @ItemTemplate(new Context(Items[j], _selectedItemIndex == j))
+
+    </div>
+}
+

@@ -10,22 +10,22 @@
 
         <TabContent>
             <div class="flex items-center gap-4 p-1 pr-4 h-8">
-                <img class="h-full" src=@service.Item.IconSrc alt=@service.Item.Title />
-                <div class="text-detail font-bold"> @service.Item.Title </div>
+                <img class="h-full" src=@service.Value.IconSrc alt=@service.Value.Title />
+                <div class="text-detail font-bold"> @service.Value.Title </div>
             </div>
         </TabContent>
 
         <Body>
             <div class="h-full flex flex-col gap-8 justify-between">
                 <div class="flex items-center gap-4 p-2 pr-4 h-14">
-                    <img class="h-full" src=@service.Item.IconSrc alt=@service.Item.Title />
-                    <div class="text-h3 font-bold"> @service.Item.Title </div>
+                    <img class="h-full" src=@service.IconSrc alt=@service.Title />
+                    <div class="text-h3 font-bold"> @service.Title </div>
                 </div>
 
-                <p class="text-body">@service.Item.Description</p>
+                <p class="text-body">@service.Description</p>
 
-                <LinkButton Text="@service.Item.AdditionalInfoText" 
-                    Url="@service.Item.DetailsUrl" 
+                <LinkButton Text="@service.AdditionalInfoText" 
+                    Url="@service.DetailsUrl" 
                     Type=@LinkButton.ButtonType.Primary
                     class="text-detail p-1"/>
             </div>

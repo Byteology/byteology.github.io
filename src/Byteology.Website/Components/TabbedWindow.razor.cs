@@ -2,7 +2,7 @@
 
 public partial class TabbedWindow<TItem> : ComponentBase
 {
-    private int _selectedTabIndex;
+    private int _selectedIndex = 0;
 
     [CascadingParameter]
     public Theme Theme { get; set; }
@@ -11,10 +11,10 @@ public partial class TabbedWindow<TItem> : ComponentBase
     public IReadOnlyList<TItem> Items { get; set; } = default!;
 
     [Parameter]
-    public RenderFragment<Context> TabContent { get; set; } = default!;
+    public RenderFragment<RadioButtonsList<TItem>.Context> TabContent { get; set; } = default!;
 
     [Parameter]
-    public RenderFragment<Context> Body { get; set; } = default!;
+    public RenderFragment<TItem> Body { get; set; } = default!;
 
     [Parameter]
     public string? Class { get; set; }
@@ -36,26 +36,8 @@ public partial class TabbedWindow<TItem> : ComponentBase
             throw new ArgumentNullException(nameof(Body));
     }
 
-    private void onClicked(int tabIndex)
+    private void onChanged(RadioButtonsList<TItem>.RadioButtonEventArgs args)
     {
-        _selectedTabIndex = tabIndex;
-    }
-
-    private void onKeyPressed(KeyboardEventArgs args, int tabIndex)
-    {
-        if (args.Code == "Enter" || args.Code == "NumpadEnter")
-            _selectedTabIndex = tabIndex;
-    }
-
-    public class Context
-    {
-        public TItem Item { get; set; }
-        public bool Selected { get; set; }
-
-        public Context(TItem item, bool selected)
-        {
-            Item = item;
-            Selected = selected;
-        }
+        _selectedIndex = args.Index;
     }
 }
