@@ -1,4 +1,7 @@
 ﻿export function init() {
+    preventSlideIncrement = false;
+    preventSlideDecrement = false;
+
     document.getElementById("layout").focus();
     document.getElementById("layout").addEventListener("wheel", onLayoutWheel, { passive: false });
 
@@ -7,10 +10,11 @@
         slides[i].addEventListener("wheel", onSlideWheel, { passive: false });
 }
 
+var preventSlideIncrement;
+var preventSlideDecrement;
+
 function onLayoutWheel(e) {
     let layoutTimer;
-    let preventSlideIncrement;
-    let preventSlideDecrement;
 
     if (e.ctrlKey)
         return;
@@ -23,10 +27,12 @@ function onLayoutWheel(e) {
 
     let slides = document.getElementsByClassName("slide");
     let currentSlideIndex;
+    let minDelta = 50000;
     for (var i = 0; i < slides.length; i++) {
-        if (Math.abs(slides[i].getBoundingClientRect().y) < 100) {
+        let delta = Math.abs(slides[i].getBoundingClientRect().y);
+        if (delta < minDelta) {
             currentSlideIndex = i;
-            break;
+            minDelta = delta;
         }
     }
 
@@ -63,6 +69,11 @@ function onSlideWheel(e) {
 
     if (e.ctrlKey)
         return;
+
+    if (!preventSlideDecrement || !preventSlideIncrement) {
+        e.preventDefault();
+        return;
+    }
 
     var slide = e.currentTarget;
     let atBottom = (slide.scrollHeight - slide.scrollTop - slide.clientHeight) < 1;
