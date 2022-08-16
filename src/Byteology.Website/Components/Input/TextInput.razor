@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+
+@inherits InputText
+
+<div @attributes=AdditionalAttributes class=@Class>
+    <label for="@_id" class="font-bold text-detail">@Label</label>
+    <input
+        @bind="CurrentValueAsString"
+        @bind:event="onchange"
+        id="@_id"
+        type="text"
+        placeholder="@Placeholder"
+        class=@($@"
+            block w-full overflow-hidden pl-4
+            transtion-all duration-500
+            bg-transparent text-detail
+            border-b-2 border-solid border-accent
+            placeholder:italic
+            hover:border-accent-light
+            invalid:border-error
+            focus:!border-accent-light {_themedClasses.Value} {CssClass}" )
+    />
+
+</div>
+
+
+@code {
+    private ThemedValue _themedClasses => new(() => Theme, light: "placeholder:text-grey-dark", dark: "placeholder:text-grey");
+}

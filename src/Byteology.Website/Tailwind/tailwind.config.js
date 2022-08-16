@@ -28,7 +28,8 @@ module.exports = {
                 DEFAULT: '#d9d9d9',
                 dark: '#959595',
                 light: '#f2f2f2'
-            }
+            },
+            error: "#ff4040"
         },
         fontSize: {
             h1:     ['2.5rem', { letterSpacing: '0.10rem', lineHeight: '1.1'} ],
@@ -63,6 +64,7 @@ module.exports = {
             addVariant('enter', '&.entered-screen');
             addVariant('hocus', ['&:hover', '&:focus', '&:focus-within']);
             addVariant('parent-enter', '.entered-screen > &');
+            addVariant('invalid', '&.invalid')
         }),
     ],
 }

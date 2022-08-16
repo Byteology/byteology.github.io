@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+
+@inherits InputTextArea
+
+<div @attributes=AdditionalAttributes class=@Class>
+    <label for="@_id" class="font-bold text-detail">@Label</label>
+
+    <div 
+        class="
+            grid mt-2
+            after:whitespace-pre-wrap after:invisible after:pl-4
+            after:row-start-1 after:row-end-2 after:col-start-1 after:col-end-1
+            after:text-detail
+            after:border-b-2 after:border-solid after:border-accent 
+            after:content-[attr(data-replicated-value)_'_']"
+        data-replicated-value=@_value
+    >
+
+        <textarea 
+            @bind="CurrentValueAsString"
+            @bind:event="onchange"
+            @oninput="onValueChanged"
+            id="@_id"
+            placeholder="@Placeholder"
+            rows="1"
+            class=@($@"
+                resize-none overflow-hidden pl-4
+                transtion-all duration-500
+                row-start-1 row-end-2 col-start-1 col-end-1
+                bg-transparent text-detail
+                border-b-2 border-solid border-accent
+                placeholder:italic
+                hover:border-accent-light
+                invalid:border-error
+                focus:!border-accent-light {_themedClasses.Value} {CssClass}" )
+        />
+
+    </div>
+</div>
+
+
+@code {
+    private ThemedValue _themedClasses => new(() => Theme, light: "placeholder:text-grey-dark", dark: "placeholder:text-grey");
+}

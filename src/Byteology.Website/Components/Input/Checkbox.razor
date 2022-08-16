@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+
+@inherits InputCheckbox
+
+<div @attributes=AdditionalAttributes class=@($"flex gap-4 {Class}" )>
+    <input 
+        @bind="CurrentValue"
+        @bind:event="onchange"
+        id="@_id"
+        type="checkbox"
+        class=@($@"
+            appearance-none 
+            flex-none self-center w-6 h-6 
+            transition-all duration-500
+            border-2 border-accent 
+            hover:border-accent-light focus:!border-accent-light invalid:border-error
+            before:inline-block before:w-[40%] before:h-[60%] 
+            checked:before:border-b-2 checked:before:border-r-2 
+            before:border-solid
+            before:left-[30%] before:-top-[15%] before:relative 
+            before:rotate-45 {_themedClasses.Value} {CssClass}" )/>
+
+    <label 
+        for="@_id"
+        class="text-[0.750rem] cursor-pointer @_labelClasses.Value">
+            @Label
+    </label>
+</div>
+
+@code {
+    private ThemedValue _themedClasses => new(() => Theme, light: "before:border-dark", dark: "before-border-light");
+    private ThemedValue _labelClasses => new(() => Theme, light: "text-dark", dark: "text-light");
+}
