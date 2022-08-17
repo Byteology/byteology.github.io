@@ -1,59 +1,24 @@
 ﻿@using Byteology.Website.Components.Input
 @using Microsoft.AspNetCore.Components.Forms
-@using System.ComponentModel.DataAnnotations
 
 <div class="p-8 bg-dark text-light space-y-8">
     <h1 class="text-h3 font-bold text-secondary text-center">Here's to working together</h1>
 
     <EditForm 
-        Model="_formModel" 
+        Model="_inquiryModel" 
         OnValidSubmit="OnSubmit"
         class="space-y-8">
 
         <DataAnnotationsValidator />
-    
 
-        <TextInput Label="Name" Placeholder="e.g. John Doe" @bind-Value=_formModel.Name />
-        <TextInput Label="Email" Placeholder="e.g. exaple@mail.com" @bind-Value=_formModel.Email />
-        <TextInput Label="Phone (optional)" Placeholder="e.g. 123-456-7890" @bind-Value=_formModel.Phone />
-        <TextArea Label="Message" Placeholder="Type your message here..." @bind-Value=_formModel.Message />
-        <Checkbox Label="I freely give my consent to have my personal information processed for the purpose of receiving feedback or solicited content." @bind-Value=_formModel.Consent />
+        <TextInput Label="Name" Placeholder="e.g. John Doe" @bind-Value=_inquiryModel.Name />
+        <TextInput Label="Email" Placeholder="e.g. exaple@mail.com" @bind-Value=_inquiryModel.Email />
+        <TextInput Label="Phone (optional)" Placeholder="e.g. 123-456-7890" @bind-Value=_inquiryModel.Phone />
+        <TextArea Label="Message" Placeholder="Type your message here..." @bind-Value=_inquiryModel.Message />
+        <Checkbox Label="I freely give my consent to have my personal information processed for the purpose of receiving feedback or solicited content." @bind-Value=_inquiryModel.Consent />
 
         <SubmitButton Label="Submit" class="block w-full" />
 
     </EditForm>
 
 </div>
-
-
-
-
-
-
-@code {
-    private FormModel _formModel = new();
-
-    private void OnSubmit()
-    {
-
-    }
-
-    class FormModel
-    {
-        [Required]
-        public string? Name { get; set; }
-
-        [Required]
-        [EmailAddress]
-        public string? Email { get; set; }
-
-        public string? Phone { get; set; }
-
-        [Required]
-        public string? Message { get; set; }
-
-        [Range(typeof(bool), "true", "true")]
-        public bool Consent { get; set; }
-    }
-
-}
