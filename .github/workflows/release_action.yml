@@ -16,6 +16,10 @@ jobs:
     
     - name: Checkout
       uses: actions/checkout@v2
+
+    # Fills the configuration with some not so secret secrets
+    - name: Change base-tag in index.html from / to BlazorGitHubPagesDemo
+      run: sed -i 's/GD_INQUIRY_URL/${{ secrets.GD_INQUIRY_URL }}/g' src/Byteology.Website/Config.cs
       
     - name: Download Tailwind CLI
       run: |
