@@ -28,7 +28,7 @@
         {
             <div class="@(_selectedIndex == i ?
                             "h-full transition-[opacity,_left] left-0 duration-[1s,_0.5s] opacity-100" :
-                            "invisible absolute -left-8 opacity-0")">
+                            "invisible fixed -left-8 opacity-0")">
                 @Body(Items[i])
             </div>
         }

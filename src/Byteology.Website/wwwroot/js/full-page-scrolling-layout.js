@@ -70,7 +70,7 @@ function onSlideWheel(e) {
     if (e.ctrlKey)
         return;
 
-    if (!preventSlideDecrement || !preventSlideIncrement) {
+    if (preventSlideDecrement || preventSlideIncrement) {
         e.preventDefault();
         return;
     }

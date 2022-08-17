@@ -2,6 +2,7 @@ let plugin = require('tailwindcss/plugin')
 
 module.exports = {
     content: ["../**/*.{razor,html,cshtml}"],
+    darkMode: 'class',
 
     theme: {
         screens: {
@@ -36,7 +37,8 @@ module.exports = {
             h2:     ['2rem', { letterSpacing: '0.10rem', lineHeight: '1.1'} ],
             h3:     ['1.5rem', { letterSpacing: '0.10rem', lineHeight: '1.1'} ],
             body:   ['1rem', { letterSpacing: '0.10rem', lineHeight: '1.5'} ],
-            detail: ['0.875rem', { letterSpacing: '0.10rem', lineHeight: '1.5'} ],
+            detail: ['0.875rem', { letterSpacing: '0.10rem', lineHeight: '1.5' }],
+            footnote: ['0.75rem', { letterSpacing: '0.10rem', lineHeight: '1.5' }],
         },
         extend: {
             fontFamily: {

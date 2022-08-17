@@ -13,6 +13,8 @@
 
     * {
         @apply relative;
+        @apply selection:text-light;
+        @apply selection:bg-accent;
     }
 
     *:focus {
