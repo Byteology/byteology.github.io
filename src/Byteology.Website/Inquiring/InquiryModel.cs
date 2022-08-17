@@ -8,7 +8,7 @@ public class InquiryModel
     public string? Name { get; set; }
 
     [Required]
-    [EmailAddress]
+    [RegularExpression(@"^[\w-_]+(\.[\w!#$%'*+\/=?\^`{|}]+)*@((([\-\w]+\.)+[a-zA-Z]{2,20})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$")]
     public string? Email { get; set; }
 
     public string? Phone { get; set; }
@@ -18,4 +18,6 @@ public class InquiryModel
 
     [Range(typeof(bool), "true", "true")]
     public bool Consent { get; set; }
+
+    public string? Honeycomb { get; set; }
 }

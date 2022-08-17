@@ -7,10 +7,18 @@ public partial class Contact : ComponentBase
     [Inject]
     private IInquiryService _inquiryService { get; set; } = default!;
 
-    private InquiryModel _inquiryModel = new();
+    private readonly InquiryModel _inquiryModel = new();
 
-    private async Task OnSubmit()
+    private async Task onSubmit()
     {
-        bool result = await _inquiryService.SendInquiryAsync(_inquiryModel);
+        if (!string.IsNullOrEmpty(_inquiryModel.Honeycomb))
+            return;
+
+        bool result = false;
+        try
+        {
+            result = await _inquiryService.SendInquiryAsync(_inquiryModel);
+        }
+        catch { /* We don't want to expose details about the error. */ }
     }
 }

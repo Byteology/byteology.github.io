@@ -15,9 +15,6 @@ await builder.Build().RunAsync();
 // This method is required by the prerenderer
 static void ConfigureServices(IServiceCollection services)
 {
-    services.AddTransient<IInquiryService, GoogleDriveInquiryService>();
-    services.AddHttpClient<IInquiryService, GoogleDriveInquiryService>(client =>
-    {
-        client.BaseAddress = new Uri(Config.GoogleDriveInquiryServiceUrl);
-    });
+    services.AddScoped<IInquiryService, GoogleDriveInquiryService>();
+    services.AddHttpClient<IInquiryService, GoogleDriveInquiryService>();
 }

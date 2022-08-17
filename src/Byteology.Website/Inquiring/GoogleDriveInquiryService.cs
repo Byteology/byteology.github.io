@@ -22,7 +22,7 @@ public class GoogleDriveInquiryService : IInquiryService
         };
 
         FormUrlEncodedContent content = new(payload);
-        HttpResponseMessage response = await _httpClient.PostAsync("", content);
+        HttpResponseMessage response = await _httpClient.PostAsync(Config.GoogleDriveInquiryServiceUrl, content);
 
         bool result = response.IsSuccessStatusCode;
         return result;
