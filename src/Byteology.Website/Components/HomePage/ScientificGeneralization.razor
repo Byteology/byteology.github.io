@@ -1,9 +1,9 @@
-﻿<div class="p-8 bg-backdrop 
+﻿<div class="p-8 bg-bg text-fg
             grid grid-cols-1 laptop:grid-cols-2 gap-8 content-center">
 
     <div class="col-start-1
                 text-h3 font-bold
-                [&_strong]:text-passive">
+                [&_strong]:text-emph">
 
         @(new MarkupString(Markdown.ToHtml(Model.Introduction)))
 
@@ -12,8 +12,17 @@
     <Timeline Items="@Model.Timeline.Select(x => new MarkupString(Markdown.ToHtml(x))).ToArray()"
               class="col-start-1 row-span-1 laptop:col-start-2 laptop:row-span-2"/>
 
-    <LinkButton Text="@Model.AdditionalInfoText" 
-                Url="@Model.AboutUsUrl" 
-                Type="LinkButton.ButtonType.Primary" 
-                class="col-start-1 self-end text-detail p-2" />
+
+    <a 
+        href="@Model.AboutUsUrl"
+        class="col-start-1 self-end p-2
+                text-detail font-bold uppercase text-center text-accent-fg
+                bg-accent
+                transition-normal
+                hocus:bg-accent-alt">
+
+        @Model.AdditionalInfoText
+
+    </a>
+
 </div>

@@ -1,9 +1,9 @@
 ﻿<div class="w-full
-            bg-backdrop
+            bg-bg text-fg
             p-8 space-y-8 @Class"
      @attributes=InputAttributes>
 
-    <h1 class="text-h2 font-bold text-passive text-center">@Model.Title</h1>
+    <h1 class="text-h2 font-bold text-emph text-center">@Model.Title</h1>
 
     <TabbedWindow Items="Model.Services" 
                   Context="service">
@@ -24,10 +24,16 @@
 
                 <p class="text-body">@service.Description</p>
 
-                <LinkButton Text="@service.AdditionalInfoText" 
-                    Url="@service.DetailsUrl" 
-                    Type=@LinkButton.ButtonType.Primary
-                    class="text-detail p-1"/>
+                <a 
+                    href="@service.DetailsUrl"
+                    class="p-1
+                           text-detail font-bold uppercase text-center text-accent-fg
+                           bg-accent
+                           transition-normal
+                           hocus:bg-accent-alt">
+
+                    @service.AdditionalInfoText
+                </a>
             </div>
         </Body>
     </TabbedWindow>

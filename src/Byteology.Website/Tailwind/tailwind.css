@@ -4,17 +4,17 @@
 
 @layer base {
     body {
-        @apply bg-backdrop;
-        @apply text-backdrop-fg;
         @apply text-body;
         @apply font-sans;
         @apply break-words;
+
+        @apply dark;
     }
 
     * {
         @apply relative;
-        @apply selection:text-active-fg;
-        @apply selection:bg-active;
+        @apply selection:text-accent-fg;
+        @apply selection:bg-accent;
     }
 
     *:focus {
@@ -24,49 +24,57 @@
 
 @layer components {
     .link {
-        @apply decoration-active;
-        @apply decoration-2;
         @apply underline;
         @apply underline-offset-2;
-        @apply text-backdrop-fg;
+        @apply decoration-2;
+        @apply decoration-accent;
+        @apply text-fg;
         @apply transition-fast;
-        @apply hocus:text-active-hover;
-        @apply hocus:decoration-active-hover;
+        @apply hocus:text-accent-alt;
+        @apply hocus:decoration-accent-alt;
     }
 }
 
 @layer utilities {
 
     .dark {
-        --clr-active: 88 59 226;
-        --clr-active-hover: 133 113 234;
-        --clr-active-fg: 255 255 255;
+        --clr-accent: 88 59 226;
+        --clr-accent-alt: 133 113 234;
+        --clr-accent-fg: 255 255 255;
 
-        --clr-passive: 96 202 239;
-        --clr-passive-hover: 162 224 246;
-        --clr-passive-fg: 40 40 40;
+        --clr-secondary: 60 182 226;
+        --clr-secondary-fg: 255 255 255;
 
-        --clr-backdrop: 3 14 40;
-        --clr-backdrop-fg: 255 255 255;
-        --clr-backdrop-fg-inactive: 217 217 217;
+        --clr-emph: 60 182 226;
 
-        --clr-error: 255 119 119;
+        --clr-bg: 3 14 40;
+        --clr-fg: 255 255 255;
+        --clr-fg-inactive: 217 217 217;
+
+        --clr-error: 226 60 60;
+
+        @apply bg-bg;
+        @apply text-fg;
     }
 
     .light {
-        --clr-active: 88 59 226;
-        --clr-active-hover: 133 113 234;
-        --clr-active-fg: 255 255 255;
+        --clr-accent: 88 59 226;
+        --clr-accent-alt: 164 149 239;
+        --clr-accent-fg: 255 255 255;
 
-        --clr-passive: 22 162 233;
-        --clr-passive-hover: 17 127 167;
-        --clr-passive-fg: 255 255 255;
+        --clr-secondary: 60 182 226;
+        --clr-secondary-fg: 255 255 255;
 
-        --clr-backdrop: 255 255 255;
-        --clr-backdrop-fg: 3 14 40;
-        --clr-backdrop-fg-inactive: 7 33 95;
+        --clr-emph: 88 59 226;
 
-        --clr-error: 255 119 119;
+        --clr-bg: 255 255 255;
+        --clr-fg: 3 14 40;
+        --clr-fg-inactive: 7 33 95;
+
+        --clr-error: 226 60 60;
+
+        @apply bg-bg;
+        @apply text-fg;
     }
 
     .transition-fast {

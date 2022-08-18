@@ -1,9 +1,9 @@
 ﻿<div class="w-full max-w-[22rem]
-            bg-backdrop
+            bg-bg text-fg
             space-y-8 p-8 @Class"
      @attributes=InputAttributes>
 
-    <h1 class="text-h3 font-bold text-passive text-center">@Model.Title</h1>
+    <h1 class="text-h3 font-bold text-center text-emph">@Model.Title</h1>
 
     <div class="flex flex-col gap-4">
 
@@ -14,10 +14,10 @@
                         box-content w-full 
                         transition-normal
                         border-solid border-2
-                        flex flex-col gap-8 justify-between no-scrollbar
+                        flex flex-col gap-2 justify-between no-scrollbar
                         @(item.Selected ? 
-                            "overflow-auto border-active bg-active h-64 py-4" : 
-                            "overflow-hidden cursor-pointer border-passive group-focus:border-active-hover group-hover:border-active-hover h-8")" >
+                            "overflow-auto bg-accent border-accent h-64 py-4" : 
+                            "overflow-hidden cursor-pointer border-secondary group-focus:border-accent-alt group-hover:border-accent-alt h-8")" >
 
                     <div class="
                             p-1
@@ -28,17 +28,25 @@
                                 "h-8 text-detail")" >
 
                         <img class="transition-normal @(item.Selected ? "h-8" : "h-6")" src="@item.Value.IconSrc" alt="@item.Value.Title" /> 
-                        <p class="@(item.Selected ? "text-active-fg" : "text-backdrop-fg") font-bold">@item.Value.Title</p>
+                        <p class="text-accent-fg font-bold">@item.Value.Title</p>
 
                     </div>
 
-                    <p class="text-detail text-active-fg mx-4">@item.Value.Description</p>
+                    <p class="text-detail text-accent-fg mx-4">@item.Value.Description</p>
 
-                    <LinkButton Text="@item.Value.AdditionalInfoText" 
-                                Url="@item.Value.DetailsUrl" 
-                                Type=LinkButton.ButtonType.Secondary
-                                class="text-detail text-active-fg p-1 mx-4"
-                                tabindex="@(item.Selected ? 0 : -1)"/>
+                    <a 
+                        href="@item.Value.DetailsUrl"
+                        tabindex="@(item.Selected ? 0 : -1)"
+                        class="mx-4 p-1
+                                text-detail font-bold uppercase text-center text-accent-fg
+                                border-2 border-solid border-secondary
+                                transition-normal
+                                hocus:bg-secondary">
+
+                        @item.Value.AdditionalInfoText
+
+                    </a>
+
                 </div>
 
             </ItemTemplate>

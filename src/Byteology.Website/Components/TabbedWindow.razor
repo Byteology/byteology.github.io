@@ -13,8 +13,8 @@
                             border-solid border-2
                             overflow-hidden
                             @(item.Selected ?
-                                "border-active" :
-                                "border-passive group-hover:border-active-hover group-focus:border-active-hover")" >
+                                "border-accent" :
+                                "border-secondary group-hover:border-accent-alt group-focus:border-accent-alt")" >
 
                     @TabContent(new RadioButtonsList<TItem>.Context(item.Value, item.Selected))
 
@@ -23,7 +23,7 @@
         </RadioButtonsList>
     </div>
 
-    <div class="bg-active h-full"></div>
+    <div class="bg-accent h-full"></div>
 
     <div>
         @for(int i = 0; i < Items.Count; i++)
