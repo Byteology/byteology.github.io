@@ -33,6 +33,18 @@
         @apply hocus:text-accent-alt;
         @apply hocus:decoration-accent-alt;
     }
+
+    .button {
+        @apply text-detail;
+        @apply font-bold;
+        @apply uppercase;
+        @apply text-center;
+        @apply text-detail;
+        @apply text-accent-fg;
+        @apply transition-normal;
+        @apply bg-accent;
+        @apply hocus:bg-accent-alt;
+    }
 }
 
 @layer utilities {
@@ -97,11 +109,11 @@
         scrollbar-width: none; /* Firefox */
     }
 
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-            width: 0;
-            height: 0;
-        }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
 
     .uppercase {
         letter-spacing: 0.15em;
