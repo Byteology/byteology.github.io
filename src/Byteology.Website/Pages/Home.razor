@@ -7,21 +7,26 @@
 
 <PageTitle>@Model.Title</PageTitle>
 
-<Slide>
-    <Logo class="mx-auto" FadeIn=true />
-</Slide>
+<div class="page dark w-full h-full overflow-hidden
+            bg-center bg-cover bg-fixed bg-[url('/images/background.jpeg')]">
 
-<Slide>
-    <ScientificGeneralization Model="Model.ScientificGeneralization" />
-</Slide>
+    <Slide>
+        <Logo class="mx-auto" FadeIn=true />
+    </Slide>
 
-<Slide>
-    <ServicesList Model="Model.ServicesList" />
-</Slide>
+    <Slide>
+        <ScientificGeneralization Model="Model.ScientificGeneralization" />
+    </Slide>
 
-<Slide>
-    <Contact />
-</Slide>
+    <Slide>
+        <ServicesList Model="Model.ServicesList" />
+    </Slide>
+
+    <Slide>
+        <Contact />
+    </Slide>
+
+</div>
 
 @*
     

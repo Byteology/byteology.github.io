@@ -3,18 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply text-body;
-        @apply font-sans;
-        @apply break-words;
-
-        @apply dark;
-    }
-
     * {
         @apply relative;
-        @apply selection:text-accent-fg;
-        @apply selection:bg-accent;
     }
 
     *:focus {
@@ -23,6 +13,15 @@
 }
 
 @layer components {
+    .page {
+        @apply text-body;
+        @apply font-sans;
+        @apply break-words;
+
+        @apply selection:text-accent-fg;
+        @apply selection:bg-accent-alt;
+    }
+
     .link {
         @apply underline;
         @apply underline-offset-2;
