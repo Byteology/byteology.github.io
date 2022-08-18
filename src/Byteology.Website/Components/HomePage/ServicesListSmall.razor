@@ -1,4 +1,6 @@
-﻿<div class="w-full max-w-[22rem]
+﻿@using Byteology.Website.Components.Input
+
+<div class="w-full max-w-[22rem]
             bg-bg text-fg
             space-y-8 p-8 @Class"
      @attributes=InputAttributes>
@@ -28,7 +30,7 @@
                                 "h-8 text-detail")" >
 
                         <img class="transition-normal @(item.Selected ? "h-8" : "h-6")" src="@item.Value.IconSrc" alt="@item.Value.Title" /> 
-                        <p class="text-accent-fg font-bold">@item.Value.Title</p>
+                        <p class="@(item.Selected ? "text-accent-fg" : "text-fg") font-bold transition-colors duration-500">@item.Value.Title</p>
 
                     </div>
 

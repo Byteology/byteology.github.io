@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+    body {
+        background-color: rgb(3 14 40);
+    }
+    
     * {
-        @apply relative;
+        @apply relative
     }
 
     *:focus {
@@ -118,7 +122,10 @@
         letter-spacing: 0.15em;
     }
 
-    .h-vvp {
-        height: calc(100 * var(--vh, 1vh));
+    .fixed-banner{
+        @apply bg-center; 
+        @apply bg-cover; 
+        @apply bg-fixed;
+        @apply bg-[url('/images/background.jpeg')];
     }
 }

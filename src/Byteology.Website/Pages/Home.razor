@@ -1,14 +1,11 @@
 ﻿@page "/"
-@layout FullPageScrollingLayout
 @inherits BasePage<HomePageModel>
 
 @using Byteology.Website.Components.HomePage;
-@using Byteology.Website.FullPageScrolling;
 
 <PageTitle>@Model.Title</PageTitle>
 
-<div class="page dark w-full h-full overflow-hidden
-            bg-center bg-cover bg-fixed bg-[url('/images/background.jpeg')]">
+<PageRoot FullPageScrolling=true DarkMode=true class="fixed-banner">
 
     <Slide>
         <Logo class="mx-auto" FadeIn=true />
@@ -26,41 +23,7 @@
         <Contact />
     </Slide>
 
-</div>
-
-@*
-    
-    <section class="snap-start snap-always h-screen bg-light text-dark">
-        <h1>Here’s what you can expect with Byteology</h1>
-        <p>At Byteology we believe in crafting and providing flexible solutions that meet your specific business needs</p>
-        <p>Here’s the modular approach that we have adopted and that can be easily customized:</p>
-
-        <h2><span>01</span>Conducting a product discovery</h2>
-        <ul>
-            <li>Free of charge</li>
-            <li>Takes 1-2 weeks</li>
-        </ul>
-
-        <h2><span>02</span>Creation of custom offer</h2>
-        <p>The offer includes</p>
-        <ul>
-            <li>Technical development plan</li>
-            <li>Timeline</li>
-            <li>A month-to-month price offer</li>
-        </ul>
-
-        <h2><span>03</span>Delivery of demo</h2>
-        <p>At the end of every month, you will be presented with a demo</p>
-
-        <p>If you are NOT satisfied with the demo, we end our relationship without you having to pay</p>
-        <p>If you ARE satisfied with the demo, we continue our partnership</p>
-
-    </section>
-
-    <section class="snap-start snap-always h-screen bg-light text-dark">
-        <h1>Here's to working together</h1>
-    </section>
-</div>*@
+</PageRoot>
 
 @code {
     public Home() : base("home-page-data.json") { }

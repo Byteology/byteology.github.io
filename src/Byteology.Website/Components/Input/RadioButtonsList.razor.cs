@@ -1,4 +1,4 @@
-﻿namespace Byteology.Website.Components;
+﻿namespace Byteology.Website.Components.Input;
 
 public partial class RadioButtonsList<TItem> : ComponentBase
 {

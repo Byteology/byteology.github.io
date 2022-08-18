@@ -1,0 +1,18 @@
+﻿<div id="page" 
+     tabindex="0"
+     class="page @(DarkMode ? "dark" : "light")
+            overflow-x-hidden overflow-y-auto
+            @(FullPageScrolling ? 
+                "w-full h-full snap-y snap-mandatory no-scrollbar space-y-64" :
+                "min-h-screen")
+            @Class"
+     @attributes=AdditionalAttributes >
+
+    @ChildContent
+
+    @if (FullPageScrolling)
+    {
+        <div class="block !mt-0 h-8" /> 
+    }
+
+</div>

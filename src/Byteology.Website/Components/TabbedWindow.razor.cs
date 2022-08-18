@@ -1,5 +1,7 @@
 ﻿namespace Byteology.Website.Components;
 
+using Byteology.Website.Components.Input;
+
 public partial class TabbedWindow<TItem> : ComponentBase
 {
     private int _selectedIndex = 0;
