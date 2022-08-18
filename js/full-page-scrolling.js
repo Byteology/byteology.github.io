@@ -2,8 +2,8 @@
     preventSlideIncrement = false;
     preventSlideDecrement = false;
 
-    document.getElementById("layout").focus();
-    document.getElementById("layout").addEventListener("wheel", onLayoutWheel, { passive: false });
+    document.getElementById("page").focus();
+    document.getElementById("page").addEventListener("wheel", onPageWheel, { passive: false });
 
     let slides = document.getElementsByClassName("slide");
     for (var i = 0; i < slides.length; i++)
@@ -13,7 +13,7 @@
 var preventSlideIncrement;
 var preventSlideDecrement;
 
-function onLayoutWheel(e) {
+function onPageWheel(e) {
     let layoutTimer;
 
     if (e.ctrlKey)
