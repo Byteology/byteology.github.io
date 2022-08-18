@@ -6,6 +6,7 @@
 .timeline > li > .bullet[b-5gqou3bbw5]::before {
     counter-increment: timeline-counter;
     content: counter(timeline-counter);
+    overflow-wrap:normal;
 }
 
 .timeline > li:nth-child(-n+9) > .bullet[b-5gqou3bbw5]::before {
