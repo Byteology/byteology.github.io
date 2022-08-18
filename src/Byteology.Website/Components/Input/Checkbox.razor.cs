@@ -6,9 +6,6 @@ public partial class Checkbox : InputCheckbox
 {
     private readonly Guid _id = Guid.NewGuid();
 
-    [CascadingParameter]
-    public Theme Theme { get; set; }
-
     [Parameter]
     public string? Label { get; set; }
 

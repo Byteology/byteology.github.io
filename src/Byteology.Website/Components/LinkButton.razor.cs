@@ -2,9 +2,6 @@
 
 public partial class LinkButton
 {
-    [CascadingParameter]
-    public Theme Theme { get; set; }
-
     [Parameter(CaptureUnmatchedValues = true)]
     public Dictionary<string, object>? InputAttributes { get; set; }
 
@@ -24,6 +21,5 @@ public partial class LinkButton
     {
         Primary,
         Secondary,
-        Tertiary
     }
 }

@@ -2,9 +2,6 @@
 
 public partial class Timeline
 {
-    [CascadingParameter]
-    public Theme Theme { get; set; }
-
     [Parameter(CaptureUnmatchedValues = true)]
     public Dictionary<string, object>? InputAttributes { get; set; }
 

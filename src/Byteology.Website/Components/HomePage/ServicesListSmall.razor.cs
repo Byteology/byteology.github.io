@@ -2,8 +2,6 @@
 
 public partial class ServicesListSmall : ComponentBase
 {
-    private int _selectedTabIndex;
-
     [Parameter]
     public ServicesListModel Model { get; set; } = default!;
 
@@ -20,16 +18,5 @@ public partial class ServicesListSmall : ComponentBase
 
         if (Model == null)
             throw new ArgumentNullException(nameof(Model));
-    }
-
-    private void onClicked(int tabIndex)
-    {
-        _selectedTabIndex = tabIndex;
-    }
-
-    private void onKeyPressed(KeyboardEventArgs args, int tabIndex)
-    {
-        if (args.Code == "Enter" || args.Code == "NumpadEnter")
-            _selectedTabIndex = tabIndex;
     }
 }

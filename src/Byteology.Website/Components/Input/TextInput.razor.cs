@@ -6,9 +6,6 @@ public partial class TextInput : InputText
 {
     private readonly Guid _id = Guid.NewGuid();
 
-    [CascadingParameter]
-    public Theme Theme { get; set; }
-
     [Parameter]
     public string? Placeholder { get; set; }
 

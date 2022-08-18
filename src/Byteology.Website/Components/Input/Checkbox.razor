@@ -8,17 +8,17 @@
         @bind:event="onchange"
         id="@_id"
         type="checkbox"
-        class=@($@"
-            appearance-none text-footnote
+        class="
+            appearance-none text-[1rem]
             flex-none self-center w-6 h-6 
-            transition-all duration-500
-            border-2 border-accent 
-            hover:border-accent-light focus:!border-accent-light invalid:border-error
+            transition-normal
+            border-2 border-active 
+            hover:border-active-hover focus:!border-active-hover invalid:border-error
             before:inline-block before:w-[40%] before:h-[60%]
             checked:before:border-b-2 checked:before:border-r-2 
-            before:border-solid
-            before:left-[30%] before:top-[5%] before:relative 
-            before:rotate-45 {_themedClasses.Value} {CssClass}" )/>
+            before:border-solid before:border-backdrop-fg
+            before:left-[30%] before:-top-[10%] before:relative 
+            before:rotate-45 @CssClass" />
 
     <label 
         for="@_id"
@@ -26,7 +26,3 @@
             @Label
     </label>
 </div>
-
-@code {
-    private ThemedValue _themedClasses => new(() => Theme, light: "before:border-dark", dark: "before:border-light");
-}

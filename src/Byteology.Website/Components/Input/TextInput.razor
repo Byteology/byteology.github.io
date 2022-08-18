@@ -10,20 +10,15 @@
         id="@_id"
         type="text"
         placeholder="@Placeholder"
-        class=@($@"
+        class="
             block w-full overflow-hidden pl-4
-            transtion-all duration-500
+            transition-normal
             bg-transparent text-detail
-            border-b-2 border-solid border-accent
+            border-b-2 border-solid border-active
             placeholder:italic
-            hover:border-accent-light
+            hover:border-active-hover
             invalid:border-error
-            focus:!border-accent-light {_themedClasses.Value} {CssClass}" )
-    />
+            focus:!border-active-hover 
+            placeholder:text-backdrop-fg-inactive @CssClass" />
 
 </div>
-
-
-@code {
-    private ThemedValue _themedClasses => new(() => Theme, light: "placeholder:text-grey-dark", dark: "placeholder:text-grey");
-}

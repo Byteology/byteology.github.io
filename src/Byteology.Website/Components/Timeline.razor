@@ -1,19 +1,23 @@
 ﻿<div @attributes="InputAttributes">
-    <ol class="timeline h-full space-y-[1em] flex flex-col @_listThemedClasses.Value">
+    <ol class="timeline h-full space-y-[1em] flex flex-col">
         @for (int i = 0; i < Items.Length; i++)
         {
             <li class="group flex gap-[1.5em] @(i != Items.Length - 1 ? "grow" : "")">
-                <div class="bullet pt-[0.125em] font-bold text-[0.875em] transition group-hover:scale-105 @_bulletThemedClasses.Value" />
-                <div class="line absolute left-[calc(0.875ch_-_1px)] top-[1.5em] w-[2px] h-[calc(100%_-_0.5em)] transition @_lineThemedClasses.Value" />
-                <div class="group-hover:scale-105 transition">@Items[i]</div>
+
+                <div class="
+                        bullet pt-[0.125em] 
+                        text-[0.875em] font-bold text-passive 
+                        transition-fast 
+                        group-hover:scale-105 group-hover:text-passive-hover" />
+
+                <div class="
+                        line absolute left-[calc(0.875ch_-_1px)] top-[1.5em] w-[2px] h-[calc(100%_-_0.5em)]
+                        bg-passive
+                        transition-fast 
+                        group-hover:bg-passive-hover" />
+
+                <div class="transition-fast group-hover:scale-105">@Items[i]</div>
             </li>
         }
     </ol>
 </div>
-
-@code 
-{
-    private ThemedValue _listThemedClasses => new(() => Theme, "text-dark", "text-light");
-    private ThemedValue _bulletThemedClasses => new(() => Theme, "text-accent group-hover:text-secondary", "text-secondary group-hover:text-accent-light");
-    private ThemedValue _lineThemedClasses => new(() => Theme, "bg-accent group-hover:bg-secondary", "bg-secondary group-hover:bg-accent-light");
-}

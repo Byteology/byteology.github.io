@@ -1,28 +1,21 @@
 ﻿<div class="flex items-center
             border-solid border-2
-            transition duration-500
+            transition-normal
             uppercase text-center font-bold
             cursor-pointer
-            @_themedClasses.Value @Class">
+            @getTypeClasses() @Class" >
     <a class="block w-full" href="@Url" @attributes="InputAttributes">@Text</a>
 </div>
 
 @code 
 {
-    private ThemedValue _themedClasses => new(() => Theme,
-        light: Type switch
+    private string getTypeClasses()
+    {
+        return Type switch
         {
-            ButtonType.Primary => "bg-accent border-accent text-light hocus:bg-accent-light hocus:border-accent-light",
-            ButtonType.Secondary => "bg-transparent border-accent text-accent hocus:bg-accent-light hocus:border-accent-light hocus:text-light",
-            ButtonType.Tertiary => "bg-transparent border-accent text-accent hocus:border-accent-light hocus:text-accent-light",
+            ButtonType.Primary => "bg-active border-active text-active-fg hocus:bg-active-hover hocus:border-active-hover",
+            ButtonType.Secondary => "bg-transparent border-passive hocus:bg-passive hocus:border-passive hocus:text-passive-fg",
             _ => string.Empty
-        },
-        dark: Type switch
-        {
-            ButtonType.Primary => "bg-accent border-accent text-light hocus:bg-accent-light hocus:border-accent-light",
-            ButtonType.Secondary => "bg-transparent border-secondary text-light hocus:bg-secondary hocus:border-secondary",
-            ButtonType.Tertiary => "bg-transparent border-secondary text-light hocus:border-accent-light",
-            _ => string.Empty
-        }
-    );
+        };
+    }
 }

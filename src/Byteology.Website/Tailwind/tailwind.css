@@ -4,8 +4,8 @@
 
 @layer base {
     body {
-        @apply bg-dark;
-        @apply text-light;
+        @apply bg-backdrop;
+        @apply text-backdrop-fg;
         @apply text-body;
         @apply font-sans;
         @apply break-words;
@@ -13,8 +13,8 @@
 
     * {
         @apply relative;
-        @apply selection:text-light;
-        @apply selection:bg-accent;
+        @apply selection:text-active-fg;
+        @apply selection:bg-active;
     }
 
     *:focus {
@@ -22,17 +22,78 @@
     }
 }
 
-    @layer utilities {
+@layer components {
+    .link {
+        @apply decoration-active;
+        @apply decoration-2;
+        @apply underline;
+        @apply underline-offset-2;
+        @apply text-backdrop-fg;
+        @apply transition-fast;
+        @apply hocus:text-active-hover;
+        @apply hocus:decoration-active-hover;
+    }
+}
+
+@layer utilities {
+
+    .dark {
+        --clr-active: 88 59 226;
+        --clr-active-hover: 133 113 234;
+        --clr-active-fg: 255 255 255;
+
+        --clr-passive: 96 202 239;
+        --clr-passive-hover: 162 224 246;
+        --clr-passive-fg: 40 40 40;
+
+        --clr-backdrop: 3 14 40;
+        --clr-backdrop-fg: 255 255 255;
+        --clr-backdrop-fg-inactive: 217 217 217;
+
+        --clr-error: 255 119 119;
+    }
+
+    .light {
+        --clr-active: 88 59 226;
+        --clr-active-hover: 133 113 234;
+        --clr-active-fg: 255 255 255;
+
+        --clr-passive: 22 162 233;
+        --clr-passive-hover: 17 127 167;
+        --clr-passive-fg: 255 255 255;
+
+        --clr-backdrop: 255 255 255;
+        --clr-backdrop-fg: 3 14 40;
+        --clr-backdrop-fg-inactive: 77 77 77;
+
+        --clr-error: 255 119 119;
+    }
+
+    .transition-fast {
+        @apply transition-all;
+        @apply duration-200;
+    }
+
+    .transition-normal {
+        @apply transition-all;
+        @apply duration-500;
+    }
+
+    .transition-slow {
+        @apply transition-all;
+        @apply duration-1000;
+    }
+
     .no-scrollbar {
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
     }
 
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-        width: 0;
-        height: 0;
-    }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            height: 0;
+        }
 
     .uppercase {
         letter-spacing: 0.15em;

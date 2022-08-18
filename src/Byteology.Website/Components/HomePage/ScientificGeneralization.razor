@@ -1,16 +1,16 @@
-﻿<div class="p-8 bg-dark text-light 
+﻿<div class="p-8 bg-backdrop 
             grid grid-cols-1 laptop:grid-cols-2 gap-8 content-center">
 
     <div class="col-start-1
                 text-h3 font-bold
-                [&_strong]:text-secondary">
+                [&_strong]:text-passive">
 
         @(new MarkupString(Markdown.ToHtml(Model.Introduction)))
 
     </div>
     
     <Timeline Items="@Model.Timeline.Select(x => new MarkupString(Markdown.ToHtml(x))).ToArray()"
-              class="col-start-1 row-span-1 laptop:col-start-2 laptop:row-span-2 text-body"/>
+              class="col-start-1 row-span-1 laptop:col-start-2 laptop:row-span-2"/>
 
     <LinkButton Text="@Model.AdditionalInfoText" 
                 Url="@Model.AboutUsUrl" 

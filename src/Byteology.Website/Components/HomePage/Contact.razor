@@ -1,24 +1,24 @@
 ﻿@using Byteology.Website.Components.Input
 @using Microsoft.AspNetCore.Components.Forms
 
-<div class="p-8 bg-dark text-light space-y-8">
-    <h1 class="text-h3 font-bold text-secondary text-center">Here's to working together</h1>
+<div class="p-8 bg-backdrop space-y-8">
+    <h1 class="text-h2 font-bold text-passive text-center">Here's to working together</h1>
 
     <div class="grid grid-cols-[2fr_3fr] gap-x-8">
-        <div class="text-detail space-y-8">
-            <p>Don't hesitate to reach out to us with any request or just to say hi and we will help you the best we can. We will get back to you within 2 business days.</p>
+        <div class="space-y-8">
+            <p class="text-body">Don't hesitate to reach out to us with any request or just to say hi and we will help you the best we can. We will get back to you within 2 business days.</p>
         
             <div class="flex flex-col">
 
-                <p class="text-secondary font-bold">Tsvetan Igov</p>
+                <p class="text-passive font-bold">Tsvetan Igov</p>
                 <p class="text-footnote font-bold mb-2">Founder of Byteology</p>
-                <a class="decoration-accent decoration-2 underline-offset-2 underline hocus:text-accent-light text-footnote" href="mailto:tsvetan.igov@byteology.net">tsvetan.igov@byteology.net</a>
-                <a class="decoration-accent decoration-2 underline-offset-2 underline hocus:text-accent-light text-footnote" href="tel:+359 876 535 938">+359 876 535 938</a>
+                <a class="link text-footnote" href="mailto:tsvetan.igov@byteology.net">tsvetan.igov@byteology.net</a>
+                <a class="link text-footnote" href="tel:+359 876 535 938">+359 876 535 938</a>
             </div>
 
             <div class="flex flex-col">
-                <p class="font-bold text-secondary">Or come visit us</p>
-                <p>5 Hristo Belchev str, Sofia, Bulgaria</p>
+                <p class="text-passive font-bold">Or come visit us</p>
+                <p class="text-footnote">5 Hristo Belchev str, Sofia, Bulgaria</p>
             </div>
         </div>
     
@@ -34,7 +34,7 @@
             <TextInput Label="Email" Placeholder="exaple@mail.com" @bind-Value=_inquiryModel.Email class="col-span-2 tablet:col-span-1"/>
             <TextInput Label="Phone (optional)" Placeholder="123-456-7890" @bind-Value=_inquiryModel.Phone class="col-span-2 tablet:col-span-1"/>
             <TextArea Label="Message" Placeholder="Type your message here..." @bind-Value=_inquiryModel.Message class="col-span-2"/>
-            <Checkbox Label="I freely give my consent to have my personal information processed for the purpose of receiving feedback or solicited content." @bind-Value=_inquiryModel.Consent class="col-span-2 text-footnote text-grey hocus:text-light transition-all duration-500"/>
+            <Checkbox Label="I freely give my consent to have my personal information processed for the purpose of receiving feedback or solicited content." @bind-Value=_inquiryModel.Consent class="col-span-2 text-footnote text-backdrop-fg-inactive hocus:text-backdrop-fg transition-fast"/>
             <TextInput Label="Honeycomb" Placeholder="Honeycomb" @bind-Value=_inquiryModel.Honeycomb class="hidden" />
         
             <SubmitButton Label="Submit" class="block w-full col-span-2" />

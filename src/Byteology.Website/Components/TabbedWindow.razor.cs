@@ -4,9 +4,6 @@ public partial class TabbedWindow<TItem> : ComponentBase
 {
     private int _selectedIndex = 0;
 
-    [CascadingParameter]
-    public Theme Theme { get; set; }
-
     [Parameter]
     public IReadOnlyList<TItem> Items { get; set; } = default!;
 

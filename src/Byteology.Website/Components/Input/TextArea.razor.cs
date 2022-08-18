@@ -8,9 +8,6 @@ public partial class TextArea : InputTextArea
 
     private string? _value;
 
-    [CascadingParameter]
-    public Theme Theme { get; set; }
-
     [Parameter]
     public string? Placeholder { get; set; }
 

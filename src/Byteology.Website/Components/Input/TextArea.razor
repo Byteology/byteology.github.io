@@ -11,10 +11,9 @@
             after:whitespace-pre-wrap after:invisible after:pl-4
             after:row-start-1 after:row-end-2 after:col-start-1 after:col-end-1
             after:text-detail
-            after:border-b-2 after:border-solid after:border-accent 
+            after:border-b-2 after:border-solid 
             after:content-[attr(data-replicated-value)_'_']"
-        data-replicated-value=@_value
-    >
+        data-replicated-value=@_value >
 
         <textarea 
             @bind="CurrentValueAsString"
@@ -23,22 +22,16 @@
             id="@_id"
             placeholder="@Placeholder"
             rows="1"
-            class=@($@"
+            class="
                 resize-none overflow-hidden pl-4
-                transtion-all duration-500
+                transition-normal
                 row-start-1 row-end-2 col-start-1 col-end-1
                 bg-transparent text-detail
-                border-b-2 border-solid border-accent
-                placeholder:italic
-                hover:border-accent-light
+                border-b-2 border-solid border-active
+                placeholder:italic placeholder:text-backdrop-fg-inactive
+                hover:border-active-hover
                 invalid:border-error
-                focus:!border-accent-light {_themedClasses.Value} {CssClass}" )
-        />
+                focus:!border-active-hover @CssClass" />
 
     </div>
 </div>
-
-
-@code {
-    private ThemedValue _themedClasses => new(() => Theme, light: "placeholder:text-grey-dark", dark: "placeholder:text-grey");
-}

@@ -1,36 +1,38 @@
 ﻿<div class="w-full max-w-[22rem]
-            bg-dark text-light
+            bg-backdrop
             space-y-8 p-8 @Class"
      @attributes=InputAttributes>
 
-    <h3 class="text-h3 font-bold text-secondary text-center">@Model.Title</h3>
+    <h1 class="text-h3 font-bold text-passive text-center">@Model.Title</h1>
 
     <div class="flex flex-col gap-4">
 
         <RadioButtonsList Items="Model.Services" Context="item">
             <ItemTemplate>
 
-                <div class="box-content w-full 
-                            transition-all duration-500
-                            border-solid border-2
-                            flex flex-col gap-8 justify-between no-scrollbar
+                <div class="
+                        box-content w-full 
+                        transition-normal
+                        border-solid border-2
+                        flex flex-col gap-8 justify-between no-scrollbar
+                        @(item.Selected ? 
+                            "overflow-auto border-active bg-active h-64 py-4" : 
+                            "overflow-hidden cursor-pointer border-passive group-focus:border-active-hover group-hover:border-active-hover h-8")" >
+
+                    <div class="
+                            p-1
+                            transition-normal
+                            flex items-center gap-4  
                             @(item.Selected ? 
-                                "overflow-auto border-accent bg-accent h-64 py-4" : 
-                                "overflow-hidden cursor-pointer border-secondary group-focus:border-accent-light group-hover:border-accent-light h-8")">
+                                "px-4 text-body" :
+                                "h-8 text-detail")" >
 
-                    <div class="p-1
-                                transition-all duration-500 
-                                flex items-center gap-4  
-                                @(item.Selected ? 
-                                    "px-4 text-body" :
-                                    "h-8 text-detail")">
-
-                        <img class="transition-all duration-500 @(item.Selected ? "h-8" : "h-6")" src="@item.Value.IconSrc" alt="@item.Value.Title" /> 
-                        <p class="font-bold">@item.Value.Title</p>
+                        <img class="transition-normal @(item.Selected ? "h-8" : "h-6")" src="@item.Value.IconSrc" alt="@item.Value.Title" /> 
+                        <p class="text-active-fg font-bold">@item.Value.Title</p>
 
                     </div>
 
-                    <p class="text-detail mx-4">@item.Value.Description</p>
+                    <p class="text-detail text-active-fg mx-4">@item.Value.Description</p>
 
                     <LinkButton Text="@item.Value.AdditionalInfoText" 
                                 Url="@item.Value.DetailsUrl" 
