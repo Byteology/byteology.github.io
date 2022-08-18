@@ -28,7 +28,7 @@
                                 "h-8 text-detail")" >
 
                         <img class="transition-normal @(item.Selected ? "h-8" : "h-6")" src="@item.Value.IconSrc" alt="@item.Value.Title" /> 
-                        <p class="text-active-fg font-bold">@item.Value.Title</p>
+                        <p class="@(item.Selected ? "text-active-fg" : "text-backdrop-fg") font-bold">@item.Value.Title</p>
 
                     </div>
 
@@ -37,7 +37,7 @@
                     <LinkButton Text="@item.Value.AdditionalInfoText" 
                                 Url="@item.Value.DetailsUrl" 
                                 Type=LinkButton.ButtonType.Secondary
-                                class="text-detail p-1 mx-4"
+                                class="text-detail text-active-fg p-1 mx-4"
                                 tabindex="@(item.Selected ? 0 : -1)"/>
                 </div>
 
