@@ -30,10 +30,10 @@
         @getLightboxTitle()
     </h3>
 
-    <p class="mb-4">@getLightboxBody()</p>
+    <p>@getLightboxBody()</p>
 
     @if (_successfulSubmit == false)
     {
-        <button class="button p-1" @onclick=@(() => _successfulSubmit = null)>@Model.ContactForm.OnErrorButtonText</button>
+        <button class="button p-1 mt-4" @onclick=@(() => _successfulSubmit = null)>@Model.ContactForm.OnErrorButtonText</button>
     }
 </div>
