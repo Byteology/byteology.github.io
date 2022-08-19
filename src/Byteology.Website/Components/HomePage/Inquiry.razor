@@ -3,15 +3,16 @@
 
     <div class="grid grid-cols-1 laptop:grid-cols-[2fr_3fr] gap-8">
 
-        <p class="text-detail tablet:text-body
-            col-start-1">
-            @Model.CallToAction
-        </p>
+        <div class="col-start-1 laptop:content-start space-y-4">
+            <p class="text-detail tablet:text-body">
+                @Model.CallToAction
+            </p>
 
-        <ContactsList Contacts="Model.Contacts" class="col-start-1" />
+            <ContactsList Contacts="Model.Contacts" />
+        </div>
     
         <ContactForm ConcentText="@Model.Consent" SubmitInquiryText="@Model.SubmitInquiryText" 
-                     class="laptop:row-start-1 laptop:row-end-3 laptop:col-start-2 " />
+                     class="laptop:col-start-2 laptop:content-between" />
 
     </div>
 </div>

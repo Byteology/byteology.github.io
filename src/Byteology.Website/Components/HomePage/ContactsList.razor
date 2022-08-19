@@ -1,14 +1,16 @@
-﻿<div class="grid grid-cols-[max-content_1fr] auto-rows-max gap-x-8 items-baseline @Class">
+﻿<div class="grid grid-cols-[max-content_1fr] auto-rows-max gap-x-8 items-baseline
+            laptop:flex laptop:flex-col laptop:gap-y-4 
+            @Class">
         
     @foreach(ContactModel contact in Contacts)
     {
-        <div class="contents">
+        <div class="contents laptop:flex laptop:flex-col">
 
             @for (int i = 0; i < contact.Details.Length; i++)
             {
                 @if (i == 0)
                 {
-                    <p class="col-start-1
+                    <p class="col-start-1 laptop:order-[-2]
                               text-emph font-bold">
                         @contact.Name
                     </p>
@@ -16,7 +18,7 @@
 
                 @if (i == 1)
                 {
-                    <p class="col-start-1
+                    <p class="col-start-1 laptop:order-[-1] laptop:mb-2
                               text-footnote font-bold">
                         @contact.Title
                     </p>
@@ -29,7 +31,7 @@
 
             @if(contact != Contacts.Last())
             {
-                <div class="w-1 h-4 col-span-2"></div>
+                <div class="laptop:hidden w-1 h-4 col-span-2"></div>
             }
 
         </div>
