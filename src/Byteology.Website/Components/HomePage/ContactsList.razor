@@ -3,24 +3,28 @@
     @foreach(ContactModel contact in Contacts)
     {
         <div class="contents">
-            <p class="col-start-1 block
-                      text-emph font-bold">
-                @contact.Name
-            </p>
 
-            @if(contact.Details.Any())
+            @for (int i = 0; i < contact.Details.Length; i++)
             {
-                <ContactDetail Model="contact.Details.First()" class="col-start-2" />
-            }
+                @if (i == 0)
+                {
+                    <p class="col-start-1
+                              text-emph font-bold">
+                        @contact.Name
+                    </p>
+                }
 
-            <p class="col-start-1 block
-                      text-footnote font-bold">
-                @contact.Title
-            </p>
+                @if (i == 1)
+                {
+                    <p class="col-start-1
+                              text-footnote font-bold">
+                        @contact.Title
+                    </p>
+                }
 
-            @foreach(ContactDetailModel detail in contact.Details.Skip(1))
-            {
-                <ContactDetail Model="detail" class="col-start-2" />
+                <ContactDetail 
+                    Model="contact.Details[i]" 
+                    class="col-start-2" />
             }
 
             @if(contact != Contacts.Last())

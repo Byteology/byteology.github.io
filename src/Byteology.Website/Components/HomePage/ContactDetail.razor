@@ -1,14 +1,15 @@
 ﻿@if(Model.Type == ContactDetailType.Address)
 {
-    <p class="col-start-2 block
-                text-footnote @Class">
+    <p class="col-start-2
+              text-footnote @Class">
         @Model.Value
     </p>
 }
+
 @if(Model.Type == ContactDetailType.Phone)
 {
-    <a class="col-start-2 block
-                link text-footnote @Class" 
+    <a class="col-start-2
+              link text-footnote @Class" 
         href="tel:@Model.Value">
         @Model.Value
     </a>
@@ -16,8 +17,8 @@
 
 @if(Model.Type == ContactDetailType.Email)
 {
-    <a class="col-start-2 block
-                link text-footnote @Class" 
+    <a class="col-start-2
+              link text-footnote @Class" 
         href="mailto:@Model.Value">
         @Model.Value
     </a>
