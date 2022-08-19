@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Byteology.Website.dll": "sha256-kPF623L7SMts60HV3H6wrdoMLfTUaH2W20sYuIxmkJA=",
+      "Byteology.Website.dll": "sha256-DEo6jTqdOt566elpnuh0HR4f5DHzM3+7KRD2VxOgWTU=",
       "Markdig.dll": "sha256-\/qKhOo2ZbkSd56j45qUCUGYRyBMnR0dmDkWfZfLJKeo=",
       "Microsoft.AspNetCore.Components.dll": "sha256-ns7JM3Nc\/ynSFAMDBGGWVyz7gNscqKwAHXtpprd\/HyU=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-E8pAJoClHQZU70wHEeWb26NKyfE7MW975Pq+7a0TuRs=",
