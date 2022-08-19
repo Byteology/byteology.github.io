@@ -11,9 +11,9 @@
 
     <DataAnnotationsValidator />
 
-    <TextInput Label="Name" Placeholder="John Doe" @bind-Value=_inquiryModel.Name class="col-span-2 tablet:col-span-1" autocomplete="@Guid.NewGuid()" name="@Guid.NewGuid()" />
-    <TextInput Label="Email" Placeholder="exaple@mail.com" @bind-Value=_inquiryModel.Email class="col-span-2 tablet:col-span-1" autocomplete="@Guid.NewGuid()" name="@Guid.NewGuid()"/>
-    <TextArea Label="Message" Placeholder="Type your message here..." @bind-Value=_inquiryModel.Message class="col-span-2" autocomplete="@Guid.NewGuid()" name="@Guid.NewGuid()"/>
+    <TextInput Label="Name" Placeholder="John Doe" @bind-Value=_inquiryModel.Name class="col-span-2 tablet:col-span-1" autocomplete="name" />
+    <TextInput Label="Email" Placeholder="exaple@mail.com" @bind-Value=_inquiryModel.Email class="col-span-2 tablet:col-span-1" autocomplete="email"/>
+    <TextArea Label="Message" Placeholder="Type your message here..." @bind-Value=_inquiryModel.Message class="col-span-2" autocomplete="off"/>
     <Checkbox Label=@ConcentText @bind-Value=_inquiryModel.Consent class="col-span-2 text-footnote text-fg-inactive hocus:text-fg transition-fast" />
     <TextInput Label="Honeycomb" Placeholder="Honeycomb" @bind-Value=_inquiryModel.Honeycomb class="hidden" />
         
