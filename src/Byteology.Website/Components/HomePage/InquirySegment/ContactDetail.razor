@@ -1,0 +1,35 @@
+﻿@inherits ByteologyComponent
+
+@if(Model.Type == ContactDetailType.Address)
+{
+    <p @attributes=AdditionalAttributes
+       class="col-start-2
+              text-footnote @CssClass">
+        @Model.Value
+    </p>
+}
+
+@if(Model.Type == ContactDetailType.Phone)
+{
+    <a @attributes=AdditionalAttributes
+       class="col-start-2
+              link text-footnote @CssClass" 
+        href="tel:@Model.Value">
+        @Model.Value
+    </a>
+}
+
+@if(Model.Type == ContactDetailType.Email)
+{
+    <a @attributes=AdditionalAttributes
+       class="col-start-2
+              link text-footnote @CssClass" 
+        href="mailto:@Model.Value">
+        @Model.Value
+    </a>
+}
+
+@code {
+    [Parameter, Required]
+    public ContactDetailModel Model { get; set; } = default!;
+}

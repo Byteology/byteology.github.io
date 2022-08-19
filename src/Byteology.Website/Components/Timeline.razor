@@ -1,4 +1,6 @@
-﻿<div @attributes="InputAttributes">
+﻿@inherits ByteologyComponent
+
+<div @attributes=AdditionalAttributes>
     <ol class="timeline h-full space-y-[1em] flex flex-col">
         @for (int i = 0; i < Items.Length; i++)
         {
@@ -17,3 +19,8 @@
         }
     </ol>
 </div>
+
+@code {
+    [Parameter, Required, MinLength(1)]
+    public MarkupString[] Items { get; set; } = default!;
+}

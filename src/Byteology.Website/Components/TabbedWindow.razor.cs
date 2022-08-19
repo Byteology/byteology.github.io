@@ -2,24 +2,18 @@
 
 using Byteology.Website.Components.Input;
 
-public partial class TabbedWindow<TItem> : ComponentBase
+public partial class TabbedWindow<TItem> : ByteologyComponent
 {
     private int _selectedIndex = 0;
 
-    [Parameter]
+    [Parameter, Required]
     public IReadOnlyList<TItem> Items { get; set; } = default!;
 
-    [Parameter]
+    [Parameter, Required]
     public RenderFragment<RadioButtonsList<TItem>.Context> TabContent { get; set; } = default!;
 
-    [Parameter]
+    [Parameter, Required]
     public RenderFragment<TItem> Body { get; set; } = default!;
-
-    [Parameter]
-    public string? Class { get; set; }
-
-    [Parameter(CaptureUnmatchedValues = true)]
-    public Dictionary<string, object>? InputAttributes { get; set; }
 
     protected override void OnParametersSet()
     {

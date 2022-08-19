@@ -1,29 +1,27 @@
 ﻿@using Byteology.Website.Components.Input
 
 @typeparam TItem
+@inherits ByteologyComponent
 
-<div class="grid grid-cols-[max-content_2px_minmax(0,_1fr)] gap-x-8 @Class"
-     @attributes=InputAttributes>
+<div @attributes=AdditionalAttributes
+     class="grid grid-cols-[max-content_2px_minmax(0,_1fr)] gap-x-8 @CssClass">
 
-    <div class="flex flex-col gap-[1.5rem] w-full">
+    <RadioButtonsList Items="Items" Context="item" TItem="TItem" OnChanged="onChanged" class="flex flex-col gap-[1.5rem] w-full">
+        <ItemTemplate>
+            <div class="box-content 
+                        cursor-pointer whitespace-nowrap
+                        transition-normal
+                        border-solid border-2
+                        overflow-hidden
+                        @(item.Selected ?
+                            "border-accent" :
+                            "border-secondary group-hover:border-accent-alt group-focus:border-accent-alt")" >
 
-        <RadioButtonsList Items="Items" Context="item" TItem="TItem" OnChanged="onChanged">
-            <ItemTemplate>
-                <div class="box-content 
-                            cursor-pointer whitespace-nowrap
-                            transition-normal
-                            border-solid border-2
-                            overflow-hidden
-                            @(item.Selected ?
-                                "border-accent" :
-                                "border-secondary group-hover:border-accent-alt group-focus:border-accent-alt")" >
+                @TabContent(new RadioButtonsList<TItem>.Context(item.Value, item.Selected))
 
-                    @TabContent(new RadioButtonsList<TItem>.Context(item.Value, item.Selected))
-
-                </div>
-            </ItemTemplate>
-        </RadioButtonsList>
-    </div>
+            </div>
+        </ItemTemplate>
+    </RadioButtonsList>
 
     <div class="bg-accent h-full"></div>
 

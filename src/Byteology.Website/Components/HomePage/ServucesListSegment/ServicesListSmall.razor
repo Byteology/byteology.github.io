@@ -1,0 +1,62 @@
+﻿@using Byteology.Website.Components.Input
+
+@inherits ByteologyComponent
+
+<div @attributes=AdditionalAttributes
+     class="w-full max-w-[22rem]
+            bg-bg text-fg
+            space-y-8 p-8 @CssClass">
+
+    <h1 class="text-h3 font-bold text-center text-emph">@Model.Title</h1>
+
+    <RadioButtonsList Items="Model.Services" Context="item" class="flex flex-col gap-4">
+        <ItemTemplate>
+
+            <div class="
+                    box-content w-full 
+                    transition-normal
+                    border-solid border-2
+                    flex flex-col gap-2 justify-between no-scrollbar
+                    @(item.Selected ? 
+                        "overflow-auto bg-accent border-accent h-64 py-4" : 
+                        "overflow-hidden cursor-pointer border-secondary group-focus:border-accent-alt group-hover:border-accent-alt h-8")" >
+
+                <div class="
+                        p-1
+                        transition-normal
+                        flex items-center gap-4  
+                        @(item.Selected ? 
+                            "px-4 text-body" :
+                            "h-8 text-detail")" >
+
+                    <img class="transition-normal @(item.Selected ? "h-8" : "h-6")" src="@item.Value.IconSrc" alt="@item.Value.Title" /> 
+                    <p class="@(item.Selected ? "text-accent-fg" : "text-fg") font-bold transition-colors duration-500">@item.Value.Title</p>
+
+                </div>
+
+                <p class="text-detail text-accent-fg mx-4">@item.Value.Description</p>
+
+                <a 
+                    href="@item.Value.DetailsUrl"
+                    tabindex="@(item.Selected ? 0 : -1)"
+                    class="mx-4 p-1
+                            text-detail font-bold uppercase text-center text-accent-fg
+                            border-2 border-solid border-secondary
+                            transition-normal
+                            hocus:bg-secondary">
+
+                    @item.Value.AdditionalInfoText
+
+                </a>
+
+            </div>
+
+        </ItemTemplate>
+    </RadioButtonsList>
+
+</div>
+
+@code {
+    [Parameter, Required]
+    public ServicesListModel Model { get; set; } = default!;
+}

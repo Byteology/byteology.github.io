@@ -2,18 +2,17 @@
 
 @inherits InputTextArea
 
-<div @attributes=AdditionalAttributes class=@Class>
+<div @attributes=AdditionalAttributes class=@CssClass>
     <label for="@_id" class="font-bold text-detail">@Label</label>
 
-    <div 
-        class="
-            grid mt-2
-            after:whitespace-pre-wrap after:invisible after:pl-4
-            after:row-start-1 after:row-end-2 after:col-start-1 after:col-end-1
-            after:text-detail
-            after:border-b-2 after:border-solid 
-            after:content-[attr(data-replicated-value)_'_']"
-        data-replicated-value=@_value >
+    <div class="text-area-wrapper
+                grid mt-2
+                after:whitespace-pre-wrap after:invisible after:pl-4
+                after:row-start-1 after:row-end-2 after:col-start-1 after:col-end-1
+                after:text-detail
+                after:border-b-2 after:border-solid 
+                after:content-[attr(data-replicated-value)_'_']"
+         data-replicated-value=@_value >
 
         <textarea 
             @bind="CurrentValueAsString"
@@ -30,8 +29,24 @@
                 border-b-2 border-solid border-accent
                 placeholder:italic placeholder:text-fg-inactive
                 hover:border-accent-alt
-                invalid:border-error
-                focus:!border-accent-alt @CssClass" />
+                [.invalid_>.text-area-wrapper_>_&]:border-error
+                focus:!border-accent-alt" />
 
     </div>
 </div>
+
+@code {
+    private readonly Guid _id = Guid.NewGuid();
+    private string? _value;
+
+    [Parameter]
+    public string? Placeholder { get; set; }
+
+    [Parameter]
+    public string? Label { get; set; }
+
+    private void onValueChanged(ChangeEventArgs e)
+    {
+        _value = (string?)e.Value;
+    }
+}

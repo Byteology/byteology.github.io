@@ -1,13 +1,13 @@
 ﻿namespace Byteology.Website.Components.Input;
 
-public partial class RadioButtonsList<TItem> : ComponentBase
+public partial class RadioButtonsList<TItem> : ByteologyComponent
 {
     private int _selectedItemIndex;
 
-    [Parameter]
+    [Parameter, Required]
     public IReadOnlyList<TItem> Items { get; set; } = default!;
 
-    [Parameter]
+    [Parameter, Required]
     public RenderFragment<Context> ItemTemplate { get; set; } = default!;
 
     [Parameter]

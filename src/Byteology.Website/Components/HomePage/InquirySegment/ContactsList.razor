@@ -1,6 +1,9 @@
-﻿<div class="grid grid-cols-[max-content_1fr] auto-rows-max gap-x-8 items-baseline
+﻿@inherits ByteologyComponent
+
+<div @attributes=AdditionalAttributes
+     class="grid grid-cols-[max-content_1fr] auto-rows-max gap-x-8 items-baseline
             laptop:flex laptop:flex-col laptop:gap-y-4 
-            @Class">
+            @CssClass">
         
     @foreach(ContactModel contact in Contacts)
     {
@@ -38,3 +41,8 @@
     }
 
 </div>
+
+@code {
+    [Parameter, Required, MinLength(1)]
+    public ContactModel[] Contacts { get; set; } = default!;
+}

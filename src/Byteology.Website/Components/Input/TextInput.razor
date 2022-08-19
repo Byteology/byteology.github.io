@@ -2,7 +2,7 @@
 
 @inherits InputText
 
-<div @attributes=AdditionalAttributes class=@Class>
+<div @attributes=AdditionalAttributes class=@CssClass>
     <label for="@_id" class="font-bold text-detail">@Label</label>
     <input
         @bind="CurrentValueAsString"
@@ -17,8 +17,18 @@
             border-b-2 border-solid border-accent
             placeholder:italic
             hover:border-accent-alt
-            invalid:border-error
+            [.invalid_>_&]:border-error
             focus:!border-accent-alt 
-            placeholder:text-fg-inactive @CssClass" />
+            placeholder:text-fg-inactive" />
 
 </div>
+
+@code {
+    private readonly Guid _id = Guid.NewGuid();
+
+    [Parameter]
+    public string? Placeholder { get; set; }
+
+    [Parameter]
+    public string? Label { get; set; }
+}

@@ -1,22 +1,19 @@
-﻿namespace Byteology.Website.Components.HomePage;
+﻿namespace Byteology.Website.Components.HomePage.InquirySegment;
 
 using Byteology.Website.Inquiring;
 
-public partial class ContactForm : ComponentBase
+public partial class ContactForm : ByteologyComponent
 {
     [Inject]
     private IInquiryService _inquiryService { get; set; } = default!;
 
     private readonly InquiryModel _inquiryModel = new();
 
-    [Parameter]
-    public string? ConcentText { get; set; }
+    [Parameter, Required]
+    public string ConcentText { get; set; } = default!;
 
-    [Parameter]
-    public string? SubmitInquiryText { get; set; }
-
-    [Parameter]
-    public string? Class { get; set; }
+    [Parameter, Required]
+    public string SubmitInquiryText { get; set; } = default!;
 
     private async Task onSubmit()
     {

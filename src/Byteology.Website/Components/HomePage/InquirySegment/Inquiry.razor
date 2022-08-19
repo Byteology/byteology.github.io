@@ -1,4 +1,7 @@
-﻿<div class="p-8 bg-bg text-fg space-y-8">
+﻿@inherits ByteologyComponent
+
+<div @attributes=AdditionalAttributes
+     class="p-8 bg-bg text-fg space-y-8 @CssClass">
     <h1 class="text-h3 font-bold text-emph text-center">@Model.Title</h1>
 
     <div class="grid grid-cols-1 laptop:grid-cols-[2fr_3fr] gap-8">
@@ -16,3 +19,8 @@
 
     </div>
 </div>
+
+@code {
+    [Parameter, Required]
+    public InquiryModel Model { get; set; } = default!;
+}

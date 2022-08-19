@@ -1,5 +1,8 @@
-﻿<div class="p-8 bg-bg text-fg
-            grid grid-cols-1 laptop:grid-cols-2 gap-8 content-center">
+﻿@inherits ByteologyComponent
+
+<div @attributes=AdditionalAttributes
+     class="p-8 bg-bg text-fg
+            grid grid-cols-1 laptop:grid-cols-2 gap-8 content-center @CssClass">
 
     <div class="col-start-1
                 text-h3 font-bold
@@ -22,3 +25,8 @@
     </a>
 
 </div>
+
+@code {
+    [Parameter, Required]
+    public ScientificGeneralizationModel Model { get; set; } = default!;
+}

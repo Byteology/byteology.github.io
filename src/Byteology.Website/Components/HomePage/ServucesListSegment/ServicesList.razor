@@ -1,0 +1,10 @@
+﻿@inherits ByteologyComponent
+
+<ServicesListSmall class="block laptop:hidden" Model=Model />
+
+<ServicesListLarge class="hidden laptop:block" Model=Model />
+
+@code {
+    [Parameter, Required]
+    public ServicesListModel Model { get; set; } = default!;
+}

@@ -2,7 +2,7 @@
 
 using Microsoft.JSInterop;
 
-public partial class PageRoot : ComponentBase, IAsyncDisposable
+public partial class PageRoot : ByteologyComponent, IAsyncDisposable
 {
     private bool _initialFullPageScrollingValue;
 
@@ -18,12 +18,6 @@ public partial class PageRoot : ComponentBase, IAsyncDisposable
 
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
-
-    [Parameter]
-    public string? Class { get; set; }
-
-    [Parameter(CaptureUnmatchedValues = true)]
-    public Dictionary<string, object>? AdditionalAttributes { get; set; }
 
     protected override void OnParametersSet()
     {
