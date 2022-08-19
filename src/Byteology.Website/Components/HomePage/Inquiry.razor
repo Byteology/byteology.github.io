@@ -1,0 +1,17 @@
+﻿<div class="p-8 bg-bg text-fg space-y-8">
+    <h1 class="text-h3 font-bold text-emph text-center">@Model.Title</h1>
+
+    <div class="grid grid-cols-1 laptop:grid-cols-[2fr_3fr] gap-8">
+
+        <p class="text-detail tablet:text-body
+            col-start-1 mb-4">
+            @Model.CallToAction
+        </p>
+
+        <ContactsList Contacts="Model.Contacts" class="col-start-1" />
+    
+        <ContactForm ConcentText="@Model.Consent" SubmitInquiryText="@Model.SubmitInquiryText" 
+                     class="laptop:row-start-1 laptop:row-end-3 laptop:col-start-2 " />
+
+    </div>
+</div>

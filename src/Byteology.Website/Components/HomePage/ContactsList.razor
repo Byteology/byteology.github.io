@@ -1,0 +1,34 @@
+﻿<div class="grid grid-cols-[max-content_1fr] auto-rows-max gap-x-8 items-baseline @Class">
+        
+    @foreach(ContactModel contact in Contacts)
+    {
+        <div class="contents">
+            <p class="col-start-1 block
+                      text-emph font-bold">
+                @contact.Name
+            </p>
+
+            @if(contact.Details.Any())
+            {
+                <ContactDetail Model="contact.Details.First()" class="col-start-2" />
+            }
+
+            <p class="col-start-1 block
+                      text-footnote font-bold">
+                @contact.Title
+            </p>
+
+            @foreach(ContactDetailModel detail in contact.Details.Skip(1))
+            {
+                <ContactDetail Model="detail" class="col-start-2" />
+            }
+
+            @if(contact != Contacts.Last())
+            {
+                <div class="w-1 h-4 col-span-2"></div>
+            }
+
+        </div>
+    }
+
+</div>

@@ -2,12 +2,21 @@
 
 using Byteology.Website.Inquiring;
 
-public partial class Contact : ComponentBase
+public partial class ContactForm : ComponentBase
 {
     [Inject]
     private IInquiryService _inquiryService { get; set; } = default!;
 
     private readonly InquiryModel _inquiryModel = new();
+
+    [Parameter]
+    public string? ConcentText { get; set; }
+
+    [Parameter]
+    public string? SubmitInquiryText { get; set; }
+
+    [Parameter]
+    public string? Class { get; set; }
 
     private async Task onSubmit()
     {

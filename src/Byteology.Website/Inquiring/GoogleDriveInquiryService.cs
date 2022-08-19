@@ -17,7 +17,6 @@ public class GoogleDriveInquiryService : IInquiryService
         {
             new KeyValuePair<string, string>(nameof(inquiry.Name), inquiry.Name ?? ""),
             new KeyValuePair<string, string>(nameof(inquiry.Email), inquiry.Email ?? ""),
-            new KeyValuePair<string, string>(nameof(inquiry.Phone), inquiry.Phone ?? ""),
             new KeyValuePair<string, string>(nameof(inquiry.Message), inquiry.Message ?? "")
         };
 

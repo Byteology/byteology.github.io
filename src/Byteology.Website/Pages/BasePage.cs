@@ -1,10 +1,14 @@
 ﻿namespace Byteology.Website.Pages;
 
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 public class BasePage<TModel> : ComponentBase
 {
-    private readonly JsonSerializerOptions _serializerOptions = new(JsonSerializerDefaults.Web);
+    private readonly JsonSerializerOptions _serializerOptions = new(JsonSerializerDefaults.Web)
+    {
+        Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
+    };
 
     public TModel Model { get; private set; }
 
