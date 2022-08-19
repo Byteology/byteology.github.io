@@ -7,7 +7,8 @@
     Model="_inquiryModel" 
     OnValidSubmit="onSubmit"
     @attributes=AdditionalAttributes
-    class=@($@"grid grid-cols-2 gap-8 laptop:content-between {(_state != State.Idle ? "hidden" : "")} {CssClass}") >
+    autocomplete="off"
+    class=@($@"grid grid-cols-2 gap-8 laptop:content-between {CssClass}") >
 
     <DataAnnotationsValidator />
 
@@ -26,21 +27,3 @@
     </button>
 
 </EditForm>
-
-@if(_state == State.Errored)
-{
-    <div class="flex flex-col justify-center gap-4">
-        <h3 class="text-h3 text-bold text-error text-center">Oops!</h3>
-        <p class="mb-4">We are terribly sorry but something went wrong. You can try again or just write us a plain old email.</p>
-        <button class="button p-1" @onclick=@(() => _state=State.Idle)>Try again</button>
-    </div>
-}
-
-@if(_state == State.Submited)
-{
-    <div class="flex flex-col justify-center gap-4">
-        <h3 class="text-h3 text-bold text-emph text-center">Thank you!</h3>
-        <p class="mb-4">Thank you for reaching out! We'll make sure to help you the best we can. We usually answer within 2 business days.</p>
-        <button class="button p-1" @onclick=@(() => _state=State.Idle)>Continue</button>
-    </div>
-}

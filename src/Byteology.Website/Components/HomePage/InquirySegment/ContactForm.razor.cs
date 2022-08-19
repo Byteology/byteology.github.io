@@ -4,8 +4,6 @@ using Byteology.Website.Inquiring;
 
 public partial class ContactForm : ByteologyComponent
 {
-    private State _state = State.Idle;
-
     [Inject]
     private IInquiryService _inquiryService { get; set; } = default!;
 
@@ -17,6 +15,9 @@ public partial class ContactForm : ByteologyComponent
     [Parameter, Required]
     public string SubmitInquiryText { get; set; } = default!;
 
+    [Parameter]
+    public EventCallback<SubmissionEventArgs> OnSubmit { get; set; }
+
     private async Task onSubmit()
     {
         if (!string.IsNullOrEmpty(_inquiryModel.Honeycomb))
@@ -25,18 +26,20 @@ public partial class ContactForm : ByteologyComponent
         bool result = false;
         try
         {
-            result = new Random().Next() % 2 == 0;
-            //result = await _inquiryService.SendInquiryAsync(_inquiryModel);
+            result = await _inquiryService.SendInquiryAsync(_inquiryModel);
         }
         catch { /* We don't want to expose details about the error. */ }
 
-        _state = result ? State.Submited : State.Errored;
+        await OnSubmit.InvokeAsync(new SubmissionEventArgs(result));
     }
 
-    private enum State
+    public class SubmissionEventArgs : EventArgs
     {
-        Idle,
-        Submited,
-        Errored
+        public bool Success { get; private set; }
+
+        public SubmissionEventArgs(bool success)
+        {
+            Success = success;
+        }
     }
 }

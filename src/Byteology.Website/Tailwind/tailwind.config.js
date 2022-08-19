@@ -45,6 +45,10 @@ module.exports = {
                     '100%': { opacity: 0 },
                 }
             },
+
+            animation: {
+                'fade-in-fast': 'fade 0.25s ease-out 0s reverse forwards',
+            }
         },
     },
 

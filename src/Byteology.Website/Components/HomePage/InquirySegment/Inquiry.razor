@@ -1,7 +1,12 @@
 ﻿@inherits ByteologyComponent
 
 <div @attributes=AdditionalAttributes
-     class="p-8 bg-bg text-fg space-y-8 @CssClass">
+     class="p-8 
+            bg-bg text-fg 
+            space-y-8 
+            @(_successfulSubmit.HasValue ? "hidden" : (_shouldFadeIn ? "animate-fade-in-fast" : "")) 
+            @CssClass">
+
     <h1 class="text-h3 font-bold text-emph text-center">@Model.Title</h1>
 
     <div class="grid grid-cols-1 laptop:grid-cols-[2fr_3fr] gap-8">
@@ -14,12 +19,21 @@
             <ContactsList Contacts="Model.Contacts" />
         </div>
     
-        <ContactForm ConcentText="@Model.Consent" SubmitInquiryText="@Model.SubmitInquiryText" />
+        <ContactForm ConcentText="@Model.ContactForm.Consent" SubmitInquiryText="@Model.ContactForm.SubmitText" OnSubmit=onSubmit />
 
     </div>
 </div>
 
-@code {
-    [Parameter, Required]
-    public InquiryModel Model { get; set; } = default!;
-}
+<div class="p-8 max-w-[26rem] bg-bg flex flex-col gap-4 @(_successfulSubmit.HasValue ? "animate-fade-in-fast" : "hidden")">
+    <h3 class="text-h3 font-bold text-center 
+              @(_successfulSubmit == true ? "text-emph" : "") @(_successfulSubmit == false ? "text-error" : "")">
+        @getLightboxTitle()
+    </h3>
+
+    <p class="mb-4">@getLightboxBody()</p>
+
+    @if (_successfulSubmit == false)
+    {
+        <button class="button p-1" @onclick=@(() => _successfulSubmit = null)>@Model.ContactForm.OnErrorButtonText</button>
+    }
+</div>

@@ -1,4 +1,4 @@
-﻿namespace Byteology.Website.Data.Models;
+﻿namespace Byteology.Website.Data.Models.HomePage.InquirySegment;
 
 public enum ContactDetailType
 {
