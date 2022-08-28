@@ -26,6 +26,41 @@
         @apply selection:bg-accent-alt;
     }
 
+    .slide {
+        @apply w-full;
+        @apply h-full;
+        @apply snap-start;
+        @apply snap-always;
+        @apply overflow-x-hidden;
+        @apply overflow-y-auto;
+        @apply no-scrollbar;
+        @apply py-4;
+        @apply flex;
+        @apply flex-col;
+        @apply justify-between;
+        @apply items-center;
+        @apply before:max-h-0;
+        @apply after:max-h-0;
+    }
+
+    .card {
+        @apply p-8;
+        @apply bg-bg;
+        @apply text-fg;
+        @apply border;
+        @apply border-solid;
+        @apply border-accent;
+    }
+
+    .slide > .card {
+        @apply tablet:w-[calc(100%_-_4rem)];
+        @apply max-w-[56rem];
+        @apply border-l-0;
+        @apply border-r-0;
+        @apply tablet:border-l;
+        @apply tablet:border-r;
+    }
+
     .link {
         @apply underline;
         @apply underline-offset-2;

@@ -9,34 +9,52 @@
 
 
 <PageRoot FullPageScrolling=true DarkMode=true class="fixed-banner">
-
-    <div class="fixed w-full z-10 px-8 flex justify-center">
-        <div class="bg-bg border-2 border-t-0 border-solid border-accent py-1 px-2
-                    text-footnote font-bold flex flex-wrap justify-center gap-x-4">
-            <a class="hocus:text-accent-alt cursor-pointer" >Mission</a>
-            <a>Services</a>
-            <a>Thoughts</a>
-            <a>Careers</a>
-            <a>Contacts</a>
-        </div>
-
-    </div>
-
-    <Slide>
+    <section class="slide">
         <Logo FadeIn=true />
-    </Slide>
+    </section>
 
-    <Slide>
-        <ScientificGeneralization Model="Model.ScientificGeneralization" />
-    </Slide>
+    <section class="slide">
+        <ScientificGeneralization Model="Model.ScientificGeneralization" class="card" />
+    </section>
 
-    <Slide>
-        <ServicesList Model="Model.ServicesList" />
-    </Slide>
+    <section class="slide">
+        <ServicesList Model="Model.ServicesList" class="card" />
+    </section>
 
-    <Slide>
-        <Inquiry Model="Model.Inquiry" />
-    </Slide>
+    <section class="slide">
+        <Inquiry Model="Model.Inquiry" class="card" />
+    </section>
+
+
+    <section class="slide">
+        <div class="card flex gap-16">
+            <div class="flex flex-col ">
+                <p class="block font-bold mb-4 text-emph text-body">Company</p>
+                <a class="link block" href="">Mission</a>
+                <a class="link block" href="">Careers</a>
+                <a class="link block" href="">Contacts</a>
+            </div>
+
+            <div class="flex flex-col ">
+                <p class="block font-bold mb-4 text-emph text-body">Services</p>
+                <a class="link block" href="">Application Development</a>
+                <a class="link block" href="">Migration to Microservices</a>
+                <a class="link block" href="">Event Sourcing</a>
+                <a class="link block" href="">Training & Consulting</a>
+                <a class="link block" href="">Interviewing as a Service</a>
+            </div>
+
+@*                <div class="flex flex-col ">
+                <p class="block font-bold mb-4 text-emph text-body">Toughts</p>
+                <a class="link block" href="">Business</a>
+                <a class="link block" href="">Software Development</a>
+                <a class="link block" href="">Random stuff</a>
+            </div>*@
+        </div>
+    </section>
+
+    <p class="mt-8 text-center text-footnote text-fg-inactive">©2021 Byteology | Privacy policy</p>
+
 
 </PageRoot>
 

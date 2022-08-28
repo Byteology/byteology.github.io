@@ -1,9 +1,7 @@
 ﻿@inherits ByteologyComponent
 
 <div @attributes=AdditionalAttributes
-     class="p-8 
-            bg-bg text-fg 
-            space-y-8 
+     class="space-y-8 
             @(_successfulSubmit.HasValue ? "hidden" : (_shouldFadeIn ? "animate-fade-in-fast" : "")) 
             @CssClass">
 
