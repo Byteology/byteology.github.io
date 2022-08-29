@@ -4,24 +4,28 @@
     <section @attributes=AdditionalAttributes
              class="@CssClass">
 
-        <div class="w-full min-h-full flex flex-col md:flex-row">
 
-            <div class="grow md:grow-0 md:w-1/2 flex items-center justify-center">
-                <img class="my-8
-                            max-w-[75%] max-h-[25vh]
+        <div class="w-full grow flex flex-col md:flex-row">
+
+            <div class="grow h-[max(25vh,10rem)] flex content-center justify-center 
+                        md:grow-0 md:w-1/2 md:sticky md:top-1/2 md:-translate-y-1/2">
+                <img class="my-8 md:my-0
+                            max-w-[50%] max-h-full
                             object-center object-contain
                             content-[url(/images/logo-portrait.svg)]"
 
                         alt="Byteology - a moment of science"/>
             </div>
 
-            <div class="bg-bg p-8
-                        md:w-1/2 md:max-w-[51rem] md:h-full 
-                        md:overflow-y-auto md:before:max-h-0 md:after:max-h-0 scrollable no-scrollbar
-                        flex flex-col justify-between items-center">
-                <div class="md:max-w-[35rem] flex flex-col gap-8
-                        md:justify-center
-                    text-body md:text-h3" >
+            <div class="bg-bg
+                        md:w-1/2 md:max-w-[51rem] md:min-h-full
+                        md:before:max-h-0 md:after:max-h-0 md:justify-between
+                        flex flex-col items-center">
+
+                <div class="p-8 bg-bg
+                            md:max-w-[35rem] flex flex-col gap-8
+                            md:justify-center
+                            text-body md:text-h3" >
 
                     <div class="[&_strong]:text-emph">
                         @(new MarkupString(Markdown.ToHtml(Model.Introduction)))
