@@ -34,13 +34,6 @@
         @apply overflow-x-hidden;
         @apply overflow-y-auto;
         @apply no-scrollbar;
-        @apply py-4;
-        @apply flex;
-        @apply flex-col;
-        @apply justify-between;
-        @apply items-center;
-        @apply before:max-h-0;
-        @apply after:max-h-0;
     }
 
     .card {
@@ -153,5 +146,11 @@
         @apply bg-cover; 
         @apply bg-fixed;
         @apply bg-[url('/images/background.jpeg')];
+    }
+
+    .justify-safe-center {
+        @apply before:max-h-0;
+        @apply after:max-h-0;
+        @apply justify-between;
     }
 }
