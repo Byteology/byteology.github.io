@@ -1,31 +1,47 @@
 ﻿@using Byteology.Website.Data.Models.HomePage
 
 @inherits ByteologyComponent
+    <section @attributes=AdditionalAttributes
+             class="@CssClass">
 
-<div @attributes=AdditionalAttributes
-     class="grid grid-cols-1 laptop:grid-cols-2 gap-8 content-center @CssClass">
+        <div class="w-full min-h-full flex flex-col md:flex-row">
 
-    <div class="col-start-1
-                text-h3 font-bold
-                [&_strong]:text-emph">
+            <div class="grow md:grow-0 md:w-1/2 flex items-center justify-center">
+                <img class="my-8
+                            max-w-[75%] max-h-[25vh]
+                            object-center object-contain
+                            content-[url(/images/logo-portrait.svg)]"
 
-        @(new MarkupString(Markdown.ToHtml(Model.Introduction)))
+                        alt="Byteology - a moment of science"/>
+            </div>
 
-    </div>
+            <div class="bg-bg p-8
+                        md:w-1/2 md:max-w-[51rem] md:h-full 
+                        md:overflow-y-auto md:before:max-h-0 md:after:max-h-0 scrollable no-scrollbar
+                        flex flex-col justify-between items-center">
+                <div class="md:max-w-[35rem] flex flex-col gap-8
+                        md:justify-center
+                    text-body md:text-h3" >
+
+                    <div class="[&_strong]:text-emph">
+                        @(new MarkupString(Markdown.ToHtml(Model.Introduction)))
+                    </div>
     
-    <Timeline Items="@Model.Timeline.Select(x => new MarkupString(Markdown.ToHtml(x))).ToArray()"
-              class="col-start-1 row-span-1 laptop:col-start-2 laptop:row-span-2"/>
+                    <Timeline Items="@Model.Timeline.Select(x => new MarkupString(Markdown.ToHtml(x))).ToArray()"
+                                class="text-detail md:text-body"/>
 
+                    <a href="@Model.AboutUsUrl"
+                        class="button p-2">
+                        @Model.AdditionalInfoText
+                    </a>
 
-    <a 
-        href="@Model.AboutUsUrl"
-        class="button col-start-1 self-end p-2">
+                </div>
 
-        @Model.AdditionalInfoText
+            </div>
 
-    </a>
+        </div>
 
-</div>
+    </section> 
 
 @code {
     [Parameter, Required]

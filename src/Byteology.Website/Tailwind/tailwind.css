@@ -52,15 +52,6 @@
         @apply border-accent;
     }
 
-    .slide > .card {
-        @apply tablet:w-[calc(100%_-_4rem)];
-        @apply max-w-[56rem];
-        @apply border-l-0;
-        @apply border-r-0;
-        @apply tablet:border-l;
-        @apply tablet:border-r;
-    }
-
     .link {
         @apply underline;
         @apply underline-offset-2;

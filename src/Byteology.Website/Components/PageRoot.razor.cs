@@ -2,19 +2,16 @@
 
 using Microsoft.JSInterop;
 
-public partial class PageRoot : ByteologyComponent, IAsyncDisposable
+public partial class PageRoot : ByteologyComponent, IDisposable
 {
     private bool _initialFullPageScrollingValue;
 
     [Inject]
-    private IJSRuntime _jsRuntime { get; set; } = default!;
-    private IJSObjectReference? _module { get; set; }
+    private IJSRuntime _jsRuntimeAsync { get; set; } = default!;
+    private IJSInProcessRuntime _jsRuntime => (IJSInProcessRuntime)_jsRuntimeAsync;
 
     [Parameter]
     public bool FullPageScrolling { get; set; }
-
-    [Parameter]
-    public bool DarkMode { get; set; }
 
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
@@ -30,35 +27,28 @@ public partial class PageRoot : ByteologyComponent, IAsyncDisposable
     {
         base.OnInitialized();
         _initialFullPageScrollingValue = FullPageScrolling;
-    }
 
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
         if (FullPageScrolling)
-            await _jsRuntime.InvokeVoidAsync("preventPitbarHiding");
+            _jsRuntime.InvokeVoid("fps.preventPitbarHiding");
     }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override void OnAfterRender(bool firstRender)
     {
-        await base.OnAfterRenderAsync(firstRender);
+        base.OnAfterRender(firstRender);
 
         if (firstRender && FullPageScrolling)
-        {
-            _module = await _jsRuntime.InvokeAsync<IJSObjectReference>("import", "./js/full-page-scrolling.js");
-            await _module.InvokeVoidAsync("init");
-        }
+            _jsRuntime.InvokeVoid("fps.init");
     }
 
-    public async ValueTask DisposeAsync()
+    public void Dispose()
     {
-        await DisposeAsyncCore();
+        DisposeCore();
         GC.SuppressFinalize(this);
     }
 
-    protected virtual async ValueTask DisposeAsyncCore()
+    protected virtual void DisposeCore()
     {
         if (FullPageScrolling)
-            await _jsRuntime.InvokeVoidAsync("resetPitbarHiding");
+            _jsRuntime.InvokeVoid("fps.resetPitbarHiding");
     }
 }
