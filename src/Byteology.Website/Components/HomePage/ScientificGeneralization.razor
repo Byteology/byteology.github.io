@@ -14,20 +14,21 @@
         </div>
 
         <div class="bg-bg
-                    md:w-1/2 md:max-w-[51rem]
+                    md:w-1/2 md:max-w-[48rem]
+                    border-accent border-t md:border-t-0 md:border-l 2xl:border-r
                     flex flex-col items-center justify-safe-center">
 
             <div class="p-8 bg-bg
                         md:max-w-[35rem] flex flex-col gap-8
                         md:justify-center
-                        text-body md:text-h3" >
+                        text-body lg:text-h3" >
 
                 <div class="[&_strong]:text-emph">
                     @(new MarkupString(Markdown.ToHtml(Model.Introduction)))
                 </div>
     
                 <Timeline Items="@Model.Timeline.Select(x => new MarkupString(Markdown.ToHtml(x))).ToArray()"
-                            class="text-detail md:text-body"/>
+                            class="text-detail lg:text-body"/>
 
                 <a href="@Model.AboutUsUrl"
                     class="button p-2">
