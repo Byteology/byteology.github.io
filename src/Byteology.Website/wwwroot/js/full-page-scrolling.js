@@ -1,13 +1,19 @@
 ﻿class FullPageScrolling {
-    isIncrementingSlide;
-    isDecrementingSlide;
+    init() {
+        this.preventPitbarHiding();
 
-    overscrollTimer;
-    preventOverscroll;
+        document.getElementById("page").focus();
+        document.getElementById("page").addEventListener("wheel", (e) => { wid.feed(e.deltaY); }, { passive: false, capture: true });
+        document.getElementById("page").addEventListener("wheel", (e) => { fps.onPageWheel(e) }, { passive: false });
 
-    changeSlideTimer;
+        let slides = document.getElementsByClassName("slide");
+        for (var i = 0; i < slides.length; i++)
+            slides[i].addEventListener("wheel", (e) => { fps.onSlideWheel(e); }, { passive: false });
+    }
 
-    inertiaTimer;
+    dispose() {
+        this.resetPitbarHiding();
+    }
 
     preventPitbarHiding() {
         document.documentElement.classList.add("w-full", "h-full", "overflow-hidden");
@@ -21,18 +27,6 @@
         document.getElementById("app").classList.remove("w-full", "h-full", "overflow-hidden");
     }
 
-    init() {
-        this.preventSlideIncrement = false;
-        this.preventSlideDecrement = false;
-
-        document.getElementById("page").focus();
-        document.getElementById("page").addEventListener("wheel", this.onPageWheel, { passive: false });
-
-        let scrollables = document.getElementsByClassName("scrollable");
-        for (var i = 0; i < scrollables.length; i++)
-            scrollables[i].addEventListener("wheel", this.onScrollableWheel, { passive: false });
-    }
-
     onPageWheel(e) {
         if (e.ctrlKey)
             return;
@@ -40,7 +34,7 @@
         e.preventDefault();
         e.stopPropagation();
 
-        if (fps.isInertiaWheel(e))
+        if (wid.isInertia)
             return;
 
         let slides = document.getElementsByClassName("slide");
@@ -57,64 +51,99 @@
         if (currentSlideIndex === undefined)
             return;
 
-        if (e.deltaY > 0 && !fps.isIncrementingSlide) {
-            clearTimeout(fps.changeSlideTimer);
-            fps.isIncrementingSlide = true;
-            fps.isDecrementingSlide = false;
-
-            fps.changeSlideTimer = setTimeout(() => { fps.isIncrementingSlide = false; }, 500);
-
-            if (currentSlideIndex != slides.length - 1) {
-                slides[currentSlideIndex + 1].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-            }
+        if (e.deltaY > 0 && currentSlideIndex != slides.length - 1) {
+            wid.reset();
+            wid.feed(e.deltaY);
+            document.getElementById("page").scrollTo({ top: slides[currentSlideIndex + 1].offsetTop, behavior: "smooth" });
         }
-        else if (e.deltaY < 0 && !fps.isDecrementingSlide) {
-
-            clearTimeout(fps.changeSlideTimer);
-            fps.isIncrementingSlide = false;
-            fps.isDecrementingSlide = true;
-
-            fps.changeSlideTimer = setTimeout(() => { fps.isDecrementingSlide = false; }, 500);
-
-            if (currentSlideIndex != 0)
-                slides[currentSlideIndex - 1].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        else if (e.deltaY < 0 && currentSlideIndex != 0) {
+            wid.reset();
+            wid.feed(e.deltaY);
+            document.getElementById("page").scrollTo({ top: slides[currentSlideIndex - 1].offsetTop, behavior: "smooth"});
         }
     }
 
-    onScrollableWheel(e) {
+    onSlideWheel(e) {
         if (e.ctrlKey)
             return;
-
-        if (fps.isDecrementingSlide || fps.isIncrementingSlide) {
-            e.preventDefault();
-            return;
-        }
 
         var element = e.currentTarget;
         let atBottom = (element.scrollHeight - element.scrollTop - element.clientHeight) < 1;
         let atTop = element.scrollTop < 1;
 
         if ((e.deltaY > 0 && !atBottom) || (e.deltaY < 0 && !atTop)) {
-            clearTimeout(fps.overscrollTimer);
-            fps.preventOverscroll = true;
-            fps.overscrollTimer = setTimeout(() => { fps.preventOverscroll = false; }, 500);
             e.stopPropagation();
         }
-        else if (fps.preventOverscroll)
-            e.stopPropagation();
+        else {
+            if (wid.isInertia) {
+                e.stopPropagation();
+            }
+            e.preventDefault();
+        }
+    }
+}
+
+class WheelInertiaDetector {
+    debounceTime = 500;
+    minSwipeInterval = 500;
+    minNewSwipeDelta = 30;
+
+    swipeStarted;
+    swipePositive;
+    swipeDurationStopwatch;
+    debouceTimer;
+
+    isInertia;
+
+    feed(delta) {
+        this.resetDebouncerTimer();
+
+        // First event in some time
+        if (!this.swipeStarted) {
+            this.startSwipe(delta);
+            this.isInertia = false;
+            return;
+        }
+
+        // Wheel direction has changed
+        if (this.swipePositive && delta < -1 || !this.swipePositive && delta > 1) {
+            this.startSwipe(delta);
+            this.isInertia = false;
+            return;
+        }
+
+        // Big delta after a lot of time into the swipe
+        if (Math.abs(delta) >= this.minNewSwipeDelta && Date.now() - this.swipeDurationStopwatch > this.minSwipeInterval) {
+            this.startSwipe(delta);
+            this.isInertia = false;
+            return;
+        }
+
+        this.isInertia = true;
     }
 
-    isInertiaWheel(e) {
-        if (Math.abs(e.deltaY) < 50 && fps.inertiaTimer)
-            return true;
+    reset() {
+        clearTimeout(this.debouceTimer);
+        this.swipeDurationStopwatch = null;
+        this.swipeStarted = false;
+    }
 
-        var result = fps.inertiaTimer != undefined;
+    resetDebouncerTimer() {
+        clearTimeout(this.debouceTimer);
+        this.debouceTimer = setTimeout(this.endSwipe, this.debounceTime)
+    }
 
-        clearTimeout(fps.inertiaTimer);
-        fps.inertiaTimer = setTimeout(() => { fps.inertiaTimer = undefined; }, 100);
+    startSwipe(delta) {
+        this.swipeStarted = true;
+        this.swipePositive = delta > 0;
+        this.swipeDurationStopwatch = Date.now();
+    }
 
-        return result;
+    endSwipe() {
+        this.swipeStarted = false;
+        this.swipeDurationStopwatch = null;
     }
 }
 
 var fps = new FullPageScrolling();
+var wid = new WheelInertiaDetector();

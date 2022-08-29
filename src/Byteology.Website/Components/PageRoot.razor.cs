@@ -27,9 +27,6 @@ public partial class PageRoot : ByteologyComponent, IDisposable
     {
         base.OnInitialized();
         _initialFullPageScrollingValue = FullPageScrolling;
-
-        if (FullPageScrolling)
-            _jsRuntime.InvokeVoid("fps.preventPitbarHiding");
     }
 
     protected override void OnAfterRender(bool firstRender)
@@ -49,6 +46,6 @@ public partial class PageRoot : ByteologyComponent, IDisposable
     protected virtual void DisposeCore()
     {
         if (FullPageScrolling)
-            _jsRuntime.InvokeVoid("fps.resetPitbarHiding");
+            _jsRuntime.InvokeVoid("fps.dispose");
     }
 }
