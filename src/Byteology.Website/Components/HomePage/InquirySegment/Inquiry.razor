@@ -1,16 +1,16 @@
 ﻿@inherits ByteologyComponent
 
 <div @attributes=AdditionalAttributes
-     class="space-y-8 
+     class="card max-w-4xl space-y-8
             @(_successfulSubmit.HasValue ? "hidden" : (_shouldFadeIn ? "animate-fade-in-fast" : "")) 
             @CssClass">
 
     <h1 class="text-h3 font-bold text-emph text-center">@Model.Title</h1>
 
-    <div class="grid grid-cols-1 laptop:grid-cols-[2fr_3fr] gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-8">
 
-        <div class="col-start-1 laptop:content-start space-y-4">
-            <p class="text-detail tablet:text-body">
+        <div class="col-start-1 md:content-start space-y-4">
+            <p class="text-detail md:text-body">
                 @Model.CallToAction
             </p>
 

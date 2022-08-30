@@ -8,7 +8,7 @@
 
     <RadioButtonsList Items="Items" Context="item" TItem="TItem" OnChanged="onChanged" class="flex flex-col gap-[1.5rem] w-full">
         <ItemTemplate>
-            <div class="box-content laptop:mr-4
+            <div class="box-content md:mr-4
                         cursor-pointer whitespace-nowrap
                         transition-colors duration-500
                         border-solid border-2
@@ -25,12 +25,12 @@
 
     <div class="bg-accent h-full"></div>
 
-    <div class="tablet:ml-4 grid grid-cols-1 grid-rows-1">
+    <div class="sm:ml-4 grid grid-cols-1 grid-rows-1">
         @for(int i = 0; i < Items.Count; i++)
         {
             <div class="col-start-1 row-start-1 @(_selectedIndex == i ?
                             "h-full transition-[opacity,_left] left-0 duration-[1s,_0.5s] opacity-100" :
-                            "invisible -left-4 tablet:-left-8 opacity-0")">
+                            "invisible -left-4 sm:-left-8 opacity-0")">
                 @Body(Items[i])
             </div>
         }

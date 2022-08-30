@@ -3,7 +3,7 @@
 @inherits ByteologyComponent
 
 <div @attributes=AdditionalAttributes
-     class="space-y-8 @CssClass">
+     class="card max-w-4xl space-y-8 flex flex-col content-center justify-safe-center @CssClass">
 
     <h1 class="text-h3 font-bold text-emph text-center">@Model.Title</h1>
 
@@ -11,20 +11,20 @@
                   Context="service">
 
         <TabContent>
-            <div class="flex items-center gap-4 p-1 laptop:pr-4 h-8">
+            <div class="flex items-center gap-4 p-1 md:pr-4 h-8">
                 <img class="h-full" src=@service.Value.IconSrc alt=@service.Value.Title />
-                <div class="hidden laptop:block text-detail font-bold"> @service.Value.Title </div>
+                <div class="hidden md:block text-detail font-bold"> @service.Value.Title </div>
             </div>
         </TabContent>
 
         <Body>
             <div class="h-full flex flex-col gap-8 justify-between">
-                <div class="flex items-center gap-4 tablet:py-2 h-8 tablet:h-14">
+                <div class="flex items-center gap-4 md:py-2 h-8 md:h-14">
                     <img class="h-full" src=@service.IconSrc alt=@service.Title />
-                    <div class="text-body tablet:text-h3 font-bold"> @service.Title </div>
+                    <div class="text-body lg:text-h3 font-bold"> @service.Title </div>
                 </div>
 
-                <p class="text-detail tablet:text-body">@service.Description</p>
+                <p class="text-detail lg:text-body">@service.Description</p>
 
                 <a 
                     href="@service.DetailsUrl"
