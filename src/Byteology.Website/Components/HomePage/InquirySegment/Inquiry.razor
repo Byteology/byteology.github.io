@@ -1,16 +1,16 @@
 ﻿@inherits ByteologyComponent
 
 <div @attributes=AdditionalAttributes
-     class="card max-w-4xl space-y-8
+     class="max-w-3xl space-y-8
             @(_successfulSubmit.HasValue ? "hidden" : (_shouldFadeIn ? "animate-fade-in-fast" : "")) 
             @CssClass">
 
-    <h1 class="text-h3 font-bold text-emph text-center">@Model.Title</h1>
+    <h1 class="text-lg font-bold uppercase text-accent text-center">@Model.Title</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-8">
 
         <div class="col-start-1 md:content-start space-y-4">
-            <p class="text-detail md:text-body">
+            <p class="text-sm md:text-base">
                 @Model.CallToAction
             </p>
 
@@ -22,11 +22,11 @@
     </div>
 </div>
 
-<div class="p-8 max-w-[26rem] bg-bg flex flex-col gap-4 @(_successfulSubmit.HasValue ? "animate-fade-in-fast" : "hidden")">
-    <h3 class="text-h3 font-bold text-center 
-              @(_successfulSubmit == true ? "text-emph" : "") @(_successfulSubmit == false ? "text-error" : "")">
+<div class="p-8 max-w-md bg-bg flex flex-col gap-4 @(_successfulSubmit.HasValue ? "animate-fade-in-fast" : "hidden")">
+    <h1 class="text-lg font-bold text-center uppercase
+              @(_successfulSubmit == true ? "text-accent" : "") @(_successfulSubmit == false ? "text-error" : "")">
         @getLightboxTitle()
-    </h3>
+    </h1>
 
     <p>@getLightboxBody()</p>
 

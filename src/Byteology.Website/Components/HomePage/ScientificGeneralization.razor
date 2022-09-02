@@ -14,24 +14,24 @@
         </div>
 
         <div class="bg-bg
-                    md:w-1/2 md:max-w-[48rem]
-                    border-accent border-t md:border-t-0 md:border-l 2xl:border-r
+                    md:w-1/2 md:max-w-3xl
+                    border-bg-5 border-t md:border-t-0 md:border-l 2xl:border-r
                     flex flex-col items-center justify-safe-center">
 
             <div class="p-8 bg-bg
-                        md:max-w-[35rem] flex flex-col gap-8
+                        md:max-w-xl flex flex-col gap-8
                         md:justify-center
-                        text-body lg:text-h3" >
+                        text-base lg:text-2xl" >
 
-                <div class="[&_strong]:text-emph">
+                <div class="[&_strong]:text-accent">
                     @(new MarkupString(Markdown.ToHtml(Model.Introduction)))
                 </div>
     
                 <Timeline Items="@Model.Timeline.Select(x => new MarkupString(Markdown.ToHtml(x))).ToArray()"
-                            class="text-detail lg:text-body"/>
+                            class="text-sm lg:text-base"/>
 
                 <a href="@Model.AboutUsUrl"
-                    class="button p-2">
+                    class="button text-sm p-2">
                     @Model.AdditionalInfoText
                 </a>
 

@@ -12,42 +12,48 @@ module.exports = {
             '2xl': '96rem',
         },
 
-        colors: {
-            'transparent':          'transparent',
-            'current':              'currentColor',
-            'accent':               'rgb(var(--clr-accent) / <alpha-value>)',
-            'accent-alt':           'rgb(var(--clr-accent-alt) / <alpha-value>)',
-            'accent-fg':            'rgb(var(--clr-accent-fg) / <alpha-value>)',
-            'secondary':            'rgb(var(--clr-secondary) / <alpha-value>)',
-            'secondary-fg':         'rgb(var(--clr-secondary-fg) / <alpha-value>)',
-            'emph':                 'rgb(var(--clr-emph) / <alpha-value>)',
-            'bg':                   'rgb(var(--clr-bg) / <alpha-value>)',
-            'fg':                   'rgb(var(--clr-fg) / <alpha-value>)',
-            'fg-inactive':          'rgb(var(--clr-fg-inactive) / <alpha-value>)',
-            'error':                'rgb(var(--clr-error) / <alpha-value>)',
+        fontFamily: {
+            'sans': ['Archivo', 'sans-serif'],
         },
 
-        fontSize: {
-            h1:     ['2.5rem', { letterSpacing: '0.10rem', lineHeight: '1.1'} ],
-            h2:     ['2rem', { letterSpacing: '0.10rem', lineHeight: '1.1'} ],
-            h3:     ['1.5rem', { letterSpacing: '0.10rem', lineHeight: '1.1'} ],
-            body:   ['1rem', { letterSpacing: '0.10rem', lineHeight: '1.5'} ],
-            detail: ['0.875rem', { letterSpacing: '0.10rem', lineHeight: '1.5' }],
-            footnote: ['0.75rem', { letterSpacing: '0.10rem', lineHeight: '1.5' }],
+        colors: {
+            'transparent': 'transparent',
+            'current': 'currentColor',
+            'primary': {
+                light: 'hsl(var(--clr-primary-light) / <alpha-value>)',
+                DEFAULT: 'hsl(var(--clr-primary) / <alpha-value>)',
+                dark: 'hsl(var(--clr-primary-dark) / <alpha-value>)',
+                contrast: 'hsl(var(--clr-primary-contrast) / <alpha-value>)'
+            },
+            'accent': {
+                light: 'hsl(var(--clr-accent-light) / <alpha-value>)',
+                DEFAULT: 'hsl(var(--clr-accent) / <alpha-value>)',
+                dark: 'hsl(var(--clr-accent-dark) / <alpha-value>)',
+            },
+            'fg': {
+                DEFAULT: 'hsl(var(--clr-foreground-1) / <alpha-value>)',
+                2: 'hsl(var(--clr-foreground-2) / <alpha-value>)',
+                3: 'hsl(var(--clr-foreground-3) / <alpha-value>)',
+                4: 'hsl(var(--clr-foreground-4) / <alpha-value>)',
+                5: 'hsl(var(--clr-foreground-5) / <alpha-value>)'
+            },
+            'bg': {
+                DEFAULT: 'hsl(var(--clr-background-1) / <alpha-value>)',
+                2: 'hsl(var(--clr-background-2) / <alpha-value>)',
+                3: 'hsl(var(--clr-background-3) / <alpha-value>)',
+                4: 'hsl(var(--clr-background-4) / <alpha-value>)',
+                5: 'hsl(var(--clr-background-5) / <alpha-value>)'
+            },
+            'error': 'hsl(var(--clr-error) / <alpha-value>)',
         },
 
         extend: {
-            fontFamily: {
-                'sans': ['Archivo', 'sans-serif'],
-            },
-
             keyframes: {
                 fade: {
                     '0%': { opacity: 1 },
                     '100%': { opacity: 0 },
                 }
             },
-
             animation: {
                 'fade-in-fast': 'fade 0.25s ease-out 0s reverse forwards',
             }

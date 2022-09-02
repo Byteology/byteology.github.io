@@ -4,12 +4,12 @@
 
 @layer base {
     body {
-        background-color: rgb(3 14 40);
+        /*background-color: rgb(3 14 40);*/
     }
     
     *, :after, :before {
         @apply relative;
-        overflow-wrap: anywhere;
+        /*overflow-wrap: anywhere;*/
     }
 
     *:focus {
@@ -19,11 +19,12 @@
 
 @layer components {
     .page {
-        @apply text-body;
         @apply font-sans;
+        @apply tracking-widest;
+        @apply bg-bg;
 
-        @apply selection:text-accent-fg;
-        @apply selection:bg-accent-alt;
+        @apply selection:text-primary-contrast;
+        @apply selection:bg-primary-light;
     }
 
     .slide {
@@ -36,79 +37,90 @@
         @apply no-scrollbar;
     }
 
-    .card {
-        @apply p-8;
-        @apply bg-bg;
-        @apply text-fg;
-        @apply border;
-        @apply border-solid;
-        @apply border-accent;
+    .slide-centered {
+        @apply flex;
+        @apply flex-col;
+        @apply justify-safe-center;
+        @apply items-center;
     }
 
     .link {
         @apply underline;
         @apply underline-offset-2;
         @apply decoration-2;
-        @apply decoration-accent;
+        @apply decoration-primary;
         @apply text-fg;
         @apply transition-fast;
-        @apply hocus:text-accent-alt;
-        @apply hocus:decoration-accent-alt;
+        @apply hocus:text-primary-light;
+        @apply hocus:decoration-primary-light;
     }
 
     .button {
-        @apply text-detail;
         @apply font-bold;
         @apply uppercase;
         @apply text-center;
-        @apply text-detail;
-        @apply text-accent-fg;
+        @apply text-primary-contrast;
         @apply transition-normal;
-        @apply bg-accent;
-        @apply hocus:bg-accent-alt;
+        @apply bg-primary;
+        @apply hocus:bg-primary-light;
     }
 }
 
 @layer utilities {
 
     .dark {
-        --clr-accent: 88 59 226;
-        --clr-accent-alt: 133 113 234;
-        --clr-accent-fg: 255 255 255;
+        --clr-primary: 250 74% 56%;
+        --clr-primary-light: 250 86% 68%;
+        --clr-primary-dark: 250 53% 44%;
+        --clr-primary-contrast: 0 0% 100%;
 
-        --clr-secondary: 60 182 226;
-        --clr-secondary-fg: 255 255 255;
+        --clr-accent: 196 82% 66%;
+        --clr-accent-light: 196 88% 78%;
+        --clr-accent-dark: 196 70% 54%;
 
-        --clr-emph: 60 182 226;
+        --clr-foreground-1: 222 12% 100%;
+        --clr-foreground-2: 222 12% 84%;
+        --clr-foreground-3: 222 12% 71%;
+        --clr-foreground-4: 222 12% 60%;
+        --clr-foreground-5: 222 12% 50%;
 
-        --clr-bg: 3 14 40;
-        --clr-fg: 255 255 255;
-        --clr-fg-inactive: 217 217 217;
+        --clr-background-1: 222 85% 8%;
+        --clr-background-2: 222 86% 11%;
+        --clr-background-3: 222 74% 15%;
+        --clr-background-4: 222 70% 18%;
+        --clr-background-5: 222 66% 21%;
 
-        --clr-error: 226 60 60;
+        --clr-error: 0 74% 56%;
 
-        @apply bg-bg;
         @apply text-fg;
     }
 
     .light {
-        --clr-accent: 88 59 226;
-        --clr-accent-alt: 164 149 239;
-        --clr-accent-fg: 255 255 255;
+        --clr-primary: 250 74% 56%;
+        --clr-primary-light: 250 86% 68%;
+        --clr-primary-dark: 250 53% 44%;
+        --clr-primary-contrast: 0 0% 100%;
 
-        --clr-secondary: 60 182 226;
-        --clr-secondary-fg: 255 255 255;
+        --clr-accent: 250 74% 56%;
+        --clr-accent-light: 250 86% 68%;
+        --clr-accent-dark: 250 53% 44%;
 
-        --clr-emph: 88 59 226;
+        --clr-foreground-1: 250 8% 8%;
+        --clr-foreground-2: 250 8% 24%;
+        --clr-foreground-3: 250 8% 37%;
+        --clr-foreground-4: 250 8% 48%;
+        --clr-foreground-5: 250 8% 58%;
 
-        --clr-bg: 255 255 255;
-        --clr-fg: 3 14 40;
-        --clr-fg-inactive: 7 33 95;
+        --clr-background-1: 250 40% 100%;
+        --clr-background-2: 250 40% 98%;
+        --clr-background-3: 250 40% 96%;
+        --clr-background-4: 250 30% 91%;
+        --clr-background-5: 250 27% 84%;
 
-        --clr-error: 226 60 60;
+        --clr-error: 0 74% 56%;
 
-        @apply bg-bg;
         @apply text-fg;
+
     }
 
     .transition-fast {
