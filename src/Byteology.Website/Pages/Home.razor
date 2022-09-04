@@ -1,43 +1,24 @@
 ﻿@page "/"
 @inherits BasePage<Data.Models.HomePage.HomePageModel>
 
-@using Byteology.Website.Components.HomePage;
+@using Byteology.Website.Components.HomePage
 @using Byteology.Website.Components.HomePage.InquirySegment;
 
 <PageTitle>@Model.Title</PageTitle>
 
-<PageRoot FullPageScrolling=true class="fixed-banner dark">
+<PageRoot FullPageScrolling=true class="text-neutral-100">
 
     <ScientificGeneralization Model=Model.ScientificGeneralization class="slide"/>
 
-
-    <section class="slide slide-centered">
-        <div class="bg-bg border border-bg-5 p-4 max-w-7xl shadow-md
-                    grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center">
-            @for (int i = 0; i < Model.ServicesList.Services.Length; i++)
-            {
-                var service = Model.ServicesList.Services[i];
-                <div class="max-w-xl border border-bg-5 shadow-md flex">
-                    <div class="bg-bg-2 basis-0 grow-[3] flex flex-col gap-4 justify-between p-4">
-                        <h2 class="font-bold text-accent uppercase text-sm md:text-base">@service.Title</h2>
-                        <p class="text-sm">@service.Description</p>
-                        <a class="button text-sm p-1">@service.AdditionalInfoText</a>
-                    </div>
-                    <div class="basis-0 grow flex justify-center bg-bg-3 @(i % 2 == 0 ? "lg:order-first" : "")">
-                        <img class="self-center w-1/2" src=@service.IconSrc /> 
-                    </div>
-                </div>
-            }
-        </div>
+    <section class="slide slide-center bg-radial">
+        <ServicesList Services=Model.Services />
     </section>
 
-
-    <section class="slide slide-centered">
-        <Inquiry Model="Model.Inquiry" class="bg-bg border border-bg-5 p-8 shadow-md" />
+    <section class="slide slide-center sm:px-8 bg-radial">
+        <Inquiry Model="Model.Inquiry" />
     </section>
 
-
-    <section class="slide">
+    <section class="slide slide-center bg-radial">
         <div class="card flex gap-16">
             <div class="flex flex-col ">
                 <p class="block font-bold mb-4 text-emph text-body">Company</p>

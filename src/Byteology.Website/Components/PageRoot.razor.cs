@@ -39,13 +39,13 @@ public partial class PageRoot : ByteologyComponent, IDisposable
 
     public void Dispose()
     {
-        DisposeCore();
+        Dispose(true);
         GC.SuppressFinalize(this);
     }
 
-    protected virtual void DisposeCore()
+    protected virtual void Dispose(bool disposing)
     {
-        if (FullPageScrolling)
+        if (disposing && FullPageScrolling)
             _jsRuntime.InvokeVoid("fps.dispose");
     }
 }

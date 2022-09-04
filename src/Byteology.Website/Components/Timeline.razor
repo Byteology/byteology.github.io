@@ -8,13 +8,13 @@
 
                 <div class="
                         bullet pt-[0.125em] 
-                        text-[0.875em] font-bold text-accent" />
+                        text-[0.875em] font-bold text-current" />
 
                 <div class="
                         line absolute left-[calc(0.875ch_-_1px)] top-[1.5em] w-[2px] h-[calc(100%_-_0.5em)]
-                        bg-accent" />
+                        bg-current" />
 
-                <div class="transition-fast group-hover:scale-105">@Items[i]</div>
+                <div class="transition-fast group-hover:scale-105">@Item(Items[i])</div>
             </li>
         }
     </ol>
@@ -22,5 +22,8 @@
 
 @code {
     [Parameter, Required, MinLength(1)]
-    public MarkupString[] Items { get; set; } = default!;
+    public string[] Items { get; set; } = default!;
+
+    [Parameter, Required]
+    public RenderFragment<string> Item { get; set; } = default!;
 }

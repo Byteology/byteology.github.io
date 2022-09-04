@@ -4,12 +4,19 @@
 
 @layer base {
     body {
-        /*background-color: rgb(3 14 40);*/
+        @apply bg-dark-900;
+        @apply font-sans;
+        @apply tracking-widest;
+        @apply selection:text-neutral-100;
+        @apply selection:bg-primary-300;
     }
-    
+
+    .uppercase {
+        letter-spacing: 0.15em;
+    }
+
     *, :after, :before {
         @apply relative;
-        /*overflow-wrap: anywhere;*/
     }
 
     *:focus {
@@ -18,15 +25,6 @@
 }
 
 @layer components {
-    .page {
-        @apply font-sans;
-        @apply tracking-widest;
-        @apply bg-bg;
-
-        @apply selection:text-primary-contrast;
-        @apply selection:bg-primary-light;
-    }
-
     .slide {
         @apply w-full;
         @apply h-full;
@@ -37,7 +35,7 @@
         @apply no-scrollbar;
     }
 
-    .slide-centered {
+    .slide-center {
         @apply flex;
         @apply flex-col;
         @apply justify-safe-center;
@@ -49,80 +47,24 @@
         @apply underline-offset-2;
         @apply decoration-2;
         @apply decoration-primary;
-        @apply text-fg;
+        @apply text-neutral-100;
         @apply transition-fast;
-        @apply hocus:text-primary-light;
-        @apply hocus:decoration-primary-light;
+        @apply hocus:text-primary-300;
+        @apply hocus:decoration-primary-300;
     }
 
     .button {
         @apply font-bold;
         @apply uppercase;
         @apply text-center;
-        @apply text-primary-contrast;
+        @apply text-neutral-100;
         @apply transition-normal;
         @apply bg-primary;
-        @apply hocus:bg-primary-light;
+        @apply hocus:bg-primary-300;
     }
 }
 
 @layer utilities {
-
-    .dark {
-        --clr-primary: 250 74% 56%;
-        --clr-primary-light: 250 86% 68%;
-        --clr-primary-dark: 250 53% 44%;
-        --clr-primary-contrast: 0 0% 100%;
-
-        --clr-accent: 196 82% 66%;
-        --clr-accent-light: 196 88% 78%;
-        --clr-accent-dark: 196 70% 54%;
-
-        --clr-foreground-1: 222 12% 100%;
-        --clr-foreground-2: 222 12% 84%;
-        --clr-foreground-3: 222 12% 71%;
-        --clr-foreground-4: 222 12% 60%;
-        --clr-foreground-5: 222 12% 50%;
-
-        --clr-background-1: 222 85% 8%;
-        --clr-background-2: 222 86% 11%;
-        --clr-background-3: 222 74% 15%;
-        --clr-background-4: 222 70% 18%;
-        --clr-background-5: 222 66% 21%;
-
-        --clr-error: 0 74% 56%;
-
-        @apply text-fg;
-    }
-
-    .light {
-        --clr-primary: 250 74% 56%;
-        --clr-primary-light: 250 86% 68%;
-        --clr-primary-dark: 250 53% 44%;
-        --clr-primary-contrast: 0 0% 100%;
-
-        --clr-accent: 250 74% 56%;
-        --clr-accent-light: 250 86% 68%;
-        --clr-accent-dark: 250 53% 44%;
-
-        --clr-foreground-1: 250 8% 8%;
-        --clr-foreground-2: 250 8% 24%;
-        --clr-foreground-3: 250 8% 37%;
-        --clr-foreground-4: 250 8% 48%;
-        --clr-foreground-5: 250 8% 58%;
-
-        --clr-background-1: 250 40% 100%;
-        --clr-background-2: 250 40% 98%;
-        --clr-background-3: 250 40% 96%;
-        --clr-background-4: 250 30% 91%;
-        --clr-background-5: 250 27% 84%;
-
-        --clr-error: 0 74% 56%;
-
-        @apply text-fg;
-
-    }
-
     .transition-fast {
         @apply transition-all;
         @apply duration-200;
@@ -149,10 +91,6 @@
         height: 0;
     }
 
-    .uppercase {
-        letter-spacing: 0.15em;
-    }
-
     .fixed-banner{
         @apply bg-center; 
         @apply bg-cover; 
@@ -164,5 +102,10 @@
         @apply before:max-h-0;
         @apply after:max-h-0;
         @apply justify-between;
+    }
+
+    .bg-radial {
+        background: radial-gradient(ellipse, #1f1452, #030d26);
+        background: -webkit-radial-gradient(ellipse, #1f1452, #030d26);
     }
 }

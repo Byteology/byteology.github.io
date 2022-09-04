@@ -1,44 +1,25 @@
-﻿@using Byteology.Website.Data.Models.HomePage.ServucesListSegment
-
+﻿@using Byteology.Website.Data.Models.HomePage
 @inherits ByteologyComponent
 
-<div @attributes=AdditionalAttributes
-     class="card max-w-4xl space-y-8 flex flex-col content-center justify-safe-center @CssClass">
-
-    <h1 class="text-h3 font-bold text-emph text-center">@Model.Title</h1>
-
-    <TabbedWindow Items="Model.Services" 
-                  Context="service">
-
-        <TabContent>
-            <div class="flex items-center gap-4 p-1 md:pr-4 h-8">
-                <img class="h-full" src=@service.Value.IconSrc alt=@service.Value.Title />
-                <div class="hidden md:block text-detail font-bold"> @service.Value.Title </div>
+<div @attributes=AdditionalAttributes 
+        class="p-4 bg-dark-900/75 border border-dark-100 shadow-md max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center @CssClass">
+    @for (int i = 0; i < Services.Length; i++)
+    {
+        var service = Services[i];
+        <div class="max-w-xl border border-dark-100 shadow-md flex">
+            <div class="bg-dark-700 basis-0 grow-[3] flex flex-col gap-4 justify-between p-4">
+                <h2 class="font-bold text-accent uppercase text-sm md:text-base">@service.Title</h2>
+                <p class="text-sm">@service.Description</p>
+                <a class="button text-sm p-1">@service.AdditionalInfoText</a>
             </div>
-        </TabContent>
-
-        <Body>
-            <div class="h-full flex flex-col gap-8 justify-between">
-                <div class="flex items-center gap-4 md:py-2 h-8 md:h-14">
-                    <img class="h-full" src=@service.IconSrc alt=@service.Title />
-                    <div class="text-body lg:text-h3 font-bold"> @service.Title </div>
-                </div>
-
-                <p class="text-detail lg:text-body">@service.Description</p>
-
-                <a 
-                    href="@service.DetailsUrl"
-                    class="button p-[calc(0.25rem_+_2px)]">
-
-                    @service.AdditionalInfoText
-                </a>
+            <div class="basis-0 grow flex justify-center bg-dark @(i % 2 == 0 ? "lg:order-first" : "")">
+                <img class="self-center w-1/2" src=@service.IconSrc /> 
             </div>
-        </Body>
-    </TabbedWindow>
-        
+        </div>
+    }
 </div>
 
 @code {
     [Parameter, Required]
-    public ServicesListModel Model { get; set; } = default!;
+    public ServiceModel[] Services { get; set; } = default!;
 }

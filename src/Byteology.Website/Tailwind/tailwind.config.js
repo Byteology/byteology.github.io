@@ -19,44 +19,47 @@ module.exports = {
         colors: {
             'transparent': 'transparent',
             'current': 'currentColor',
-            'primary': {
-                light: 'hsl(var(--clr-primary-light) / <alpha-value>)',
-                DEFAULT: 'hsl(var(--clr-primary) / <alpha-value>)',
-                dark: 'hsl(var(--clr-primary-dark) / <alpha-value>)',
-                contrast: 'hsl(var(--clr-primary-contrast) / <alpha-value>)'
-            },
-            'accent': {
-                light: 'hsl(var(--clr-accent-light) / <alpha-value>)',
-                DEFAULT: 'hsl(var(--clr-accent) / <alpha-value>)',
-                dark: 'hsl(var(--clr-accent-dark) / <alpha-value>)',
-            },
-            'fg': {
-                DEFAULT: 'hsl(var(--clr-foreground-1) / <alpha-value>)',
-                2: 'hsl(var(--clr-foreground-2) / <alpha-value>)',
-                3: 'hsl(var(--clr-foreground-3) / <alpha-value>)',
-                4: 'hsl(var(--clr-foreground-4) / <alpha-value>)',
-                5: 'hsl(var(--clr-foreground-5) / <alpha-value>)'
-            },
-            'bg': {
-                DEFAULT: 'hsl(var(--clr-background-1) / <alpha-value>)',
-                2: 'hsl(var(--clr-background-2) / <alpha-value>)',
-                3: 'hsl(var(--clr-background-3) / <alpha-value>)',
-                4: 'hsl(var(--clr-background-4) / <alpha-value>)',
-                5: 'hsl(var(--clr-background-5) / <alpha-value>)'
-            },
-            'error': 'hsl(var(--clr-error) / <alpha-value>)',
-        },
 
-        extend: {
-            keyframes: {
-                fade: {
-                    '0%': { opacity: 1 },
-                    '100%': { opacity: 0 },
-                }
+            primary: {
+                100: "#aa99ff",
+                300: "#7f67f4",
+                DEFAULT: "#573ce2",
+                700: "#4935ac",
+                900: "#36297a"
             },
-            animation: {
-                'fade-in-fast': 'fade 0.25s ease-out 0s reverse forwards',
-            }
+            accent: {
+                100: "#ade9ff",
+                300: "#96def8",
+                DEFAULT: "#61c9ef",
+                700: "#38b0dc",
+                900: "#1b98c5"
+            },
+            dark: {
+                100: "#122759",
+                300: "#0e214e",
+                DEFAULT: "#0a1b42",
+                700: "#041334",
+                900: "#030d26"
+            },
+            light: {
+                100: "#ffffff",
+                300: "#f9f8fc",
+                DEFAULT: "#f2f1f9",
+                700: "#e3e1ef",
+                900: "#cfcbe1"
+            },
+            neutral: {
+                100: "#ffffff",
+                200: "#d4d3d9",
+                300: "#b1afbb",
+                400: "#9491a1",
+                DEFAULT: "#7b7887",
+                600: "#6a6779",
+                700: "#595766",
+                800: "#3f3d48",
+                900: "#131316"
+            },
+            error: "#e23c3c"
         },
     },
 
