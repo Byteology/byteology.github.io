@@ -10,7 +10,7 @@
             <div class="bg-dark-700 basis-0 grow-[3] flex flex-col gap-4 justify-between p-4">
                 <h2 class="font-bold text-accent uppercase text-sm md:text-base">@service.Title</h2>
                 <p class="text-sm">@service.Description</p>
-                <a class="button text-sm p-1">@service.AdditionalInfoText</a>
+                <a class="button text-sm p-1" href="@service.DetailsUrl">@service.AdditionalInfoText</a>
             </div>
             <div class="basis-0 grow flex justify-center bg-dark @(i % 2 == 0 ? "lg:order-first" : "")">
                 <img class="self-center w-1/2" src=@service.IconSrc /> 
