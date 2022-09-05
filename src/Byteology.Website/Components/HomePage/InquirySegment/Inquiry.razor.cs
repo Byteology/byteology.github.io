@@ -2,12 +2,12 @@
 
 using Byteology.Website.Data.Models.HomePage.InquirySegment;
 
-public partial class Inquiry : ByteologyComponent
+public partial class Inquiry : ComponentBase
 {
     private bool? _successfulSubmit;
     private bool _shouldFadeIn = false;
 
-    [Parameter, Required]
+    [Parameter]
     public InquiryModel Model { get; set; } = default!;
 
     private void onSubmit(ContactForm.SubmissionEventArgs args)

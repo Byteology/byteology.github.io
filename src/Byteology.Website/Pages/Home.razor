@@ -8,50 +8,13 @@
 
 <PageRoot FullPageScrolling=true class="text-neutral-100">
 
-    <ScientificGeneralization Model=Model.ScientificGeneralization class="slide"/>
+    <ScientificGeneralization Model=Model.ScientificGeneralization/>
 
-    <section class="slide slide-center">
-        <ServicesList Services=Model.Services />
-    </section>
+    <ServicesList Services=Model.Services />
 
-    <section class="slide slide-center md:px-8">
-        <Inquiry Model="Model.Inquiry" />
-    </section>
+    <Inquiry Model="Model.Inquiry" />
 
-    <section class="slide slide-center">
-        <div class="w-full bg-dark-900 border-y border-dark-100 shadow-md flex flex-col items-center">
-            <div class="p-8 w-full max-w-7xl flex justify-evenly gap-8">
-
-                <img class="w-[10rem] object-center object-contain
-                        content-[url(/images/logo-portrait.svg)]"/>
-
-                <div class="flex flex-col text-sm">
-                    <p class="uppercase font-bold mb-4 text-accent text-base">Company</p>
-                    <a class="hocus:text-primary-300" href="">Mission</a>
-                    <a class="hocus:text-primary-300" href="">Careers</a>
-                    <a class="hocus:text-primary-300" href="">Contacts</a>
-                </div>
-
-                <div class="flex flex-col text-sm">
-                    <p class="uppercase font-bold mb-4 text-accent text-base">Services</p>
-                    <a class="hocus:text-primary-300"  href="">Application Development</a>
-                    <a class="hocus:text-primary-300"  href="">Migration to Microservices</a>
-                    <a class="hocus:text-primary-300"  href="">Event Sourcing</a>
-                    <a class="hocus:text-primary-300"  href="">Training & Consulting</a>
-                    <a class="hocus:text-primary-300"  href="">Interviewing as a Service</a>
-                </div>
-
-                <div class="flex flex-col text-sm">
-                    <p class="uppercase font-bold mb-4 text-accent text-base">Toughts</p>
-                    <a class="hocus:text-primary-300"  href="">Business</a>
-                    <a class="hocus:text-primary-300"  href="">Software Development</a>
-                    <a class="hocus:text-primary-300"  href="">Random stuff</a>
-                </div>
-            </div>
-            <div class="w-full p-1 text-center text-neutral text-xs">©2021 Byteology | <a class="underline hocus:text-primary-300" href="">Privacy policy</a></div>
-
-        </div>
-    </section>
+    <Footer />
 
 </PageRoot>
 

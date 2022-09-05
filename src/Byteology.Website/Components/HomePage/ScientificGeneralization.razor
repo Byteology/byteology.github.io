@@ -1,53 +1,51 @@
 ﻿@using Byteology.Website.Data.Models.HomePage
 
-@inherits ByteologyComponent
-    <section @attributes=AdditionalAttributes
-             class="bg-[url('/images/background.jpeg')] bg-cover bg-center
-                    flex flex-col md:flex-row @CssClass">
+<section class="slide bg-[url('/images/background.jpeg')] bg-cover bg-center
+                flex flex-col md:flex-row">
 
-        <div class="grow h-[max(25vh,10rem)] flex content-center justify-center 
-                    md:grow-0 md:w-1/2 md:sticky md:top-1/2 md:-translate-y-1/2">
-            <img class="my-8 md:my-0
-                        max-w-[50%]
-                        object-center object-contain
-                        content-[url(/images/logo-portrait.svg)]"
-                 alt="Byteology - a moment of science"/>
-        </div>
+    <div class="grow h-[max(25vh,10rem)] flex content-center justify-center 
+                md:grow-0 md:w-1/2 md:sticky md:top-1/2 md:-translate-y-1/2">
+        <img class="my-8 md:my-0
+                    max-w-[50%]
+                    object-center object-contain
+                    content-[url(/images/logo-portrait.svg)]"
+                alt="Byteology - a moment of science"/>
+    </div>
 
-        <div class="md:px-4 lg:px-8
-                    md:w-1/2 md:max-w-3xl
-                    flex flex-col items-center justify-safe-center">
+    <div class="md:px-4 lg:px-8
+                md:w-1/2 md:max-w-3xl
+                flex flex-col items-center justify-safe-center">
 
-            <div class="p-8 bg-dark-700 shadow-md
-                        border border-dark-100
-                        md:max-w-xl flex flex-col gap-8
-                        md:justify-center
-                        text-base lg:text-2xl" >
+        <div class="p-8 bg-dark-900 shadow-md
+                    border border-dark-100
+                    md:max-w-xl flex flex-col gap-8
+                    md:justify-center
+                    text-base lg:text-2xl" >
 
-                <div class="[&_strong]:text-accent font-bold">
-                    @(new MarkupString(Markdown.ToHtml(Model.Introduction)))
-                </div>
-    
-                <Timeline Items="@Model.Timeline" Context="item"
-                            class="text-sm lg:text-base text-accent">
-                    <Item>
-                        <p class="text-neutral-100">@(new MarkupString(Markdown.ToHtml(item)))</p>
-                    </Item>
-                </Timeline>
-
-                <a href="@Model.AboutUsUrl"
-                    class="button text-sm p-2">
-                    @Model.AdditionalInfoText
-                </a>
-
+            <div class="[&_strong]:text-accent font-bold">
+                @(new MarkupString(Markdown.ToHtml(Model.Introduction)))
             </div>
+    
+            <Timeline Items="@Model.Timeline" Context="item"
+                        class="text-sm lg:text-base text-accent">
+                <Item>
+                    <p class="text-neutral-100">@(new MarkupString(Markdown.ToHtml(item)))</p>
+                </Item>
+            </Timeline>
+
+            <a href="@Model.AboutUsUrl"
+                class="button text-sm p-2">
+                @Model.AdditionalInfoText
+            </a>
 
         </div>
 
+    </div>
 
-    </section> 
+
+</section> 
 
 @code {
-    [Parameter, Required]
+    [Parameter]
     public ScientificGeneralizationModel Model { get; set; } = default!;
 }

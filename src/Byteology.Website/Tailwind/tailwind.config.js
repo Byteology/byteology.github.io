@@ -61,6 +61,18 @@ module.exports = {
             },
             error: "#e23c3c"
         },
+
+        extend: {
+            keyframes: {
+                fade: {
+                    '0%': { opacity: 1 },
+                    '100%': { opacity: 0 },
+                }
+            },
+            animation: {
+                'fade-in-fast': 'fade 0.25s ease-out 0s reverse forwards',
+            }
+        },
     },
 
     plugins: [
