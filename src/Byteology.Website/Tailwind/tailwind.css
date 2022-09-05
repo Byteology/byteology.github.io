@@ -47,7 +47,6 @@
         @apply underline-offset-2;
         @apply decoration-2;
         @apply decoration-primary;
-        @apply text-neutral-100;
         @apply transition-fast;
         @apply hocus:text-primary-300;
         @apply hocus:decoration-primary-300;
