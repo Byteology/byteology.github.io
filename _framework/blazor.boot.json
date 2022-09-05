@@ -7,11 +7,11 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Byteology.Website.dll": "sha256-Mz0GH7tzq3pGZaDmXJy9c47vYWVRuCd6vRzPAAGaOHQ=",
+      "Byteology.Website.dll": "sha256-vtQmkYNMq\/lwr5FgpX4p2RHT70pBy0g2NFT7n7ATJOc=",
       "Markdig.dll": "sha256-\/qKhOo2ZbkSd56j45qUCUGYRyBMnR0dmDkWfZfLJKeo=",
-      "Microsoft.AspNetCore.Components.dll": "sha256-ns7JM3Nc\/ynSFAMDBGGWVyz7gNscqKwAHXtpprd\/HyU=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-t2D8SJtfFXmM0lZrFwgBneG9UR4gjXtEnq8YgrUofUE=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-E8pAJoClHQZU70wHEeWb26NKyfE7MW975Pq+7a0TuRs=",
-      "Microsoft.AspNetCore.Components.Web.dll": "sha256-AKZNJM3kG7Y\/I3ftzjRV80YVaaMpGAxoDdIOVIJaQew=",
+      "Microsoft.AspNetCore.Components.Web.dll": "sha256-Le6zA6H4v3YDiDH644ULTKBYyKXz7KBxhljoC1ud\/gk=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-TYSvnmczp3HoJBtOn6aDAffJ+8okxxSOkgT7uV6OGeI=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-zhFtW4kE16TdrpPne9I1Cu9o0KYzrS50VE9MVSifJg4=",
       "Microsoft.Extensions.Configuration.dll": "sha256-QPR+1IXNcA28b\/gXw3uZ8aRigHIZUJ1KWSH02kkCg7Q=",
