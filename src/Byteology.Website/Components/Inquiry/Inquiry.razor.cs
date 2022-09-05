@@ -1,14 +1,21 @@
-﻿namespace Byteology.Website.Components.HomePage.InquirySegment;
+﻿namespace Byteology.Website.Components.Inquiry;
 
-using Byteology.Website.Data.Models.HomePage.InquirySegment;
+using Byteology.Website.Models.Inquiry;
 
 public partial class Inquiry : ComponentBase
 {
     private bool? _successfulSubmit;
     private bool _shouldFadeIn = false;
 
-    [Parameter]
-    public InquiryModel Model { get; set; } = default!;
+    [Inject]
+    private ModelReader _modelReader { get; set; } = default!;
+    private InquiryModel _model = default!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _model = _modelReader.Read<InquiryModel>("inquiry-data.json");
+    }
 
     private void onSubmit(ContactForm.SubmissionEventArgs args)
     {
@@ -21,7 +28,7 @@ public partial class Inquiry : ComponentBase
         string? result = null;
 
         if (_successfulSubmit.HasValue)
-            result = _successfulSubmit.Value ? Model.ContactForm.OnSuccessTitle : Model.ContactForm.OnErrorTitle;
+            result = _successfulSubmit.Value ? _model.Response.OnSuccessTitle : _model.Response.OnErrorTitle;
 
         return result ?? string.Empty;
     }
@@ -31,7 +38,7 @@ public partial class Inquiry : ComponentBase
         string? result = null;
 
         if (_successfulSubmit.HasValue)
-            result = _successfulSubmit.Value ? Model.ContactForm.OnSuccessBody : Model.ContactForm.OnErrorBody;
+            result = _successfulSubmit.Value ? _model.Response.OnSuccessBody : _model.Response.OnErrorBody;
 
         return result ?? string.Empty;
     }

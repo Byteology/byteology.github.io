@@ -1,3 +1,3 @@
-﻿namespace Byteology.Website.Data.Models;
+﻿namespace Byteology.Website.Models;
 
 public record LinkSectionModel(string Title, LinkModel[] Links);

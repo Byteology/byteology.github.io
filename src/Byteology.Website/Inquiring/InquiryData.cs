@@ -2,7 +2,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-public class InquiryModel
+public class InquiryData
 {
     [Required]
     public string? Name { get; set; }

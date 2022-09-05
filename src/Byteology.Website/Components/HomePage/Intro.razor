@@ -1,6 +1,4 @@
-﻿@using Byteology.Website.Data.Models.HomePage
-
-<section class="slide bg-[url('/images/background.jpeg')] bg-cover bg-center
+﻿<section class="slide bg-[url('/images/background.jpeg')] bg-cover bg-center
                 flex flex-col md:flex-row">
 
     <div class="grow h-[max(25vh,10rem)] flex content-center justify-center 
@@ -23,20 +21,20 @@
                     text-base lg:text-2xl" >
 
             <div class="[&_strong]:text-accent font-bold">
-                @(new MarkupString(Markdown.ToHtml(Model.Introduction)))
+                @(new MarkupString(Markdown.ToHtml(_model.Introduction)))
             </div>
     
             <div class="text-sm lg:text-base text-accent">
-                <Timeline Items="@Model.Timeline" Context="item">
+                <Timeline Items="@_model.Timeline" Context="item">
                     <Item>
                         <p class="text-neutral-100">@(new MarkupString(Markdown.ToHtml(item)))</p>
                     </Item>
                 </Timeline>
             </div>
 
-            <a href="@Model.Link.Url"
+            <a href="@_model.Link.Url"
                 class="button text-sm p-2">
-                @Model.Link.Text
+                @_model.Link.Text
             </a>
 
         </div>
@@ -47,6 +45,13 @@
 </section> 
 
 @code {
-    [Parameter]
-    public ScientificGeneralizationModel Model { get; set; } = default!;
+    [Inject]
+    private ModelReader _modelReader { get; set; } = default!;
+    private IntroModel _model = default!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _model = _modelReader.Read<IntroModel>("intro-data.json");
+    }
 }

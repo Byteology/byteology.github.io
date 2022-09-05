@@ -1,3 +1,3 @@
-﻿namespace Byteology.Website.Data.Models.HomePage;
+﻿namespace Byteology.Website.Models;
 
 public record FooterModel(LinkSectionModel[] LinkSections, string Copyright, LinkModel PrivacyPolicy);

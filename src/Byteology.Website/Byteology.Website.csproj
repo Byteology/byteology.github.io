@@ -13,9 +13,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Data\home-page-data.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <Content Remove="Data\footer-data.json" />
+    <Content Remove="Data\inquiry-data.json" />
+    <Content Remove="Data\intro-data.json" />
+    <Content Remove="Data\service-list-data.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\inquiry-data.json" />
+    <EmbeddedResource Include="Data\footer-data.json" />
+    <EmbeddedResource Include="Data\home-page-data.json" />
+    <EmbeddedResource Include="Data\intro-data.json" />
+    <EmbeddedResource Include="Data\service-list-data.json" />
   </ItemGroup>
 
   <ItemGroup>

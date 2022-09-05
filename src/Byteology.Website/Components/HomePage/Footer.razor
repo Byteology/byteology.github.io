@@ -1,13 +1,11 @@
-﻿@using Byteology.Website.Data.Models.HomePage
-
-<section class="slide slide-center">
+﻿<section class="slide slide-center">
     <div class="w-full bg-dark-900 border-y border-dark-100 shadow-md flex flex-col items-center">
         <div class="p-8 w-full max-w-7xl flex justify-evenly gap-8">
 
             <img class="w-[10rem] object-center object-contain
                     content-[url(/images/logo-portrait.svg)]"/>
 
-            @foreach (LinkSectionModel section in Model.LinkSections)
+            @foreach (LinkSectionModel section in _model.LinkSections)
             {
                 <div class="flex flex-col text-sm">
                     <p class="uppercase font-bold mb-4 text-accent text-base">@(section.Title)</p>
@@ -20,12 +18,19 @@
             }
         </div>
 
-        <div class="w-full p-1 text-center text-neutral text-xs">@Model.Copyright | <a class="transition-fast underline hocus:text-primary-300" href="@Model.PrivacyPolicy.Url">@Model.PrivacyPolicy.Text</a></div>
+        <div class="w-full p-1 text-center text-neutral text-xs">@_model.Copyright.Replace("{year}", DateTime.Now.Year.ToString()) | <a class="transition-fast underline hocus:text-primary-300" href="@_model.PrivacyPolicy.Url">@_model.PrivacyPolicy.Text</a></div>
 
     </div>
 </section>
 
 @code {
-    [Parameter]
-    public FooterModel Model { get; set; } = default!;
+    [Inject]
+    private ModelReader _modelReader { get; set; } = default!;
+    private FooterModel _model = default!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _model = _modelReader.Read<FooterModel>("footer-data.json");
+    }
 }

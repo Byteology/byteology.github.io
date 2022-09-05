@@ -1,32 +1,30 @@
-﻿namespace Byteology.Website.Components.HomePage.InquirySegment;
+﻿namespace Byteology.Website.Components.Inquiry;
 
 using Byteology.Website.Inquiring;
+using Byteology.Website.Models.Inquiry;
 
 public partial class ContactForm
 {
     [Inject]
     private IInquiryService _inquiryService { get; set; } = default!;
 
-    private readonly InquiryModel _inquiryModel = new();
+    private readonly InquiryData _inquiryData = new();
 
     [Parameter]
-    public string ConcentText { get; set; } = default!;
-
-    [Parameter]
-    public string SubmitInquiryText { get; set; } = default!;
+    public ContactFormModel Model { get; set; } = default!;
 
     [Parameter]
     public EventCallback<SubmissionEventArgs> OnSubmit { get; set; }
 
     private async Task onSubmit()
     {
-        if (!string.IsNullOrEmpty(_inquiryModel.Honeycomb))
+        if (!string.IsNullOrEmpty(_inquiryData.Honeycomb))
             return;
 
         bool result = false;
         try
         {
-            result = await _inquiryService.SendInquiryAsync(_inquiryModel);
+            result = await _inquiryService.SendInquiryAsync(_inquiryData);
         }
         catch { /* We don't want to expose details about the error. */ }
 

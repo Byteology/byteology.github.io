@@ -11,7 +11,7 @@ public class GoogleDriveInquiryService : IInquiryService
         _httpClient = httpClient;
     }
 
-    public async Task<bool> SendInquiryAsync(InquiryModel inquiry)
+    public async Task<bool> SendInquiryAsync(InquiryData inquiry)
     {
         List<KeyValuePair<string, string>> payload = new()
         {

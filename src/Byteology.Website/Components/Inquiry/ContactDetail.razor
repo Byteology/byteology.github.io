@@ -1,4 +1,4 @@
-﻿@using Byteology.Website.Data.Models.HomePage.InquirySegment
+﻿@using Byteology.Website.Models.Inquiry
 
 @if(Model.Type == ContactDetailType.Address)
 {
@@ -27,6 +27,6 @@
 }
 
 @code {
-    [Parameter, Required]
+    [Parameter]
     public ContactDetailModel Model { get; set; } = default!;
 }

@@ -1,10 +1,8 @@
-﻿@using Byteology.Website.Data.Models.HomePage
-
-<section class="slide slide-center">
+﻿<section class="slide slide-center">
     <div class="p-4 bg-dark-900 border border-dark-100 shadow-md max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center">
-        @for (int i = 0; i < Services.Length; i++)
+        @for (int i = 0; i < _services.Length; i++)
         {
-            var service = Services[i];
+            var service = _services[i];
             <div class="max-w-xl border border-dark-100 shadow-md flex">
                 <div class="bg-dark-700 basis-0 grow-[3] flex flex-col gap-4 justify-between p-4">
                     <h2 class="font-bold text-accent uppercase text-sm md:text-base">@service.Title</h2>
@@ -20,6 +18,13 @@
 </section>
 
 @code {
-    [Parameter]
-    public ServiceModel[] Services { get; set; } = default!;
+    [Inject]
+    private ModelReader _modelReader { get; set; } = default!;
+    private ServiceSummaryModel[] _services = default!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _services = _modelReader.Read<ServiceSummaryModel[]>("service-list-data.json");
+    }
 }

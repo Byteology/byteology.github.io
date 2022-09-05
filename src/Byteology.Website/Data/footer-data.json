@@ -1,0 +1,68 @@
+﻿{
+  "linkSections": [
+    {
+      "title": "Company",
+      "links": [
+        {
+          "text": "Mission",
+          "url": "/mission"
+        },
+        {
+          "text": "Careers",
+          "url": "/careers"
+        },
+        {
+          "text": "Contacts",
+          "url": "/contacts"
+        }
+      ]
+    },
+    {
+      "title": "Services",
+      "links": [
+        {
+          "text": "Application Development",
+          "url": "/services/development"
+        },
+        {
+          "text": "Migration to Microservices",
+          "url": "/services/microservices"
+        },
+        {
+          "text": "Event Sourcing",
+          "url": "/services/event-sourcing"
+        },
+        {
+          "text": "Consulting & Training",
+          "url": "/services/consulting-and-training"
+        },
+        {
+          "text": "Interviewing as a Service",
+          "url": "/services/interviewing"
+        }
+      ]
+    },
+    {
+      "title": "Thoughts",
+      "links": [
+        {
+          "text": "Business",
+          "url": "/blog/business"
+        },
+        {
+          "text": "Software Development",
+          "url": "/blog/development"
+        },
+        {
+          "text": "Random Stuff",
+          "url": "/blog/random"
+        }
+      ]
+    }
+  ],
+  "copyright": "©{year} Byteology",
+  "privacyPolicy": {
+    "text": "Privacy policy",
+    "url": "/privacy"
+  }
+}
