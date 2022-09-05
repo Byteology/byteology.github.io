@@ -8,8 +8,10 @@
       "We design and implement **tailored solutions**",
       "We help your business **scale and grow**"
     ],
-    "additionalInfoText": "Learn More",
-    "aboutUsUrl": "/about-us"
+    "link": {
+      "text": "Learn More",
+      "url": "/about-us"
+    }
   },
   "services": [
     {

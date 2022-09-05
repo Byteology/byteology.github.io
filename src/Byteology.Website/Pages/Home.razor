@@ -1,23 +1,29 @@
 ﻿@page "/"
-@inherits BasePage<Data.Models.HomePage.HomePageModel>
 
 @using Byteology.Website.Components.HomePage
 @using Byteology.Website.Components.HomePage.InquirySegment;
+@using Byteology.Website.Data.Models.HomePage
 
-<PageTitle>@Model.Title</PageTitle>
+<PageTitle>@_model.Title</PageTitle>
 
 <PageRoot FullPageScrolling=true>
 
-    <ScientificGeneralization Model="Model.ScientificGeneralization" />
+    <ScientificGeneralization Model="_model.ScientificGeneralization" />
 
-    <ServicesList Services="Model.Services" />
+    <ServicesList Services="_model.Services" />
 
-    <Inquiry Model="Model.Inquiry" />
+    <Inquiry Model="_model.Inquiry" />
 
-    <Footer Model="Model.Footer" />
+    <Footer Model="_model.Footer" />
 
 </PageRoot>
 
 @code {
-    public Home() : base("home-page-data.json") { }
+    private HomePageModel _model = default!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _model = ModelReader.Read<HomePageModel>("home-page-data.json");
+    }
 }
