@@ -1,29 +1,25 @@
-﻿@inherits ByteologyComponent
+﻿<ol class="timeline h-full space-y-[1em] flex flex-col">
+    @for (int i = 0; i < Items.Length; i++)
+    {
+        <li class="group flex gap-[1.5em] @(i != Items.Length - 1 ? "grow" : "")">
 
-<div @attributes=AdditionalAttributes>
-    <ol class="timeline h-full space-y-[1em] flex flex-col">
-        @for (int i = 0; i < Items.Length; i++)
-        {
-            <li class="group flex gap-[1.5em] @(i != Items.Length - 1 ? "grow" : "")">
+            <div class="
+                    bullet pt-[0.125em] 
+                    text-[0.875em] font-bold text-current" />
 
-                <div class="
-                        bullet pt-[0.125em] 
-                        text-[0.875em] font-bold text-current" />
+            <div class="
+                    line absolute left-[calc(0.875ch_-_1px)] top-[1.5em] w-[2px] h-[calc(100%_-_0.5em)]
+                    bg-current" />
 
-                <div class="
-                        line absolute left-[calc(0.875ch_-_1px)] top-[1.5em] w-[2px] h-[calc(100%_-_0.5em)]
-                        bg-current" />
-
-                <div class="transition-fast group-hover:scale-105">@Item(Items[i])</div>
-            </li>
-        }
-    </ol>
-</div>
+            <div class="transition-fast group-hover:scale-105">@Item(Items[i])</div>
+        </li>
+    }
+</ol>
 
 @code {
-    [Parameter, Required, MinLength(1)]
+    [Parameter]
     public string[] Items { get; set; } = default!;
 
-    [Parameter, Required]
+    [Parameter]
     public RenderFragment<string> Item { get; set; } = default!;
 }

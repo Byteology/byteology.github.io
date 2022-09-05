@@ -2,7 +2,7 @@
 
 using Microsoft.JSInterop;
 
-public partial class PageRoot : ByteologyComponent, IDisposable
+public partial class PageRoot : IDisposable
 {
     private bool _initialFullPageScrollingValue;
 

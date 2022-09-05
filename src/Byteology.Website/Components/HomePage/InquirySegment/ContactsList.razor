@@ -1,11 +1,7 @@
 ﻿@using Byteology.Website.Data.Models.HomePage.InquirySegment
 
-@inherits ByteologyComponent
-
-<div @attributes=AdditionalAttributes
-     class="grid grid-cols-[max-content_1fr] auto-rows-max gap-x-8 items-baseline
-            md:flex md:flex-col md:gap-y-4 
-            @CssClass">
+<div class="grid grid-cols-[max-content_1fr] auto-rows-max gap-x-8 items-baseline
+            md:flex md:flex-col md:gap-y-4">
         
     @foreach(ContactModel contact in Contacts)
     {
@@ -29,9 +25,7 @@
                     </p>
                 }
 
-                <ContactDetail 
-                    Model="contact.Details[i]" 
-                    class="col-start-2" />
+                <ContactDetail Model="contact.Details[i]" />
             }
 
             @if(contact != Contacts.Last())
@@ -45,6 +39,6 @@
 </div>
 
 @code {
-    [Parameter, Required, MinLength(1)]
+    [Parameter]
     public ContactModel[] Contacts { get; set; } = default!;
 }

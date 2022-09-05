@@ -2,17 +2,17 @@
 
 using Byteology.Website.Inquiring;
 
-public partial class ContactForm : ByteologyComponent
+public partial class ContactForm
 {
     [Inject]
     private IInquiryService _inquiryService { get; set; } = default!;
 
     private readonly InquiryModel _inquiryModel = new();
 
-    [Parameter, Required]
+    [Parameter]
     public string ConcentText { get; set; } = default!;
 
-    [Parameter, Required]
+    [Parameter]
     public string SubmitInquiryText { get; set; } = default!;
 
     [Parameter]

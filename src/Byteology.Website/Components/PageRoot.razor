@@ -1,15 +1,10 @@
-﻿@inherits ByteologyComponent
-
-<div @attributes=AdditionalAttributes
-     id="page" 
+﻿<div id="page" 
      tabindex="0"
-     class="page
+     class="page text-neutral-100
             overflow-x-hidden overflow-y-auto
             @(FullPageScrolling ? 
                 "w-full h-full snap-y snap-mandatory no-scrollbar" :
-                "min-h-screen")
-            @CssClass"
-      >
+                "min-h-screen")">
 
     <Background/>
 

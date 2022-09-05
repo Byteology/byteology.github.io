@@ -1,13 +1,10 @@
 ﻿@using Byteology.Website.Components.Input
 @using Microsoft.AspNetCore.Components.Forms
 
-@inherits ByteologyComponent
-
 <EditForm 
     Model="_inquiryModel" 
     OnValidSubmit="onSubmit"
-    @attributes=AdditionalAttributes
-    class=@($@"grid grid-cols-2 gap-8 {CssClass}") >
+    class="p-8 md:content-center grid grid-cols-2 gap-8" >
 
     <DataAnnotationsValidator />
 

@@ -26,12 +26,13 @@
                 @(new MarkupString(Markdown.ToHtml(Model.Introduction)))
             </div>
     
-            <Timeline Items="@Model.Timeline" Context="item"
-                        class="text-sm lg:text-base text-accent">
-                <Item>
-                    <p class="text-neutral-100">@(new MarkupString(Markdown.ToHtml(item)))</p>
-                </Item>
-            </Timeline>
+            <div class="text-sm lg:text-base text-accent">
+                <Timeline Items="@Model.Timeline" Context="item">
+                    <Item>
+                        <p class="text-neutral-100">@(new MarkupString(Markdown.ToHtml(item)))</p>
+                    </Item>
+                </Timeline>
+            </div>
 
             <a href="@Model.AboutUsUrl"
                 class="button text-sm p-2">

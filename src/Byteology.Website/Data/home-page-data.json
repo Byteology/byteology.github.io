@@ -16,36 +16,46 @@
       "title": "Software Development",
       "description": "Byteology’s team will develop your application or minimum viable product (MVP) for you.",
       "iconSrc": "/images/application-development-cropped.png",
-      "detailsUrl": "/services/development",
-      "additionalInfoText": "Learn More"
+      "link": {
+        "url": "/services/development",
+        "text": "Learn More"
+      }
     },
     {
       "title": "Migration to Microservices",
       "description": "Byteology will provide you with a tailored technology, strategy and process to help your business successfully migrate to microservices.",
       "iconSrc": "/images/application-development-cropped.png",
-      "detailsUrl": "/services/microservices",
-      "additionalInfoText": "Learn More"
+      "link": {
+        "url": "/services/microservices",
+        "text": "Learn More"
+      }
     },
     {
       "title": "Event Sourcing",
       "description": "Standard software development methodologies store and utilize less than 50% of the data that runs through the system.",
       "iconSrc": "/images/application-development-cropped.png",
-      "detailsUrl": "/services/event-sourcing",
-      "additionalInfoText": "Learn More"
+      "link": {
+        "url": "/services/event-sourcing",
+        "text": "Learn More"
+      }
     },
     {
       "title": "Consulting & Training",
       "description": "Byteology will provide you with tailored consulting services and training to help your business scale and grow.",
       "iconSrc": "/images/application-development-cropped.png",
-      "detailsUrl": "/services/consulting-and-training",
-      "additionalInfoText": "Learn More"
+      "link": {
+        "url": "/services/consulting-and-training",
+        "text": "Learn More"
+      }
     },
     {
       "title": "Interviewing as a Service",
       "description": "Byteology will conduct technical and social interviews on your behalf so you can focus of your core business.",
       "iconSrc": "/images/application-development-cropped.png",
-      "detailsUrl": "/services/interviewing",
-      "additionalInfoText": "Learn More"
+      "link": {
+        "url": "/services/interviewing",
+        "text": "Learn More"
+      }
     }
   ],
   "inquiry": {
@@ -89,6 +99,74 @@
       "onErrorTitle": "Oops!",
       "onErrorBody": "We are terribly sorry but something went wrong. You can retry or just write us a plain old email.",
       "onErrorButtonText": "Continue"
+    }
+  },
+  "footer": {
+    "linkSections": [
+      {
+        "title": "Company",
+        "links": [
+          {
+            "text": "Mission",
+            "url": "/mission"
+          },
+          {
+            "text": "Careers",
+            "url": "/careers"
+          },
+          {
+            "text": "Contacts",
+            "url": "/contacts"
+          }
+        ]
+      },
+      {
+        "title": "Services",
+        "links": [
+          {
+            "text": "Application Development",
+            "url": "/services/development"
+          },
+          {
+            "text": "Migration to Microservices",
+            "url": "/services/microservices"
+          },
+          {
+            "text": "Event Sourcing",
+            "url": "/services/event-sourcing"
+          },
+          {
+            "text": "Consulting & Training",
+            "url": "/services/consulting-and-training"
+          },
+          {
+            "text": "Interviewing as a Service",
+            "url": "/services/interviewing"
+          }
+        ]
+      },
+      {
+        "title": "Thoughts",
+        "links": [
+          {
+            "text": "Business",
+            "url": "/blog/business"
+          },
+          {
+            "text": "Software Development",
+            "url": "/blog/development"
+          },
+          {
+            "text": "Random Stuff",
+            "url": "/blog/random"
+          }
+        ]
+      }
+    ],
+    "copyright": "©2021 Byteology",
+    "privacyPolicy": {
+      "text": "Privacy policy",
+      "url": "/privacy"
     }
   }
 }

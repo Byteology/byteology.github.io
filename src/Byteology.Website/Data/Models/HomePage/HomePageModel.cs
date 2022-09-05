@@ -6,4 +6,5 @@ public record HomePageModel(
     string Title,
     ScientificGeneralizationModel ScientificGeneralization,
     ServiceModel[] Services,
-    InquiryModel Inquiry);
+    InquiryModel Inquiry,
+    FooterModel Footer);

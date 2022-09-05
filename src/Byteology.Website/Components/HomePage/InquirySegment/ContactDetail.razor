@@ -1,21 +1,17 @@
 ﻿@using Byteology.Website.Data.Models.HomePage.InquirySegment
 
-@inherits ByteologyComponent
-
 @if(Model.Type == ContactDetailType.Address)
 {
-    <p @attributes=AdditionalAttributes
-       class="col-start-2
-              text-xs break-words @CssClass">
+    <p class="col-start-2
+              text-xs break-words">
         @Model.Value
     </p>
 }
 
 @if(Model.Type == ContactDetailType.Phone)
 {
-    <a @attributes=AdditionalAttributes
-       class="col-start-2
-              link text-xs break-all @CssClass" 
+    <a class="col-start-2
+              link text-xs break-all" 
         href="tel:@Model.Value">
         @Model.Value
     </a>
@@ -23,9 +19,8 @@
 
 @if(Model.Type == ContactDetailType.Email)
 {
-    <a @attributes=AdditionalAttributes
-       class="col-start-2
-              link text-xs break-all @CssClass" 
+    <a class="col-start-2
+              link text-xs break-all" 
         href="mailto:@Model.Value">
         @Model.Value
     </a>
