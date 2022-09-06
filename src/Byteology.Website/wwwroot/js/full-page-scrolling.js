@@ -3,7 +3,7 @@
         this.preventPitbarHiding();
 
         document.getElementById("page").focus();
-        document.getElementById("page").addEventListener("scroll", fps.onResize);
+        document.getElementById("page").addEventListener("scroll", fps.reScrollSlides);
         document.getElementById("page").addEventListener("wheel", (e) => { wid.feed(e.deltaY); }, { passive: false, capture: true });
         document.getElementById("page").addEventListener("wheel", (e) => { fps.onPageWheel(e) }, { passive: false });
 
@@ -11,7 +11,7 @@
         for (var i = 0; i < slides.length; i++)
             slides[i].addEventListener("wheel", (e) => { fps.onSlideWheel(e); }, { passive: false });
 
-        this.onResize();
+        this.reScrollSlides();
     }
 
     dispose() {
@@ -30,7 +30,7 @@
         document.getElementById("app").classList.remove("w-full", "h-full", "overflow-hidden");
     }
 
-    onResize() {
+    reScrollSlides() {
         let slides = document.getElementsByClassName("slide");
         let currentSlideIndex;
         let minDelta = 50000;
