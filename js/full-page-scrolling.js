@@ -3,12 +3,15 @@
         this.preventPitbarHiding();
 
         document.getElementById("page").focus();
+        document.getElementById("page").addEventListener("scroll", fps.onResize);
         document.getElementById("page").addEventListener("wheel", (e) => { wid.feed(e.deltaY); }, { passive: false, capture: true });
         document.getElementById("page").addEventListener("wheel", (e) => { fps.onPageWheel(e) }, { passive: false });
 
         let slides = document.getElementsByClassName("slide");
         for (var i = 0; i < slides.length; i++)
             slides[i].addEventListener("wheel", (e) => { fps.onSlideWheel(e); }, { passive: false });
+
+        this.onResize();
     }
 
     dispose() {
@@ -26,6 +29,27 @@
         document.body.classList.remove("w-full", "h-full", "overflow-hidden");
         document.getElementById("app").classList.remove("w-full", "h-full", "overflow-hidden");
     }
+
+    onResize() {
+        let slides = document.getElementsByClassName("slide");
+        let currentSlideIndex;
+        let minDelta = 50000;
+
+        for (var i = 0; i < slides.length; i++) {
+            let delta = Math.abs(slides[i].getBoundingClientRect().y);
+            if (delta < minDelta) {
+                currentSlideIndex = i;
+                minDelta = delta;
+            }
+        }
+
+        for (var i = 0; i < slides.length; i++) {
+            if (i < currentSlideIndex)
+                slides[i].scrollTop = 9999;
+            else if (i > currentSlideIndex)
+                slides[i].scrollTop = 0;
+        }
+    } 
 
     onPageWheel(e) {
         if (e.ctrlKey)
