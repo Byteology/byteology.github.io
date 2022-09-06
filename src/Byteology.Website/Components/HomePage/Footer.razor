@@ -1,7 +1,7 @@
 ﻿<section class="slide slide-center">
-    <div class="w-full bg-dark-900 border-y border-dark-100 shadow-md flex flex-col items-center">
+    <div class="w-full bg-dark-900 border border-dark-100 shadow-md flex flex-col items-center">
 
-        <div class="p-8 pb-2 w-full max-w-5xl 
+        <div class="p-6 md:p-8 w-full max-w-5xl 
                     grid grid-cols-[minmax(0,_max-content)] md:grid-cols-[8rem_auto] 
                     justify-center justify-items-start md:justify-items-center 
                     gap-8 md:gap-x-16 lg:gap-x-32">
@@ -26,10 +26,12 @@
                 }
             </div>
 
-            <div class="md:col-span-2 text-center text-neutral text-xs">
+            
+        </div>
+        <div class="w-full p-1 border-t border-dark-100 
+                    text-xs text-center text-neutral">
                 @(_model.Copyright.Replace("{year}", DateTime.Now.Year.ToString())) | 
                 <a class="transition-fast underline hocus:text-primary-300" href="@_model.PrivacyPolicy.Url">@_model.PrivacyPolicy.Text</a>
-            </div>
         </div>
 
 
