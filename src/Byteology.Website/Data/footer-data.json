@@ -21,8 +21,12 @@
       "title": "Services",
       "links": [
         {
-          "text": "Application Development",
+          "text": "Software Development",
           "url": "/services/development"
+        },
+        {
+          "text": "Research & PoC",
+          "url": "/services/research"
         },
         {
           "text": "Migration to Microservices",
