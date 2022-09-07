@@ -14,7 +14,7 @@ public partial class Inquiry : ComponentBase
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        _model = _modelReader.Read<InquiryModel>("inquiry-data.json");
+        _model = _modelReader.ReadJson<InquiryModel>("inquiry-data.json");
     }
 
     private void onSubmit(ContactForm.SubmissionEventArgs args)

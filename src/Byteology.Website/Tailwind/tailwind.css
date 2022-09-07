@@ -59,6 +59,17 @@
         @apply hocus:decoration-primary-300;
     }
 
+    .link-accent {
+        @apply underline;
+        @apply underline-offset-2;
+        @apply decoration-2;
+        @apply decoration-accent;
+        @apply text-accent;
+        @apply transition-fast;
+        @apply hocus:text-accent-300;
+        @apply hocus:decoration-accent-300;
+    }
+
     .button {
         @apply font-bold;
         @apply uppercase;

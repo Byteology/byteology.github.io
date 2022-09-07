@@ -25,6 +25,6 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        _services = _modelReader.Read<ServiceSummaryModel[]>("service-list-data.json");
+        _services = _modelReader.ReadJson<ServiceSummaryModel[]>("service-list-data.json");
     }
 }

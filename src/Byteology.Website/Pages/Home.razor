@@ -21,6 +21,6 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        _model = _modelReader.Read<HomePageModel>("home-page-data.json");
+        _model = _modelReader.ReadJson<HomePageModel>("home-page-data.json");
     }
 }

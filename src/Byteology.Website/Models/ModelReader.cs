@@ -14,7 +14,24 @@ public class ModelReader
         _serializerOptions = serializerOptions;
     }
 
-    public TModel Read<TModel>(string dataFilename)
+    public TModel ReadJson<TModel>(string dataFilename)
+    {
+        string dataText = readData(dataFilename);
+        TModel? model = JsonSerializer.Deserialize<TModel>(dataText, _serializerOptions);
+
+        if (model == null)
+            throw new InvalidOperationException("Data failed to deserialize.");
+
+        return model;
+    }
+
+    public string ReadPlainText(string dataFilename)
+    {
+        string dataText = readData(dataFilename);
+        return dataText;
+    }
+
+    private string readData(string dataFilename)
     {
         string? ns = _assembly.GetName().Name;
 
@@ -28,11 +45,6 @@ public class ModelReader
 
         using StreamReader sr = new(stream);
         string dataText = sr.ReadToEnd();
-        TModel? model = JsonSerializer.Deserialize<TModel>(dataText, _serializerOptions);
-
-        if (model == null)
-            throw new InvalidOperationException("Data failed to deserialize.");
-
-        return model;
+        return dataText;
     }
 }

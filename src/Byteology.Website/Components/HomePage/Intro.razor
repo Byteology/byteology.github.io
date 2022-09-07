@@ -51,6 +51,6 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        _model = _modelReader.Read<IntroModel>("intro-data.json");
+        _model = _modelReader.ReadJson<IntroModel>("intro-data.json");
     }
 }

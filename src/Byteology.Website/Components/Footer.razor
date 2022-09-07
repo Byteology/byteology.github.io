@@ -45,6 +45,6 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        _model = _modelReader.Read<FooterModel>("footer-data.json");
+        _model = _modelReader.ReadJson<FooterModel>("footer-data.json");
     }
 }

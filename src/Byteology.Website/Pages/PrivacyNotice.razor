@@ -1,4 +1,24 @@
 ﻿@page "/privacy"
 @using Byteology.Website.Components.HomePage
+@using System.Text.Json
 
-<p>Privacy Notice</p>
+<section class="mx-auto my-8 max-w-3xl bg-dark-900 border border-dark-100 shadow-md p-8 space-y-4
+                [&_h1]:!mt-8 [&_h1]:text-primary-300 [&_h1]:font-bold [&_h1]:text-lg [&_h1]:uppercase
+                [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:ml-8
+                [&_strong]:text-accent
+                [&_a]:link-accent">
+    @(new MarkupString(Markdown.ToHtml(_model)))
+</section>
+
+
+@code {
+    [Inject]
+    private ModelReader _modelReader { get; set; } = default!;
+    private string _model = default!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _model = _modelReader.ReadPlainText("privacy-data.md");
+    }
+}
