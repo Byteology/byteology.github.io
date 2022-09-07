@@ -1,0 +1,50 @@
+﻿<footer class="w-full mt-auto bg-dark-900 border border-dark-100 shadow-md flex flex-col items-center">
+
+    <div class="p-6 md:p-8 w-full max-w-5xl 
+                grid grid-cols-[minmax(0,_max-content)] md:grid-cols-[8rem_auto] 
+                justify-center justify-items-start md:justify-items-center 
+                gap-8 md:gap-x-16 lg:gap-x-32">
+
+        <a class="block w-full max-h-fit" href="/">
+            <img class="
+                bg-center bg-contain
+                content-[url(/images/logo-landscape.svg)]
+                md:content-[url(/images/logo-portrait.svg)]"
+                    alt="Byteology"/>
+        </a>
+
+        <div class="flex flex-col md:flex-row md:w-full justify-evenly gap-6 md:gap-8 lg:gap-16">
+            @foreach (LinkSectionModel section in _model.LinkSections)
+            {
+                <div class="flex flex-col text-sm gap-1">
+                    <p class="uppercase font-bold text-accent text-sm">@(section.Title)</p>
+
+                    @foreach(LinkModel link in section.Links)
+                    {
+                        <a class="transition-fast hocus:text-primary-300" href="@link.Url">@link.Text</a>
+                    }
+                </div>
+            }
+        </div>
+
+            
+    </div>
+    <div class="w-full p-1 border-t border-dark-100 
+                text-xs text-center text-neutral">
+            @(_model.Copyright.Replace("{year}", DateTime.Now.Year.ToString())) | 
+            <a class="transition-fast underline hocus:text-primary-300" href="@_model.PrivacyPolicy.Url">@_model.PrivacyPolicy.Text</a>
+    </div>
+
+</footer>
+
+@code {
+    [Inject]
+    private ModelReader _modelReader { get; set; } = default!;
+    private FooterModel _model = default!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _model = _modelReader.Read<FooterModel>("footer-data.json");
+    }
+}

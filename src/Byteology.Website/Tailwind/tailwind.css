@@ -97,6 +97,22 @@
             height: 0;
         }
 
+    .styled-scrollbar::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        @apply bg-dark-900;
+        @apply shadow-dark-100;
+        box-shadow: inset 0 0 0 2px var(--tw-shadow-color);
+    }
+
+    .styled-scrollbar::-webkit-scrollbar-thumb { /* Foreground */
+        @apply bg-gradient-to-b;
+        @apply from-dark;
+        @apply to-primary-900;
+        @apply shadow-dark-100;
+        box-shadow: inset 0 0 0 2px var(--tw-shadow-color);
+        --tw-gradient-stops: var(--tw-gradient-from) 25%, var(--tw-gradient-to) 50%, var(--tw-gradient-from) 75%;
+    }
 
     .justify-safe-center {
         @apply before:max-h-0;

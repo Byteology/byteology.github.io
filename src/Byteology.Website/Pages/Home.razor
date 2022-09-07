@@ -1,19 +1,17 @@
 ﻿@page "/"
+@layout FullPageScrollingLayout
 
 @using Byteology.Website.Components.HomePage
 @using Byteology.Website.Components.Inquiry
 
 <PageTitle>@_model.Title</PageTitle>
 
-<Page FullPageScrolling=true>
+<Intro />
+<ServicesList />
 
-    <Intro />
-    <ServicesList />
+<section class="slide slide-center md:px-8">
     <Inquiry />
-    <Footer/>
-
-</Page>
-
+</section>
 
 @code {
     [Inject]
