@@ -1,3 +1,20 @@
+/* /Components/Background.razor.rz.scp.css */
+@keyframes move-b-a2xvopc965 {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+span[b-a2xvopc965] {
+    width: 1vmin;
+    height: 1vmin;
+    border-radius: 1vmin;
+    position: absolute;
+    animation: move-b-a2xvopc965;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    box-shadow: 2vmin 0 var(--blur-radius) currentColor;
+}
 /* /Components/Timeline.razor.rz.scp.css */
 .timeline[b-5gqou3bbw5] {
     counter-reset: timeline-counter;
