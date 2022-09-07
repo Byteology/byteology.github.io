@@ -3,7 +3,7 @@
      class="page w-full h-full text-neutral-100 overflow-x-hidden overflow-y-auto
             @(FullPageScrolling ? 
                 "snap-y snap-mandatory [&>.slide+.slide]:mt-32 no-scrollbar" : 
-                "flex flex-col min-h-full styled-scrollbar")
+                "flex flex-col min-h-full cursor:styled-scrollbar")
             @(_state.InitialLoad ? "" : "animate-fade-in-fast")">
 
     @ChildContent

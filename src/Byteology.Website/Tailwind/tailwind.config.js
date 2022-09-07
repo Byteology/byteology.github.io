@@ -10,6 +10,9 @@ module.exports = {
             'lg': '64rem',
             'xl': '80rem',
             '2xl': '96rem',
+
+            'touch': { "raw": "(hover: none)" },
+            'cursor': { "raw": "(hover: hover)" }
         },
 
         fontFamily: {

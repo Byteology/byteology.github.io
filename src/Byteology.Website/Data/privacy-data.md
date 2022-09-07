@@ -31,7 +31,7 @@ Byteology follows a standard procedure of using log files. These files log visit
 # Cookies and web beacons
 Like any other website, Byteology uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.
 
-For more general information on cookies, please read [this Wikipedia article](https://en.wikipedia.org/wiki/HTTP_cookie).
+For more general information on cookies, please read <a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">this Wikipedia article</a>.
 
 # GDPR data protection rights
 We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
