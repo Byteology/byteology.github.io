@@ -1,10 +1,10 @@
-﻿<div class="max-w-md md:max-w-3xl bg-dark-900 border border-dark-100 shadow-md
+﻿<div class="max-w-md md:max-w-3xl border border-dark-100 shadow-md
         @(_successfulSubmit.HasValue ? "hidden" : (_shouldFadeIn ? "animate-fade-in-fast" : ""))">
 
 
     <div class="grid grid-cols-1 md:grid-cols-[2fr_3fr]">
 
-        <div class="col-start-1 md:content-start space-y-4 p-8 bg-dark-700">
+        <div class="col-start-1 md:content-start space-y-4 p-8 bg-dark-700/50">
             <h1 class=" font-bold uppercase text-accent text-center">@_model.Title</h1>
 
             <p class="text-sm">
@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<div class="p-8 max-w-md bg-dark-900 border border-dark-100 shadow-md flex flex-col gap-4 @(_successfulSubmit.HasValue ? "animate-fade-in-fast" : "hidden")">
+<div class="p-8 max-w-md bg-dark-900/70 border border-dark-100 shadow-md flex flex-col gap-4 @(_successfulSubmit.HasValue ? "animate-fade-in-fast" : "hidden")">
     <h1 class="text-lg font-bold text-center uppercase
                 @(_successfulSubmit == true ? "text-accent" : "") @(_successfulSubmit == false ? "text-error" : "")">
         @getLightboxTitle()
