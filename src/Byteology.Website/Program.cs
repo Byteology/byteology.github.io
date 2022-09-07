@@ -16,7 +16,8 @@ await builder.Build().RunAsync();
 // This method is required by the prerenderer
 static void ConfigureServices(IServiceCollection services)
 {
-    services.AddScoped<IInquiryService, GoogleDriveInquiryService>();
+    services.AddSingleton<StateContainer>();
+    services.AddSingleton<IInquiryService, GoogleDriveInquiryService>();
     services.AddHttpClient<IInquiryService, GoogleDriveInquiryService>();
     services.AddSingleton((services) => new ModelReader(typeof(Program).Assembly, new(JsonSerializerDefaults.Web)
     {

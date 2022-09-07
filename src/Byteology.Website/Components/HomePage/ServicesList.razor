@@ -1,15 +1,15 @@
 ﻿<section class="slide slide-center">
-    <div class="p-4 bg-dark-900 border border-dark-100 shadow-md max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center">
+    <div class="p-4 max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center">
         @for (int i = 0; i < _services.Length; i++)
         {
             var service = _services[i];
             <div class="max-w-xl border border-dark-100 shadow-md flex">
-                <div class="bg-dark-700 basis-0 grow-[3] flex flex-col gap-4 justify-between p-4">
+                <div class="bg-dark-900 basis-0 grow-[3] flex flex-col gap-4 justify-between p-4">
                     <h2 class="font-bold text-accent uppercase text-sm md:text-base">@service.Title</h2>
                     <p class="text-sm">@service.Description</p>
                     <a class="button text-sm p-1" href="@service.Link.Url">@service.Link.Text</a>
                 </div>
-                <div class="basis-0 grow flex justify-center bg-dark @(i % 2 == 0 ? "lg:order-first" : "")">
+                <div class="basis-0 grow flex justify-center bg-dark-700 @(i % 2 == 0 ? "lg:order-first" : "")">
                     <img class="self-center w-1/2" src=@service.IconSrc alt="@service.Title" /> 
                 </div>
             </div>

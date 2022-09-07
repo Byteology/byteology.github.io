@@ -1,13 +1,13 @@
 ﻿@using Microsoft.AspNetCore.Components.Routing
 
-<Router AppAssembly="@typeof(App).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" />
-        <FocusOnNavigate RouteData="@routeData" Selector="#app" />
-    </Found>
-    <NotFound>
-        <LayoutView>
+<Background>
+    <Router AppAssembly="@typeof(App).Assembly">
+        <Found Context="routeData">
+            <RouteView RouteData="@routeData" />
+            <FocusOnNavigate RouteData="@routeData" Selector="#page" />
+        </Found>
+        <NotFound>
             <Byteology.Website.Pages.NotFound/>
-        </LayoutView>
-    </NotFound>
-</Router>
+        </NotFound>
+    </Router>
+</Background>

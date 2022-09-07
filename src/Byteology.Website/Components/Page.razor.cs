@@ -2,9 +2,10 @@
 
 using Microsoft.JSInterop;
 
-public partial class PageRoot : IDisposable
+public partial class Page : ComponentBase, IDisposable
 {
-    private bool _initialFullPageScrollingValue;
+    [Inject]
+    private StateContainer _state { get; set; } = default!; 
 
     [Inject]
     private IJSRuntime _jsRuntimeAsync { get; set; } = default!;
@@ -16,25 +17,16 @@ public partial class PageRoot : IDisposable
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
 
-    protected override void OnParametersSet()
-    {
-        base.OnParametersSet();
-        if (FullPageScrolling != _initialFullPageScrollingValue)
-            throw new InvalidOperationException($"The value of the parameter {nameof(FullPageScrolling)} can't be changed.");
-    }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        _initialFullPageScrollingValue = FullPageScrolling;
-    }
-
     protected override void OnAfterRender(bool firstRender)
     {
         base.OnAfterRender(firstRender);
 
-        if (firstRender && FullPageScrolling)
-            _jsRuntime.InvokeVoid("fps.init");
+        if (firstRender)
+        {
+            _state.InitialLoad = false;
+            if (FullPageScrolling)
+                _jsRuntime.InvokeVoid("fps.start");
+        }
     }
 
     public void Dispose()
@@ -46,6 +38,6 @@ public partial class PageRoot : IDisposable
     protected virtual void Dispose(bool disposing)
     {
         if (disposing && FullPageScrolling)
-            _jsRuntime.InvokeVoid("fps.dispose");
+            _jsRuntime.InvokeVoid("fps.stop");
     }
 }

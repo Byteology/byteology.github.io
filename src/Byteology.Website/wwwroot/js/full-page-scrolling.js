@@ -1,33 +1,24 @@
 ﻿class FullPageScrolling {
-    init() {
-        this.preventPitbarHiding();
-
-        document.getElementById("page").focus();
+    start() {
         document.getElementById("page").addEventListener("scroll", fps.reScrollSlides);
-        document.getElementById("page").addEventListener("wheel", (e) => { wid.feed(e.deltaY); }, { passive: false, capture: true });
-        document.getElementById("page").addEventListener("wheel", (e) => { fps.onPageWheel(e) }, { passive: false });
+        document.getElementById("page").addEventListener("wheel", wid.feed, { passive: false, capture: true });
+        document.getElementById("page").addEventListener("wheel", fps.onPageWheel, { passive: false });
 
         let slides = document.getElementsByClassName("slide");
         for (var i = 0; i < slides.length; i++)
-            slides[i].addEventListener("wheel", (e) => { fps.onSlideWheel(e); }, { passive: false });
+            slides[i].addEventListener("wheel", fps.onSlideWheel, { passive: false });
 
         this.reScrollSlides();
     }
 
-    dispose() {
-        this.resetPitbarHiding();
-    }
+    stop() {
+        document.getElementById("page").removeEventListener("scroll", fps.reScrollSlides);
+        document.getElementById("page").removeEventListener("wheel", wid.feed, { passive: false, capture: true });
+        document.getElementById("page").removeEventListener("wheel", fps.onPageWheel, { passive: false });
 
-    preventPitbarHiding() {
-        document.documentElement.classList.add("w-full", "h-full", "overflow-hidden");
-        document.body.classList.add("w-full", "h-full", "overflow-hidden");
-        document.getElementById("app").classList.add("w-full", "h-full", "overflow-hidden");
-    }
-
-    resetPitbarHiding() {
-        document.documentElement.classList.remove("w-full", "h-full", "overflow-hidden");
-        document.body.classList.remove("w-full", "h-full", "overflow-hidden");
-        document.getElementById("app").classList.remove("w-full", "h-full", "overflow-hidden");
+        let slides = document.getElementsByClassName("slide");
+        for (var i = 0; i < slides.length; i++)
+            slides[i].removeEventListener("wheel", fps.onSlideWheel, { passive: false });
     }
 
     reScrollSlides() {
@@ -77,12 +68,12 @@
 
         if (e.deltaY > 0 && currentSlideIndex != slides.length - 1) {
             wid.reset();
-            wid.feed(e.deltaY);
+            wid.feed(e);
             document.getElementById("page").scrollTo({ top: slides[currentSlideIndex + 1].offsetTop, behavior: "smooth" });
         }
         else if (e.deltaY < 0 && currentSlideIndex != 0) {
             wid.reset();
-            wid.feed(e.deltaY);
+            wid.feed(e);
             document.getElementById("page").scrollTo({ top: slides[currentSlideIndex - 1].offsetTop, behavior: "smooth"});
         }
     }
@@ -119,53 +110,54 @@ class WheelInertiaDetector {
 
     isInertia;
 
-    feed(delta) {
-        this.resetDebouncerTimer();
+    feed(e) {
+        let delta = e.deltaY;
+        wid.resetDebouncerTimer();
 
         // First event in some time
-        if (!this.swipeStarted) {
-            this.startSwipe(delta);
-            this.isInertia = false;
+        if (!wid.swipeStarted) {
+            wid.startSwipe(delta);
+            wid.isInertia = false;
             return;
         }
 
         // Wheel direction has changed
-        if (this.swipePositive && delta < -1 || !this.swipePositive && delta > 1) {
-            this.startSwipe(delta);
-            this.isInertia = false;
+        if (wid.swipePositive && delta < -1 || !wid.swipePositive && delta > 1) {
+            wid.startSwipe(delta);
+            wid.isInertia = wid;
             return;
         }
 
         // Big delta after a lot of time into the swipe
-        if (Math.abs(delta) >= this.minNewSwipeDelta && Date.now() - this.swipeDurationStopwatch > this.minSwipeInterval) {
-            this.startSwipe(delta);
-            this.isInertia = false;
+        if (Math.abs(delta) >= wid.minNewSwipeDelta && Date.now() - wid.swipeDurationStopwatch > wid.minSwipeInterval) {
+            wid.startSwipe(delta);
+            wid.isInertia = false;
             return;
         }
 
-        this.isInertia = true;
+        wid.isInertia = true;
     }
 
     reset() {
-        clearTimeout(this.debouceTimer);
-        this.swipeDurationStopwatch = null;
-        this.swipeStarted = false;
+        clearTimeout(wid.debouceTimer);
+        wid.swipeDurationStopwatch = null;
+        wid.swipeStarted = false;
     }
 
     resetDebouncerTimer() {
-        clearTimeout(this.debouceTimer);
-        this.debouceTimer = setTimeout(this.endSwipe, this.debounceTime)
+        clearTimeout(wid.debouceTimer);
+        wid.debouceTimer = setTimeout(wid.endSwipe, wid.debounceTime)
     }
 
     startSwipe(delta) {
-        this.swipeStarted = true;
-        this.swipePositive = delta > 0;
-        this.swipeDurationStopwatch = Date.now();
+        wid.swipeStarted = true;
+        wid.swipePositive = delta > 0;
+        wid.swipeDurationStopwatch = Date.now();
     }
 
     endSwipe() {
-        this.swipeStarted = false;
-        this.swipeDurationStopwatch = null;
+        wid.swipeStarted = false;
+        wid.swipeDurationStopwatch = null;
     }
 }
 

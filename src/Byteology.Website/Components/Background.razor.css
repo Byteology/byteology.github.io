@@ -1,0 +1,16 @@
+﻿@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+span {
+    width: 1vmin;
+    height: 1vmin;
+    border-radius: 1vmin;
+    position: absolute;
+    animation: move;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    box-shadow: 2vmin 0 var(--blur-radius) currentColor;
+}
