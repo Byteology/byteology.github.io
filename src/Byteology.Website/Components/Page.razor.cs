@@ -4,6 +4,8 @@ using Microsoft.JSInterop;
 
 public partial class Page : ComponentBase, IDisposable
 {
+    private bool _comesFromFullPageScrolling;
+
     [Inject]
     private StateContainer _state { get; set; } = default!; 
 
@@ -16,6 +18,13 @@ public partial class Page : ComponentBase, IDisposable
 
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _comesFromFullPageScrolling = _state.FullPageScrolling;
+        _state.FullPageScrolling = FullPageScrolling;
+    }
 
     protected override void OnAfterRender(bool firstRender)
     {

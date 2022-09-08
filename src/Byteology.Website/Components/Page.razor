@@ -1,10 +1,10 @@
 ﻿<div id="page" 
      tabindex="0"
-     class="page w-full h-full text-neutral-100 overflow-x-hidden overflow-y-auto
+     class="page w-full h-full text-neutral-100 overflow-x-hidden overflow-y-scroll
             @(FullPageScrolling ? 
                 "snap-y snap-mandatory [&>.slide+.slide]:mt-32 no-scrollbar" : 
                 "flex flex-col min-h-full cursor:styled-scrollbar")
-            @(_state.InitialLoad ? "" : "animate-fade-in-fast")">
+            @(_state.InitialLoad ? "" : ("[&>section]:animate-fade-in-fast " + (_comesFromFullPageScrolling ? "[&>nav]:animate-fade-in-fast" : "")))">
 
     @ChildContent
 

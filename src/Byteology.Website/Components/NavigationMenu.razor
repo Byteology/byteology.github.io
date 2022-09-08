@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+
+<nav class="sticky top-0 z-50 w-full h-[2.5rem] bg-dark-900 border border-dark-100 shadow-md">
+    <div class="max-w-3xl h-full mx-auto 
+                text-sm font-bold
+                flex gap-8 items-center justify-end">
+
+        <NavLink class="mr-auto h-full" href="/" Match="NavLinkMatch.Prefix"><img class="h-full" src="/images/icon.png" alt="Byteology"/></NavLink>
+        
+
+        <NavLink class="[&.active]:text-accent" href="/" Match="NavLinkMatch.All">Home</NavLink>
+
+        <NavLink class="[&.active]:text-accent" href="/mission" Match="NavLinkMatch.All">Mission</NavLink>
+        <NavLink class="[&.active]:text-accent" href="/careers" Match="NavLinkMatch.All">Careers</NavLink>
+        <NavLink class="[&.active]:text-accent" href="/contacts" Match="NavLinkMatch.All">Contacts</NavLink>
+        <NavLink class="[&.active]:text-accent" href="/services" Match="NavLinkMatch.All">Services</NavLink>
+        <NavLink class="[&.active]:text-accent" href="/thoughts" Match="NavLinkMatch.All">Thoughts</NavLink>
+    </div>
+</nav>
