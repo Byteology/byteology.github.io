@@ -1,0 +1,53 @@
+﻿[
+  {
+    "link": {
+      "text": "Mission",
+      "url": "/mission"
+    }
+  },
+  {
+    "link": {
+      "text": "Careers",
+      "url": "/careers"
+    }
+  },
+  {
+    "link": {
+      "text": "Services",
+      "url": "/services"
+    },
+    "sublinks": [
+      {
+        "text": "Software Development",
+        "url": "/services/development"
+      },
+      {
+        "text": "Research & PoC",
+        "url": "/services/research"
+      },
+      {
+        "text": "Migration to Microservices",
+        "url": "/services/microservices"
+      },
+      {
+        "text": "Event Sourcing",
+        "url": "/services/event-sourcing"
+      },
+      {
+        "text": "Consulting & Training",
+        "url": "/services/consulting"
+      },
+      {
+        "text": "Interviewing as a Service",
+        "url": "/services/interviewing"
+      }
+    ]
+  },
+  {
+    "link": {
+      "text": "Contact us",
+      "url": "/contacts"
+    },
+    "highlighted": true
+  }
+]

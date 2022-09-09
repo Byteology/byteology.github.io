@@ -7,7 +7,9 @@
             <FocusOnNavigate RouteData="@routeData" Selector="#page" />
         </Found>
         <NotFound>
-            <Byteology.Website.Pages.NotFound/>
+            <LayoutView Layout="typeof(DefaultLayout)">
+                <Byteology.Website.Pages.NotFound/>
+            </LayoutView>
         </NotFound>
     </Router>
 </Background>

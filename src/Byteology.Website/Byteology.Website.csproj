@@ -12,8 +12,13 @@
     <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Data\nav-menu-data.json" />
+  </ItemGroup>
+
 
   <ItemGroup>
+    <EmbeddedResource Include="Data\nav-menu-data.json" />
     <EmbeddedResource Include="Data\privacy-data.md" />
     <EmbeddedResource Include="Data\inquiry-data.json" />
     <EmbeddedResource Include="Data\footer-data.json" />

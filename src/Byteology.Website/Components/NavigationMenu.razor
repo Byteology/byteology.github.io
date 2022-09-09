@@ -1,19 +1,52 @@
 ﻿@using Microsoft.AspNetCore.Components.Routing
 
-<nav class="sticky top-0 z-50 w-full h-[2.5rem] bg-dark-900 border border-dark-100 shadow-md">
-    <div class="max-w-3xl h-full mx-auto 
-                text-sm font-bold
-                flex gap-8 items-center justify-end">
+<nav class="sticky top-0 z-50 w-full h-[2.5rem] px-4 
+            bg-dark-900 border border-dark-100 shadow-md
+            text-sm font-bold whitespace-nowrap">
 
-        <NavLink class="mr-auto h-full" href="/" Match="NavLinkMatch.Prefix"><img class="h-full" src="/images/icon.png" alt="Byteology"/></NavLink>
+    <div class="max-w-3xl w-full h-full mx-auto            
+                flex gap-8 items-center justify-between">
+
+        <a class="h-full flex-1" href="/" Match="NavLinkMatch.Prefix"><img class="h-full" src="/images/icon.png" alt="Byteology"/></a>
         
+        <div class="h-full flex gap-8 items-center justify-center">
+            @foreach (NavigationItemModel item in _items)
+            {
+                @if (item.Sublinks == null || item.Sublinks.Length == 0)
+                {
+                    <NavLink class="@(item.Highlighted ? "button p-1 px-2 text-xs" : "transition-fast [&.active]:text-accent hover:text-primary-300")" href="@item.Link.Url" Match="NavLinkMatch.All">@item.Link.Text</NavLink>
+                }
+                else
+                {
+                    <div class="h-full group cursor-pointer">
+                        <NavLink class="transition-fast leading-[2.5rem] active:text-accent group-hover:text-primary-300 pointer-events-none" href="@item.Link.Url" Match="NavLinkMatch.Prefix">
+                            <span>@item.Link.Text</span>
+                            <svg class="inline h-[70%] mb-[0.1rem] ml-[-0.4rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path class="fill-current" fill-rule="evenodd" d="M15.3 10.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z"/>
+                            </svg>
+                        </NavLink>
+                        <div class="absolute mt-px -ml-4 bg-dark-700 border border-dark-100 shadow-md invisible opacity-0 transition-fast group-hover:visible group-hover:opacity-100 p-4 space-y-2">
+                            @foreach(LinkModel subitem in item.Sublinks)
+                            {
+                                <NavLink class="transition-fast block active:text-accent hocus:!text-primary-300" href="@subitem.Url" Match="NavLinkMatch.All">@subitem.Text</NavLink>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
 
-        <NavLink class="[&.active]:text-accent" href="/" Match="NavLinkMatch.All">Home</NavLink>
-
-        <NavLink class="[&.active]:text-accent" href="/mission" Match="NavLinkMatch.All">Mission</NavLink>
-        <NavLink class="[&.active]:text-accent" href="/careers" Match="NavLinkMatch.All">Careers</NavLink>
-        <NavLink class="[&.active]:text-accent" href="/contacts" Match="NavLinkMatch.All">Contacts</NavLink>
-        <NavLink class="[&.active]:text-accent" href="/services" Match="NavLinkMatch.All">Services</NavLink>
-        <NavLink class="[&.active]:text-accent" href="/thoughts" Match="NavLinkMatch.All">Thoughts</NavLink>
     </div>
 </nav>
+
+@code {
+    [Inject]
+    private ModelReader _modelReader { get; set; } = default!;
+    private NavigationItemModel[] _items = default!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _items = _modelReader.ReadJson<NavigationItemModel[]>("nav-menu-data.json");
+    }
+}
