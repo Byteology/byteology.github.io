@@ -3,7 +3,7 @@
 using Microsoft.AspNetCore.Components.Routing;
 using System.Web;
 
-public sealed class ConventionRouter : IComponent, IHandleAfterRender, IDisposable
+public sealed class HashConventionRouter : IComponent, IHandleAfterRender, IDisposable
 {
     private RenderHandle _renderHandle;
     private bool _navigationInterceptionEnabled;
@@ -29,12 +29,12 @@ public sealed class ConventionRouter : IComponent, IHandleAfterRender, IDisposab
 
         if (Found == null)
         {
-            throw new InvalidOperationException($"The {nameof(ConventionRouter)} component requires a value for the parameter {nameof(Found)}.");
+            throw new InvalidOperationException($"The {nameof(HashConventionRouter)} component requires a value for the parameter {nameof(Found)}.");
         }
 
         if (NotFound == null)
         {
-            throw new InvalidOperationException($"The {nameof(ConventionRouter)} component requires a value for the parameter {nameof(NotFound)}.");
+            throw new InvalidOperationException($"The {nameof(HashConventionRouter)} component requires a value for the parameter {nameof(NotFound)}.");
         }
 
         refresh();
