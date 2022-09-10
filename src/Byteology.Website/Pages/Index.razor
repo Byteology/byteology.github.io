@@ -1,25 +1,15 @@
 ﻿@layout FullPageScrollingLayout
 
-@using Byteology.Website.Components.HomePage
 @using Byteology.Website.Components.Inquiry
 
 <PageTitle>@_model.Title</PageTitle>
 
-<Intro />
-<ServicesList />
+<Hero />
+
+<section class="slide slide-center">
+    <ServicesList />
+</section>
 
 <section class="slide slide-center md:px-8">
     <Inquiry />
 </section>
-
-@code {
-    [Inject]
-    private ModelReader _modelReader { get; set; } = default!;
-    private HomePageModel _model = default!;
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        _model = _modelReader.ReadJson<HomePageModel>("home-page-data.json");
-    }
-}

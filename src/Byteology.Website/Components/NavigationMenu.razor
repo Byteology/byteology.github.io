@@ -15,15 +15,15 @@
         <div class="h-full flex gap-8 items-center justify-center">
             @foreach (NavigationItemModel item in _items)
             {
-                @if (item.Sublinks == null || item.Sublinks.Length == 0)
+                @if (item.Subitems == null)
                 {
                     <NavLink class="@(item.Highlighted ? 
                                         "button p-1 px-2 text-xs" : 
                                         "transition-fast [&.active]:text-accent hover:text-primary-300")" 
                              tabindex="-1" 
-                             href="@item.Link.Url" 
+                             href="@(_routeManager.Match(item.Page)?.GetUrl())" 
                              Match="NavLinkMatch.All">
-                        @item.Link.Text
+                        @item.Text
                     </NavLink>
                 }
                 else
@@ -33,10 +33,10 @@
                         <NavLink class="pointer-events-none leading-[2.5rem] 
                                         transition-fast active:text-accent group-hover:text-primary-300" 
                                  tabindex="-1" 
-                                 href="@item.Link.Url" 
+                                 href="@(_routeManager.Match(item.Page)?.GetUrl())" 
                                  Match="NavLinkMatch.Prefix">
 
-                            <span>@item.Link.Text</span>
+                            <span>@item.Text</span>
                             <svg class="inline h-[70%] mb-[0.1rem] ml-[-0.4rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path class="fill-current" 
                                       fill-rule="evenodd" 
@@ -50,11 +50,11 @@
                                     invisible opacity-0 transition-fast group-hover:visible group-hover:opacity-100 
                                     p-4 space-y-2">
 
-                            @foreach(LinkModel subitem in item.Sublinks)
+                            @foreach(NavigationItemModel subitem in item.Subitems)
                             {
                                 <NavLink class="block transition-fast active:text-accent hocus:!text-primary-300" 
                                          tabindex="-1" 
-                                         href="@subitem.Url" 
+                                         href="@(_routeManager.Match(subitem.Page)?.GetUrl())" 
                                          Match="NavLinkMatch.All">
                                     @subitem.Text
                                 </NavLink>
@@ -110,13 +110,13 @@
 
                 @foreach(NavigationItemModel item in _items.Where(x => !x.Highlighted))
                 {
-                    @if (item.Sublinks == null || item.Sublinks.Length == 0)
+                    @if (item.Subitems == null)
                     {
                         <NavLink class="transition-fast [&.active]:text-accent hover:text-primary-300" 
                                      tabindex="-1" 
-                                     href="@item.Link.Url" 
+                                     href="@(_routeManager.Match(item.Page)?.GetUrl())" 
                                      Match="NavLinkMatch.All">
-                            @item.Link.Text
+                            @item.Text
                         </NavLink>
                     }
                     else
@@ -127,10 +127,10 @@
                             <NavLink class="pointer-events-none
                                             transition-fast active:text-accent checkbox-checked:text-primary-300" 
                                      tabindex="-1" 
-                                     href="@item.Link.Url" 
+                                     href="@(_routeManager.Match(item.Page)?.GetUrl())" 
                                      Match="NavLinkMatch.Prefix">
 
-                                <span>@item.Link.Text</span>
+                                <span>@item.Text</span>
                                 <svg class="inline absolute h-[1.8rem] bottom-[-0.4rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <path class="fill-current" 
                                           fill-rule="evenodd" 
@@ -150,9 +150,9 @@
             {
                 <NavLink class="button p-1 px-2 text-xs" 
                                  tabindex="-1" 
-                                 href="@item.Link.Url" 
+                                 href="@(_routeManager.Match(item.Page)?.GetUrl())" 
                                  Match="NavLinkMatch.All">
-                    @item.Link.Text
+                    @item.Text
                 </NavLink>
             }
         </div>
@@ -160,14 +160,62 @@
     </div>
 </nav>
 
-@code {
-    [Inject]
-    private ModelReader _modelReader { get; set; } = default!;
-    private NavigationItemModel[] _items = default!;
 
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        _items = _modelReader.ReadJson<NavigationItemModel[]>("nav-menu-data.json");
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<footer class="w-full mt-auto bg-dark-900 border border-dark-100 shadow-md flex flex-col items-center">
+
+    <div class="p-6 md:p-8 w-full max-w-5xl 
+                grid grid-cols-[minmax(0,_max-content)] md:grid-cols-[8rem_auto] 
+                justify-center justify-items-start md:justify-items-center 
+                gap-8 md:gap-x-16 lg:gap-x-32">
+
+        <a class="block w-full max-h-fit" href="/">
+            <img class="
+                bg-center bg-contain
+                content-[url(/images/logo-landscape.svg)]
+                md:content-[url(/images/logo-portrait.svg)]"
+                    alt="Byteology"/>
+        </a>
+
+        <div class="flex flex-col md:flex-row md:w-full justify-evenly gap-6 md:gap-8 lg:gap-16">
+            @foreach (LinkSectionModel section in _model.LinkSections)
+            {
+                <div class="flex flex-col text-sm gap-1">
+                    <p class="uppercase font-bold text-accent text-sm">@(section.Title)</p>
+
+                    @foreach(LinkModel link in section.Links)
+                    {
+                        <a class="transition-fast hocus:text-primary-300" href="@link.Url">@link.Text</a>
+                    }
+                </div>
+            }
+        </div>
+
+            
+    </div>
+    <div class="w-full p-1 border-t border-dark-100 
+                text-xs text-center text-neutral">
+            @(_model.Copyright.Replace("{year}", DateTime.Now.Year.ToString())) | 
+            <a class="transition-fast underline hocus:text-primary-300" href="@_model.PrivacyPolicy.Url">@_model.PrivacyPolicy.Text</a>
+    </div>
+
+</footer>*@

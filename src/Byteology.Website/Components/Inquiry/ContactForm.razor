@@ -8,17 +8,17 @@
 
     <DataAnnotationsValidator />
 
-    <TextInput Label="@Model.NameLabel" Placeholder="@Model.NamePlaceholder" @bind-Value=_inquiryData.Name class="col-span-2 md:col-span-1" autocomplete="name" />
-    <TextInput Label="@Model.EmailLabel" Placeholder="@Model.EmailPlaceholder" @bind-Value=_inquiryData.Email class="col-span-2 md:col-span-1" autocomplete="email"/>
-    <TextArea Label="@Model.MessageLabel" Placeholder="@Model.MessagePlaceholder" @bind-Value=_inquiryData.Message class="col-span-2" autocomplete="off"/>
-    <Checkbox Label=@Model.Consent @bind-Value=_inquiryData.Consent class="col-span-2 text-xs text-neutral-200 hocus:text-neutral-100 transition-fast" />
+    <TextInput Label="@_model.NameLabel" Placeholder="@_model.NamePlaceholder" @bind-Value=_inquiryData.Name class="col-span-2 md:col-span-1" autocomplete="name" />
+    <TextInput Label="@_model.EmailLabel" Placeholder="@_model.EmailPlaceholder" @bind-Value=_inquiryData.Email class="col-span-2 md:col-span-1" autocomplete="email"/>
+    <TextArea Label="@_model.MessageLabel" Placeholder="@_model.MessagePlaceholder" @bind-Value=_inquiryData.Message class="col-span-2" autocomplete="off"/>
+    <Checkbox Label=@_model.Consent @bind-Value=_inquiryData.Consent class="col-span-2 text-xs text-neutral-200 hocus:text-neutral-100 transition-fast" />
     <TextInput Label="Honeycomb" Placeholder="Honeycomb" @bind-Value=_inquiryData.Honeycomb class="hidden" />
         
     <button 
         type="submit"
         class="button p-2 col-span-2">
 
-        @Model.SubmitText
+        @_model.SubmitText
 
     </button>
 

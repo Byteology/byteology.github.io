@@ -6,8 +6,5 @@
     "We design and implement **tailored solutions**",
     "We help your business **scale and grow**"
   ],
-  "link": {
-    "text": "Learn More",
-    "url": "/#!/about-us"
-  }
+  "linkText": "Learn More"
 }

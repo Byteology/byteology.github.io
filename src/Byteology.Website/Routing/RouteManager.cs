@@ -1,6 +1,7 @@
 ﻿namespace Byteology.Website.Routing;
 
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 public class RouteManager
 {
@@ -20,6 +21,8 @@ public class RouteManager
             if (segments.Last().ToLower() == "index")
                 segments.RemoveAt(segments.Count - 1);
 
+            segments = segments.Select(x => pascalToKebabCase(x)).ToList();
+
             if (segments.Any())
                 segments.Insert(0, "#!");
 
@@ -37,5 +40,37 @@ public class RouteManager
                 return route;
 
         return null;
+    }
+
+    public Route? Match<TPage>()
+    {
+        foreach (Route route in _routes)
+            if (route.Match(typeof(TPage)))
+                return route;
+
+        return null;
+    }
+
+    public Route? Match(Type type)
+    {
+        foreach (Route route in _routes)
+            if (route.Match(type))
+                return route;
+
+        return null;
+    }
+
+    private static string pascalToKebabCase(string value)
+    {
+        if (string.IsNullOrEmpty(value))
+            return value;
+
+        return Regex.Replace(
+            value,
+            "(?<!^)([A-Z][a-z]|(?<=[a-z])[A-Z])",
+            "-$1",
+            RegexOptions.Compiled)
+            .Trim()
+            .ToLower();
     }
 }

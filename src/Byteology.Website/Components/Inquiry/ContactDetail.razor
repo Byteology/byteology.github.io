@@ -1,32 +1,25 @@
-﻿@using Byteology.Website.Models.Inquiry
-
-@if(Model.Type == ContactDetailType.Address)
+﻿@if(Detail.Type == DetailType.Address)
 {
     <p class="col-start-2
               text-xs break-words">
-        @Model.Value
+        @Detail.Value
     </p>
 }
 
-@if(Model.Type == ContactDetailType.Phone)
+@if(Detail.Type == DetailType.Phone)
 {
     <a class="col-start-2
               link text-xs break-all" 
-        href="tel:@Model.Value">
-        @Model.Value
+        href="tel:@Detail.Value">
+        @Detail.Value
     </a>
 }
 
-@if(Model.Type == ContactDetailType.Email)
+@if(Detail.Type == DetailType.Email)
 {
     <a class="col-start-2
               link text-xs break-all" 
-        href="mailto:@Model.Value">
-        @Model.Value
+        href="mailto:@Detail.Value">
+        @Detail.Value
     </a>
-}
-
-@code {
-    [Parameter]
-    public ContactDetailModel Model { get; set; } = default!;
 }

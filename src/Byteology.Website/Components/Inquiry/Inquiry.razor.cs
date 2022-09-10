@@ -1,20 +1,15 @@
 ﻿namespace Byteology.Website.Components.Inquiry;
 
-using Byteology.Website.Models.Inquiry;
-
 public partial class Inquiry : ComponentBase
 {
     private bool? _successfulSubmit;
     private bool _shouldFadeIn = false;
 
-    [Inject]
-    private ModelReader _modelReader { get; set; } = default!;
-    private InquiryModel _model = default!;
+    private readonly Model _model;
 
-    protected override void OnInitialized()
+    public Inquiry()
     {
-        base.OnInitialized();
-        _model = _modelReader.ReadJson<InquiryModel>("inquiry-data.json");
+        _model = this.ReadJsonModel<Model>();
     }
 
     private void onSubmit(ContactForm.SubmissionEventArgs args)
@@ -42,4 +37,16 @@ public partial class Inquiry : ComponentBase
 
         return result ?? string.Empty;
     }
+
+    private sealed record Model(
+        string? Title,
+        string? CallToAction,
+        ResponseModel Response);
+
+    private sealed record ResponseModel(
+        string OnSuccessTitle,
+        string OnSuccessBody,
+        string OnErrorTitle,
+        string OnErrorBody,
+        string OnErrorButtonText);
 }

@@ -23,4 +23,14 @@ public class Route
 
         return true;
     }
+
+    public bool Match(Type handler)
+    {
+        return handler == Handler;
+    }
+
+    public string GetUrl()
+    {
+        return $"/{string.Join("/", _uriSegments)}";
+    }
 }

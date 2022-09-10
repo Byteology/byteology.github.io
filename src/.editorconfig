@@ -63,3 +63,6 @@ dotnet_diagnostic.S3903.severity = none
 
 # S3928: Parameter names used into ArgumentException constructors should match an existing one 
 dotnet_diagnostic.S3928.severity = none
+
+# IDE0057: Use range operator
+dotnet_diagnostic.IDE0057.severity = silent

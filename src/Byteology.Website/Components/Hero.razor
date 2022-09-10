@@ -31,9 +31,9 @@
                 </Timeline>
             </div>
 
-            <a href="@_model.Link.Url"
+            <a href="@(_routeManager.Match<Mission>()?.GetUrl())"
                 class="button text-sm p-2">
-                @_model.Link.Text
+                @_model.LinkText
             </a>
 
         </div>
@@ -42,15 +42,3 @@
 
 
 </section> 
-
-@code {
-    [Inject]
-    private ModelReader _modelReader { get; set; } = default!;
-    private IntroModel _model = default!;
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        _model = _modelReader.ReadJson<IntroModel>("intro-data.json");
-    }
-}

@@ -1,0 +1,10 @@
+﻿{
+  "nameLabel": "Name",
+  "namePlaceholder": "John Doe",
+  "emailLabel": "Email",
+  "emailPlaceholder": "exaple@mail.com",
+  "messageLabel": "Message",
+  "messagePlaceholder": "Type your message here...",
+  "consent": "I freely give my consent to have my personal information processed for the purpose of receiving feedback or solicited content.",
+  "submitText": "Let's talk"
+}

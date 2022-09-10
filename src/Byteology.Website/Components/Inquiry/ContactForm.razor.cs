@@ -1,20 +1,22 @@
 ﻿namespace Byteology.Website.Components.Inquiry;
 
 using Byteology.Website.Inquiring;
-using Byteology.Website.Models.Inquiry;
 
-public partial class ContactForm
+public partial class ContactForm : ComponentBase
 {
+    private readonly Model _model;
+    private readonly InquiryData _inquiryData = new();
+
     [Inject]
     private IInquiryService _inquiryService { get; set; } = default!;
 
-    private readonly InquiryData _inquiryData = new();
-
-    [Parameter]
-    public ContactFormModel Model { get; set; } = default!;
-
     [Parameter]
     public EventCallback<SubmissionEventArgs> OnSubmit { get; set; }
+
+    public ContactForm()
+    {
+        _model = this.ReadJsonModel<Model>();
+    }
 
     private async Task onSubmit()
     {
@@ -40,4 +42,19 @@ public partial class ContactForm
             Success = success;
         }
     }
+
+    private sealed record Model(
+        string NameLabel,
+        string NamePlaceholder,
+        string EmailLabel,
+        string EmailPlaceholder,
+        string MessageLabel,
+        string MessagePlaceholder,
+        string Consent,
+        string SubmitText,
+        string OnSuccessTitle,
+        string OnSuccessBody,
+        string OnErrorTitle,
+        string OnErrorBody,
+        string OnErrorButtonText);
 }

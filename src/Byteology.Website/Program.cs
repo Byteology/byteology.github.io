@@ -3,8 +3,6 @@ using Byteology.Website.Inquiring;
 using Byteology.Website.Routing;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Http;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -21,9 +19,4 @@ static void ConfigureServices(IServiceCollection services)
     services.AddSingleton<StateContainer>();
     services.AddSingleton<IInquiryService, GoogleDriveInquiryService>();
     services.AddHttpClient<IInquiryService, GoogleDriveInquiryService>();
-    services.AddSingleton((services) => new ModelReader(typeof(Program).Assembly, new(JsonSerializerDefaults.Web)
-    {
-        Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
-    }));
-
 }
