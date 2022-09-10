@@ -16,12 +16,12 @@ public class RouteManager
         List<Route> routesList = new();
         foreach (Type pageType in pageComponentTypes)
         {
-            string[] segments = pageType.FullName!.Substring(pageType.FullName.IndexOf("Pages") + 6).Split('.');
+            List<string> segments = pageType.FullName!.Substring(pageType.FullName.IndexOf("Pages") + 6).Split('.').ToList();
             if (segments.Last().ToLower() == "index")
-                segments = segments.SkipLast(1).ToArray();
+                segments.RemoveAt(segments.Count - 1);
 
             if (segments.Any())
-                segments[0] = "#!" + segments[0];
+                segments.Insert(0, "#!");
 
             Route newRoute = new(segments, pageType);
             routesList.Add(newRoute);
@@ -30,7 +30,7 @@ public class RouteManager
         _routes = routesList.ToArray();
     }
 
-    public Route? Match(string[] segments)
+    public Route? Match(IList<string> segments)
     {
         foreach (Route route in _routes)
             if (route.Match(segments))

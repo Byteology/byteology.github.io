@@ -2,22 +2,22 @@
 
 public class Route
 {
-    private readonly string[] _uriSegments;
+    private readonly List<string> _uriSegments;
 
     public Type Handler { get; private set; }
 
-    public Route(string[] uriSegments, Type handler)
+    public Route(IEnumerable<string> uriSegments, Type handler)
     {
-        _uriSegments = uriSegments;
+        _uriSegments = new List<string>(uriSegments);
         Handler = handler;
     }
 
-    public bool Match(string[] segments)
+    public bool Match(IList<string> segments)
     {
-        if (segments.Length != _uriSegments.Length)
+        if (segments.Count != _uriSegments.Count)
             return false;
 
-        for (int i = 0; i < _uriSegments.Length; i++)
+        for (int i = 0; i < _uriSegments.Count; i++)
             if (string.Compare(segments[i], _uriSegments[i], StringComparison.OrdinalIgnoreCase) != 0)
                 return false;
 
