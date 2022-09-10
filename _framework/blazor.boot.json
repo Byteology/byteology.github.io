@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Byteology.Website.dll": "sha256-t44qjG5VdLt2SWId6X2mMHjZlXBWdjmHThA8aaE4yUs=",
+      "Byteology.Website.dll": "sha256-eW+rUWXk54yMLCLiy8A5E4feBtu8xVEloQ0SKYMSS6E=",
       "Markdig.dll": "sha256-\/qKhOo2ZbkSd56j45qUCUGYRyBMnR0dmDkWfZfLJKeo=",
       "Microsoft.AspNetCore.Components.dll": "sha256-xT8mNFd1pbMrGRra9bhscv+xz1gy\/AwGOtmv7ajp3dU=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-E8pAJoClHQZU70wHEeWb26NKyfE7MW975Pq+7a0TuRs=",
@@ -34,7 +34,7 @@
       "System.ComponentModel.Primitives.dll": "sha256-5lRVbx78yWUs6V0vuoT613GLWFOZaXJF2C5bwLzyQRw=",
       "System.ComponentModel.TypeConverter.dll": "sha256-iqdMJHrxTCVFoVPgyvxci5eq6yeXuxzhMWOi8z2FMm8=",
       "System.dll": "sha256-PdeKH2Cv9Zv944vnu2iECqm1vnAbquqZ3k63QD6qB6g=",
-      "System.Linq.dll": "sha256-4AXpTHGpiCUp1yddjr6FXp50C\/2sRrAle65WiZ83KYg=",
+      "System.Linq.dll": "sha256-szGfQtQ7bXksXzgES0fVa2IcSTHC6NUdf92h1qfA7+E=",
       "System.Linq.Expressions.dll": "sha256-C5LP\/pIBBMXO2Rr32JSH\/8RqNijljgOkaPcWSvPcrZI=",
       "System.Memory.dll": "sha256-RmXgu+gvHRJUWsmuypiMb6vwNeB6ifXR9uu8U\/ZPrTU=",
       "System.Net.Http.dll": "sha256-OJLt5k4VBNpnLjyRmigiIYnu22OvL3xkbqI03OSTsyA=",
