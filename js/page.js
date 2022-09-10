@@ -163,3 +163,7 @@ class WheelInertiaDetector {
 
 var fps = new FullPageScrolling();
 var wid = new WheelInertiaDetector();
+
+window.scrollPageToTop = () => {
+    document.getElementById("page").scrollTo(0, 0);
+};
