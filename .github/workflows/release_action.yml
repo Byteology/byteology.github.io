@@ -33,8 +33,8 @@ jobs:
       working-directory: src
       run: dotnet publish -c Release -o ../release --nologo
       
-    #- name: Set 404 page
-    #  run: cp release/wwwroot/notfound/index.html release/wwwroot/404.html
+    - name: Set 404 page
+      run: cp release/wwwroot/notfound/index.html release/wwwroot/404.html
     
     # Add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
     - name: Add .nojekyll file
