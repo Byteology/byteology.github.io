@@ -1,5 +1,6 @@
 using Byteology.Website;
 using Byteology.Website.Inquiring;
+using Byteology.Website.Routing;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Http;
 using System.Text.Json;
@@ -16,6 +17,7 @@ await builder.Build().RunAsync();
 // This method is required by the prerenderer
 static void ConfigureServices(IServiceCollection services)
 {
+    services.AddSingleton<RouteManager>();
     services.AddSingleton<StateContainer>();
     services.AddSingleton<IInquiryService, GoogleDriveInquiryService>();
     services.AddHttpClient<IInquiryService, GoogleDriveInquiryService>();

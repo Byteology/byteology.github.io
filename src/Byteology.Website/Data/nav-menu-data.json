@@ -2,51 +2,51 @@
   {
     "link": {
       "text": "Mission",
-      "url": "/mission"
+      "url": "/#!mission"
     }
   },
   {
     "link": {
       "text": "Careers",
-      "url": "/careers"
+      "url": "/#!careers"
     }
   },
   {
     "link": {
       "text": "Services",
-      "url": "/services"
+      "url": "/#!services"
     },
     "sublinks": [
       {
         "text": "Software Development",
-        "url": "/services/development"
+        "url": "/#!services/development"
       },
       {
         "text": "Research & PoC",
-        "url": "/services/research"
+        "url": "/#!services/research"
       },
       {
         "text": "Migration to Microservices",
-        "url": "/services/microservices"
+        "url": "/#!services/microservices"
       },
       {
         "text": "Event Sourcing",
-        "url": "/services/event-sourcing"
+        "url": "/#!services/event-sourcing"
       },
       {
         "text": "Consulting & Training",
-        "url": "/services/consulting"
+        "url": "/#!services/consulting"
       },
       {
         "text": "Interviewing as a Service",
-        "url": "/services/interviewing"
+        "url": "/#!services/interviewing"
       }
     ]
   },
   {
     "link": {
       "text": "Contact us",
-      "url": "/contacts"
+      "url": "/#!contacts"
     },
     "highlighted": true
   }

@@ -1,7 +1,8 @@
-﻿@using Microsoft.AspNetCore.Components.Routing
+﻿@using Byteology.Website.Routing
+@using Microsoft.AspNetCore.Components.Routing
 
 <Background>
-    <Router AppAssembly="@typeof(App).Assembly">
+    <ConventionRouter>
         <Found Context="routeData">
             <RouteView RouteData="@routeData" DefaultLayout="typeof(DefaultLayout)"/>
             <FocusOnNavigate RouteData="@routeData" Selector="#page" />
@@ -11,5 +12,5 @@
                 <Byteology.Website.Pages.NotFound/>
             </LayoutView>
         </NotFound>
-    </Router>
+    </ConventionRouter>
 </Background>

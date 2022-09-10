@@ -5,15 +5,15 @@
       "links": [
         {
           "text": "Mission",
-          "url": "/mission"
+          "url": "/#!mission"
         },
         {
           "text": "Careers",
-          "url": "/careers"
+          "url": "/#!careers"
         },
         {
           "text": "Contacts",
-          "url": "/contacts"
+          "url": "/#!contacts"
         }
       ]
     },
@@ -22,27 +22,27 @@
       "links": [
         {
           "text": "Software Development",
-          "url": "/services/development"
+          "url": "/#!services/development"
         },
         {
           "text": "Research & PoC",
-          "url": "/services/research"
+          "url": "/#!services/research"
         },
         {
           "text": "Migration to Microservices",
-          "url": "/services/microservices"
+          "url": "/#!services/microservices"
         },
         {
           "text": "Event Sourcing",
-          "url": "/services/event-sourcing"
+          "url": "/#!services/event-sourcing"
         },
         {
           "text": "Consulting & Training",
-          "url": "/services/consulting-and-training"
+          "url": "/#!services/consulting-and-training"
         },
         {
           "text": "Interviewing as a Service",
-          "url": "/services/interviewing"
+          "url": "/#!services/interviewing"
         }
       ]
     },
@@ -51,15 +51,15 @@
       "links": [
         {
           "text": "Business",
-          "url": "/blog/business"
+          "url": "/#!blog/business"
         },
         {
           "text": "Software Development",
-          "url": "/blog/development"
+          "url": "/#!blog/development"
         },
         {
           "text": "Random Stuff",
-          "url": "/blog/random"
+          "url": "/#!blog/random"
         }
       ]
     }
@@ -67,6 +67,6 @@
   "copyright": "©{year} Byteology",
   "privacyPolicy": {
     "text": "Privacy notice",
-    "url": "/privacy"
+    "url": "/#!privacy"
   }
 }

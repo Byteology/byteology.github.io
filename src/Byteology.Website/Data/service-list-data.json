@@ -4,7 +4,7 @@
     "description": "We will develop your application or minimum viable product (MVP) by applying scientific generalization and domain-driven design principles.",
     "iconSrc": "/images/application-development-cropped.png",
     "link": {
-      "url": "/services/development",
+      "url": "/#!services/development",
       "text": "Learn More"
     }
   },
@@ -13,7 +13,7 @@
     "description": "Byteology's team will do any research or proof of contept on your behalf. We'll valdiate your idea, explore feasible approaches and identify potential risks and roadblocks.",
     "iconSrc": "/images/application-development-cropped.png",
     "link": {
-      "url": "/services/research",
+      "url": "/#!services/research",
       "text": "Learn More"
     }
   },
@@ -22,7 +22,7 @@
     "description": "We have researched and designed strategies and processes that help businesses successfully migrate to microservices.",
     "iconSrc": "/images/application-development-cropped.png",
     "link": {
-      "url": "/services/microservices",
+      "url": "/#!services/microservices",
       "text": "Learn More"
     }
   },
@@ -31,7 +31,7 @@
     "description": "Standard software development methodologies store and utilize less than 50% of the data that runs through the system.",
     "iconSrc": "/images/application-development-cropped.png",
     "link": {
-      "url": "/services/event-sourcing",
+      "url": "/#!services/event-sourcing",
       "text": "Learn More"
     }
   },
@@ -40,7 +40,7 @@
     "description": "Byteology will provide you with tailored consulting services and/or personnel training to help your business scale and grow.",
     "iconSrc": "/images/application-development-cropped.png",
     "link": {
-      "url": "/services/consulting-and-training",
+      "url": "/#!services/consulting-and-training",
       "text": "Learn More"
     }
   },
@@ -49,7 +49,7 @@
     "description": "We've been studying the process of identifying great software developers for over a decade. Our team will conduct technical and social interviews on your behalf so you can focus of your core business.",
     "iconSrc": "/images/application-development-cropped.png",
     "link": {
-      "url": "/services/interviewing",
+      "url": "/#!services/interviewing",
       "text": "Learn More"
     }
   }
