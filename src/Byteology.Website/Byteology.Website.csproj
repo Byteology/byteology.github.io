@@ -31,7 +31,6 @@
     <EmbeddedResource Include="Components\Inquiry\ContactForm.razor.json" />
     <EmbeddedResource Include="Components\Inquiry\ContactsList.razor.json" />
     <EmbeddedResource Include="Components\Hero.razor.json" />
-    <EmbeddedResource Include="Components\NavigationMenu.razor.json" />
     <EmbeddedResource Include="Components\Inquiry\Inquiry.razor.json" />
     <EmbeddedResource Include="Components\ServicesList.razor.json" />
     <EmbeddedResource Include="Pages\Index.razor.json" />

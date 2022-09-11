@@ -80,13 +80,13 @@ module.exports = {
 
     plugins: [
         plugin(function ({ addVariant }) {
-            addVariant('hocus', ['&:hover', '&:focus', '&:focus-within']);
             addVariant('active', '&.active');
             addVariant('checkbox-checked', [
                 'input[type=checkbox]:checked + label > &',
                 'input[type=checkbox]:checked + label + &',
                 'input[type=checkbox]:checked + &'
             ]);
+            addVariant('hocus', ['&:hover', '&:focus', '&:focus-within']);
         }),
     ],
 }

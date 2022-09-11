@@ -1,0 +1,85 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+@using static Byteology.Website.Components.Navigation.NavigationData
+
+<nav class="hidden md:block
+            sticky top-0 z-10 w-full h-[2.5rem] px-4 
+            bg-dark-900 border border-dark-100 shadow-md
+            text-sm font-bold whitespace-nowrap select-none">
+
+    <div class="flex max-w-3xl w-full h-[2.5rem] mx-auto            
+                gap-8 items-center justify-between">
+
+        <a class="h-full flex-1" href="@(_routeManager.Match<Pages.Index>()?.GetUrl())" tabindex="-1">
+            <img class="h-full" src="/images/icon.png" alt="Byteology"/>
+        </a>
+        
+        <div class="h-full flex gap-8 items-center justify-center">
+            @foreach (NavigationSection section in Data.Sections)
+            {
+                @if (section.Expand)
+                {
+                    @foreach (NavigationItemModel item in section.Items)
+                    {
+                        <NavLink class="transition-fast active:text-accent hocus:text-accent-300" 
+                             tabindex="-1" 
+                             href="@(_routeManager.Match(item.Page)?.GetUrl())" 
+                             Match="NavLinkMatch.All">
+                            @item.Text
+                        </NavLink>
+                    }
+                }
+                else
+                {
+                    <div class="h-full cursor-pointer group">
+
+                        <NavLink class="pointer-events-none leading-[2.5rem] 
+                                        transition-fast active:text-accent group-hover:text-accent-300" 
+                                    tabindex="-1" 
+                                    href="@(_routeManager.Match(section.Page)?.GetUrl())" 
+                                    Match="NavLinkMatch.Prefix">
+
+                            <span>@(section.Text)</span>
+                            <svg class="inline h-[70%] mb-[0.1rem] ml-[-0.4rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path class="fill-current" 
+                                        fill-rule="evenodd" 
+                                        d="M15.3 10.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z"/>
+                            </svg>
+
+                        </NavLink>
+
+                        <div class="absolute mt-px -ml-4 
+                                    bg-dark-700 border border-dark-100 shadow-md 
+                                    invisible opacity-0 transition-fast group-hover:visible group-hover:opacity-100 
+                                    p-4 space-y-2">
+
+                            @foreach(NavigationItemModel item in section.Items)
+                            {
+                                <NavLink class="block transition-fast active:text-accent hocus:text-accent-300" 
+                                            tabindex="-1" 
+                                            href="@(_routeManager.Match(item.Page)?.GetUrl())" 
+                                            Match="NavLinkMatch.All">
+                                    @item.Text
+                                </NavLink>
+                            }
+
+                        </div>
+                    </div>
+                }
+            }
+
+            <NavLink class="button p-1 px-2 text-xs" 
+                     tabindex="-1"
+                     href="@(_routeManager.Match(Data.Highlighted.Page)?.GetUrl())" 
+                     Match="NavLinkMatch.All">
+                @Data.Highlighted.Text
+            </NavLink>
+
+        </div>
+
+    </div>
+
+</nav>
+
+@code {
+    private readonly NavigationData Data = new();
+}

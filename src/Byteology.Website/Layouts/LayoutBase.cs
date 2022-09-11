@@ -11,6 +11,6 @@ public abstract class LayoutBase : LayoutComponentBase
     protected override void OnAfterRender(bool firstRender)
     {
         base.OnAfterRender(firstRender);
-        _jsRuntime.InvokeVoid("scrollPageToTop");
+        _jsRuntime.InvokeVoid("onNavigated");
     }
 }

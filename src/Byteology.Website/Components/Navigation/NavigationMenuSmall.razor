@@ -1,0 +1,138 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+@using static Byteology.Website.Components.Navigation.NavigationData
+
+<nav class="md:hidden
+            sticky top-0 z-10 w-full h-[2.5rem] px-4 
+            bg-dark-900 border border-dark-100 shadow-md
+            text-sm font-bold whitespace-nowrap select-none">
+
+    <div class="flex
+                w-full h-[2.5rem]
+                items-center justify-between gap-8">
+
+        <input id="hamburger" type="checkbox" class="hidden" title="menu" />
+        <label class="w-[1.8rem]" for="hamburger">
+            <svg class="transition-normal visible opacity-100
+                        checkbox-checked:invisible
+                        checkbox-checked:opacity-0"
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 24 24">
+                <path class="fill-neutral-100" 
+                        fill-rule="evenodd" 
+                        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+            </svg>
+            <svg class="absolute top-0 left-0
+                        transition-normal invisible opacity-0
+                        checkbox-checked:visible
+                        checkbox-checked:opacity-100" 
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path class="fill-neutral-100" 
+                        fill-rule="evenodd" 
+                        d="M15.78 14.36a1 1 0 0 1-1.42 1.42l-2.82-2.83-2.83 2.83a1 1 0 1 1-1.42-1.42l2.83-2.82L7.3 8.7a1 1 0 0 1 1.42-1.42l2.83 2.83 2.82-2.83a1 1 0 0 1 1.42 1.42l-2.83 2.83 2.83 2.82z"/>
+            </svg>
+        </label>
+
+        <div class="fixed h-full top-[2.5rem] left-0 z-50 
+                    bg-dark-700 border-r border-dark-100 shadow-md 
+                    p-8 overflow-x-hidden overflow-y-auto
+                    transition-fast 
+                    invisible opacity-0
+                    checkbox-checked:visible checkbox-checked:opacity-90">
+
+
+            <div class="p-6 md:p-8 w-full max-w-5xl 
+                        grid grid-cols-[minmax(0,_max-content)] md:grid-cols-[8rem_auto] 
+                        justify-center justify-items-start md:justify-items-center 
+                        gap-8 md:gap-x-16 lg:gap-x-32">
+
+                <a class="block w-full max-h-fit" href="@(_routeManager.Match<Pages.Index>()?.GetUrl())">
+                    <img class="
+                        bg-center bg-contain
+                        content-[url(/images/logo-landscape.svg)]
+                        md:content-[url(/images/logo-portrait.svg)]"
+                            alt="Byteology"/>
+                </a>
+
+                <div class="flex flex-col md:flex-row md:w-full justify-evenly gap-6 md:gap-8 lg:gap-16">
+                    @foreach (NavigationSection section in Data.Sections)
+                    {
+                        <div class="flex flex-col text-sm gap-1">
+                            <p class="uppercase font-bold text-accent text-sm mb-2">@(section.Text)</p>
+
+                            @foreach(NavigationItemModel item in section.Items)
+                            {
+                                <NavLink class="transition-fast hocus:text-accent-300" 
+                                            href="@(_routeManager.Match(item.Page)?.GetUrl())"
+                                            Match="NavLinkMatch.All">
+                                    @item.Text
+                                </NavLink>
+                            }
+                        </div>
+                    }
+                </div>
+
+            
+            </div>
+
+        </div>
+
+        <NavLink class="button p-1 px-2 text-xs" 
+                 tabindex="-1" 
+                 href="@(_routeManager.Match(Data.Highlighted.Page)?.GetUrl())" 
+                 Match="NavLinkMatch.All">
+            @Data.Highlighted.Text
+        </NavLink>
+
+    </div>
+
+</nav>
+
+
+
+
+@*<footer class="w-full mt-auto bg-dark-900 border border-dark-100 shadow-md flex flex-col items-center">
+
+    <div class="p-6 md:p-8 w-full max-w-5xl 
+                grid grid-cols-[minmax(0,_max-content)] md:grid-cols-[8rem_auto] 
+                justify-center justify-items-start md:justify-items-center 
+                gap-8 md:gap-x-16 lg:gap-x-32">
+
+        <a class="block w-full max-h-fit" href="/">
+            <img class="
+                bg-center bg-contain
+                content-[url(/images/logo-landscape.svg)]
+                md:content-[url(/images/logo-portrait.svg)]"
+                    alt="Byteology"/>
+        </a>
+
+        <div class="flex flex-col md:flex-row md:w-full justify-evenly gap-6 md:gap-8 lg:gap-16">
+            @foreach (LinkSectionModel section in _model.LinkSections)
+            {
+                <div class="flex flex-col text-sm gap-1">
+                    <p class="uppercase font-bold text-accent text-sm">@(section.Title)</p>
+
+                    @foreach(LinkModel link in section.Links)
+                    {
+                        <a class="transition-fast hocus:text-primary-300" href="@link.Url">@link.Text</a>
+                    }
+                </div>
+            }
+        </div>
+
+            
+    </div>
+    <div class="w-full p-1 border-t border-dark-100 
+                text-xs text-center text-neutral">
+            @(_model.Copyright.Replace("{year}", DateTime.Now.Year.ToString())) | 
+            <a class="transition-fast underline hocus:text-primary-300" href="@_model.PrivacyPolicy.Url">@_model.PrivacyPolicy.Text</a>
+    </div>
+
+</footer>*@
+
+
+
+
+
+@code {
+    private readonly NavigationData Data = new();
+}
