@@ -14,7 +14,8 @@ public class NavigationData
             new NavigationSection("Company", typeof(Pages.Index), new NavigationItemModel[] 
             {
                 new NavigationItemModel("Mission", typeof(Mission)),
-                new NavigationItemModel("Careers", typeof(Careers)) 
+                new NavigationItemModel("Careers", typeof(Careers)),
+                new NavigationItemModel("Contacts", typeof(Contacts))
             }, true),
             new NavigationSection("Services", typeof(Index), new NavigationItemModel[]
             {
