@@ -166,7 +166,11 @@ var wid = new WheelInertiaDetector();
 
 window.onNavigated = () => {
     document.getElementById("page").scrollTo(0, 0);
+    collapseHamburder();
+};
+
+window.collapseHamburder = () => {
     let hamburger = document.getElementById("hamburger");
     if (hamburger)
         hamburger.checked = false;
-};
+}
