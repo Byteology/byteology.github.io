@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+@using static Byteology.Website.Components.Navigation.NavigationData
+
+<div class="p-6 md:p-8 max-w-5xl 
+            grid grid-cols-[minmax(0,_max-content)] md:grid-cols-[8rem_auto] 
+            justify-center justify-items-start md:justify-items-center 
+            gap-8 md:gap-x-16 lg:gap-x-32">
+
+    <a class="block w-full max-h-fit" href="@(_routeManager.Match<Pages.Index>()?.GetUrl())">
+        <img class="
+            bg-center bg-contain
+            content-[url(/images/logo-landscape.svg)]
+            md:content-[url(/images/logo-portrait.svg)]"
+                alt="Byteology"/>
+    </a>
+
+    <div class="flex flex-col md:flex-row md:w-full justify-evenly gap-6 md:gap-8 lg:gap-16">
+        @foreach (NavigationSection section in Data.Sections)
+        {
+            <div class="flex flex-col text-sm gap-1">
+                <p class="uppercase font-bold text-accent text-sm mb-2">@(section.Text)</p>
+
+                @foreach(NavigationItemModel item in section.Items)
+                {
+                    <NavLink class="transition-fast hocus:text-accent-300" 
+                                href="@(_routeManager.Match(item.Page)?.GetUrl())"
+                                Match="NavLinkMatch.All">
+                        @item.Text
+                    </NavLink>
+                }
+            </div>
+        }
+    </div>
+
+            
+</div>
+
+@code {
+    private readonly NavigationData Data = new();
+}

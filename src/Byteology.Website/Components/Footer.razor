@@ -1,8 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Components.Routing
 
-<footer class="w-full h-[2.5rem] leading-[2.5rem] mt-auto
+<footer class="w-full h-[2.5rem] leading-[2.5rem] mt-auto mb-[2px]
                bg-dark-900 border border-dark-100 shadow-md 
-                text-xs text-center text-neutral-300">
+               text-xs text-center text-neutral-300">
 
     @(_model.Copyright.Replace("{year}", DateTime.Now.Year.ToString())) | 
     <NavLink class="transition-fast 
