@@ -1,5 +1,4 @@
 ﻿@using Microsoft.AspNetCore.Components.Routing
-@using Microsoft.JSInterop
 @using static Byteology.Website.Components.Navigation.NavigationData
 
 <nav class="md:hidden flex-none
@@ -37,7 +36,9 @@
                     backdrop-blur-none invisible 
                     transition-normal 
                         checkbox-checked:visible checkbox-checked:backdrop-blur-sm"
-            @onclick=onClickOutside>
+            @onclick=onClickOutside
+            @ontouchstart=onTouchStart
+            @ontouchmove=onTouchMove>
 
             <div class="inline-block h-full
                         bg-dark-900 border-r border-dark-100 shadow-md
@@ -54,22 +55,11 @@
 
         <NavLink class="button p-1 px-4 text-xs" 
                  tabindex="-1" 
-                 href="@(_routeManager.Match(Data.Highlighted.Page)?.GetUrl())" 
+                 href="@(_routeManager.Match(_data.Highlighted.Page)?.GetUrl())" 
                  Match="NavLinkMatch.All">
-            @Data.Highlighted.Text
+            @_data.Highlighted.Text
         </NavLink>
 
     </div>
 
 </nav>
-
-@code {
-    private readonly NavigationData Data = new();
-    [Inject]
-    private IJSRuntime _jsRuntimeAsync { get; set; } = default!;
-
-    private async void onClickOutside()
-    {
-        await _jsRuntimeAsync.InvokeVoidAsync("collapseHamburder");
-    }
-}
