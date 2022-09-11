@@ -84,7 +84,10 @@ module.exports = {
             addVariant('checkbox-checked', [
                 'input[type=checkbox]:checked + label > &',
                 'input[type=checkbox]:checked + label + &',
-                'input[type=checkbox]:checked + &'
+                'input[type=checkbox]:checked + label + * > &',
+                'input[type=checkbox]:checked + &',
+                'input[type=checkbox]:checked + * > &',
+
             ]);
             addVariant('hocus', ['&:hover', '&:focus', '&:focus-within']);
         }),

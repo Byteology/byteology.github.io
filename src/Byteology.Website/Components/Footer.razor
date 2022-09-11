@@ -1,14 +1,13 @@
 ﻿@using Microsoft.AspNetCore.Components.Routing
 
-<footer class="w-full h-[2.5rem]
+<footer class="w-full h-10 flex-none
                bg-dark-900 border border-dark-100 shadow-md 
                text-xs text-center text-neutral-300
                flex items-center justify-center">
 
-    @(_model.Copyright.Replace("{year}", DateTime.Now.Year.ToString())) | 
+    <span>@(_model.Copyright.Replace("{year}", DateTime.Now.Year.ToString())) |&nbsp;</span>
     <NavLink class="transition-fast 
-                    underline active:no-underline 
-                    active:text-accent hocus:text-accent-300" 
+                    underline hocus:text-accent-300" 
              href="@(_routeManager.Match<Privacy>()?.GetUrl())"
              Match="NavLinkMatch.All">
         @_model.PrivacyPolicyText
