@@ -74,6 +74,7 @@ module.exports = {
             },
             animation: {
                 'fade-in-fast': 'fade 0.25s ease-out 0s reverse forwards',
+                'blink': 'fade 1s linear 0s infinite alternate',
             }
         },
     },
