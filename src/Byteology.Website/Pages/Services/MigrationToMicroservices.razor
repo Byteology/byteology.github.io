@@ -1,30 +1,31 @@
 ﻿@using Byteology.Website.Components.Inquiry
 
 
-<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4 col-span-12 lg:col-start-4 lg:col-span-6">
+<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
     <h1 class="text-accent text-xl font-bold text-center uppercase">Migration to Microservices</h1>
     <p class="text-lg">We have researched and designed strategies and processes that help businesses successfully migrate to microservices.</p>
 </section>
 
 
-<section class="grid grid-flow-row-dense grid-cols-12 auto-rows-max gap-8 items-start items-stretch justify-center col-span-12">
 
-    @for (int i = 0; i < _model.Process.Length; i++)
-    {
-        var timeline = _model.Process[i];
-        <div class="col-span-12 lg:col-span-6 2xl:col-span-3 border border-dark-100 shadow-md flex flex-col">
-            <div class="h-22 bg-dark/70 px-8 py-4 flex gap-4 items-center">
-                <h2 class="text-primary uppercase font-bold text-5xl">@((i + 1).ToString().PadLeft(2, '0'))</h2>
-                <h2 class="text-accent uppercase font-bold text-xl">@timeline.Title</h2>
+@for (int i = 0; i < _model.Process.Length; i++)
+{
+    var timeline = _model.Process[i];
+    <section>
+
+            <div class="col-span-12 border border-dark-100 shadow-md flex flex-col">
+                <div class="h-22 bg-dark/70 px-8 py-4 flex gap-4 items-center">
+                    <h2 class="text-primary uppercase font-bold text-5xl">@((i + 1).ToString().PadLeft(2, '0'))</h2>
+                    <h2 class="text-accent uppercase font-bold text-xl">@timeline.Title</h2>
+                </div>
+                <Timeline class="grow 2xl:mb-0 bg-dark-900/70 p-8 text-accent" Items="timeline.Items" Context="item" >
+                    <Item>
+                        <p class="text-neutral-100"> @(new MarkupString(Markdown.ToHtml(item)))</p>
+                    </Item>
+                </Timeline>
             </div>
-            <Timeline class="grow 2xl:mb-0 bg-dark-900/70 p-8 text-accent" Items="timeline.Items" Context="item" >
-                <Item>
-                    <p class="text-neutral-100"> @(new MarkupString(Markdown.ToHtml(item)))</p>
-                </Item>
-            </Timeline>
-        </div>
-    }
-</section>
+    </section>
+}
 
 <section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 col-span-12 2xl:col-start-4 2xl:col-span-6">
     <h1 class="text-lg uppercase font-bold text-accent">Process map</h1>

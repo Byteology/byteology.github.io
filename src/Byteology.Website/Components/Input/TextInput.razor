@@ -3,7 +3,7 @@
 @inherits InputText
 
 <div @attributes=AdditionalAttributes class=@CssClass>
-    <label for="@_id" class="font-bold text-sm md:text-base">@Label</label>
+    <label for="@_id" class="font-bold text-sm lg:text-base">@Label</label>
     <input
         @bind="CurrentValueAsString"
         @bind:event="onchange"
@@ -13,7 +13,7 @@
         class="
             block w-full overflow-hidden pl-4
             transition-fast
-            bg-transparent text-sm md:text-base
+            bg-transparent text-sm lg:text-base
             border-b-2 border-primary
             placeholder:italic
             hover:border-primary-300
