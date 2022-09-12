@@ -2,7 +2,7 @@
 
 using Byteology.Website.Inquiring;
 
-public partial class ContactForm : ComponentBase
+public partial class ContactForm : StyleableComponent
 {
     private readonly Model _model;
     private readonly InquiryData _inquiryData = new();

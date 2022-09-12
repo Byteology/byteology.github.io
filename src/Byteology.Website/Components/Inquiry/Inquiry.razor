@@ -4,25 +4,25 @@
         @(_successfulSubmit.HasValue ? "hidden" : (_shouldFadeIn ? "animate-fade-in-fast" : "")) @CssClass">
 
 
-    <div class="grid grid-cols-1 md:grid-cols-[2fr_3fr]">
+    <div class="flex flex-col md:flex-row">
 
-        <div class="col-start-1 md:content-start space-y-4 p-8 bg-dark-700/50">
-            <h1 class=" font-bold uppercase text-accent">@_model.Title</h1>
+        <div class="flex-[3_0_0%] md:content-start space-y-4 p-8 bg-dark-700/50">
+            <h1 class=" font-bold uppercase text-accent md:text-lg">@_model.Title</h1>
 
-            <p class="text-sm">
+            <p class="text-sm md:text-base">
                 @_model.CallToAction
             </p>
 
             <ContactsList />
         </div>
     
-        <ContactForm OnSubmit=onSubmit />
+        <ContactForm class="flex-[4_0_0%]" OnSubmit=onSubmit />
 
     </div>
 </div>
 
 <div @attributes=AdditionalAttributes class="p-8 bg-dark-900/70 border border-dark-100 shadow-md flex flex-col gap-4 @(_successfulSubmit.HasValue ? "animate-fade-in-fast" : "hidden") @CssClass">
-    <h1 class="text-lg font-bold text-center uppercase
+    <h1 class="text-lg md:text-xl font-bold text-center uppercase
                 @(_successfulSubmit == true ? "text-accent" : "") @(_successfulSubmit == false ? "text-error" : "")">
         @getLightboxTitle()
     </h1>

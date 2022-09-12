@@ -15,8 +15,8 @@
     <div class="flex-none flex flex-col md:flex-row justify-evenly gap-8 md:gap-16">
         @foreach (NavigationSection section in Data.Sections)
         {
-            <div class="flex flex-col text-sm gap-1">
-                <p class="uppercase font-bold text-accent text-sm mb-2">@(section.Text)</p>
+            <div class="flex flex-col text-sm md:text-base gap-1">
+                <p class="uppercase font-bold text-accent text-sm md:text-base mb-2">@(section.Text)</p>
 
                 @foreach(NavigationItemModel item in section.Items)
                 {

@@ -1,7 +1,7 @@
 ﻿@if(Detail.Type == DetailType.Address)
 {
     <p class="col-start-2
-              text-xs break-words">
+              text-xs md:text-sm break-words">
         @Detail.Value
     </p>
 }
@@ -9,7 +9,7 @@
 @if(Detail.Type == DetailType.Phone)
 {
     <a class="col-start-2
-              link text-xs break-all" 
+              link text-xs md:text-sm break-all" 
         href="tel:@Detail.Value">
         @Detail.Value
     </a>
@@ -18,7 +18,7 @@
 @if(Detail.Type == DetailType.Email)
 {
     <a class="col-start-2
-              link text-xs break-all" 
+              link text-xs md:text-sm break-all" 
         href="mailto:@Detail.Value">
         @Detail.Value
     </a>

@@ -45,7 +45,7 @@
     "onSuccessTitle": "Thank you!",
     "onSuccessBody": "Thank you for reaching out! We'll make sure to help you the best we can. We usually answer within 2 business days.",
     "onErrorTitle": "Oops!",
-    "onErrorBody": "We are terribly sorry but something went wrong. You can retry or just write us a plain old email.",
+    "onErrorBody": "We are terribly sorry but something went wrong. You can either retry or just write us a plain old email.",
     "onErrorButtonText": "Continue"
   }
 }

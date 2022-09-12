@@ -1,22 +1,25 @@
-﻿@using Byteology.Website.Components.Input
+﻿@inherits StyleableComponent
+
+@using Byteology.Website.Components.Input
 @using Microsoft.AspNetCore.Components.Forms
 
 <EditForm 
+    @attributes=AdditionalAttributes
     Model="_inquiryData" 
     OnValidSubmit="onSubmit"
-    class="p-8 bg-dark-900/70 md:content-center grid grid-cols-2 gap-8" >
+    class=@($"max-w-xl p-8 bg-dark-900/70 md:content-center grid grid-cols-2 gap-8 {CssClass}") >
 
     <DataAnnotationsValidator />
 
-    <TextInput Label="@_model.NameLabel" Placeholder="@_model.NamePlaceholder" @bind-Value=_inquiryData.Name class="col-span-2 md:col-span-1" autocomplete="name" />
-    <TextInput Label="@_model.EmailLabel" Placeholder="@_model.EmailPlaceholder" @bind-Value=_inquiryData.Email class="col-span-2 md:col-span-1" autocomplete="email"/>
+    <TextInput Label="@_model.NameLabel" Placeholder="@_model.NamePlaceholder" @bind-Value=_inquiryData.Name class="col-span-2 lg:col-span-1" autocomplete="name" />
+    <TextInput Label="@_model.EmailLabel" Placeholder="@_model.EmailPlaceholder" @bind-Value=_inquiryData.Email class="col-span-2 lg:col-span-1" autocomplete="email"/>
     <TextArea Label="@_model.MessageLabel" Placeholder="@_model.MessagePlaceholder" @bind-Value=_inquiryData.Message class="col-span-2" autocomplete="off"/>
-    <Checkbox Label=@_model.Consent @bind-Value=_inquiryData.Consent class="col-span-2 text-xs text-neutral-200 hocus:text-neutral-100 transition-fast" />
+    <Checkbox Label=@_model.Consent @bind-Value=_inquiryData.Consent class="col-span-2 text-xs md:text-sm text-neutral-200 hocus:text-neutral-100 transition-fast" />
     <TextInput Label="Honeycomb" Placeholder="Honeycomb" @bind-Value=_inquiryData.Honeycomb class="hidden" />
         
     <button 
         type="submit"
-        class="button p-2 col-span-2">
+        class="button text-sm md:text-base p-2 col-span-2">
 
         @_model.SubmitText
 

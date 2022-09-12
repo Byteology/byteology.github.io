@@ -16,15 +16,15 @@
 
         <div class="p-8 bg-dark-900/70 shadow-md
                     border border-dark-100
-                    md:max-w-xl flex flex-col gap-8
-                    md:justify-center
-                    text-base lg:text-2xl" >
+                    md:max-w-xl md:max-h-screen overflow-y-auto no-scrollbar flex flex-col gap-8
+                    md:justify-safe-center
+                    text-lg md:text-xl" >
 
             <div class="[&_strong]:text-accent font-bold">
                 @(new MarkupString(Markdown.ToHtml(_model.Introduction)))
             </div>
     
-            <Timeline class="text-sm lg:text-base text-accent" Items="@_model.Timeline" Context="item">
+            <Timeline class="text-sm md:text-base text-accent" Items="@_model.Timeline" Context="item">
                 <Item>
                     <p class="text-neutral-100">@(new MarkupString(Markdown.ToHtml(item)))</p>
                 </Item>
