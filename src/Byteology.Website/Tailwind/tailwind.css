@@ -34,6 +34,12 @@
 }
 
 @layer components {
+    .container {
+        @apply sm:px-4;
+        @apply md:px-8;
+        @apply lg:px-12;
+    }
+
     .slide {
         @apply w-full;
         @apply h-full;

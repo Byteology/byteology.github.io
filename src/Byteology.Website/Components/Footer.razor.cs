@@ -1,6 +1,6 @@
 ﻿namespace Byteology.Website.Components;
 
-public partial class Footer : ComponentBase
+public partial class Footer : StyleableComponent
 {
     private readonly Model _model;
 

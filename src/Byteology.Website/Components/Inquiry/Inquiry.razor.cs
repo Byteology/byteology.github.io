@@ -1,6 +1,6 @@
 ﻿namespace Byteology.Website.Components.Inquiry;
 
-public partial class Inquiry : ComponentBase
+public partial class Inquiry : StyleableComponent
 {
     private bool? _successfulSubmit;
     private bool _shouldFadeIn = false;

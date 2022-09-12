@@ -1,9 +1,11 @@
-﻿@using Microsoft.AspNetCore.Components.Routing
+﻿@inherits StyleableComponent
 
-<footer class="w-full h-10 flex-none
-               bg-dark-900 border border-dark-100 shadow-md 
+@using Microsoft.AspNetCore.Components.Routing
+
+<footer @attributes=AdditionalAttributes
+        class="w-full leading-[3rem] bg-dark-900 border border-dark-100 shadow-md 
                text-xs text-center text-neutral-300
-               flex items-center justify-center">
+               flex items-center justify-center @CssClass">
 
     <span>@(_model.Copyright.Replace("{year}", DateTime.Now.Year.ToString())) |&nbsp;</span>
     <NavLink class="transition-fast 

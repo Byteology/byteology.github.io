@@ -1,5 +1,6 @@
-﻿<section class="slide flex flex-col md:flex-row">
+﻿@inherits StyleableComponent
 
+<div @attributes=AdditionalAttributes class="flex flex-col md:flex-row @CssClass">
     <div class="grow h-[max(25vh,10rem)] flex content-center justify-center 
                 md:grow-0 md:w-1/2 md:sticky md:top-1/2 md:-translate-y-1/2">
         <img class="my-8 md:my-0
@@ -23,13 +24,11 @@
                 @(new MarkupString(Markdown.ToHtml(_model.Introduction)))
             </div>
     
-            <div class="text-sm lg:text-base text-accent">
-                <Timeline Items="@_model.Timeline" Context="item">
-                    <Item>
-                        <p class="text-neutral-100">@(new MarkupString(Markdown.ToHtml(item)))</p>
-                    </Item>
-                </Timeline>
-            </div>
+            <Timeline class="text-sm lg:text-base text-accent" Items="@_model.Timeline" Context="item">
+                <Item>
+                    <p class="text-neutral-100">@(new MarkupString(Markdown.ToHtml(item)))</p>
+                </Item>
+            </Timeline>
 
             <a href="@(_routeManager.Match<Mission>()?.GetUrl())"
                 class="button text-sm p-2">
@@ -45,5 +44,4 @@
                 fill-rule="evenodd" 
                 d="M15.3 10.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z"/>
     </svg>
-
-</section> 
+</div>

@@ -2,7 +2,7 @@
 
 using Byteology.Website.Pages.Services;
 
-public partial class ServicesList : ComponentBase
+public partial class ServicesList : StyleableComponent
 {
     private readonly Model[] _services;
 

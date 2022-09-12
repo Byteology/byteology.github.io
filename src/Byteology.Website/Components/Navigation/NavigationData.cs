@@ -13,6 +13,7 @@ public class NavigationData
         {
             new NavigationSection("Company", typeof(Pages.Index), new NavigationItemModel[] 
             {
+                new NavigationItemModel("Home", typeof(Pages.Index)),
                 new NavigationItemModel("Mission", typeof(Mission)),
                 new NavigationItemModel("Careers", typeof(Careers)),
                 new NavigationItemModel("Contacts", typeof(Contacts))

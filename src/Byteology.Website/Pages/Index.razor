@@ -5,23 +5,26 @@
 
 <PageTitle>@_model.Title</PageTitle>
 
-<Hero />
+<section class="slide">
+    <Hero class="w-full h-full" />
+</section>
 
-<section class="slide slide-center py-10">
-    <ServicesList />
+<section class="slide slide-center sm:px-8 py-10">
+    <ServicesList class="max-w-7xl" />
 </section>
 
 <section class="slide slide-center md:px-8 py-10">
-    <Inquiry />
+    <Inquiry class="max-w-md md:max-w-3xl" />
 </section>
 
-<section class="slide">
-    <div class="w-full min-h-full flex flex-col gap-10 items-center pt-10">
-        <div class="w-full grow flex items-center">
-            <div class="w-full bg-dark-900/70 border border-dark-100 shadow-md flex justify-center">
-                <ExpandedNavigation DisableHomeLink=true />
-            </div>
+<section class="slide flex flex-col gap-10 items-center justify-between">
+
+        <div class="w-full h-12 flex-none"></div>
+
+        <div class="w-full p-6 md:p-8 flex justify-center
+                    bg-dark-900/70 border border-dark-100 shadow-md">
+            <ExpandedNavigation DisableHomeLink=true />
         </div>
-        <Footer/>
-    </div>
+
+        <Footer class="flex-none"/>
 </section>

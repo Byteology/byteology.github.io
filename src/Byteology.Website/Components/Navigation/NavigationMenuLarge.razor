@@ -6,20 +6,23 @@
             bg-dark-900 border border-dark-100 shadow-md
             text-sm font-bold whitespace-nowrap select-none">
 
-    <div class="flex max-w-3xl w-full h-full mx-auto            
+    <div class="px-4 lg:container flex h-full mx-auto            
                 gap-8 items-center justify-between">
 
         <a class="h-full flex-1" href="@(_routeManager.Match<Pages.Index>()?.GetUrl())" tabindex="-1">
             <img class="h-full" src="/images/icon.png" alt="Byteology"/>
         </a>
         
-        <div class="h-full flex gap-8 items-center justify-center">
+        <div class="h-full flex gap-6 lg:gap-8 items-center justify-center">
             @foreach (NavigationSection section in Data.Sections)
             {
                 @if (section.Expand)
                 {
                     @foreach (NavigationItemModel item in section.Items)
                     {
+                        @if (item.Page == typeof(Pages.Index))
+                            continue;
+
                         <NavLink class="h-full leading-[3rem] transition-fast active:text-accent hocus:text-accent-300" 
                              tabindex="-1" 
                              href="@(_routeManager.Match(item.Page)?.GetUrl())" 

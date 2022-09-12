@@ -1,8 +1,10 @@
-﻿<ol class="timeline space-y-[1em] flex flex-col">
+﻿@inherits StyleableComponent
+
+<ol @attributes=AdditionalAttributes class="timeline space-y-[1em] flex flex-col @CssClass">
     @for (int i = 0; i < Items.Length; i++)
     {
-        <li class="group flex gap-[1.5em] @(i != Items.Length - 1 ? "grow" : "")">
-
+        <li class="group flex gap-[2em]">
+            
             <div class="
                     bullet pt-[0.125em] 
                     text-[0.875em] font-bold text-current" />

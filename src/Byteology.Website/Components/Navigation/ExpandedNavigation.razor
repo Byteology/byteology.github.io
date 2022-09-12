@@ -1,20 +1,18 @@
-﻿@using Microsoft.AspNetCore.Components.Routing
+﻿@inherits StyleableComponent
+
+@using Microsoft.AspNetCore.Components.Routing
 @using static Byteology.Website.Components.Navigation.NavigationData
 
-<div class="p-6 md:p-8 max-w-5xl 
-            grid grid-cols-[minmax(0,_max-content)] md:grid-cols-[8rem_auto] 
-            justify-center justify-items-start md:justify-items-center 
-            gap-8 md:gap-x-16 lg:gap-x-32">
+<div @attributes=AdditionalAttributes
+     class="flex flex-col md:flex-row justify-center gap-8 md:gap-16 lg:gap-32 @CssClass">
 
-    <a class="block w-full max-h-fit @(DisableHomeLink ? "pointer-events-none" : "")" href="@(_routeManager.Match<Pages.Index>()?.GetUrl())">
-        <img class="
-            bg-center bg-contain
-            content-[url(/images/logo-landscape.svg)]
-            md:content-[url(/images/logo-portrait.svg)]"
-                alt="Byteology"/>
-    </a>
+    <img class="flex-none w-auto md:w-32 h-16 md:h-auto md:self-start
+        bg-center bg-contain
+        content-[url(/images/logo-landscape.svg)]
+        md:content-[url(/images/logo-portrait.svg)]"
+            alt="Byteology"/>
 
-    <div class="flex flex-col md:flex-row md:w-full justify-evenly gap-6 md:gap-8 lg:gap-16">
+    <div class="flex-none flex flex-col md:flex-row justify-evenly gap-8 md:gap-16">
         @foreach (NavigationSection section in Data.Sections)
         {
             <div class="flex flex-col text-sm gap-1">
@@ -22,6 +20,9 @@
 
                 @foreach(NavigationItemModel item in section.Items)
                 {
+                    @if (item.Page == typeof(Pages.Index) && DisableHomeLink)
+                        continue;
+
                     <NavLink class="transition-fast hocus:text-accent-300" 
                                 href="@(_routeManager.Match(item.Page)?.GetUrl())"
                                 Match="NavLinkMatch.All">
@@ -32,7 +33,6 @@
         }
     </div>
 
-            
 </div>
 
 @code {
