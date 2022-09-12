@@ -1,1 +1,24 @@
-﻿<h3>Migration To Microservices</h3>
+﻿<section class="max-w-3xl bg-dark-900/70 border border-dark-100 shadow-md p-4 space-y-4">
+    <h1 class="text-accent text-xl font-bold text-center uppercase">Migration to Microservices</h1>
+    <p class="text-lg">We have researched and designed strategies and processes that help businesses successfully migrate to microservices.</p>
+</section>
+
+
+<section class="mt-4 grid grid-cols-[auto_auto_auto_auto] grid-rows-[max-content_max-content] gap-x-8 items-start px-12 ">
+
+    @for (int i = 0; i < _model.Process.Length; i++)
+    {
+        var timeline = _model.Process[i];
+        <div class="max-w-md h-full bg-dark-700/70 p-4 flex gap-4 items-center row-start-1 border border-dark-100 border-b-0 shadow-md">
+            <h2 class="text-primary uppercase font-bold text-5xl">@((i + 1).ToString().PadLeft(2, '0'))</h2>
+            <h2 class="text-accent uppercase font-bold text-xl">@timeline.Title</h2>
+        </div>
+        <div class="max-w-md bg-dark-900/70 p-4 text-accent row-start-2 border border-dark-100 border-t-0 shadow-md">
+            <Timeline Items="timeline.Items" Context="item" >
+                <Item>
+                    <p class="text-neutral-100"> @(new MarkupString(Markdown.ToHtml(item)))</p>
+                </Item>
+            </Timeline>
+        </div>
+    }
+</section>
