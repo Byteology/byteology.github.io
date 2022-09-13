@@ -14,7 +14,7 @@
   {
     "title": "Migration to Microservices",
     "description": "We have researched and designed strategies and processes that help businesses successfully migrate to microservices.",
-    "iconSrc": "/images/microservices.svg",
+    "iconSrc": "/images/microservices/icon.svg",
     "linkText": "Learn More"
   },
   {
