@@ -2,8 +2,18 @@
 
 
 <section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
-    <h1 class="text-accent text-xl font-bold text-center uppercase">Migration to Microservices</h1>
-    <p class="text-lg">We have researched and designed strategies and processes that help businesses successfully migrate to microservices.</p>
+    <h1 class="text-accent text-xl font-bold text-center uppercase">@_model.Title</h1>
+    <p class="text-lg">@_model.Intro</p>
+</section>
+
+<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-8">
+    @foreach(Benefit benefit in _model.Benefits)
+    {
+        <div class="space-y-2">
+            <h2 class="text-accent font-bold uppercase">@benefit.Title</h2>
+            <p>@benefit.Description</p>
+        </div>
+    }
 </section>
 
 
