@@ -9,23 +9,32 @@
     <p class="">@_introModel.Body</p>
 </section>
 
-<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
-    <h1 class="text-lg font-bold text-accent uppercase">@_benefitsModel.Title</h1>
-    <p>@_benefitsModel.Body</p>
+<section class="border border-dark-100 shadow-md">
+    <div class="border-[2rem] border-dark-900/70">
+        <div class="bg-dark-900/70 space-y-4 pb-4">
+            <h1 class="text-lg font-bold text-accent uppercase">@_benefitsModel.Title</h1>
+            <p>@_benefitsModel.Body</p>
+        </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        @foreach(Benefit benefit in _benefitsModel.Items)
-        {
-            <div class="grow p-4 
-                        bg-dark-700 border border-dark-100 shadow-md 
-                        flex flex-col gap-2">
-                <div class="flex items-center gap-4">
-                    <ProxyComponent class="flex-none self-center w-8" ComponentToRender="@benefit.Icon"/>
-                    <h2 class="grow text-accent font-bold uppercase text-sm md:text-base">@benefit.Title</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2">
+            @for (int i = 0; i < _benefitsModel.Items.Length; i++)
+            {
+                Benefit benefit = _benefitsModel.Items[i];
+                <div class="border-x-0 border-y-[0.5rem]
+                            @(i % 2 == 1 ? "md:border-l-[0.5rem]" : "md:border-r-[0.5rem]") 
+                            border-dark-900/70">
+                    <div class="p-4 h-full
+                                bg-dark/70 border border-dark-100 shadow-md 
+                                flex flex-col gap-2">
+                        <div class="flex items-center gap-4">
+                            <ProxyComponent class="flex-none self-center w-8" ComponentToRender="@benefit.Icon"/>
+                            <h2 class="grow text-accent font-bold uppercase text-sm md:text-base">@benefit.Title</h2>
+                        </div>
+                        <p class="text-sm">@benefit.Description</p>
+                    </div>
                 </div>
-                <p class="text-sm">@benefit.Description</p>
-            </div>
-        }
+            }
+        </div>
     </div>
 </section>
 
@@ -35,8 +44,8 @@
     <p>@_whenToMigrateModel.Body</p>
 </section>
 
-<section class="bg-dark-900/70 border border-dark-100 shadow-md py-8 space-y-8">
-    <div class="space-y-4 px-8">
+<section class="border border-dark-100 shadow-md">
+    <div class="bg-dark-900/70 space-y-4 p-8">
         <h1 class="text-lg font-bold text-accent uppercase">@_migrationModel.Title</h1>
         <p>@_migrationModel.Body</p>
     </div>
@@ -44,17 +53,20 @@
     @for (int i = 0; i < _migrationModel.Steps.Length; i++)
     {
         MigrationStep step = _migrationModel.Steps[i];
-            <div class="md:mx-8 col-span-12 flex flex-col border-y md:border border-dark-100 bg-dark-700 shadow-md">
+        <div class="md:border-x-[2rem] border-dark-900/70">
+            <div class="col-span-12 flex flex-col border-y md:border border-dark-100 shadow-md">
                 <div class="px-8 py-2 bg-dark/70 border-b border-dark-100 shadow-md flex gap-4 items-center">
                     <h2 class="text-primary uppercase font-bold text-2xl">@((i + 1).ToString().PadLeft(2, '0'))</h2>
                     <h2 class="text-accent uppercase font-bold text-sm md:text-base">@step.Title</h2>
                 </div>
-                <Timeline class="px-8 py-6 text-accent" Items="step.Items" Context="item" >
+                <Timeline class="bg-dark-700/70 px-8 py-6 text-accent" Items="step.Items" Context="item" >
                     <Item>
                         <p class="text-neutral-100"> @(new MarkupString(Markdown.ToHtml(item)))</p>
                     </Item>
                 </Timeline>
             </div>
+        </div>
+        <div class="w-full h-8 bg-dark-900/70"></div>
     }
 </section>
 
