@@ -7,7 +7,7 @@
                text-xs text-center text-neutral-300
                flex items-center justify-center @CssClass">
 
-    <span>@(_model.Copyright.Replace("{year}", DateTime.Now.Year.ToString())) |&nbsp;</span>
+    <span>@_model.Copyright |&nbsp;</span>
     <NavLink class="transition-fast 
                     underline hocus:text-accent-300" 
              href="@(_routeManager.Match<Privacy>()?.GetUrl())"

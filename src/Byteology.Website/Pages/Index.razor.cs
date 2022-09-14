@@ -6,7 +6,9 @@ public partial class Index : ComponentBase
 
     public Index()
     {
-        _model = this.ReadJsonModel<Model>();
+        _model = new Model(
+            Title: "Byteology - a moment of science"
+        );
     }
 
     private sealed record Model(string Title);

@@ -2,10 +2,10 @@
 
 public partial class ContactDetail
 {
-    [Parameter]
+    [Parameter, EditorRequired]
     public Model Detail { get; set; } = default!;
 
-    public record Model(DetailType Type, string? Value);
+    public record Model(DetailType Type, string Value);
 
     public enum DetailType
     {

@@ -6,10 +6,11 @@ public partial class Footer : StyleableComponent
 
     public Footer()
     {
-        _model = this.ReadJsonModel<Model>();
+        _model = new Model(
+            Copyright: $"@ {DateTime.Now.Year} Byteology",
+            PrivacyPolicyText: "Privacy notice"
+        );
     }
 
-    private sealed record Model(LinkSectionModel[] LinkSections, string Copyright, string PrivacyPolicyText);
-    private sealed record LinkSectionModel(string Title, LinkModel[] Links);
-    private sealed record LinkModel(string Text, string Url);
+    private sealed record Model(string Copyright, string PrivacyPolicyText);
 }

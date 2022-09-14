@@ -19,7 +19,7 @@ public partial class MigrationToMicroservices
 
     private static Intro getIntroSection() => new(
         Title: "Migration to Microservices",
-        IconSrc: "/images/microservices/icon.svg",
+        Icon: typeof(Icons.MigrationToMicroservices.Icon),
         Body: "In today’s disruptive web development world, microservices are receiving a lot of attention. Due to advances in cloud technology, the demand for microservices is increasing even more in scale. Unlike monolithic systems, microservices are designed to scale with changing market demands. Because of that modern enterprises are moving onto microservices from legacy monolithic systems."
     );
     private static Benefits getBenefitsSection() => new(
@@ -27,12 +27,12 @@ public partial class MigrationToMicroservices
         Body: "As the name suggests, microservices are micros, which break up a monolith app into a set of independent services. Unlike slow and heavy monolith architectures, microservices are faster to develop and deploy. Migrating from a monolithic application to microservices also enables you to optimize resources, enhance collaboration and streamline business processes.",
         Items: new Benefit[]
         {
-            new Benefit("Agility", "Teams act within a small and well understood context, reducing cognitive complexity and shortening development cycle times.", "/images/microservices/icon.svg"),
-            new Benefit("Domain Alignment", "Microservices align closely with their respective business domain allowing the use of ubiquitous language thus improving collaboration.", "/images/microservices/icon.svg"),
-            new Benefit("Flexible Scaling", "Microservices allow each service to be independently scaled to meet demand for the application feature it supports.", "/images/microservices/icon.svg"),
-            new Benefit("Easy Deployment", "Microservices enable continuous integration and continuous delivery, making it easy to try out new ideas and to roll back if something doesn’t work.", "/images/microservices/icon.svg"),
-            new Benefit("Resilience", "Service independence increases an application’s resistance to failure.", "/images/microservices/icon.svg"),
-            new Benefit("Technological Freedom", "Teams have the freedom to choose the best tool to solve their specific problems.", "/images/microservices/icon.svg"),
+            new Benefit("Agility", "Teams act within a small and well understood context, reducing cognitive complexity and shortening development cycle times.", typeof(Icons.MigrationToMicroservices.Icon)),
+            new Benefit("Domain Alignment", "Microservices align closely with their respective business domain allowing the use of ubiquitous language thus improving collaboration.", typeof(Icons.MigrationToMicroservices.Icon)),
+            new Benefit("Flexible Scaling", "Microservices allow each service to be independently scaled to meet demand for the application feature it supports.", typeof(Icons.MigrationToMicroservices.Icon)),
+            new Benefit("Easy Deployment", "Microservices enable continuous integration and continuous delivery, making it easy to try out new ideas and to roll back if something doesn’t work.", typeof(Icons.MigrationToMicroservices.Icon)),
+            new Benefit("Resilience", "Service independence increases an application’s resistance to failure.", typeof(Icons.MigrationToMicroservices.Icon)),
+            new Benefit("Technological Freedom", "Teams have the freedom to choose the best tool to solve their specific problems.", typeof(Icons.MigrationToMicroservices.Icon)),
         }
     );
     private static WhenToMigrate getWhenToMigrateSection() => new(
@@ -71,10 +71,10 @@ public partial class MigrationToMicroservices
         }
     );
 
-    private sealed record Intro(string Title, string IconSrc, string Body);
+    private sealed record Intro(string Title, Type Icon, string Body);
 
     private sealed record Benefits(string Title, string Body, Benefit[] Items);
-    private sealed record Benefit(string Title, string Description, string IconSrc);
+    private sealed record Benefit(string Title, string Description, Type Icon);
 
     private sealed record WhenToMigrate(string Title, string Body);
 

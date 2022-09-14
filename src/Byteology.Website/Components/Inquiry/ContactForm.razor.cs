@@ -15,7 +15,16 @@ public partial class ContactForm : StyleableComponent
 
     public ContactForm()
     {
-        _model = this.ReadJsonModel<Model>();
+        _model = new Model(
+            NameLabel: "Name",
+            NamePlaceholder: "John Doe",
+            EmailLabel: "Email",
+            EmailPlaceholder: "exaple@mail.com",
+            MessageLabel: "Message",
+            MessagePlaceholder: "Type your message here...",
+            Consent: "I freely give my consent to have my personal information processed for the purpose of receiving feedback or solicited content.",
+            SubmitText: "Let's talk"
+        );
     }
 
     private async Task onSubmit()
@@ -51,10 +60,5 @@ public partial class ContactForm : StyleableComponent
         string MessageLabel,
         string MessagePlaceholder,
         string Consent,
-        string SubmitText,
-        string OnSuccessTitle,
-        string OnSuccessBody,
-        string OnErrorTitle,
-        string OnErrorBody,
-        string OnErrorButtonText);
+        string SubmitText);
 }
