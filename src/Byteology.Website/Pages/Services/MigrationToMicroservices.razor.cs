@@ -27,12 +27,12 @@ public partial class MigrationToMicroservices
         Body: "As the name suggests, microservices are micros, which break up a monolith app into a set of independent services. Unlike slow and heavy monolith architectures, microservices are faster to develop and deploy. Migrating from a monolithic application to microservices also enables you to optimize resources, enhance collaboration and streamline business processes.",
         Items: new Benefit[]
         {
-            new Benefit("Agility", "Teams act within a small and well understood context, reducing cognitive complexity and shortening development cycle times.", typeof(Icons.MigrationToMicroservices.Icon)),
-            new Benefit("Domain Alignment", "Microservices align closely with their respective business domain allowing the use of ubiquitous language thus improving collaboration.", typeof(Icons.MigrationToMicroservices.Icon)),
-            new Benefit("Flexible Scaling", "Microservices allow each service to be independently scaled to meet demand for the application feature it supports.", typeof(Icons.MigrationToMicroservices.Icon)),
-            new Benefit("Easy Deployment", "Microservices enable continuous integration and continuous delivery, making it easy to try out new ideas and to roll back if something doesn’t work.", typeof(Icons.MigrationToMicroservices.Icon)),
-            new Benefit("Resilience", "Service independence increases an application’s resistance to failure.", typeof(Icons.MigrationToMicroservices.Icon)),
-            new Benefit("Technological Freedom", "Teams have the freedom to choose the best tool to solve their specific problems.", typeof(Icons.MigrationToMicroservices.Icon)),
+            new Benefit("Simplicity", "Teams act within a small and well understood context, reducing cognitive complexity and shortening development cycle times.", typeof(Icons.MigrationToMicroservices.Simplicity)),
+            new Benefit("Domain Alignment", "Microservices align closely with their respective business domain allowing the use of ubiquitous language thus improving collaboration.", typeof(Icons.MigrationToMicroservices.DomainAlignment)),
+            new Benefit("Flexible Scaling", "Microservices allow each service to be independently scaled to meet demand for the application feature it supports.", typeof(Icons.MigrationToMicroservices.FlexibleScaling)),
+            new Benefit("Easy Deployment", "Microservices enable continuous integration and continuous delivery, making it easy to try out new ideas and to roll back if something doesn’t work.", typeof(Icons.MigrationToMicroservices.EasyDeployment)),
+            new Benefit("Resilience", "Service independence increases an application’s resistance to failure.", typeof(Icons.MigrationToMicroservices.Resilience)),
+            new Benefit("Freedom", "Teams have the freedom to choose the best tool to solve their specific problems.", typeof(Icons.MigrationToMicroservices.Freedom)),
         }
     );
     private static WhenToMigrate getWhenToMigrateSection() => new(
