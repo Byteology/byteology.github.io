@@ -20,11 +20,11 @@ public partial class MigrationToMicroservices
     private static Intro getIntroSection() => new(
         Title: "Migration to Microservices",
         Icon: typeof(Icons.MigrationToMicroservices.Icon),
-        Body: "In today’s disruptive web development world, microservices are receiving a lot of attention. Due to advances in cloud technology, the demand for microservices is increasing even more in scale. Unlike monolithic systems, microservices are designed to scale with changing market demands. Because of that modern enterprises are moving onto microservices from legacy monolithic systems."
+        Body: "In today’s disruptive web development world, microservices are receiving a lot of attention. Unlike monolithic systems, microservices are designed to scale with changing market demands. Because of that modern enterprises are moving their legacy monolithic systems to microservices architecture."
     );
     private static Benefits getBenefitsSection() => new(
         Title: "Benefits of the Microservice Architecture",
-        Body: "As the name suggests, microservices are micros, which break up a monolith app into a set of independent services. Unlike slow and heavy monolith architectures, microservices are faster to develop and deploy. Migrating from a monolithic application to microservices also enables you to optimize resources, enhance collaboration and streamline business processes.",
+        Body: "As the name suggests, microservices are small units that break up a monolithic application into a set of independent services. Unlike slow and heavy monolithic applications, microservices are faster to develop and deploy. Migrating from a monolithic architecture to a microservices one provides a lot of benefits, most important of which are as follows:",
         Items: new Benefit[]
         {
             new Benefit("Simplicity", "Teams act within a small and well understood context, reducing cognitive complexity and shortening development cycle times.", typeof(Icons.MigrationToMicroservices.Simplicity)),
@@ -37,36 +37,36 @@ public partial class MigrationToMicroservices
     );
     private static WhenToMigrate getWhenToMigrateSection() => new(
         Title: "When to Migrate",
-        Body: "Once you have made your mind to embrace microservices, the first question is – when should you move to microservices? The right time to migrate a monolithic app is when your organization is growing and is facing productivity and scaling issues or you start experiencing disruption in the communication between teams."
+        Body: "Once you have made your mind to embrace microservices, the first question is – when should you make your move? Usually the right time to migrate a monolithic application is when your organization is growing and is facing productivity and scaling issues or when you start experiencing disruption in the communication between teams."
     );
     private static Migration getMigrationSection() => new(
         Title: "How to Migrate",
         Body: "The migration to microservice architecture is a complex process with many pitfalls. To avoid them we have spent years designing and refining a four-step strategy that helps businesses successfully migrate to microservices.",
         Steps: new MigrationStep[]
         {
-            new MigrationStep("Process discovery", new string[]
+            new MigrationStep("Process Discovery", new string[]
             {
-                "Organize a workshop with your domain experts and engineering team",
-                "Map all the business processes that occur in your application",
-                "Create a top-level document (process map) of what your application does and how it does it",
-                "Establish a proper domain language and look for type instance homonyms so that domain experts and software engineers will be able to communicate fluently"
+                "We organize a workshop with your domain experts and engineering team.",
+                "Together we map all the business processes that occur in your application.",
+                "As an output we create a top-level document (process map) of what your application does and how it does it.",
+                "Additionally we establish a proper domain language and look for type instance homonyms so that domain experts and software engineers will be able to communicate fluently."
             }),
-            new MigrationStep("Define bounded contexts", new string[]
+            new MigrationStep("Defining Bounded Contexts", new string[]
             {
-                "Use the process map to define entities, aggregates, services, and their bounded contexts",
-                "Create a bounded context canvas for each context that will contain the definition of the context, its capabilities, responsibilities, policies, dependencies, and its ubiquitous language",
-                "Identify proper microservices",
+                "We use the process map to define entities, aggregates, services, and their bounded contexts.",
+                "This gets detailed in a bounded context canvas for each context. It contains the definition of the context, its capabilities, responsibilities, policies, dependencies, and its ubiquitous language.",
+                "Using the bounded context canvases we identify proper microservices. Usually they align with the bounded contexts themselves but can be range in size anywhere between a single aggregate and a whole bounded context.",
             }),
-            new MigrationStep("Establish intra-service boundaries", new string[]
+            new MigrationStep("Establishing Service Boundaries", new string[]
             {
-                "Design and implement automated testing process in order to make sure exsisting functionalities will be left unchanged during the following refactoring",
-                "Refactor the existing solution in a way that will isolate bounded contexts from the rest of the application without changing its current behavior",
+                "With the help of your team we design and implement automated testing processes in order to make sure exsisting functionalities will be left unchanged during the refactoring that will occur.",
+                "We refactor the existing solution in a way that will isolate bounded contexts from the rest of the application without changing its current behavior.",
             }),
             new MigrationStep("Migration", new string[]
             {
-                "Migrate the isolated bounded contexts to microservices",
-                "Each of the resulting microservices will be independently deployable and scalable using an automated pipeline",
-                "Each microservice migration will reduce the acquired technical debt as well as the cognitive load on the development team, allowing faster and more reliable development",
+                "We start migrating the now isolated bounded contexts to a set of microservices as defined in the second step of the process.",
+                "Each of the resulting microservices is independently deployable and scalable using an automated pipeline.",
+                "Each migration will reduces both the acquired technical debt and cognitive load on the development team, allowing a faster and more reliable development.",
             })
         }
     );
