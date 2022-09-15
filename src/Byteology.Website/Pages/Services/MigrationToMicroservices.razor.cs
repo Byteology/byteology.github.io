@@ -49,13 +49,13 @@ public partial class MigrationToMicroservices
                 "We organize a workshop with your domain experts and engineering team.",
                 "Together we map all the business processes that occur in your application.",
                 "As an output we create a top-level document (process map) of what your application does and how it does it.",
-                "Additionally we establish a proper domain language and look for type instance homonyms so that domain experts and software engineers will be able to communicate fluently."
+                "Additionally, we establish a proper domain language and look for type instance homonyms so that domain experts and software engineers will be able to communicate fluently."
             }),
             new MigrationStep("Defining Bounded Contexts", new string[]
             {
                 "We use the process map to define entities, aggregates, services, and their bounded contexts.",
                 "This gets detailed in a bounded context canvas for each context. It contains the definition of the context, its capabilities, responsibilities, policies, dependencies, and its ubiquitous language.",
-                "Using the bounded context canvases we identify proper microservices. Usually they align with the bounded contexts themselves but can be range in size anywhere between a single aggregate and a whole bounded context.",
+                "Using the bounded context canvases we identify proper microservices. Usually they align with the bounded contexts themselves but can range in size anywhere between a single aggregate and a whole bounded context.",
             }),
             new MigrationStep("Establishing Service Boundaries", new string[]
             {
