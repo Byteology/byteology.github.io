@@ -1,6 +1,23 @@
-﻿<PageTitle>@Data.Title</PageTitle>
+﻿<PageTitle>@Title</PageTitle>
 <HeadContent>
-    <meta name="description" content="@Data.Description">
-    <meta name="keywords" content="@string.Join(", ", Data.Keywords)">
+    @if (!string.IsNullOrEmpty(Description))
+    {
+        <meta name="description" content="@Description">
+    }
+    @if (Keywords != null)
+    {
+        <meta name="keywords" content="@string.Join(", ", Keywords)">
+    }
 </HeadContent>
+
+@code {
+    [Parameter, EditorRequired]
+    public string Title { get; set; } = null!;
+
+    [Parameter]
+    public string? Description { get; set; }
+
+    [Parameter]
+    public string[]? Keywords { get; set; }
+}
 
