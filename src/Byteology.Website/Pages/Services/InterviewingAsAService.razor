@@ -1,1 +1,188 @@
-﻿<h3>Interviewing as a Service</h3>
+﻿@using Byteology.Website.Components.Inquiry
+
+<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
+    <div class="flex items-center gap-4">
+        <ProxyComponent class="flex-none self-center w-10" ComponentToRender="_introModel.Icon" />
+        <h1 class="text-accent text-xl font-bold uppercase">@_introModel.Title</h1>
+    </div>
+    @foreach(string paragraph in _introModel.Body)
+    {
+        <p>@(new MarkupString(Markdown.ToHtml(paragraph)))</p>
+    }
+</section>
+
+<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
+    <h1 class="text-lg font-bold text-accent uppercase">@_thoroughnessModel.Title</h1>
+    @foreach(string paragraph in _thoroughnessModel.Body)
+    {
+        <p>@(new MarkupString(Markdown.ToHtml(paragraph)))</p>
+    }
+</section>
+
+<section class="border border-dark-100 shadow-md">
+    <div class="border-[2rem] border-dark-900/70">
+        <div class="bg-dark-900/70 space-y-4 pb-4">
+            <h1 class="text-lg font-bold text-accent uppercase">@_skillsModel.Title</h1>
+            @foreach(string paragraph in _skillsModel.Body)
+            {
+                <p>@(new MarkupString(Markdown.ToHtml(paragraph)))</p>
+            }
+        </div>
+
+        <div class="grid grid-cols-1">
+            @for (int i = 0; i < _skillsModel.Items.Length; i++)
+            {
+                SkillType skillType = _skillsModel.Items[i];
+                <div class="border-x-0 border-y-[0.5rem]
+                            border-dark-900/70">
+                    <div class="p-4 h-full
+                                bg-dark-700/70 border border-dark-100 shadow-md 
+                                flex flex-col gap-2">
+                        <div class="flex items-center gap-4">
+                            <ProxyComponent class="flex-none self-center w-10" ComponentToRender="@skillType.Icon"/>
+                            <h2 class="grow text-accent font-bold uppercase text-sm md:text-base">@skillType.Title</h2>
+                        </div>
+                        @foreach(string paragraph in skillType.Description)
+                        {
+                            <p class="">@(new MarkupString(Markdown.ToHtml(paragraph)))</p>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
+    <h1 class="text-lg font-bold text-accent uppercase">@_expertiseLevelsModel.Title</h1>
+    @foreach(string paragraph in _expertiseLevelsModel.Body)
+    {
+        <p>@(new MarkupString(Markdown.ToHtml(paragraph)))</p>
+    }
+</section>
+
+<section class="border border-dark-100 shadow-md">
+    <div class="bg-dark-900/70 space-y-4 p-8">
+        <h1 class="text-lg font-bold text-accent uppercase">@_jobAdvertModel.Title</h1>
+        <p>@_jobAdvertModel.Body</p>
+    </div>
+
+    @for (int i = 0; i < _jobAdvertModel.Sections.Length; i++)
+    {
+        Section segment = _jobAdvertModel.Sections[i];
+        <div class="md:border-x-[2rem] border-dark-900/70">
+            <div class="col-span-12 flex flex-col border-y md:border border-dark-100 shadow-md">
+                <div class="px-8 py-2 bg-dark/70 border-b border-dark-100 shadow-md flex gap-4 items-center">
+                    <h2 class="text-primary uppercase font-bold text-2xl">@((i + 1).ToString().PadLeft(2, '0'))</h2>
+                    <h2 class="text-accent uppercase font-bold text-sm md:text-base">@segment.Title</h2>
+                </div>
+                <div class="bg-dark-700/70 px-8 py-6 space-y-4">
+                    @foreach(string paragraph in segment.Body)
+                    {
+                        <p class="">@(new MarkupString(Markdown.ToHtml(paragraph)))</p>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-8 bg-dark-900/70"></div>
+    }
+</section>
+
+<section class="border border-dark-100 shadow-md">
+    <div class="border-[2rem] border-dark-900/70">
+        <div class="bg-dark-900/70 space-y-4 pb-4">
+            <h1 class="text-lg font-bold text-accent uppercase">@_budgetModel.Title</h1>
+            <p>@_budgetModel.Body</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2">
+            <div class="border-x-0 border-y-[0.5rem]
+                        md:border-r-[0.5rem] 
+                        border-dark-900/70">
+                <div class="p-4 h-full
+                            bg-dark-700/70 border border-dark-100 shadow-md 
+                            flex flex-col gap-2">
+                    <div class="flex items-center gap-4">
+                        <h2 class="grow text-accent font-bold uppercase text-sm md:text-base">Pros</h2>
+                    </div>
+                    <ul class="list-disc pl-4 text-sm space-y-4 marker:text-accent">
+                        @foreach(string item in _budgetModel.Pros)
+                        {
+                            <li>@item</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-x-0 border-y-[0.5rem]
+                        md:border-l-[0.5rem]
+                        border-dark-900/70">
+                <div class="p-4 h-full
+                            bg-dark-700/70 border border-dark-100 shadow-md 
+                            flex flex-col gap-2">
+                    <div class="flex items-center gap-4">
+                        <h2 class="grow text-error font-bold uppercase text-sm md:text-base">Cons</h2>
+                    </div>
+                    <ul class="list-disc pl-4 text-sm space-y-4 marker:text-error">
+                        @foreach(string item in _budgetModel.Pros)
+                        {
+                            <li>@item</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
+    <h1 class="text-lg font-bold text-accent uppercase">@_motivationLetterModel.Title</h1>
+    @foreach(string paragraph in _motivationLetterModel.Body)
+    {
+        <p>@(new MarkupString(Markdown.ToHtml(paragraph)))</p>
+    }
+</section>
+
+<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
+    <h1 class="text-lg font-bold text-accent uppercase">@_applicationRoundModel.Title</h1>
+    @foreach(string paragraph in _applicationRoundModel.Body)
+    {
+        <p>@(new MarkupString(Markdown.ToHtml(paragraph)))</p>
+    }
+</section>
+
+<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
+    <h1 class="text-lg font-bold text-accent uppercase">@_interviewModel.Title</h1>
+    @foreach(string paragraph in _interviewModel.Body)
+    {
+        <p>@(new MarkupString(Markdown.ToHtml(paragraph)))</p>
+    }
+</section>
+
+<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
+    <h1 class="text-lg font-bold text-accent uppercase">@_homeworkModel.Title</h1>
+    @foreach(string paragraph in _homeworkModel.Body)
+    {
+        <p>@(new MarkupString(Markdown.ToHtml(paragraph)))</p>
+    }
+</section>
+
+<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
+    <h1 class="text-lg font-bold text-accent uppercase">@_feedbackModel.Title</h1>
+    @foreach(string paragraph in _feedbackModel.Body)
+    {
+        <p>@(new MarkupString(Markdown.ToHtml(paragraph)))</p>
+    }
+</section>
+
+<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
+    <h1 class="text-lg font-bold text-accent uppercase">@_serviceModel.Title</h1>
+    @foreach(string paragraph in _serviceModel.Body)
+    {
+        <p>@(new MarkupString(Markdown.ToHtml(paragraph)))</p>
+    }
+</section>
+
+<section class="col-span-12 2xl:col-start-4 2xl:col-span-6 flex justify-center">
+    <Inquiry CallToAction="@_callToAction"/>
+</section>
