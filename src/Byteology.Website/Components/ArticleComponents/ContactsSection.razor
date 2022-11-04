@@ -1,0 +1,10 @@
+﻿@using Byteology.Website.Components.Inquiry
+
+<section class="col-span-12 2xl:col-start-4 2xl:col-span-6 flex justify-center">
+    <Inquiry CallToAction="@Text"/>
+</section>
+
+@code {
+    [Parameter]
+    public string? Text { get; set; }
+}
