@@ -1,5 +1,10 @@
-﻿<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
-    <h1 class="text-lg font-bold text-accent uppercase">@Header</h1>
+﻿@inherits StyleableComponent
+
+<section @attributes="AdditionalAttributes" class="@CssClass bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
+    @if (!string.IsNullOrEmpty(Header))
+    {
+        <h1 class="text-lg font-bold text-accent uppercase">@Header</h1>
+    }
     @if(!string.IsNullOrEmpty(Text))
     {
         @(new MarkupString(Markdown.ToHtml(Text)))
@@ -8,8 +13,8 @@
 
 @code
 {
-    [Parameter, EditorRequired]
-    public string Header { get; set; } = null!;
+    [Parameter]
+    public string? Header { get; set; }
 
     [Parameter]
     public string? Text { get; set; }

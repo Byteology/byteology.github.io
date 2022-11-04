@@ -35,6 +35,16 @@
     *:focus {
         outline: none;
     }
+
+    ul {
+        @apply list-disc;
+        @apply space-y-2;
+        @apply pl-[1em];
+    }
+
+    ul li::marker {
+        @apply text-accent;
+    }
 }
 
 @layer components {
