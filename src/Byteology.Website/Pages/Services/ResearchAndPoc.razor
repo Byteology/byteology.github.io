@@ -1,1 +1,27 @@
-﻿<h3>Research and PoC</h3>
+﻿@using Byteology.Website.Components.ArticleComponents
+
+<Head Title="Byteology - Research and PoC" 
+      Description="Creating a successful proof of concept requires a whole set of skills that differ from those needed for the actual development of the software." 
+      Keywords="@(new string[] { "proof of concept", "research", "outsource", "service" })" />
+
+<Title Header="Research and PoC"
+       Icon="typeof(Icons.ResearchAndPoc.Icon)"
+       Text="A proof of concept (or PoC for short) is the first and arguably one of the most essential steps in the software development process.
+
+A proof of concept doesn’t produce deliverables, as the core issue being considered is the feasibility of the project. Because of this it can be developed quickly and undergo many iterations, thus allowing it to provide valuable insights about the project before the actual development has begun."/>
+
+<CardsSection Header="Benefits"
+              Text="Here are some of the main benefits of using POC during the early development stages of your projects:"
+              Items="@(new (string?, Type?, string?)[] 
+    {
+        new("Idea validation", typeof(Icons.ResearchAndPoc.IdeaValidation), "Innovation happens at the intersection of technological viability and market demand. A PoC will help you check if your idea can be built using current technology."),
+        new("Risk identification", typeof(Icons.ResearchAndPoc.RiskIdentification), "A proof of concept helps in identifying problems, limitations, roadblocks and other kinds of risks, thus allowing them to be tackled early in the design when it is least expensive."),
+        new("Better technology stack", typeof(Icons.ResearchAndPoc.TechnologyStack), "A proof of concept undergoes many iterations in a short amount of time. Because of this it is a great tool to identify which technology stack is the most suitable for your project. This way, you’ll be using the right tools for the job which solves a lot of problems before they even occur."),
+        new("Clear business plan", typeof(Icons.ResearchAndPoc.ClearBusinessPlan), "A proof of concept highlights the project's top priorities and requirements. With what you will learn from a PoC, it is easier to set up a more accurate project timeline and roadmap as well as to predict costs better."),
+        new("Save time and money", typeof(Icons.ResearchAndPoc.SaveTimeAndMoney), "By picking the right technologies and identifying potential risks in advance, PoCs save a lot of time and money. There is no available statistics on how much exactly but we have seen cases of 34% reduction of costs by risk mitigation alone."),
+        new("Investors interest", typeof(Icons.ResearchAndPoc.InvestorInterest), "You can build a PoC to present your idea to investors to acquire seed funding for further development.")
+})"/>
+
+<Section Text="Creating a successful proof of concept requires a whole set of skills that differ from those needed for the actual development of the software. Because of this it might be a good idea to outsource your PoCs in certain situations. If this is the case, don’t hesitate to contact us. We have spent years honing our PoC crafting skills and we’ll be happy to assist you in your next endeavor." />
+
+<ContactsSection />

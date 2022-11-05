@@ -154,9 +154,11 @@
 
     svg .primary {
         @apply fill-accent;
+        @apply stroke-accent;
     }
 
     svg .secondary {
         @apply fill-neutral-100;
+        @apply stroke-neutral-100;
     }
 }
