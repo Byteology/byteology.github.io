@@ -15,7 +15,10 @@
                             bg-dark-700/70 border border-dark-100 shadow-md 
                             flex flex-col gap-2">
                     <div class="flex items-center gap-4">
-                        <h2 class="grow text-accent font-bold uppercase text-sm md:text-base">Pros</h2>
+                        @if (!string.IsNullOrEmpty(ProsText))
+                        {
+                            <h2 class="grow text-accent font-bold uppercase text-sm md:text-base">@ProsText</h2>
+                        }
                     </div>
                     <div class="[&_ul]:list-disc [&_ul]:space-y-4 [&_ul_li::marker]:text-accent pl-4 text-sm">
                         @(new MarkupString(Markdown.ToHtml(Pros)))
@@ -30,7 +33,10 @@
                             bg-dark-700/70 border border-dark-100 shadow-md 
                             flex flex-col gap-2">
                     <div class="flex items-center gap-4">
-                        <h2 class="grow text-error font-bold uppercase text-sm md:text-base">Cons</h2>
+                        @if (!string.IsNullOrEmpty(ConsText))
+                        {
+                            <h2 class="grow text-error font-bold uppercase text-sm md:text-base">@ConsText</h2>
+                        }
                     </div>
                     <div class="[&_ul]:list-disc [&_ul]:space-y-4 [&_ul_li::marker]:text-error pl-4 text-sm">
                         @(new MarkupString(Markdown.ToHtml(Cons)))
@@ -47,6 +53,12 @@
 
     [Parameter]
     public string? Text { get; set; }
+
+    [Parameter]
+    public string ProsText { get; set; } = null!;
+
+    [Parameter]
+    public string ConsText { get; set; } = null!;
 
     [Parameter, EditorRequired]
     public string Pros { get; set; } = null!;
