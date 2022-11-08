@@ -35,30 +35,6 @@
     *:focus {
         outline: none;
     }
-
-    ol {
-        @apply list-decimal;
-        @apply space-y-2;
-        @apply pl-[1em];
-    }
-
-    ol li::marker {
-        @apply text-accent;
-    }
-
-    ul {
-        @apply list-disc;
-        @apply space-y-2;
-        @apply pl-[1em];
-    }
-
-    ul li::marker {
-        @apply text-accent;
-    }
-
-    li {
-        @apply space-y-4;
-    }
 }
 
 @layer components {
@@ -108,6 +84,34 @@
         @apply transition-normal;
         @apply bg-primary;
         @apply hocus:bg-primary-300;
+    }
+
+    .ordered-list {
+        @apply list-decimal;
+        @apply space-y-4;
+        @apply pl-[1em];
+    }
+
+    .ordered-list > li::marker {
+        @apply text-accent;
+    }
+
+    .ordered-list > li {
+        @apply space-y-4;
+    }
+
+    .unordered-list {
+        @apply list-disc;
+        @apply space-y-2;
+        @apply pl-[1em];
+    }
+
+    .unordered-list > li::marker {
+        @apply text-accent;
+    }
+
+    .unordered-list > li {
+        @apply space-y-4;
     }
 }
 
