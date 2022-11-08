@@ -42,7 +42,7 @@ public partial class ServicesList : StyleableComponent
                 Icon: typeof(Icons.ConsultingAndTraining.Icon)),
             new ServiceModel(
                 Title: "Interviewing as a Service",
-                Description: "We've been studying the process of identifying great software developers for over a decade. Our team will conduct technical and social interviews on your behalf so you can focus of your core business.",
+                Description: "We've been studying the process of identifying great software engineers for over a decade. Our team will conduct technical and social interviews on your behalf so you can focus of your core business.",
                 LinkText: "Learn More",
                 Page: typeof(InterviewingAsAService),
                 Icon: typeof(Icons.InterviewingAsAService.Icon)),
