@@ -36,6 +36,16 @@
         outline: none;
     }
 
+    ol {
+        @apply list-decimal;
+        @apply space-y-2;
+        @apply pl-[1em];
+    }
+
+    ol li::marker {
+        @apply text-accent;
+    }
+
     ul {
         @apply list-disc;
         @apply space-y-2;
@@ -44,6 +54,10 @@
 
     ul li::marker {
         @apply text-accent;
+    }
+
+    li {
+        @apply space-y-4;
     }
 }
 
