@@ -13,7 +13,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Components\Footer.razor.json" />
     <Content Remove="Components\Intro.razor.json" />
     <Content Remove="Components\NavigationMenu.razor.json" />
   </ItemGroup>
@@ -24,7 +23,6 @@
 
 
   <ItemGroup>
-    <EmbeddedResource Include="Components\Footer.razor.json" />
     <EmbeddedResource Include="Pages\Privacy.razor.md" />
   </ItemGroup>
 

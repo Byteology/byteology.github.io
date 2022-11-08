@@ -8,7 +8,7 @@ public partial class Footer : StyleableComponent
     {
         _model = new Model(
             Copyright: $"@ {DateTime.Now.Year} Byteology",
-            PrivacyPolicyText: "Privacy notice"
+            PrivacyPolicyText: "Privacy policy"
         );
     }
 
