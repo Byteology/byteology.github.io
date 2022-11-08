@@ -6,14 +6,14 @@
 
 <Title Header="Migration to Microservices"
        Icon="typeof(Icons.MigrationToMicroservices.Icon)"
-       Text="In today’s disruptive web development world, microservices are receiving a lot of attention. Unlike monolithic systems, microservices are designed to scale with changing market demands. Because of that modern enterprises are moving their legacy monolithic systems to microservices architecture."/>
+       Text="In today’s disruptive web development world, microservices are receiving a lot of attention. Unlike monolithic systems, microservices are designed to scale with changing market demands. Because of that, modern enterprises are moving their legacy monolithic systems to microservices architecture."/>
 
 <CardsSection Header="Benefits of the Microservice Architecture"
-              Text="As the name suggests, microservices are small units that break up a monolithic application into a set of independent services. Unlike slow and heavy monolithic applications, microservices are faster to develop and deploy. Migrating from a monolithic architecture to a microservices one provides a lot of benefits, most important of which are as follows:"
+              Text="As the name suggests, microservices are small units that break up a monolithic application into a set of independent services. Unlike slow and heavy monolithic applications, microservices are faster to develop and deploy. Migrating from a monolithic architecture to a microservice one provides a lot of benefits, most important of which are as follows:"
               Items="@(new (string?, Type?, string?)[] 
     {
         new("Simplicity", typeof(Icons.MigrationToMicroservices.Simplicity), "Teams act within a small and well understood context, reducing cognitive complexity and shortening development cycle times."),
-        new("Domain Alignment", typeof(Icons.MigrationToMicroservices.DomainAlignment), "Microservices align closely with their respective business domain allowing the use of ubiquitous language thus improving collaboration."),
+        new("Domain Alignment", typeof(Icons.MigrationToMicroservices.DomainAlignment), "Microservices align closely with their respective business domains, allowing the use of ubiquitous language and thus improving collaboration."),
         new("Flexible Scaling", typeof(Icons.MigrationToMicroservices.FlexibleScaling), "Microservices allow each service to be independently scaled to meet demand for the application feature it supports."),
         new("Easy Deployment", typeof(Icons.MigrationToMicroservices.EasyDeployment), "Microservices enable continuous integration and continuous delivery, making it easy to try out new ideas and to roll back if something doesn’t work."),
         new("Resilience", typeof(Icons.MigrationToMicroservices.Resilience), "Service independence increases an application’s resistance to failure."),
@@ -49,7 +49,7 @@
     {
         "We start migrating the now isolated bounded contexts to a set of microservices as defined in the second step of the process.",
         "Each of the resulting microservices is independently deployable and scalable using an automated pipeline.",
-        "Each migration will reduces both the acquired technical debt and cognitive load on the development team, allowing a faster and more reliable development.",
+        "Each migration reduces both the acquired technical debt and cognitive load on the development team, allowing a faster and more reliable development.",
     }),
 })"/>
 
