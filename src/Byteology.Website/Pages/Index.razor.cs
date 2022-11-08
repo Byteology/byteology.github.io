@@ -9,7 +9,7 @@ public partial class Index : ComponentBase
 
     public Index()
     {
-        _title = "Byteology - A Moment of Science";
+        _title = "A Moment of Science";
         _description = "By introducing scientific generalization to software engineering, Byteology helps businesses tackle software complexity and grow.";
         _keywords = new string[] { "scientific generalization", "software development", "research", "proof of concept", "poc", "microservices", "migration to microservices", "event sourcing", "consulting", "training", "interviewing", "interviewing as a service" };
 
