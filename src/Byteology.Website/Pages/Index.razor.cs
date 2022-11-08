@@ -15,7 +15,7 @@ public partial class Index : ComponentBase
 
         _model = new Model(
             CallToActionTitle: "Here's to working together",
-            CallToAction: "Don't hesitate to reach out to us with any request and we will help you the best we can. We usually answer within 2 business days."
+            CallToAction: "Don't hesitate to reach out to us with any request and we'll be happy to help you the best we can. We usually answer within 2 business days."
         );
     }
 
