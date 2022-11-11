@@ -1,3 +1,3 @@
 # Byteology's Website
 
-Work in progress
+Byteology's main website
