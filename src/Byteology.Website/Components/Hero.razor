@@ -30,7 +30,7 @@
                 </Item>
             </Timeline>
 
-            <a href="@(_routeManager.Match<Mission>()?.GetUrl())"
+            <a href="@(RouteManager.Match<Mission>())"
                 class="button text-sm p-2">
                 @_model.LinkText
             </a>

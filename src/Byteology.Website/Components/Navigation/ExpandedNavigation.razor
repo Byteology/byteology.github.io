@@ -24,7 +24,7 @@
                         continue;
 
                     <NavLink class="transition-fast hocus:text-accent-300" 
-                                href="@(_routeManager.Match(item.Page)?.GetUrl())"
+                                href="@(RouteManager.Match(item.Page))"
                                 Match="NavLinkMatch.All">
                         @item.Text
                     </NavLink>

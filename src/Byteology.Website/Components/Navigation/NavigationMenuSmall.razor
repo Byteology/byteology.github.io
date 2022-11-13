@@ -55,7 +55,7 @@
 
         <NavLink class="button p-1 px-4 text-sm" 
                  tabindex="-1" 
-                 href="@(_routeManager.Match(_data.Highlighted.Page)?.GetUrl())" 
+                 href="@(RouteManager.Match(_data.Highlighted.Page))" 
                  Match="NavLinkMatch.All">
             @_data.Highlighted.Text
         </NavLink>

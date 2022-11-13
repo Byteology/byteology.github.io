@@ -9,7 +9,7 @@
         <div class="max-w-3xl w-full flex h-full mx-auto            
                 gap-8 items-center justify-between">
 
-            <a class="h-full flex-1" href="@(_routeManager.Match<Pages.Index>()?.GetUrl())" tabindex="-1">
+            <a class="h-full flex-1" href="@(RouteManager.Match<Pages.Index>())" tabindex="-1">
                 <img class="h-full" src="/images/icon.png" alt="Byteology"/>
             </a>
         
@@ -28,7 +28,7 @@
 
                             <NavLink class="h-full leading-[3rem] transition-fast active:text-accent hocus:text-accent-300" 
                                  tabindex="-1" 
-                                 href="@(_routeManager.Match(item.Page)?.GetUrl())" 
+                                 href="@(RouteManager.Match(item.Page))" 
                                  Match="NavLinkMatch.All">
                                 @item.Text
                             </NavLink>
@@ -41,7 +41,7 @@
                             <NavLink class="pointer-events-none self-center
                                             transition-fast active:text-accent group-hover:text-accent-300" 
                                         tabindex="-1" 
-                                        href="@(_routeManager.Match(section.Page)?.GetUrl())" 
+                                        href="@(RouteManager.Match(section.Page))" 
                                         Match="NavLinkMatch.Prefix">
 
                                 <span>@(section.Text)</span>
@@ -62,7 +62,7 @@
                                 {
                                     <NavLink class="block transition-fast active:text-accent hocus:text-accent-300" 
                                                 tabindex="-1" 
-                                                href="@(_routeManager.Match(item.Page)?.GetUrl())" 
+                                                href="@(RouteManager.Match(item.Page))" 
                                                 Match="NavLinkMatch.All">
                                         @item.Text
                                     </NavLink>
@@ -75,7 +75,7 @@
 
                 <NavLink class="button p-1 px-4 text-sm" 
                          tabindex="-1"
-                         href="@(_routeManager.Match(Data.Highlighted.Page)?.GetUrl())" 
+                         href="@(RouteManager.Match(Data.Highlighted.Page))" 
                          Match="NavLinkMatch.All">
                     @Data.Highlighted.Text
                 </NavLink>

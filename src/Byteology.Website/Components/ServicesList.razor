@@ -8,7 +8,7 @@
             <div class="bg-dark-900/70 basis-0 grow-[3] flex flex-col gap-4 justify-between p-4">
                 <h2 class="font-bold text-accent uppercase text-sm md:text-base">@service.Title</h2>
                 <p class="text-sm md:text-base">@service.Description</p>
-                <a class="button text-sm p-1" href="@(_routeManager.Match(service.Page!)?.GetUrl())">@service.LinkText</a>
+                <a class="button text-sm p-1" href="@(RouteManager.Match(service.Page!))">@service.LinkText</a>
             </div>
             <div class="p-4 md:p-8 basis-0 grow flex justify-center bg-dark-700/70 @(i % 2 == 0 ? "lg:order-first" : "")">
                 <ProxyComponent class="self-center w-full" ComponentToRender="@service.Icon"/>
