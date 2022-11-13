@@ -8,7 +8,7 @@
 
   <PropertyGroup>
     <BlazorWasmPrerenderingDeleteLoadingContents>true</BlazorWasmPrerenderingDeleteLoadingContents>
-    <BlazorWasmPrerenderingUrlPathToExplicitFetch>/notfound</BlazorWasmPrerenderingUrlPathToExplicitFetch>
+    <BlazorWasmPrerenderingUrlPathToExplicitFetch>/notfound;/articles/interviewing</BlazorWasmPrerenderingUrlPathToExplicitFetch>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
 
