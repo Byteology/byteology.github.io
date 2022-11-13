@@ -1,6 +1,8 @@
 ﻿@inherits StyleableComponent
 
-<section @attributes="AdditionalAttributes" class="@CssClass bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4 [&_>_ul]:unordered-list">
+<section @attributes="AdditionalAttributes" 
+    class="@CssClass bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4 [&_>_ul]:unordered-list
+            [&_h2]:text-accent [&_h2]:font-bold [&_h2]:uppercase [&_h2]:!-mb-2">
     @if (!string.IsNullOrEmpty(Header))
     {
         <h1 class="text-lg font-bold text-accent uppercase">@Header</h1>
