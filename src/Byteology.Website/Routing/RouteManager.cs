@@ -23,8 +23,8 @@ public class RouteManager
 
             segments = segments.Select(x => pascalToKebabCase(x)).ToList();
 
-            if (segments.Any())
-                segments.Insert(0, "#!");
+            //if (segments.Any())
+            //    segments.Insert(0, "#!");
 
             Route newRoute = new(segments, pageType);
             routesList.Add(newRoute);

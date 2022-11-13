@@ -1,13 +1,14 @@
 ﻿<PageTitle>Byteology - @Title</PageTitle>
 <HeadContent>
+
     <meta property="og:title" content="@Title" />
-    <meta property="og:image" content="@($"{_url}/images/og-image.png")" />
+    <meta property="og:image" content="https://byteology.net/images/og-image.png" />
     <meta property="og:type" content="@(Article ? "article" : "website")" />
-    <meta property="og:description" content="@Description" />
-    <meta property="og:locale" content="en_GB" />   
+    <meta property="og:locale" content="en_GB" />
 
     @if (!string.IsNullOrEmpty(Description))
     {
+        <meta property="og:description" content="@Description" />
         <meta name="description" content="@Description">
     }
     @if (Keywords != null)
