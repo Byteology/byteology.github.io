@@ -24,7 +24,7 @@
                 @(new MarkupString(Markdown.ToHtml(_model.Introduction)))
             </div>
     
-            <Timeline class="text-sm md:text-base text-accent" Items="@_model.Timeline" Context="item">
+            <Timeline class="text-sm md:text-base" Items="@_model.Timeline" Context="item">
                 <Item>
                     <p class="text-neutral-100">@(new MarkupString(Markdown.ToHtml(item)))</p>
                 </Item>
