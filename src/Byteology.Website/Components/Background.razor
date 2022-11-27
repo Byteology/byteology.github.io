@@ -14,6 +14,7 @@
 @ChildContent
 
 @code {
+    private int _opacity = 0;
 
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
@@ -31,11 +32,22 @@
         int originY = _random.Next(-25, 25);
 
         float blurRadius = _random.NextSingle() + 0.25f;
+        float fadeInDelay = _random.NextSingle() * 2 + 0.25f;
 
         CultureInfo cultureInfo = (CultureInfo)CultureInfo.InvariantCulture.Clone();
         cultureInfo.NumberFormat.NumberDecimalSeparator = ".";
 
-        string result = $"top: {top}%; left: {left}%; animation-duration: {duration}s; animation-delay: {delay}s; transform-origin: {originX}vw {originY}vh; --blur-radius: {MathF.Round(blurRadius, 5).ToString(cultureInfo)}vmin;";
+        string result = $"top: {top}%; left: {left}%; animation-duration: {duration}s; animation-delay: {delay}s; transform-origin: {originX}vw {originY}vh; --blur-radius: {MathF.Round(blurRadius, 5).ToString(cultureInfo)}vmin; opacity: {_opacity}; transition: opacity 4s; transition-delay: {fadeInDelay.ToString("0.00", cultureInfo)}s";
         return result;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+        if (firstRender)
+        {
+            _opacity = 1;
+            StateHasChanged();
+        }
     }
 }
