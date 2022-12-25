@@ -6,6 +6,7 @@ public partial class Page : ComponentBase, IDisposable
 {
     private bool _comesFromFullPageScrolling;
     private bool _fadeIn;
+    private bool _firstRender = true;
     
     [Inject]
     private StateContainer _state { get; set; } = default!; 
@@ -38,6 +39,10 @@ public partial class Page : ComponentBase, IDisposable
         {
             if (FullPageScrolling)
                 _jsRuntime.InvokeVoid("fps.start");
+
+            _firstRender = false;
+            if (_state.InitialLoad == true)
+                StateHasChanged();
         }
     }
 
