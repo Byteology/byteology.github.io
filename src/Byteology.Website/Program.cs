@@ -1,6 +1,7 @@
 using Byteology.Website;
 using Byteology.Website.Inquiring;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Ljbc1994.Blazor.IntersectionObserver;
 using Microsoft.Extensions.Http;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -17,4 +18,5 @@ static void ConfigureServices(IServiceCollection services)
     services.AddSingleton<StateContainer>();
     services.AddSingleton<IInquiryService, GoogleDriveInquiryService>();
     services.AddHttpClient<IInquiryService, GoogleDriveInquiryService>();
+    services.AddIntersectionObserver();
 }

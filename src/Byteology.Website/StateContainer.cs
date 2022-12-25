@@ -2,6 +2,6 @@
 
 public class StateContainer
 {
-    public bool InitialLoad { get; set; } = true;
+    public bool? InitialLoad { get; set; }
     public bool FullPageScrolling { get; set; }
 }

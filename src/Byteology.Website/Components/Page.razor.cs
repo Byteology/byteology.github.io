@@ -5,7 +5,8 @@ using Microsoft.JSInterop;
 public partial class Page : ComponentBase, IDisposable
 {
     private bool _comesFromFullPageScrolling;
-
+    private bool _fadeIn;
+    
     [Inject]
     private StateContainer _state { get; set; } = default!; 
 
@@ -24,6 +25,9 @@ public partial class Page : ComponentBase, IDisposable
         base.OnInitialized();
         _comesFromFullPageScrolling = _state.FullPageScrolling;
         _state.FullPageScrolling = FullPageScrolling;
+
+        _state.InitialLoad = _state.InitialLoad == null;
+        _fadeIn = !_state.InitialLoad.Value;
     }
 
     protected override void OnAfterRender(bool firstRender)
@@ -32,7 +36,6 @@ public partial class Page : ComponentBase, IDisposable
 
         if (firstRender)
         {
-            _state.InitialLoad = false;
             if (FullPageScrolling)
                 _jsRuntime.InvokeVoid("fps.start");
         }

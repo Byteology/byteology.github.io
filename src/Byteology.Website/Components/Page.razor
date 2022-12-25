@@ -4,7 +4,7 @@
             @(FullPageScrolling ? 
                 "snap-y snap-mandatory [&>.slide+.slide]:mt-32 no-scrollbar" : 
                 "flex flex-col min-h-full cursor:styled-scrollbar")
-            @(_state.InitialLoad ? "" : ("[&_section]:animate-fade-in-fast " + (_comesFromFullPageScrolling ? "[&_nav]:animate-fade-in-fast" : "")))">
+            @(!_fadeIn ? "" : ((FullPageScrolling ? "" : "[&_section]:animate-fade-in-fast ") + (_comesFromFullPageScrolling ? "[&_nav]:animate-fade-in-fast" : "")))">
 
     @ChildContent
 

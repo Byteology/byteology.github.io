@@ -69,12 +69,12 @@
         if (e.deltaY > 0 && currentSlideIndex != slides.length - 1) {
             wid.reset();
             wid.feed(e);
-            document.getElementById("page").scrollTo({ top: slides[currentSlideIndex + 1].offsetTop, behavior: "smooth" });
+            document.getElementById("page").scrollTo({ top: slides[currentSlideIndex + 1].offsetTop, behavior: "instant" });
         }
         else if (e.deltaY < 0 && currentSlideIndex != 0) {
             wid.reset();
             wid.feed(e);
-            document.getElementById("page").scrollTo({ top: slides[currentSlideIndex - 1].offsetTop, behavior: "smooth"});
+            document.getElementById("page").scrollTo({ top: slides[currentSlideIndex - 1].offsetTop, behavior: "instant"});
         }
     }
 
@@ -124,7 +124,7 @@ class WheelInertiaDetector {
         // Wheel direction has changed
         if (wid.swipePositive && delta < -1 || !wid.swipePositive && delta > 1) {
             wid.startSwipe(delta);
-            wid.isInertia = wid;
+            wid.isInertia = false;
             return;
         }
 
