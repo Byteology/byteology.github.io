@@ -24,7 +24,7 @@ public class NavigationData
                 new NavigationItemModel("Research & PoC", typeof(ResearchAndPoc)),
                 new NavigationItemModel("Migration to Microservices", typeof(MigrationToMicroservices)),
                 new NavigationItemModel("Event Sourcing", typeof(EventSourcing)),
-                new NavigationItemModel("Consulting & Training", typeof(ConsultingAndTraining)),
+                new NavigationItemModel("Education & Training", typeof(EducationAndTraining)),
                 new NavigationItemModel("Interviewing as a Service", typeof(InterviewingAsAService)),
             }),
         };

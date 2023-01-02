@@ -1,8 +1,11 @@
 ﻿<section class="border border-dark-100 shadow-md">
     <div class="border-[2rem] border-dark-900/70">
         <div class="bg-dark-900/70 space-y-4 pb-4">
-            <h1 class="text-lg font-bold text-accent uppercase">@Header</h1>
-            @if(!string.IsNullOrEmpty(Text))
+            @if (!string.IsNullOrEmpty(Header))
+            {
+                <h1 class="text-lg font-bold text-accent uppercase">@Header</h1>
+            }
+            @if (!string.IsNullOrEmpty(Text))
             {
                 @(new MarkupString(Markdown.ToHtml(Text)))
             }
@@ -35,6 +38,16 @@
                     </div>
                 </div>
             }
+            
+            @if (!Wide && Items.Length % 2 == 1)
+            {
+                <div class="hidden md:block border-x-0 border-y-[0.5rem]
+                            md:border-l-[0.5rem] 
+                            border-dark-900/70">
+                    <div class="h-full bg-dark-900/70" />
+                </div>
+            }
+            
         </div>
     </div>
 </section>
@@ -42,7 +55,7 @@
 
 @code
 {
-    [Parameter, EditorRequired]
+    [Parameter]
     public string Header { get; set; } = null!;
 
     [Parameter]

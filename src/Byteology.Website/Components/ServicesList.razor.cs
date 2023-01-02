@@ -18,7 +18,7 @@ public partial class ServicesList : StyleableComponent
                 Icon: typeof(Icons.SoftwareDevelopment.Icon)),
             new ServiceModel(
                 Title: "Research & PoC",
-                Description: "Byteology's team will do any research or proof of contept on your behalf. We'll valdiate your idea, explore feasible approaches and identify potential risks and roadblocks.",
+                Description: "Byteology's team will do any research or proof of concept on your behalf. We'll validate your idea, explore feasible approaches and identify potential risks and roadblocks.",
                 LinkText: "Learn More",
                 Page: typeof(ResearchAndPoc),
                 Icon: typeof(Icons.ResearchAndPoc.Icon)),
@@ -35,11 +35,11 @@ public partial class ServicesList : StyleableComponent
                 Page: typeof(EventSourcing),
                 Icon: typeof(Icons.EventSourcing.Icon)),
             new ServiceModel(
-                Title: "Consulting & Training",
-                Description: "Byteology will provide you with tailored consulting services and/or personnel training to help your business scale and grow.",
+                Title: "Education & Training",
+                Description: "Byteology will provide you with a number of tailored personnel training services to help your business scale and grow.",
                 LinkText: "Learn More",
-                Page: typeof(ConsultingAndTraining),
-                Icon: typeof(Icons.ConsultingAndTraining.Icon)),
+                Page: typeof(EducationAndTraining),
+                Icon: typeof(Icons.EducationAndTraining.Icon)),
             new ServiceModel(
                 Title: "Interviewing as a Service",
                 Description: "We've been studying the process of identifying great software engineers for over a decade. Our team will conduct technical and social interviews on your behalf so you can focus of your core business.",

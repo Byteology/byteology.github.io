@@ -2,7 +2,6 @@ using Byteology.Website;
 using Byteology.Website.Inquiring;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Ljbc1994.Blazor.IntersectionObserver;
-using Microsoft.Extensions.Http;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -12,7 +11,7 @@ ConfigureServices(builder.Services);
 
 await builder.Build().RunAsync();
 
-// This method is required by the prerenderer
+// This method is required by the pre-renderer
 static void ConfigureServices(IServiceCollection services)
 {
     services.AddSingleton<StateContainer>();
