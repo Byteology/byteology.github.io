@@ -1,0 +1,87 @@
+@using Microsoft.AspNetCore.Components.Routing
+@using Byteology.Website.Company
+
+<nav class="hidden md:block flex-none box-content
+            sticky top-0 z-10 w-full h-12
+            bg-dark-900 border border-dark-100 shadow-md
+            font-bold whitespace-nowrap select-none">
+    <div class="px-4 h-full w-full">
+        <div class="max-w-3xl w-full flex h-full mx-auto            
+                gap-8 items-center justify-between">
+
+            <a class="h-full flex-1" href="@(RouteDetector.Match<HomePage>())" tabindex="-1">
+                <img class="h-full" src="/images/icon.png" alt="Byteology"/>
+            </a>
+
+            <div class="h-full flex gap-6 lg:gap-8 items-center justify-center">
+                @foreach (SitemapData.Section siteSection in SitemapData.Sections)
+                {
+                    @if (siteSection.IsRoot())
+                    {
+                        @foreach (SitemapData.Link item in siteSection.Items)
+                        {
+                            @if (item.IsHome() || item.IsCallToAction())
+                                continue;
+
+                            <NavLink class="h-full leading-[3rem] transition-fast active:text-accent hocus:text-accent-300"
+                                     tabindex="-1"
+                                     href="@item.Url"
+                                     Match="NavLinkMatch.All">
+                                @item.Title
+                            </NavLink>
+                        }
+                    }
+                    else
+                    {
+                        <div class="h-full cursor-pointer group flex">
+
+                            <NavLink class="pointer-events-none self-center
+                                            transition-fast active:text-accent group-hover:text-accent-300"
+                                     tabindex="-1"
+                                     href="@siteSection.Url"
+                                     Match="NavLinkMatch.Prefix">
+
+                                <span>@siteSection.Title</span>
+                                <svg class="inline w-[1.8rem] h-4 scale-[1.6] ml-[-0.4rem]"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24">
+                                    <path class="fill-current"
+                                          fill-rule="evenodd"
+                                          d="M15.3 10.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z"/>
+                                </svg>
+
+                            </NavLink>
+
+                            <div class="absolute top-12 -ml-4 
+                                        bg-dark-700 border border-dark-100 shadow-md 
+                                        invisible opacity-0 transition-fast group-hover:visible group-hover:opacity-100 
+                                        p-4 space-y-2">
+
+                                @foreach (SitemapData.Link item in siteSection.Items)
+                                {
+                                    <NavLink class="block transition-fast active:text-accent hocus:text-accent-300"
+                                             tabindex="-1"
+                                             href="@item.Url"
+                                             Match="NavLinkMatch.All">
+                                        @item.Title
+                                    </NavLink>
+                                }
+
+                            </div>
+                        </div>
+                    }
+                }
+
+                <NavLink class="button p-1 px-4 text-sm"
+                         tabindex="-1"
+                         href="@SitemapData.CallToAction.Url"
+                         Match="NavLinkMatch.All">
+                    @SitemapData.CallToAction.Title
+                </NavLink>
+
+            </div>
+
+        </div>
+    </div>
+
+</nav>

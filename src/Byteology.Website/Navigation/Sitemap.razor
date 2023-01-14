@@ -1,0 +1,42 @@
+@inherits StyledComponent
+
+@using Microsoft.AspNetCore.Components.Routing
+
+<div @attributes="@AdditionalAttributes"
+     class="flex flex-col md:flex-row justify-center gap-8 md:gap-16 lg:gap-32 @CssClass">
+
+    <!--suppress RequiredAttributes -->
+    <img
+        class="flex-none w-auto md:w-32 h-16 md:h-auto md:self-start
+               bg-center bg-contain
+               content-[url(/images/logo-landscape.svg)]
+               md:content-[url(/images/logo-portrait.svg)]"
+        alt="Byteology"/>
+
+    <div class="flex flex-col md:flex-row flex-none justify-evenly gap-8 md:gap-16">
+        @foreach (SitemapData.Section section in SitemapData.Sections)
+        {
+            <div class="flex flex-col text-base gap-1">
+                <p class="uppercase font-bold text-accent text-base mb-2">@(section.Title)</p>
+
+                @foreach (SitemapData.Link item in section.Items)
+                {
+                    @if (item.IsHome() && RemoveHomeLink)
+                        continue;
+
+                    <NavLink class="transition-fast hocus:text-accent-300"
+                             href="@item.Url"
+                             Match="NavLinkMatch.All">
+                        @item.Title
+                    </NavLink>
+                }
+            </div>
+        }
+    </div>
+
+</div>
+
+@code {
+    [Parameter]
+    public bool RemoveHomeLink { get; set; }
+}

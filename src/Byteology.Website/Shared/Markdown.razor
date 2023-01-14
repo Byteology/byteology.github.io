@@ -1,0 +1,13 @@
+@inherits StyledComponent
+
+<div @attritubes="@AdditionalAttributes" class="@CssClass" style="@CssStyle">
+    @if (!string.IsNullOrEmpty(Content))
+    {
+        @(new MarkupString(Markdig.Markdown.ToHtml(Content)))
+    }
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public string? Content { get; set; }
+}

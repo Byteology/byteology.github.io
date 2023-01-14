@@ -1,0 +1,70 @@
+﻿<section class="border border-dark-100 shadow-md">
+    <div class="border-[2rem] border-dark-900/70">
+        <div class="bg-dark-900/70 space-y-4 pb-4">
+            @if (!string.IsNullOrEmpty(Header))
+            {
+                <h1 class="text-lg font-bold text-accent uppercase">@Header</h1>
+            }
+            @if (!string.IsNullOrEmpty(Text))
+            {
+                @(new MarkupString(Markdig.Markdown.ToHtml(Text)))
+            }
+        </div>
+
+        <div class="grid grid-cols-1 @(Wide ? "" : "md:grid-cols-2")">
+            @for (int i = 0; i < Items.Length; i++)
+            {
+                (string? itemHeader, Type? itemIcon, string? itemText) = Items[i];
+                <div class="border-x-0 border-y-[0.5rem]
+                            @(Wide ? "" : (i % 2 == 1 ? "md:border-l-[0.5rem]" : "md:border-r-[0.5rem]")) 
+                            border-dark-900/70">
+                    <div class="p-4 h-full text-sm
+                                bg-dark-700/70 border border-dark-100 shadow-md 
+                                flex flex-col gap-2">
+                        <div class="flex items-center gap-4">
+                            @if (itemIcon != null)
+                            {
+                                <ProxyComponent class="flex-none self-center w-10"
+                                ComponentToRender="@itemIcon"/>
+                            }
+                            @if (!string.IsNullOrEmpty(itemHeader))
+                            {
+                                <h2 class="grow text-accent font-bold uppercase text-sm md:text-base">@itemHeader</h2>
+                            }
+                        </div>
+                        @if (!string.IsNullOrEmpty(itemText))
+                        {
+                            @(new MarkupString(Markdig.Markdown.ToHtml(itemText)))
+                        }
+                    </div>
+                </div>
+            }
+            
+            @if (!Wide && Items.Length % 2 == 1)
+            {
+                <div class="hidden md:block border-x-0 border-y-[0.5rem]
+                            md:border-l-[0.5rem] 
+                            border-dark-900/70">
+                    <div class="h-full bg-dark-900/70" />
+                </div>
+            }
+            
+        </div>
+    </div>
+</section>
+
+
+@code
+{
+    [Parameter]
+    public string Header { get; set; } = null!;
+
+    [Parameter]
+    public string? Text { get; set; }
+
+    [Parameter, EditorRequired]
+    public (string? Header, Type? Icon, string? Text)[] Items { get; set; } = null!;
+
+    [Parameter]
+    public bool Wide { get; set; }
+}

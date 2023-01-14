@@ -1,0 +1,27 @@
+﻿@inherits StyledComponent
+
+<ol @attributes=AdditionalAttributes class="timeline space-y-[1em] flex flex-col @CssClass">
+    @for (int i = 0; i < Items.Length; i++)
+    {
+        <li class="group flex gap-[2em]">
+            
+            <div class="
+                    bullet pt-[0.125em] 
+                    text-[0.875em] font-bold text-accent" />
+
+            <div class="
+                    line absolute left-[calc(0.875ch_-_1px)] top-[1.5em] w-[2px] h-[calc(100%_-_0.5em)]
+                    bg-accent text-accent" />
+
+            <div>@Item(Items[i])</div>
+        </li>
+    }
+</ol>
+
+@code {
+    [Parameter]
+    public string[] Items { get; set; } = default!;
+
+    [Parameter]
+    public RenderFragment<string> Item { get; set; } = default!;
+}

@@ -1,0 +1,21 @@
+﻿@inherits LayoutComponentBase
+
+@using Microsoft.JSInterop
+
+<Page FullPageScrolling="true">
+
+    @Body
+
+</Page>
+
+@code {
+    [Inject]
+    private IJSRuntime _jsRuntimeAsync { get; set; } = default!;
+    private IJSInProcessRuntime _jsRuntime => (IJSInProcessRuntime)_jsRuntimeAsync;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        _jsRuntime.InvokeVoid("onNavigated");
+    }
+}
