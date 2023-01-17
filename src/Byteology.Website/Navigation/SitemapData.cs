@@ -21,7 +21,7 @@ public static class SitemapData
 				new Link("Careers", RouteDetector.Match<CareersPage>()),
 				new Link("Contacts", RouteDetector.Match<ContactsPage>())
 			}),
-			new Section("Services", RouteDetector.Match<Index>(), new Link[]
+			new Section("Services", RouteDetector.Match<ServiceListPage>(), new Link[]
 			{
 				new Link("Software Development", RouteDetector.Match<SoftwareDevelopmentPage>()),
 				new Link("Research & PoC",RouteDetector.Match<ResearchAndPocPage>()),

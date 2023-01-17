@@ -1,0 +1,10 @@
+<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
+    @ChildContent
+</section>
+
+@code {
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+}

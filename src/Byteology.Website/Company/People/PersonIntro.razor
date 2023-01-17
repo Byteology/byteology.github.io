@@ -1,0 +1,36 @@
+<SidebarPanel SidebarRatio="0.32f" NoSidebarPadding="true" ReversedOrderPortrait="true">
+    <Sidebar>
+        <div class="flex md:flex-col
+                    md:h-full md:justify-evenly">
+
+            <img class="w-16 md:w-auto flex-1 md:flex-none
+                        object-center object-contain
+                        grayscale scale-x-[-1]"
+                 src="@ImageSrc"
+                 alt="@Name">
+
+            <div class="px-8 md:px-4 py-4 self-center flex-auto md:flex-none">
+                <h1 class="font-bold text-accent uppercase">@Name</h1>
+                <h2 class="text-sm font-bold uppercase md:text-center">@Title</h2></div>
+        </div>
+    </Sidebar>
+    <Content>
+        @ChildContent
+    </Content>
+</SidebarPanel>
+
+@code {
+
+    [Parameter, EditorRequired]
+    public string Name { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public string Title { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public string ImageSrc { get; set; } = default!;
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+}

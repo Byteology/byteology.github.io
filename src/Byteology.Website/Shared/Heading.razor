@@ -1,0 +1,28 @@
+@if (string.IsNullOrEmpty(IconSrc))
+{
+    <h1 class="text-accent text-xl font-bold uppercase">
+        @Text
+    </h1>
+}
+else
+{
+    <div class="flex items-center gap-4">
+        <img
+            class="flex-none self-center w-14"
+            src="@IconSrc"
+            alt="@Text"/>
+        <h1 class="text-accent text-xl font-bold uppercase">
+            @Text
+        </h1>
+    </div>
+}
+
+@code
+{
+    [Parameter, EditorRequired]
+    public string Text { get; set; } = null!;
+
+    [Parameter]
+    public string? IconSrc { get; set; }
+
+}

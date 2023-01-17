@@ -1,6 +1,7 @@
 ﻿@layout FullPageScrollingLayout
 @page "/"
 
+@using Byteology.Website.Company.People
 @using Byteology.Website.Inquiry.Components
 @using Byteology.Website.Services
 @using Byteology.Website.Navigation
@@ -18,7 +19,9 @@
 </Slide>
 
 <Slide class="slide-center md:px-8 py-10">
-    <Founder class="max-w-md md:max-w-4xl" />
+    <div class="max-w-md md:max-w-4xl">
+        <Founder/>
+    </div>
 </Slide>
 
 <Slide class="slide-center md:px-8 py-10">

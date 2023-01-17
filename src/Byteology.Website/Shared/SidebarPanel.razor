@@ -1,0 +1,52 @@
+<section class="border border-dark-100 shadow-md
+                flex flex-col md:flex-row">
+    <div
+        class="bg-dark-700/70 basis-0 shrink-0
+               @(ReversedOrderPortrait ? "order-2" : "order-none")
+               @(ReversedOrderLandscape ? "md:order-2" : "md:order-none")"
+        style="flex-grow: @(getSidebarFlexGrow())">
+        <div class="@(NoSidebarPadding ? "" :"p-8") h-full">
+            @Sidebar
+        </div>
+    </div>
+    <div
+        class="bg-dark-900/70 basis-0 shrink-0"
+        style="flex-grow: @(getContentFlexGrow())">
+        <div class="p-8 h-full">
+            @Content
+        </div>
+    </div>
+</section>
+
+
+@code {
+
+    [Parameter]
+    public RenderFragment? Content { get; set; }
+
+    [Parameter]
+    public RenderFragment? Sidebar { get; set; }
+
+    [Parameter, EditorRequired]
+    public float SidebarRatio { get; set; }
+
+    [Parameter]
+    public bool ReversedOrderLandscape { get; set; }
+
+    [Parameter]
+    public bool ReversedOrderPortrait { get; set; }
+
+    [Parameter]
+    public bool NoSidebarPadding { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        if (SidebarRatio <= 0 || SidebarRatio >= 1)
+            throw new ArgumentOutOfRangeException(nameof(SidebarRatio), SidebarRatio, "The ration of the sidebar should be in the interval (0, 1)");
+    }
+
+    private int getSidebarFlexGrow() => (int)Math.Round(SidebarRatio * 100);
+    private int getContentFlexGrow() => 100 - getSidebarFlexGrow();
+}
