@@ -1,0 +1,32 @@
+@if (Detail.Type == ContactDetailType.Address)
+{
+    <p class="block
+              text-xs md:text-sm break-words">
+        @Detail.Value
+    </p>
+}
+
+@if (Detail.Type == ContactDetailType.Phone)
+{
+    <a class="block
+              link text-xs md:text-sm break-all"
+       href="tel:@Detail.Value">
+        @Detail.Value
+    </a>
+}
+
+@if (Detail.Type == ContactDetailType.Email)
+{
+    <a class="block
+              link text-xs md:text-sm break-all"
+       href="mailto:@Detail.Value">
+        @Detail.Value
+    </a>
+}
+
+@code {
+
+    [Parameter, EditorRequired]
+    public ContactDetail Detail { get; set; } = default!;
+
+}

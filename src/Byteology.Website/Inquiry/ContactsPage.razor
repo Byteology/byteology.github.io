@@ -1,4 +1,5 @@
-﻿@using Byteology.Website.Inquiry.Components
+﻿@using Byteology.Website.Articles.Components
+@using Byteology.Website.Inquiry
 @page "/contacts"
 
 <Metadata Title="Contacts"
@@ -6,5 +7,5 @@
       Keywords="@(new string[] { "contacts", "contact us" })" />
 
 <section class="col-span-12">
-    <Inquiry Title="Here's to working together" CallToAction="Don't hesitate to reach out to us with any request and we will help you the best we can. We usually answer within 2 business days."/>
+    <DefaultInquiryComponent />
 </section>

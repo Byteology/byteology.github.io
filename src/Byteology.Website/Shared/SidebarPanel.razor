@@ -1,7 +1,7 @@
 <section class="border border-dark-100 shadow-md
                 flex flex-col md:flex-row">
     <div
-        class="bg-dark-700/70 basis-0 shrink-0
+        class="bg-dark-700/50 basis-0 shrink-0
                @(ReversedOrderPortrait ? "order-2" : "order-none")
                @(ReversedOrderLandscape ? "md:order-2" : "md:order-none")"
         style="flex-grow: @(getSidebarFlexGrow())">
@@ -12,7 +12,7 @@
     <div
         class="bg-dark-900/70 basis-0 shrink-0"
         style="flex-grow: @(getContentFlexGrow())">
-        <div class="p-8 h-full">
+        <div class="p-8 h-full @(CenterContent ? "flex items-center" : "")">
             @Content
         </div>
     </div>
@@ -38,6 +38,9 @@
 
     [Parameter]
     public bool NoSidebarPadding { get; set; }
+
+    [Parameter]
+    public bool CenterContent { get; set; }
 
     protected override void OnParametersSet()
     {

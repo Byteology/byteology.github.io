@@ -1,0 +1,80 @@
+@using Byteology.Website.Inquiry.Contacts
+
+<div class="@(_successfulSubmit.HasValue ? "hidden" : (_shouldFadeIn ? "animate-fade-in-fast" : ""))">
+    <SidebarPanel SidebarRatio="0.42f" CenterContent="true">
+        <Sidebar>
+            <div class="mb-4">
+                @CallToAction
+            </div>
+            <div class="space-y-4">
+                @if (Contacts != null)
+                {
+                    @foreach (Contact contact in Contacts)
+                    {
+                        <ContactComponent Contact="@contact"/>
+                    }
+                }
+            </div>
+        </Sidebar>
+        <Content>
+            <InquiryForm OnSubmit=onSubmit />
+        </Content>
+    </SidebarPanel>
+</div>
+
+
+
+<div class="@(_successfulSubmit.HasValue ? "animate-fade-in-fast" : "hidden")">
+    <Panel>
+        <h1 class="text-lg lg:text-xl font-bold text-center uppercase
+                   @(_successfulSubmit == true ? "text-accent" : "") @(_successfulSubmit == false ? "text-error" : "")">
+            @getLightboxTitle()
+        </h1>
+
+        <p>@getLightboxBody()</p>
+
+        @if (_successfulSubmit == false)
+        {
+            <button type="button" class="button p-2 mt-4 w-full" @onclick=@(() => _successfulSubmit = null)>Continue</button>
+        }
+    </Panel>
+</div>
+
+@code {
+
+    private bool? _successfulSubmit;
+    private bool _shouldFadeIn = false;
+
+    [Parameter]
+    public RenderFragment? CallToAction { get; set; }
+
+    [Parameter]
+    public Contact[]? Contacts { get; set; }
+
+    private void onSubmit(InquiryForm.SubmissionEventArgs args)
+    {
+        _successfulSubmit = args.Success;
+        _shouldFadeIn = true;
+    }
+
+    private string getLightboxTitle()
+    {
+        string? result = null;
+
+        if (_successfulSubmit.HasValue)
+            result = _successfulSubmit.Value ? "Thank you!" : "Oops!";
+
+        return result ?? string.Empty;
+    }
+
+    private string getLightboxBody()
+    {
+        string? result = null;
+
+        if (_successfulSubmit.HasValue)
+            result = _successfulSubmit.Value ? "Thank you for reaching out! We'll make sure to help you the best we can. We usually answer within 2 business days.": "We are terribly sorry but something went wrong. You can either retry or just write us a plain old email.";
+
+        return result ?? string.Empty;
+    }
+
+}

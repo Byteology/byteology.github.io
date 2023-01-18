@@ -1,4 +1,4 @@
-﻿namespace Byteology.Website.Inquiry;
+﻿namespace Byteology.Website.Inquiry.Service;
 
 using System.ComponentModel.DataAnnotations;
 

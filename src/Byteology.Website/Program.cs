@@ -1,5 +1,6 @@
 using Byteology.Website;
 using Byteology.Website.Inquiry;
+using Byteology.Website.Inquiry.Service;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Ljbc1994.Blazor.IntersectionObserver;
 

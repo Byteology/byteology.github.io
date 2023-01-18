@@ -1,19 +1,17 @@
-﻿@inherits StyledComponent
-
-@using Byteology.Website.Shared.Input
+﻿@using Byteology.Website.Shared.Input
 @using Microsoft.AspNetCore.Components.Forms
+@using Byteology.Website.Inquiry.Service
 
 <EditForm 
-    @attributes=AdditionalAttributes
-    Model="_inquiryData" 
+    Model="_inquiryData"
     OnValidSubmit="onSubmit"
-    class=@($"max-w-xl p-8 bg-dark-900/70 md:content-center grid grid-cols-2 gap-8 {CssClass}") >
+    class="md:content-center grid grid-cols-2 gap-8" >
 
     <DataAnnotationsValidator />
 
     <TextInput Label="Name" Placeholder="John Doe" @bind-Value=_inquiryData.Name class="col-span-2
     lg:col-span-1" autocomplete="name" />
-    <TextInput Label="Email" Placeholder="mail@example.com" @bind-Value=_inquiryData.Email class="col-span-2
+    <TextInput Label="Email" Placeholder="example@mail.com" @bind-Value=_inquiryData.Email class="col-span-2
     lg:col-span-1" autocomplete="email"/>
     <TextArea Label="Message" Placeholder="Type your message here..." @bind-Value=_inquiryData.Message
     class="col-span-2" autocomplete="off"></TextArea>
