@@ -2,7 +2,7 @@
 
 using Microsoft.JSInterop;
 
-public partial class Page : ComponentBase, IDisposable
+public partial class LayoutWrapper : ComponentBase, IDisposable
 {
     private bool _comesFromFullPageScrolling;
     private bool _fadeIn;

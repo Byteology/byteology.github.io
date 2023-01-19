@@ -1,33 +1,36 @@
-@inherits StyledComponent
 @using Ljbc1994.Blazor.IntersectionObserver.Components
 
 <IntersectionObserve>
     <section @ref="context.Ref.Current"
-             class="slide transition-slow @(context.IsIntersecting ||
-                                            (_firstRender && _state.InitialLoad == true)
-                                                ? "opacity-100"
-                                                : "opacity-0") @CssClass">
+             class="slide transition-slow
+                    @(context.IsIntersecting || (_firstRender && _state.InitialLoad == true)
+                          ? "opacity-100" : "opacity-0")
+                    flex flex-col justify-safe-center items-center
+                    @(PaddingDisabled ? "" : "md:px-8 py-10")
+                    ">
         @ChildContent
     </section>
 </IntersectionObserve>
 
 @code {
     private bool _firstRender = true;
-    
+
     [Inject]
     private LayoutStateContainer _state { get; set; } = default!;
-    
+
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public bool PaddingDisabled { get; set; }
 
     protected override void OnAfterRender(bool firstRender)
     {
         base.OnAfterRender(firstRender);
-    
+
         _firstRender = false;
-        
+
         if (firstRender)
             StateHasChanged();
     }
-
 }

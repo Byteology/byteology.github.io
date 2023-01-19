@@ -16,6 +16,7 @@
         @apply tracking-widest;
         @apply selection:text-neutral-100;
         @apply selection:bg-primary-300;
+        @apply text-neutral-100;
     }
 
     .uppercase {
@@ -28,8 +29,7 @@
 
     *, :after, :before {
         @apply relative;
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-        -webkit-tap-highlight-color: transparent;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
 
     *:focus {
@@ -48,13 +48,6 @@
         @apply no-scrollbar;
     }
 
-    .slide-center {
-        @apply flex;
-        @apply flex-col;
-        @apply justify-safe-center;
-        @apply items-center;
-    }
-
     .link {
         @apply underline;
         @apply underline-offset-2;
@@ -63,17 +56,6 @@
         @apply transition-fast;
         @apply hocus:text-primary-300;
         @apply hocus:decoration-primary-300;
-    }
-
-    .link-accent {
-        @apply underline;
-        @apply underline-offset-2;
-        @apply decoration-2;
-        @apply decoration-accent;
-        @apply text-accent;
-        @apply transition-fast;
-        @apply hocus:text-accent-300;
-        @apply hocus:decoration-accent-300;
     }
 
     .button {
@@ -128,11 +110,11 @@
         @apply pl-[1em];
     }
 
-    .markdown ul>li {
+    .markdown ul > li {
         @apply space-y-4;
     }
 
-    .markdown ul>li::marker {
+    .markdown ul > li::marker {
         @apply text-accent;
     }
 
@@ -165,11 +147,11 @@
         scrollbar-width: none; /* Firefox */
     }
 
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-            width: 0;
-            height: 0;
-        }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
 
     .styled-scrollbar::-webkit-scrollbar {
         width: 16px;
@@ -192,15 +174,5 @@
         @apply before:max-h-0;
         @apply after:max-h-0;
         @apply justify-between;
-    }
-
-    svg .primary {
-        @apply fill-accent;
-        @apply stroke-accent;
-    }
-
-    svg .secondary {
-        @apply fill-neutral-100;
-        @apply stroke-neutral-100;
     }
 }
