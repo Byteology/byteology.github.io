@@ -10,21 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     env:
       sonar_project_key: Byteology_byteology.github.io
-
+      
     steps:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 6.0.x
-
+          
       - name: Setup NodeJS
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
+          
       - name: Install Tailwind CSS
         run: npm install -D tailwindcss
-
+          
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -33,11 +33,11 @@ jobs:
         run: | 
           dotnet tool install --global dotnet-sonarscanner
           dotnet sonarscanner begin /o:byteology /k:${sonar_project_key} /d:sonar.login=${{ secrets.SONAR_TOKEN }} /s:$GITHUB_WORKSPACE/.sonar/SonarQube.Analysis.xml
-
+          
       - name: Restore
         working-directory: src
         run: dotnet restore
-
+        
       - name: Build
         working-directory: src
         run: dotnet build --configuration Release --no-restore
@@ -45,7 +45,7 @@ jobs:
       - name: Test
         working-directory: src
         run: dotnet test --no-build --configuration Release --verbosity normal --settings ../.sonar/coverlet.runsettings --logger:trx
-
+        
       - name: Sonarqube End
         working-directory: src
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
