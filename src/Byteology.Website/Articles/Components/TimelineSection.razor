@@ -17,8 +17,7 @@
                     <h2 class="text-accent uppercase font-bold text-sm md:text-base">@itemHeader</h2>
                 </div>
                 <div class="bg-dark-700/70 px-8 py-6 space-y-4 
-                            [&_h3]:text-accent [&_h3]:font-bold [&_h3]:uppercase [&_h3]:!-mb-2
-                            [&_ol]:ordered-list">
+                            [&_h3]:text-accent [&_h3]:font-bold [&_h3]:uppercase [&_h3]:!-mb-2">
                     @(new MarkupString(Markdig.Markdown.ToHtml(itemText)))
                 </div>
             </div>

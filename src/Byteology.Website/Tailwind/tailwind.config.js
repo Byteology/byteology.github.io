@@ -80,7 +80,7 @@ module.exports = {
     },
 
     plugins: [
-        plugin(function ({ addVariant }) {
+        plugin(function ({ addVariant, addBase, addComponents, addUtilities, theme }) {
             addVariant('active', '&.active');
             addVariant('checkbox-checked', [
                 'input[type=checkbox]:checked + label > &',
@@ -88,9 +88,124 @@ module.exports = {
                 'input[type=checkbox]:checked + label + * > &',
                 'input[type=checkbox]:checked + &',
                 'input[type=checkbox]:checked + * > &',
-
             ]);
             addVariant('hocus', ['&:hover', '&:focus', '&:focus-within']);
+
+            addBase({
+                ".uppercase": {
+                    "letter-spacing": "0.15em"
+                }
+            });
+
+            addComponents(getLinkComponent(theme));
+            addComponents(getButtonComponent(theme));
+
+            addUtilities(getScrollBarUtilities(theme));
+            addUtilities(getTransitionUtilities(theme));
+            addUtilities(getSafeCenterUtilities(theme));
         }),
     ],
+}
+
+function getLinkComponent(theme)
+{
+    return {
+        ".link": {
+            "text-decoration-line": "underline",
+            "text-underline-offset": "2px",
+            "text-decoration-thickness": "2px",
+            "text-decoration-color": theme("colors.primary.DEFAULT"),
+            "transition-property": "all",
+            "transition-timing-function": theme("transitionTimingFunction.ease-out"),
+            "transition-duration": "0.2s",
+        },
+        ".link:focus, .link:focus-within, .link:hover": {
+            "text-decoration-color": theme("colors.primary.300"),
+            "color": theme("colors.primary.300")
+        }
+    }
+}
+
+function getButtonComponent(theme)
+{
+    return {
+        ".button": {
+            "font-weight": theme("fontWeight.bold"),
+            "letter-spacing": ".15em",
+            "text-transform": "uppercase",
+            "text-align": "center",
+            "color": theme("colors.neutral.100"),
+            "background-color": theme("colors.primary.DEFAULT"),
+            "transition-property": "all",
+            "transition-timing-function": theme("transitionTimingFunction.ease-out"),
+            "transition-duration": "0.5s",
+        },
+        ".button:focus, .button:focus-within, .button:hover": {
+            "background-color": theme("colors.primary.300"),
+        }
+    }
+}
+
+function getScrollBarUtilities(theme)
+{
+    return {
+        ".no-scrollbar": {
+            "-ms-overflow-style": "none",
+            "scrollbar-width": "none"
+        },
+        ".no-scrollbar::-webkit-scrollbar": {
+            "display": "none",
+            "width": 0,
+            "height": 0
+        },
+        ".styled-scrollbar::-webkit-scrollbar": {
+            "width": "16px",
+            "height": "16px",
+            "background-color": theme("colors.dark.900"),
+            "--tw-shadow-color": theme("colors.dark.100"),
+            "box-shadow": "inset 0 0 0 2px var(--tw-shadow-color)"
+        },
+        ".styled-scrollbar::-webkit-scrollbar-thumb": {
+            "--tw-gradient-from": theme("colors.dark.DEFAULT"),
+            "--tw-gradient-to": theme("colors.primary.900"),
+            "--tw-gradient-stops": "var(--tw-gradient-from) 25%, var(--tw-gradient-to) 50%, var(--tw-gradient-from) 75%",
+            "background-image": "linear-gradient(to bottom, var(--tw-gradient-stops))",
+            "--tw-shadow-color": theme("colors.dark.100"),
+            "box-shadow": "inset 0 0 0 2px var(--tw-shadow-color)",
+        }
+    }
+}
+
+function getTransitionUtilities(theme)
+{
+    return {
+        ".transition-slow": {
+            "transition-property": "all",
+            "transition-timing-function": theme("transitionTimingFunction.ease-out"),
+            "transition-duration": "1s",
+        },
+        ".transition-normal": {
+            "transition-property": "all",
+            "transition-timing-function": theme("transitionTimingFunction.ease-out"),
+            "transition-duration": "0.5s",
+        },
+        ".transition-fast": {
+            "transition-property": "all",
+            "transition-timing-function": theme("transitionTimingFunction.ease-out"),
+            "transition-duration": "0.2s",
+        },
+    }
+}
+
+function getSafeCenterUtilities()
+{
+    return {
+        ".justify-safe-center": {
+            "justify-content": "space-between"
+        },
+        ".justify-safe-center:after, .justify-safe-center:before":{
+            "content": "var(--tw-content)",
+            "max-height": "0",
+        }
+    }
 }

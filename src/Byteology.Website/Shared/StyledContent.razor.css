@@ -1,0 +1,72 @@
+.content {
+    @apply space-y-4;
+}
+
+.content a {
+    @apply link;
+}
+
+.content ::deep strong {
+    @apply font-bold;
+    @apply text-accent;
+}
+
+.content ::deep ol {
+    @apply list-decimal;
+    @apply space-y-4;
+    @apply pl-[1em];
+}
+
+.content ::deep ol > li::marker {
+    @apply text-accent;
+}
+
+.content ::deep ol > li {
+    @apply space-y-4;
+}
+
+.content ::deep ul {
+    @apply list-disc;
+    @apply space-y-2;
+    @apply pl-[1em];
+}
+
+.content ::deep ul > li::marker {
+    @apply text-accent;
+}
+
+.content ::deep ul > li {
+    @apply space-y-4;
+}
+
+.content ::deep h1 {
+    @apply text-xl;
+    @apply font-bold;
+    @apply text-accent;
+    @apply uppercase;
+}
+
+.content ::deep h2 {
+    @apply text-lg;
+    @apply font-bold;
+    @apply text-accent;
+    @apply uppercase;
+}
+
+.content ::deep h3 {
+    @apply text-base;
+    @apply font-bold;
+    @apply text-accent;
+    @apply uppercase;
+}
+
+.content ::deep h4 {
+    @apply text-base;
+    @apply font-bold;
+    @apply text-accent;
+}
+
+.content ::deep h5 {
+    @apply text-base;
+    @apply text-accent;
+}

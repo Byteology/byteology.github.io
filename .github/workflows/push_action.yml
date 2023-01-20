@@ -19,7 +19,15 @@ jobs:
           
       - name: Checkout
         uses: actions/checkout@v2
-        
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Tailwind CSS
+        run: npm install -D tailwindcss
+
       - name: Sonarqube Begin
         working-directory: src
         run: | 

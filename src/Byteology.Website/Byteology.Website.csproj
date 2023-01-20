@@ -30,15 +30,18 @@
     <UpToDateCheckInput Include="Tailwind\tailwind.css" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Update="wwwroot\careers.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
+  <Target Name="ProcessScopedCssFilesWithTailwind" AfterTargets="_GenerateScopedCssFiles">
+    <MSBuild Projects="$(MSBuildProjectFile)" Properties="CurrentScopedCssFile=%(_ScopedCssOutputs.Identity)" Targets="ProcessScopedCssFileWithTailwind">
+    </MSBuild>
+  </Target>
+
+  <Target Name="ProcessScopedCssFileWithTailwind">
+    <Message Importance="high" Text="Processing with Tailwind: $(CurrentScopedCssFile)" />
+    <Exec Command="npx tailwindcss -c $(ProjectDir)Tailwind/tailwind.config.js -i $(CurrentScopedCssFile) -o $(CurrentScopedCssFile)" WorkingDirectory="$(MSBuildProjectDirectory)" EnvironmentVariables="TAILWIND_MODE=build" />
+  </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="tailwindcss -c $(ProjectDir)Tailwind\tailwind.config.js -i $(ProjectDir)Tailwind\tailwind.css -o $(ProjectDir)wwwroot\css\style.css -m" ContinueOnError="true" />
+    <Exec Command="npx tailwindcss -c $(ProjectDir)Tailwind/tailwind.config.js -i $(ProjectDir)Tailwind/preflight.css -o $(ProjectDir)wwwroot/css/style.css -m" />
   </Target>
 
 </Project>
