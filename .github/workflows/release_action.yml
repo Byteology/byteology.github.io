@@ -13,14 +13,6 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-        
-    - name: Setup NodeJS
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
-        
-    - name: Install Tailwind CSS
-      run: npm install -D tailwindcss
     
     - name: Checkout
       uses: actions/checkout@v3
@@ -28,6 +20,14 @@ jobs:
     # Fills the configuration with some not so secret secrets
     - name: Fill config values
       run: sed -i 's|GD_INQUIRY_URL|${{ secrets.GD_INQUIRY_URL }}|g' src/Byteology.Website/Config.cs
+
+    - name: Install NodeJS
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install Tailwind CSS
+      run: npm install -D tailwindcss
 
     - name: Publish
       working-directory: src
