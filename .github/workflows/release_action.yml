@@ -21,7 +21,7 @@ jobs:
     - name: Fill config values
       run: sed -i 's|GD_INQUIRY_URL|${{ secrets.GD_INQUIRY_URL }}|g' src/Byteology.Website/Config.cs
 
-    - name: Install NodeJS
+    - name: Setup NodeJS
       uses: actions/setup-node@v3
       with:
         node-version: 18
