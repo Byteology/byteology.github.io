@@ -4,33 +4,31 @@
 @using Byteology.Website.Inquiry
 @using Byteology.Website.Inquiry.Contacts
 @using Byteology.Website.Layout.Components
-@using Microsoft.JSInterop
 
-<LayoutWrapper>
-    <div class="flex-[1_0_100%] flex flex-col justify-between">
+<div id="page"
+     tabindex="0"
+     class="page w-full h-full overflow-x-hidden overflow-y-scroll
+            flex flex-col min-h-full cursor:styled-scrollbar"
+     style="@(_state.InitialRender == true ? "overflow: hidden;" : "")">
+
+    <div class="flex-[1_0_100%] flex flex-col justify-between
+                @(_fadeIn && _comesFromFullPageScrolling ? getAnimationClass() : "")">
 
         <NavBar/>
 
-        <div class="flex-none w-full xm:px-4 md:px-8 lg:px-12">
+        <div class="flex-none w-full xm:px-4 md:px-8 lg:px-12
+                @(_fadeIn && !_comesFromFullPageScrolling ? getAnimationClass() : "")">
             <div class="w-full max-w-3xl mx-auto space-y-10 py-10">
                 @Body
                 <DefaultInquiryComponent/>
             </div>
         </div>
 
-        <PrivacyFooter class="flex-none" />
+        <PrivacyFooter class="flex-none"/>
 
     </div>
-</LayoutWrapper>
+</div>
 
 @code {
-    [Inject]
-    private IJSRuntime _jsRuntimeAsync { get; set; } = default!;
-    private IJSInProcessRuntime _jsRuntime => (IJSInProcessRuntime)_jsRuntimeAsync;
-
-    protected override void OnAfterRender(bool firstRender)
-    {
-        base.OnAfterRender(firstRender);
-        _jsRuntime.InvokeVoid("onNavigated");
-    }
+    private string getAnimationClass() => _altFadeInAnimation ? "animate-fade-in-fast-alt" : "animate-fade-in-fast";
 }

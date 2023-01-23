@@ -2,9 +2,13 @@
 
 @using Byteology.Website.Layout.Components
 @using Byteology.Website.Navigation
-@using Microsoft.JSInterop
 
-<LayoutWrapper FullPageScrolling="true">
+<div id="page"
+     tabindex="0"
+     class="page w-full h-full overflow-x-hidden overflow-y-scroll
+            snap-y snap-mandatory space-y-32 no-scrollbar
+            @(_fadeIn ? getAnimationClass() : "")"
+     style="@(_state.InitialRender == true ? "overflow: hidden;" : "")">
 
     @Body
 
@@ -28,19 +32,8 @@
         </div>
     </Slide>
 
-</LayoutWrapper>
+</div>
 
 @code {
-
-    [Inject]
-    private IJSRuntime _jsRuntimeAsync { get; set; } = default!;
-
-    private IJSInProcessRuntime _jsRuntime => (IJSInProcessRuntime)_jsRuntimeAsync;
-
-    protected override void OnAfterRender(bool firstRender)
-    {
-        base.OnAfterRender(firstRender);
-        _jsRuntime.InvokeVoid("onNavigated");
-    }
-
+    private string getAnimationClass() => _altFadeInAnimation ? "animate-fade-in-fast-alt" : "animate-fade-in-fast";
 }

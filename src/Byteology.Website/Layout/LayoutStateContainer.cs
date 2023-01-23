@@ -2,6 +2,6 @@
 
 public class LayoutStateContainer
 {
-    public bool? InitialLoad { get; set; }
+    public bool? InitialRender { get; set; }
     public bool FullPageScrolling { get; set; }
 }

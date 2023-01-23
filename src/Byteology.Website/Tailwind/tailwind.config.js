@@ -70,10 +70,15 @@ module.exports = {
                 fade: {
                     '0%': { opacity: 1 },
                     '100%': { opacity: 0 },
+                },
+                fadeAlt: {
+                    '0%': { opacity: 1 },
+                    '100%': { opacity: 0 },
                 }
             },
             animation: {
                 'fade-in-fast': 'fade 0.25s ease-out 0s reverse forwards',
+                'fade-in-fast-alt': 'fadeAlt 0.25s ease-out 0s reverse forwards',
                 'blink': 'fade 1s linear 0s infinite alternate',
             }
         },
