@@ -1,22 +1,23 @@
-<section class="border border-dark-100 shadow-md
-                flex flex-col md:flex-row">
-    <div
-        class="bg-dark-700/50 basis-0 shrink-0
-               @(ReversedOrderPortrait ? "order-2" : "order-none")
-               @(ReversedOrderLandscape ? "md:order-2" : "md:order-none")"
-        style="flex-grow: @(getSidebarFlexGrow())">
-        <div class="@(NoSidebarPadding ? "" :"p-8") h-full">
-            @Sidebar
+<Panel NoPadding="true">
+    <div class="flex flex-col md:flex-row">
+        <div class="basis-0 shrink-0
+                   @(ReversedOrderPortrait ? "order-2" : "order-none")
+                   @(ReversedOrderLandscape ? "md:order-2" : "md:order-none")"
+             style="flex-grow: @(getSidebarFlexGrow())">
+            <PanelOverlay/>
+            <div class="@(NoSidebarPadding ? "" : "p-8") h-full">
+                @Sidebar
+            </div>
+        </div>
+        <div
+            class="basis-0 shrink-0"
+            style="flex-grow: @(getContentFlexGrow())">
+            <div class="p-8 h-full @(CenterContent ? "flex flex-col justify-safe-center" : "")">
+                @Content
+            </div>
         </div>
     </div>
-    <div
-        class="bg-dark-900/70 basis-0 shrink-0"
-        style="flex-grow: @(getContentFlexGrow())">
-        <div class="p-8 h-full @(CenterContent ? "flex flex-col justify-center" : "")">
-            @Content
-        </div>
-    </div>
-</section>
+</Panel>
 
 
 @code {

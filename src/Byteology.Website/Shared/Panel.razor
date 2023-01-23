@@ -1,8 +1,11 @@
-<section class="bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
+<section class="bg-dark-900/70 border border-dark-100 shadow-md @(NoPadding ? "" : "p-8")">
     @ChildContent
 </section>
 
 @code {
+
+    [Parameter]
+    public bool NoPadding { get; set; }
 
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
