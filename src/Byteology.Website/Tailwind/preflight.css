@@ -31,4 +31,19 @@
     *:focus {
         outline: none;
     }
+
+}
+
+@layer utilities {
+
+    .svg-color-base {
+        @apply fill-accent;
+        @apply stroke-accent;
+    }
+
+    .svg-color-accent {
+        @apply fill-neutral-100;
+        @apply stroke-neutral-100;
+    }
+
 }
