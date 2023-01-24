@@ -79,7 +79,7 @@ module.exports = {
             animation: {
                 'fade-in-fast': 'fade 0.25s ease-out 0s reverse forwards',
                 'fade-in-fast-alt': 'fadeAlt 0.25s ease-out 0s reverse forwards',
-                'blink': 'fade 1s linear 0s infinite alternate',
+                'blink': 'fade 1.5s linear 0s infinite alternate-reverse',
             }
         },
     },
@@ -109,7 +109,6 @@ module.exports = {
 
             addUtilities(getScrollBarUtilities(theme));
             addUtilities(getTransitionUtilities(theme));
-            addUtilities(getSafeCenterUtilities(theme));
         }),
     ],
 }
@@ -173,10 +172,7 @@ function getScrollBarUtilities(theme)
             "box-shadow": "inset 0 0 0 2px var(--tw-shadow-color)"
         },
         ".styled-scrollbar::-webkit-scrollbar-thumb": {
-            "--tw-gradient-from": theme("colors.dark.DEFAULT"),
-            "--tw-gradient-to": theme("colors.primary.900"),
-            "--tw-gradient-stops": "var(--tw-gradient-from) 25%, var(--tw-gradient-to) 50%, var(--tw-gradient-from) 75%",
-            "background-image": "linear-gradient(to bottom, var(--tw-gradient-stops))",
+            "background-color": theme("colors.dark.100"),
             "--tw-shadow-color": theme("colors.dark.100"),
             "box-shadow": "inset 0 0 0 2px var(--tw-shadow-color)",
         }
@@ -201,18 +197,5 @@ function getTransitionUtilities(theme)
             "transition-timing-function": theme("transitionTimingFunction.ease-out"),
             "transition-duration": "0.2s",
         },
-    }
-}
-
-function getSafeCenterUtilities()
-{
-    return {
-        ".justify-safe-center": {
-            "justify-content": "space-between"
-        },
-        ".justify-safe-center:after, .justify-safe-center:before":{
-            "content": "var(--tw-content)",
-            "max-height": "0",
-        }
     }
 }

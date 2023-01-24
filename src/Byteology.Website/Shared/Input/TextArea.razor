@@ -14,7 +14,7 @@
                 after:content-[attr(data-replicated-value)_'_']"
          data-replicated-value=@_value >
 
-        <textarea 
+    <textarea
             @bind="CurrentValueAsString"
             @bind:event="onchange"
             @oninput="onValueChanged"
@@ -25,12 +25,13 @@
                 resize-none overflow-hidden pl-4
                 transition-fast
                 row-start-1 row-end-2 col-start-1 col-end-1
-                bg-transparent text-sm lg:text-base
+                bg-transparent text-sm md:text-base
                 border-b-2 border-primary
                 placeholder:italic placeholder:text-neutral-200
                 hover:border-primary-300
                 [.invalid_>.text-area-wrapper_>_&]:border-error
-                focus:!border-primary-300" />
+                focus:!border-primary-300">
+    </textarea>
 
     </div>
 </div>

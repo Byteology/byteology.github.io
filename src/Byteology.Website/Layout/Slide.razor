@@ -1,48 +1,51 @@
 @using Ljbc1994.Blazor.IntersectionObserver.Components
+@using Byteology.Website.Layout.Components
 
 <IntersectionObserve>
     <section @ref="context.Ref.Current"
-             class="slide transition-slow
-                    @(context.IsIntersecting || (_firstRender && _state.InitialRender == true) ? "opacity-100" : "opacity-0")
-                    flex flex-col justify-between items-center
-                    @(PaddingDisabled ? "" : "md:px-8")
-                    ">
+             class="slide group transition-slow
+                    @(context.IsIntersecting || _state.InitialRender == true ? "opacity-100" : "opacity-0")
+                    flex flex-col justify-between items-center">
 
-        <div class="w-full h-12
+        <div class="group-first:invisible
+                    @(_state.InitialRender == true ? "invisible" : "")
+                    @(context.IsIntersecting && _state.InitialRender == false ? "animate-blink" : "")
+                    w-full h-12 rotate-180
                     flex justify-center
                     [&>svg]:h-full">
-            <Chevron Upward="true"/>
+            <ChevronIcon/>
         </div>
 
         @ChildContent
 
-        <div class="w-full h-12
+        @if (IncludeFooter)
+        {
+            <div class="w-full">
+                <PrivacyFooter/>
+            </div>
+        }
+        else
+        {
+            <div class="group-last:invisible
+                    @(_state.InitialRender == true ? "invisible" : "")
+                    @(context.IsIntersecting && _state.InitialRender == false ? "animate-blink" : "")
+                    w-full h-12
                     flex justify-center
                     [&>svg]:h-full">
-            <Chevron/>
-        </div>
+                <ChevronIcon/>
+            </div>
+        }
+
     </section>
 </IntersectionObserve>
 
 @code {
-    private bool _firstRender = true;
-
     [Inject]
     private LayoutStateContainer _state { get; set; } = default!;
 
     [Parameter]
-    public RenderFragment? ChildContent { get; set; }
+    public bool IncludeFooter { get; set; }
 
     [Parameter]
-    public bool PaddingDisabled { get; set; }
-
-    protected override void OnAfterRender(bool firstRender)
-    {
-        base.OnAfterRender(firstRender);
-
-        _firstRender = false;
-
-        if (firstRender)
-            StateHasChanged();
-    }
+    public RenderFragment? ChildContent { get; set; }
 }

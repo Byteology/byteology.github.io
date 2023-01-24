@@ -1,16 +1,13 @@
-@inherits StyledComponent
-
 @using Microsoft.AspNetCore.Components.Routing
 @using Byteology.Website.Navigation
 
-<footer @attributes="@AdditionalAttributes"
-        class="w-full leading-[3rem] bg-dark-900 border border-dark-100 shadow-md
-               text-xs text-center text-neutral-300
-               flex items-center justify-center @CssClass">
+<footer class="w-full h-12 bg-dark-900 border-t border-dark-100 shadow-md
+               text-xs text-neutral-300
+               flex items-center justify-center">
 
     <span>&copy;@DateTime.Now.Year Byteology |&nbsp;</span>
     <NavLink class="transition-fast
-underline hocus:text-accent-300"
+                    underline hocus:text-accent-300"
              href="@SitemapData.PrivacyPolicy.Url"
              Match="NavLinkMatch.All">
         @SitemapData.PrivacyPolicy.Title
