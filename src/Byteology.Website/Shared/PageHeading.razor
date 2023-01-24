@@ -1,0 +1,25 @@
+@if (Icon == null)
+{
+    <StyledContent>
+        <h1>@Text</h1>
+    </StyledContent>
+}
+else
+{
+    <div class="flex items-center gap-4 mb-4 first-child:w-14">
+        <ProxyComponent ComponentToRender="Icon" />
+        <StyledContent>
+            <h1>@Text</h1>
+        </StyledContent>
+    </div>
+}
+
+@code
+{
+    [Parameter, EditorRequired]
+    public string Text { get; set; } = default!;
+
+    [Parameter]
+    public Type? Icon { get; set; }
+
+}

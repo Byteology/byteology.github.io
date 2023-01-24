@@ -1,0 +1,14 @@
+.icon {
+    --base-color: theme('colors.accent.DEFAULT');
+    --accent-color: theme('colors.neutral.100');
+}
+
+.icon ::deep .svg-color-base {
+    fill: var(--base-color);
+    stroke: var(--base-color);
+}
+
+.icon ::deep .svg-color-accent {
+    fill: var(--accent-color);
+    stroke: var(--accent-color);
+}
