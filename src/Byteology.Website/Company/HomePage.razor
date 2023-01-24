@@ -10,14 +10,44 @@
 @using Byteology.Website.Layout
 
 <Metadata Title="A Moment of Science"
-      Description="By introducing scientific generalization to software engineering, Byteology helps businesses tackle software complexity and grow."               Keywords="@(new string[] { "scientific generalization", "software development", "research", "proof of concept", "poc", "microservices", "migration to microservices", "event sourcing", "consulting", "training", "interviewing", "interviewing as a service"})" />
+          Description="By introducing scientific generalization to software engineering, Byteology helps businesses tackle software complexity and grow."
+          Keywords="@(new string[] { "scientific generalization", "software development", "research", "proof of concept", "poc", "microservices", "migration to microservices", "event sourcing", "consulting", "training", "interviewing", "interviewing as a service" })"/>
 
-<Slide PaddingDisabled="true">
-    <Hero />
-</Slide>
+<HeroSlide>
+    <div class="space-y-8">
+        <StyledContent>
+            <p class="text-lg lg:text-xl font-bold">
+                By introducing <strong>scientific generalization</strong> to software engineering,
+                <strong>Byteology</strong> helps businesses tackle software complexity and grow.
+            </p>
+        </StyledContent>
+
+        <div class="text-sm md:text-base">
+            <Timeline>
+                <TimelineItem>
+                    We <strong>gather and detail</strong> the information defining your domain
+                </TimelineItem>
+                <TimelineItem>
+                    We derive <strong>actionable data and insights</strong>
+                </TimelineItem>
+                <TimelineItem>
+                    We design and implement <strong>tailored solutions</strong>
+                </TimelineItem>
+                <TimelineItem>
+                    We help your business <strong>scale and grow</strong>
+                </TimelineItem>
+            </Timeline>
+        </div>
+
+        <a href="@(RouteDetector.Match<MissionPage>())"
+           class="block button text-sm p-2">
+            Learn More
+        </a>
+    </div>
+</HeroSlide>
 
 <Slide>
-    <ServicesList class="max-w-7xl" />
+    <ServicesList class="max-w-7xl"/>
 </Slide>
 
 <Slide>

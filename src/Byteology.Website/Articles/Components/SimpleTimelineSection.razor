@@ -6,12 +6,12 @@
             @(new MarkupString(Markdig.Markdown.ToHtml(Text)))
         }
 
-        <Timeline class="text-sm md:text-base text-accent" 
-            Items="@Items" Context="item">
-            <Item>
-                <p class="text-neutral-100">@(new MarkupString(Markdig.Markdown.ToHtml(item)))</p>
-            </Item>
-        </Timeline>
+        @* <Timeline class="text-sm md:text-base text-accent"  *@
+        @*     Items="@Items" Context="item"> *@
+        @*     <Item> *@
+        @*         <p class="text-neutral-100">@(new MarkupString(Markdig.Markdown.ToHtml(item)))</p> *@
+        @*     </Item> *@
+        @* </Timeline> *@
     </div>
 </section>
 

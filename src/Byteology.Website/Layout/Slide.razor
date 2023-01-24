@@ -3,12 +3,24 @@
 <IntersectionObserve>
     <section @ref="context.Ref.Current"
              class="slide transition-slow
-                    @(context.IsIntersecting || (_firstRender && _state.InitialRender == true)
-                          ? "opacity-100" : "opacity-0")
-                    flex flex-col justify-safe-center items-center
-                    @(PaddingDisabled ? "" : "md:px-8 py-10")
+                    @(context.IsIntersecting || (_firstRender && _state.InitialRender == true) ? "opacity-100" : "opacity-0")
+                    flex flex-col justify-between items-center
+                    @(PaddingDisabled ? "" : "md:px-8")
                     ">
+
+        <div class="w-full h-12
+                    flex justify-center
+                    [&>svg]:h-full">
+            <Chevron Upward="true"/>
+        </div>
+
         @ChildContent
+
+        <div class="w-full h-12
+                    flex justify-center
+                    [&>svg]:h-full">
+            <Chevron/>
+        </div>
     </section>
 </IntersectionObserve>
 

@@ -1,0 +1,29 @@
+@using Byteology.Website.Layout
+@using Byteology.Website.Navigation
+
+<Slide PaddingDisabled="true">
+    <div class="w-full min-h-full
+                flex flex-col">
+
+        <div class="grow p-8
+                    flex items-center justify-center">
+            <img class="w-1/2 max-w-xs
+                        object-center object-contain"
+                 src="/images/logo-portrait.svg"
+                 alt="Byteology - a moment of science"/>
+        </div>
+
+        <div class="flex-none">
+            <Panel>
+                @ChildContent
+            </Panel>
+        </div>
+    </div>
+</Slide>
+
+@code {
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+}
