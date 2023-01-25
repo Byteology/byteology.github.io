@@ -1,5 +1,8 @@
-<SidebarPanel SidebarRatio="0.30f" NoSidebarPadding="true" ReversedOrderPortrait="true" CenterContent="true">
-    <Sidebar>
+<div class="panel p-0 flex flex-col md:flex-row">
+
+    <div class="basis-0 shrink-0 grow-[3]
+                order-2 md:order-none">
+        <div class="panel-overlay"></div>
         <div class="flex md:flex-col
                     md:h-full md:justify-evenly">
 
@@ -14,11 +17,13 @@
                 <p class="text-sm font-bold uppercase md:text-center">@Title</p>
             </div>
         </div>
-    </Sidebar>
-    <Content>
+    </div>
+
+    <div class="basis-0 shrink-0 grow-[7]
+                p-8">
         @ChildContent
-    </Content>
-</SidebarPanel>
+    </div>
+</div>
 
 @code {
 

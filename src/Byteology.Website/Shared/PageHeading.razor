@@ -1,16 +1,16 @@
 @if (Icon == null)
 {
-    <StyledContent>
+    <div class="styled-content">
         <h1>@Text</h1>
-    </StyledContent>
+    </div>
 }
 else
 {
-    <div class="flex items-center gap-4 mb-4 first-child:w-14">
+    <div class="flex items-center gap-4 first-child:w-14">
         <ProxyComponent ComponentToRender="Icon" />
-        <StyledContent>
+        <div class="styled-content">
             <h1>@Text</h1>
-        </StyledContent>
+        </div>
     </div>
 }
 
