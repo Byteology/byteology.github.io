@@ -1,8 +1,8 @@
-namespace Byteology.Website.Shared;
+namespace Byteology.Website.Tools;
 
 using System.Globalization;
 
-public class StyledComponent : ComponentBase
+public class StylableComponent : ComponentBase
 {
 	[Parameter(CaptureUnmatchedValues = true)]
 	public Dictionary<string, object>? AdditionalAttributes { get; set; }

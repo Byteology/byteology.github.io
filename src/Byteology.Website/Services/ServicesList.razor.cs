@@ -1,8 +1,9 @@
 ﻿namespace Byteology.Website.Services;
 
 using Byteology.Website.Navigation;
+using Byteology.Website.Tools;
 
-public partial class ServicesList : StyledComponent
+public partial class ServicesList : StylableComponent
 {
     private readonly ServiceModel[] _services;
 

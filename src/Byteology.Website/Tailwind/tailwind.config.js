@@ -86,8 +86,6 @@ module.exports = {
 
     plugins: [
         plugin(function ({ addVariant, addBase, addComponents, addUtilities, theme }) {
-            addVariant('children', '&>*');
-            addVariant('first-child', '&>*:first-child');
             addVariant('active', '&.active');
             addVariant('checkbox-checked', [
                 'input[type=checkbox]:checked + label > &',

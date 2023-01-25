@@ -1,10 +1,10 @@
-﻿@inherits StyledComponent
+﻿@inherits StylableComponent
 
 <section @attributes="AdditionalAttributes" class="@CssClass bg-dark-900/70 border border-dark-100 shadow-md p-8 space-y-4">
     <div class="flex items-center gap-4">
         @if (Icon != null)
         {
-            <ProxyComponent class="flex-none self-center w-14" ComponentToRender="Icon" />
+            @* <ProxyComponent class="flex-none self-center w-14" ComponentToRender="Icon" /> *@
         }
         <h1 class="text-accent text-xl font-bold uppercase">@Header</h1>
     </div>

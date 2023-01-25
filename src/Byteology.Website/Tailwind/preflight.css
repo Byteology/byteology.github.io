@@ -170,6 +170,8 @@
         @apply bg-accent;
         @apply text-accent;
     }
+
+    .title
 }
 
 @layer utilities {

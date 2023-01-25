@@ -1,4 +1,4 @@
-﻿@inherits StyledComponent
+﻿@inherits StylableComponent
 
 <div @attributes=AdditionalAttributes class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center @CssClass">
     @for (int i = 0; i < _services.Length; i++)
@@ -11,7 +11,7 @@
                 <a class="button text-sm p-1" href="@service.Url">@service.LinkText</a>
             </div>
             <div class="p-4 md:p-8 basis-0 grow flex justify-center bg-dark-700/70 @(i % 2 == 0 ? "lg:order-first" : "")">
-                <ProxyComponent class="self-center w-full" ComponentToRender="@service.Icon"/>
+                @* <ProxyComponent class="self-center w-full" ComponentToRender="@service.Icon"/> *@
             </div>
         </div>
     }
