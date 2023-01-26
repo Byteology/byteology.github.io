@@ -25,27 +25,12 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <UpToDateCheckInput Include="Tailwind\tailwind.config.js" />
-    <UpToDateCheckInput Include="Tailwind\tailwind.css" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="wwwroot\images\icons\mission.svg" />
-  </ItemGroup>
-
-  <Target Name="ProcessScopedCssFilesWithTailwind" AfterTargets="_GenerateScopedCssFiles">
-    <MSBuild Projects="$(MSBuildProjectFile)" Properties="CurrentScopedCssFile=%(_ScopedCssOutputs.Identity)" Targets="ProcessScopedCssFileWithTailwind">
-    </MSBuild>
-  </Target>
-
-  <Target Name="ProcessScopedCssFileWithTailwind">
-    <Message Importance="high" Text="Processing with Tailwind: $(CurrentScopedCssFile)" />
-    <Exec Command="npx tailwindcss -c $(ProjectDir)Tailwind/tailwind.config.js -i $(CurrentScopedCssFile) -o $(CurrentScopedCssFile)" WorkingDirectory="$(MSBuildProjectDirectory)" EnvironmentVariables="TAILWIND_MODE=build" />
+  <Target Name="PrepareScopedStylesFroPostCss" AfterTargets="BundleScopedCssFiles">
+    <Copy SourceFiles="$(IntermediateOutputPath)scopedcss\bundle\$(PackageId).styles.css" DestinationFiles="$(ProjectDir)Styles\Base\scoped-styles.css" />
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="npx tailwindcss -c $(ProjectDir)Tailwind/tailwind.config.js -i $(ProjectDir)Tailwind/preflight.css -o $(ProjectDir)wwwroot/css/style.css -m" />
+    <Exec Command="npx postcss styles-root.css -o $(ProjectDir)wwwroot\css\style.css" WorkingDirectory="$(ProjectDir)Styles" />
   </Target>
 
 </Project>

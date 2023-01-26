@@ -1,0 +1,13 @@
+@layer components {
+
+    .article-title {
+        @apply flex;
+        @apply items-center;
+        @apply gap-4;
+    }
+
+    .article-title > *:first-child {
+        @apply h-14;
+        @apply w-auto;
+    }
+}

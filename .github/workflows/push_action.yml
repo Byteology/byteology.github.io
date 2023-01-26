@@ -26,7 +26,7 @@ jobs:
           node-version: 18
 
       - name: Install Tailwind CSS
-        run: npm install -D tailwindcss
+        run: npm install -D tailwindcss postcss autoprefixer postcss-minify
 
       - name: Sonarqube Begin
         working-directory: src

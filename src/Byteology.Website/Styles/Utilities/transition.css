@@ -1,0 +1,21 @@
+@layer utilities {
+
+    .transition-slow {
+        transition-property: all;
+        @apply ease-out;
+        @apply duration-1000;
+    }
+
+    .transition-normal {
+        transition-property: all;
+        @apply ease-out;
+        @apply duration-500;
+    }
+
+    .transition-fast {
+        transition-property: all;
+        @apply ease-out;
+        @apply duration-200;
+    }
+
+}
