@@ -1,18 +1,58 @@
-﻿@inherits StylableComponent
+﻿<div class="services-list grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center lg:px-8">
 
-<div @attributes=AdditionalAttributes class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center @CssClass">
-    @for (int i = 0; i < _services.Length; i++)
-    {
-        var service = _services[i];
-        <div class="max-w-xl border border-dark-100 shadow-md flex">
-            <div class="bg-dark-900/70 basis-0 grow-[3] flex flex-col gap-4 justify-between p-4">
-                <h2 class="font-bold text-accent uppercase text-sm md:text-base">@service.Title</h2>
-                <p class="text-sm md:text-base">@service.Description</p>
-                <a class="button text-sm p-1" href="@service.Url">@service.LinkText</a>
-            </div>
-            <div class="p-4 md:p-8 basis-0 grow flex justify-center bg-dark-700/70 @(i % 2 == 0 ? "lg:order-first" : "")">
-                @* <ProxyComponent class="self-center w-full" ComponentToRender="@service.Icon"/> *@
-            </div>
-        </div>
-    }
+    <ServiceCard Title="Software Development"
+                 Description="We will develop your application or minimum viable product (MVP) by applying scientific
+                              generalization and domain-driven design principles."
+                 PageLink="typeof(SoftwareDevelopmentPage)">
+        <Icon>
+            <CoreIcon/>
+        </Icon>
+    </ServiceCard>
+
+    <ServiceCard Title="Research and PoC"
+                 Description="Byteology's team will do any research or proof of concept on your behalf. We'll validate
+                              your idea, explore feasible approaches and identify potential risks and roadblocks."
+                 PageLink="typeof(ResearchAndPocPage)">
+        <Icon>
+            <CoreIcon/>
+        </Icon>
+    </ServiceCard>
+
+    <ServiceCard Title="Migration to Microservices"
+                 Description="We have researched and designed strategies and processes that help businesses
+                              successfully migrate to microservices."
+                 PageLink="typeof(MigrationToMicroservicesPage)">
+        <Icon>
+            <CoreIcon/>
+        </Icon>
+    </ServiceCard>
+
+    <ServiceCard Title="Event Sourcing"
+                 Description="Standard software development methodologies store and utilize less than 50% of the data
+                              that runs through the system."
+                 PageLink="typeof(EventSourcingPage)">
+        <Icon>
+            <CoreIcon/>
+        </Icon>
+    </ServiceCard>
+
+    <ServiceCard Title="Education and Training"
+                 Description="Byteology will provide you with a number of tailored personnel training services to help
+                              your business scale and grow."
+                 PageLink="typeof(EducationAndTrainingPage)">
+        <Icon>
+            <CoreIcon/>
+        </Icon>
+    </ServiceCard>
+
+    <ServiceCard Title="Interviewing as a Service"
+                 Description="We've been studying the process of identifying great software engineers for over a decade.
+                              Our team will conduct technical and social interviews on your behalf so you can focus of
+                              your core business."
+                 PageLink="typeof(InterviewingAsAServicePage)">
+        <Icon>
+            <CoreIcon/>
+        </Icon>
+    </ServiceCard>
+
 </div>

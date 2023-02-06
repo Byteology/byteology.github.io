@@ -1,0 +1,3 @@
+.services-list ::deep .service-card:nth-child(odd) > .service-card-sidebar {
+    @apply lg:order-first;
+}

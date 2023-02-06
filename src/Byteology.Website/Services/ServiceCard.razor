@@ -1,0 +1,37 @@
+@using Byteology.Website.Navigation
+
+<div class="service-card panel p-0 flex max-w-xl">
+    <div class="p-4 lg:px-8 basis-0 grow-[3]
+                flex flex-col gap-4 justify-between">
+        <div class="article-title sm:[&_>_*:first-child]:hidden">
+            @Icon
+            <h2 class="text-sm md:text-base font-bold text-accent uppercase">
+                @Title
+            </h2>
+        </div>
+        <p class="text-sm md:text-base">
+            @Description
+        </p>
+        <a class="button p-1" href="@(RouteDetector.Match(PageLink))">Learn More</a>
+    </div>
+    <div class="service-card-sidebar hidden sm:flex justify-center basis-0 basis-0 grow p-4 md:p-8">
+        <div class="panel-overlay"></div>
+        @Icon
+    </div>
+</div>
+
+@code {
+
+    [Parameter, EditorRequired]
+    public RenderFragment Icon { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public string Title { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public string Description { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public Type PageLink { get; set; } = default!;
+
+}

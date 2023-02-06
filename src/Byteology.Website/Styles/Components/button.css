@@ -1,6 +1,9 @@
 @layer components {
 
     .button {
+        @apply text-sm;
+        @apply p-2;
+        @apply block;
         @apply font-bold;
         @apply tracking-[.15em];
         @apply uppercase;
