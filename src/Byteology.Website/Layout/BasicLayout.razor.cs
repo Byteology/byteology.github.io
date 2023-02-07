@@ -2,7 +2,7 @@ namespace Byteology.Website.Layout;
 
 using Microsoft.JSInterop;
 
-public partial class DefaultLayout : LayoutComponentBase
+public partial class BasicLayout : LayoutComponentBase
 {
 	private bool _comesFromFullPageScrolling;
 	private bool _fadeIn;

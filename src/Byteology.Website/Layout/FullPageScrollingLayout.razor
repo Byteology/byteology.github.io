@@ -1,6 +1,5 @@
 ﻿@inherits LayoutComponentBase
 
-@using Byteology.Website.Layout.Components
 @using Byteology.Website.Navigation
 
 <div id="page"
@@ -11,12 +10,6 @@
      style="@(_state.InitialRender == true ? "overflow: hidden;" : "")">
 
     @Body
-
-    <Slide>
-        <div class="max-w-md md:max-w-4xl">
-            <DefaultInquiryComponent/>
-        </div>
-    </Slide>
 
     <Slide IncludeFooter="true">
         <div class="w-full p-6 md:p-8 flex justify-center

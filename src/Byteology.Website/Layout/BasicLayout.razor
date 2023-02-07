@@ -3,7 +3,6 @@
 @using Byteology.Website.Navigation
 @using Byteology.Website.Inquiry
 @using Byteology.Website.Inquiry.Contacts
-@using Byteology.Website.Layout.Components
 
 <div id="page"
      tabindex="0"
@@ -18,9 +17,8 @@
 
         <div class="flex-none w-full xm:px-4 md:px-8 lg:px-12
                 @(_fadeIn && !_comesFromFullPageScrolling ? getAnimationClass() : "")">
-            <div class="w-full max-w-3xl mx-auto space-y-10 py-10">
+            <div class="w-full flex flex-col justify-between items-center gap-y-10 py-10">
                 @Body
-                <DefaultInquiryComponent/>
             </div>
         </div>
 

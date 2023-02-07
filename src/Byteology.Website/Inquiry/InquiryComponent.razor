@@ -1,40 +1,42 @@
 @using Byteology.Website.Inquiry.Contacts
 
-<div class="@(_successfulSubmit.HasValue ? "hidden" : (_shouldFadeIn ? "animate-fade-in-fast" : ""))">
-    <div class="panel p-0 flex flex-col md:flex-row">
-        <div class="basis-0 shrink-0 grow-[3]">
-            <div class="panel-overlay"></div>
-            <div class="p-8 space-y-4">
-                <div>@CallToAction</div>
-                @if (Contacts != null)
-                {
-                    @foreach (Contact contact in Contacts)
+<div class="max-w-md md:max-w-4xl">
+    <div class="@(_successfulSubmit.HasValue ? "hidden" : (_shouldFadeIn ? "animate-fade-in-fast" : ""))">
+        <div class="panel p-0 flex flex-col md:flex-row">
+            <div class="basis-0 shrink-0 grow-[3]">
+                <div class="panel-overlay"></div>
+                <div class="p-8 space-y-4">
+                    <div>@CallToAction</div>
+                    @if (Contacts != null)
                     {
-                        <ContactComponent Contact="@contact"/>
+                        @foreach (Contact contact in Contacts)
+                        {
+                            <ContactComponent Contact="@contact"/>
+                        }
                     }
-                }
+                </div>
             </div>
-        </div>
-        <div class="basis-0 shrink-0 grow-[4]">
-            <div class="p-8 flex h-full items-center">
-                <InquiryForm OnSubmit="onSubmit"/>
+            <div class="basis-0 shrink-0 grow-[4]">
+                <div class="p-8 flex h-full items-center">
+                    <InquiryForm OnSubmit="onSubmit"/>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="panel space-y-4 @(_successfulSubmit.HasValue ? "animate-fade-in-fast" : "hidden")">
-    <h1 class="text-lg lg:text-xl font-bold text-center uppercase
-               @(_successfulSubmit == true ? "text-accent" : "") @(_successfulSubmit == false ? "text-error" : "")">
-        @getLightboxTitle()
-    </h1>
+    <div class="panel space-y-4 @(_successfulSubmit.HasValue ? "animate-fade-in-fast" : "hidden")">
+        <h1 class="text-lg lg:text-xl font-bold text-center uppercase
+                   @(_successfulSubmit == true ? "text-accent" : "") @(_successfulSubmit == false ? "text-error" : "")">
+            @getLightboxTitle()
+        </h1>
 
-    <p>@getLightboxBody()</p>
+        <p>@getLightboxBody()</p>
 
-    @if (_successfulSubmit == false)
-    {
-        <button type="button" class="button w-full" @onclick=@(() => _successfulSubmit = null)>Continue</button>
-    }
+        @if (_successfulSubmit == false)
+        {
+            <button type="button" class="button w-full" @onclick=@(() => _successfulSubmit = null)>Continue</button>
+        }
+    </div>
 </div>
 
 @code {
