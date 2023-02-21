@@ -72,4 +72,12 @@
         @apply text-base;
         @apply text-accent;
     }
+
+    .styled-content q,
+    .styled-content blockquote {
+        @apply text-sm;
+        @apply text-neutral-200;
+        @apply italic;
+        @apply leading-tight;
+    }
 }

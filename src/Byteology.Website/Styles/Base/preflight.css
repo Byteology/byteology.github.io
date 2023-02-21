@@ -36,4 +36,11 @@
         @apply tracking-[.15em];
     }
 
+    q:before,
+    q:after,
+    blockquote:before,
+    blockquote:after {
+        content:''
+    }
+
 }
