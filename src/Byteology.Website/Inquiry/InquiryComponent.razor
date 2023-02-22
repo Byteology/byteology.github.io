@@ -3,8 +3,7 @@
 <div class="max-w-md md:max-w-4xl">
     <div class="@(_successfulSubmit.HasValue ? "hidden" : (_shouldFadeIn ? "animate-fade-in-fast" : ""))">
         <div class="panel p-0 flex flex-col md:flex-row">
-            <div class="basis-0 shrink-0 grow-[3]">
-                <div class="panel-overlay"></div>
+            <div class="surface-2 basis-0 shrink-0 grow-[3]">
                 <div class="p-8 space-y-4">
                     <div>@CallToAction</div>
                     @if (Contacts != null)

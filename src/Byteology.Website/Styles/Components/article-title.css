@@ -10,4 +10,15 @@
         @apply h-14;
         @apply w-auto;
     }
+
+    .article-title-sm {
+        @apply flex;
+        @apply items-center;
+        @apply gap-4;
+    }
+
+    .article-title-sm > *:first-child {
+        @apply h-10;
+        @apply w-auto;
+    }
 }

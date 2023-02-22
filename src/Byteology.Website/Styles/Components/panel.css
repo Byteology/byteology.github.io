@@ -1,21 +1,9 @@
 @layer components {
 
     .panel {
-        @apply bg-dark-900/70;
-        @apply border;
-        @apply border-dark-100;
-        @apply shadow-md;
+        @apply surface;
+        @apply elevation;
         @apply p-8;
-    }
-
-    .panel-overlay {
-        @apply absolute;
-        @apply top-0;
-        @apply left-0;
-        @apply w-full;
-        @apply h-full;
-        @apply bg-dark-700;
-        @apply mix-blend-lighten;
     }
 
 }

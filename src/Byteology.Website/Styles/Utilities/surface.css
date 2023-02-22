@@ -1,0 +1,18 @@
+@layer utilities {
+
+    .surface {
+        @apply bg-dark-900/70;
+    }
+
+    .surface-2::before {
+        @apply absolute;
+        @apply top-0;
+        @apply left-0;
+        @apply w-full;
+        @apply h-full;
+        @apply opacity-10;
+        @apply bg-dark-900;
+        @apply brightness-[3.5];
+        content: "";
+    }
+}
