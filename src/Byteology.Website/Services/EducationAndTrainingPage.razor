@@ -1,22 +1,86 @@
-﻿@using Byteology.Website.Articles.Components
-@page "/services/education-and-training"
+﻿@page "/services/education-and-training"
+
+@using Byteology.Website.Inquiry
 
 <Metadata Title="Education and Training" Article="true"
       Description="Every team will require some sort of training at some point. Unfortunately, teaching a skill requires a different kind of expertise than just knowing it. Byteology will provide you with a number of training services to help your business scale and grow while you focus on your core business." 
       Keywords="@(new string[] { "training", "bootcamps", "onboarding", "documentation", "mentorship", "mentor", "mentor program", "workshop", "service" })" />
 
-<Title class="[&_>_ul]:text-sm"
-       Header="Education and Training"
-       Icon="typeof(Icons.WhiteboardIcon)"
-       Text="Every team will require some sort of training at some point. Unfortunately, teaching a skill requires a different kind of expertise than just knowing it. This, coupled with the amount of resources that go into training preparations, sometimes makes internal trainings too disruptive."/>
+<section class="panel styled-content">
+    <div class="icon-title">
+        <WhiteboardIcon />
+        <h1>Education and Training</h1>
+    </div>
+    <p>
+        Every team will require some sort of training at some point. Unfortunately, teaching a skill requires a
+        different kind of expertise than just knowing it. This, coupled with the amount of resources that go into
+        training preparations, sometimes makes internal trainings too disruptive.
+    </p>
+</section>
 
-<CardsSection Text="Byteology will provide you with a number of training services to help your business scale and grow while you focus on your core business."
-            Wide="false"
-            Items="@(new (string?, Type?, string?)[] 
-{
-    new("Bootcamps", typeof(Icons.EducationAndTraining.Bootcamps), "A high intensity trainings aimed towards people with little or no experience in order to put them on the path of becoming true professionals."),
-    new("Onboarding program", typeof(Icons.EducationAndTraining.Onboarding), "Instructional materials and documentation aimed at introducing new employees to the project in order to increase efficiency, engagement and retention."),
-    new("Educational curriculums", typeof(Icons.EducationAndTraining.Education), "A handcrafted syllabus and training materials with the goal of improving certain skills over a long period of time."),
-    new("Mentorship", typeof(Icons.EducationAndTraining.Mentorship), "Personal sessions with highly experienced professionals with the goal of improving skills and traits by giving advice and assistance."),
-    new("Workshops", typeof(Icons.EducationAndTraining.Workshop), "Short bursts of practical studies used to improve the general understanding of a concept, skill or technology."),
-})"/>
+<section class="panel styled-content">
+    <p>
+        Byteology will provide you with a number of training services to help your business scale and grow while you
+        focus on your core business.
+    </p>
+    <div class="card-grid">
+
+        <div>
+            <div class="icon-title-sm">
+                <PeopleIcon/>
+                <h3>Bootcamps</h3>
+            </div>
+            <p>
+                A high intensity trainings aimed towards people with little or no experience in order to put them on
+                the path of becoming true professionals.
+            </p>
+        </div>
+
+        <div>
+            <div class="icon-title-sm">
+                <SignpostIcon/>
+                <h3>Onboarding Programs</h3>
+            </div>
+            <p>
+                Instructional materials and documentation aimed at introducing new employees to the project in order to
+                increase efficiency, engagement and retention.
+            </p>
+        </div>
+
+        <div>
+            <div class="icon-title-sm">
+                <BooksIcon/>
+                <h3>Educational Curriculums</h3>
+            </div>
+            <p>
+                A handcrafted syllabus and training materials with the goal of improving certain skills over a long
+                period of time.
+            </p>
+        </div>
+
+        <div>
+            <div class="icon-title-sm">
+                <NurtureIcon/>
+                <h3>Mentorship</h3>
+            </div>
+            <p>
+                Personal sessions with highly experienced professionals with the goal of improving skills and traits by
+                giving advice and assistance.
+            </p>
+        </div>
+
+        <div>
+            <div class="icon-title-sm">
+                <GearsIcon/>
+                <h3>Workshops</h3>
+            </div>
+            <p>
+                Short bursts of practical studies used to improve the general understanding of a concept, skill or
+                technology.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<DefaultInquiryComponent/>
