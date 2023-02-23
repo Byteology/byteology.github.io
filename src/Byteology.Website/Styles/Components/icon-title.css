@@ -1,23 +1,23 @@
 @layer components {
 
-    .article-title {
+    .icon-title {
         @apply flex;
         @apply items-center;
         @apply gap-4;
     }
 
-    .article-title > *:first-child {
+    .icon-title > *:first-child {
         @apply h-14;
         @apply w-auto;
     }
 
-    .article-title-sm {
+    .icon-title-sm {
         @apply flex;
         @apply items-center;
         @apply gap-4;
     }
 
-    .article-title-sm > *:first-child {
+    .icon-title-sm > *:first-child {
         @apply h-10;
         @apply w-auto;
     }

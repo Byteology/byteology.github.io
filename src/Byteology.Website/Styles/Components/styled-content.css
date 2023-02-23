@@ -13,17 +13,17 @@
         @apply text-accent;
     }
 
-    .styled-content ol {
+    .styled-content ol:not(.timeline) {
         @apply list-decimal;
         @apply space-y-4;
         @apply pl-[1em];
     }
 
-    .styled-content ol > li::marker {
+    .styled-content ol:not(.timeline) > li::marker {
         @apply text-accent;
     }
 
-    .styled-content ol > li {
+    .styled-content ol:not(.timeline) > li {
         @apply space-y-4;
     }
 

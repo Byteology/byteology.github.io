@@ -21,7 +21,7 @@
     }
 
     ol.timeline > li {
-        @apply pl-8;
+        @apply pl-[3em];
     }
 
     ol.timeline > li:nth-child(-n+9)::before {

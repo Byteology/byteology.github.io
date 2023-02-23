@@ -3,7 +3,46 @@
     .card {
         @apply surface-2;
         @apply elevation;
+        @apply p-8;
+    }
+
+    .card-sm {
+        @apply surface-2;
+        @apply elevation;
         @apply p-4;
+        @apply text-sm;
+    }
+
+    .card-title {
+        @apply surface-2;
+        @apply py-4;
+        @apply elevation;
+        @apply border-x-0;
+        @apply border-t-0;
+    }
+
+    .card > .card-title {
+        @apply px-8;
+        @apply -m-8;
+        @apply mb-0;
+    }
+
+    .card-sm > .card-title {
+        @apply px-4;
+        @apply -m-4;
+        @apply mb-0;
+    }
+
+    .card-title > .counter {
+        @apply align-middle;
+        @apply text-[1.5em];
+        @apply text-primary;
+        @apply absolute;
+    }
+
+    .card-title > .counter + * {
+        @apply align-middle;
+        @apply left-[3em];
     }
 
 }
