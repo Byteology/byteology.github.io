@@ -31,7 +31,7 @@ jobs:
 
     - name: Publish
       working-directory: src
-      run: dotnet publish -c Release -o ../release --nologo
+      run: dotnet publish Byteology.Website -c Release -o ../release --nologo
       
     - name: Set 404 page
       run: cp release/wwwroot/index.html release/wwwroot/404.html
