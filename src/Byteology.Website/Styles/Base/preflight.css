@@ -37,10 +37,12 @@
     }
 
     q:before,
-    q:after,
-    blockquote:before,
-    blockquote:after {
-        content:''
+    blockquote:before {
+        content: open-quote;
     }
 
+    q:after,
+    blockquote:after {
+        content: close-quote;
+    }
 }
