@@ -166,10 +166,10 @@ var wid = new WheelInertiaDetector();
 
 window.onNavigated = () => {
     document.getElementById("page").scrollTo(0, 0);
-    collapseHamburder();
+    collapseHamburger();
 };
 
-window.collapseHamburder = () => {
+window.collapseHamburger = () => {
     let hamburger = document.getElementById("hamburger");
     if (hamburger)
         hamburger.checked = false;

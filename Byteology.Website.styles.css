@@ -1,35 +1,35 @@
-/* /Components/Background.razor.rz.scp.css */
-@keyframes move-b-a2xvopc965 {
+/* /Layout/Background.razor.rz.scp.css */
+@keyframes move-b-2bs5jy54na {
     100% {
         transform: translate3d(0, 0, 1px) rotate(360deg);
     }
 }
 
-span[b-a2xvopc965] {
+span[b-2bs5jy54na] {
     width: 1vmin;
     height: 1vmin;
     border-radius: 1vmin;
     position: absolute;
-    animation: move-b-a2xvopc965;
+    animation: move-b-2bs5jy54na;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     box-shadow: 2vmin 0 var(--blur-radius) currentColor;
 }
-/* /Components/Timeline.razor.rz.scp.css */
-.timeline[b-5gqou3bbw5] {
-    counter-reset: timeline-counter;
-}
 
-.timeline > li > .bullet[b-5gqou3bbw5]::before {
-    counter-increment: timeline-counter;
-    content: counter(timeline-counter);
-    overflow-wrap:normal;
+.hero-mask[b-2bs5jy54na] {
+    mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDAwMDAwMCI+PC9yZWN0Pgo8ZyBmaWxsPSIjMDAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxIiB5PSIyMCI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEiIHk9IjQwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMSIgeT0iNjAiPjwvcmVjdD4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxIiB5PSI4MCI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxMDAiIHg9IjIwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEwMCIgeD0iNDAiPjwvcmVjdD4KPHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMTAwIiB4PSI2MCI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxMDAiIHg9IjgwIj48L3JlY3Q+CjwvZz4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlPSIjMDAwIj48L3JlY3Q+Cjwvc3ZnPg==");
 }
-
-.timeline > li:nth-child(-n+9) > .bullet[b-5gqou3bbw5]::before {
-    content: '0'counter(timeline-counter);
+/* /Layout/Slide.razor.rz.scp.css */
+.slide[b-ru81iy3tqv] {
+    @apply w-full;
+    @apply h-full;
+    @apply snap-start;
+    @apply snap-always;
+    @apply overflow-x-hidden;
+    @apply overflow-y-auto;
+    @apply no-scrollbar;
 }
-
-.timeline > li:last-child > .line[b-5gqou3bbw5] {
-    display: none;
+/* /Services/ServicesList.razor.rz.scp.css */
+.services-list[b-28n5bdbpgy]  .service-card:nth-child(odd) > .service-card-sidebar {
+    @apply lg:order-first;
 }
