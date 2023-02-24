@@ -4,6 +4,7 @@ obj
 .idea
 **.DotSettings
 **.DotSettings.user
+**.csproj.user
 
 /src/Byteology.Website/wwwroot/css/style.css
 /src/Byteology.Website/Styles/Base/scoped-styles.css
