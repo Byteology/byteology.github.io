@@ -13,20 +13,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Components\Intro.razor.json" />
-    <Content Remove="Components\NavigationMenu.razor.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Pages\Privacy.razor.md" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\Privacy.razor.md" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="BlazorIntersectionObserver" Version="3.1.0" />
     <PackageReference Include="BlazorWasmPreRendering.Build" Version="1.0.0-preview.24.0" />
     <PackageReference Include="Markdig" Version="0.30.2" />
@@ -40,19 +26,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Include="Tailwind\tailwind.config.js" />
-    <UpToDateCheckInput Include="Tailwind\tailwind.css" />
+    <_ContentIncludedByDefault Remove="Icons\SoftwareDevelopment\Icon.razor" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Update="wwwroot\careers.html">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
+  <Target Name="PrepareScopedStylesFroPostCss" AfterTargets="BundleScopedCssFiles">
+    <Copy SourceFiles="$(IntermediateOutputPath)scopedcss\bundle\$(PackageId).styles.css" DestinationFiles="$(ProjectDir)Styles\Base\scoped-styles.css" />
+  </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="tailwindcss -c $(ProjectDir)Tailwind\tailwind.config.js -i $(ProjectDir)Tailwind\tailwind.css -o $(ProjectDir)wwwroot\css\style.css -m" ContinueOnError="true" />
+    <Exec Command="npx postcss styles-root.css -o $(ProjectDir)wwwroot\css\style.css" WorkingDirectory="$(ProjectDir)Styles" />
   </Target>
 
 </Project>

@@ -1,0 +1,24 @@
+@layer components {
+
+    .icon-title {
+        @apply flex;
+        @apply items-center;
+        @apply gap-4;
+    }
+
+    .icon-title > *:first-child {
+        @apply h-14;
+        @apply w-auto;
+    }
+
+    .icon-title-sm {
+        @apply flex;
+        @apply items-center;
+        @apply gap-4;
+    }
+
+    .icon-title-sm > *:first-child {
+        @apply h-10;
+        @apply w-auto;
+    }
+}

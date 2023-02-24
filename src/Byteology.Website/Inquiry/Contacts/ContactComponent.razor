@@ -1,0 +1,27 @@
+﻿<div class="grid grid-cols-[max-content_1fr] auto-rows-max gap-y-1 gap-x-8 items-baseline
+            md:flex md:flex-col md:gap-y-0">
+    <p class="col-start-1 row-start-1
+              text-body lg:text-lg text-accent font-bold">
+        @Contact.Name
+    </p>
+    <p class="col-start-1 row-start-2 md:mb-2
+              text-xs lg:text-sm font-bold">
+        @Contact.Title
+    </p>
+    @{
+        int i = 0;
+        foreach(ContactDetail detail in Contact.Details)
+        {
+            i++;
+            <div class="col-start-2" style="grid-row-start: @i">
+                <ContactDetailComponent Detail="detail"/>
+            </div>
+        }
+    }
+</div>
+
+@code {
+
+    [Parameter, EditorRequired]
+    public Contact Contact { get; set; } = default!;
+}

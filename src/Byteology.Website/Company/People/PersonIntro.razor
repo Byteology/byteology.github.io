@@ -1,0 +1,42 @@
+<div class="max-w-md md:max-w-4xl panel p-0 flex flex-col md:flex-row">
+
+    <div class="surface-2 basis-0 shrink-0 grow-[3]
+                order-2 md:order-none">
+        <div class="flex md:flex-col
+                    md:h-full md:justify-evenly">
+
+            <img class="w-16 md:w-auto flex-1 md:flex-none
+                        object-center object-contain
+                        grayscale scale-x-[-1]"
+                 src="@ImageSrc"
+                 alt="@Name">
+
+            <div class="px-8 md:px-4 py-4 self-center flex-auto md:flex-none
+                        md:text-center">
+                <p class="font-bold text-accent uppercase">@Name</p>
+                <p class="text-sm font-bold uppercase">@Title</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="basis-0 shrink-0 grow-[7]
+                p-8">
+        @ChildContent
+    </div>
+</div>
+
+@code {
+
+    [Parameter, EditorRequired]
+    public string Name { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public string Title { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public string ImageSrc { get; set; } = default!;
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+}

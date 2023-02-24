@@ -1,0 +1,9 @@
+@layer utilities {
+
+    .elevation {
+        @apply border;
+        @apply border-dark-100;
+        @apply shadow-md;
+    }
+
+}

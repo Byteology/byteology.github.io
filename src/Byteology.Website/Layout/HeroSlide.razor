@@ -1,0 +1,27 @@
+<Slide>
+    <div class="grow w-full max-w-7xl flex flex-col md:flex-row items-center lg:justify-between">
+
+        <div class="grow p-8 -mt-12
+                    md:mt-0 md:grow-0 md:w-1/2 lg:w-[45%]
+                    md:self-start md:sticky md:top-1/2 md:-translate-y-1/2
+                    flex items-center justify-center">
+            <img class="w-1/2 max-w-xs
+                        object-center object-contain"
+                 src="/images/logo-portrait.svg"
+                 alt="Byteology - a moment of science"/>
+        </div>
+
+        <div class="w-full md:w-1/2 md:pr-8 lg:w-[45%]">
+            <div class="panel md:max-w-xl">
+                @ChildContent
+            </div>
+        </div>
+    </div>
+</Slide>
+
+@code {
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+}

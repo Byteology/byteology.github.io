@@ -1,0 +1,19 @@
+@layer components {
+
+    .button {
+        @apply text-sm;
+        @apply p-2;
+        @apply block;
+        @apply font-bold;
+        @apply tracking-[.15em];
+        @apply uppercase;
+        @apply text-center;
+        @apply text-neutral-100;
+        @apply bg-primary;
+        @apply transition-normal;
+    }
+
+    .button:focus, .button:focus-within, .button:hover {
+        @apply bg-primary-300;
+    }
+}

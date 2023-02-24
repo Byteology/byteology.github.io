@@ -13,13 +13,21 @@ jobs:
       
     steps:
       - name: Setup .NET
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 6.0.x
           
       - name: Checkout
-        uses: actions/checkout@v2
-        
+        uses: actions/checkout@v3
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Tailwind CSS
+        run: npm install -D tailwindcss postcss postcss-cli autoprefixer postcss-minify
+
       - name: Sonarqube Begin
         working-directory: src
         run: | 

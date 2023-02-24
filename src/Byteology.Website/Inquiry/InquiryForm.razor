@@ -1,0 +1,64 @@
+﻿@using Byteology.Website.Shared.Input
+@using Microsoft.AspNetCore.Components.Forms
+@using Byteology.Website.Inquiry.Service
+
+<EditForm 
+    Model="_inquiryData"
+    OnValidSubmit="onSubmit"
+    class="md:content-center grid grid-cols-2 gap-8" >
+
+    <DataAnnotationsValidator />
+
+    <TextInput Label="Name" Placeholder="John Doe" @bind-Value=_inquiryData.Name class="col-span-2
+    lg:col-span-1" autocomplete="name" />
+    <TextInput Label="Email" Placeholder="example@mail.com" @bind-Value=_inquiryData.Email class="col-span-2
+    lg:col-span-1" autocomplete="email"/>
+    <TextArea Label="Message" Placeholder="Type your message here..." @bind-Value=_inquiryData.Message
+    class="col-span-2" autocomplete="off"></TextArea>
+    <Checkbox Label="I freely give my consent to have my personal information processed for the purpose of receiving feedback or solicited content." @bind-Value=_inquiryData.Consent class="col-span-2 text-xs text-neutral-200 hocus:text-neutral-100 transition-fast" />
+    <TextInput Label="Honeycomb" Placeholder="Honeycomb" @bind-Value=_inquiryData.Honeycomb class="hidden" />
+        
+    <button 
+        type="submit"
+        class="button md:text-base col-span-2">
+
+        Let's talk
+
+    </button>
+
+</EditForm>
+
+@code {
+    private readonly InquiryData _inquiryData = new();
+
+    [Inject]
+    private IInquiryService _inquiryService { get; set; } = default!;
+
+    [Parameter]
+    public EventCallback<SubmissionEventArgs> OnSubmit { get; set; }
+
+    private async Task onSubmit()
+    {
+        if (!string.IsNullOrEmpty(_inquiryData.Honeycomb))
+            return;
+
+        bool result = false;
+        try
+        {
+            result = await _inquiryService.SendInquiryAsync(_inquiryData);
+        }
+        catch { /* We don't want to expose details about the error. */ }
+
+        await OnSubmit.InvokeAsync(new SubmissionEventArgs(result));
+    }
+
+    public class SubmissionEventArgs : EventArgs
+    {
+        public bool Success { get; private set; }
+
+        public SubmissionEventArgs(bool success)
+        {
+            Success = success;
+        }
+    }
+}

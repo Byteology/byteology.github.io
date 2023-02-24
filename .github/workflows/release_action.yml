@@ -10,25 +10,25 @@ jobs:
     
     steps:
     - name: Setup .NET
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
     
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     # Fills the configuration with some not so secret secrets
     - name: Fill config values
       run: sed -i 's|GD_INQUIRY_URL|${{ secrets.GD_INQUIRY_URL }}|g' src/Byteology.Website/Config.cs
-      
-    - name: Download Tailwind CLI
-      run: |
-        mkdir tailwind
-        echo "${GITHUB_WORKSPACE}/tailwind" >> $GITHUB_PATH
-        curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
-        chmod +x tailwindcss-linux-x64
-        mv tailwindcss-linux-x64 tailwind/tailwindcss
-    
+
+    - name: Setup NodeJS
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install Tailwind CSS
+      run: npm install -D tailwindcss postcss postcss-cli autoprefixer postcss-minify
+
     - name: Publish
       working-directory: src
       run: dotnet publish -c Release -o ../release --nologo

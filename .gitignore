@@ -1,5 +1,9 @@
 bin
 obj
 .vs
+.idea
+**.DotSettings
+**.DotSettings.user
 
-src/Byteology.Website/wwwroot/css/style.css
+/src/Byteology.Website/wwwroot/css/style.css
+/src/Byteology.Website/Styles/Base/scoped-styles.css

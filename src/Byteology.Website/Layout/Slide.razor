@@ -1,0 +1,51 @@
+@using Byteology.Website.Navigation
+@using Ljbc1994.Blazor.IntersectionObserver.Components
+
+<IntersectionObserve>
+    <section @ref="context.Ref.Current"
+             class="slide group transition-slow
+                    @(context.IsIntersecting || _state.InitialRender == true ? "opacity-100" : "opacity-0")
+                    flex flex-col justify-between items-center">
+
+        <div class="group-first:invisible
+                    @(_state.InitialRender == true ? "invisible" : "")
+                    @(context.IsIntersecting && _state.InitialRender == false ? "animate-blink" : "")
+                    w-full h-12 rotate-180
+                    flex justify-center
+                    [&>svg]:h-full">
+            <ChevronIcon/>
+        </div>
+
+        @ChildContent
+
+        @if (IncludeFooter)
+        {
+            <div class="w-full">
+                <PrivacyFooter/>
+            </div>
+        }
+        else
+        {
+            <div class="group-last:invisible
+                    @(_state.InitialRender == true ? "invisible" : "")
+                    @(context.IsIntersecting && _state.InitialRender == false ? "animate-blink" : "")
+                    w-full h-12
+                    flex justify-center
+                    [&>svg]:h-full">
+                <ChevronIcon/>
+            </div>
+        }
+
+    </section>
+</IntersectionObserve>
+
+@code {
+    [Inject]
+    private LayoutStateContainer _state { get; set; } = default!;
+
+    [Parameter]
+    public bool IncludeFooter { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}

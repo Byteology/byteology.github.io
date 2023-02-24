@@ -1,0 +1,33 @@
+<PageTitle>Byteology - @Title</PageTitle>
+<HeadContent>
+
+    <meta property="og:title" content="@Title" />
+    <meta property="og:image" content="https://byteology.net/images/og-image.png" />
+    <meta property="og:type" content="@(Article ? "article" : "website")" />
+    <meta property="og:locale" content="en_GB" />
+
+    @if (!string.IsNullOrEmpty(Description))
+    {
+        <meta property="og:description" content="@Description" />
+        <meta name="description" content="@Description">
+    }
+    @if (Keywords != null)
+    {
+        <meta name="keywords" content="@string.Join(", ", Keywords)">
+    }
+</HeadContent>
+
+@code {
+
+    [Parameter, EditorRequired]
+    public string Title { get; set; } = default!;
+
+    [Parameter]
+    public string? Description { get; set; }
+
+    [Parameter]
+    public string[]? Keywords { get; set; }
+
+    [Parameter]
+    public bool Article { get; set; }
+}

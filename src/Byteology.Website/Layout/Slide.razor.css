@@ -1,0 +1,9 @@
+.slide {
+    @apply w-full;
+    @apply h-full;
+    @apply snap-start;
+    @apply snap-always;
+    @apply overflow-x-hidden;
+    @apply overflow-y-auto;
+    @apply no-scrollbar;
+}

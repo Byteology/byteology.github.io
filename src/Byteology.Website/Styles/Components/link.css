@@ -1,0 +1,14 @@
+@layer components {
+    .link {
+        @apply underline;
+        @apply underline-offset-2;
+        @apply decoration-2;
+        @apply decoration-primary;
+        @apply transition-fast;
+    }
+
+    .link:focus, .link:focus-within, .link:hover {
+        @apply decoration-primary-300;
+        @apply text-primary-300;
+    }
+}

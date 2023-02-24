@@ -1,0 +1,48 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    html, body, #app {
+        @apply w-full;
+        @apply h-full;
+        @apply overflow-hidden;
+    }
+
+    body {
+        @apply bg-dark-900;
+        @apply font-sans;
+        @apply tracking-widest;
+        @apply selection:text-neutral-100;
+        @apply selection:bg-primary-300;
+        @apply text-neutral-100;
+    }
+
+    svg {
+        @apply h-auto;
+    }
+
+    *, :after, :before {
+        @apply relative;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    .uppercase {
+        @apply tracking-[.15em];
+    }
+
+    q:before,
+    blockquote:before {
+        content: open-quote;
+    }
+
+    q:after,
+    blockquote:after {
+        content: close-quote;
+    }
+}

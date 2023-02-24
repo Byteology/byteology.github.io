@@ -1,0 +1,47 @@
+@layer components {
+
+    ol.timeline {
+        counter-reset: timeline-counter;
+        @apply flex;
+        @apply flex-col;
+        @apply gap-y-[1em];
+    }
+
+    ol.timeline > li::before {
+        counter-increment: timeline-counter;
+        content: counter(timeline-counter);
+        overflow-wrap: normal;
+
+        @apply font-bold;
+        @apply text-accent;
+
+        @apply absolute;
+        @apply left-0;
+        @apply scale-y-[0.875];
+    }
+
+    ol.timeline > li {
+        @apply pl-[3em];
+    }
+
+    ol.timeline > li:nth-child(-n+9)::before {
+        content: '0' counter(timeline-counter);
+    }
+
+    ol.timeline > li:last-child::after {
+        @apply hidden;
+    }
+
+    ol.timeline > li::after {
+        content: '';
+
+        @apply absolute;
+        @apply left-[0.875ch];
+        @apply top-[1.375em];
+        @apply w-[2px];
+        @apply h-[calc(100%_-_0.5em)];
+        @apply bg-accent;
+        @apply text-accent;
+    }
+
+}
