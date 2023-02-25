@@ -4,6 +4,7 @@
         @apply surface;
         @apply elevation;
         @apply p-8;
+        @apply mx-auto;
     }
 
 }
