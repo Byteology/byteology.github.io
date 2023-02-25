@@ -4,6 +4,8 @@
         @apply surface-2;
         @apply elevation;
         @apply p-8;
+        @apply -mx-8;
+        @apply sm:mx-0;
     }
 
     .card-sm {
@@ -33,16 +35,16 @@
         @apply mb-0;
     }
 
-    .card-title > .counter {
-        @apply align-middle;
-        @apply text-[1.5em];
-        @apply text-primary;
-        @apply absolute;
+    .card-title {
+        @apply flex;
+        @apply items-center;
+        @apply gap-4;
     }
 
-    .card-title > .counter + * {
-        @apply align-middle;
-        @apply left-[3em];
+    .card-title > .counter {
+        @apply text-[1.5em];
+        @apply text-primary;
+        @apply font-bold;
     }
 
 }

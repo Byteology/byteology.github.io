@@ -7,8 +7,7 @@
     }
 
     .icon-title > *:first-child {
-        @apply h-14;
-        @apply w-auto;
+        flex: 0 0 3.5rem;
     }
 
     .icon-title-sm {
@@ -18,7 +17,6 @@
     }
 
     .icon-title-sm > *:first-child {
-        @apply h-10;
-        @apply w-auto;
+        flex: 0 0 2.5rem;
     }
 }
