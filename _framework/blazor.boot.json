@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Byteology.Website.dll": "sha256-n\/FqQSMb\/uhbjMl+i+Iv7O+9D+3gSwBKR4RCoSCrKlY=",
+      "Byteology.Website.dll": "sha256-uzomUOtXzUizlbabwsSCapvWL1QjqzocJFq\/KImbmlM=",
       "Ljbc1994.Blazor.IntersectionObserver.dll": "sha256-Ai8SJ+xq\/zjyaWJOTluL+XT3p5XFHziMafx7fLVut0I=",
       "Microsoft.AspNetCore.Components.dll": "sha256-9DxSsHCphCuV6ngJdQ25woP5\/+Gt9G\/uQNdNJj0xTqw=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-osO7D+FlPYCmY3dueXEPC4ZrTWu\/j1boI13Yk\/+3CRE=",
