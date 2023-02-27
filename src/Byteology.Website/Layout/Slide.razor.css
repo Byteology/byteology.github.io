@@ -6,4 +6,47 @@
     @apply overflow-x-hidden;
     @apply overflow-y-auto;
     @apply no-scrollbar;
+
+    @apply transition-slow;
+    @apply flex;
+    @apply flex-col;
+    @apply justify-between;
+    @apply items-center;
+
+    @apply opacity-0;
+}
+
+.slide.active {
+    @apply opacity-100;
+}
+
+.slide:first-child > .chevron:first-child {
+    @apply invisible;
+}
+
+.slide:last-child > .chevron:last-child {
+    @apply invisible;
+}
+
+.slide > .chevron.prerendered {
+    @apply invisible;
+}
+
+.slide.active > .chevron {
+    @apply animate-blink;
+}
+
+.slide > .chevron {
+    @apply w-full;
+    @apply h-12;
+    @apply flex;
+    @apply justify-center;
+}
+
+.slide > .chevron:first-child {
+    @apply rotate-180;
+}
+
+.slide > .chevron > svg {
+    @apply h-full;
 }

@@ -1,0 +1,5 @@
+#paper {
+    @apply max-w-3xl;
+    @apply mx-auto;
+    @apply space-y-10;
+}

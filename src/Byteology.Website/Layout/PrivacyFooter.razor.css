@@ -1,0 +1,19 @@
+footer {
+    @apply w-full;
+    @apply h-12;
+    @apply bg-dark-900;
+    @apply border-t;
+    @apply border-dark-100;
+    @apply shadow-md;
+    @apply text-xs;
+    @apply text-neutral-300;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+}
+
+footer > a {
+    @apply transition-fast;
+    @apply underline;
+    @apply hocus:text-accent-300;
+}

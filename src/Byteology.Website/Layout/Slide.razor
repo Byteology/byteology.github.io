@@ -3,16 +3,9 @@
 
 <IntersectionObserve>
     <section @ref="context.Ref.Current"
-             class="slide group transition-slow
-                    @(context.IsIntersecting || _state.InitialRender == true ? "opacity-100" : "opacity-0")
-                    flex flex-col justify-between items-center">
+             class="slide @(context.IsIntersecting || _state.Prerendering ? "active" : "")">
 
-        <div class="group-first:invisible
-                    @(_state.InitialRender == true ? "invisible" : "")
-                    @(context.IsIntersecting && _state.InitialRender == false ? "animate-blink" : "")
-                    w-full h-12 rotate-180
-                    flex justify-center
-                    [&>svg]:h-full">
+        <div class="chevron @(_state.Prerendering ? "prerendered" : "")">
             <ChevronIcon/>
         </div>
 
@@ -20,18 +13,11 @@
 
         @if (IncludeFooter)
         {
-            <div class="w-full">
-                <PrivacyFooter/>
-            </div>
+            <PrivacyFooter/>
         }
         else
         {
-            <div class="group-last:invisible
-                    @(_state.InitialRender == true ? "invisible" : "")
-                    @(context.IsIntersecting && _state.InitialRender == false ? "animate-blink" : "")
-                    w-full h-12
-                    flex justify-center
-                    [&>svg]:h-full">
+            <div class="chevron @(_state.Prerendering? "prerendered" : "")">
                 <ChevronIcon/>
             </div>
         }

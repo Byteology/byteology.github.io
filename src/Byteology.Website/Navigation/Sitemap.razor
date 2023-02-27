@@ -1,9 +1,6 @@
-@inherits StylableComponent
-
 @using Microsoft.AspNetCore.Components.Routing
 
-<div @attributes="@AdditionalAttributes"
-     class="flex flex-col md:flex-row justify-center gap-8 md:gap-16 lg:gap-32 @CssClass">
+<nav class="flex flex-col md:flex-row justify-center gap-8 md:gap-16 lg:gap-32">
 
     <!--suppress RequiredAttributes -->
     <img
@@ -34,7 +31,7 @@
         }
     </div>
 
-</div>
+</nav>
 
 @code {
     [Parameter]

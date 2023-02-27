@@ -24,10 +24,6 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Icons\SoftwareDevelopment\Icon.razor" />
-  </ItemGroup>
-
   <Target Name="PrepareScopedStylesFroPostCss" AfterTargets="BundleScopedCssFiles">
     <Copy SourceFiles="$(IntermediateOutputPath)scopedcss\bundle\$(PackageId).styles.css" DestinationFiles="$(ProjectDir)Styles\Base\scoped-styles.css" />
   </Target>

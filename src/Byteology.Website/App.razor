@@ -1,16 +1,15 @@
 ﻿@using Byteology.Website.Layout
 @using Microsoft.AspNetCore.Components.Routing
 
-<Background>
-    <Router AppAssembly="@typeof(Program).Assembly">
-        <Found Context="routeData">
-            <RouteView RouteData="@routeData" DefaultLayout="typeof(ArticleLayout)"/>
-            <FocusOnNavigate RouteData="@routeData" Selector="#page" />
-        </Found>
-        <NotFound>
-            <LayoutView Layout="typeof(ArticleLayout)">
-                <NotFoundPage/>
-            </LayoutView>
-        </NotFound>
-    </Router>
-</Background>
+<Background />
+<Router AppAssembly="@typeof(Program).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="typeof(PaperLayout)"/>
+        <FocusOnNavigate RouteData="@routeData" Selector="#page" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout="typeof(PaperLayout)">
+            <NotFoundPage/>
+        </LayoutView>
+    </NotFound>
+</Router>

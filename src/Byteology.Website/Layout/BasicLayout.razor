@@ -1,32 +1,19 @@
 ﻿@inherits LayoutComponentBase
 
 @using Byteology.Website.Navigation
-@using Byteology.Website.Inquiry
-@using Byteology.Website.Inquiry.Contacts
 
-<div id="page"
-     tabindex="0"
-     class="page w-full h-full overflow-x-hidden overflow-y-scroll
-            flex flex-col min-h-full cursor:styled-scrollbar"
-     style="@(_state.InitialRender == true ? "overflow: hidden;" : "")">
+<div id="page" class="@(_state.Prerendering ? "prerendered" : "")">
 
-    <div class="flex-[1_0_100%] flex flex-col justify-between
-                @(_fadeIn && _comesFromFullPageScrolling ? getAnimationClass() : "")">
+    <div id="layout" class="@(!_state.NavigationBarRendered ? _fadeInAnimationClass : "")">
 
         <NavBar/>
 
-        <div class="flex-none w-full xm:px-4 md:px-8 lg:px-12
-                @(_fadeIn && !_comesFromFullPageScrolling ? getAnimationClass() : "")">
-            <div class="w-full flex flex-col justify-between items-center gap-y-10 py-10">
-                @Body
-            </div>
-        </div>
+        <main class="@(_state.NavigationBarRendered ? _fadeInAnimationClass : "")">
+            @Body
+        </main>
 
         <PrivacyFooter />
 
     </div>
-</div>
 
-@code {
-    private string getAnimationClass() => _altFadeInAnimation ? "animate-fade-in-fast-alt" : "animate-fade-in-fast";
-}
+</div>

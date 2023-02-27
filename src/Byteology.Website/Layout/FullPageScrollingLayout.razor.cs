@@ -4,8 +4,7 @@ using Microsoft.JSInterop;
 
 public partial class FullPageScrollingLayout : LayoutComponentBase, IDisposable
 {
-    private bool _fadeIn;
-    private bool _altFadeInAnimation;
+    private string? _fadeInAnimationClass;
 
     [Inject]
     private LayoutStateContainer _state { get; set; } = default!;
@@ -17,11 +16,10 @@ public partial class FullPageScrollingLayout : LayoutComponentBase, IDisposable
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        _state.InitialRender = _state.InitialRender == null;
-        _fadeIn = !_state.InitialRender.Value;
-        _state.FullPageScrolling = true;
-    }
 
+        if (!_state.Prerendering)
+            _fadeInAnimationClass = "fade-in";
+    }
     protected override void OnAfterRender(bool firstRender)
     {
         base.OnAfterRender(firstRender);
@@ -31,15 +29,19 @@ public partial class FullPageScrollingLayout : LayoutComponentBase, IDisposable
         if (firstRender)
             _jsRuntime.InvokeVoid("fps.start");
 
-        if (_state.InitialRender == true)
-        {
-            _state.InitialRender = false;
+        bool shouldRerender = _state.Prerendering;
+        _state.OnLayoutChanged(false);
+
+        if (shouldRerender)
             StateHasChanged();
-        }
         else
         {
-            _fadeIn = true;
-            _altFadeInAnimation = !_altFadeInAnimation;
+            _fadeInAnimationClass = _fadeInAnimationClass switch
+            {
+                "fade-in" => "fade-in-alt",
+                "fade-in-alt" => "fade-in",
+                _ => "fade-in"
+            };
         }
     }
 
