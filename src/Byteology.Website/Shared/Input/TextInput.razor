@@ -1,25 +1,10 @@
-﻿@using Microsoft.AspNetCore.Components.Forms
+﻿@inherits Microsoft.AspNetCore.Components.Forms.InputText
 
-@inherits InputText
-
-<div @attributes=AdditionalAttributes class=@CssClass>
-    <label for="@_id" class="font-bold text-sm lg:text-base">@Label</label>
-    <input
+<div @attributes="AdditionalAttributes" class="@CssClass">
+    <label for="@_id">@Label</label>
+    <input id="@_id" type="text" placeholder="@Placeholder"
         @bind="CurrentValueAsString"
-        @bind:event="onchange"
-        id="@_id"
-        type="text"
-        placeholder="@Placeholder"
-        class="
-            block w-full overflow-hidden pl-4
-            transition-fast
-            bg-transparent text-sm lg:text-base
-            border-b-2 border-primary
-            placeholder:italic
-            hover:border-primary-300
-            [.invalid_>_&]:border-error
-            focus:!border-primary-300 
-            placeholder:text-neutral-200" />
+        @bind:event="onchange"/>
 
 </div>
 

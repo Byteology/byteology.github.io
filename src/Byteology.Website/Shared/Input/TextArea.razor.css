@@ -1,0 +1,57 @@
+div > label {
+    @apply font-bold;
+    @apply text-sm;
+    @apply lg:text-base;
+}
+
+div > div {
+    @apply grid;
+    @apply mt-2;
+}
+
+div > div:after {
+    @apply whitespace-pre-wrap;
+    @apply invisible;
+    @apply pl-4;
+    @apply row-start-1;
+    @apply row-end-2;
+    @apply col-start-1;
+    @apply col-end-1;
+    @apply text-sm;
+    @apply md:text-base;
+    @apply border-b-2;
+    content: attr(data-replicated-value) ' ';
+}
+
+div > div > textarea {
+    @apply resize-none;
+    @apply overflow-hidden;
+    @apply pl-4;
+    @apply transition-fast;
+    @apply row-start-1;
+    @apply row-end-2;
+    @apply col-start-1;
+    @apply col-end-1;
+    @apply bg-transparent;
+    @apply text-sm;
+    @apply md:text-base;
+    @apply border-b-2;
+    @apply border-primary;
+}
+
+div > div > textarea:hover {
+    @apply border-primary-300;
+}
+
+div > div > textarea:focus {
+    @apply !border-primary-300;
+}
+
+div.invalid > div > textarea {
+    @apply border-error;
+}
+
+div > textarea::placeholder {
+    @apply italic;
+    @apply text-neutral-200;
+}
