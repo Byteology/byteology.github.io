@@ -1,3 +1,7 @@
+nav {
+    @apply flex;
+}
+
 nav ::deep a {
     @apply transition-fast;
     @apply hocus:text-accent-300;
@@ -6,14 +10,15 @@ nav ::deep a {
     @apply active:fill-accent;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 46rem) {
     nav {
-        @apply overflow-x-hidden;
-        @apply overflow-y-auto;
-        @apply no-scrollbar;
+        @apply flex-col;
+        @apply flex-wrap;
+        @apply content-center;
+        @apply gap-8;
     }
 
-    nav > a:first-child > img {
+    nav > a > img {
         @apply h-16;
     }
 
@@ -38,36 +43,66 @@ nav ::deep a {
         @apply gap-1;
     }
 
-    nav ::deep > section > section > a {
-        @apply transition-fast;
-        @apply hocus:text-accent-300;
-        @apply active:text-accent;
-    }
 }
 
-@media not all and (max-width: 40rem) {
-    nav {
+@media not all and (max-width: 46rem) {
+    nav:not(.detached) {
         @apply flex-1;
-        @apply flex;
         @apply items-center;
         @apply justify-end;
         @apply gap-8;
     }
 
-    #logo{
+    nav:not(.detached) > a{
         @apply hidden;
     }
 
-    nav > section:first-of-type {
+    nav:not(.detached) > section:first-of-type {
         @apply expanded;
     }
 
-    nav > section:not(:first-of-type) {
+    nav:not(.detached) > section:not(:first-of-type) {
         @apply collapsed;
     }
 
-    nav > section:first-of-type > section ::deep > a:last-child {
+    nav:not(.detached) > section:first-of-type > section ::deep > a:last-child {
         @apply hidden;
+    }
+
+    nav.detached {
+        @apply flex-nowrap;
+        @apply justify-center;
+        @apply gap-8;
+    }
+
+    nav.detached > a {
+        @apply mr-8;
+    }
+
+    nav.detached > a > img {
+        @apply h-24;
+        content: url("/images/logo-portrait.svg");
+    }
+
+    nav.detached > section {
+        @apply flex;
+        @apply flex-col;
+        @apply gap-1;
+    }
+
+    nav.detached ::deep > section > a {
+        @apply uppercase;
+        @apply font-bold;
+        @apply text-accent;
+        @apply mb-2;
+        @apply pointer-events-none;
+    }
+
+    nav.detached > section > section {
+        @apply flex;
+        @apply flex-col;
+        @apply items-start;
+        @apply gap-1;
     }
 }
 

@@ -2,7 +2,7 @@ namespace Byteology.Website.Navigation;
 
 using Microsoft.JSInterop;
 
-public partial class NavBar : ComponentBase
+public partial class NavigationBar : ComponentBase
 {
 	[Inject]
 	private IJSRuntime _jsRuntimeAsync { get; set; } = default!;

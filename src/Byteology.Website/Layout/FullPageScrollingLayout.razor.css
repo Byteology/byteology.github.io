@@ -29,4 +29,9 @@
     @apply border-y;
     @apply border-dark-100;
     @apply shadow-md;
+    @apply mb-12;
+}
+
+#page ::deep > .slide:last-child > footer {
+    @apply shrink-0;
 }

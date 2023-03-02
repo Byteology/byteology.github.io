@@ -1,8 +1,8 @@
 @using Microsoft.AspNetCore.Components.Routing
 
-<nav id="sitemap" @onclick:stopPropagation="true">
+<nav @onclick:stopPropagation="true" class="@(Detached ? "detached" : "")">
 
-    <a id="logo" href="/"><img src="/images/logo-landscape.svg" alt="Byteology"></a>
+    <a href="/"><img src="/images/logo-landscape.svg" alt="Byteology"></a>
 
     <section>
         <NavLink tabindex="-1" Match="NavLinkMatch.Prefix" href="/">Company</NavLink>
@@ -34,10 +34,3 @@
         </section>
     </section>
 </nav>
-
-@code {
-
-    [Parameter]
-    public bool Detached { get; set; }
-
-}

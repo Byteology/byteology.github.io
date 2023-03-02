@@ -1,4 +1,4 @@
-@media (max-width: 40rem) {
+@media (max-width: 46rem) {
     header {
         @apply sticky;
         @apply z-10;
@@ -87,14 +87,16 @@
     }
 
     #sitemap-layout ::deep > nav {
-        @apply inline-block;
+        @apply inline-flex;
         @apply h-full;
-        @apply space-y-8;
         @apply bg-dark-900;
         @apply border-r;
         @apply border-dark-100;
         @apply shadow-md;
         @apply p-8;
+        @apply overflow-x-hidden;
+        @apply overflow-y-auto;
+        @apply no-scrollbar;
     }
 
     #hamburger:not(:checked) ~ #sitemap-layout ::deep > nav {
@@ -107,7 +109,7 @@
     }
 }
 
-@media not all and (max-width: 40rem) {
+@media not all and (max-width: 46rem) {
     header {
         @apply sticky;
         @apply z-10;
