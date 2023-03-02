@@ -1,0 +1,16 @@
+<section>
+    @foreach (Contact contact in Contacts)
+    {
+        <p class="name">@contact.Name</p>
+        <p class="title">@contact.Title</p>
+        @foreach (ContactDetail detail in contact.Details)
+        {
+            <ContactDetailComponent Detail="detail" />
+        }
+
+        @if (contact != Contacts.Last())
+        {
+            <hr/>
+        }
+    }
+</section>

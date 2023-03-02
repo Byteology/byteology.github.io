@@ -1,0 +1,39 @@
+section {
+    @apply grid;
+    @apply grid-cols-[max-content_1fr];
+    @apply grid-flow-col-dense;
+    @apply auto-rows-max;
+    @apply gap-y-1;
+    @apply gap-x-8;
+    @apply items-baseline;
+    @apply md:flex;
+    @apply md:flex-col;
+    @apply md:gap-y-0;
+}
+
+section ::deep > * {
+    @apply col-start-2;
+}
+
+section > hr {
+    @apply h-4;
+    @apply col-start-1;
+    @apply col-end-3;
+}
+
+section > .name {
+    @apply col-start-1;
+    @apply text-base;
+    @apply lg:text-lg;
+    @apply text-accent;
+    @apply font-bold;
+}
+
+section > .title {
+    @apply col-start-1;
+    @apply text-xs;
+    @apply lg:text-sm;
+    @apply text-neutral-100;
+    @apply font-bold;
+    @apply md:mb-2;
+}

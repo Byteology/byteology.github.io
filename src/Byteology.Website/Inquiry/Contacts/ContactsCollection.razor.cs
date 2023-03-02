@@ -1,7 +1,10 @@
 namespace Byteology.Website.Inquiry.Contacts;
 
-public static class ContactCollection
+public partial class ContactsCollection : ComponentBase
 {
+	[Parameter, EditorRequired]
+	public Contact[] Contacts { get; set; } = default!;
+
 	public static Contact Founder { get; } =
 		new(Name: "Tsvetan Igov",
 		    Title: "Founder",
