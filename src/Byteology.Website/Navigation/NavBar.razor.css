@@ -1,4 +1,4 @@
-@media (max-width: 40em) {
+@media (max-width: 40rem) {
     header {
         @apply sticky;
         @apply z-10;
@@ -94,7 +94,6 @@
         @apply border-r;
         @apply border-dark-100;
         @apply shadow-md;
-        @apply transition-normal;
         @apply p-8;
     }
 
@@ -103,11 +102,12 @@
     }
 
     #hamburger:checked ~ #sitemap-layout ::deep > nav {
+        @apply transition-normal;
         @apply translate-x-0;
     }
 }
 
-@media not all and (max-width: 40em) {
+@media not all and (max-width: 40rem) {
     header {
         @apply sticky;
         @apply z-10;
@@ -164,5 +164,9 @@
 
     #sitemap-layout {
         @apply flex-1;
+    }
+
+    #sitemap-layout ::deep > nav {
+        @apply visible;
     }
 }

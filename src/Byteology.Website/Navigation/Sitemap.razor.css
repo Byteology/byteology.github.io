@@ -6,7 +6,7 @@ nav ::deep a {
     @apply active:fill-accent;
 }
 
-@media (max-width: 40em) {
+@media (max-width: 40rem) {
     nav {
         @apply overflow-x-hidden;
         @apply overflow-y-auto;
@@ -45,7 +45,7 @@ nav ::deep a {
     }
 }
 
-@media not all and (max-width: 40em) {
+@media not all and (max-width: 40rem) {
     nav {
         @apply flex-1;
         @apply flex;
