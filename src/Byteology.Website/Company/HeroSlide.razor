@@ -1,29 +1,36 @@
 @using Byteology.Website.Layout
+@using Byteology.Website.Navigation
 
 <Slide>
-    <div class="grow w-full max-w-7xl flex flex-col md:flex-row items-center lg:justify-between">
+    <article>
+        <aside>
+            <img src="/images/logo-portrait.svg" alt="Byteology - a moment of science"/>
+        </aside>
 
-        <div class="grow p-8 -mt-12
-                    md:mt-0 md:grow-0 md:w-1/2 lg:w-[45%]
-                    md:self-start md:sticky md:top-1/2 md:-translate-y-1/2
-                    flex items-center justify-center">
-            <img class="w-1/2 max-w-xs
-                        object-center object-contain"
-                 src="/images/logo-portrait.svg"
-                 alt="Byteology - a moment of science"/>
-        </div>
+        <section>
+            <div>
+                <p>
+                    By introducing <strong>scientific generalization</strong> to software engineering,
+                    <strong>Byteology</strong> helps businesses tackle software complexity and grow.
+                </p>
 
-        <div class="w-full md:w-1/2 md:pr-8 lg:w-[45%]">
-            <div class="panel md:max-w-xl">
-                @ChildContent
+                <ol>
+                    <li>
+                        We <strong>gather and detail</strong> the information defining your domain
+                    </li>
+                    <li>
+                        We derive <strong>actionable data and insights</strong>
+                    </li>
+                    <li>
+                        We design and implement <strong>tailored solutions</strong>
+                    </li>
+                    <li>
+                        We help your business <strong>scale and grow</strong>
+                    </li>
+                </ol>
+
+                <a href="@(Sitemap.GetRouteOf<MissionPage>())">Learn More</a>
             </div>
-        </div>
-    </div>
+        </section>
+    </article>
 </Slide>
-
-@code {
-
-    [Parameter]
-    public RenderFragment? ChildContent { get; set; }
-
-}
