@@ -12,7 +12,7 @@
         <p class="text-sm md:text-base">
             @Description
         </p>
-        <a class="button p-1" href="@(RouteDetector.Match(PageLink))">Learn More</a>
+        <a class="button p-1" href="@(Sitemap.GetRouteOf(PageLink))">Learn More</a>
     </div>
     <div class="service-card-sidebar surface-2 hidden sm:flex justify-center basis-0 basis-0 grow p-4 md:p-8">
         @Icon
