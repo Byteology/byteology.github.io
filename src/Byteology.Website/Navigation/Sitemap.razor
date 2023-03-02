@@ -1,39 +1,36 @@
 @using Microsoft.AspNetCore.Components.Routing
 
-<nav class="flex flex-col md:flex-row justify-center gap-8 md:gap-16 lg:gap-32">
+<nav id="sitemap" @onclick:stopPropagation="true">
 
-    <!--suppress RequiredAttributes -->
-    <img
-        class="flex-none w-auto md:w-32 h-16 md:h-auto md:self-start
-               bg-center bg-contain
-               content-[url(/images/logo-landscape.svg)]
-               md:content-[url(/images/logo-portrait.svg)]"
-        alt="Byteology"/>
+    <a id="logo" href="/"><img src="/images/logo-landscape.svg" alt="Byteology"></a>
 
-    <div class="flex flex-col md:flex-row flex-none justify-evenly gap-8 md:gap-16">
-        @foreach (SitemapData.Section section in SitemapData.Sections)
-        {
-            <div class="flex flex-col text-base gap-1 items-start">
-                <p class="uppercase font-bold text-accent text-base mb-2">@(section.Title)</p>
+    <section>
+        <NavLink tabindex="-1" Match="NavLinkMatch.Prefix" href="/">Company</NavLink>
+        <section>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/mission">Mission</NavLink>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/careers">Careers</NavLink>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/contacts">Contacts</NavLink>
+        </section>
+    </section>
+    <section>
+        <NavLink tabindex="-1" Match="NavLinkMatch.Prefix" href="/services">Services</NavLink>
+        <section>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/services/software-development">Software Development</NavLink>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/services/research-and-poc">Research & PoC</NavLink>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/services/migration-to-microservices">Migration to Microservices</NavLink>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/services/event-sourcing">Event Sourcing</NavLink>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/services/education-and-training">Education and Training</NavLink>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/services/interviewing-as-a-service">Interviewing as a Service</NavLink>
+        </section>
+    </section>
 
-                @foreach (SitemapData.Link item in section.Items)
-                {
-                    @if (item.IsHome() && RemoveHomeLink)
-                        continue;
-
-                    <NavLink class="transition-fast hocus:text-accent-300"
-                             href="@item.Url"
-                             Match="NavLinkMatch.All">
-                        @item.Title
-                    </NavLink>
-                }
-            </div>
-        }
-    </div>
-
+    <section>
+        <NavLink tabindex="-1" Match="NavLinkMatch.Prefix" href="/thoughts">Thoughts</NavLink>
+        <section>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/thoughts/software-development">Software Development</NavLink>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/thoughts/research-and-poc">Recruitment</NavLink>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/thoughts/migration-to-microservices">Trainings</NavLink>
+            <NavLink tabindex="-1" Match="NavLinkMatch.All" href="/thoughts/migration-to-microservices">Random</NavLink>
+        </section>
+    </section>
 </nav>
-
-@code {
-    [Parameter]
-    public bool RemoveHomeLink { get; set; }
-}

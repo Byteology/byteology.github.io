@@ -1,0 +1,144 @@
+nav ::deep a {
+    @apply transition-fast;
+    @apply hocus:text-accent-300;
+    @apply active:text-accent;
+    @apply hocus:fill-accent-300;
+    @apply active:fill-accent;
+}
+
+@media (max-width: 40em) {
+    nav {
+        @apply overflow-x-hidden;
+        @apply overflow-y-auto;
+        @apply no-scrollbar;
+    }
+
+    nav > a:first-child > img {
+        @apply h-16;
+    }
+
+    nav > section {
+        @apply flex;
+        @apply flex-col;
+        @apply gap-1;
+    }
+
+    nav ::deep > section > a {
+        @apply uppercase;
+        @apply font-bold;
+        @apply text-accent;
+        @apply mb-2;
+        @apply pointer-events-none;
+    }
+
+    nav > section > section {
+        @apply flex;
+        @apply flex-col;
+        @apply items-start;
+        @apply gap-1;
+    }
+
+    nav ::deep > section > section > a {
+        @apply transition-fast;
+        @apply hocus:text-accent-300;
+        @apply active:text-accent;
+    }
+}
+
+@media not all and (max-width: 40em) {
+    nav {
+        @apply flex-1;
+        @apply flex;
+        @apply items-center;
+        @apply justify-end;
+        @apply gap-8;
+    }
+
+    #logo{
+        @apply hidden;
+    }
+
+    nav > section:first-of-type {
+        @apply expanded;
+    }
+
+    nav > section:not(:first-of-type) {
+        @apply collapsed;
+    }
+
+    nav > section:first-of-type > section ::deep > a:last-child {
+        @apply hidden;
+    }
+}
+
+@layer utilities {
+    .expanded ::deep > section {
+        @apply flex;
+        @apply gap-8;
+    }
+
+   .expanded ::deep > a {
+        @apply hidden;
+    }
+
+    .expanded ::deep > section > a {
+        line-height: 3rem;
+    }
+
+    .collapsed ::deep {
+        @apply cursor-pointer;
+    }
+
+    .collapsed ::deep > a {
+        @apply pointer-events-none;
+        line-height: 3rem;
+    }
+
+    .collapsed ::deep > a::after {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' fill='%23fff' d='M15.3 10.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3E%3C/svg%3E%0A");
+        @apply inline-block;
+        @apply h-5;
+        @apply w-5;
+        @apply -mr-2;
+        @apply -bottom-1;
+    }
+
+    .collapsed ::deep > a.active:after {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' fill='%2361c9ef' d='M15.3 10.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3E%3C/svg%3E%0A");
+    }
+
+    .collapsed:hover ::deep > a::after,
+    .collapsed:focus ::deep > a::after {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' fill='%2396def8' d='M15.3 10.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3E%3C/svg%3E%0A");
+    }
+
+    .collapsed ::deep > section {
+        @apply invisible;
+        @apply flex;
+        @apply absolute;
+        @apply flex-col;
+        @apply gap-2;
+        @apply top-12;
+        @apply -left-4;
+
+        @apply bg-dark-700;
+        @apply border;
+        @apply border-dark-100;
+        @apply shadow-md;
+        @apply opacity-0;
+        @apply transition-fast;
+        @apply transition-opacity;
+        @apply p-4;
+    }
+
+    .collapsed:focus ::deep > a,
+    .collapsed:hover ::deep > a {
+        @apply text-accent-300;
+    }
+
+    .collapsed:focus ::deep > section,
+    .collapsed:hover ::deep > section {
+        @apply visible;
+        @apply opacity-100;
+    }
+}

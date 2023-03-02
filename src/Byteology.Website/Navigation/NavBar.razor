@@ -1,2 +1,22 @@
-<NavBarSmall/>
-<NavBarLarge/>
+@using Microsoft.AspNetCore.Components.Routing
+
+<header>
+    <a href="/" tabindex="-1"><img src="/images/icon.png" alt="Byteology"></a>
+
+    <input id="hamburger" type="checkbox" title="menu">
+    <label for="hamburger">
+        <HamburgerIcon/>
+        <CloseIcon/>
+    </label>
+
+    <div id="sitemap-layout"
+         @onclick=onClickOutside
+         @ontouchstart=onTouchStart
+         @ontouchmove=onTouchMove>
+
+        <Sitemap />
+
+    </div>
+
+    <a href="/contacts">Contact Us</a>
+</header>
