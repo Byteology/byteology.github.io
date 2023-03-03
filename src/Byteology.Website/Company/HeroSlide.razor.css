@@ -1,4 +1,4 @@
-article {
+b-hero-layout {
     @apply grow;
     @apply w-full;
     @apply max-w-7xl;
@@ -33,32 +33,33 @@ aside > img {
     @apply object-contain;
 }
 
-section {
+b-hero-content-side {
+    @apply block;
     @apply w-full;
     @apply md:w-1/2;
     @apply md:pr-8;
     @apply lg:w-[45%];
 }
 
-section > div {
+article {
     @apply panel;
     @apply md:max-w-xl;
     @apply space-y-8;
 }
 
-section > div > p {
+article > p {
     @apply styled-content;
     @apply text-lg;
     @apply lg:text-xl;
     @apply font-bold;
 }
 
-section > div > ol {
+article > ol {
     @apply timeline;
     @apply text-sm;
     @apply md:text-base;
 }
 
-section > div > a {
+article > a {
     @apply button;
 }

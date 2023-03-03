@@ -1,31 +1,35 @@
-#inquiry-content,
-#success-lightbox,
-#error-lightbox {
+b-inquiry {
+    @apply block;
+}
+
+b-inquiry-content,
+b-inquiry-success,
+b-inquiry-error {
     @apply hidden;
     @apply max-w-md;
     @apply md:max-w-4xl;
 }
 
-#inquiry.initial > #inquiry-content {
+b-inquiry.initial > b-inquiry-content {
     @apply flex;
 }
 
-#inquiry.not-submitted > #inquiry-content {
-    @apply flex;
-    @apply animate-fade-in-fast;
-}
-
-#inquiry.success > #success-lightbox {
+b-inquiry.not-submitted > b-inquiry-content {
     @apply flex;
     @apply animate-fade-in-fast;
 }
 
-#inquiry.error > #error-lightbox {
+b-inquiry.success > b-inquiry-success {
     @apply flex;
     @apply animate-fade-in-fast;
 }
 
-#inquiry-content {
+b-inquiry.error > b-inquiry-error {
+    @apply flex;
+    @apply animate-fade-in-fast;
+}
+
+b-inquiry-content {
     @apply panel;
     @apply p-0;
 
@@ -33,29 +37,29 @@
     @apply md:flex-row;
 }
 
-#inquiry-content > aside {
+b-inquiry-content > aside {
     @apply surface-2;
     @apply p-8;
     @apply styled-content;
     flex: 3 0 0;
 }
 
-#inquiry-content ::deep > *:last-child {
+b-inquiry-content ::deep > *:last-child {
     @apply flex;
     @apply p-8;
     @apply items-center;
     flex: 4 0 0;
 }
 
-#success-lightbox,
-#error-lightbox {
+b-inquiry-success,
+b-inquiry-error {
     @apply flex-col;
     @apply gap-4;
     @apply panel;
 }
 
-#success-lightbox > h2,
-#error-lightbox > h2 {
+b-inquiry-success > h2,
+b-inquiry-error > h2 {
     @apply text-lg;
     @apply lg:text-xl;
     @apply font-bold;
@@ -63,14 +67,14 @@
     @apply uppercase;
 }
 
-#success-lightbox > h2 {
+b-inquiry-success > h2 {
     @apply text-accent;
 }
 
-#error-lightbox > h2 {
+b-inquiry-error > h2 {
     @apply text-error;
 }
 
-#error-lightbox > button {
+b-inquiry-error > button {
     @apply button;
 }

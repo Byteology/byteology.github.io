@@ -1,4 +1,4 @@
-section {
+b-services {
     @apply grid;
     @apply grid-cols-1;
     @apply lg:grid-cols-2;
@@ -7,6 +7,6 @@ section {
     @apply lg:px-8;
 }
 
-section ::deep > *:nth-child(odd) aside {
+b-services ::deep > *:nth-child(odd) aside {
     @apply lg:order-first;
 }

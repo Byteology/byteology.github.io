@@ -1,4 +1,5 @@
-#page {
+b-viewport {
+    @apply block;
     @apply w-full;
     @apply h-full;
     @apply overflow-x-hidden;
@@ -9,7 +10,7 @@
     @apply no-scrollbar;
 }
 
-#page.prerendered {
+b-viewport.prerendered {
     @apply overflow-hidden;
 }
 
@@ -21,7 +22,7 @@
     @apply animate-fade-in-fast-alt;
 }
 
-#page ::deep > .slide:last-child > nav {
+b-viewport ::deep > b-slide:last-child > nav {
     @apply w-full;
     @apply p-6;
     @apply md:p-8;
@@ -32,6 +33,6 @@
     @apply mb-12;
 }
 
-#page ::deep > .slide:last-child > footer {
+b-viewport ::deep > b-slide:last-child > footer {
     @apply shrink-0;
 }

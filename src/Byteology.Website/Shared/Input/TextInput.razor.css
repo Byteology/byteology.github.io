@@ -4,6 +4,10 @@ label {
     @apply lg:text-base;
 }
 
+b-input {
+    @apply block;
+}
+
 input {
     @apply block;
     @apply w-full;
@@ -25,7 +29,7 @@ input:focus {
     @apply !border-primary-300;
 }
 
-.invalid > input {
+b-input.invalid > input {
     @apply border-error;
 }
 

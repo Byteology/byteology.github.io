@@ -67,7 +67,7 @@
         @apply opacity-100;
     }
 
-    #sitemap-layout {
+    b-sitemap-overlay {
         @apply fixed;
         @apply left-0;
         @apply top-12;
@@ -76,17 +76,17 @@
         @apply transition-normal;
     }
 
-    #hamburger:not(:checked) ~ #sitemap-layout {
+    #hamburger:not(:checked) ~ b-sitemap-overlay {
         @apply backdrop-blur-none;
         @apply invisible;
     }
 
-    #hamburger:checked ~ #sitemap-layout {
+    #hamburger:checked ~ b-sitemap-overlay {
         @apply backdrop-blur-sm;
         @apply visible;
     }
 
-    #sitemap-layout ::deep > nav {
+    b-sitemap-overlay ::deep > nav {
         @apply inline-flex;
         @apply h-full;
         @apply bg-dark-900;
@@ -99,11 +99,11 @@
         @apply no-scrollbar;
     }
 
-    #hamburger:not(:checked) ~ #sitemap-layout ::deep > nav {
+    #hamburger:not(:checked) ~ b-sitemap-overlay ::deep > nav {
         @apply -translate-x-full;
     }
 
-    #hamburger:checked ~ #sitemap-layout ::deep > nav {
+    #hamburger:checked ~ b-sitemap-overlay ::deep > nav {
         @apply transition-normal;
         @apply translate-x-0;
     }
@@ -164,11 +164,12 @@
         @apply hidden;
     }
 
-    #sitemap-layout {
+    b-sitemap-overlay {
+        @apply block;
         @apply flex-1;
     }
 
-    #sitemap-layout ::deep > nav {
+    b-sitemap-overlay ::deep > nav {
         @apply visible;
     }
 }

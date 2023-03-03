@@ -2,7 +2,7 @@
 @using Microsoft.AspNetCore.Components.Forms
 @using Byteology.Website.Inquiry.Service
 
-<div>
+<b-inquiry-form>
     <EditForm Model="_inquiryData" OnValidSubmit="onSubmit">
         <DataAnnotationsValidator />
         <TextInput Label="Name" Placeholder="John Doe" @bind-Value="_inquiryData.Name" autocomplete="name" />
@@ -13,4 +13,4 @@
         <TextInput Label="Honeycomb" Placeholder="Honeycomb" @bind-Value=_inquiryData.Honeycomb class="hidden" />
         <button type="submit">Let's talk</button>
     </EditForm>
-</div>
+</b-inquiry-form>

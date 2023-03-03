@@ -1,9 +1,9 @@
-div {
+b-checkbox {
     @apply flex;
     @apply gap-4;
 }
 
-div > input {
+b-checkbox > input {
     @apply appearance-none;
     @apply text-base;
     @apply flex-none;
@@ -16,20 +16,20 @@ div > input {
     @apply cursor-pointer;
 }
 
-div > input:hover {
+b-checkbox > input:hover {
     @apply border-primary-300;
 
 }
 
-div > input:focus {
+b-checkbox > input:focus {
     @apply !border-primary-300;
 }
 
-div.invalid > input {
+b-checkbox.invalid > input {
     @apply border-error;
 }
 
-div > input:before {
+b-checkbox > input:before {
     content: "";
     @apply inline-block;
     @apply w-[40%];
@@ -41,11 +41,11 @@ div > input:before {
     @apply rotate-45;
 }
 
-div > input:checked:before {
+b-checkbox > input:checked:before {
     @apply border-b-2;
     @apply border-r-2;
 }
 
-div > label {
+b-checkbox > label {
     @apply cursor-pointer;
 }

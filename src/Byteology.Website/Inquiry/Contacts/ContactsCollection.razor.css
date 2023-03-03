@@ -1,4 +1,4 @@
-section {
+b-contacts {
     @apply grid;
     @apply grid-cols-[max-content_1fr];
     @apply grid-flow-col-dense;
@@ -11,17 +11,18 @@ section {
     @apply md:gap-y-0;
 }
 
-section ::deep > * {
+b-contacts ::deep > * {
     @apply col-start-2;
 }
 
-section > hr {
+b-contacts > hr {
     @apply h-4;
     @apply col-start-1;
     @apply col-end-3;
 }
 
-section > .name {
+b-name {
+    @apply block;
     @apply col-start-1;
     @apply text-base;
     @apply lg:text-lg;
@@ -29,7 +30,8 @@ section > .name {
     @apply font-bold;
 }
 
-section > .title {
+b-title {
+    @apply block;
     @apply col-start-1;
     @apply text-xs;
     @apply lg:text-sm;

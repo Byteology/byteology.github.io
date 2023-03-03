@@ -9,14 +9,14 @@ aside {
     @apply md:p-8;
 }
 
-section {
+b-service-card {
     @apply panel;
     @apply p-0;
     @apply flex;
     @apply max-w-xl;
 }
 
-section > div {
+article {
     @apply p-4;
     @apply lg:px-8;
     @apply basis-0;
@@ -27,7 +27,7 @@ section > div {
     @apply justify-between;
 }
 
-section > div > h2 {
+article > h2 {
     @apply text-sm;
     @apply md:text-base;
     @apply font-bold;
@@ -36,15 +36,16 @@ section > div > h2 {
     @apply icon-title;
 }
 
-section ::deep > div > h2 > *:first-child {
+article ::deep > h2 > *:first-child {
     @apply sm:hidden;
 }
 
-section > div > p {
+article > p {
     @apply text-sm;
     @apply md:text-base;
 }
-section > div > a {
+
+article > a {
     @apply button;
     @apply p-1;
 }

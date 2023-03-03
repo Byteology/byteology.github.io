@@ -1,13 +1,13 @@
 ﻿@inherits Microsoft.AspNetCore.Components.Forms.InputTextArea
 
-<div @attributes="AdditionalAttributes" class="@CssClass">
+<b-textarea @attributes="AdditionalAttributes" class="@CssClass">
     <label for="@_id">@Label</label>
 
-    <div data-replicated-value=@_value >
+    <b-textarea-wrapper data-replicated-value=@_value >
         <textarea id="@_id" placeholder="@Placeholder" rows="1"
                 @bind="CurrentValueAsString"
                 @bind:event="onchange"
                 @oninput="onValueChanged">
         </textarea>
-    </div>
-</div>
+    </b-textarea-wrapper>
+</b-textarea>

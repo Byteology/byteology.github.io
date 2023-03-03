@@ -1,4 +1,4 @@
-.slide {
+b-slide {
     @apply w-full;
     @apply h-full;
     @apply snap-start;
@@ -16,37 +16,33 @@
     @apply opacity-0;
 }
 
-.slide.active {
+b-slide.active {
     @apply opacity-100;
 }
 
-.slide:first-child > .chevron:first-child {
+b-slide:first-child > b-chevron:first-child {
     @apply invisible;
 }
 
-.slide:last-child > .chevron:last-child {
+b-slide:last-child > b-chevron:last-child {
     @apply invisible;
 }
 
-.slide > .chevron.prerendered {
-    @apply invisible;
-}
-
-.slide.active > .chevron {
-    @apply animate-blink;
-}
-
-.slide > .chevron {
+b-chevron {
     @apply w-full;
     @apply h-12;
     @apply flex;
     @apply justify-center;
 }
 
-.slide > .chevron:first-child {
-    @apply rotate-180;
+b-chevron.prerendered {
+    @apply invisible;
 }
 
-.slide > .chevron > svg {
-    @apply h-full;
+b-slide.active > b-chevron {
+    @apply animate-blink;
+}
+
+b-chevron:first-child {
+    @apply rotate-180;
 }

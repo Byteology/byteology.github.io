@@ -1,13 +1,11 @@
-@using Byteology.Website.Navigation
 @using Ljbc1994.Blazor.IntersectionObserver.Components
 
 <IntersectionObserve>
-    <section @ref="context.Ref.Current"
-             class="slide @(context.IsIntersecting || _state.Prerendering ? "active" : "")">
+    <b-slide @ref="context.Ref.Current" class="@(context.IsIntersecting || _state.Prerendering ? "active" : "")">
 
-        <div class="chevron @(_state.Prerendering ? "prerendered" : "")">
+        <b-chevron class="@(_state.Prerendering ? "prerendered" : "")">
             <ChevronIcon/>
-        </div>
+        </b-chevron>
 
         @ChildContent
 
@@ -17,21 +15,10 @@
         }
         else
         {
-            <div class="chevron @(_state.Prerendering? "prerendered" : "")">
+            <b-chevron class="@(_state.Prerendering? "prerendered" : "")">
                 <ChevronIcon/>
-            </div>
+            </b-chevron>
         }
 
-    </section>
+    </b-slide>
 </IntersectionObserve>
-
-@code {
-    [Inject]
-    private LayoutStateContainer _state { get; set; } = default!;
-
-    [Parameter]
-    public bool IncludeFooter { get; set; }
-
-    [Parameter]
-    public RenderFragment? ChildContent { get; set; }
-}

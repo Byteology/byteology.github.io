@@ -1,21 +1,25 @@
-div ::deep > form {
+b-inquiry-form {
+    @apply block;
+}
+
+b-inquiry-form ::deep > form {
     @apply md:content-center;
     @apply grid;
     @apply grid-cols-2;
     @apply gap-8;
 }
 
-div ::deep > form > *:nth-child(1),
-div ::deep > form > *:nth-child(2) {
+b-inquiry-form ::deep > form > *:nth-child(1),
+b-inquiry-form ::deep > form > *:nth-child(2) {
     @apply col-span-2;
     @apply lg:col-span-1;
 }
 
-div ::deep > form > *:nth-child(3) {
+b-inquiry-form ::deep > form > *:nth-child(3) {
     @apply col-span-2;
 }
 
-div ::deep > form > *:nth-child(4) {
+b-inquiry-form ::deep > form > *:nth-child(4) {
     @apply col-span-2;
     @apply text-xs;
     @apply text-neutral-200;
@@ -23,11 +27,11 @@ div ::deep > form > *:nth-child(4) {
     @apply transition-fast;
 }
 
-div ::deep > form > *:nth-last-child(2) {
+b-inquiry-form ::deep > form > *:nth-last-child(2) {
     @apply hidden;
 }
 
-div ::deep > form > *:last-child {
+b-inquiry-form ::deep > form > *:last-child {
     @apply button;
     @apply md:text-base;
     @apply col-span-2;

@@ -1,15 +1,15 @@
 @using Byteology.Website.Navigation
 
-<section>
-    <div>
+<b-service-card>
+    <article>
         <h2>
             <DynamicComponent Type="@Icon" />
             <span>@Title</span>
         </h2>
         <p>@Description</p>
         <a href="@(Sitemap.GetRouteOf(PageLink))">Learn More</a>
-    </div>
+    </article>
     <aside>
         <DynamicComponent Type="@Icon" />
     </aside>
-</section>
+</b-service-card>

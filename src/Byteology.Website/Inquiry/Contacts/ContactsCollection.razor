@@ -1,8 +1,8 @@
-<section>
+<b-contacts>
     @foreach (Contact contact in Contacts)
     {
-        <p class="name">@contact.Name</p>
-        <p class="title">@contact.Title</p>
+        <b-name>@contact.Name</b-name>
+        <b-title>@contact.Title</b-title>
         @foreach (ContactDetail detail in contact.Details)
         {
             <ContactDetailComponent Detail="detail" />
@@ -13,4 +13,4 @@
             <hr/>
         }
     }
-</section>
+</b-contacts>

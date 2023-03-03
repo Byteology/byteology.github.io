@@ -1,19 +1,8 @@
 ﻿@inherits Microsoft.AspNetCore.Components.Forms.InputText
 
-<div @attributes="AdditionalAttributes" class="@CssClass">
+<b-input @attributes="AdditionalAttributes" class="@CssClass">
     <label for="@_id">@Label</label>
     <input id="@_id" type="text" placeholder="@Placeholder"
         @bind="CurrentValueAsString"
         @bind:event="onchange"/>
-
-</div>
-
-@code {
-    private readonly Guid _id = Guid.NewGuid();
-
-    [Parameter]
-    public string? Placeholder { get; set; }
-
-    [Parameter]
-    public string? Label { get; set; }
-}
+</b-input>

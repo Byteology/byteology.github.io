@@ -2,9 +2,9 @@
 
 @using Byteology.Website.Navigation
 
-<div id="page" class="@(_state.Prerendering ? "prerendered" : "")">
+<b-viewport class="@(_state.Prerendering ? "prerendered" : "")">
 
-    <div id="layout" class="@(!_state.NavigationBarRendered ? _fadeInAnimationClass : "")">
+    <b-layout class="@(!_state.NavigationBarRendered ? _fadeInAnimationClass : "")">
 
         <NavigationBar/>
 
@@ -14,6 +14,6 @@
 
         <PrivacyFooter />
 
-    </div>
+    </b-layout>
 
-</div>
+</b-viewport>

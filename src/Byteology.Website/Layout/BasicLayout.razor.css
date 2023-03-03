@@ -1,4 +1,4 @@
-#page {
+b-viewport {
     @apply w-full;
     @apply h-full;
     @apply overflow-x-hidden;
@@ -9,11 +9,11 @@
     @apply cursor:styled-scrollbar;
 }
 
-#page.prerendered {
+b-viewport.prerendered {
     @apply overflow-hidden;
 }
 
-#layout {
+b-layout {
     @apply flex-[1_0_100%];
     @apply flex;
     @apply flex-col;

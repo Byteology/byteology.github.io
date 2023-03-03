@@ -2,13 +2,13 @@
 @using Byteology.Website.Navigation
 
 <Slide>
-    <article>
+    <b-hero-layout>
         <aside>
             <img src="/images/logo-portrait.svg" alt="Byteology - a moment of science"/>
         </aside>
 
-        <section>
-            <div>
+        <b-hero-content-side>
+            <article>
                 <p>
                     By introducing <strong>scientific generalization</strong> to software engineering,
                     <strong>Byteology</strong> helps businesses tackle software complexity and grow.
@@ -30,7 +30,7 @@
                 </ol>
 
                 <a href="@(Sitemap.GetRouteOf<MissionPage>())">Learn More</a>
-            </div>
-        </section>
-    </article>
+            </article>
+        </b-hero-content-side>
+    </b-hero-layout>
 </Slide>
