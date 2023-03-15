@@ -1,0 +1,56 @@
+section {
+    @apply panel;
+    @apply styled-content;
+}
+
+b-heading {
+    @apply icon-title;
+}
+
+b-technical-skills,
+b-personal-skills {
+    @apply card-sm;
+    @apply styled-content;
+}
+
+b-technical-skills > b-heading,
+b-personal-skills > b-heading {
+    @apply icon-title-sm;
+}
+
+b-steps {
+    @apply block;
+    @apply space-y-8;
+}
+
+b-step {
+    @apply card;
+    @apply styled-content;
+}
+
+b-step > h3 {
+    @apply card-title;
+}
+
+b-pros,
+b-cons{
+    @apply card-sm;
+    @apply styled-content;
+}
+
+b-cons > h3 {
+    @apply text-error;
+}
+
+b-cons > ul {
+    @apply marker:text-error;
+}
+
+b-offer {
+    @apply block;
+    @apply styled-content;
+}
+
+b-offer > ol {
+    @apply timeline;
+}

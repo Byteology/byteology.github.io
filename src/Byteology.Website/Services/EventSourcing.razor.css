@@ -1,0 +1,37 @@
+section {
+    @apply panel;
+    @apply styled-content;
+}
+
+b-heading {
+    @apply icon-title;
+}
+
+b-benefits {
+    @apply block;
+    @apply space-y-8;
+    @apply pt-4;
+}
+
+b-benefit {
+    @apply card-sm;
+    @apply styled-content;
+}
+
+b-benefit > b-heading {
+    @apply icon-title-sm;
+}
+
+b-pros,
+b-cons{
+    @apply card-sm;
+    @apply styled-content;
+}
+
+b-cons > h3 {
+    @apply text-error;
+}
+
+b-cons > ul {
+    @apply marker:text-error;
+}

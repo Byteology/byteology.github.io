@@ -5,6 +5,9 @@
         @apply flex;
         @apply flex-col;
         @apply gap-y-[1em];
+        @apply list-none;
+        @apply space-y-0;
+        @apply pl-0;
     }
 
     .timeline > li::before {

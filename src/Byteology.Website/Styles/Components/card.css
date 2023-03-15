@@ -1,6 +1,7 @@
 @layer components {
 
     .card {
+        @apply block;
         @apply surface-2;
         @apply elevation;
         @apply p-8;
@@ -9,6 +10,7 @@
     }
 
     .card-sm {
+        @apply block;
         @apply surface-2;
         @apply elevation;
         @apply p-4;
@@ -21,27 +23,25 @@
         @apply elevation;
         @apply border-x-0;
         @apply border-t-0;
-    }
 
-    .card > .card-title {
         @apply px-8;
         @apply -m-8;
         @apply mb-0;
-    }
 
-    .card-sm > .card-title {
-        @apply px-4;
-        @apply -m-4;
-        @apply mb-0;
-    }
-
-    .card-title {
         @apply flex;
         @apply items-center;
         @apply gap-4;
     }
 
-    .card-title > .counter {
+
+    .card-title-sm {
+        @apply card-title;
+        @apply px-4;
+        @apply -m-4;
+        @apply mb-0;
+    }
+
+    .card-title > b-counter  {
         @apply text-[1.5em];
         @apply text-primary;
         @apply font-bold;

@@ -13,18 +13,18 @@
         @apply text-accent;
     }
 
-    .styled-content ol:not(.timeline) {
+    .styled-content ol {
         @apply list-decimal;
         @apply space-y-4;
         @apply pl-[1em];
     }
 
-    .styled-content ol:not(.timeline) > li::marker {
+    .styled-content ol > li::marker {
         @apply text-accent;
         @apply font-bold;
     }
 
-    .styled-content ol:not(.timeline) > li {
+    .styled-content ol > li {
         @apply space-y-4;
     }
 

@@ -6,11 +6,11 @@
       Description="The migration to microservice architecture is a complex process with many pitfalls. To avoid them we have spent years designing and refining a four-step strategy that helps businesses successfully migrate to microservices." 
       Keywords="@(new string[] { "microservices", "migration", "migration to microservices", "monolith", "process", "migration process" })" />
 
-<section class="panel styled-content">
-    <div class="icon-title">
+<section>
+    <b-heading>
         <MicroservicesIcon />
         <h1>Migration to Microservices</h1>
-    </div>
+    </b-heading>
     <p>
         In today’s disruptive web development world, microservices are receiving a lot of attention. Unlike monolithic
         systems, microservices are designed to scale with changing market demands. Because of that, modern enterprises
@@ -18,7 +18,7 @@
     </p>
 </section>
 
-<section class="panel styled-content">
+<section>
     <h2>Benefits of the Microservice Architecture</h2>
     <p>
         As the name suggests, microservices are small units that break up a monolithic application into a set of
@@ -26,77 +26,77 @@
         deploy. Migrating from a monolithic architecture to a microservice one provides a lot of benefits, most
         important of which are as follows:
     </p>
-    <div class="card-grid">
+    <b-benefits>
 
-        <section>
-            <div class="icon-title-sm">
+        <b-benefit>
+            <b-heading>
                 <RaindropIcon/>
                 <h3>Simplicity</h3>
-            </div>
+            </b-heading>
             <p>
                 Teams act within a small and well understood context, reducing cognitive complexity and shortening
                 development cycle times.
             </p>
-        </section>
+        </b-benefit>
 
-        <section>
-            <div class="icon-title-sm">
+        <b-benefit>
+            <b-heading>
                 <DomainAlignmentIcon/>
                 <h3>Domain Alignment</h3>
-            </div>
+            </b-heading>
             <p>
                 Microservices align closely with their respective business domains, allowing the use of ubiquitous
                 language and thus improving collaboration.
             </p>
-        </section>
+        </b-benefit>
 
-        <section>
-            <div class="icon-title-sm">
+        <b-benefit>
+            <b-heading>
                 <ScalingIcon/>
                 <h3>Flexible Scaling</h3>
-            </div>
+            </b-heading>
             <p>
                 Microservices allow each service to be independently scaled to meet demand for the application feature
                 it supports.
             </p>
-        </section>
+        </b-benefit>
 
-        <section>
-            <div class="icon-title-sm">
+        <b-benefit>
+            <b-heading>
                 <DeploymentIcon/>
                 <h3>Easy Deployment</h3>
-            </div>
+            </b-heading>
             <p>
                 Microservices enable continuous integration and continuous delivery, making it easy to try out new
                 ideas and to roll back if something doesn’t work.
             </p>
-        </section>
+        </b-benefit>
 
-        <section>
-            <div class="icon-title-sm">
+        <b-benefit>
+            <b-heading>
                 <DominosIcon/>
                 <h3>Resilience</h3>
-            </div>
+            </b-heading>
             <p>
                 Service independence increases an application’s resistance to failure.
             </p>
-        </section>
+        </b-benefit>
 
-        <section>
-            <div class="icon-title-sm">
+        <b-benefit>
+            <b-heading>
                 <DirectionsIcon/>
                 <h3>Freedom</h3>
-            </div>
+            </b-heading>
             <p>
                 Teams have the freedom to choose the best tool to solve their specific problems.
             </p>
-        </section>
+        </b-benefit>
 
-    </div>
+    </b-benefits>
 
 </section>
 
-<section class="panel styled-content">
+<section>
     <h2>When to Migrate</h2>
     <p>
         Once you have made your mind to embrace microservices, the first question is – when should you make your move?
@@ -105,21 +105,21 @@
     </p>
 </section>
 
-<section class="panel styled-content">
+<section>
     <h2>How to Migrate</h2>
     <p>
         The migration to microservice architecture is a complex process with many pitfalls. To avoid them we have spent
         years designing and refining a four-step strategy that helps businesses successfully migrate to microservices.
     </p>
 
-    <div class="space-y-8">
+    <b-steps>
 
-        <section class="card styled-content">
-            <h3 class="card-title">
-                <span class="counter">01</span>
+        <b-step>
+            <h3>
+                <b-counter>01</b-counter>
                 <span>Process Discovery</span>
             </h3>
-            <ol class="timeline">
+            <ol>
                 <li>We organize a workshop with your domain experts and engineering team.</li>
                 <li>Together we map all the business processes that occur in your application.</li>
                 <li>
@@ -131,14 +131,14 @@
                     experts and software engineers will be able to communicate fluently.
                 </li>
             </ol>
-        </section>
+        </b-step>
 
-        <section class="card styled-content">
-            <h3 class="card-title">
-                <span class="counter">02</span>
+        <b-step>
+            <h3>
+                <b-counter>02</b-counter>
                 <span>Defining Bounded Contexts</span>
             </h3>
-            <ol class="timeline">
+            <ol>
                 <li>We use the process map to define entities, aggregates, services, and their bounded contexts.</li>
                 <li>
                     This gets detailed in a bounded context canvas for each context. It contains the definition of the
@@ -154,14 +154,14 @@
                     bounded context.
                 </li>
             </ol>
-        </section>
+        </b-step>
 
-        <section class="card styled-content">
-            <h3 class="card-title">
-                <span class="counter">03</span>
+        <b-step>
+            <h3>
+                <b-counter>03</b-counter>
                 <span>Establishing Service Boundaries</span>
             </h3>
-            <ol class="timeline">
+            <ol>
                 <li>
                     With the help of your team we design and implement regression testing processes and suites in order to
                     make sure existing functionalities will be left unchanged during the refactoring that will occur.
@@ -171,14 +171,14 @@
                     application without changing its current behavior.
                 </li>
             </ol>
-        </section>
+        </b-step>
 
-        <section class="card styled-content">
-            <h3 class="card-title">
-                <span class="counter">04</span>
+        <b-step>
+            <h3>
+                <b-counter>04</b-counter>
                 <span>Migration</span>
             </h3>
-            <ol class="timeline">
+            <ol>
                 <li>
                     We start migrating the now isolated bounded contexts to a set of microservices as defined in the second
                     step of the process.
@@ -192,9 +192,9 @@
                     allowing a faster and more reliable development.
                 </li>
             </ol>
-        </section>
+        </b-step>
 
-    </div>
+    </b-steps>
 
 </section>
 
