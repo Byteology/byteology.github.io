@@ -1,0 +1,14 @@
+@page "/career/{openingId}"
+
+@using Byteology.Website.Company.Career.Inquiry
+
+@if (_component == null)
+{
+    <DynamicComponent Type="typeof(CareerPage)" />
+}
+else
+{
+    <DynamicComponent Type="_component" />
+
+    <JobApplicationInquiryComponent />
+}

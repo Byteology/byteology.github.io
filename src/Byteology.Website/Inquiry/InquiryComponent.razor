@@ -5,7 +5,7 @@
         <aside>
             @Sidebar
         </aside>
-        <InquiryForm OnSubmit="onSubmit"/>
+        <DynamicComponent Type="InquiryFormType" Parameters="getDynamicComponentParameters()"/>
     </b-inquiry-content>
 
     <b-inquiry-success>

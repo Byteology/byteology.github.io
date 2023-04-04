@@ -1,0 +1,15 @@
+@using Byteology.Website.Inquiry
+@using Byteology.Website.Inquiry.Contacts
+
+<InquiryComponent InquiryFormType="typeof(JobApplicationInquiryForm)">
+    <Sidebar>
+        <h2>Here's to working together</h2>
+        <p>
+            You can apply for this job opening by filling the provided form.
+        </p>
+        <p>
+            Feel free to contact us in case you have any questions.
+        </p>
+        <ContactsCollection Contacts="ContactsCollection.CareerContacts" />
+    </Sidebar>
+</InquiryComponent>

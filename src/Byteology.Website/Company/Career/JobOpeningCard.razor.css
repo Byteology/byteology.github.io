@@ -1,0 +1,35 @@
+b-opening {
+    @apply panel;
+    @apply flex;
+    @apply flex-col;
+    @apply gap-4;
+}
+
+h2 {
+    @apply grid;
+    @apply grid-cols-[3.5rem_1fr];
+    @apply items-center;
+    @apply gap-x-4;
+}
+
+h2 ::deep > *:first-child {
+    @apply row-start-1;
+    @apply row-end-3;
+}
+
+b-title {
+    @apply uppercase;
+    @apply text-lg;
+    @apply font-bold;
+    @apply text-accent;
+}
+
+b-salary {
+    @apply font-bold;
+    @apply text-sm;
+}
+
+a {
+    @apply button;
+    @apply p-1;
+}

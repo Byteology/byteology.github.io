@@ -1,0 +1,10 @@
+b-heading {
+    @apply block;
+    @apply icon-title;
+}
+
+b-intro {
+    @apply block;
+    @apply panel;
+    @apply styled-content;
+}

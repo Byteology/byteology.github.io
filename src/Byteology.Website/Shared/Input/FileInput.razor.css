@@ -1,0 +1,61 @@
+b-input {
+    @apply block;
+    @apply w-full;
+    @apply overflow-hidden;
+    @apply transition-fast;
+    @apply border-b-2;
+    @apply border-primary;
+    @apply pb-1;
+}
+
+b-input:hover {
+    @apply border-primary-300;
+}
+
+b-input:focus,
+b-input:focus-within {
+    @apply !border-primary-300;
+}
+
+b-input:hover  a,
+b-input:focus a,
+b-input:focus-within a {
+    @apply bg-primary-300;
+}
+
+b-input.invalid {
+    @apply border-error;
+}
+
+label {
+    @apply font-bold;
+    @apply text-sm;
+    @apply lg:text-base;
+}
+
+b-upload {
+    @apply flex;
+    @apply justify-between;
+    @apply items-center;
+    @apply pl-4;
+}
+
+b-filename {
+    @apply whitespace-nowrap;
+    @apply w-0;
+    @apply font-normal;
+}
+
+b-placeholder {
+    @apply whitespace-nowrap;
+    @apply w-0;
+    @apply font-normal;
+    @apply italic;
+    @apply text-neutral-200;
+}
+
+b-upload > a {
+    @apply button;
+    @apply text-xs;
+    @apply py-1;
+}

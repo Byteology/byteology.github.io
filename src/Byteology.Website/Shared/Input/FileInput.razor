@@ -1,0 +1,26 @@
+@inherits Microsoft.AspNetCore.Components.Forms.InputText
+
+@using Microsoft.AspNetCore.Components.Forms
+
+<b-input @attributes="AdditionalAttributes" class="@CssClass">
+    <label for="@_id">
+        @Label
+        <b-upload>
+            @if (_filename != null)
+            {
+                <b-filename>@_filename</b-filename>
+            }
+            else
+            {
+                <b-placeholder>@Placeholder</b-placeholder>
+            }
+            <a>@ButtonText</a>
+        </b-upload>
+    </label>
+
+    <InputFile id="@_id" accept="@AcceptedFiles" OnChange="onUpload" style="display: none;" />
+    <input type="text"
+           @bind="CurrentValueAsString"
+           @bind:event="onchange"
+           style="display: none;"/>
+</b-input>
