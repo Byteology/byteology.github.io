@@ -1,4 +1,4 @@
-namespace Byteology.Website.Company.Career.Inquiry;
+namespace Byteology.Website.Career.Inquiry;
 
 using Byteology.Website.Inquiry.Service;
 

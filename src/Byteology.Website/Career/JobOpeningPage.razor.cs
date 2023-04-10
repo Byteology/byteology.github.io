@@ -1,6 +1,6 @@
-namespace Byteology.Website.Company.Career;
+namespace Byteology.Website.Career;
 
-public partial class JobOpeningPage
+public partial class JobOpeningPage : ComponentBase
 {
 	[Parameter]
 	public string OpeningId { get; set; } = default!;

@@ -1,6 +1,6 @@
-namespace Byteology.Website.Company.Career;
+namespace Byteology.Website.Career;
 
-using Byteology.Website.Company.Career.Openings;
+using Byteology.Website.Career.Openings;
 
 public static class JobOpenings
 {

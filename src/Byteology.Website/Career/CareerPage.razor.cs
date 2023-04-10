@@ -1,4 +1,4 @@
-namespace Byteology.Website.Company;
+namespace Byteology.Website.Career;
 
 public partial class CareerPage : ComponentBase
 {
