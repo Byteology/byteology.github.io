@@ -42,8 +42,18 @@ csharp_style_namespace_declarations = file_scoped
 # Remove this or Me qualification
 dotnet_diagnostic.IDE0003.severity = none 
 
+# IDE0028 Use collection initializers
+dotnet_diagnostic.IDE0028.severity = none
+
 # Convert to file scoped namespace
 dotnet_diagnostic.IDE0161.severity = suggestion
+
+######################################
+# C# Rules
+######################################
+
+# CA1825: Avoid zero-length array allocations
+dotnet_diagnostic.CA1825.severity = none
 
 ######################################
 # Sonar Rules
