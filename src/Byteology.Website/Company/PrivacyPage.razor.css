@@ -1,0 +1,4 @@
+section {
+	@apply panel;
+	@apply styled-content;
+}
