@@ -1,6 +1,11 @@
-﻿<section>
+﻿@page "/articles/interviewing"
+@page "/thoughts/interviewing"
+
+<ArticleMetadata Info="Info" />
+
+<section>
     <b-heading>
-        <CvIcon />
+        <ArticleCategoryIcon Category="Info.Category" />
         <h1>A Concise Guide to Conducting Technical Interviews</h1>
     </b-heading>
     <p>
@@ -62,7 +67,7 @@
 
     <b-technical-skills>
         <b-heading>
-            <GearIcon/>
+            <GearIcon />
             <h3>Technical Skills</h3>
         </b-heading>
         <p>
@@ -79,7 +84,7 @@
 
     <b-personal-skills>
         <b-heading>
-            <PersonIcon/>
+            <PersonIcon />
             <h3>Personal Skills</h3>
         </b-heading>
         <p>
@@ -101,7 +106,7 @@
     <p>
         At this point you might have written something along the lines of <q>The candidate must have at least 5
             years of experience working in microservices architectures</q>. Bear in mind that experience is only a
-        small partof what builds up mastery and is not really a skill.
+        small part of what builds up mastery and is not really a skill.
     </p>
     <p>
         Try to be a little bit more specific about what this kind experience means to you. For example, you might be
@@ -130,7 +135,8 @@
                 <span>How Potential Candidates Interact With Job Adverts</span>
             </h3>
             <p>
-                Everything in this section has a big <em>"in general"</em> asterisk attached to it. Additionally, this is
+                Everything in this section has a big <em>"in general"</em> asterisk attached to it. Additionally, this
+                is
                 the most opinionated part of this guide so take it with a grain of salt.
             </p>
             <p>
@@ -138,13 +144,17 @@
                 actively looking for their next job and are browsing through some kind of job adverts website.
             </p>
             <p>
-                These websites often have very limited searching functionalities. In most cases these are a place of work,
-                some vague industry category like <em>"IT services"</em> and maybe some predefined list of technologies or
-                programming languages like <em>".NET Core"</em>, <em>"C++"</em>, etc. As you can imagine, any combination
+                These websites often have very limited searching functionalities. In most cases these are a place of
+                work,
+                some vague industry category like <em>"IT services"</em> and maybe some predefined list of technologies
+                or
+                programming languages like <em>".NET Core"</em>, <em>"C++"</em>, etc. As you can imagine, any
+                combination
                 of these filters yields hundreds, if not thousands of results.
             </p>
             <p>
-                Potential candidates have limited time as well, so they are not going to click through every single one in
+                Potential candidates have limited time as well, so they are not going to click through every single one
+                in
                 order to figure out if they are a good match before applying. Because of that they are playing a numbers
                 game. Two of them actually:
             </p>
@@ -156,11 +166,13 @@
                             I'm a good fit are above random</q>.
                     </p>
                     <p>
-                        The titles of job adverts are usually some kind of skill requirement and the potential candidates
+                        The titles of job adverts are usually some kind of skill requirement and the potential
+                        candidates
                         will answer their question by figuring out if they have this particular skill.
                     </p>
                     <p>
-                        The problem is that the more vague the skill is - the less an affirmative answer raises the odds of
+                        The problem is that the more vague the skill is - the less an affirmative answer raises the odds
+                        of
                         being a good fit. For example, falling into the category of
                         <em>"C#.NET Developer with SAP B1
                             experience for a marketplace"</em> means a lot more than falling into the category of
@@ -177,8 +189,10 @@
                             good fit</q>.
                     </p>
                     <p>
-                        This usually happens by checking the listed requirements. If they positively consider themselves to
-                        possess at least 80% (sometimes even lower) of the listed skills - they will consider applying for
+                        This usually happens by checking the listed requirements. If they positively consider themselves
+                        to
+                        possess at least 80% (sometimes even lower) of the listed skills - they will consider applying
+                        for
                         the position. Take a note of that. It will help us a little bit later in a non-intuitive way.
                     </p>
                     <p>
@@ -186,9 +200,11 @@
                         back to browsing adverts.
                     </p>
                     <p>
-                        Only after the potential candidate has decided that it might be worth their while to apply for this
+                        Only after the potential candidate has decided that it might be worth their while to apply for
+                        this
                         position, they may try to figure out if they'll actually like working at it. They'll scan the
-                        advert for any clues about that and this will be their last deciding factor before they take action.
+                        advert for any clues about that and this will be their last deciding factor before they take
+                        action.
                     </p>
                 </li>
             </ol>
@@ -200,16 +216,20 @@
                 <span>The Goals of an Advert</span>
             </h3>
             <p>
-                Before starting to craft our job advert, we need to know one more thing: what makes an advert successful.
+                Before starting to craft our job advert, we need to know one more thing: what makes an advert
+                successful.
             </p>
             <p>
-                After publishing your job advert only a certain number of people will actually see or be interested in it
+                After publishing your job advert only a certain number of people will actually see or be interested in
+                it
                 and the higher this number is - the higher the chances that a great candidate will be among them. So the
                 first goal of a successful job advert is to increase the number of people that will interact with it.
             </p>
             <p>
-                At some point candidates will start sending you applications. In most cases they will be way more than you
-                have resources to interview people and you will have to resort to screening them by their application alone,
+                At some point candidates will start sending you applications. In most cases they will be way more than
+                you
+                have resources to interview people and you will have to resort to screening them by their application
+                alone,
                 which is not really effective for reasons we will describe a bit later.
             </p>
             <p>
@@ -297,7 +317,7 @@
                 For example, instead of saying <q>The perfect candidate must have excellent time management
                     skills</q>, take a moment and think about why you would want this skill from a candidate. Then you
                 might explain how it will be connected to their work: <q>You'll have to assess priorities in a tight
-                deadline environment and act upon them</q>.
+                    deadline environment and act upon them</q>.
             </p>
             <p>
                 This will discourage people lacking this particular skill from applying without them even knowing they
@@ -578,7 +598,8 @@
                 Interview the candidates on your behalf
             </li>
             <li>
-                Prepare a detailed report containing the personal and technical skill levels of each candidate along with a
+                Prepare a detailed report containing the personal and technical skill levels of each candidate along
+                with a
                 comprehensive argumentation on why we believe so
             </li>
             <li>
