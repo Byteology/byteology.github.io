@@ -1,0 +1,11 @@
+@using Microsoft.AspNetCore.Components.Routing
+
+<b-nav-group class="@getCssClass()">
+	@if (!string.IsNullOrEmpty(Name))
+	{
+		<NavLink Match="NavLinkMatch.Prefix" href="@UrlPrefix">@Name</NavLink>
+	}
+	<section>
+		@ChildContent
+	</section>
+</b-nav-group>
