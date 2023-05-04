@@ -1,0 +1,26 @@
+@using Byteology.Website.Inquiry;
+@using Byteology.Website.Layout
+
+@inherits LayoutComponentBase
+@layout PaperLayout
+
+<CascadingValue Name="Layout" Value="@this">
+    <article>
+        @Body
+    </article>
+
+    @if (_nextArticle != null || _prevArticle != null)
+    {
+        <b-article-nav>
+            <b-prev>
+                <p>@(_prevArticle != null ? "< Previous article" : "")</p>
+                <a href="@($"thoughts/{_prevArticle?.Handle}")">@_prevArticle?.Title</a>
+            </b-prev>
+            <b-next>
+                <p>@(_nextArticle != null ? "Next article >" : "")</p>
+                <a href="@($"thoughts/{_nextArticle?.Handle}")">@_nextArticle?.Title</a>
+            </b-next>
+        </b-article-nav>
+    }
+
+</CascadingValue>

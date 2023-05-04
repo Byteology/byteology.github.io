@@ -1,9 +1,8 @@
 namespace Byteology.Website.Thoughts;
 
-public record ArticleInfo(
+public record ArticleMetadata(
+	string Handle,
 	ArticleCategory Category,
 	string Title,
 	string Intro,
-	string Id,
-	Type ArticleComponent,
 	string[] Keywords);

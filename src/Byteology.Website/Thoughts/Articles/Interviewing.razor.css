@@ -1,12 +1,3 @@
-section {
-    @apply panel;
-    @apply styled-content;
-}
-
-b-heading {
-    @apply icon-title;
-}
-
 b-technical-skills,
 b-personal-skills {
     @apply card-sm;

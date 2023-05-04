@@ -1,13 +1,9 @@
 ﻿@page "/articles/interviewing"
 @page "/thoughts/interviewing"
 
-<ArticleMetadata Info="Info" />
+@inherits Article
 
-<section>
-    <b-heading>
-        <ArticleCategoryIcon Category="Info.Category" />
-        <h1>A Concise Guide to Conducting Technical Interviews</h1>
-    </b-heading>
+<ArticleIntro Metadata="Metadata">
     <p>
         Employees are the lifeblood of every company. They are the ones creating our products, providing our services
         and driving our growth and innovation. Because of this, it is of utmost importance to choose them with
@@ -21,7 +17,7 @@
         We have spent over a decade thinking about these problems and are ready to share some of our insights in this
         guide. It is written with technical positions in mind but most of it applies to any job opening.
     </p>
-</section>
+</ArticleIntro>
 
 <section>
     <h2>Thoroughness vs Brevity</h2>
@@ -374,7 +370,7 @@
             </li>
             <li>
                 You are inevitably going to pay more than you would have otherwise but to be fair you can think of this
-                money as being spent for the better wellbeing of your new employee.
+                money as being spent for the better well-being of your new employee.
             </li>
             <li>
                 You are giving insights of your budget to your direct competitors which might not be a good idea if
@@ -568,7 +564,7 @@
     <h2>Interviewing as a Service</h2>
     <p>
         If you've come this far you probably understand that recruitment is a really important but complex process.
-        Doing it properly requires skills that oftentime do not align with the core expertise of companies. Furthermore,
+        Doing it properly requires skills that oftentimes do not align with the core expertise of companies. Furthermore,
         the interviewing process may divert valuable resources in terms of engineers or other specialized personnel and
         thus disrupt operations.
     </p>

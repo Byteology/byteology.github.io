@@ -169,6 +169,9 @@ var wid = new WheelInertiaDetector();
 window.onNavigated = () => {
     document.getElementsByTagName("b-viewport")[0].scrollTo(0, 0);
     collapseHamburger();
+
+    if (document.activeElement)
+        document.activeElement.blur();
 };
 
 window.collapseHamburger = () => {
