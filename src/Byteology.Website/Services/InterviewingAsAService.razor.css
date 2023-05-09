@@ -1,0 +1,13 @@
+section {
+    @apply panel;
+    @apply styled-content;
+}
+
+b-heading {
+    @apply block;
+    @apply icon-title;
+}
+
+ol {
+	@apply timeline;
+}
