@@ -1,11 +1,16 @@
-b-technical-skills,
-b-personal-skills {
+b-skill-categories {
+    @apply grid;
+    @apply grid-cols-1;
+    @apply md:grid-cols-2;
+    @apply gap-4;
+}
+
+b-skill-category {
     @apply card-sm;
     @apply styled-content;
 }
 
-b-technical-skills > b-heading,
-b-personal-skills > b-heading {
+b-skill-category > b-heading {
     @apply icon-title-sm;
 }
 
@@ -20,7 +25,7 @@ b-step {
 }
 
 b-step > h3 {
-    @apply card-title;
+    @apply card-title-sm;
 }
 
 b-pros,
