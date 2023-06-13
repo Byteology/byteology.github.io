@@ -1,48 +1,3 @@
-- Step 1 - Creating a Skill Canvas
-  - The Skill List
-  	- Technical Skills
-  	- Personal Skills
-  - Skill Definitions and Expertise Levels
-  - Quantifying the Skills
-	- Importance
-	- Teachability
-
-
-- Step 2 - Defining a Strategy 
-	- Constraints Evaluation
-		- Deadlines
-		- Team Availability
-		- Finances
-	- Thoroughness vs Brevity
-	- The Game Plan
-
-- Step 3 - Preparing the Job Description
-	- how people interact with it
-		- filter (limited)
-		- click depending on title (more vague the worse)
-		- look at requirements (does the person match 70%)
-		- follow up (depending on complexity)
-	- what is it meant to do
-	- how to create it
-		- should we sate the budget
-		
-
-- Talent Search
-
-- Screening and Shortlisting
-	- should we require a motivation letter
-
-- Interviewing
-	- Homework
-	- Feedback
-
-- Evaluation and Offer of Employment
-
-- Training and Onboarding
-	
-	 	
-
-
 # Concise Guide to Specialized Recruitment - Part 1: Creating a Skill Canvas
 
 Employees are the lifeblood of every company. They are the ones creating our products, providing our services and driving our growth and innovation. Because of this, it is of utmost importance to choose them with meticulous care.
@@ -300,6 +255,24 @@ For example, instead of saying <q>The perfect candidate must have excellent time
 
 This will discourage people lacking this particular skill from applying without them even knowing they have just self-evaluated it.
 
+## Stating the Budget
+
+Should we state the budget for the position in the job description? There is no one right answer to this question so let's think a little bit about the pros and cons of stating the budget upfront.
+
+### Pros
+
+- It statistically increases the number of people that apply for the position (which might or might not be a good thing depending on how many candidates we are expecting).
+
+- It will also automatically filter candidates that are out of our price range. The budget talks usually happen after the interview rounds which means that we might have wasted precious resources interviewing a candidate that we can't hire for budget reasons instead of interviewing another one.
+
+- Discussing the expected salary with a candidate is more or less a kind of bargaining which might make them feel like their new employer does not share their best interest which is not a great way to start a relationship.
+
+### Cons
+
+- If the job offer is in the lower half of the listed budget, the candidate might feel cheated. We are inevitably going to pay more than we would have otherwise but to be fair we can think of this money as being spent for the better well-being of our new employee.
+
+- We are giving insights of our budget to our direct competitors which might not be a good idea if we think there is somebody who is actively looking to outbid us.
+
 ### Everything Else
 
 At this point we should be done crafting our job description. Everything else can be safely removed in order to keep it short. 
@@ -330,3 +303,128 @@ At this point we should have received a bit more applications than people we can
 
 
 # Concise Guide to Specialized Recruitment - Part 4: Pre-screening
+
+When doing talent sourcing one of our goals is to attract as many candidates as possible. Of course we won't have the resources to interview all of them so we need some kind of tools that can do a rough estimation of an applicant's skills with as much effort as possible. This allows us to create a shortlist of people that we'll interview.
+
+Let's take a look at some of the tools at our disposal:
+
+## Resumes
+
+It might be tempting to pick the best-looking and the most refined resumes and it is definitely a tell about certain personal skills but bear in mind that you are not looking for the person who is able to craft the best CV.
+
+Instead we should be looking for signs about the presence of skills from the skill canvas. This is a tricky thing to do but if we are able to give a one-sentence reasoning on why we believe a certain detail in the resume corresponds to a certain skill - it will increase our chances of shortlisting the appropriate candidates. 
+
+The only other thing we can do is keep statistics. We should keep track which universities and previous employers yielded successful interviews in the past. Maybe a certain style of writing, certain kind of certifications or something entirely different.
+
+That doesn't mean we shouldn't give a chance to anyone that doesn't fit our statistics but it might help us when we are hard-pressed to choose which applicants to interview.
+
+Basically we should create some kind of system to help us order applications but this is the part of the process in which we are trying to make a decision having only minimal information. This is why keeping statistics is our best bet in the long term.
+
+## Motivation Letters
+
+Motivation letters are a very specific tool at our disposal. They increase the thoroughness of our interview process but in return they pre-screen a lot of candidates. This can be of great help if we are receiving way too many applications than we can handle but unfortunately, it might not be an accurate screening.
+
+They make the process of applying harder which filters candidates based on motivation (hence the name) to apply for this exact job or sometimes by desperation to get any job at all.
+
+Additionally, we will want to actually read and evaluate these letters and this costs additional resources while filtering candidates on what is basically an essay for a job that probably has nothing to do with writing.
+
+One great use for motivation letters though, is for intern positions or positions for which candidates are not required to have any previous experience. In these situations it might be really difficult to distinguish between candidates and their motivation letters might be the only tool we have available.
+
+## Homework Assignments
+
+Homework assignments are a great way to increase the thoroughness of the interview process while keeping it brief (for us at least) although they come with a different load of problems.
+
+- It is hard to craft a homework assignment that will properly reflect the skills we are looking for.
+
+- We'll have to do it over and over again. It is surprising how fast the assignments and their proper solutions leak to the public. Additionally, different positions require different assignments.
+
+- We can't be sure that the solution comes from the assignee. Because of that we should at least schedule a call to talk with them about the solution. This combined with the actual grading of the solution will take time that we might want to spend somewhere else in the process.
+
+- The whole homework assignment, grading and the follow-up interview may take weeks and during this time the candidate might receive a job offer from another company which may cause them to drop out of our interview process.
+
+## Others
+
+There are a plethora of other tools to do pre-screening such as HR interviews, logic tests, quick coding problems, etc. When deciding which ones to use, though, we need to make sure they align with the skill canvas. Additionally, we should be aware of the resources they consume and the confidence of their skill estimations.
+
+## Next Steps
+
+At this point we should have a shortlist of people we would like to call in for an interview.
+
+We probably have some limited information about each of them so we should start preparing and choosing interview scenarios based on that.
+
+As for the applicants that didn't make it, we should inform them via some kind of an automated channel.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Concise Guide to Specialized Recruitment - Part 5: The Interview
+
+The actual interview is arguably the hardest part of the whole process. During it we'll be gathering the majority of information about the candidates thus helping us make an informed decision. However, we have only so much time to gather that information so we need to carefully prepare beforehand.
+
+## Preparation
+
+Let's take a look at the skill canvas and focus our efforts on them. We should carefully craft appropriate conversations beforehand. We used the word *"conversation"* instead of *"questions"* on purpose.
+
+The interview is not a trivia exam. We might ask a candidate something along the lines of <q>Can you tell me about the SOLID principles</q> but that usually doesn't help us understand if the candidate has the required skills to apply them in practice.
+
+Instead we might want to ask them for their opinion on the controversy around the dependency inversion principle. Maybe they will try to defend it, maybe they will try to prove that it is too extreme, maybe they will hold an opinion that it is more of a guideline than an actual rule. Either way we'll understand a lot more about the interviewee than checking if they have read the Wikipedia article or have been asked the same question at another interview.
+
+The goal is to keep a conversation going so the candidate is in their usual mindset instead of their *"trying to remember something"* one.
+
+## About Stress
+
+This way of conducting the interview also helps the candidate feel more comfortable because they don't follow the exam scenario. We should understand that the interviewee is in a bad spot. They might be nervous, worried or outright scared.
+
+This might happen because getting this job is really important to them, because there are five people who are conducting this interview (please keep this number to a minimum) or they just might have trouble keeping calm when they are asked about a topic they are not confident in.
+
+On that note, we should always be aware of how nervous the interviewee is at any moment and try to calm them down. There are many ways to do so and they vary depending on the situation but we'll list a couple of the most common and successful ones.
+
+- The first one is to not acknowledge that they are nervous and just ask them a couple of related to the current topic questions you know they will answer correctly. This gives them a moment to catch their breath and get back into *"the zone"*.
+
+- Another one is to actually take time and provide some additional information on the topic that the candidate omitted. This makes them feel better because the conversation is going on without having weird pauses or jumps due to their lack of certain knowledge. It also helps them learn new things and it reduces the time you'll spend on providing feedback later.
+
+If we fail to calm down a nervous candidate, continuing the interview will not tell us anything about their skills. Instead it will tell us how well they can work under pressure which is usually not a requirement for their job.
+
+ ## Let Candidates Choose Topics
+
+- We must remember that the interview is a two-way street. This is what *"inter"* means. There should be enough time to let the person ask you questions and to pick their own topics. This way we may also understand a little bit more about them, about what drives them and what they find interesting.
+
+## Feedback
+
+After every interview candidates may ask for feedback on how they have done. But regardless of whether they did it or not, we should provide it. This serves a few really important purposes.
+
+- Verbalizing the feedback helps us better understand what we are looking for and helps us craft better interviews in the future.
+
+- It builds trust and transparency between us and the candidate. That's a great thing to do even if we don't plan to hire them. We have had many successful candidates referred to us by people we haven't hired.
+
+- It helps the candidates grow and become better experts in the future and as interviewers we have a responsibility to try and help people even if they are not the right fit for our company right now.
+
+- 30 minutes after the interview, we forget about 70% of the feedback that we have to give. We don't need to wait for a hiring decision before giving our feedback.
+
+- And on that note when a hiring decision is made, we should take a minute and inform the candidate regardless of the decision itself. They will appreciate it tremendously and will probably spread a good word.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Concise Guide to Specialized Recruitment - Part 6: Training and Onboarding
