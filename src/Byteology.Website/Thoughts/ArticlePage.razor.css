@@ -1,0 +1,12 @@
+article {
+    @apply space-y-8;
+}
+
+article ::deep > section {
+    @apply panel;
+    @apply styled-content;
+}
+
+article ::deep b-heading {
+    @apply icon-title;
+}

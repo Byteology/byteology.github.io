@@ -1,5 +1,8 @@
 namespace Byteology.Website.Thoughts;
 
+using System.Reflection;
+using System.Text.Json;
+
 public class ArticlesRepository
 {
 	private readonly LinkedList<ArticleMetadata> _data = new();
@@ -7,7 +10,17 @@ public class ArticlesRepository
 
 	public ArticlesRepository()
 	{
-		foreach (ArticleMetadata article in Articles.ArticlesDataSet.All)
+		Assembly assembly = typeof(ArticlesRepository).Assembly;
+		string assemblyName = assembly.GetName().Name!;
+
+		string path = $"{assemblyName}.Thoughts.Articles";
+
+		using Stream articleListStream = assembly.GetManifestResourceStream($"{path}.ArticleList.json")!;
+		using StreamReader articleListReader = new(articleListStream);
+		string rawArticleList = articleListReader.ReadToEnd();
+		ArticleMetadata[] articleList = JsonSerializer.Deserialize<ArticleMetadata[]>(rawArticleList, new JsonSerializerOptions(JsonSerializerDefaults.Web))!;
+
+		foreach (ArticleMetadata article in articleList)
 		{
 			LinkedListNode<ArticleMetadata> node = _data.AddLast(article);
 			_dict.Add(article.Handle, node);

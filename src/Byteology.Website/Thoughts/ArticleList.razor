@@ -1,0 +1,12 @@
+@page "/articles"
+@page "/thoughts"
+@layout PaperLayout
+
+<Metadata Title="Our Thoughts" Article="false"
+		Description="Here you can find our thoughts on business, software engineering, technology and everything else."
+		Keywords="@(new string[] { "articles", "blog", "thoughts", "software", "software engineering", "business", "technology" })" />
+
+@foreach (ArticleMetadata article in _articlesRepository.GetAll())
+{
+	<ArticleCard Article="article" />
+}

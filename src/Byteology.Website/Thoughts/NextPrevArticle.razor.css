@@ -1,16 +1,3 @@
-article {
-    @apply space-y-8;
-}
-
-article ::deep > section {
-    @apply panel;
-    @apply styled-content;
-}
-
-article ::deep b-heading {
-    @apply icon-title;
-}
-
 b-article-nav {
     @apply grid;
     @apply grid-cols-1;

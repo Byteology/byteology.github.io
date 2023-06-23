@@ -1,0 +1,35 @@
+@page "/articles/{handle}"
+@page "/thoughts/{handle}"
+@layout PaperLayout
+
+@if (_metadata == null)
+{
+    <ArticleList />
+}
+else
+{
+    <Metadata Title="@_metadata.Title" Description="@_metadata.Description" Article="true" Keywords="@_metadata.Keywords"/>
+
+    <article id="@_metadata.Handle">
+
+        <section>
+            <b-heading>
+                <ArticleIcon Category="_metadata.Category" />
+                <h1>@_metadata.Title</h1>
+            </b-heading>
+            @_intro
+        </section>
+
+        @if (_blocks.Length > 2)
+        {
+            <ArticleIndex Blocks="_blocks" />
+        }
+
+        @_content
+        
+    </article>
+
+
+    <NextPrevArticle CurrentArticleHandle="@Handle" />
+}
+

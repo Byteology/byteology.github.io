@@ -1,0 +1,6 @@
+b-index {
+	@apply panel styled-content inline-block
+}
+
+b-index ::deep button {
+} 

@@ -1,8 +1,8 @@
 namespace Byteology.Website.Thoughts;
 
-public partial class ArticleCategoryIcon : ComponentBase
+public partial class ArticleIcon : ComponentBase
 {
-	[Parameter, EditorRequired]
+	[Parameter]
 	public ArticleCategory Category { get; set; }
 
 	private Type getIconType()
@@ -16,5 +16,4 @@ public partial class ArticleCategoryIcon : ComponentBase
 			_ => typeof(Icons.CoreIcon)
 		};
 	}
-
 }
