@@ -2,6 +2,7 @@ namespace Byteology.Website.Thoughts;
 
 using System.Reflection;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 public class ArticlesRepository
 {
@@ -15,10 +16,13 @@ public class ArticlesRepository
 
 		string path = $"{assemblyName}.Thoughts.Articles";
 
-		using Stream articleListStream = assembly.GetManifestResourceStream($"{path}.ArticleList.json")!;
+		using Stream articleListStream = assembly.GetManifestResourceStream($"{path}.article-list.json")!;
 		using StreamReader articleListReader = new(articleListStream);
 		string rawArticleList = articleListReader.ReadToEnd();
-		ArticleMetadata[] articleList = JsonSerializer.Deserialize<ArticleMetadata[]>(rawArticleList, new JsonSerializerOptions(JsonSerializerDefaults.Web))!;
+
+		JsonSerializerOptions serializerOptions = new(JsonSerializerDefaults.Web);
+		serializerOptions.Converters.Add(new JsonStringEnumConverter());
+		ArticleMetadata[] articleList = JsonSerializer.Deserialize<ArticleMetadata[]>(rawArticleList, serializerOptions)!;
 
 		foreach (ArticleMetadata article in articleList)
 		{
