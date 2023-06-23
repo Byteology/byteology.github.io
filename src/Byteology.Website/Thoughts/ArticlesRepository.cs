@@ -24,14 +24,16 @@ public class ArticlesRepository
 		serializerOptions.Converters.Add(new JsonStringEnumConverter());
 		ArticleMetadata[] articleList = JsonSerializer.Deserialize<ArticleMetadata[]>(rawArticleList, serializerOptions)!;
 
-		foreach (ArticleMetadata article in articleList)
+		foreach (ArticleMetadata article in articleList.Reverse())
 		{
 			LinkedListNode<ArticleMetadata> node = _data.AddLast(article);
-			_dict.Add(article.Handle, node);
+			bool success = _dict.TryAdd(article.Handle, node);
+			if (!success)
+				_data.RemoveLast();
 		}
 	}
 
-	public IEnumerable<ArticleMetadata> GetAll() => _data;
+	public IEnumerable<ArticleMetadata> GetAll() => _data.Reverse();
 
 	public ArticleMetadata? Get(string handle)
 	{
