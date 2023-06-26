@@ -1,9 +1,15 @@
-<b-article>
-	<h2>
+<b-card>
+	<b-title>
 		<ArticleIcon Category="Article.Category" />
-		<b-title>@Article.Title</b-title>
-	</h2>
+		<h1>
+			@Article.Title
+			@if(!string.IsNullOrEmpty(Article.Subtitle))
+			{
+				<span>@Article.Subtitle</span>
+			}
+		</h1>
+	</b-title>
 	<p>@Article.Description</p>
 	<a href="thoughts/@Article.Handle">Learn More</a>
 
-</b-article>
+</b-card>

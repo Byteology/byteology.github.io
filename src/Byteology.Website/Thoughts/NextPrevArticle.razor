@@ -3,11 +3,25 @@
 	<b-article-nav>
 		<b-prev>
 			<p>@(_prevArticle != null ? "< Previous article" : "")</p>
-			<a href="@($"thoughts/{_prevArticle?.Handle}")">@_prevArticle?.Title</a>
+			<a href="@($"thoughts/{_prevArticle?.Handle}")">
+				@_prevArticle?.Title
+				@if(!string.IsNullOrEmpty(_prevArticle?.Subtitle))
+				{
+					<br>
+					@_prevArticle.Subtitle
+				}
+			</a>
 		</b-prev>
 		<b-next>
 			<p>@(_nextArticle != null ? "Next article >" : "")</p>
-			<a href="@($"thoughts/{_nextArticle?.Handle}")">@_nextArticle?.Title</a>
+			<a href="@($"thoughts/{_nextArticle?.Handle}")">
+				@_nextArticle?.Title
+				@if(!string.IsNullOrEmpty(_nextArticle?.Subtitle))
+				{
+					<br>
+					@_nextArticle.Subtitle
+				}
+			</a>
 		</b-next>
 	</b-article-nav>
 }

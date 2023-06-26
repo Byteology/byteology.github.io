@@ -10,3 +10,7 @@ article ::deep > section {
 article ::deep b-heading {
     @apply icon-title;
 }
+
+h1 > span {
+    @apply text-neutral-100 font-bold block text-lg normal-case;
+}

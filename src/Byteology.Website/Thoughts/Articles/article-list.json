@@ -2,14 +2,16 @@
 	{
 		"handle": "recruitment-guide-part-2",
 		"category": "Trainings",
-		"title": "Concise Guide to Specialized Recruitment - Part 2: Defining a Strategy",
+		"title": "Concise Guide to Specialized Recruitment",
+		"subtitle": "Part 2: Defining a Strategy",
 		"description": "How do you craft a successful job advert? How do you identify a great candidate? How do you even know what a “great candidate” is? We have spent over a decade thinking about these problems and are ready to share some of our findings in this guide.",
 		"keywords": [ "interviewing", "hiring", "interviewing as a service", "iaas", "guide", "job application", "job adverts" ]
 	},
 	{
 		"handle": "recruitment-guide-part-1",
 		"category": "Recruitment",
-		"title": "Concise Guide to Specialized Recruitment - Part 1: Creating a Skill Canvas",
+		"title": "Concise Guide to Specialized Recruitment",
+		"subtitle": "Part 1: Creating a Skill Canvas",
 		"description": "How do you craft a successful job advert? How do you identify a great candidate? How do you even know what a “great candidate” is? We have spent over a decade thinking about these problems and are ready to share some of our findings in this guide.",
 		"keywords": [ "interviewing", "hiring", "interviewing as a service", "iaas", "guide", "job application", "job adverts" ]
 	}

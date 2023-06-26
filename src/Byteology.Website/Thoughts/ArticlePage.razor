@@ -15,7 +15,13 @@ else
         <section>
             <b-heading>
                 <ArticleIcon Category="_metadata.Category" />
-                <h1>@_metadata.Title</h1>
+                <h1>
+                    @_metadata.Title
+                    @if(!string.IsNullOrEmpty(_metadata.Subtitle))
+                    {
+                        <span>@_metadata.Subtitle</span>
+                    }
+                </h1>
             </b-heading>
             @_intro
         </section>

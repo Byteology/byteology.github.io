@@ -1,27 +1,21 @@
-b-article{
+b-card{
     @apply panel;
     @apply flex;
     @apply flex-col;
     @apply gap-4;
 }
 
-h2 {
-    @apply grid;
-    @apply grid-cols-[3.5rem_1fr];
-    @apply items-center;
-    @apply gap-x-4;
-}
-
-h2 ::deep > *:first-child {
-    @apply row-start-1;
-    @apply row-end-3;
-}
 
 b-title {
-    @apply uppercase;
-    @apply text-lg;
-    @apply font-bold;
-    @apply text-accent;
+    @apply icon-title;
+}
+
+h1 {
+    @apply text-accent font-bold uppercase text-xl;
+}
+
+h1 > span {
+    @apply text-neutral-100 font-bold block text-lg normal-case;
 }
 
 a {
