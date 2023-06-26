@@ -3,4 +3,19 @@ b-index {
 }
 
 b-index ::deep button {
+	@apply link;
 } 
+
+b-index ::deep ol {
+      counter-reset: item;
+}
+
+b-index ::deep ol > li {
+	@apply block;
+}
+
+b-index ::deep ol > li:before { 
+	content: counters(item, ".") ". "; 
+	counter-increment: item;
+	@apply text-accent font-bold;
+}
