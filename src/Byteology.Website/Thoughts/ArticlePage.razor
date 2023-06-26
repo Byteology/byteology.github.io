@@ -8,7 +8,7 @@
 }
 else
 {
-    <Metadata Title="@_metadata.Title" Description="@_metadata.Description" Article="true" Keywords="@_metadata.Keywords"/>
+    <Metadata Title="@(string.IsNullOrEmpty(_metadata.Subtitle) ? _metadata.Title : $"{_metadata.Title} - {_metadata.Subtitle}")" Description="@_metadata.Description" Article="true" Keywords="@_metadata.Keywords"/>
 
     <article id="@_metadata.Handle">
 
