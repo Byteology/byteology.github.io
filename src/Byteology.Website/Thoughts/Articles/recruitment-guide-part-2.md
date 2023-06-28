@@ -40,9 +40,9 @@ The longer our interview process is - the higher chances we have to correctly de
 
 In other words - the longer we spend on a single application - the less applicants we'll be able to interview, thus reducing our chances to find a good fit. On the other hand, if we don't spend enough time - we won't be able to identify potentially great candidates.
 
-Additionally, candidates usually don't stop applying for other positions in different companies until they get a satisfactory job offer and if they receive one in the middle of our interview process, it is very unlikely they'll finish it.
+Additionally, candidates usually don't stop applying for other positions in different companies until they get a satisfactory job offer and if they receive one in the middle of our interview process, it is highly unlikely they'll finish it.
 
-Fortunately, the benefits of increasing the thoroughness of our process quickly hits diminishing returns and with careful planning and consideration you might be able to get to this point while simultaneously keeping the process quite brief.
+Fortunately, the benefits of increasing the thoroughness of our process quickly hits diminishing returns and with careful planning and consideration we might be able to get to this point while simultaneously keeping the process quite brief.
 
 ## The Game Plan
 
@@ -54,8 +54,8 @@ Now that we are aware of our requirements and constrains it is time to write dow
 - Which people or teams will be responsible for each subsequent part of the process
 - A plan for training and onboarding the new hirees
 
+Having done this, we can treat the process as any other project and apply similar project management techniques.
+
 ## Next Steps
 
-At this point we can treat the process as any other project and apply similar project management techniques.
-
-Next we'll take a look at some of the important steps of the recruitment process and how we can use them to execute our strategy.
+Next we'll start looking into some of the important steps of the recruitment process and how we can use them to execute our strategy. First we'll be discussing job descriptions and how they can be crafted in a way that increases our chances of finding the right candidate.

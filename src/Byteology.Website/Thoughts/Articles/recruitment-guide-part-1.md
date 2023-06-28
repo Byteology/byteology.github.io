@@ -32,7 +32,7 @@ Technical skills are the ones that are related to some kind of expertise regardi
 
 ### Personal Skills
 
-Personal skills or soft skills are the ones that do not relate to a particular field of study. They might be willingness to teach or mentor others, the ability to organize a group of people, a certain way of tackling problems, dealing with interpersonal issues, working under pressure, etc.
+Personal skills or soft skills are the ones that do not relate to a particular field of study. They might be willingness to teach or mentor others, the ability to organize a specific group of people, a certain way of tackling problems, dealing with interpersonal issues, working under pressure, etc.
 
 ## Skill Definitions and Expertise Levels
 
@@ -61,7 +61,7 @@ This will help us at the later stages of the process by allowing us to focus our
 Next, it is time to determine what is the approximate cost for teaching each of the skills. Every skill generally falls in one of these 3 categories.
 
 - **Internally teachable** - a skill that our organization has the ability and resources to teach. The resources usually are the time of the trainee and the availability of willing and able personnel that will conduct some kind of a training program.
-- **Externally teachable** - a skill that our organization doesn't have the ability or resources to teach internally but can afford to outsource it. The resources that are usually associated with that are the time of the trainee, and the financial cost of the third-party that will conduct the training.
+- **Externally teachable** - a skill that our organization doesn't have the ability or resources to teach internally but can afford to outsource a training. The resources that are usually associated with that are the time of the trainee, and the financial cost of the third-party that will conduct the training.
 - **Unteachable** - a skill that is not teachable given a reasonable amount of time or other resources. 
 
 ## Next Steps

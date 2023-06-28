@@ -1,11 +1,35 @@
 [
 	{
+		"handle": "recruitment-guide-part-5",
+		"category": "Recruitment",
+		"title": "Concise Guide to Specialized Recruitment",
+		"subtitle": "Part 5: Screening",
+		"description": "description",
+		"keywords": [ "interviewing" ]
+	},
+	{
+		"handle": "recruitment-guide-part-4",
+		"category": "Recruitment",
+		"title": "Concise Guide to Specialized Recruitment",
+		"subtitle": "Part 4: Pre-screening Techniques",
+		"description": "description",
+		"keywords": [ "interviewing" ]
+	},
+	{
+		"handle": "recruitment-guide-part-3",
+		"category": "Recruitment",
+		"title": "Concise Guide to Specialized Recruitment",
+		"subtitle": "Part 3: Crafting a Job Description",
+		"description": "description",
+		"keywords": [ "interviewing" ]
+	},
+	{
 		"handle": "recruitment-guide-part-2",
-		"category": "Trainings",
+		"category": "Recruitment",
 		"title": "Concise Guide to Specialized Recruitment",
 		"subtitle": "Part 2: Defining a Strategy",
-		"description": "How do you craft a successful job advert? How do you identify a great candidate? How do you even know what a “great candidate” is? We have spent over a decade thinking about these problems and are ready to share some of our findings in this guide.",
-		"keywords": [ "interviewing", "hiring", "interviewing as a service", "iaas", "guide", "job application", "job adverts" ]
+		"description": "description",
+		"keywords": [ "interviewing" ]
 	},
 	{
 		"handle": "recruitment-guide-part-1",
