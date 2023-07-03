@@ -2,7 +2,6 @@ using Byteology.Website;
 using Byteology.Website.Inquiry.Service;
 using Byteology.Website.Thoughts;
 using Ljbc1994.Blazor.IntersectionObserver;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -10,7 +9,7 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 ConfigureServices(builder.Services);
-builder.RootComponents.RegisterCustomElement<Byteology.Website.Icons.DynamicIcon>("b-icon");
+RegisterCustomElements(builder.RootComponents);
 
 await builder.Build().RunAsync();
 
@@ -22,4 +21,9 @@ static void ConfigureServices(IServiceCollection services)
     services.AddSingleton<IInquiryService, GoogleDriveInquiryService>();
     services.AddHttpClient<IInquiryService, GoogleDriveInquiryService>();
     services.AddIntersectionObserver();
+}
+
+static void RegisterCustomElements(IJSComponentConfiguration configuration)
+{
+	configuration.RegisterCustomElement<Byteology.Website.Icons.DynamicIcon>("b-icon");
 }

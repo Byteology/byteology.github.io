@@ -17,7 +17,7 @@ public partial class NavigationBar : ComponentBase
 	private bool _touchIgnored;
 	private void onTouchStart(TouchEventArgs args)
 	{
-		_touchStartX = args.Touches.First().ClientX;
+		_touchStartX = args.Touches[0].ClientX;
 		_touchIgnored = args.Touches.Length != 1;
 	}
 
@@ -25,7 +25,7 @@ public partial class NavigationBar : ComponentBase
 	{
 		if (!_touchIgnored)
 		{
-			if (_touchStartX > args.Touches.First().ClientX)
+			if (_touchStartX > args.Touches[0].ClientX)
 				_jsRuntime.InvokeVoid("collapseHamburger");
 			else
 				_touchIgnored = true;

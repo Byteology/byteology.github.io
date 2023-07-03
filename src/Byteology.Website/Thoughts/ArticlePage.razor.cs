@@ -19,6 +19,12 @@ public partial class ArticlePage : ComponentBase
 	[Inject]
 	private ArticlesRepository _articlesRepository { get; set; } = default!;
 
+	[GeneratedRegex(@"(?=<h\d>.*</h\d>)", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)]
+	private static partial Regex getHeadingRegex();
+
+	[GeneratedRegex(@"^<h\d>", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)]
+	private static partial Regex getHeadingCloseRegex();
+
 	protected override void OnParametersSet()
 	{
 		base.OnParametersSet();
@@ -58,7 +64,7 @@ public partial class ArticlePage : ComponentBase
 	private static ArticleBlock[] parseMarkdown(string markdown)
 	{
 		string htmlString = Markdown.ToHtml(markdown);
-		string[] blockSplit = Regex.Split(htmlString, @"(?=<h\d>.*</h\d>)", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+		string[] blockSplit = getHeadingRegex().Split(htmlString);
 
 		List<int> lastBlockId = new();
 		ArticleBlock[] blocks = blockSplit
@@ -73,8 +79,7 @@ public partial class ArticlePage : ComponentBase
 	{
 		blockData = blockData.Trim();
 
-		bool startsWithHeading = !string.IsNullOrWhiteSpace(blockData) && Regex.IsMatch(blockData, @"^<h\d>",
-			RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+		bool startsWithHeading = !string.IsNullOrWhiteSpace(blockData) && getHeadingCloseRegex().IsMatch(blockData);
 
 		if (!startsWithHeading)
 			return new ArticleBlock(
@@ -119,7 +124,7 @@ public partial class ArticlePage : ComponentBase
 
 	private MarkupString getIntroContent()
 	{
-		return new MarkupString(_blocks.First().Text);
+		return new MarkupString(_blocks[0].Text);
 	}
 
 	private MarkupString fillContent()

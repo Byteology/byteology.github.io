@@ -11,6 +11,6 @@ public partial class JobOpeningPage : ComponentBase
 	{
 		base.OnParametersSet();
 
-		_component = JobOpenings.Current.FirstOrDefault(x => x.Id == OpeningId)?.DetailsComponent;
+		_component = Array.Find(JobOpenings.Current, x => x.Id == OpeningId)?.DetailsComponent;
 	}
 }
