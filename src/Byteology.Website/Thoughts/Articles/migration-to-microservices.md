@@ -7,22 +7,22 @@ In today's disruptive web development world, microservices are receiving a lot o
 As the name suggests, microservices are small units that break up a monolithic application into a set of independent services. Unlike slow and heavy monolithic applications, microservices are faster to develop and deploy. Migrating from a monolithic architecture to a microservice one provides a lot of benefits, most important of which are as follows:
 
 
-### ![Simplicity](/images/icon.png) Simplicity
+### <b-icon name="RaindropIcon"/> Simplicity
 Teams act within a small and well understood context, reducing cognitive complexity and shortening development cycle times.
 
-### ![Domain Alignment](/images/icon.png) Domain Alignment
+### <b-icon name="DomainAlignmentIcon"/>  Domain Alignment
 Microservices align closely with their respective business domains, allowing the use of ubiquitous language and thus improving collaboration.
 
-### ![Flexible Scaling](/images/icon.png) Flexible Scaling
+### <b-icon name="ScalingIcon"/>  Flexible Scaling
 Microservices allow each service to be independently scaled to meet demand for the application feature it supports.
 
-### ![Easy Deployment](/images/icon.png) Easy Deployment
+### <b-icon name="DeploymentIcon"/>  Easy Deployment
 Microservices enable continuous integration and continuous delivery, making it easy to try out new ideas and to roll back if something doesn't work.
 
-### ![Resilience](/images/icon.png) Resilience
+### <b-icon name="DominosIcon"/>  Resilience
 Service independence increases an application's resistance to failure.
 
-### ![Freedom](/images/icon.png) Freedom
+### <b-icon name="DirectionsIcon"/>  Freedom
 Teams have the freedom to choose the best tool to solve their specific problems.
 
 ## When to Migrate

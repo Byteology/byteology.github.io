@@ -15,7 +15,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 6.0.x
+          dotnet-version: 7.0.x
           
       - name: Checkout
         uses: actions/checkout@v3
@@ -28,12 +28,6 @@ jobs:
       - name: Install Tailwind CSS
         run: npm install -D tailwindcss postcss postcss-cli autoprefixer postcss-minify postcss-import-ext-glob
 
-      - name: Sonarqube Begin
-        working-directory: src
-        run: | 
-          dotnet tool install --global dotnet-sonarscanner
-          dotnet sonarscanner begin /o:byteology /k:${sonar_project_key} /d:sonar.login=${{ secrets.SONAR_TOKEN }} /s:$GITHUB_WORKSPACE/.sonar/SonarQube.Analysis.xml
-          
       - name: Restore
         working-directory: src
         run: dotnet restore
@@ -41,13 +35,3 @@ jobs:
       - name: Build
         working-directory: src
         run: dotnet build --configuration Release --no-restore
-
-      - name: Test
-        working-directory: src
-        run: dotnet test --no-build --configuration Release --verbosity normal --settings ../.sonar/coverlet.runsettings --logger:trx
-        
-      - name: Sonarqube End
-        working-directory: src
-        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

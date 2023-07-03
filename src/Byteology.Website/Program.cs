@@ -1,15 +1,16 @@
 using Byteology.Website;
-using Byteology.Website.Inquiry;
 using Byteology.Website.Inquiry.Service;
 using Byteology.Website.Thoughts;
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Ljbc1994.Blazor.IntersectionObserver;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 ConfigureServices(builder.Services);
+builder.RootComponents.RegisterCustomElement<Byteology.Website.Icons.DynamicIcon>("b-icon");
 
 await builder.Build().RunAsync();
 
