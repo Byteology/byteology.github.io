@@ -1,6 +1,7 @@
 namespace Byteology.Website.Thoughts;
 
 using System.Text;
+using System.Text.RegularExpressions;
 using Markdig;
 using Microsoft.JSInterop;
 
@@ -25,10 +26,16 @@ public partial class ArticleIndex : ComponentBase
 			if (block.HeaderNumber > 1)
 			{
 				string indent = new(' ', (block.HeaderNumber - 2) * 3);
-				markdown.AppendLine($"{indent}1. <button b-target=\"{block.Id}\">{block.Title}</button>");
+				markdown.AppendLine($"{indent}1. <button b-target=\"{block.Id}\">{sanitizeTitle(block.Title)}</button>");
 			}
 		}
 		_content = new MarkupString(Markdown.ToHtml(markdown.ToString()));
+	}
+
+	private static string sanitizeTitle(string title)
+	{
+		title = Regex.Replace(title, "<.*?>", String.Empty);
+		return title;
 	}
 
 	protected override void OnAfterRender(bool firstRender)

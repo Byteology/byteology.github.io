@@ -1,71 +1,65 @@
 # Concise Guide to Specialized Recruitment - Part 1: Creating a Skill Canvas
 
-Employees are the lifeblood of every company. They are the ones creating our products, providing our services and driving our growth and innovation. Because of this, it is of utmost importance to choose them with meticulous care.
+Employees are the lifeblood of any organization. They are responsible for product creation, service provision, and the impetus behind growth and innovation. Consequently, selecting the right candidates for open positions is a critical process that requires careful consideration. 
 
-Unfortunately, this is a difficult process full of pitfalls.  How do you identify a great candidate? How do you even know what *"a great candidate"* is?
-
-We have spent over a decade thinking about these problems and are ready to share some of our insights in this guide. It is written with technical positions in mind but most of it applies to any job opening.
+This guide aims to provide insights into the challenges of identifying exceptional candidates and offers a systematic approach to specialized recruitment.
 
 ## What is a Skill Canvas
 
-The recruitment process consists of a lot of parts such as crafting job descriptions, pre-screening candidates, preparing interview scenarios, building proper training and onboarding procedures, etc. 
+Recruitment encompasses various components such as crafting job descriptions, candidate pre-screening, interview preparation, onboarding procedures, etc. 
 
-In a successful process all of these work together towards a singular well-defined goal. The skill canvas is a tool that help us define it thus allowing everyone involved in the recruitment process to share the same vision.
+To ensure an effective and coherent recruitment process, it is essential to establish a shared vision among everyone involved in it. The skill canvas serves as a tool for defining this vision, providing a clear outline of the desired skills and their rationale.
 
-The canvas mainly consists of a list of unambiguously described and quantified skills of what we are looking for in a candidate as well as the reasoning behind it.
+The canvas primarily comprises a meticulously crafted list of skills, explicitly described and quantified, that encapsulate the qualities sought in a candidate. Additionally, it encompasses the rationale underpinning the selection of each skill.
 
-Creating it is arguably the most important step in the whole process yet it is oftentimes either completely ignored or it's being done idly by a single person for less than an hour.
+Creating the skill canvas represents an indispensable initial step in the overall process, oftentimes ignored completely or done by a single individual within a meager timeframe.
 
 ## The Skill List
 
-The first step of creating a skill canvas is to list all skills related to the particular position. 
+The initial step in creating a skill canvas is to compile a comprehensive list of skills relevant to the specific position. 
 
-Though remember, we are not looking for the perfect human being. We probably don't need a team full of team leaders or people thinking outside of the box.
+It is important to note that the objective is not to seek a perfect human being. Instead, the focus should be on identifying the skills that are most relevant for the job at hand. 
 
-It helps tremendously to write down a once-sentence reasoning of why we chose each of the skills listed. It keeps everyone on board and it makes future analysis easier.
+Providing concise reasoning for each skill inclusion helps maintain alignment and facilitates future analysis.
 
-Although, not necessary, we can group the skills in two categories:
+Furthermore, the skills can be categorized into two groups:
 
 ### Technical Skills
 
-Technical skills are the ones that are related to some kind of expertise regarding a certain piece of technology, software or specialized knowledge and are deeply rooted in a particular field of study. Usually they will be listed by the engineering team.
+Technical skills are often defined by engineering teams and pertain to expertise in a particular technology, software, or specialized knowledge firmly rooted in a specific field of study.
 
 ### Personal Skills
 
-Personal skills or soft skills are the ones that do not relate to a particular field of study. They might be willingness to teach or mentor others, the ability to organize a specific group of people, a certain way of tackling problems, dealing with interpersonal issues, working under pressure, etc.
+Personal skills, also known as soft skills, are not tied to a specific field of study. They encompass attributes such as mentoring ability, organizational skills, problem-solving approach, interpersonal capabilities, and working under pressure, among others.
 
 ## Skill Definitions and Expertise Levels
 
-At this point we might have written something along the lines of <q>The candidate must have at least 5 years of experience working in microservices architectures</q>. Bear in mind that experience is only a small part of what builds up mastery and is not really a skill.
+Rather than relying solely on years of experience for defining a level of expertise, it is crucial to provide explicit definitions and expectations for each skill. 
 
-Let's try to be a little bit more specific about what this kind experience means to us. For example, we might be looking for a particular level of autonomy when solving problems that our new employee will encounter: <q>The candidate should be able to investigate and identify race conditions within a complex microservice architecture on their own</q>.
+For instance, instead of stating <q>The candidate must have at least 5 years of experience working in microservices architectures</q>, a more precise requirement could be articulated, such as <q>The candidate should be able to autonomously investigate and identify race conditions within a complex microservice architecture</q>. 
 
-Phrasing it like that will help us immensely in crafting both our job description and interview scenarios and allows everyone involved in the recruitment process to share the same vision.
+This level of detail aids in crafting accurate job descriptions and interview scenarios, while fostering shared understanding throughout the recruitment process.
 
 ## Quantifying the Skills
 
-It is highly unlikely that during the recruitment process we'll be able to test all candidates on every single skill on the canvas with as much depth as we would like. Because of this we need some kind of system to help us define our strategy.
-
-To do this, we should evaluate all skills on the canvas on two additional characteristics.
+Considering the limitations of assessing all skills in-depth for every candidate, a systematic approach is necessary to guide the evaluation strategy. To achieve this, two additional characteristics should be considered for each skill:
 
 ### Importance
 
-This will help us at the later stages of the process by allowing us to focus our efforts on the things that matter most. Generally, there are 3 types of skills:
+This classification permits the concentration of efforts on pivotal elements during the advanced stages of the process. Generally, three types of skills are recognized:
 
-- **Core** - a skill that is essential for the job and is strictly necessary for even attempting it.
-- **Auxiliary** - a skill that is not necessarily required for the job but has a substantial impact on it.
-- **Tangent** - a skill that is somehow related to the job but it is possible for a skilled professional to lack it.
+- **Core** - these skills constitute essential prerequisites for the job, without which it cannot be effectively pursued.
+- **Auxiliary** - Although not obligatory, these skills exert a substantial impact on the role and its outcomes.
+- **Tangent** - these skills bear some tangential relevance to the job, but a skilled professional may lack them without significant detriment.
 
 ### Teachability
 
-Next, it is time to determine what is the approximate cost for teaching each of the skills. Every skill generally falls in one of these 3 categories.
+To determine the feasibility of imparting skills, each should be evaluated in terms of teachability. Skills can fall into three categories:
 
-- **Internally teachable** - a skill that our organization has the ability and resources to teach. The resources usually are the time of the trainee and the availability of willing and able personnel that will conduct some kind of a training program.
-- **Externally teachable** - a skill that our organization doesn't have the ability or resources to teach internally but can afford to outsource a training. The resources that are usually associated with that are the time of the trainee, and the financial cost of the third-party that will conduct the training.
-- **Unteachable** - a skill that is not teachable given a reasonable amount of time or other resources. 
+- **Internally teachable** - these skills can be cultivated within the organization through available resources. Typically, the temporal commitment of trainees and the presence of willing and competent personnel who facilitate relevant training programs comprise the requisite resources.
+- **Externally teachable** - these skills surpass the internal training capacities. Outsourcing the training to third-party entities becomes a viable option, albeit incurring financial costs and necessitating the investment of trainee time.
+- **Unteachable** - certain skills defy reasonable acquisition within the confines of available temporal or resource constraints.
 
 ## Next Steps
 
-Having completed the skill canvas, we can now be sure that every single step of the recruitment process will work in unison towards the same goal. 
-
-Next, we are ready to start defining our recruitment strategy.
+With the skill canvas in place, the recruitment process can operate cohesively towards the defined goal. The subsequent phase involves the formulation of a recruitment strategy that aligns cohesively with the identified skills while working with the constraints imposed on the overall process.

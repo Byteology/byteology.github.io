@@ -1,5 +1,13 @@
 [
 	{
+		"handle": "migration-to-microservices",
+		"category": "SoftwareDevelopment",
+		"title": "Migration to Microservices",
+		"subtitle": "4-step Strategy",
+		"description": "The migration to a microservice architecture is a complex process with many pitfalls. To avoid them we have spent years designing and refining a four-step strategy that helps businesses successfully migrate to microservices.",
+		"keywords": [ "microservices", "migration", "migration to microservices", "monolith", "process", "migration process" ]
+	},
+	{
 		"handle": "recruitment-guide-part-6",
 		"category": "Recruitment",
 		"title": "Concise Guide to Specialized Recruitment",
