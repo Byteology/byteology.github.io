@@ -4,6 +4,8 @@ Employees are the lifeblood of any organization. They are responsible for produc
 
 This guide aims to provide insights into the challenges of identifying exceptional candidates and offers a systematic approach to specialized recruitment.
 
+---
+
 ## What is a Skill Canvas
 
 Recruitment encompasses various components such as crafting job descriptions, candidate pre-screening, interview preparation, onboarding procedures, etc. 
@@ -13,6 +15,8 @@ To ensure an effective and coherent recruitment process, it is essential to esta
 The canvas primarily comprises a meticulously crafted list of skills, explicitly described and quantified, that encapsulate the qualities sought in a candidate. Additionally, it encompasses the rationale underpinning the selection of each skill.
 
 Creating the skill canvas represents an indispensable initial step in the overall process, oftentimes ignored completely or done by a single individual within a meager timeframe.
+
+---
 
 ## The Skill List
 
@@ -32,13 +36,17 @@ Technical skills are often defined by engineering teams and pertain to expertise
 
 Personal skills, also known as soft skills, are not tied to a specific field of study. They encompass attributes such as mentoring ability, organizational skills, problem-solving approach, interpersonal capabilities, and working under pressure, among others.
 
+---
+
 ## Skill Definitions and Expertise Levels
 
 Rather than relying solely on years of experience for defining a level of expertise, it is crucial to provide explicit definitions and expectations for each skill. 
 
-For instance, instead of stating <q>The candidate must have at least 5 years of experience working in microservices architectures</q>, a more precise requirement could be articulated, such as <q>The candidate should be able to autonomously investigate and identify race conditions within a complex microservice architecture</q>. 
+For instance, instead of stating ""The candidate must have at least 5 years of experience working in microservices architectures"", a more precise requirement could be articulated, such as ""The candidate should be able to autonomously investigate and identify race conditions within a complex microservice architecture"". 
 
 This level of detail aids in crafting accurate job descriptions and interview scenarios, while fostering shared understanding throughout the recruitment process.
+
+---
 
 ## Quantifying the Skills
 
@@ -59,6 +67,8 @@ To determine the feasibility of imparting skills, each should be evaluated in te
 - **Internally teachable** - these skills can be cultivated within the organization through available resources. Typically, the temporal commitment of trainees and the presence of willing and competent personnel who facilitate relevant training programs comprise the requisite resources.
 - **Externally teachable** - these skills surpass the internal training capacities. Outsourcing the training to third-party entities becomes a viable option, albeit incurring financial costs and necessitating the investment of trainee time.
 - **Unteachable** - certain skills defy reasonable acquisition within the confines of available temporal or resource constraints.
+
+---
 
 ## Next Steps
 

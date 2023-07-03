@@ -76,9 +76,19 @@
     }
 
     .styled-content q,
+    .styled-content cite,
     .styled-content blockquote {
         @apply text-neutral-200;
         @apply italic;
         @apply leading-tight;
     }
+
+    .styled-content cite::before,
+    .styled-content cite::after,
+    {
+        @apply text-neutral-200 italic leading-tight;
+        content: '"';
+    }
+
+
 }

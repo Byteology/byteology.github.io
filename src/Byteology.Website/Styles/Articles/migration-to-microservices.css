@@ -1,0 +1,26 @@
+#migration-to-microservices .benefit {
+	@apply card-sm styled-content text-sm space-y-2;
+}
+
+#migration-to-microservices b-heading {
+    @apply block;
+    @apply icon-title;
+}
+
+#migration-to-microservices b-benefits {
+    @apply grid;
+    @apply grid-cols-1;
+    @apply md:grid-cols-2;
+    @apply gap-4;
+}
+
+#migration-to-microservices b-benefit {
+    @apply card-sm;
+    @apply styled-content;
+    @apply text-sm;
+    @apply space-y-2;
+}
+
+#migration-to-microservices b-benefit > b-heading {
+    @apply icon-title-sm;
+}

@@ -19,4 +19,8 @@
     .icon-title-sm > *:first-child {
         flex: 0 0 2.5rem;
     }
+
+    .icon-title-sm > span {
+        @apply text-base font-bold text-accent uppercase;
+    }
 }

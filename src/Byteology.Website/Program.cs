@@ -2,6 +2,7 @@ using Byteology.Website;
 using Byteology.Website.Inquiry.Service;
 using Byteology.Website.Thoughts;
 using Ljbc1994.Blazor.IntersectionObserver;
+using Markdig;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -21,6 +22,11 @@ static void ConfigureServices(IServiceCollection services)
     services.AddSingleton<IInquiryService, GoogleDriveInquiryService>();
     services.AddHttpClient<IInquiryService, GoogleDriveInquiryService>();
     services.AddIntersectionObserver();
+
+	services.AddSingleton(new MarkdownPipelineBuilder()
+		.UseCitations()
+		.UseCustomContainers()
+		.Build());
 }
 
 static void RegisterCustomElements(IJSComponentConfiguration configuration)

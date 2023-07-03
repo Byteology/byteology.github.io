@@ -2,13 +2,30 @@
 
 In today's disruptive web development world, microservices are receiving a lot of attention. Unlike monolithic systems, microservices are designed to scale with changing market demands. Because of that, modern enterprises are moving their legacy monolithic systems to microservices architecture.
 
+---
+
 ## Benefits of the Microservice Architecture
 
 As the name suggests, microservices are small units that break up a monolithic application into a set of independent services. Unlike slow and heavy monolithic applications, microservices are faster to develop and deploy. Migrating from a monolithic architecture to a microservice one provides a lot of benefits, most important of which are as follows:
 
 
-### <b-icon name="RaindropIcon"/> Simplicity
+<b-benefit>
+	<b-heading>
+		<b-icon name="RaindropIcon"></b-icon>
+		<span>Simplicity</span>
+	</b-heading>
+	<p>
+		Teams act within a small and well understood context, reducing cognitive complexity and shortening
+		development cycle times.
+	</p>
+</b-benefit>
+
+::::benefits
+
+:::benefit
+### <b-icon name="RaindropIcon"></b-icon> Simplicity
 Teams act within a small and well understood context, reducing cognitive complexity and shortening development cycle times.
+:::
 
 ### <b-icon name="DomainAlignmentIcon"/>  Domain Alignment
 Microservices align closely with their respective business domains, allowing the use of ubiquitous language and thus improving collaboration.
@@ -25,8 +42,14 @@ Service independence increases an application's resistance to failure.
 ### <b-icon name="DirectionsIcon"/>  Freedom
 Teams have the freedom to choose the best tool to solve their specific problems.
 
+::::
+
+---
+
 ## When to Migrate
 Once you have made your mind to embrace microservices, the first question is - when should you make your move? Usually the right time to migrate a monolithic application is when your organization is growing and is facing productivity and scaling issues or when you start experiencing disruption in the communication between teams.
+
+---
 
 ## How to Migrate
 The migration to microservice architecture is a complex process with many pitfalls. To avoid them we have spent

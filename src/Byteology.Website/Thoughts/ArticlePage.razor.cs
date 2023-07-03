@@ -1,6 +1,7 @@
 namespace Byteology.Website.Thoughts;
 
 using System.Reflection;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Text.RegularExpressions;
 using Markdig;
@@ -15,6 +16,9 @@ public partial class ArticlePage : ComponentBase
 	private MarkupString _intro, _content = default!;
 
 	private ArticleMetadata? _metadata;
+
+	[Inject]
+	private MarkdownPipeline _markdownPipeline { get; set; } = default!;
 
 	[Inject]
 	private ArticlesRepository _articlesRepository { get; set; } = default!;
@@ -61,9 +65,9 @@ public partial class ArticlePage : ComponentBase
 		return markdown;
 	}
 
-	private static ArticleBlock[] parseMarkdown(string markdown)
+	private ArticleBlock[] parseMarkdown(string markdown)
 	{
-		string htmlString = Markdown.ToHtml(markdown);
+		string htmlString = Markdown.ToHtml(markdown, _markdownPipeline);
 		string[] blockSplit = getHeadingRegex().Split(htmlString);
 
 		List<int> lastBlockId = new();
@@ -91,8 +95,8 @@ public partial class ArticlePage : ComponentBase
 
 		int headingNumber = int.Parse(blockData[2].ToString());
 		int headingEnd = blockData.IndexOf($"</h{headingNumber}>");
-		string title = blockData[4..headingEnd];
-		string content = blockData[(headingEnd + 5)..];
+		string title = blockData[4..headingEnd].Trim();
+		string content = blockData[(headingEnd + 5)..].Trim();
 		string id = string.Empty;
 
 		if (headingNumber > 1)
@@ -124,29 +128,22 @@ public partial class ArticlePage : ComponentBase
 
 	private MarkupString getIntroContent()
 	{
-		return new MarkupString(_blocks[0].Text);
+		string text = _blocks[0].Text.EndsWith("<hr />") ? _blocks[0].Text[..^6] : _blocks[0].Text;
+		return new MarkupString(text);
 	}
 
 	private MarkupString fillContent()
 	{
-		bool blockOpened = false;
-		StringBuilder value = new();
+		StringBuilder value = new("<section>");
 
 		foreach (ArticleBlock block in _blocks.Skip(1))
 		{
-			if (block.HeaderNumber == 2)
-			{
-				if (blockOpened)
-					value.AppendLine("</section>");
-				value.AppendLine("<section>");
-				blockOpened = true;
-			}
 			value.AppendLine($"<h{block.HeaderNumber} name=\"{block.Id}\">{block.Title}</h{block.HeaderNumber}>");
 			value.AppendLine(block.Text);
 		}
 
-		if (blockOpened)
-			value.AppendLine("</section>");
+		value = value.Replace("<hr />", "</section><section>");
+		value.AppendLine("</section>");
 
 		return new MarkupString(value.ToString());
 	}
