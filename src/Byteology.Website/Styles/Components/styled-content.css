@@ -86,7 +86,6 @@
     .styled-content cite::before,
     .styled-content cite::after,
     {
-        @apply text-neutral-200 italic leading-tight;
         content: '"';
     }
 

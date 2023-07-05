@@ -14,17 +14,13 @@ b-benefits {
 }
 
 b-benefit {
-    @apply card-sm;
+    @apply card;
     @apply styled-content;
-}
-
-b-benefit > b-heading {
-    @apply icon-title-sm;
 }
 
 b-pros,
 b-cons{
-    @apply card-sm;
+    @apply card;
     @apply styled-content;
 }
 

@@ -16,14 +16,10 @@ b-benefits {
 }
 
 b-benefit {
-    @apply card-sm;
+    @apply card;
     @apply styled-content;
     @apply text-sm;
     @apply space-y-2;
-}
-
-b-benefit > b-heading {
-    @apply icon-title-sm;
 }
 
 b-steps {
@@ -33,13 +29,12 @@ b-steps {
 
 b-step {
     @apply block;
-    @apply card;
     @apply styled-content;
     @apply space-y-8;
 }
 
 b-step > h3 {
-    @apply card-title;
+    /* @apply card-title; */
 }
 
 b-step > ol {

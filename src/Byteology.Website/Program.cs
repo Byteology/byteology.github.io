@@ -26,6 +26,7 @@ static void ConfigureServices(IServiceCollection services)
 	services.AddSingleton(new MarkdownPipelineBuilder()
 		.UseCitations()
 		.UseCustomContainers()
+		.UseGenericAttributes()
 		.Build());
 }
 

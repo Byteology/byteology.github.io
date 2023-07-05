@@ -6,12 +6,8 @@ b-skill-categories {
 }
 
 b-skill-category {
-    @apply card-sm;
+    @apply card;
     @apply styled-content;
-}
-
-b-skill-category > b-heading {
-    @apply icon-title-sm;
 }
 
 b-steps {
@@ -20,17 +16,16 @@ b-steps {
 }
 
 b-step {
-    @apply card;
     @apply styled-content;
 }
 
 b-step > h3 {
-    @apply card-title-sm;
+    /* @apply card-title-sm; */
 }
 
 b-pros,
 b-cons{
-    @apply card-sm;
+    @apply card;
     @apply styled-content;
 }
 

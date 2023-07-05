@@ -7,10 +7,6 @@ b-heading {
     @apply icon-title;
 }
 
-b-benefit > b-heading {
-    @apply icon-title-sm;
-}
-
 b-benefits {
     @apply grid;
     @apply grid-cols-1;
@@ -19,7 +15,7 @@ b-benefits {
 }
 
 b-benefit {
-    @apply card-sm;
+    @apply card;
     @apply styled-content;
     @apply text-sm;
     @apply space-y-2;

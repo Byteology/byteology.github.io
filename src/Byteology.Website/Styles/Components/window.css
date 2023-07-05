@@ -1,0 +1,25 @@
+@layer components {
+
+	.window {
+		@apply block surface-2 elevation p-4 styled-content space-y-4;
+	}
+
+	.window > *:first-child {
+
+        @apply surface-2 py-4 elevation !border-x-0 !border-t-0;
+		@apply px-8 -m-4 mb-4;
+        @apply flex items-center gap-4;
+    }
+
+	.window > *:first-child > *:first-child {
+		@apply text-[1.5em] text-primary font-bold;
+	}
+
+	.window:not(:first-child) {
+		@apply !mt-8;
+	}
+
+	.window:not(:last-child) {
+		@apply !mb-8;
+	}
+}
