@@ -1,0 +1,38 @@
+@if (_metadata == null)
+{
+    <PaperList PapersRepository="PapersRepository" />
+}
+else
+{
+    <Metadata Title="@(string.IsNullOrEmpty(_metadata.Subtitle) ? _metadata.Title : $"{_metadata.Title} - {_metadata.Subtitle}")" Description="@_metadata.Description" Article="true" Keywords="@_metadata.Keywords"/>
+
+    <article id="@_metadata.Handle">
+
+        <section>
+            <b-heading>
+                <PaperCategoryIcon Category="_metadata.Category" />
+                <h1>
+                    @_metadata.Title
+                    @if(!string.IsNullOrEmpty(_metadata.Subtitle))
+                    {
+                        <span>@_metadata.Subtitle</span>
+                    }
+                </h1>
+            </b-heading>
+            @_intro
+        </section>
+
+        @if (_sections.Length > 2 && IndexEnabled)
+        {
+            <PaperIndex Sections="_sections" />
+        }
+
+        @_content
+        
+    </article>
+
+	@if (NavigationEnabled)
+	{
+	    <PaperNavigation PapersRepository="PapersRepository" CurrentPaperHandle="@Handle" />
+	}
+}

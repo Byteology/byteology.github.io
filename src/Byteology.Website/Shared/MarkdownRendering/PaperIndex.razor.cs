@@ -1,18 +1,18 @@
-namespace Byteology.Website.Thoughts;
+namespace Byteology.Website.Shared.MarkdownRendering;
 
 using System.Text;
 using System.Text.RegularExpressions;
 using Markdig;
 using Microsoft.JSInterop;
 
-public partial class ArticleIndex : ComponentBase
+public partial class PaperIndex : ComponentBase
 {
 	[Inject]
 	private IJSRuntime _jsRuntimeAsync { get; set; } = default!;
 	private IJSInProcessRuntime _jsRuntime => (IJSInProcessRuntime)_jsRuntimeAsync;
 
 	[Parameter, EditorRequired]
-	public IEnumerable<ArticleBlock> Blocks { get; set; } = default!;
+	public IEnumerable<PaperSection> Sections { get; set; } = default!;
 
 	private MarkupString _content = default!;
 
@@ -21,12 +21,12 @@ public partial class ArticleIndex : ComponentBase
 		base.OnParametersSet();
 
 		StringBuilder markdown = new();
-		foreach (ArticleBlock block in Blocks)
+		foreach (PaperSection section in Sections)
 		{
-			if (block.HeaderNumber > 1)
+			if (section.HeaderNumber > 1)
 			{
-				string indent = new(' ', (block.HeaderNumber - 2) * 3);
-				markdown.AppendLine($"{indent}1. <button b-target=\"{block.Id}\">{sanitizeTitle(block.Title)}</button>");
+				string indent = new(' ', (section.HeaderNumber - 2) * 3);
+				markdown.AppendLine($"{indent}1. <button b-target=\"{section.Id}\">{sanitizeTitle(section.Title)}</button>");
 			}
 		}
 		_content = new MarkupString(Markdown.ToHtml(markdown.ToString()));
@@ -36,7 +36,7 @@ public partial class ArticleIndex : ComponentBase
 	{
 		base.OnAfterRender(firstRender);
 
-		string[] navIds = Blocks.Where(x => x.HeaderNumber > 1).Select(x => x.Id).ToArray();
+		string[] navIds = Sections.Where(x => x.HeaderNumber > 1).Select(x => x.Id).ToArray();
 		_jsRuntime.InvokeVoid("initIndex", (object)navIds);
 	}
 

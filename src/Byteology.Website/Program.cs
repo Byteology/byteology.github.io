@@ -17,17 +17,23 @@ await builder.Build().RunAsync();
 // This method is required by the pre-renderer
 static void ConfigureServices(IServiceCollection services)
 {
-    services.AddSingleton<LayoutStateContainer>();
-    services.AddSingleton<ArticlesRepository>();
+	services.AddSingleton<LayoutStateContainer>();
     services.AddSingleton<IInquiryService, GoogleDriveInquiryService>();
     services.AddHttpClient<IInquiryService, GoogleDriveInquiryService>();
-    services.AddIntersectionObserver();
+	services.AddIntersectionObserver();
 
 	services.AddSingleton(new MarkdownPipelineBuilder()
 		.UseCitations()
 		.UseCustomContainers()
 		.UseGenericAttributes()
 		.Build());
+
+	RegisterMarkdownRepositories(services);
+}
+
+static void RegisterMarkdownRepositories(IServiceCollection services)
+{
+	services.AddSingleton<ArticlesRepository>();
 }
 
 static void RegisterCustomElements(IJSComponentConfiguration configuration)

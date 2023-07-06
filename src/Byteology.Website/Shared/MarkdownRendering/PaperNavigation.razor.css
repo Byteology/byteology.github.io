@@ -1,4 +1,4 @@
-b-article-nav {
+b-paper-nav {
     @apply grid;
     @apply grid-cols-1;
     @apply md:grid-cols-2;
@@ -6,13 +6,13 @@ b-article-nav {
     @apply gap-8;
 }
 
-b-article-nav p {
+b-paper-nav p {
     @apply text-sm;
     @apply text-accent;
     @apply font-bold;
 }
 
-b-article-nav a {
+b-paper-nav a {
     @apply link;
 }
 

@@ -1,6 +1,6 @@
-namespace Byteology.Website.Thoughts;
+namespace Byteology.Website.Shared.MarkdownRendering;
 
-public class ArticleBlock
+public class PaperSection
 {
 	public string Id { get; init; }
 
@@ -9,7 +9,7 @@ public class ArticleBlock
 
 	public string Text { get; init; }
 
-	public ArticleBlock(string id, int headerNumber, string title, string text)
+	public PaperSection(string id, int headerNumber, string title, string text)
 	{
 		Id = id;
 		HeaderNumber = headerNumber;

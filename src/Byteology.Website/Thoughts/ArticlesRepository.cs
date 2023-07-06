@@ -1,65 +1,27 @@
 namespace Byteology.Website.Thoughts;
 
-using System.Reflection;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using System.Collections.Generic;
+using Byteology.Website.Shared.MarkdownRendering;
 
-public class ArticlesRepository
+public class ArticlesRepository : PapersRepository
 {
-	private readonly LinkedList<ArticleMetadata> _data = new();
-	private readonly Dictionary<string, LinkedListNode<ArticleMetadata>> _dict = new();
+	public ArticlesRepository() : base(getPapersMetadata(), "thoughts/", getArticlesNamespace(), getLegacyHandles()) { }
 
-	public ArticlesRepository()
+	private static PaperMetadata[] getPapersMetadata()
 	{
-		Assembly assembly = typeof(ArticlesRepository).Assembly;
-		string assemblyName = assembly.GetName().Name!;
+		PaperMetadata[] result =
+			GetPaperMetadataFromEmbeddedJson(typeof(ArticlesRepository).Assembly, "Thoughts.Articles.article-list.json");
 
-		string path = $"{assemblyName}.Thoughts.Articles";
-
-		using Stream articleListStream = assembly.GetManifestResourceStream($"{path}.article-list.json")!;
-		using StreamReader articleListReader = new(articleListStream);
-		string rawArticleList = articleListReader.ReadToEnd();
-
-		JsonSerializerOptions serializerOptions = new(JsonSerializerDefaults.Web);
-		serializerOptions.Converters.Add(new JsonStringEnumConverter());
-		ArticleMetadata[] articleList = JsonSerializer.Deserialize<ArticleMetadata[]>(rawArticleList, serializerOptions)!;
-
-		foreach (ArticleMetadata article in articleList.Reverse())
-		{
-			LinkedListNode<ArticleMetadata> node = _data.AddLast(article);
-			bool success = _dict.TryAdd(article.Handle.ToLower(), node);
-			if (!success)
-				_data.RemoveLast();
-			addLegacyHandles(node);
-		}
+		return result;
 	}
 
-	private void addLegacyHandles(LinkedListNode<ArticleMetadata> node)
+	private static IEnumerable<(string legacyHandle, string newHandle)>? getLegacyHandles()
 	{
-		if (node.Value.Handle.ToLower() == "recruitment-guide-part-1")
-			_dict.Add("interviewing", node);
+		yield return new("interviewing", "recruitment-guide-part-1");
 	}
 
-	public IEnumerable<ArticleMetadata> GetAll() => _data.Reverse();
-
-	public ArticleMetadata? Get(string handle)
+	private static string getArticlesNamespace()
 	{
-		handle = handle.ToLower();
-		_dict.TryGetValue(handle, out LinkedListNode<ArticleMetadata>? result);
-		return result?.Value;
-	}
-
-	public ArticleMetadata? GetNext(string handle)
-	{
-		handle = handle.ToLower();
-		_dict.TryGetValue(handle, out LinkedListNode<ArticleMetadata>? node);
-		return node?.Next?.Value;
-	}
-
-	public ArticleMetadata? GetPrevious(string handle)
-	{
-		handle = handle.ToLower();
-		_dict.TryGetValue(handle, out LinkedListNode<ArticleMetadata>? node);
-		return node?.Previous?.Value;
+		return $"{typeof(ArticlesRepository).Namespace}.Articles";
 	}
 }
