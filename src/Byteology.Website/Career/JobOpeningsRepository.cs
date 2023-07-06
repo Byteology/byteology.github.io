@@ -4,7 +4,13 @@ using Byteology.Website.Shared.MarkdownRendering;
 
 public class JobOpeningsRepository : PapersRepository
 {
-	public JobOpeningsRepository() : base(getPapersMetadata(), "career", getJobOpeningsNamespace()) { }
+	public JobOpeningsRepository() : base(
+		paperList: getPapersMetadata(),
+		urlPrefix: "career",
+		papersNamespace: getJobOpeningsNamespace(),
+		defaultIcon: typeof(Icons.PeopleIcon)
+		)
+	{ }
 
 	private static PaperMetadata[] getPapersMetadata()
 	{

@@ -27,15 +27,18 @@ public abstract class PapersRepository
 	private readonly string _urlPrefix;
 	private readonly string _papersNamespace;
 
+	public Type? DefaultIcon { get; }
 
 	protected PapersRepository(
 		PaperMetadata[] paperList,
 		string urlPrefix,
 		string papersNamespace,
+		Type? defaultIcon,
 		IEnumerable<(string legacyHandle, string newHandle)>? legacyHandles = null)
 	{
 		_urlPrefix = urlPrefix.EndsWith('/') ? urlPrefix : urlPrefix + "/";
 		_papersNamespace = papersNamespace;
+		DefaultIcon = defaultIcon;
 
 		if (legacyHandles != null)
 		{

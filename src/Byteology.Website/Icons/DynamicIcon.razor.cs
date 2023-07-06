@@ -7,6 +7,9 @@ public partial class DynamicIcon : ComponentBase
 	[Parameter, EditorRequired]
 	public string Name { get; set; } = default!;
 
+	[Parameter]
+	public Type? DefaultIcon { get; set; }
+
 	private Type? _iconType;
 
 	protected override void OnParametersSet()
@@ -18,5 +21,16 @@ public partial class DynamicIcon : ComponentBase
 
 		Assembly assembly = typeof(DynamicIcon).Assembly;
 		_iconType = assembly.GetType(fullName, false, true);
+
+		if (_iconType == null && !fullName.EndsWith("Icon"))
+		{
+			fullName += "Icon";
+			_iconType = assembly.GetType(fullName, false, true);
+		}
+
+		Console.WriteLine($"{fullName} - {_iconType?.Name} - {DefaultIcon?.Name}");
+
+		if (_iconType == null)
+			_iconType = DefaultIcon;
 	}
 }

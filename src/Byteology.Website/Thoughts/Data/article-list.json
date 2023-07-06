@@ -1,7 +1,7 @@
 [
 	{
 		"handle": "migration-to-microservices",
-		"category": "SoftwareDevelopment",
+		"icon": "cogwheel",
 		"title": "Migration to Microservices",
 		"subtitle": "4-step Strategy",
 		"description": "The migration to a microservice architecture is a complex process with many pitfalls. To avoid them we have spent years designing and refining a four-step strategy that helps businesses successfully migrate to microservices.",
@@ -9,7 +9,7 @@
 	},
 	{
 		"handle": "recruitment-guide-part-6",
-		"category": "Recruitment",
+		"icon": "cv",
 		"title": "Concise Guide to Specialized Recruitment",
 		"subtitle": "Part 6: Onboarding and Trainings",
 		"description": "description",
@@ -17,7 +17,7 @@
 	},
 	{
 		"handle": "recruitment-guide-part-5",
-		"category": "Recruitment",
+		"icon": "cv",
 		"title": "Concise Guide to Specialized Recruitment",
 		"subtitle": "Part 5: Screening",
 		"description": "description",
@@ -25,7 +25,7 @@
 	},
 	{
 		"handle": "recruitment-guide-part-4",
-		"category": "Recruitment",
+		"icon": "cv",
 		"title": "Concise Guide to Specialized Recruitment",
 		"subtitle": "Part 4: Pre-screening Techniques",
 		"description": "description",
@@ -33,7 +33,7 @@
 	},
 	{
 		"handle": "recruitment-guide-part-3",
-		"category": "Recruitment",
+		"icon": "cv",
 		"title": "Concise Guide to Specialized Recruitment",
 		"subtitle": "Part 3: Crafting a Job Description",
 		"description": "description",
@@ -41,7 +41,7 @@
 	},
 	{
 		"handle": "recruitment-guide-part-2",
-		"category": "Recruitment",
+		"icon": "cv",
 		"title": "Concise Guide to Specialized Recruitment",
 		"subtitle": "Part 2: Defining a Strategy",
 		"description": "description",
@@ -49,7 +49,7 @@
 	},
 	{
 		"handle": "recruitment-guide-part-1",
-		"category": "Recruitment",
+		"icon": "cv",
 		"title": "Concise Guide to Specialized Recruitment",
 		"subtitle": "Part 1: Creating a Skill Canvas",
 		"description": "How do you craft a successful job advert? How do you identify a great candidate? How do you even know what a “great candidate” is? We have spent over a decade thinking about these problems and are ready to share some of our findings in this guide.",

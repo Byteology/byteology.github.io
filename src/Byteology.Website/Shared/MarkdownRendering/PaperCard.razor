@@ -1,6 +1,6 @@
 <b-card>
 	<b-title>
-		<PaperCategoryIcon Category="Metadata.Category" />
+		<DynamicIcon Name="@Metadata.Icon" DefaultIcon="@PapersRepository.DefaultIcon" />
 		<h1>
 			@Metadata.Title
 			@if(!string.IsNullOrEmpty(Metadata.Subtitle))

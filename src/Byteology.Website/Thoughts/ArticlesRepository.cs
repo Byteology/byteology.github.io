@@ -5,7 +5,13 @@ using Byteology.Website.Shared.MarkdownRendering;
 
 public class ArticlesRepository : PapersRepository
 {
-	public ArticlesRepository() : base(getPapersMetadata(), "thoughts", getArticlesNamespace(), getLegacyHandles()) { }
+	public ArticlesRepository() : base(
+			paperList: getPapersMetadata(),
+			urlPrefix: "thoughts",
+			papersNamespace: getArticlesNamespace(),
+			defaultIcon: typeof(Icons.BooksIcon),
+			legacyHandles: getLegacyHandles())
+	{ }
 
 	private static PaperMetadata[] getPapersMetadata()
 	{

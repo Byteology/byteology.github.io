@@ -10,7 +10,7 @@ else
 
         <section>
             <b-heading>
-                <PaperCategoryIcon Category="_metadata.Category" />
+                <DynamicIcon Name="@_metadata.Icon" DefaultIcon="@PapersRepository.DefaultIcon" />
                 <h1>
                     @_metadata.Title
                     @if(!string.IsNullOrEmpty(_metadata.Subtitle))
