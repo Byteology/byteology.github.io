@@ -34,7 +34,7 @@ public abstract class PapersRepository
 		string papersNamespace,
 		IEnumerable<(string legacyHandle, string newHandle)>? legacyHandles = null)
 	{
-		_urlPrefix = urlPrefix;
+		_urlPrefix = urlPrefix.EndsWith('/') ? urlPrefix : urlPrefix + "/";
 		_papersNamespace = papersNamespace;
 
 		if (legacyHandles != null)

@@ -5,12 +5,12 @@ using Byteology.Website.Shared.MarkdownRendering;
 
 public class ArticlesRepository : PapersRepository
 {
-	public ArticlesRepository() : base(getPapersMetadata(), "thoughts/", getArticlesNamespace(), getLegacyHandles()) { }
+	public ArticlesRepository() : base(getPapersMetadata(), "thoughts", getArticlesNamespace(), getLegacyHandles()) { }
 
 	private static PaperMetadata[] getPapersMetadata()
 	{
 		PaperMetadata[] result =
-			GetPaperMetadataFromEmbeddedJson(typeof(ArticlesRepository).Assembly, "Thoughts.Articles.article-list.json");
+			GetPaperMetadataFromEmbeddedJson(typeof(ArticlesRepository).Assembly, "Thoughts.Data.article-list.json");
 
 		return result;
 	}
@@ -22,6 +22,6 @@ public class ArticlesRepository : PapersRepository
 
 	private static string getArticlesNamespace()
 	{
-		return $"{typeof(ArticlesRepository).Namespace}.Articles";
+		return $"{typeof(ArticlesRepository).Namespace}.Data";
 	}
 }
