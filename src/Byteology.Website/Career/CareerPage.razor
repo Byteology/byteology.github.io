@@ -1,8 +1,12 @@
-﻿@page "/career"
-
+﻿@using Byteology.Website.Shared.MarkdownRendering
 @using Byteology.Website.Career.Inquiry
 @using Byteology.Website.Inquiry
 @using Byteology.Website.Layout
+
+@inject JobOpeningsRepository _repository
+
+@page "/career"
+
 
 <Metadata Title="Careers"
           Description="Don't hesitate to contact us if you need any help with your career development. We'll be happy to give you advice and help you prepare for interviews."
@@ -14,7 +18,7 @@
         <CvIcon />
         <h1>Open Positions</h1>
     </b-heading>
-    @if (JobOpenings.Current.Length == 0)
+    @if (_repository.GetPaperCount() == 0)
     {
         <p>
             We don't have any open positions right now but don't hesitate to contact us if you need any help with your
@@ -30,14 +34,11 @@
     }
 </b-intro>
 
-@if (JobOpenings.Current.Length == 0)
+@if (_repository.GetPaperCount() == 0)
 {
     <CareerInquiryComponent />
 }
 else
 {
-    @foreach (JobOpening position in JobOpenings.Current)
-    {
-        <JobOpeningCard Opening="position"/>
-    }
+    <PaperList PapersRepository="_repository"/>
 }

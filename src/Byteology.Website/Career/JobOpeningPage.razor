@@ -1,14 +1,12 @@
+@using Byteology.Website.Career.Inquiry
+@using Byteology.Website.Shared.MarkdownRendering
+
 @page "/career/{openingId}"
 
-@using Byteology.Website.Career.Inquiry
+<Paper PapersRepository="_repository"
+       Handle="@OpeningId"
+       NotFoundUrl="/career"
+       IndexEnabled="false"
+       NavigationEnabled="false" />
 
-@if (_component == null)
-{
-    <DynamicComponent Type="typeof(CareerPage)" />
-}
-else
-{
-    <DynamicComponent Type="_component" />
-
-    <JobApplicationInquiryComponent />
-}
+<JobApplicationInquiryComponent />

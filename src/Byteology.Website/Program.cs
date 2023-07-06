@@ -1,4 +1,5 @@
 using Byteology.Website;
+using Byteology.Website.Career;
 using Byteology.Website.Inquiry.Service;
 using Byteology.Website.Thoughts;
 using Ljbc1994.Blazor.IntersectionObserver;
@@ -34,6 +35,7 @@ static void ConfigureServices(IServiceCollection services)
 static void RegisterMarkdownRepositories(IServiceCollection services)
 {
 	services.AddSingleton<ArticlesRepository>();
+	services.AddSingleton<JobOpeningsRepository>();
 }
 
 static void RegisterCustomElements(IJSComponentConfiguration configuration)

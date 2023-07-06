@@ -35,8 +35,8 @@
   </Target>
 
   <ItemGroup>
-    <EmbeddedResource Include="Thoughts\Data\article-list.json" />
-    <EmbeddedResource Include="Thoughts\Data\*.md" />
+    <EmbeddedResource Include="Career\Data\*" />
+    <EmbeddedResource Include="Thoughts\Data\*" />
   </ItemGroup>
 
 </Project>

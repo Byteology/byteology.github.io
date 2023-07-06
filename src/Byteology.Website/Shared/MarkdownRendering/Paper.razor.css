@@ -12,5 +12,5 @@ article ::deep b-heading {
 }
 
 h1 > span {
-    @apply text-neutral-100 font-bold block text-lg normal-case;
+    @apply text-neutral-100 font-bold block text-base;
 }

@@ -1,0 +1,20 @@
+[
+	{
+		"handle": "dotnet-engineer",
+		"category": "Recruitment",
+		"title": ".NET Engineer",
+		"subtitle": "€3600 net salary",
+		"description": "You'll be working together with other team members on our clients' and our own products. We are striving to deliver amazing quality so be prepared for a lot of code reviews, programming and architectural discussion and code analysis.",
+		"keywords": [ "open position", "career", "hiring", "job application", "job advert", ".NET Engineer", ".NET Developer" ],
+		"inactive": true
+	},
+	{
+		"handle": "intern-dotnet-engineer",
+		"category": "Recruitment",
+		"title": "Intern .NET Engineer",
+		"subtitle": "€1600 - €2000 net salary",
+		"description": "You'll be assigned a personal mentor with a long history of working in the industry. Together you will work on both our clients' and our own products. Our goal is to kickstart your professional development and help you become the best software engineer you can be.",
+		"keywords": [ "open position", "career", "hiring", "job application", "job advert", "intern", ".NET Engineer", ".NET Developer" ],
+		"inactive": true
+	}
+]

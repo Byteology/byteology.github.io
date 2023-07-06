@@ -48,7 +48,7 @@ public abstract class PapersRepository
 			}
 		}
 
-		foreach (PaperMetadata paper in paperList.Reverse())
+		foreach (PaperMetadata paper in paperList.Reverse().Where(x => !x.Inactive))
 		{
 			LinkedListNode<PaperMetadata> node = _data.AddLast(paper);
 			bool success = _dict.TryAdd(paper.Handle.ToLower(), node);
@@ -58,6 +58,8 @@ public abstract class PapersRepository
 				_data.RemoveLast();
 		}
 	}
+
+	public int GetPaperCount() => _data.Count;
 
 	public string? GetPaperUrl(string paperHandle)
 	{
