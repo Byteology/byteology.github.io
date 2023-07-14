@@ -1,13 +1,13 @@
 @layer components {
 
 	.window {
-		@apply block surface-2 elevation p-4 styled-content space-y-4;
+		@apply block surface-2 elevation px-8 py-4 styled-content space-y-4;
 	}
 
 	.window > *:first-child {
 
         @apply surface-2 py-4 elevation !border-x-0 !border-t-0;
-		@apply px-8 -m-4 mb-4;
+		@apply px-8 -mx-8 -mt-4 mb-4;
         @apply flex items-center gap-4;
     }
 

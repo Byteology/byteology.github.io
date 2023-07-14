@@ -1,10 +1,15 @@
 @layer components {
 
-	.icon-title {
+	.icon-title,
+	.icon-title-sm {
 		@apply flex items-center gap-4;
 	}
 
 	.icon-title > *:first-child {
         flex: 0 0 3.5rem;
+    }
+
+	.icon-title-sm > *:first-child {
+        flex: 0 0 2.5rem;
     }
 }

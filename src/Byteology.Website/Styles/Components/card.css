@@ -5,7 +5,7 @@
     }
 
     .card > *:first-child {
-        @apply icon-title text-base font-bold text-accent uppercase;
+        @apply icon-title-sm text-base font-bold text-accent uppercase;
     }
 
     .cards {
