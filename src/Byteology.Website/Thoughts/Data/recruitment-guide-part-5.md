@@ -1,65 +1,54 @@
-# Concise Guide to Specialized Recruitment - Part 5: Screening
+# Concise Guide to Specialized Recruitment - Part 5: Screening Techniques
+Screening is widely considered the most challenging aspect of the entire recruitment process. It is during this phase that the most valuable insights about a candidate are acquired. Typically, screening involves one or multiple interviews, but it is essential to minimize their number due to the reasons we discussed in previous parts.
 
-Screening is arguably the hardest part of the whole recruitment process. This is the time when get the most valuable information about a candidate. It usually happens in the form of either a single or multiple interviews but as always we should keep that to a minimum. 
-
-Because of the time limitations we inevitably have, we need to carefully prepare beforehand so everything we do will align with the skill canvas and the data we currently have.
+---
 
 ## Preparation
+Given the inevitable time constraints, thorough preparation is crucial.
 
-Let's take a look at the skill canvas and the candidate's results from the pre-screening. We should carefully craft appropriate conversations for every skill that was not already covered by the pre-screening. We used the word *"conversation"* instead of *"questions"* on purpose.
+Before commencing the interview, it is essential to review the skill canvas and the candidate's pre-screening results. Appropriate conversations should be carefully constructed in order to evaluate skills that were not adequately covered in the pre-screening phase.
 
-An interview is not a trivia exam. Knowledge is only a part of what makes up a skill. A skill is the ability to apply knowledge and this is what we are looking for. The simplest way to understand if someone has a skill in a certain field is to find out if they can hold an opinion on it and how they react when presented with conflicting ideas. 
+We used the word *"conversation"* instead of *"questions"* on purpose. Knowledge is only a part of what makes up a skill. Skills encompass the ability to apply knowledge effectively, which is the primary focus of this evaluation. 
 
-For example we could ask a candidate something along the lines of <q>Can you tell me about the SOLID principles</q> but that will only tell us if they have read the Wikipedia article or if they have been asked this question on another interview. 
+To gauge a candidate's mastery in a particular field, it is beneficial to explore their opinions and how they handle conflicting ideas. For instance, instead of asking a candidate to recite the SOLID principles, which only tests their familiarity with a Wikipedia article, we could inquire about their viewpoint on the controversy surrounding the dependency inversion principle. By analyzing their response and engaging in further discussion, we can assess their ability to examine the topic from various perspectives. This approach enables us to determine their proficiency in the field more reliably.
 
-Instead we might want to ask them for their opinion on the controversy around the dependency inversion principle. Maybe they will try to defend it, maybe they will try to prove that it is too extreme, maybe they will hold an opinion that it is more of a guideline than an actual rule. Then we can try to challenge them on what they just said and see if they have the ability to look at the topic through different lens. This way we can be fairly confident if the candidate has achieved a certain mastery over the field.
+Once we have prepared multiple conversations for each skill in the canvas, we will be equipped to conduct the interview efficiently, gathering the most valuable information within the allotted time.
 
-When we have prepared a couple of conversation for each skill in the canvas we'll be ready to navigate the interview in such a way that we'll get the most valuable information for the least amount of time.
+---
 
 ## The Interview
+An integral objective of the interview is to engage the candidate in their natural mindset, rather than a state of trying to recall information. We can regard these mindsets as different personas, aiming to extract information solely from the persona they will assume while working.
 
-One of the main goals of the interview is to keep the candidate is in their usual mindset instead of their *"trying to remember something"* one. We can treat their mindsets as different personas and we want to get information only from the one they'll be working with.
+Conducting the interview as a conversation greatly aids in achieving this goal. With sufficient experience, we can seamlessly integrate the prepared topics into a comprehensive dialogue.
 
-Keeping the interview in a conversation format helps a lot with that. With enough experience we'll be able to weave the topics we prepared beforehand into a single overarching conversation. 
+Moreover, it is not necessary to delve deeply into every topic. Once we have evaluated a skill with a satisfactory level of confidence, we can smoothly transition to the next area of assessment. The aim is to ensure a seamless flow throughout the interview.
 
-Additionally, we don't have to go through all the topics in their depths. At some point we'll evaluate a certain skill with a certain confidence level and we can transition to the next one we would like to test. The goal is to do that as smoothly as possible. 
+Having prepared multiple conversations per skill allows us to enter the discussion at different points, depending on the current moment in the conversation.
 
-One of the reasons we prepared a couple of conversations per skill is so that we can have different entry points depending on where in the conversation we are at a certain moment. 
+### Addressing Stress
+This conversational approach also helps alleviate candidate stress by avoiding an exam-like atmosphere. It is important to acknowledge that interviewees may feel nervous, worried, or even outright scared.
 
-### About Stress
+There are several ways to help candidates relax, depending on the situation:
 
-This way of conducting the interview also helps the candidate feel more comfortable because they don't follow the exam scenario. We should understand that the interviewee is in a bad spot. They might be nervous, worried or outright scared.
+- One approach is to not explicitly acknowledge their nervousness and instead ask a few questions related to the current topic, which you know they will have strong opinions on. This provides them with a moment to gather themselves and regain their composure.
+- Another strategy is to offer additional information on a topic the candidate may have omitted. This ensures the conversation flows smoothly, without awkward pauses or abrupt transitions due to their lack of specific knowledge. Furthermore, it allows candidates to learn new things and reduces the time spent on providing feedback later.
 
-This might happen because getting this job is really important to them, because there are five people who are conducting this interview (we should really keep this number to a minimum) or they just might have trouble keeping calm when they are asked about a topic they are not confident in.
+If we fail to calm a nervous candidate, continuing the interview may not provide accurate insights into their skills. Instead, it will primarily evaluate their ability to perform under pressure, which is typically not a requirement for their role.
 
-On that note, we should always be aware of how nervous the interviewee is at any moment and try to calm them down. There are many ways to do so and they vary depending on the situation but we'll list a couple of the most common and successful ones.
+### Allowing Candidates to Choose Topics
+It is crucial to remember that interviews are a two-way street (hence the word). Sufficient time should be allocated for candidates to ask questions and stray away from the predefined topics. This approach offers additional insights into their motivations and areas of expertise, even if these aspects were not thoroughly explored during the rest of the conversation.
 
-- The first one is to not acknowledge that they are nervous and just ask them a couple of related to the current topic questions you know they will answer correctly and then chat about that for a bit. This gives them a moment to catch their breath and get back into *"the zone"*.
+### Providing Feedback
+After each interview, candidates may request feedback on their performance. Regardless of whether they explicitly ask, it should be provided. This serves several significant purposes:
 
-- Another one is to actually take time and provide some additional information on the topic that the candidate omitted. This makes them feel better because the conversation is going on without having weird pauses or jumps due to their lack of certain knowledge. It also helps them learn new things and it reduces the time you'll spend on providing feedback later.
+- Articulating feedback enhances our understanding of what we are seeking in candidates, aiding in the creation of improved skill canvases in the future.
+- It fosters trust and transparency between us and the candidate, which is beneficial even if we do not intend to hire them. Many successful candidates have been referred to us by individuals we did not hire.
+- It promotes candidates' personal and professional growth, assisting them in becoming better experts in the future. As interviewers, we have a responsibility to support individuals, even if they may not currently fit our organization's requirements.
+- Within 30 minutes of the interview, we tend to forget approximately 80% of the feedback we need to provide. Thus, there is no need to delay feedback until a hiring decision is made.
 
-If we fail to calm down a nervous candidate, continuing the interview will not tell us anything about their skills. Instead it will tell us how well they can work under pressure which is usually not a requirement for their job.
+Additionally, regardless of the hiring decision, it is important to take a moment to inform the candidate about the outcome. This gesture demonstrates respect and is likely to leave a positive impression.
 
- ### Let Candidates Choose Topics
-
-We must remember that the interview is a two-way street. This is what *"inter"* means. There should be enough time to let the person ask us questions and to pick their own topics. This way we may also understand a little bit more about them, about what drives them and what they find interesting.
-
-Additionally, candidates are inclined to choose topics they are most skilled in so this way we can find their greatest strengths even if we omitted them during the rest of the conversation. 
-
-### Feedback
-
-After every interview candidates may ask for feedback on how they have done. But regardless of whether they did it or not, we should provide it. This serves a few really important purposes.
-
-- Verbalizing the feedback helps us better understand what we are looking for and helps us craft better skill canvases in the future.
-
-- It builds trust and transparency between us and the candidate. That's a great thing to do even if we don't plan to hire them. We have had many successful candidates referred to us by people we haven't hired.
-
-- It helps the candidates grow and become better experts in the future and as interviewers we have a responsibility to try and help people even if they are not the right fit for our company right now.
-
-- 30 minutes after the interview, we forget about 70% of the feedback that we have to give. We don't need to wait for a hiring decision before giving our feedback.
-
-- And on that note when a hiring decision is made, we should take a minute and inform the candidate regardless of the decision itself. They will appreciate it tremendously and will probably spread a good word.
+---
 
 ## Next Steps
-
-The recruitment process doesn't end with a hiring. It ends when we have a new employee that is fully integrated within the team. Next we'll discuss how to do that through onboarding and trainings.
+The recruitment process does not conclude with a hire; it continues until the new employee is fully integrated into the team. The subsequent steps involve onboarding and training, which we will discuss in the next part of this guide.

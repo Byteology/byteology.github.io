@@ -1,12 +1,11 @@
 # Migration to Microservices - 4-step Strategy
-
-In today's disruptive web development world, microservices are receiving a lot of attention. Unlike monolithic systems, microservices are designed to scale with changing market demands. Because of that, modern enterprises are moving their legacy monolithic systems to microservices architecture.
+In the rapidly evolving world of web development, microservices have emerged as a prominent topic of interest. Unlike monolithic systems, microservices are designed to adapt and scale according to changing market demands. Consequently, modern enterprises are actively transitioning their legacy monolithic systems to a microservices architecture.
 
 ---
 
-## Benefits of the Microservice Architecture
+## Advantages of the Microservice Architecture
 
-As the name suggests, microservices are small units that break up a monolithic application into a set of independent services. Unlike slow and heavy monolithic applications, microservices are faster to develop and deploy. Migrating from a monolithic architecture to a microservice one provides a lot of benefits, most important of which are as follows:
+Microservices, as the name suggests, are small independent units that break down a monolithic application into separate services. In contrast to the sluggish and cumbersome nature of monolithic applications, microservices offer faster development and deployment capabilities. Migrating from a monolithic architecture to a microservice-based approach brings numerous benefits, including:
 
 :::: cards
 :::
@@ -43,44 +42,47 @@ Teams have the freedom to choose the best tool to solve their specific problems.
 
 ---
 
-## When to Migrate
-Once you have made your mind to embrace microservices, the first question is - when should you make your move? Usually the right time to migrate a monolithic application is when your organization is growing and is facing productivity and scaling issues or when you start experiencing disruption in the communication between teams.
+## Determining the Right Time to Migrate
+Once the decision to embrace microservices is made, the crucial question arises: when is the ideal time to initiate the migration process? Typically, migrating a monolithic application is advisable when an organization experiences growth, encounters productivity and scaling challenges, or faces disruptions in inter-team communication.
 
 ---
 
-## How to Migrate
-The migration to microservice architecture is a complex process with many pitfalls. To avoid them we have spent
-years designing and refining a four-step strategy that helps businesses successfully migrate to microservices.
+## The Migration Process
+The migration to a microservice architecture is a complex endeavor that presents numerous challenges. To navigate these challenges successfully, we have designed a comprehensive four-step strategy that was proven effective in facilitating businesses' transition to microservices.
 
 ::: window
 ### ::01:: Process Discovery
 {.timeline}
-1. We organize a workshop with your domain experts and engineering team.
-1. Together we map all the business processes that occur in your application.
-1. As an output we create a top-level document (process map) of what your application does and how it does it.
-1. Additionally, we establish a proper domain language and look for type instance homonyms so that domain experts and software engineers will be able to communicate fluently.
+1. Workshop is organized involving domain experts and engineering teams.
+1. All the business processes occurring in the application are mapped.
+1. Standardized domain language is established, resolving any potential ambiguities between domain experts and software engineers.
+1. The outcome is a top-level document (process map) detailing the application's functionalities and operations.
 :::
 
 ::: window
 ### ::02:: Defining Bounded Contexts
 {.timeline}
-1. We use the process map to define entities, aggregates, services, and their bounded contexts.
-1. This gets detailed in a bounded context canvas for each context. It contains the definition of the context, its capabilities, responsibilities, policies, dependencies, and its ubiquitous language.
-1. As an output we create a top-level document (process map) of what your application does and how it does it.
-1. Using the bounded context canvases we identify proper microservices. Usually they align with the contexts themselves but can range in size anywhere between a single aggregate and a whole bounded context.
+1. Aggregates, services, and their corresponding bounded contexts are defined with the help of the process map.
+1. This information is captured in a bounded context canvas for each context, encompassing its capabilities, responsibilities, policies, dependencies, and ubiquitous language.
+1. Leveraging the bounded context canvases, appropriate microservices are identified. These microservices typically align with the defined contexts but can vary in size, ranging from a single aggregate to an entire bounded context.
 :::
 
 ::: window
 ### ::03:: Establishing Service Boundaries
 {.timeline}
-1. With the help of your team we design and implement regression testing processes and suites in order to make sure existing functionalities will be left unchanged during the refactoring that will occur.
-1. We refactor the existing solution in a way that will isolate bounded contexts from the rest of the application without changing its current behavior.
+1. Regression testing processes and suites are designed and implemented to ensure the preservation of existing functionalities during the refactoring phase.
+1. The existing solution is refactored to isolate bounded contexts from the rest of the application while maintaining its current behavior.
 :::
 
 ::: window
 ### ::04:: Migration
 {.timeline}
-1. We start migrating the now isolated bounded contexts to a set of microservices as defined in the second step of the process.
-1. Each of the resulting microservices is independently deployable and scalable using an automated pipeline.
-1. Each migration reduces both the acquired technical debt and cognitive load on the development team, allowing a faster and more reliable development.
+1. The isolated bounded contexts are gradually migrated to a set of microservices defined in the second step of the process.
+1. Each resulting microservice is independently deployable and scalable, facilitated by an automated pipeline.
+1. With each migration, the accumulated technical debt and cognitive load on the development team are reduced, enabling faster and more reliable development.
 :::
+
+---
+
+## Conclusion
+By following this comprehensive four-step strategy, businesses can successfully navigate the complexities of migrating from a monolithic architecture to a microservice architecture, unlocking the full potential of scalability, flexibility, and resilience offered by microservices.

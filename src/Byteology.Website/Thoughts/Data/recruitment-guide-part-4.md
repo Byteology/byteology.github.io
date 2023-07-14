@@ -1,59 +1,48 @@
 # Concise Guide to Specialized Recruitment - Part 4: Pre-screening Techniques
+Pre-screening, the process of evaluating candidates based on their application alone, is a cost-effective method compared to full screening. Although it may not be as comprehensive, pre-screening helps identify potential candidates who are likely to be a good fit for the position. It also allows screeners to focus on evaluating more challenging skills by providing an initial assessment of certain skills outlined in the skill canvas.
 
-Pre-screening refers to the process of evaluating candidates based on their application alone. This kind of evaluation is less effective than the actual screening but it costs way less in terms of resources. 
+Various techniques can be employed during pre-screening, but it's essential to consider their associated costs. Some techniques may require additional input from candidates during the application process, providing more information but potentially deterring applicants who prefer a faster process. Candidates may choose to apply for other positions with quicker application processes, considering it statistically more advantageous than applying for a role with lengthier pre-screening requirements.
 
-It is used to get a shortlist of candidates that are the most likely to be a good fit for the position. Additionally, it can provide a good enough evaluation on some of the skills described in the skill canvas so the screeners may focus on other skills that are harder to evaluate.  
+When deciding which pre-screening techniques to use, it is crucial to evaluate how well they align with the skill canvas and consider the impact on the application process's complexity.
 
-There are a lot of techniques we can employ during pre-screening but some of them come with a cost. They might require additional input from the candidate at the time of application. This provides us with extra information to work with but might discourage potential candidates from applying as it increases their time investment. They might decide that statistically it would be better for them to apply for two other jobs with faster application process than to apply for this one.
+Now, let's explore the tools available for pre-screening.
 
-So when deciding which techniques to employ we must be aware of how they will support the skill canvas and just how much harder they'll make the application process.
-
-Now let's examine the tools we have at our disposal.
+---
 
 ## Resumes
+Resumes (or CVs) are the fundamental and most widely-used tool for pre-screening. They provide a wealth of information about the applicants. The goal is to extract relevant information that aligns with the skill canvas. While it may be tempting to favor aesthetically pleasing and refined resumes, our focus should be on identifying signs of skills aligning with the skill canvas. This can be challenging, but providing concise explanations linking specific details in resumes to relevant skills can increase the likelihood of shortlisting suitable candidates.
 
-Evaluation based on resumes (or CVs) is the most basic and common tool of the pre-screening process. The reason for that is a resume contains a lot of data about the applicant. 
+Additionally, it is beneficial to maintain statistics on successful interviews from specific universities or previous employers. Factors such as writing style, certifications, or other attributes may contribute to identifying potential candidates. However, it's important to note that statistics should guide decisions rather than serve as rigid criteria, allowing room for considering candidates beyond the statistical data. Developing a systematic approach to sorting applications is crucial during this stage, given the limited information available, and maintaining statistics offers a valuable long-term strategy.
 
-Our goal is to extract the information that is relative according to the skill canvas. It might be tempting to pick the best-looking and the most refined resumes and it is definitely a tell about certain personal skills but bear in mind that we are not looking for the person who is able to craft the best CV.
-
-Instead we should be looking for signs about the presence of skills from the skill canvas. This is a tricky thing to do but if we are able to give a one-sentence reasoning on why we believe a certain detail in the resume corresponds to a certain skill - it will increase our chances of shortlisting the appropriate candidates. 
-
-The only other thing we can do is keep statistics. We should keep track which universities and previous employers yielded successful interviews in the past. Maybe a certain style of writing, certain kind of certifications or something entirely different.
-
-That doesn't mean we shouldn't give a chance to anyone that doesn't fit our statistics but it might help us when we are hard-pressed to choose which applicants to interview.
-
-Basically we should create some kind of system to help us sort applications but this is the part of the process in which we are trying to make a decision having only minimal information. This is why keeping statistics is our best bet in the long term.
+---
 
 ## Motivation Letters
+Motivation letters present a specific tool for pre-screening. They enhance the thoroughness of the interview process but also act as a filter for a large number of candidates. However, their accuracy as a screening tool may be limited.
 
-Motivation letters are a very specific tool at our disposal. They increase the thoroughness of our interview process but in return they pre-screen a lot of candidates. This can be of great help if we are receiving way too many applications than we can handle but unfortunately, it might not be an accurate screening.
+Introducing motivation letters increases the application's complexity, potentially filtering out candidates based on their level of motivation or sometimes even desperation for any job opportunity. Additionally, evaluating these letters requires additional resources, as it entails reading and assessing what is basically an essay for a job that probably has nothing to do with writing.
 
-They make the process of applying harder which filters candidates based on motivation (hence the name) to apply for this exact job or sometimes by desperation to get any job at all.
+Nevertheless, motivation letters can be particularly valuable for intern positions or roles where previous experience is not a requirement. In such cases, distinguishing between candidates can be challenging, and motivation letters may be the only available tool for assessment.
 
-Additionally, we will want to actually read and evaluate these letters and this costs additional resources while filtering candidates on what is basically an essay for a job that probably has nothing to do with writing.
-
-One great use for motivation letters though, is for intern positions or positions for which candidates are not required to have any previous experience. In these situations it might be really difficult to distinguish between candidates and their motivation letters might be the only tool we have available.
+---
 
 ## Homework Assignments
+Homework assignments offer a valuable means to enhance the interview process's thoroughness while maintaining brevity on the recruiter's part. However, they come with their own set of challenges:
 
-Homework assignments are a great way to increase the thoroughness of the interview process while keeping it brief (for us at least) although they come with a different load of problems.
+- Designing a homework assignment that adequately reflects the desired skills can be difficult.
+- Assignments and their solutions can spread rapidly hence they can't be reused very often.
+- Verifying that the solution submitted is the work of the assignee requires scheduling a call to discuss the solution. This, coupled with grading, consumes time that could be allocated elsewhere in the process.
 
-- It is hard to craft a homework assignment that will properly reflect the skills we are looking for.
-
-- We'll have to do it over and over again. It is surprising how fast the assignments and their proper solutions leak to the public. Additionally, different positions require different assignments.
-
-- We can't be sure that the solution comes from the assignee. Because of that we should at least schedule a call to talk with them about the solution. This combined with the actual grading of the solution will take time that we might want to spend somewhere else in the process.
-
-- The whole homework assignment, grading and the follow-up interview may take weeks and during this time the candidate might receive a job offer from another company which may cause them to drop out of our interview process.
+---
 
 ## Automated Tests
+When expecting a high volume of applicants and when a skill from the skill canvas can be objectively assessed in a quick and automated manner, automated tests are a valuable option. The ability to evaluate skills impartially, regardless of the applicant count, can save significant time and allow for greater thoroughness in other areas. It is essential, however, to ensure that the automated tests closely align with the skill canvas and are not easily susceptible to cheating.
 
-If we are expecting a lot of applicants and a skill from the canvas can be evaluated in a quick and automated manner we probably should do automate it. The benefit of being able to objectively evaluate a skill with no regards for the amount of applicants can be a huge time saver and allow us to increase thoroughness of the process in other areas. We just need to make sure that the automated tests align closely to the skill canvas and are not easily cheatable.
+---
 
-## Others
+## Others Techniques
+Additional pre-screening tools can be devised, but it is of utmost importance they align with the skill canvas. Moreover, consideration should be given to  the confidence level of skill evaluations and the resources required.
 
-We can come up with any other tools to do pre-screening but when designing it we must make sure that it aligns with our skill canvas. Additionally, we should be aware of the resources they consume and the confidence of their skill valuations.
+---
 
 ## Next Steps
-
-At this point we should have a shortlist of people we would like to call in for interviews. We already have some limited information about each of them so we should start choosing and preparing interview scenarios based on it. We'll discuss how to do that in the next chapter.
+By this stage, a shortlist of potential candidates for interviews should have been established. With the limited information available, it is now time to select and prepare interview scenarios based on the gathered data. The next chapter will delve into the details of this process.

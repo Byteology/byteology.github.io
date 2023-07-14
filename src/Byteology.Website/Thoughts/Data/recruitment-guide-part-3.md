@@ -1,107 +1,95 @@
-# Concise Guide to Specialized Recruitment - Part 3: Crafting a Job Description
+# Concise Guide to Specialized Recruitment - Part 3: Crafting an Effective Job Description
+In the pursuit of finding the ideal candidate for an open position, a well-crafted job description becomes paramount. A meticulously designed job description significantly increases the likelihood of both attracting and identifying suitable candidates. However, to achieve this, we must first grasp a few fundamental concepts.
 
-Now that we have a skill canvas and a defined strategy for filling our open position it is time to prepare the job description. 
+---
 
-A carefully crafted job description can improve the odds of finding the right candidate tremendously but to do that we first need to understand a few things.
+## How Candidates Interact With Job Descriptions
+*__Note:__ The following section contains general observations and personal opinions so take it with a grain of salt.*
 
-## How Potential Candidates Interact With Job Descriptions
+Potential candidates seldom stumble upon job advertisements by chance. Most of the time, they actively seek their next job opportunity and are either browsing through job portals or are being targeted by recruiters.
 
-***Note:*** *Everything in this section has a big "in general" asterisk attached to it. Additionally, this is the most opinionated part of this guide so take it with a grain of salt.*
+In both cases, candidates are presented with an overwhelming number of job descriptions. Consequently, they must decide which ones are worth their attention and ultimately, their application.
 
-Potential candidates will rarely stumble upon our job advert by accident. Most of the time they are actively looking for their next job and are either being targeted by sourcers or are browsing through some kind of job adverts portal.
+Due to time constraints, potential candidates cannot thoroughly evaluate every job description to determine a good fit before applying. Therefore, they approach the process in a statistical manner.
 
-In both cases they have to deal with a tremendous amount of barely filtered job descriptions and decide for which ones to apply.
+Candidates typically start by swiftly evaluating the title of the job description to gauge the specific domain it belongs to. Job titles often provide a glimpse into the business or technical domain, and candidates use this information to assess their suitability. 
 
-Unfortunately, potential candidates have limited time as well, so they are not going to go through the details of every single one in order to figure out if they are a good match before applying. Because of that they are playing a numbers game.
+The broader the domain indicated in the title, the less likely it is for highly specialized candidates to pursue it. For example, a job title like "Senior Software Engineer" implies a broader domain, which appeals to less specialized candidates and may discourage those with more specialized expertise. 
 
-First, by just by glancing at the title of the job description they are trying to determine if the chances they are a good fit are above median.
+Conversely, more specific titles, such as "C#.NET Developer with event sourcing experience for a marketplace" are more likely to attract candidates who possess specialized skills in that particular area.
 
-The titles of job adverts are usually some kind of skill requirement and the potential candidates will answer their question by figuring out if they have this particular skill.
+Once a candidate clicks on a job advert, their second concern emerges: Is investing time in applying for this position worthwhile in terms of potential fit?
 
-The problem is that the more vague the skill is - the less an affirmative answer raises the odds of being a good fit. For example, falling into the category of *"Senior Software Engineer"* means a lot less than *"C#.NET Developer with SAP B1 experience for a marketplace"*.
+This evaluation typically revolves around checking the listed requirements. If a candidate possesses around 70% (or sometimes even less) of the required skills, they'll consider applying. Take a note of that as it will help in a non-intuitive way later on.
 
-Once a potential candidate has clicked on a job advert, comes their second problem: how to determine if the time they will spend applying for this position will be worth the chance they'll be be a good fit.
+If a candidate cannot quickly assess their suitability based on the job description, they are likely to move on.
 
-This usually happens by checking the listed requirements. If they consider themselves to possess around 70% (sometimes even lower) of the listed skills - they will consider applying for the position. Take a note of that. It will help us a little bit later in a non-intuitive way. 
+Only after a potential candidate decides it's worth applying for a position do they consider whether they would enjoy working in that role. They scan the job description, searching for clues about the work environment and culture, which becomes the final deciding factor.
 
-If the candidate is not able to answer that question fast, they will most likely resort to going back to browsing adverts.
-
-Only after the potential candidate has decided that it might be worth their while to apply for this position, they may try to figure out if they'll actually like working at it. They'll scan the job description for any clues about that and this will be their last deciding factor before they take action.
+---
 
 ## The Goals of a Job Description
-	
-Before starting to craft our job description, we need to know one more thing: what is the purpose of job descriptions.
+Once we publish a job advert, only a limited number of people will see it, and the higher this number, the greater the chances of the perfect candidate being among them. Thus, the primary goal of a successful job advert is to increase its visibility and reach.
 
-After publishing the job advert only a certain number of people will actually see or be interested in it and the higher this number is - the higher the chances that a great candidate will be among them. So the first goal of a successful job advert is to increase the number of people that will interact with it.
+However, as candidates start applying, the number of applications may exceed the capacity of the screening process. Consequently, most of the filtering will happen in the pre-screening process, which comes with certain drawbacks that we will discuss in the next chapter of this guide.
 
-The problem is that at some point candidates will start sending applications and in most cases they will be way more than we have resources to interview people. At this point we'll have to put a lot of pressure on the pre-screening process, which comes with a lot of drawbacks for reasons we will describe later.
+Fortunately, a well-designed job description can alleviate this situation by acting as an automatic filter, discouraging unsuitable candidates from applying. However, caution should be exercised in order to avoid inadvertently filtering out exceptional candidates. 
 
-Fortunately, a great tool for avoiding this scenario is the job description itself. If we craft it correctly it will automatically filter a lot of the people that are not a good fit. We have to be careful though, not to filter great candidates as well. So how do we do that?
+---
 
 ## Crafting The Job Description
-
-Armed with this knowledge and the skill canvas we created earlier, we are now ready to craft the perfect job description.
+Armed with the knowledge about candidate behavior and the skill canvas we created earlier, we are now prepared to craft an exceptional job description.
 
 ### The Title
+Let's begin with the title. To attract the highest number of relevant candidates, the title should succinctly convey the core requirement of the position in the most specific manner possible. This approach also reduces the chances of unsuitable candidates applying, alleviating the burden on the pre-screening process.
 
-Let's begin with the title. As we said earlier in order to attract the highest number of relevant candidates we must set the title to be the core requirement of the position written in the most specific way possible. This will also prevent people who are not a good fit to apply thus reducing the load on the pre-screening process.
+Expertise levels like "Junior/Regular/Senior'' can be safely omitted since they are highly subjective and often vague. Furthermore, candidates' perception of these levels will differ significantly from the ones intended.
 
-We can also safely remove expertise levels like *"Junior/Regular/Senior"* because they are way too subjective and this makes them vague. A potential candidate's idea of these levels may and will wildly differ from yours.
-
-The only exception being intern positions as pretty much everyone has the same understanding of the word *"intern"*.
+The only exception is for intern positions, as the term "intern" generally carries the same understanding for all.
 
 ### Technical Skill Requirements
+Let's consider the skill requirements list with regard to the 70% rule mentioned earlier. It's important to keep in mind that if the list includes auxiliary or tangent skills, there is a higher probability that candidates will apply even if they lack a significant portion of the core skills. This can pose a challenge during the pre-screening stage, as it might be difficult to identify these gaps at that stage.
 
-Now let's continue with the list of skill requirements. Remember when we said that people will apply if they think they possess 70% of the required skills? This means that the bigger the list - the higher the chance candidates will apply while missing some of the core skills for the position and this might be a hard thing to catch on the application level.
+Therefore, it's best to include only the core skills from the skill canvas. The rest of the skills will have to be evaluated in the other stages of the recruitment process.
 
-So our best option is to include only the core skills from the skill canvas but don't worry, we'll test for the auxiliary skills in other parts of the process.
+The listed technical requirement should be described in the most specific terms possible, mirroring the approach taken for the job title. Vague skill descriptions tend to inflate candidates' perception of their abilities and may cause an overabundance of unfit applicants.
 
-We will want to write these skill requirements as specific as possible for the same reason we wrote the title that way. People are objectively bad at evaluating themselves and the more vague a skill is described - the more likely it is for them to think they possess it.
+Additionally, specifying the "required years of experience" for a particular technology should be avoided. Experience alone is not a comprehensive measure of expertise, and candidates are often aware of this. Numerous job advertisements require an excessive amount of experience, to the point where it has become a running joke. Consequently, candidates tend to overlook such requirements.
 
-We will also ditch the *"required years of experience"* for a certain technology. Experience is only a small part of what builds up expertise and people know or at least feel it so they are inclined to ignore it. Also there are so many job adverts out there that require an unreasonable amount of years of experience that there are running jokes about it and at some point people stopped paying attention.
+Instead, the expectations tied to that experience should be defined. E.g. "You should be able to understand and optimize complex SQL Server execution plans''. This way of phrasing it conveys the desired expertise. 
 
-Instead we might just explain what those years of experience mean to us. E.g. <q>You should be able to understand and optimize complex SQL Server execution plans</q>. Fortunately, we already did that when creating the skill canvas.
+Fortunately, these descriptions were already defined when creating the skill canvas.
 
 ### Personal Skill Requirements
+We should refrain from listing personal skills in the job description. Candidates are worse at evaluating their personal skills than their technical ones. We have never met a single person that said they are not a great problem solver or fast learner.
 		
-We don’t want to list any of the personal skills we are looking for in the job description. People are even more terrible at self-evaluating their personal skills than their technical ones. We have never met a single person that said they are not a great problem solver or fast learner.
+By including personal skills in the job description, candidates mentally check them off while scanning the requirements, leading them to apply even if they lack core technical skills.
 
-If we include the personal skills, potential candidates will mentally check them off when skimming through the list of requirements and this will make them more likely to apply even if they miss some of the core technical skills.
+However, it may be advantageous to incorporate core personal skills in the job advert, albeit in a different manner. Rather than asking candidates to evaluate themselves against a list of personal skills, we want them to realize their unsuitability for the position in case they lack them.
 
-We might want to include the core personal skills in the job advert though but we will do it by casting it in a different light. Instead of making potential candidates decide if they have a list of personal skills we would want them to dislike the position if they lack them.
+To achieve this, a workday scenario may be described, placing a strong emphasis on the required personal skills. For example, instead of stating, "The perfect candidate must have excellent time management skills," the job description should elaborate on how these skills are connected to the work: "You'll have to assess priorities in a tight deadline environment and act upon them."
 
-One way to do that is by describing how an example workday at that position might look like with a heavy emphasis on the personal skills required.
+This approach discourages individuals lacking the specified personal skills from applying, without them even knowing they have just performed a self-evaluation.
 
-For example, instead of saying <q>The perfect candidate must have excellent time management skills</q>, let's take a moment and think about why we would want this skill from a candidate. Then we might explain how it will be connected to their work: <q>You'll have to assess priorities in a tight deadline environment and act upon them</q>.
 
-This will discourage people lacking this particular skill from applying without them even knowing they have just self-evaluated it.
+### Stating the Budget
+Should the budget for the position be disclosed in the job description? There is no definitive answer to this question so let's consider the pros and cons of stating the budget upfront.
 
-## Stating the Budget
+#### Pros
+- It statistically increases the number of applicants 
+- It serves as an automatic filter, eliminating candidates whose salary expectations exceed the allocated budget. Engaging in salary discussions after the interview stages may result in wasted resources when interviewing candidates who are ultimately unaffordable.
+- Discussing expected salary can sometimes be viewed as a form of bargaining, potentially creating a perception that the organization does not have the candidate's best interests in mind, which is a less than ideal start to the relationship.
 
-Should we state the budget for the position in the job description? There is no one right answer to this question so let's think a little bit about the pros and cons of stating the budget upfront.
-
-### Pros
-
-- It statistically increases the number of people that apply for the position (which might or might not be a good thing depending on how many candidates we are expecting).
-
-- It will also automatically filter candidates that are out of our price range. The budget talks usually happen after the interview rounds which means that we might have wasted precious resources interviewing a candidate that we can't hire for budget reasons instead of interviewing another one.
-
-- Discussing the expected salary with a candidate is more or less a kind of bargaining which might make them feel like we do not share their best interest which is not a great way to start a relationship.
-
-### Cons
-
-- If the job offer is in the lower half of the listed budget, the candidate might feel cheated. We are inevitably going to pay more than we would have otherwise but to be fair we can think of this money as being spent for the better well-being of our new employee.
-
-- We are giving insights of our budget to our direct competitors which might not be a good idea if we think there is somebody who is actively looking to outbid us.
+#### Cons
+- If the job offer is in the lower range of the listed range, candidates might feel cheated.
+- Disclosing the organization's budget to direct competitors may be disadvantageous if they are actively attempting to outbid us.
 
 ### Everything Else
+At this stage, the job description is completed. Any remaining content can be safely removed to keep it concise. 
 
-At this point we should be done crafting our job description. Everything else can be safely removed in order to keep it short. 
+If candidates are genuinely interested in the organization, they will likely seek more information on its website or social media platforms. An unnecessarily lengthy job advert will only discourage potential applicants from reading it.
 
-If someone is really interested in our company they will probably go to our website or social media to check for more information. Making the advert unnecessarily large will only reduce the number of people who will actually read it.
+---
 
 ## Next Steps
-
-This way of crafting job descriptions maximizes the chance of the right candidate applying for the job. At the same time it minimizes the number of non-suitable applications thus allowing us to easily identify the right one.
-
-At this point we should have received a bit more applications than people we can interview. So next we'll be discussing pre-screening techniques and how to identify how much resources to spend on each candidate.
+At this point, applications will start coming in an amount surpassing the available screening resources. Next, we will explore pre-screening techniques and determine the optimal allocation of resources for each candidate.

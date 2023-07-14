@@ -1,27 +1,27 @@
-# Concise Guide to Specialized Recruitment - Part 6: Onboarding and Trainings
+# Concise Guide to Specialized Recruitment - Part 6: Onboarding and Training
+The recruitment process extends beyond the act of hiring and concludes when a new employee becomes fully integrated into the team. This crucial phase is achieved through effective onboarding and training methods.
 
-The recruitment process doesn't end with a hiring. It ends when we have a new employee that is fully integrated within the team. This usually happens through onboarding and trainings. 
+---
 
-## Onboarding 
+## Onboarding: A Smooth Integration Process
+Each project possesses its own unique set of procedures, technologies, practices, architectural nuances, and domain-specific language. While a proficient specialist may acquire these independently, it can impede their integration timeline. Moreover, inconsistent understanding among team members regarding these project aspects may lead to significant issues in the future.
 
-Every project has its own specifics in terms of procedures, technologies, practices, architecture or even domain language. While a skilled specialist may be able to learn all of these on their own it would negatively impact their time to integration. Additionally, this will make it possible for different team members to have different understanding on the aforementioned aspects of the project which might lead to severe issues down the road.
+Although there is no universally applicable onboarding approach due to project variations, it is essential to establish a systematic process. It does not need to be flawless initially but must remain dynamic. Outdated onboarding procedures can be counterproductive and detrimental rather than beneficial.
 
-And while there is no single way to do great onboarding as it differs from project to project, it is important to have a system in place. It doesn't need to be perfect at first but it needs to be alive. There is nothing worse than an outdated onboarding procedure that can sometimes do more harm than help.
+The objective is to encourage every individual who undergoes the onboarding process to enhance it. By doing so, they can address any areas that require improvement or further clarification — a task that can be challenging for seasoned project veterans. Over time, the onboarding system will evolve into a state where integration becomes nearly instantaneous.
 
-The goal is to have every person that goes through it to upgrade it. This way they can improve it on areas it was missing or it wasn't clear enough - a task that is really hard to do for a veteran in the project.
+---
 
-In time our onboarding system will become good enough that the integration time will become almost instantaneous.
+## Training: Filling Skill Gaps
+It is important to acknowledge that the likelihood of a new employee perfectly aligning with every skill outlined in the skill canvas is extremely low. This is why various training methods for each skill were incorporated into the canvas.
 
-## Trainings
+At times, it is acceptable to hire individuals with identified skill gaps, provided there is a plan in place to bridge those effectively.
 
-Another thing to keep in mind is that the chances that our new employee scored perfectly on every skill in the skill canvas is close to zero. This is one of the reasons why we included possible training methods for each skill.
+Additionally, throughout the project's lifespan, additional areas that require improvement will be inevitably identified. These areas are likely to be shared among multiple team members, making it crucial to proactively address them.
 
-Sometimes it is perfectly acceptable to hire someone with already identified gaps in the skill canvas but only if we have a plan on how to close them. 
+---
 
-Additionally, during the lifetime of the project we'll inevitably identify additional areas for improvement that are most likely to be shared between multiple team members and it is always a good idea to act on them.
+## Final Thoughts
+Through our collaborative work, we will gain valuable insights into the individuals we have hired. It is vital to remain vigilant for important skills or characteristics that were not initially identified during the recruitment process and to question why this occurred.
 
-## Last Words
-
-In the process of working together we'll learn a lot about the people we hired. It is important to be on the lookout for important skills or characteristics that we didn't manage to identify during the recruitment process and ask ourselves *"why"*.
-
-The process itself should be a living and breathing being that reflects our organization's strengths and values. The moment it becomes rigid or stale so does our organization and because of that we should always take meticulous care of it and continuously strive to improve it 
+The process itself should be a living and breathing entity that reflects our organization's strengths and values. The moment it becomes rigid or stale so does our organization. Therefore, it is paramount to nurture and continuously enhance the process with meticulous care.
