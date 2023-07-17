@@ -81,20 +81,16 @@ This approach discourages individuals lacking the specified personal skills from
 Should the budget for the position be disclosed in the job description? There is no definitive answer to this question so let's consider the pros and cons of stating the budget upfront.
 
 
-::: card
-Pros
-
+### Pros
 - It statistically increases the number of applicants 
 - It serves as an automatic filter, eliminating candidates whose salary expectations exceed the allocated budget. Engaging in salary discussions after the interview stages may result in wasted resources when interviewing candidates who are ultimately unaffordable.
 - Discussing expected salary can sometimes be viewed as a form of bargaining, potentially creating a perception that the organization does not have the candidate's best interests in mind, which is a less than ideal start to the relationship.
-:::
 
-::: window
-Cons
-
+{.negative}
+### Cons
+{.negative}
 - If the job offer is in the lower range of the listed range, candidates might feel cheated.
 - Disclosing the organization's budget to direct competitors may be disadvantageous if they are actively attempting to outbid us.
-:::
 
 ---
 

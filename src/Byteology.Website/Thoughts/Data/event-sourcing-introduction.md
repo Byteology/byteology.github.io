@@ -20,37 +20,37 @@ Instead of storing just the current state of the domain data, event sourced syst
 
 This simplifies tasks in complex domains, by avoiding the need to synchronize the data model and the business domain, while improving performance, scalability and responsiveness. It also provides consistency for transactional data and maintains full audit trails and history. Following is a list of some of the benefits that event sourcing provides:
 
-### Audit Trail
+#### <b-icon name="CheckboxList"></b-icon> Audit Trail
 The append-only storage of events provides an audit trail that can be used to monitor actions taken against a data store, regenerate the current state as materialized views or projections by replaying the events at any time, and assist in testing and debugging the system.
 
 In addition, the requirement to use compensating events to cancel changes provides a history of changes that were reversed, which wouldn't be the case if the model simply stored the current state.
 
 The list of events can also be used to analyze application performance and detect user behavior trends, or to obtain other useful business information.
 
-### Domain Alignment
+#### <b-icon name="DomainAlignment"></b-icon>Domain Alignment
 Events typically have meaning for a domain expert, whereas object-relational impedance mismatch can make complex database tables hard to understand. Tables are artificial constructs that represent the current state of the system, not the events that occurred.
 
 Using events as the main carriers of data allows the use of ubiquitous language between domain experts and software engineers thus improving collaboration.
 
-### Temporal Querying
+#### <b-icon name="TimeChart"></b-icon>Temporal Querying
 We can determine the application state at any point in time. Notionally we do this by starting with a blank state and rerunning the events up to a particular time or event. We can take this further by considering multiple time-lines (analogous to branching in a version control system). This allows us to get a full overview of how the application’s data evolved and query it at any point in the past.
 
-### What-if Analysis
+#### <b-icon name="MagnifiedQuestion"></b-icon>What-if Analysis
 With event sourcing it is possible to change how certain events are being handled and then simulate how this would have influenced the data. This method is called “what-if analysis” and is a great way to make data driven decisions.
 
-### Event Replay
+#### <b-icon name="Replay"></b-icon>Event Replay
 If we find a past event was handled incorrectly due to a bug or some other failure, we can compute the consequences by reversing it and later events and then replaying them again.
 
 This way it is sometimes possible to fix past issues without having to worry about impacting the application’s data.
 
 The same technique can handle events received in the wrong sequence - a common problem with systems that communicate with asynchronous messaging.
 
-### Decoupling
+#### <b-icon name="Decoupling"></b-icon>Decoupling
 The event store raises events, and tasks perform operations in response to those events. This decoupling of the tasks from the events provides flexibility and extensibility. Tasks know about the type of event and the event data, but not about the operation that triggered the event. In addition, multiple tasks can handle each event.
 
 This enables easy integration with other services and systems that only have to listen for events raised by the event store.
 
-### Retroactive Development
+#### <b-icon name="History"></b-icon>Retroactive Development
 We can discard the application state completely and rebuild it by re-running the events from the event log on an empty application. This way you can introduce different or additional processing of some events.
 
 A common example for that is an e-commerce website. At some point in the application lifecycle you might want to introduce a functionality that suggests items to your customers based on what they have removed from their shopping carts right before checking out.
@@ -59,7 +59,7 @@ With a traditional CRUD system you will start recording what gets removed from c
 
 In contrast, event sourcing allows you to replay all events on shopping carts that ever occurred and use them to build a new model for the suggestion functionality, allowing it to work as if it was collecting data from day one.
 
-### High Performance
+#### <b-icon name="Speed"></b-icon>High Performance
 Events are immutable and can be stored using an append-only operation. This way the user interface or any other process that initiated an event can continue, and tasks that handle the events can run in the background.
 
 Additionally, data is retrieved from specialized projections that are optimized for performance.
@@ -80,7 +80,9 @@ Event sourcing is not a silver bullet, though. There are situations in which you
 - you want flexibility to be able to change the format of materialized models and entity data if requirements change, or—when used in conjunction with CQRS—you need to adapt a read model or the views that expose the data.
 - used in conjunction with CQRS, eventual consistency is acceptable while a read model is updated, or the performance impact of rehydrating entities and data from an event stream is acceptable.
 
+{.negative}
 ### Avoid Using On
+{.negative}
 - non-domain systems that naturally work well with traditional CRUD data management mechanisms.
 - systems where consistency and real-time updates to the views of the data are required.
 - systems where audit trails, history, and capabilities to roll back and replay actions are not required.

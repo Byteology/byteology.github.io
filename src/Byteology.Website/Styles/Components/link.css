@@ -2,7 +2,7 @@
     .link {
         @apply underline;
         @apply underline-offset-2;
-        @apply decoration-2;
+        @apply decoration-1;
         @apply decoration-primary;
         @apply transition-fast;
     }

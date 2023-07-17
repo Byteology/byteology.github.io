@@ -3,8 +3,7 @@ article {
 }
 
 article ::deep > section {
-    @apply panel;
-    @apply styled-content;
+    @apply panel styled-content;
 }
 
 article ::deep b-heading {
@@ -13,4 +12,16 @@ article ::deep b-heading {
 
 h1 > span {
     @apply text-neutral-100 font-bold block text-base;
+}
+
+article ::deep b-subsection {
+    @apply block window styled-content;
+}
+
+article ::deep b-card {
+    @apply block card;
+}
+
+article ::deep .group {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
 }

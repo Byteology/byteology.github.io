@@ -23,7 +23,7 @@ public partial class PaperIndex : ComponentBase
 		StringBuilder markdown = new();
 		foreach (PaperSection section in Sections)
 		{
-			if (section.HeaderNumber > 1)
+			if (section.HeaderNumber > 1 && section.HeaderNumber < 4)
 			{
 				string indent = new(' ', (section.HeaderNumber - 2) * 3);
 				markdown.AppendLine($"{indent}1. <button b-target=\"{section.Id}\">{sanitizeTitle(section.Title)}</button>");

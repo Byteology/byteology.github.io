@@ -8,7 +8,6 @@ Recruitment endeavors are invariably bound by a range of resource constraints. T
 
 Understanding these limitations is crucial as it enables us to develop a targeted and effective recruitment strategy, greatly enhancing our chances of success. Let's examine some of the key constraints:
 
-::: window
 ### Deadlines
 Deadlines pertain to the time available before a new employee must integrate into the team and start working independently or semi-independently. When faced with a tight deadline, we must account for the time required for candidates to acquire any missing teachable core skills. This duration should be factored into their potential start date. If this timeframe exceeds the deadline, we must prioritize testing teachable core skills with heightened confidence, as we may not have the luxury of providing extensive training later.
 
@@ -16,9 +15,7 @@ Strict deadlines also impose time limitations on the entire recruitment process.
 
 - Employing multiple teams to work on parts of the recruitment process simultaneously, albeit with potential trade-offs in consistency.
 - Reducing the thoroughness of the process in regards to the auxiliary and tangent skills specified in the skill canvas. 
-:::
 
-::: window
 ### Team Availability
 Another significant constraint revolves around the availability of the team members responsible for conducting interviews. Often, these individuals are extensively involved in core business operations and may lack sufficient time for recruitment activities.
 
@@ -27,16 +24,13 @@ Furthermore, they might not have the optimal interviewing skillset as it is usua
 To address this constraint, several strategies can be implemented. One straightforward approach is outsourcing certain aspects of the recruitment process, enabling existing team members to focus on the core business of the organization. Alternatively, additional personnel can be trained for the purpose of conducting interviews.
 
 Additionally, while it is beneficial to involve the most highly experienced and valuable team members in the recruitment process, their expertise in the core business may not be an absolute necessity.
-:::
 
-::: window
 ### Financial Considerations
 Tight financial constraints within the recruitment process can impose certain limitations.
 
 While it may be desirable to minimize the outsourced elements of the process, this approach can negatively affect team availability. 
 
 Furthermore, external training may become impractical, leading to a need for increased confidence in evaluating externally teachable core skills. However, achieving this confidence comes with the trade-off of heightened thoroughness.
-:::
 
 ---
 

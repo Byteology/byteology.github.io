@@ -7,7 +7,7 @@
         @apply gap-y-[1em];
         @apply !list-none;
         @apply !space-y-0;
-        @apply pl-0;
+        @apply !pl-0;
     }
 
     .timeline > li::before {
@@ -24,7 +24,7 @@
     }
 
     .timeline > li {
-        @apply pl-[3em];
+        @apply !pl-[2.5em];
     }
 
     .timeline > li:nth-child(-n+9)::before {

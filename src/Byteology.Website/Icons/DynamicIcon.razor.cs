@@ -28,8 +28,6 @@ public partial class DynamicIcon : ComponentBase
 			_iconType = assembly.GetType(fullName, false, true);
 		}
 
-		Console.WriteLine($"{fullName} - {_iconType?.Name} - {DefaultIcon?.Name}");
-
 		if (_iconType == null)
 			_iconType = DefaultIcon;
 	}

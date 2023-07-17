@@ -27,26 +27,25 @@
 
     .styled-content ol {
         @apply list-decimal;
-        @apply space-y-4;
-        @apply pl-[1em];
+
     }
 
     .styled-content ol > li::marker {
         @apply font-bold;
     }
 
-    .styled-content ol > li {
-        @apply space-y-4;
+    .styled-content ol,
+    .styled-content ul {
+        @apply space-y-4 pl-[1em];
     }
 
     .styled-content ul {
         @apply list-disc;
-        @apply space-y-2;
-        @apply pl-[1em];
     }
 
-    .styled-content ul > li {
-        @apply space-y-4;
+    .styled-content ul > li,
+    .styled-content ol > li {
+        @apply space-y-4 pl-[0.5em];
     }
 
     .styled-content h1 {
@@ -61,20 +60,10 @@
         @apply uppercase;
     }
 
-    .styled-content h3 {
+    .styled-content h3, h4, h5 {
         @apply text-base;
         @apply font-bold;
         @apply uppercase;
-    }
-
-    .styled-content h4 {
-        @apply text-base;
-        @apply font-bold;
-    }
-
-    .styled-content h5 {
-        @apply text-base;
-        @apply font-bold;
     }
 
     .styled-content q,
@@ -90,17 +79,4 @@
     {
         content: '"';
     }
-
-    .styled-content .negative-accent strong,
-    .styled-content .negative-accent ol > li::marker,
-    .styled-content .negative-accent ul > li::marker,
-    .styled-content .negative-accent h1,
-    .styled-content .negative-accent h2,
-    .styled-content .negative-accent h3,
-    .styled-content .negative-accent h4,
-    .styled-content .negative-accent h5
-     {
-        @apply text-error;
-    }
-
 }

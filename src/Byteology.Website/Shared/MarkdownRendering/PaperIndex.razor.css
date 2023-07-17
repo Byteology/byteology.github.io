@@ -19,3 +19,8 @@ b-index ::deep ol > li:before {
 	counter-increment: item;
 	@apply text-accent font-bold;
 }
+
+b-index ::deep > ol,
+b-index ::deep > ol > li {
+	@apply pl-0;
+}

@@ -34,11 +34,14 @@ public partial class Paper : ComponentBase
 
 	private PaperMetadata? _metadata;
 
-	[GeneratedRegex(@"(?=<h\d>.*</h\d>)", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)]
+	[GeneratedRegex(@"(?=<h\d\s*[^>]*>.*</h\d>)", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)]
 	private static partial Regex getHeadingRegex();
 
-	[GeneratedRegex(@"^<h\d>", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)]
-	private static partial Regex getHeadingCloseRegex();
+	[GeneratedRegex(@"^<h\d\s*[^>]*>", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)]
+	private static partial Regex getHeadingStartRegex();
+
+	[GeneratedRegex(@"class=""[^""]*""", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)]
+	private static partial Regex getClassRegex();
 
 	protected override void OnParametersSet()
 	{
@@ -85,19 +88,26 @@ public partial class Paper : ComponentBase
 	{
 		blockData = blockData.Trim();
 
-		bool startsWithHeading = !string.IsNullOrWhiteSpace(blockData) && getHeadingCloseRegex().IsMatch(blockData);
+		bool startsWithHeading = !string.IsNullOrWhiteSpace(blockData) && getHeadingStartRegex().IsMatch(blockData);
 
 		if (!startsWithHeading)
 			return new PaperSection(
 				id: string.Empty,
 				headerNumber: 1,
 				title: string.Empty,
-				text: blockData
+				text: blockData,
+				classes: string.Empty
 			);
 
 		int headingNumber = int.Parse(blockData[2].ToString());
 		int headingEnd = blockData.IndexOf($"</h{headingNumber}>");
-		string title = blockData[4..headingEnd].Trim();
+		int indexOfContentStart = blockData.IndexOf('>') + 1;
+
+		string classes = getClassRegex().Match(blockData.Substring(0, indexOfContentStart)).Value;
+		if (!string.IsNullOrEmpty(classes))
+			classes = classes[7..^1];
+
+		string title = blockData[indexOfContentStart..headingEnd].Trim();
 		string content = blockData[(headingEnd + 5)..].Trim();
 		string id = string.Empty;
 
@@ -124,7 +134,8 @@ public partial class Paper : ComponentBase
 			id: id,
 			headerNumber: headingNumber,
 			title: title,
-			text: content
+			text: content,
+			classes: classes
 		);
 	}
 
@@ -138,13 +149,46 @@ public partial class Paper : ComponentBase
 	{
 		StringBuilder value = new("<section>");
 
+		bool subsectionOpened = false;
+		bool cardOpened = false;
+
 		foreach (PaperSection section in _sections.Skip(1))
 		{
-			value.AppendLine($"<h{section.HeaderNumber} name=\"{section.Id}\">{section.Title}</h{section.HeaderNumber}>");
+			if (subsectionOpened && section.HeaderNumber <= 3)
+			{
+				value.AppendLine("</b-subsection>");
+				subsectionOpened = false;
+			}
+
+			if (cardOpened && section.HeaderNumber <= 4)
+			{
+				value.AppendLine("</b-card>");
+				cardOpened = false;
+			}
+
+			if (section.HeaderNumber == 3)
+			{
+				value.AppendLine("<b-subsection>");
+				subsectionOpened = true;
+			}
+
+			if (section.HeaderNumber == 4)
+			{
+				value.AppendLine("<b-card>");
+				cardOpened = true;
+			}
+
+			string classesString = string.IsNullOrEmpty(section.Classes) ? string.Empty : $" class=\"{section.Classes}\"";
+
+			value.AppendLine($"<h{section.HeaderNumber} name=\"{section.Id}\"{classesString}>{section.Title}</h{section.HeaderNumber}>");
 			value.AppendLine(section.Text);
 		}
 
 		value = value.Replace("<hr />", "</section><section>");
+
+		if (subsectionOpened)
+			value.AppendLine("</b-subsection>");
+
 		value.AppendLine("</section>");
 
 		return new MarkupString(value.ToString());

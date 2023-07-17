@@ -1,0 +1,8 @@
+@layer utilities {
+
+	.negative:not(ul):not(ol),
+    .negative li::marker {
+        @apply !text-error;
+    }
+
+}

@@ -9,11 +9,14 @@ public class PaperSection
 
 	public string Text { get; init; }
 
-	public PaperSection(string id, int headerNumber, string title, string text)
+	public string Classes { get; init; }
+
+	public PaperSection(string id, int headerNumber, string title, string text, string classes)
 	{
 		Id = id;
 		HeaderNumber = headerNumber;
 		Title = title;
 		Text = text;
+		Classes = classes;
 	}
 }

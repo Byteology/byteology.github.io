@@ -24,16 +24,11 @@ To enhance the effectiveness of the skill canvas, it is highly beneficial to pro
 
 While not obligatory, it can be advantageous to categorize the skills into two main groups:
 
-::: window
-<b-icon name="gear"></b-icon> Technical Skills
-
+#### <b-icon name="gear"></b-icon> Technical Skills
 Technical skills encompass expertise related to specific technologies, software, or specialized knowledge directly associated with a particular field of study. Typically, these skills are identified by the engineering team.
-:::
-::: window
-<b-icon name="person"></b-icon> Personal Skills
 
+#### <b-icon name="person"></b-icon> Personal Skills
 Personal skills, also known as soft skills, are not tied to a specific field of study. They encompass attributes such as mentoring ability, organizational skills, problem-solving approach, interpersonal capabilities, and working under pressure, among others.
-:::
 
 ---
 
@@ -52,22 +47,20 @@ During the recruitment process, it is unlikely that every candidate can be thoro
 
 To achieve this, we recommend evaluating each skill on the canvas based on two additional characteristics:
 
-::: window
 ### ::01:: Importance
 This classification permits the concentration of efforts on pivotal elements during the advanced stages of the process. Generally, three types of skills are recognized:
 
 - **Core** - these skills constitute essential prerequisites for the job, without which it cannot be effectively pursued.
 - **Auxiliary** - Although not obligatory, these skills exert a substantial impact on the role and its outcomes.
 - **Tangent** - these skills bear some tangential relevance to the job, but a skilled professional may lack them without significant detriment.
-:::
-::: window
+
 ### ::02:: Teachability
 To determine the feasibility of imparting skills, each should be evaluated in terms of teachability. Skills can fall into three categories:
 
 - **Internally teachable** - these skills can be cultivated within the organization through available resources. Typically, the temporal commitment of willing and competent personnel to facilitate training programs
 - **Externally teachable** - these skills surpass the internal training capacities. Outsourcing their training to third-party entities becomes a viable option, albeit incurring financial costs.
 - **Unteachable** - skills that defy reasonable acquisition within the confines of available temporal or resource constraints.
-:::
+
 ---
 
 ## Conclusion
