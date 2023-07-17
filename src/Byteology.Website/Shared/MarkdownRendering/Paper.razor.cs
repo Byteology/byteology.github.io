@@ -84,7 +84,7 @@ public partial class Paper : ComponentBase
 		return sections;
 	}
 
-	private static PaperSection getSection(string blockData, ref List<int> lastBlockId)
+	private static PaperSection getSection(string blockData, ref List<int> lastSectionId)
 	{
 		blockData = blockData.Trim();
 
@@ -116,16 +116,16 @@ public partial class Paper : ComponentBase
 			StringBuilder idBuilder = new();
 			idBuilder.Append("section");
 
-			if (lastBlockId.Count > headingNumber - 1)
-				lastBlockId.RemoveRange(headingNumber - 1, lastBlockId.Count - (headingNumber - 1));
+			if (lastSectionId.Count > headingNumber - 1)
+				lastSectionId.RemoveRange(headingNumber - 1, lastSectionId.Count - (headingNumber - 1));
 
-			if (lastBlockId.Count == headingNumber - 1)
-				lastBlockId[^1]++;
-			else
-				lastBlockId.Add(1);
+			if (lastSectionId.Count == headingNumber - 1)
+				lastSectionId[^1]++;
+			else while (lastSectionId.Count != headingNumber - 1)
+					lastSectionId.Add(1);
 
-			for (int i = 0; i < lastBlockId.Count; i++)
-				idBuilder.Append($"-{lastBlockId[i]}");
+			for (int i = 0; i < lastSectionId.Count; i++)
+				idBuilder.Append($"-{lastSectionId[i]}");
 
 			id = idBuilder.ToString();
 		}
