@@ -8,7 +8,7 @@ This guide aims to provide insights into the challenges of identifying exception
 ## What is a Skill Canvas
 The recruitment process involves various stages, including crafting job descriptions, candidate pre-screening, interview preparation, and designing onboarding and training procedures. 
 
-To ensure an effective process, all these components should work cohesively towards a well-defined goal. The skill canvas serves as a tool that enables us to articulate this goal, fostering shared understanding among all stakeholders involved in the recruitment process.
+To ensure an effective process, all these components should work cohesively towards a well-defined goal and the skill canvas serves as a tool that enables the articulation of this goal by fostering shared understanding among all stakeholders involved in the recruitment process.
 
 The skill canvas primarily consists of a comprehensive list of clearly defined and quantified skills that we seek in potential candidates, accompanied by the rationale behind each skill requirement.
 
@@ -36,16 +36,16 @@ Personal skills, also known as soft skills, are not tied to a specific field of 
 
 Rather than relying solely on years of experience for defining a level of expertise, it is crucial to provide explicit definitions and expectations for each skill. 
 
-For instance, instead of stating “The candidate must have at least 5 years of experience working in microservices architectures”, a more precise requirement could be articulated, such as “The candidate should be able to autonomously investigate and identify race conditions within a complex microservice architecture. 
+For instance, instead of stating ""The candidate must have at least 5 years of experience working in microservices architectures"", a more precise requirement could be articulated, such as ""The candidate should be able to autonomously investigate and identify race conditions within a complex microservice architecture"". 
 
 This level of detail aids in crafting accurate job descriptions and interview scenarios, while fostering shared understanding throughout the recruitment process.
 
 ---
 
 ## Quantifying the Skills
-During the recruitment process, it is unlikely that every candidate can be thoroughly assessed on every skill listed in the canvas. To address this challenge, it is necessary to implement a system that helps define our strategy.
+It is unlikely that every candidate can be thoroughly assessed on every skill listed in the canvas in the timeframe of the recruitment process. To address this challenge, it is necessary to implement a system that helps define our strategy.
 
-To achieve this, we recommend evaluating each skill on the canvas based on two additional characteristics:
+To achieve this, each skill on the canvas should be classified based on a couple of characteristics:
 
 ### ::01:: Importance
 This classification permits the concentration of efforts on pivotal elements during the advanced stages of the process. Generally, three types of skills are recognized:
@@ -63,7 +63,5 @@ To determine the feasibility of imparting skills, each should be evaluated in te
 
 ---
 
-## Conclusion
-Recruitment plays a crucial role in the success of any organization. By employing a skill canvas, we establish a clear vision for the ideal candidate and foster effective decision-making throughout the process. 
-
+## Next Steps
 In the subsequent parts of this guide, we will delve into defining recruitment strategies that leverage the skill canvas, ensuring the acquisition of top-tier talent.

@@ -3,10 +3,8 @@ With our skill canvas completed, it is now time to progress to the next step of 
 
 ---
 
-## Constraints Evaluation
-Recruitment endeavors are invariably bound by a range of resource constraints. These constraints can include deadlines, availability of key personnel involved in the process, and financial considerations among many others.
-
-Understanding these limitations is crucial as it enables us to develop a targeted and effective recruitment strategy, greatly enhancing our chances of success. Let's examine some of the key constraints:
+## Constraints
+Recruitment endeavors are invariably bound by a range of resource constraints. Understanding them is crucial as it enables the development of a targeted and effective recruitment strategy, greatly enhancing the chances of success.
 
 ### Deadlines
 Deadlines pertain to the time available before a new employee must integrate into the team and start working independently or semi-independently. When faced with a tight deadline, we must account for the time required for candidates to acquire any missing teachable core skills. This duration should be factored into their potential start date. If this timeframe exceeds the deadline, we must prioritize testing teachable core skills with heightened confidence, as we may not have the luxury of providing extensive training later.

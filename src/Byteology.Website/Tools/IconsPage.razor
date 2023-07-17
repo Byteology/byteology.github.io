@@ -1,0 +1,12 @@
+@page "/icons"
+
+<b-icon-name>@_name</b-icon-name>
+
+<b-icons>
+	@foreach (string icon in _iconNames)
+	{
+		<b-icon-container class="@(icon == _name ? "clicked" : "")"  @onclick="() => showName(icon)">
+			<b-icon name="@icon"></b-icon> 
+		</b-icon-container>
+	}
+</b-icons>
