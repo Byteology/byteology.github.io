@@ -1,6 +1,9 @@
 # Concise Guide to Specialized Recruitment - Part 4: Pre-screening Techniques
 Pre-screening, the process of evaluating candidates based on their application alone, is a cost-effective method compared to full screening. Although it may not be as comprehensive, pre-screening helps identify potential candidates who are likely to be a good fit for the position. It also allows screeners to focus on evaluating more challenging skills by providing an initial assessment of certain skills outlined in the skill canvas.
 
+---
+
+## Choosing Pre-screening Techniques
 Various techniques can be employed during pre-screening, but it's essential to consider their associated costs. Some techniques may require additional input from candidates during the application process, providing more information but potentially deterring applicants who prefer a faster process. Candidates may choose to apply for other positions with quicker application processes, considering it statistically more advantageous than applying for a role with lengthier pre-screening requirements.
 
 When deciding which pre-screening techniques to use, it is crucial to evaluate how well they align with the skill canvas and consider the impact on the application process's complexity.
@@ -10,9 +13,15 @@ Now, let's explore the tools available for pre-screening.
 ---
 
 ## Resumes
-Resumes (or CVs) are the fundamental and most widely-used tool for pre-screening. They provide a wealth of information about the applicants. The goal is to extract relevant information that aligns with the skill canvas. While it may be tempting to favor aesthetically pleasing and refined resumes, our focus should be on identifying signs of skills aligning with the skill canvas. This can be challenging, but providing concise explanations linking specific details in resumes to relevant skills can increase the likelihood of shortlisting suitable candidates.
+Resumes (or CVs) are the fundamental and most widely-used tool for pre-screening. They provide a wealth of information about the applicants and our goal is to extract only the relevant one.
 
-Additionally, it is beneficial to maintain statistics on successful interviews from specific universities or previous employers. Factors such as writing style, certifications, or other attributes may contribute to identifying potential candidates. However, it's important to note that statistics should guide decisions rather than serve as rigid criteria, allowing room for considering candidates beyond the statistical data. Developing a systematic approach to sorting applications is crucial during this stage, given the limited information available, and maintaining statistics offers a valuable long-term strategy.
+While it may be tempting to favor aesthetically pleasing and refined resumes, our focus should be on identifying signs of skills aligning with the skill canvas. This can be challenging, but providing concise explanations linking specific details in resumes to relevant skills can increase the likelihood of shortlisting suitable candidates.
+
+Additionally, it is beneficial to maintain statistics on successful interviews from specific universities or previous employers. Factors such as writing style, certifications, or other attributes may contribute to identifying potential candidates. 
+
+Developing a systematic approach to sorting applications is crucial during this stage, given the limited information available, and maintaining statistics offers a valuable long-term strategy.
+
+However, it's important to note that statistics should guide decisions rather than serve as rigid criteria, allowing room for considering candidates beyond the statistical data. 
 
 ---
 
@@ -30,12 +39,16 @@ Homework assignments offer a valuable means to enhance the interview process's t
 
 - Designing a homework assignment that adequately reflects the desired skills can be difficult.
 - Assignments and their solutions can spread rapidly hence they can't be reused very often.
-- Verifying that the solution submitted is the work of the assignee requires scheduling a call to discuss the solution. This, coupled with grading, consumes time that could be allocated elsewhere in the process.
+- Verifying that the solution submitted is the work of the assignee requires scheduling a call to discuss it. This, coupled with grading, consumes time that could be allocated elsewhere in the process.
 
 ---
 
 ## Automated Tests
-When expecting a high volume of applicants and when a skill from the skill canvas can be objectively assessed in a quick and automated manner, automated tests are a valuable option. The ability to evaluate skills impartially, regardless of the applicant count, can save significant time and allow for greater thoroughness in other areas. It is essential, however, to ensure that the automated tests closely align with the skill canvas and are not easily susceptible to cheating.
+When expecting a high volume of applicants and when a skill from the skill canvas can be objectively assessed in a quick and automated manner, automated tests are a valuable option. 
+
+The ability to evaluate skills impartially, regardless of the applicant count, can save significant time and allow for greater thoroughness in other areas. 
+
+It is essential, however, to ensure that the automated tests closely align with the skill canvas and are not easily susceptible to cheating.
 
 ---
 

@@ -2,8 +2,8 @@ b-index {
 	@apply panel styled-content inline-block
 }
 
-b-index ::deep button {
-	@apply link;
+b-index ::deep b-button {
+	@apply link cursor-pointer text-sm font-bold; 
 } 
 
 b-index ::deep ol {

@@ -1,5 +1,5 @@
 # Concise Guide to Specialized Recruitment - Part 2: Formulating a Strategic Approach
-With our skill canvas completed, it is now time to progress to the next step of the process: evaluating the constraints that will shape our recruitment strategy.
+With the skill canvas completed, it is now time to progress to the next step of the process: evaluating the constraints that will shape the recruitment strategy.
 
 ---
 
@@ -7,7 +7,9 @@ With our skill canvas completed, it is now time to progress to the next step of 
 Recruitment endeavors are invariably bound by a range of resource constraints. Understanding them is crucial as it enables the development of a targeted and effective recruitment strategy, greatly enhancing the chances of success.
 
 ### Deadlines
-Deadlines pertain to the time available before a new employee must integrate into the team and start working independently or semi-independently. When faced with a tight deadline, we must account for the time required for candidates to acquire any missing teachable core skills. This duration should be factored into their potential start date. If this timeframe exceeds the deadline, we must prioritize testing teachable core skills with heightened confidence, as we may not have the luxury of providing extensive training later.
+Deadlines pertain to the time available before a new employee should integrate into the team and start working independently or semi-independently. 
+
+When faced with a tight deadline, the time required for candidates to acquire any missing teachable core skills should be taken into account. This duration should be factored into their potential start date and if this timeframe exceeds the deadline, we must prioritize testing teachable core skills with heightened confidence, as we may not have the luxury of providing extensive training later on.
 
 Strict deadlines also impose time limitations on the entire recruitment process. Insufficient time might hinder our ability to interview an adequate number of candidates, potentially resulting in choosing from a suboptimal talent pool. To mitigate this, there are two approaches:
 
@@ -19,16 +21,18 @@ Another significant constraint revolves around the availability of the team memb
 
 Furthermore, they might not have the optimal interviewing skillset as it is usually different than the one required for their primary roles.
 
-To address this constraint, several strategies can be implemented. One straightforward approach is outsourcing certain aspects of the recruitment process, enabling existing team members to focus on the core business of the organization. Alternatively, additional personnel can be trained for the purpose of conducting interviews.
+To address this constraint, several strategies can be implemented. 
 
-Additionally, while it is beneficial to involve the most highly experienced and valuable team members in the recruitment process, their expertise in the core business may not be an absolute necessity.
+- Outsourcing certain aspects of the recruitment process enables existing team members to focus on the core business of the organization. 
+- Additional personnel can be trained for the purpose of conducting interviews.
+- While it is beneficial to involve the most highly experienced and valuable team members in the recruitment process, their expertise in the core business may not be an absolute necessity and other personnel can be involved instead.
 
 ### Financial Considerations
 Tight financial constraints within the recruitment process can impose certain limitations.
 
 While it may be desirable to minimize the outsourced elements of the process, this approach can negatively affect team availability. 
 
-Furthermore, external training may become impractical, leading to a need for increased confidence in evaluating externally teachable core skills. However, achieving this confidence comes with the trade-off of heightened thoroughness.
+Furthermore, financial constraints may cause external training to become impractical, leading to a need for increased confidence in evaluating externally teachable core skills. However, achieving this confidence comes with the trade-off of heightened thoroughness.
 
 ---
 

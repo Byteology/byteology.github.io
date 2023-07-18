@@ -1,14 +1,12 @@
 # Concise Guide to Specialized Recruitment - Part 5: Screening Techniques
-Screening is widely considered the most challenging aspect of the entire recruitment process. It is during this phase that the most valuable insights about a candidate are acquired. Typically, screening involves one or multiple interviews, but it is essential to minimize their number due to the reasons we discussed in previous parts.
+Screening is widely considered the most challenging aspect of the entire recruitment process. It is during this phase that the most valuable insights about a candidate are acquired. Typically, screening involves one or multiple interviews, but it is essential to minimize their number for the sake of brevity as discussed in previous chapters.
 
 ---
 
 ## Preparation
-Given the inevitable time constraints, thorough preparation is crucial.
-
 Before commencing the interview, it is essential to review the skill canvas and the candidate's pre-screening results. Appropriate conversations should be carefully constructed in order to evaluate skills that were not adequately covered in the pre-screening phase.
 
-We used the word *"conversation"* instead of *"questions"* on purpose. Knowledge is only a part of what makes up a skill. Skills encompass the ability to apply knowledge effectively, which is the primary focus of this evaluation. 
+We used the word *"conversation"* instead of *"questions"* on purpose. Questions can only test knowledge and knowledge is only a part of what makes up a skill. A skill encompasses the ability to apply knowledge effectively, which is the primary focus of this evaluation. 
 
 To gauge a candidate's mastery in a particular field, it is beneficial to explore their opinions and how they handle conflicting ideas. For instance, instead of asking a candidate to recite the SOLID principles, which only tests their familiarity with a Wikipedia article, we could inquire about their viewpoint on the controversy surrounding the dependency inversion principle. By analyzing their response and engaging in further discussion, we can assess their ability to examine the topic from various perspectives. This approach enables us to determine their proficiency in the field more reliably.
 
@@ -23,7 +21,7 @@ Conducting the interview as a conversation greatly aids in achieving this goal. 
 
 Moreover, it is not necessary to delve deeply into every topic. Once we have evaluated a skill with a satisfactory level of confidence, we can smoothly transition to the next area of assessment. The aim is to ensure a seamless flow throughout the interview.
 
-Having prepared multiple conversations per skill allows us to enter the discussion at different points, depending on the current moment in the conversation.
+Having prepared multiple conversations per skill allows us to enter a discussion at different points, depending on the current flow of the conversation.
 
 ### Addressing Stress
 This conversational approach also helps alleviate candidate stress by avoiding an exam-like atmosphere. It is important to acknowledge that interviewees may feel nervous, worried, or even outright scared.
@@ -36,7 +34,9 @@ There are several ways to help candidates relax, depending on the situation:
 If we fail to calm a nervous candidate, continuing the interview may not provide accurate insights into their skills. Instead, it will primarily evaluate their ability to perform under pressure, which is typically not a requirement for their role.
 
 ### Allowing Candidates to Choose Topics
-It is crucial to remember that interviews are a two-way street (hence the word). Sufficient time should be allocated for candidates to ask questions and stray away from the predefined topics. This approach offers additional insights into their motivations and areas of expertise, even if these aspects were not thoroughly explored during the rest of the conversation.
+It is crucial to remember that interviews are a two-way street (hence the word). Sufficient time should be allocated for candidates to ask questions and stray away from the predefined topics.
+
+This approach offers additional insights into their motivations and areas of expertise, even if these aspects were not thoroughly explored during the rest of the conversation.
 
 ### Providing Feedback
 After each interview, candidates may request feedback on their performance. Regardless of whether they explicitly ask, it should be provided. This serves several significant purposes:

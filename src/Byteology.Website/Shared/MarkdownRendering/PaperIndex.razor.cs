@@ -26,7 +26,7 @@ public partial class PaperIndex : ComponentBase
 			if (section.HeaderNumber > 1 && section.HeaderNumber < 4)
 			{
 				string indent = new(' ', (section.HeaderNumber - 2) * 3);
-				markdown.AppendLine($"{indent}1. <button b-target=\"{section.Id}\">{sanitizeTitle(section.Title)}</button>");
+				markdown.AppendLine($"{indent}1. <b-button b-target=\"{section.Id}\">{sanitizeTitle(section.Title)}</b-button>");
 			}
 		}
 		_content = new MarkupString(Markdown.ToHtml(markdown.ToString()));

@@ -8,16 +8,16 @@ In the pursuit of finding the ideal candidate for an open position, a well-craft
 
 Potential candidates seldom stumble upon job advertisements by chance. Most of the time, they actively seek their next job opportunity and are either browsing through job portals or are being targeted by recruiters.
 
-In both cases, candidates are presented with an overwhelming number of job descriptions. Consequently, they must decide which ones are worth their attention and ultimately, their application.
+In both cases, candidates are presented with an overwhelming number of job descriptions and consequently, they must decide which ones are worth their attention and ultimately, their application.
 
 Due to time constraints, potential candidates cannot thoroughly evaluate every job description to determine a good fit before applying. Therefore, they approach the process in a statistical manner.
 
 {.timeline}
 1. Candidates typically start by swiftly evaluating the title of the job description to gauge the specific domain it belongs to. Job titles often provide a glimpse into the business or technical domain, and candidates use this information to assess their suitability. 
 
-   The broader the domain indicated in the title, the less likely it is for highly specialized candidates to pursue it. For example, a job title like "Senior Software Engineer" implies a broader domain, which appeals to less specialized candidates and may discourage those with more specialized expertise. 
+   The broader the domain indicated in the title, the less likely it is for highly specialized candidates to pursue it. For example, a job title like *"Senior Software Engineer"* implies a broader domain, which appeals to less specialized candidates and may discourage those with more specialized expertise. 
 
-   Conversely, more specific titles, such as "C#.NET Developer with event sourcing experience for a marketplace" are more likely to attract candidates who possess specialized skills in that particular area.
+   Conversely, more specific titles, such as *"C#.NET Developer with event sourcing experience for a marketplace"* are more likely to attract candidates who possess specialized skills in that particular area.
 
 1. Once a candidate clicks on a job advert, their second concern emerges: Is investing time in applying for this position worthwhile in terms of potential fit?
 
@@ -30,13 +30,11 @@ Due to time constraints, potential candidates cannot thoroughly evaluate every j
 ---
 
 ## The Goals of a Job Description
-Once we publish a job advert, only a limited number of people will see it, and the higher this number, the greater the chances of the perfect candidate being among them. Thus, the primary goal of a successful job advert is to increase its visibility and reach.
+Once a job advert is published, only a limited number of people will see it, and the higher this number, the greater the chances of the perfect candidate being among them. Thus, one of the main goals of a successful job advert is to increase its visibility and reach.
 
 However, as candidates start applying, the number of applications may exceed the capacity of the screening process. Consequently, most of the filtering will happen in the pre-screening process, which comes with certain drawbacks that we will discuss in the next chapter of this guide.
 
 Fortunately, a well-designed job description can alleviate this situation by acting as an automatic filter, discouraging unsuitable candidates from applying. However, caution should be exercised in order to avoid inadvertently filtering out exceptional candidates. 
-
-Armed with this knowledge and the skill canvas we created earlier, we are now prepared to craft an exceptional job description.
 
 ---
 
@@ -50,15 +48,15 @@ The only exception is for intern positions, as the term *"intern"* generally car
 ---
 
 ## Technical Skill Requirements
-Let's consider the skill requirements list with regard to the 70% rule mentioned earlier. It's important to keep in mind that if the list includes auxiliary or tangent skills, there is a higher probability that candidates will apply even if they lack a significant portion of the core skills. This can pose a challenge during the pre-screening stage, as it might be difficult to identify these gaps at that stage.
+Let's consider the skill requirements list with regard to the 70% rule mentioned earlier. It's important to keep in mind that if the list includes auxiliary or tangent skills, there is a higher probability that candidates will apply even if they lack a significant portion of the core skills. This can pose a challenge during the pre-screening stage, as it might be difficult to identify these gaps at that point.
 
 Therefore, it's best to include only the core skills from the skill canvas. The rest of the skills will have to be evaluated in the other stages of the recruitment process.
 
 The listed technical requirement should be described in the most specific terms possible, mirroring the approach taken for the job title. Vague skill descriptions tend to inflate candidates' perception of their abilities and may cause an overabundance of unfit applicants.
 
-Additionally, specifying the "required years of experience" for a particular technology should be avoided. Experience alone is not a comprehensive measure of expertise, and candidates are often aware of this. Numerous job advertisements require an excessive amount of experience, to the point where it has become a running joke. Consequently, candidates tend to overlook such requirements.
+Additionally, specifying the ""required years of experience"" for a particular technology should be avoided. Experience alone is not a comprehensive measure of expertise, and candidates are often aware of this. Numerous job advertisements require an excessive amount of experience, to the point where it has become a running joke. Consequently, candidates tend to overlook such requirements.
 
-Instead, the expectations tied to that experience should be defined. E.g. "You should be able to understand and optimize complex SQL Server execution plans''. This way of phrasing it conveys the desired expertise. 
+Instead, the expectations tied to that experience should be defined. E.g. ""You should be able to understand and optimize complex SQL Server execution plans"". This way of phrasing it conveys the desired expertise. 
 
 Fortunately, these descriptions were already defined when creating the skill canvas.
 
@@ -71,7 +69,7 @@ By including personal skills in the job description, candidates mentally check t
 
 However, it may be advantageous to incorporate core personal skills in the job advert, albeit in a different manner. Rather than asking candidates to evaluate themselves against a list of personal skills, we want them to realize their unsuitability for the position in case they lack them.
 
-To achieve this, a workday scenario may be described, placing a strong emphasis on the required personal skills. For example, instead of stating, "The perfect candidate must have excellent time management skills," the job description should elaborate on how these skills are connected to the work: "You'll have to assess priorities in a tight deadline environment and act upon them."
+To achieve this, a workday scenario may be described, placing a strong emphasis on the required personal skills. For example, instead of stating, ""The perfect candidate must have excellent time management skills"", the job description should elaborate on how these skills are connected to the job: ""You'll have to assess priorities in a tight deadline environment and act upon them"".
 
 This approach discourages individuals lacking the specified personal skills from applying, without them even knowing they have just performed a self-evaluation.
 
