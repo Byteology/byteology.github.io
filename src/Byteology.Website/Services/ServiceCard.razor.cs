@@ -3,7 +3,7 @@ namespace Byteology.Website.Services;
 public partial class ServiceCard : ComponentBase
 {
 	[Parameter, EditorRequired]
-	public Type Icon { get; set; } = default!;
+	public string Icon { get; set; } = default!;
 
 	[Parameter, EditorRequired]
 	public string Title { get; set; } = default!;
@@ -12,5 +12,5 @@ public partial class ServiceCard : ComponentBase
 	public string Description { get; set; } = default!;
 
 	[Parameter, EditorRequired]
-	public Type PageLink { get; set; } = default!;
+	public string PageLink { get; set; } = default!;
 }

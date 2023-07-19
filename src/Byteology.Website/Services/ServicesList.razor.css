@@ -1,12 +1,7 @@
 b-services {
     @apply grid;
     @apply grid-cols-1;
-    @apply lg:grid-cols-2;
     @apply gap-4;
     @apply justify-center;
     @apply lg:px-8;
-}
-
-b-services ::deep > *:nth-child(odd) aside {
-    @apply lg:order-first;
 }

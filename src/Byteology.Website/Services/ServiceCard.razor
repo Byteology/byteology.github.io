@@ -3,13 +3,13 @@
 <b-service-card>
     <article>
         <h2>
-            <DynamicComponent Type="@Icon" />
+            <b-icon name="@Icon"></b-icon>
             <span>@Title</span>
         </h2>
         <p>@Description</p>
-        <a href="@(Sitemap.GetRouteOf(PageLink))">Learn More</a>
+        <a href="@PageLink">Learn More</a>
     </article>
     <aside>
-        <DynamicComponent Type="@Icon" />
+        <b-icon name="@Icon"></b-icon>
     </aside>
 </b-service-card>

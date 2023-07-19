@@ -9,18 +9,22 @@ aside {
     @apply md:p-8;
 }
 
+b-icon {
+    @apply w-full my-auto;
+}
+
 b-service-card {
     @apply panel;
     @apply p-0;
     @apply flex;
-    @apply max-w-xl;
+    @apply max-w-3xl;
 }
 
 article {
     @apply p-4;
     @apply lg:px-8;
     @apply basis-0;
-    @apply grow-[3];
+    @apply grow-[5];
     @apply flex;
     @apply flex-col;
     @apply gap-4;

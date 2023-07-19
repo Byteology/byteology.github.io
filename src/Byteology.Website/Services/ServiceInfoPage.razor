@@ -1,0 +1,13 @@
+@using Byteology.Website.Shared.MarkdownRendering
+@using Byteology.Website.Inquiry
+
+
+@page "/services/{handle}"
+
+<Paper PapersRepository="_serviceInfoRepository"
+       Handle="@Handle"
+       NotFoundUrl="/services"
+       IndexEnabled="false"
+       NavigationEnabled="false" />
+
+<DefaultInquiryComponent />

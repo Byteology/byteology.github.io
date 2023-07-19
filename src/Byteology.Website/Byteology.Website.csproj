@@ -37,6 +37,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Career\Data\*" />
     <EmbeddedResource Include="Thoughts\Data\*" />
+    <EmbeddedResource Include="Services\Data\*" />
   </ItemGroup>
 
 </Project>

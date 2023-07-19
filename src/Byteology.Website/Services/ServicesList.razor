@@ -1,45 +1,14 @@
 ﻿<b-services>
 
-    <ServiceCard Title="Software Development"
-                 Description="We will develop your application or minimum viable product (MVP) by applying scientific
-                              generalization and domain-driven design principles."
-                 PageLink="typeof(SoftwareDevelopment)"
-                 Icon="typeof(CogwheelIcon)">
-    </ServiceCard>
-
-    <ServiceCard Title="Research and PoC"
-                 Description="Byteology's team will do any research or proof of concept on your behalf. We'll validate
-                              your idea, explore feasible approaches and identify potential risks and roadblocks."
-                 PageLink="typeof(ResearchAndPoC)" Icon="typeof(PageLightbulbIcon)">
-    </ServiceCard>
-
-    <ServiceCard Title="Migration to Microservices"
-                 Description="We have researched and designed strategies and processes that help businesses
-                              successfully migrate to microservices."
-                 PageLink="typeof(MigrationToMicroservices)"
-                 Icon="typeof(MicroservicesIcon)">
-    </ServiceCard>
-
-    <ServiceCard Title="Event Sourcing"
-                 Description="Standard software development methodologies store and utilize less than 50% of the data
-                              that runs through the system."
-                 PageLink="typeof(EventSourcing)"
-                 Icon="typeof(EventStreamIcon)">
-    </ServiceCard>
-
-    <ServiceCard Title="Education and Training"
-                 Description="Byteology will provide you with a number of tailored personnel training services to help
-                              your business scale and grow."
-                 PageLink="typeof(EducationAndTraining)"
-                 Icon="typeof(WhiteboardIcon)">
-    </ServiceCard>
-
-    <ServiceCard Title="Interviewing as a Service"
-                 Description="We've been studying the process of identifying great software engineers for over a decade.
-                              Our team will conduct technical and social interviews on your behalf so you can focus of
-                              your core business."
-                 PageLink="typeof(InterviewingAsAService)"
-                 Icon="typeof(CvIcon)">
-    </ServiceCard>
+    @foreach(var serviceInfo in _servicesInfoRepository.GetAll())
+    {
+        @if(!serviceInfo.Inactive)
+        {
+            <ServiceCard Title="@serviceInfo.Title"
+                 Description="@serviceInfo.Description"
+                 PageLink="@_servicesInfoRepository.GetPaperUrl(serviceInfo.Handle)"
+                 Icon="@serviceInfo.Icon" />
+        }
+    }
 
 </b-services>

@@ -1,0 +1,23 @@
+[
+	{
+		"handle": "software-development",
+		"icon": "cogwheel",
+		"title": "Software Development",
+		"description": "We will develop your application or minimum viable product (MVP) by applying scientific generalization and domain-driven design principles.",
+		"keywords": [ "software", "development", "software development", "domain", "design", "domain design", "programming", "architecture", "skills", "thinking deeply about simple things" ]
+	},
+	{
+		"handle": "interviewing-as-a-service",
+		"icon": "cv",
+		"title": "Interviewing as a Service",
+		"description": "We've been studying the process of identifying great software engineers for over a decade. Our team will conduct technical and social interviews on your behalf so you can focus of your core business.",
+		"keywords": [ "interviewing", "hiring", "interviewing as a service", "iaas", "guide", "job application", "job adverts" ]
+	},
+	{
+		"handle": "education-and-training",
+		"icon": "whiteboard",
+		"title": "Education and Training",
+		"description": "Byteology will provide you with a number of tailored personnel training services to help your business scale and grow.",
+		"keywords": [ "training", "bootcamps", "onboarding", "documentation", "mentorship", "mentor", "mentor program", "workshop", "service" ]
+	}
+]
