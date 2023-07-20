@@ -1,8 +1,6 @@
 # Migration to Microservices - 4-step Strategy
 In the rapidly evolving world of web development, microservices have emerged as a prominent topic of interest. Unlike monolithic systems, microservices are designed to adapt and scale according to changing market demands. Consequently, modern enterprises are actively transitioning their legacy monolithic systems to a microservices architecture.
 
----
-
 ## Advantages of the Microservice Architecture
 
 Microservices, as the name suggests, are small independent units that break down a monolithic application into separate services. In contrast to the sluggish and cumbersome nature of monolithic applications, microservices offer faster development and deployment capabilities. Migrating from a monolithic architecture to a microservice-based approach brings numerous benefits, including:
@@ -27,12 +25,8 @@ Service independence increases an application's resistance to failure.
 Teams have the freedom to choose the best tool to solve their specific problems.
 :::
 
----
-
 ## Determining the Right Time to Migrate
 Once the decision to embrace microservices is made, the crucial question arises: when is the ideal time to initiate the migration process? Typically, migrating a monolithic application is advisable when an organization experiences growth, encounters productivity and scaling challenges, or faces disruptions in inter-team communication.
-
----
 
 ## The Migration Process
 The migration to a microservice architecture is a complex endeavor that presents numerous challenges. To navigate these challenges successfully, we have designed a comprehensive four-step strategy that was proven effective in facilitating businesses' transition to microservices.
@@ -60,8 +54,6 @@ The migration to a microservice architecture is a complex endeavor that presents
 1. The isolated bounded contexts are gradually migrated to a set of microservices defined in the second step of the process.
 1. Each resulting microservice is independently deployable and scalable, facilitated by an automated pipeline.
 1. With each migration, the accumulated technical debt and cognitive load on the development team are reduced, enabling faster and more reliable development.
-
----
 
 ## Conclusion
 By following this comprehensive four-step strategy, businesses can successfully navigate the complexities of migrating from a monolithic architecture to a microservice architecture, unlocking the full potential of scalability, flexibility, and resilience offered by microservices.

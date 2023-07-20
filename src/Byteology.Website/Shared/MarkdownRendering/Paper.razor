@@ -22,9 +22,9 @@ else
             @_intro
         </section>
 
-        @if (_sections.Length > 2 && IndexEnabled)
+        @if (IndexEnabled)
         {
-            <PaperIndex Sections="_sections" />
+            <PaperIndex Data="_indexData" />
         }
 
         @_content
