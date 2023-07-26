@@ -1,24 +1,20 @@
-@using Ljbc1994.Blazor.IntersectionObserver.Components
+<b-slide @ref="_slide" class="@(_isIntersecting || _state.Prerendering ? "active" : "")">
 
-<IntersectionObserve>
-    <b-slide @ref="context.Ref.Current" class="@(context.IsIntersecting || _state.Prerendering ? "active" : "")">
+    <b-chevron class="@(_state.Prerendering ? "prerendered" : "")">
+        <ChevronIcon/>
+    </b-chevron>
 
-        <b-chevron class="@(_state.Prerendering ? "prerendered" : "")">
+    @ChildContent
+
+    @if (IncludeFooter)
+    {
+        <PrivacyFooter/>
+    }
+    else
+    {
+        <b-chevron class="@(_state.Prerendering? "prerendered" : "")">
             <ChevronIcon/>
         </b-chevron>
+    }
 
-        @ChildContent
-
-        @if (IncludeFooter)
-        {
-            <PrivacyFooter/>
-        }
-        else
-        {
-            <b-chevron class="@(_state.Prerendering? "prerendered" : "")">
-                <ChevronIcon/>
-            </b-chevron>
-        }
-
-    </b-slide>
-</IntersectionObserve>
+</b-slide>
