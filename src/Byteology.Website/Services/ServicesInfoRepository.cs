@@ -29,5 +29,6 @@ public class ServicesInfoRepository : PapersRepository
 	private static IEnumerable<(string legacyHandle, string newHandle)>? getLegacyHandles()
 	{
 		yield return new("software-development", "software-engineering");
+		yield return new("interviewing-as-a-service", "staff-selection");
 	}
 }
