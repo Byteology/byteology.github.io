@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <base href="/"/>
+    <link href="css/style.css" rel="stylesheet"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo&amp;display=swap" rel="stylesheet"/>
+
+<!-- %%-PRERENDERING-HEADOUTLET-BEGIN-%% -->
+<title>Byteology - Introduction to Event Sourcing - Empowering Data Processing and System Evolution</title><meta property="og:title" content="Introduction to Event Sourcing - Empowering Data Processing and System Evolution" />
+    <meta property="og:image" content="https://byteology.net/images/og-image.png">
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_GB"><meta property="og:description" content="In the world of data processing, event sourcing emerges as a powerful approach that challenges the limitations of traditional CRUD-based systems. By capturing the full series of actions taken on data as a sequence of events, event sourcing enables event replay, temporal querying of data, what-if analysis, and provides a comprehensive audit trail and historical record." />
+        <meta name="description" content="In the world of data processing, event sourcing emerges as a powerful approach that challenges the limitations of traditional CRUD-based systems. By capturing the full series of actions taken on data as a sequence of events, event sourcing enables event replay, temporal querying of data, what-if analysis, and provides a comprehensive audit trail and historical record." /><meta name="keywords" content="Event Sourcing, Data Processing, System Evolution, CRUD-based Systems, Limitations of CRUD, Performance, Scalability, Responsiveness, Audit Trail, Historical Record, What-if analysis, temporal querying" />
+<!-- %%-PRERENDERING-HEADOUTLET-END-%% -->
+<script src="data:text/javascript;base64,KGZ1bmN0aW9uKG4sdCxpKXtmb3IodmFyIGY9bi5jcmVhdGVOb2RlSXRlcmF0b3IobiwxMjgpLHIsZSx1O2YubmV4dE5vZGUoKTspaWYocj1mLnJlZmVyZW5jZU5vZGUsdC50ZXN0KHIudGV4dENvbnRlbnQudHJpbSgpKSl7d2hpbGUoaT1yLm5leHRTaWJsaW5nKWlmKGU9aS50ZXh0Q29udGVudC50cmltKCksaS5yZW1vdmUoKSx0LnRlc3QoZSkpYnJlYWs7ci5yZW1vdmUoKTticmVha311PUFycmF5LmZyb20obi5xdWVyeVNlbGVjdG9yQWxsKCJzY3JpcHQiKSkucG9wKCk7dSYmdS5yZW1vdmUoKX0pKGRvY3VtZW50LC9eJSUtUFJFUkVOREVSSU5HLUhFQURPVVRMRVQtKEJFR0lOfEVORCktJSUkLyk7"></script></head>
+
+<body>
+    <div id="app">
+<!-- %%-PRERENDERING-BEGIN-%% -->
+<b-background b-2bs5jy54na><b-graph-paper b-2bs5jy54na></b-graph-paper>
+    <b-graph-paper b-2bs5jy54na></b-graph-paper>
+
+    <b-fireflies b-2bs5jy54na><b-firefly style="--top: 31%;--left: 8%;--orbit-duration: 190s;--orbit-delay: -58s;--orbit-point: 13vw -23vh;--blur-radius: 0.91447vmin;--opacity: 0;--fade-in-delay: 2.03s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 19%;--left: 32%;--orbit-duration: 228s;--orbit-delay: -237s;--orbit-point: -18vw -6vh;--blur-radius: 0.93353vmin;--opacity: 0;--fade-in-delay: 0.90s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 3%;--left: 44%;--orbit-duration: 80s;--orbit-delay: -84s;--orbit-point: 16vw -16vh;--blur-radius: 1.05393vmin;--opacity: 0;--fade-in-delay: 1.69s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 92%;--left: 31%;--orbit-duration: 121s;--orbit-delay: -209s;--orbit-point: -15vw 12vh;--blur-radius: 0.66523vmin;--opacity: 0;--fade-in-delay: 0.66s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 70%;--left: 4%;--orbit-duration: 163s;--orbit-delay: -106s;--orbit-point: 15vw 14vh;--blur-radius: 0.36902vmin;--opacity: 0;--fade-in-delay: 1.31s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 97%;--left: 38%;--orbit-duration: 67s;--orbit-delay: -221s;--orbit-point: 17vw 1vh;--blur-radius: 0.57129vmin;--opacity: 0;--fade-in-delay: 0.82s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 79%;--left: 38%;--orbit-duration: 68s;--orbit-delay: -5s;--orbit-point: 19vw 10vh;--blur-radius: 0.68294vmin;--opacity: 0;--fade-in-delay: 0.50s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 28%;--left: 0%;--orbit-duration: 233s;--orbit-delay: -267s;--orbit-point: 10vw -21vh;--blur-radius: 0.92789vmin;--opacity: 0;--fade-in-delay: 1.14s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 90%;--left: 72%;--orbit-duration: 208s;--orbit-delay: -454s;--orbit-point: 16vw 19vh;--blur-radius: 0.76399vmin;--opacity: 0;--fade-in-delay: 0.75s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 32%;--left: 58%;--orbit-duration: 215s;--orbit-delay: -282s;--orbit-point: -18vw -13vh;--blur-radius: 1.11465vmin;--opacity: 0;--fade-in-delay: 1.06s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 98%;--left: 5%;--orbit-duration: 202s;--orbit-delay: -87s;--orbit-point: 10vw -4vh;--blur-radius: 0.55953vmin;--opacity: 0;--fade-in-delay: 2.23s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 61%;--left: 45%;--orbit-duration: 151s;--orbit-delay: -97s;--orbit-point: 16vw 7vh;--blur-radius: 1.07168vmin;--opacity: 0;--fade-in-delay: 2.03s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 70%;--left: 59%;--orbit-duration: 176s;--orbit-delay: -438s;--orbit-point: 9vw -14vh;--blur-radius: 0.71454vmin;--opacity: 0;--fade-in-delay: 2.04s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 87%;--left: 79%;--orbit-duration: 180s;--orbit-delay: -346s;--orbit-point: 17vw 24vh;--blur-radius: 1.21677vmin;--opacity: 0;--fade-in-delay: 0.32s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 13%;--left: 55%;--orbit-duration: 145s;--orbit-delay: -173s;--orbit-point: -11vw 17vh;--blur-radius: 0.99089vmin;--opacity: 0;--fade-in-delay: 1.22s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 42%;--left: 83%;--orbit-duration: 146s;--orbit-delay: -316s;--orbit-point: -6vw 10vh;--blur-radius: 0.67883vmin;--opacity: 0;--fade-in-delay: 1.59s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 76%;--left: 97%;--orbit-duration: 191s;--orbit-delay: -220s;--orbit-point: 4vw 11vh;--blur-radius: 0.95372vmin;--opacity: 0;--fade-in-delay: 1.77s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 58%;--left: 89%;--orbit-duration: 232s;--orbit-delay: -46s;--orbit-point: 12vw 24vh;--blur-radius: 0.38477vmin;--opacity: 0;--fade-in-delay: 1.49s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 48%;--left: 47%;--orbit-duration: 180s;--orbit-delay: -368s;--orbit-point: -17vw -17vh;--blur-radius: 0.84733vmin;--opacity: 0;--fade-in-delay: 1.96s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 85%;--left: 16%;--orbit-duration: 187s;--orbit-delay: -68s;--orbit-point: 12vw -21vh;--blur-radius: 0.75887vmin;--opacity: 0;--fade-in-delay: 0.58s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 36%;--left: 0%;--orbit-duration: 157s;--orbit-delay: -59s;--orbit-point: -12vw -5vh;--blur-radius: 0.69022vmin;--opacity: 0;--fade-in-delay: 1.05s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 85%;--left: 71%;--orbit-duration: 71s;--orbit-delay: -301s;--orbit-point: 19vw 16vh;--blur-radius: 0.98156vmin;--opacity: 0;--fade-in-delay: 1.09s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 69%;--left: 86%;--orbit-duration: 219s;--orbit-delay: -42s;--orbit-point: -24vw -17vh;--blur-radius: 0.74265vmin;--opacity: 0;--fade-in-delay: 1.45s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 37%;--left: 87%;--orbit-duration: 187s;--orbit-delay: -285s;--orbit-point: -24vw 16vh;--blur-radius: 0.26431vmin;--opacity: 0;--fade-in-delay: 1.24s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 38%;--left: 79%;--orbit-duration: 157s;--orbit-delay: -125s;--orbit-point: -3vw -13vh;--blur-radius: 0.60087vmin;--opacity: 0;--fade-in-delay: 0.41s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 3%;--left: 26%;--orbit-duration: 133s;--orbit-delay: -270s;--orbit-point: -20vw -16vh;--blur-radius: 1.21336vmin;--opacity: 0;--fade-in-delay: 0.30s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 43%;--left: 28%;--orbit-duration: 90s;--orbit-delay: -58s;--orbit-point: -15vw 4vh;--blur-radius: 0.37468vmin;--opacity: 0;--fade-in-delay: 0.65s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 50%;--left: 94%;--orbit-duration: 151s;--orbit-delay: -304s;--orbit-point: 9vw -25vh;--blur-radius: 0.61746vmin;--opacity: 0;--fade-in-delay: 0.28s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 70%;--left: 57%;--orbit-duration: 62s;--orbit-delay: -451s;--orbit-point: -11vw 24vh;--blur-radius: 1.21507vmin;--opacity: 0;--fade-in-delay: 1.14s;" b-2bs5jy54na></b-firefly><b-firefly style="--top: 51%;--left: 80%;--orbit-duration: 219s;--orbit-delay: -114s;--orbit-point: 12vw -24vh;--blur-radius: 0.7463vmin;--opacity: 0;--fade-in-delay: 0.60s;" b-2bs5jy54na></b-firefly></b-fireflies></b-background>
+<b-viewport class="prerendered" b-aat85u6fau><b-layout b-aat85u6fau><header b-wup2jfgj3z><a href="/" tabindex="-1" b-wup2jfgj3z><img src="/images/icon.png" alt="Byteology" b-wup2jfgj3z></a>
+
+    <input id="hamburger" type="checkbox" title="menu" b-wup2jfgj3z>
+    <label for="hamburger" b-wup2jfgj3z><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="svg-color-accent" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="svg-color-accent" fill-rule="evenodd" d="M15.78 14.36a1 1 0 0 1-1.42 1.42l-2.82-2.83-2.83 2.83a1 1 0 1 1-1.42-1.42l2.83-2.82L7.3 8.7a1 1 0 0 1 1.42-1.42l2.83 2.83 2.82-2.83a1 1 0 0 1 1.42 1.42l-2.83 2.83 2.83 2.82z"></path></svg></label>
+
+    <b-sitemap-overlay b-wup2jfgj3z><nav __internal_stopPropagation_onclick class="" b-ks47hauohg><a href="/" b-ks47hauohg><img src="/images/logo-landscape.svg" alt="Byteology" b-ks47hauohg></a>
+
+    <b-nav-group class="sitemap-visible" b-ktwel9sa97><a href="/" class="active">Company</a><section b-ktwel9sa97><a href="/mission">Mission</a>
+        <a href="/career">Career</a>
+        <a href="/thoughts" class="active">Thoughts</a>
+        <a href="/contacts">Contacts</a></section></b-nav-group>
+
+    <b-nav-group class="navbar-expanded" b-ktwel9sa97><section b-ktwel9sa97><a href="/mission">Mission</a></section></b-nav-group>
+
+    <b-nav-group class="sitemap-visible navbar-collapsed" b-ktwel9sa97><a href="/services">Services</a><section b-ktwel9sa97><a href="/services/software-engineering">Software Engineering</a>
+        <a href="/services/education-and-training">Education and Training</a>
+        <a href="/services/staff-selection">Staff Selection</a></section></b-nav-group>
+
+    <b-nav-group class="navbar-expanded" b-ktwel9sa97><section b-ktwel9sa97><a href="/career">Career</a>
+        <a href="/thoughts" class="active">Thoughts</a></section></b-nav-group></nav></b-sitemap-overlay>
+
+    <a href="/contacts" b-wup2jfgj3z>Contact Us</a></header>
+
+        <main class="" b-aat85u6fau><b-paper b-3pdhs0162n>
+<article id="event-sourcing-introduction" b-p6qgimhhlp><section b-p6qgimhhlp><b-heading b-p6qgimhhlp><svg xmlns="http://www.w3.org/2000/svg" viewBox="100 100 552 552"><g class="svg-color-base"><path d="m310.58 274.61h-72.082c-5.8867 0.007813-11.527 2.3477-15.691 6.5078-4.1602 4.1641-6.5 9.8047-6.5078 15.691v72.074c0.007813 5.8867 2.3477 11.527 6.5078 15.691 4.1641 4.1602 9.8047 6.5039 15.691 6.5078h72.082c5.8867-0.003906 11.527-2.3477 15.691-6.5078 4.1602-4.1641 6.5-9.8047 6.5078-15.691v-72.074c-0.007812-5.8867-2.3477-11.527-6.5078-15.691-4.1641-4.1602-9.8047-6.5-15.691-6.5078zm7.3984 94.273c0 4.0859-3.3125 7.3984-7.3984 7.4023h-72.082c-4.0859-0.003906-7.3984-3.3164-7.3984-7.4023v-72.074c0-4.0859 3.3125-7.3984 7.3984-7.3984h72.082c4.0859 0 7.3984 3.3125 7.3984 7.3984z"></path>
+        <path d="m310.58 445.57h-72.082c-5.8867 0.007812-11.527 2.3477-15.691 6.5117-4.1602 4.1602-6.5 9.8047-6.5078 15.688v72.082c0.007813 5.8867 2.3477 11.531 6.5078 15.691 4.1641 4.1602 9.8047 6.5039 15.691 6.5078h72.082c5.8867-0.003907 11.527-2.3477 15.691-6.5078 4.1602-4.1602 6.5-9.8047 6.5078-15.691v-72.082c-0.007812-5.8828-2.3477-11.527-6.5078-15.688-4.1641-4.1641-9.8047-6.5039-15.691-6.5117zm7.3984 94.281c0 4.0859-3.3125 7.3984-7.3984 7.4023h-72.082c-4.0859-0.003906-7.3984-3.3164-7.3984-7.4023v-72.082c0-4.0859 3.3125-7.3945 7.3984-7.3984h72.082c4.0859 0.003906 7.3984 3.3125 7.3984 7.3984z"></path>
+        <path d="m513.5 189.75h-72.082c-5.8867 0.003906-11.531 2.3438-15.691 6.5078-4.1602 4.1602-6.5039 9.8047-6.5078 15.688v72.086c0.003906 5.8828 2.3477 11.527 6.5078 15.688 4.1602 4.1641 9.8047 6.5039 15.691 6.5078h72.082c5.8828-0.003906 11.527-2.3438 15.688-6.5078 4.1641-4.1602 6.5039-9.8047 6.5117-15.688v-72.086c-0.007813-5.8828-2.3477-11.527-6.5117-15.688-4.1602-4.1641-9.8047-6.5039-15.688-6.5078zm7.3984 94.281c-0.003906 4.082-3.3125 7.3945-7.3984 7.3984h-72.082c-4.0859-0.003906-7.3984-3.3164-7.4023-7.3984v-72.086c0.003907-4.082 3.3164-7.3945 7.4023-7.3984h72.082c4.0859 0.003906 7.3945 3.3164 7.3984 7.3984z"></path>
+        <path d="m513.5 359.47h-72.082c-5.8867 0.003906-11.531 2.3477-15.691 6.5078-4.1602 4.1602-6.5039 9.8047-6.5078 15.691v72.082c0.003906 5.8828 2.3477 11.527 6.5078 15.688 4.1602 4.1641 9.8047 6.5039 15.691 6.5117h72.082c5.8828-0.007813 11.527-2.3477 15.688-6.5117 4.1641-4.1602 6.5039-9.8047 6.5117-15.688v-72.082c-0.007813-5.8867-2.3477-11.531-6.5117-15.691-4.1602-4.1602-9.8047-6.5039-15.688-6.5078zm7.3984 94.281c-0.003906 4.0859-3.3125 7.3945-7.3984 7.3984h-72.082c-4.0859-0.003907-7.3984-3.3125-7.4023-7.3984v-72.082c0.003907-4.0859 3.3164-7.3984 7.4023-7.4023h72.082c4.0859 0.003906 7.3945 3.3164 7.3984 7.4023z"></path></g>
+
+    <g class="svg-color-accent"><path d="m401.89 417.71c-0.019531-5.5547-1.8281-10.953-5.1602-15.398-3.3281-4.4453-8-7.6953-13.324-9.2773v-35.504c7.0859-2.1758 12.891-7.293 15.945-14.047 3.0508-6.7539 3.0508-14.496-0.003906-21.25-3.0508-6.7539-8.8594-11.867-15.945-14.043l0.003906-35.5c7.1602-2.1094 13.055-7.2227 16.152-14.012 3.0977-6.793 3.0977-14.594 0-21.387-3.0977-6.7891-8.9922-11.902-16.152-14.012v-47.07c0-4.0898-3.3125-7.4023-7.4023-7.4023-4.0859 0-7.3984 3.3125-7.3984 7.4023v47.074-0.003906c-7.0898 2.1836-12.898 7.3086-15.953 14.07-3.0508 6.7617-3.0508 14.508 0 21.27 3.0547 6.7617 8.8633 11.887 15.953 14.07v35.5c-7.1602 2.0977-13.051 7.1992-16.152 13.984-3.1016 6.7852-3.1016 14.582 0 21.367 3.1016 6.7852 8.9922 11.891 16.152 13.988v35.504c-7.1602 2.0977-13.059 7.2031-16.16 13.988-3.1016 6.7891-3.1016 14.586 0 21.375 3.1016 6.7852 9 11.891 16.16 13.988v35.508c-7.0859 2.1758-12.895 7.2969-15.945 14.051-3.0508 6.7578-3.0508 14.5 0 21.254 3.0508 6.7578 8.8594 11.875 15.945 14.055v48.539c0 4.0859 3.3125 7.3984 7.3984 7.3984 4.0898 0 7.4023-3.3125 7.4023-7.3984v-48.539c7.1602-2.0977 13.055-7.207 16.156-13.992 3.1016-6.7891 3.1016-14.59 0-21.375-3.1016-6.7891-8.9961-11.895-16.156-13.992v-35.508c5.3242-1.5781 9.9961-4.832 13.324-9.2773 3.332-4.4453 5.1406-9.8438 5.1602-15.398zm-36.965-169.77c0.09375-6.0547 5.0273-10.914 11.078-10.914 6.0547 0 10.988 4.8594 11.078 10.914-0.089844 6.0547-5.0234 10.91-11.078 10.91-6.0508 0-10.984-4.8594-11.078-10.91zm0 84.914c0.089844-6.0547 5.0234-10.914 11.078-10.914 6.0586 0 10.992 4.8594 11.078 10.914-0.085937 6.0586-5.0195 10.918-11.078 10.918-6.0547 0-10.988-4.8633-11.078-10.918zm-0.007813 84.852h0.003907c0.085937-6.0586 5.0234-10.926 11.082-10.926 6.0625 0 11 4.8672 11.086 10.926-0.097657 6.0547-5.0312 10.91-11.086 10.91-6.0508 0-10.988-4.8555-11.082-10.91zm22.172 84.867c-0.09375 6.0547-5.0312 10.91-11.086 10.91s-10.988-4.8594-11.082-10.91c0.089843-6.0586 5.0273-10.918 11.082-10.918 6.0586 0 10.992 4.8594 11.086 10.918z"></path></g></svg>
+                <h1 b-p6qgimhhlp>Introduction to Event Sourcing<span b-p6qgimhhlp>Empowering Data Processing and System Evolution</span></h1></b-heading>
+            
+<p>Most applications work with data and the typical way to do it is by maintaining its current state and updating it as time passes. Unfortunately, this way of interacting with data comes with a lot of drawbacks.</p>
+
+</section><b-index b-7x9u7vm24f><h2 b-7x9u7vm24f>Contents</h2>
+		<ol>
+<li><b-button b-target="section-1">Limitations of CRUD-based Systems</b-button></li>
+<li><b-button b-target="section-2">The Solution</b-button></li>
+<li><b-button b-target="section-3">When to Use Event Sourcing</b-button>
+<ol>
+<li><b-button b-target="section-3-1">Use When</b-button></li>
+<li><b-button b-target="section-3-2">Avoid Using On</b-button></li>
+</ol>
+</li>
+</ol>
+</b-index><section>
+<h2 name="section-1" >Limitations of CRUD-based Systems</h2>
+
+<p>In a typical CRUD based application the data is being processed by reading it from a store, making some modifications to it and then pushing them back to the store, often by using transactions to lock the data.</p>
+<p>Currently, the CRUD approach is the most used and well-known one regarding data persistence but unfortunately it has some limitations:</p>
+<ul>
+<li>CRUD systems perform update operations directly against a data store, which can slow down performance and responsiveness, and limit scalability, due to the processing overhead it requires.</li>
+<li>In a collaborative domain with many concurrent users, data update conflicts are more likely because the update operations take place on a single item of data.</li>
+<li>Unless there's an additional auditing mechanism that records the details of each operation in a separate log, history is lost.</li>
+<li>Debugging a production issue requires data from both the data store and the audit log to be interpreted and used together to form a replay.</li>
+</ul>
+
+</section>
+<section>
+<h2 name="section-2" >The Solution</h2>
+
+<p>Instead of storing just the current state of the domain data, event sourced systems use an append-only store to record the full series of actions taken on that data as a sequence of events.</p>
+<p>This simplifies tasks in complex domains, by avoiding the need to synchronize the data model and the business domain, while improving performance, scalability and responsiveness. It also provides consistency for transactional data and maintains full audit trails and history. Following is a list of some of the benefits that event sourcing provides:</p>
+
+<b-card>
+<h4><b-icon name="CheckboxList"></b-icon> Audit Trail</h4>
+
+<p>The append-only storage of events provides an audit trail that can be used to monitor actions taken against a data store, regenerate the current state as materialized views or projections by replaying the events at any time, and assist in testing and debugging the system.</p>
+<p>In addition, the requirement to use compensating events to cancel changes provides a history of changes that were reversed, which wouldn't be the case if the model simply stored the current state.</p>
+<p>The list of events can also be used to analyze application performance and detect user behavior trends, or to obtain other useful business information.</p>
+
+</b-card>
+<b-card>
+<h4><b-icon name="DomainAlignment"></b-icon>Domain Alignment</h4>
+
+<p>Events typically have meaning for a domain expert, whereas object-relational impedance mismatch can make complex database tables hard to understand. Tables are artificial constructs that represent the current state of the system, not the events that occurred.</p>
+<p>Using events as the main carriers of data allows the use of ubiquitous language between domain experts and software engineers thus improving collaboration.</p>
+
+</b-card>
+<b-card>
+<h4><b-icon name="TimeChart"></b-icon>Temporal Querying</h4>
+
+<p>We can determine the application state at any point in time. Notionally we do this by starting with a blank state and rerunning the events up to a particular time or event. We can take this further by considering multiple time-lines (analogous to branching in a version control system). This allows us to get a full overview of how the application’s data evolved and query it at any point in the past.</p>
+
+</b-card>
+<b-card>
+<h4><b-icon name="MagnifiedQuestion"></b-icon>What-if Analysis</h4>
+
+<p>With event sourcing it is possible to change how certain events are being handled and then simulate how this would have influenced the data. This method is called “what-if analysis” and is a great way to make data driven decisions.</p>
+
+</b-card>
+<b-card>
+<h4><b-icon name="Replay"></b-icon>Event Replay</h4>
+
+<p>If we find a past event was handled incorrectly due to a bug or some other failure, we can compute the consequences by reversing it and later events and then replaying them again.</p>
+<p>This way it is sometimes possible to fix past issues without having to worry about impacting the application’s data.</p>
+<p>The same technique can handle events received in the wrong sequence - a common problem with systems that communicate with asynchronous messaging.</p>
+
+</b-card>
+<b-card>
+<h4><b-icon name="Decoupling"></b-icon>Decoupling</h4>
+
+<p>The event store raises events, and tasks perform operations in response to those events. This decoupling of the tasks from the events provides flexibility and extensibility. Tasks know about the type of event and the event data, but not about the operation that triggered the event. In addition, multiple tasks can handle each event.</p>
+<p>This enables easy integration with other services and systems that only have to listen for events raised by the event store.</p>
+
+</b-card>
+<b-card>
+<h4><b-icon name="History"></b-icon>Retroactive Development</h4>
+
+<p>We can discard the application state completely and rebuild it by re-running the events from the event log on an empty application. This way you can introduce different or additional processing of some events.</p>
+<p>A common example for that is an e-commerce website. At some point in the application lifecycle you might want to introduce a functionality that suggests items to your customers based on what they have removed from their shopping carts right before checking out.</p>
+<p>With a traditional CRUD system you will start recording what gets removed from carts and then feed that data to the new functionality. The problem with that is all changes to a cart before the implementation are unknown.</p>
+<p>In contrast, event sourcing allows you to replay all events on shopping carts that ever occurred and use them to build a new model for the suggestion functionality, allowing it to work as if it was collecting data from day one.</p>
+
+</b-card>
+<b-card>
+<h4><b-icon name="Speed"></b-icon>High Performance</h4>
+
+<p>Events are immutable and can be stored using an append-only operation. This way the user interface or any other process that initiated an event can continue, and tasks that handle the events can run in the background.</p>
+<p>Additionally, data is retrieved from specialized projections that are optimized for performance.</p>
+<p>All of this, combined with the fact that there's no contention during the processing of transactions, can vastly improve performance and scalability for applications, especially for the presentation level or user interface.</p>
+
+</b-card>
+</section>
+<section>
+<h2 name="section-3" >When to Use Event Sourcing</h2>
+
+<p>Event sourcing is not a silver bullet, though. There are situations in which you might want to actively avoid it.</p>
+
+<b-subsection>
+<h3 name="section-3-1" >Use When</h3>
+
+<ul>
+<li>you want to capture intent, purpose, or reason in the data.</li>
+<li>it's vital to minimize or completely avoid the occurrence of conflicting updates to data.</li>
+<li>you want to record events that occur, and be able to replay them to restore the state of a system, roll back changes, or keep a history and audit log.</li>
+<li>using events is a natural feature of the operation of the application, and requires little additional development or implementation effort.</li>
+<li>you need to decouple the process of inputting or updating data from the tasks required to apply these actions. This might be to improve UI performance, or to distribute events to other listeners that take action when the events occur.</li>
+<li>you want flexibility to be able to change the format of materialized models and entity data if requirements change, or—when used in conjunction with CQRS—you need to adapt a read model or the views that expose the data.</li>
+<li>used in conjunction with CQRS, eventual consistency is acceptable while a read model is updated, or the performance impact of rehydrating entities and data from an event stream is acceptable.</li>
+</ul>
+
+</b-subsection>
+<b-subsection>
+<h3 name="section-3-2"  class="negative">Avoid Using On</h3>
+
+<ul class="negative">
+<li>non-domain systems that naturally work well with traditional CRUD data management mechanisms.</li>
+<li>systems where consistency and real-time updates to the views of the data are required.</li>
+<li>systems where audit trails, history, and capabilities to roll back and replay actions are not required.
+-systems where there's only a very low occurrence of conflicting updates to the underlying data. For example, systems that predominantly add data rather than updating it.</li>
+</ul>
+</section>
+</article><b-paper-nav b-tiq84inamd><b-prev b-tiq84inamd><p b-tiq84inamd>&lt; Previous</p>
+				<a href="thoughts/migration-to-microservices" b-tiq84inamd>Migration to Microservices<br b-tiq84inamd>4-step Strategy</a></b-prev>
+		<b-next b-tiq84inamd></b-next></b-paper-nav></b-paper></main>
+
+        <footer b-3r7xg0w6mj><span b-3r7xg0w6mj>&#xA9;2023 Byteology |&#xA0;</span>
+    <a href="/privacy" b-3r7xg0w6mj>Privary policy</a></footer></b-layout></b-viewport>
+        
+<!-- %%-PRERENDERING-END-%% -->
+</div>
+    <script src="js/layout.js"></script>
+    <script src="js/articles.js"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
+
+
+
+</body></html>
