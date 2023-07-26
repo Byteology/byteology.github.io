@@ -1,9 +1,9 @@
 * {
-    @apply block;
+    @apply block text-xs md:text-sm break-all;
+}
+
+a {
     @apply link;
-    @apply text-xs;
-    @apply md:text-sm;
-    @apply break-all;
 }
 
 *:first-child {
