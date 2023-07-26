@@ -1,0 +1,15 @@
+<b-card>
+	<b-title>
+		<DynamicIcon Name="@Metadata.Icon" DefaultIcon="@PapersRepository.DefaultIcon" />
+		<h1>
+			@Metadata.Title
+			@if(!string.IsNullOrEmpty(Metadata.Subtitle))
+			{
+				<span>@Metadata.Subtitle</span>
+			}
+		</h1>
+	</b-title>
+	<p>@Metadata.Description</p>
+	<a href="@PapersRepository.GetPaperUrl(Metadata.Handle)">Learn More</a>
+
+</b-card>

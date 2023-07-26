@@ -1,0 +1,18 @@
+b-icons {
+	@apply panel flex flex-wrap justify-evenly gap-4;
+}
+
+b-icon-container {
+	@apply surface-2 elevation p-4;
+	@apply w-20 break-words;
+	@apply flex flex-col gap-2;
+	@apply hover:border-primary-300;
+}
+
+b-icon-container.clicked {
+	@apply !border-primary;
+}
+
+b-icon-name {
+	@apply block text-center sticky z-10 panel top-16 p-4;
+}

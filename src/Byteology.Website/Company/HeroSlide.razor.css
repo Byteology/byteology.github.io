@@ -1,0 +1,65 @@
+b-hero-layout {
+    @apply grow;
+    @apply w-full;
+    @apply max-w-7xl;
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
+    @apply md:flex-row;
+    @apply lg:justify-between;
+}
+
+aside {
+    @apply grow;
+    @apply p-8;
+    @apply -mt-12;
+    @apply md:mt-0;
+    @apply md:grow-0;
+    @apply md:w-1/2;
+    @apply lg:w-[45%];
+    @apply md:self-start;
+    @apply md:sticky;
+    @apply md:top-1/2;
+    @apply md:-translate-y-1/2;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+}
+
+aside > img {
+    @apply w-1/2;
+    @apply max-w-xs;
+    @apply object-center;
+    @apply object-contain;
+}
+
+b-hero-content-side {
+    @apply block;
+    @apply w-full;
+    @apply md:w-1/2;
+    @apply md:pr-8;
+    @apply lg:w-[45%];
+}
+
+article {
+    @apply panel;
+    @apply md:max-w-xl;
+    @apply space-y-8;
+}
+
+article > p {
+    @apply styled-content;
+    @apply text-lg;
+    @apply lg:text-xl;
+    @apply font-bold;
+}
+
+article > ol {
+    @apply timeline;
+    @apply text-sm;
+    @apply md:text-base;
+}
+
+article > a {
+    @apply button;
+}

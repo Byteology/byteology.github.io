@@ -1,0 +1,4 @@
+@foreach (PaperMetadata paper in PapersRepository.GetAll())
+{
+	<PaperCard Metadata="paper" PapersRepository="PapersRepository" />
+}

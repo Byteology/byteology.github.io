@@ -1,4 +1,4 @@
-.slide {
+b-slide {
     @apply w-full;
     @apply h-full;
     @apply snap-start;
@@ -6,4 +6,43 @@
     @apply overflow-x-hidden;
     @apply overflow-y-auto;
     @apply no-scrollbar;
+
+    @apply transition-slow;
+    @apply flex;
+    @apply flex-col;
+    @apply justify-between;
+    @apply items-center;
+
+    @apply opacity-0;
+}
+
+b-slide.active {
+    @apply opacity-100;
+}
+
+b-slide:first-child > b-chevron:first-child {
+    @apply invisible;
+}
+
+b-slide:last-child > b-chevron:last-child {
+    @apply invisible;
+}
+
+b-chevron {
+    @apply w-full;
+    @apply h-12;
+    @apply flex;
+    @apply justify-center;
+}
+
+b-chevron.prerendered {
+    @apply invisible;
+}
+
+b-slide.active > b-chevron {
+    @apply animate-blink;
+}
+
+b-chevron:first-child {
+    @apply rotate-180;
 }

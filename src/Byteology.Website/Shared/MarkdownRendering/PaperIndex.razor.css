@@ -1,0 +1,26 @@
+b-index {
+	@apply panel styled-content inline-block
+}
+
+b-index ::deep b-button {
+	@apply link cursor-pointer text-sm font-bold; 
+} 
+
+b-index ::deep ol {
+      counter-reset: item;
+}
+
+b-index ::deep ol > li {
+	@apply block;
+}
+
+b-index ::deep ol > li:before { 
+	content: counters(item, ".") ". "; 
+	counter-increment: item;
+	@apply text-accent font-bold;
+}
+
+b-index ::deep > ol,
+b-index ::deep > ol > li {
+	@apply pl-0;
+}

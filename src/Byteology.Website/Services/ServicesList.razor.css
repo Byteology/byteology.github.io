@@ -1,3 +1,7 @@
-.services-list ::deep .service-card:nth-child(odd) > .service-card-sidebar {
-    @apply lg:order-first;
+b-services {
+    @apply grid;
+    @apply grid-cols-1;
+    @apply gap-4;
+    @apply justify-center;
+    @apply lg:px-8;
 }

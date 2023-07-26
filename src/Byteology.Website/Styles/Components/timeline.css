@@ -1,13 +1,16 @@
 @layer components {
 
-    ol.timeline {
+    .timeline {
         counter-reset: timeline-counter;
         @apply flex;
         @apply flex-col;
         @apply gap-y-[1em];
+        @apply !list-none;
+        @apply !space-y-0;
+        @apply !pl-0;
     }
 
-    ol.timeline > li::before {
+    .timeline > li::before {
         counter-increment: timeline-counter;
         content: counter(timeline-counter);
         overflow-wrap: normal;
@@ -20,19 +23,19 @@
         @apply scale-y-[0.875];
     }
 
-    ol.timeline > li {
-        @apply pl-[3em];
+    .timeline > li {
+        @apply !pl-[2.5em];
     }
 
-    ol.timeline > li:nth-child(-n+9)::before {
+    .timeline > li:nth-child(-n+9)::before {
         content: '0' counter(timeline-counter);
     }
 
-    ol.timeline > li:last-child::after {
+    .timeline > li:last-child::after {
         @apply hidden;
     }
 
-    ol.timeline > li::after {
+    .timeline > li::after {
         content: '';
 
         @apply absolute;

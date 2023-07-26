@@ -11,14 +11,9 @@ public class GoogleDriveInquiryService : IInquiryService
         _httpClient = httpClient;
     }
 
-    public async Task<bool> SendInquiryAsync(InquiryData inquiry)
+    public async Task<bool> SendInquiryAsync(InquiryDataBase inquiry)
     {
-        List<KeyValuePair<string, string>> payload = new()
-        {
-            new KeyValuePair<string, string>(nameof(inquiry.Name), inquiry.Name ?? ""),
-            new KeyValuePair<string, string>(nameof(inquiry.Email), inquiry.Email ?? ""),
-            new KeyValuePair<string, string>(nameof(inquiry.Message), inquiry.Message ?? "")
-        };
+        List<KeyValuePair<string, string>> payload = inquiry.ToPayload();
 
         FormUrlEncodedContent content = new(payload);
         HttpResponseMessage response = await _httpClient.PostAsync(Config.GoogleDriveInquiryServiceUrl, content);

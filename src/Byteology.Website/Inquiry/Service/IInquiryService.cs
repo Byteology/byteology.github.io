@@ -2,5 +2,5 @@
 
 public interface IInquiryService
 {
-    Task<bool> SendInquiryAsync(InquiryData inquiry);
+    Task<bool> SendInquiryAsync(InquiryDataBase inquiry);
 }

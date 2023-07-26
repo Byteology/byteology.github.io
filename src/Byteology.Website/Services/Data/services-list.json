@@ -1,0 +1,23 @@
+[
+	{
+		"handle": "software-engineering",
+		"icon": "cogwheel",
+		"title": "Software Engineering",
+		"description": "Software engineering is a complex process that spans many fields of study. We have spent decades on improving each of them and are ready to help you in every aspect of your next software development endeavor.",
+		"keywords": [ "Software Engineering", "Programming", "Outsourcing", "Software development", "Project Management", "Design and Architecture", "Software design", "Software Architecture", "Quality Assurance", "Proof of concept", "PoC", "Minimum Viable Product", "MVP" ]
+	},
+	{
+		"handle": "staff-selection",
+		"icon": "cv",
+		"title": "Staff Selection",
+		"description": "We've been studying the process of identifying great software engineers for over 10 years. Our team will design a complete staff selection strategy and conduct technical and social interviews on your behalf so you can focus of your core business.",
+		"keywords": [ "interviewing", "hiring", "interviewing as a service", "iaas", "guide", "job application", "job adverts" ]
+	},
+	{
+		"handle": "education-and-training",
+		"icon": "whiteboard",
+		"title": "Education and Training",
+		"description": "Byteology will provide you with a number of tailored personnel training services to help your business scale and grow.",
+		"keywords": [ "training", "bootcamps", "onboarding", "documentation", "mentorship", "mentor", "mentor program", "workshop", "service" ]
+	}
+]

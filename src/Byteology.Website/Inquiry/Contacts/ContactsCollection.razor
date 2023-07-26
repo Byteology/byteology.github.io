@@ -1,0 +1,16 @@
+<b-contacts>
+    @foreach (Contact contact in Contacts)
+    {
+        <b-name>@contact.Name</b-name>
+        <b-title>@contact.Title</b-title>
+        @foreach (ContactDetail detail in contact.Details)
+        {
+            <ContactDetailComponent Detail="detail" />
+        }
+
+        @if (contact != Contacts.Last())
+        {
+            <hr/>
+        }
+    }
+</b-contacts>

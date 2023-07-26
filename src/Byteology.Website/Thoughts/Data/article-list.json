@@ -1,0 +1,67 @@
+[
+	{
+		"handle": "event-sourcing-introduction",
+		"icon": "eventStream",
+		"title": "Introduction to Event Sourcing",
+		"subtitle": "Empowering Data Processing and System Evolution",
+		"description": "In the world of data processing, event sourcing emerges as a powerful approach that challenges the limitations of traditional CRUD-based systems. By capturing the full series of actions taken on data as a sequence of events, event sourcing enables event replay, temporal querying of data, what-if analysis, and provides a comprehensive audit trail and historical record.",
+		"keywords": [ "Event Sourcing", "Data Processing", "System Evolution", "CRUD-based Systems", "Limitations of CRUD", "Performance", "Scalability", "Responsiveness", "Audit Trail", "Historical Record", "What-if analysis", "temporal querying" ]
+	},
+	{
+		"handle": "migration-to-microservices",
+		"icon": "microservices",
+		"title": "Migration to Microservices",
+		"subtitle": "4-step Strategy",
+		"description": "In the rapidly evolving world of web development, the migration to microservices has become a crucial topic. This article presents a comprehensive four-step strategy to facilitate a successful transition.",
+		"keywords": [ "Migration to Microservices", "Microservices architecture", "Monolithic systems", "Advantages of microservices", "Migrating from monolithic to microservices", "Four-step migration strategy" ]
+	},
+	{
+		"handle": "recruitment-guide-part-6",
+		"icon": "cv",
+		"title": "Concise Guide to Specialized Recruitment",
+		"subtitle": "Part 6: Onboarding and Trainings",
+		"description": "Effective onboarding and training are crucial elements in the recruitment process that ensure a new employee's smooth integration into the team. By establishing a systematic onboarding process and addressing skill gaps through training, organizations can enhance team integration and optimize project outcomes.",
+		"keywords": [ "Specialized recruitment", "Effective recruitment", "Onboarding", "Training methods", "Recruitment process", "Employee integration", "Skill gaps", "Systematic onboarding", "Team integration" ]
+	},
+	{
+		"handle": "recruitment-guide-part-5",
+		"icon": "cv",
+		"title": "Concise Guide to Specialized Recruitment",
+		"subtitle": "Part 5: Screening",
+		"description": "Screening is a critical part of the recruitment process. In this article, we explore the importance of thorough preparation and adopting a conversational approach during interviews to efficiently gather valuable insights about candidates.",
+		"keywords": [ "Specialized recruitment", "Effective recruitment", "Recruitment process", "Screening", "Interviews", "Conversational approach", "Skills evaluation", "Candidate stress" ]
+	},
+	{
+		"handle": "recruitment-guide-part-4",
+		"icon": "cv",
+		"title": "Concise Guide to Specialized Recruitment",
+		"subtitle": "Part 4: Pre-screening Techniques",
+		"description": "Pre-screening techniques play a crucial role in the candidate evaluation process, offering a cost-effective way to identify potential candidates who are a good fit for a position. However, choosing the right pre-screening methods requires careful consideration of their effectiveness, impact on the application process, and alignment with the desired skill set.",
+		"keywords": [ "Specialized recruitment", "Effective recruitment", "Pre-screening techniques", "Candidate evaluation", "Cost-effective methods", "Fit for position", "Choosing the right methods", "Effectiveness of pre-screening", "Impact on application process", "Alignment with desired skills" ]
+	},
+	{
+		"handle": "recruitment-guide-part-3",
+		"icon": "cv",
+		"title": "Concise Guide to Specialized Recruitment",
+		"subtitle": "Part 3: Crafting a Job Description",
+		"description": "Crafting an effective job description is crucial when searching for the perfect candidate. In this concise guide, we delve into the fundamental concepts of creating a well-designed job description that attracts suitable candidates and increases the chances of finding the ideal fit.",
+		"keywords": [ "Specialized recruitment", "Effective recruitment", "Crafting job description", "Effective job description", "Ideal candidate", "Job portals",
+			"Suitable candidates", "Job title", "Budget disclosure", "Job advertisement", "Job opportunity" ]
+	},
+	{
+		"handle": "recruitment-guide-part-2",
+		"icon": "cv",
+		"title": "Concise Guide to Specialized Recruitment",
+		"subtitle": "Part 2: Defining a Strategy",
+		"description": "Evaluating the constraints that shape our recruitment strategy is essential for enhancing our chances of success. This article explores key constraints such as deadlines, team availability, and financial considerations, while highlighting the importance of striking a balance between thoroughness and brevity in the recruitment process.",
+		"keywords": [ "Specialized recruitment", "Effective recruitment", "Strategic approach", "Constraints evaluation", "Deadlines", "Team availability", "Financial considerations", "Thoroughness vs Brevity", "Recruitment process", "Skill evaluation" ]
+	},
+	{
+		"handle": "recruitment-guide-part-1",
+		"icon": "cv",
+		"title": "Concise Guide to Specialized Recruitment",
+		"subtitle": "Part 1: Creating a Skill Canvas",
+		"description": "Selecting the right employees is vital for a company's success, and specialized recruitment requires a systematic approach. In this comprehensive guide, we explore the concept of a skill canvas - a powerful tool that enables organizations to define and articulate the skills they seek in potential candidates, fostering effective decision-making throughout the recruitment process.",
+		"keywords": [ "specialized recruitment", "Effective recruitment", "skill canvas", "recruitment process", "candidate selection", "effective decision-making", "defining skills" ]
+	}
+]

@@ -1,0 +1,36 @@
+@using Byteology.Website.Layout
+@using Byteology.Website.Navigation
+
+<Slide>
+    <b-hero-layout>
+        <aside>
+            <img src="/images/logo-portrait.svg" alt="Byteology - a moment of science"/>
+        </aside>
+
+        <b-hero-content-side>
+            <article>
+                <p>
+                    By introducing <strong>scientific generalization</strong> to software engineering,
+                    <strong>Byteology</strong> helps businesses tackle software complexity and grow.
+                </p>
+
+                <ol>
+                    <li>
+                        We <strong>gather and detail</strong> the information defining your domain
+                    </li>
+                    <li>
+                        We derive <strong>actionable data and insights</strong>
+                    </li>
+                    <li>
+                        We design and implement <strong>tailored solutions</strong>
+                    </li>
+                    <li>
+                        We help your business <strong>scale and grow</strong>
+                    </li>
+                </ol>
+
+                <a href="@(Sitemap.GetRouteOf<MissionPage>())">Learn More</a>
+            </article>
+        </b-hero-content-side>
+    </b-hero-layout>
+</Slide>

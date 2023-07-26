@@ -1,0 +1,44 @@
+b-viewport {
+    @apply w-full;
+    @apply h-full;
+    @apply overflow-x-hidden;
+    @apply overflow-y-scroll;
+    @apply flex;
+    @apply flex-col;
+    @apply min-h-full;
+    @apply cursor:styled-scrollbar;
+}
+
+b-viewport.prerendered {
+    @apply overflow-hidden;
+}
+
+b-layout {
+    @apply flex-[1_0_100%];
+    @apply flex;
+    @apply flex-col;
+    @apply justify-between;
+}
+
+.fade-in {
+    @apply animate-fade-in-fast;
+}
+
+.fade-in-alt {
+    @apply animate-fade-in-fast-alt;
+}
+
+main {
+    @apply flex-none;
+    @apply w-full;
+    @apply sm:px-4;
+    @apply md:px-8;
+    @apply lg:px-12;
+
+    @apply flex;
+    @apply flex-col;
+    @apply justify-between;
+    @apply items-center;
+    @apply gap-y-10;
+    @apply py-10;
+}

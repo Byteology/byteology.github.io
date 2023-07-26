@@ -1,0 +1,11 @@
+@using Byteology.Website.Shared.MarkdownRendering
+@inject ArticlesRepository _articlesRepository
+
+@page "/articles"
+@page "/thoughts"
+
+<Metadata Title="Our Thoughts" Article="false"
+		Description="Here you can find our thoughts on business, software engineering, technology and everything else."
+		Keywords="@(new string[] { "articles", "blog", "thoughts", "software", "software engineering", "business", "technology" })" />
+
+<PaperList PapersRepository="_articlesRepository"/>

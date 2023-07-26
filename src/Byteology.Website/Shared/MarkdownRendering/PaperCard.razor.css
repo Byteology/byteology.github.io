@@ -1,0 +1,24 @@
+b-card{
+    @apply panel;
+    @apply flex;
+    @apply flex-col;
+    @apply gap-4;
+}
+
+
+b-title {
+    @apply icon-title;
+}
+
+h1 {
+    @apply text-accent font-bold uppercase text-xl;
+}
+
+h1 > span {
+    @apply text-neutral-100 font-bold block text-base;
+}
+
+a {
+    @apply button;
+    @apply p-1;
+}

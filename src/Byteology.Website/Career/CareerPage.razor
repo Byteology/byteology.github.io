@@ -1,0 +1,44 @@
+﻿@using Byteology.Website.Shared.MarkdownRendering
+@using Byteology.Website.Career.Inquiry
+@using Byteology.Website.Inquiry
+@using Byteology.Website.Layout
+
+@inject JobOpeningsRepository _repository
+
+@page "/career"
+
+
+<Metadata Title="Careers"
+          Description="Don't hesitate to contact us if you need any help with your career development. We'll be happy to give you advice and help you prepare for interviews."
+          Keywords="@(new string[] { "career", "development", "career development", "open positions", "positions" })" />
+
+
+<b-intro>
+    <b-heading>
+        <CvIcon />
+        <h1>Open Positions</h1>
+    </b-heading>
+    @if (_repository.GetPaperCount() == 0)
+    {
+        <p>
+            We don't have any open positions right now but don't hesitate to contact us if you need any help with your
+            career development. We'll be happy to give you advice and help you prepare for interviews.
+        </p>
+    }
+    else
+    {
+        <p>
+            Grow fast while working remotely or switching between work from home and from the office!
+            Explore our job openings and apply now!
+        </p>
+    }
+</b-intro>
+
+@if (_repository.GetPaperCount() == 0)
+{
+    <CareerInquiryComponent />
+}
+else
+{
+    <PaperList PapersRepository="_repository"/>
+}

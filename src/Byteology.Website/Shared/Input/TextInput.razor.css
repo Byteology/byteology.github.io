@@ -1,0 +1,39 @@
+label {
+    @apply font-bold;
+    @apply text-sm;
+    @apply lg:text-base;
+}
+
+b-input {
+    @apply block;
+}
+
+input {
+    @apply block;
+    @apply w-full;
+    @apply overflow-hidden;
+    @apply pl-4;
+    @apply transition-fast;
+    @apply bg-transparent;
+    @apply text-sm;
+    @apply lg:text-base;
+    @apply border-b-2;
+    @apply border-primary;
+}
+
+input:hover {
+    @apply border-primary-300;
+}
+
+input:focus {
+    @apply !border-primary-300;
+}
+
+b-input.invalid > input {
+    @apply border-error;
+}
+
+input::placeholder {
+    @apply italic;
+    @apply text-neutral-200;
+}

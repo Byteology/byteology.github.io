@@ -1,0 +1,33 @@
+@if (_nextPaper != null || _prevPaper != null)
+{
+	<b-paper-nav>
+		<b-prev>
+			@if (_prevPaper?.Handle != null)
+			{
+				<p>&lt; Previous</p>
+				<a href="@PapersRepository.GetPaperUrl(_prevPaper.Handle)">
+					@_prevPaper?.Title
+					@if(!string.IsNullOrEmpty(_prevPaper?.Subtitle))
+					{
+						<br>
+						@_prevPaper.Subtitle
+					}
+				</a>
+			}
+		</b-prev>
+		<b-next>
+			@if (_nextPaper?.Handle != null)
+			{
+				<p>Next &gt;</p>
+				<a href="@PapersRepository.GetPaperUrl(_nextPaper.Handle)">
+					@_nextPaper.Title
+					@if(!string.IsNullOrEmpty(_nextPaper.Subtitle))
+					{
+						<br>
+						@_nextPaper.Subtitle
+					}
+				</a>
+			}
+		</b-next>
+	</b-paper-nav>
+}

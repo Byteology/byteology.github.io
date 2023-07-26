@@ -1,32 +1,32 @@
 ﻿class FullPageScrolling {
     start() {
-        document.getElementById("page").addEventListener("scroll", fps.reScrollSlides);
-        document.getElementById("page").addEventListener("wheel", wid.feed, { passive: false, capture: true });
-        document.getElementById("page").addEventListener("wheel", fps.onPageWheel, { passive: false });
+        document.getElementsByTagName("b-viewport")[0].addEventListener("scroll", fps.reScrollSlides);
+        document.getElementsByTagName("b-viewport")[0].addEventListener("wheel", wid.feed, { passive: false, capture: true });
+        document.getElementsByTagName("b-viewport")[0].addEventListener("wheel", fps.onPageWheel, { passive: false });
 
-        let slides = document.getElementsByClassName("slide");
-        for (var i = 0; i < slides.length; i++)
+        let slides = document.getElementsByTagName("b-slide");
+        for (let i = 0; i < slides.length; i++)
             slides[i].addEventListener("wheel", fps.onSlideWheel, { passive: false });
 
         this.reScrollSlides();
     }
 
     stop() {
-        document.getElementById("page").removeEventListener("scroll", fps.reScrollSlides);
-        document.getElementById("page").removeEventListener("wheel", wid.feed, { passive: false, capture: true });
-        document.getElementById("page").removeEventListener("wheel", fps.onPageWheel, { passive: false });
+        document.getElementsByTagName("b-viewport")[0].removeEventListener("scroll", fps.reScrollSlides);
+        document.getElementsByTagName("b-viewport")[0].removeEventListener("wheel", wid.feed, { passive: false, capture: true });
+        document.getElementsByTagName("b-viewport")[0].removeEventListener("wheel", fps.onPageWheel, { passive: false });
 
-        let slides = document.getElementsByClassName("slide");
-        for (var i = 0; i < slides.length; i++)
+        let slides = document.getElementsByTagName("b-slide");
+        for (let i = 0; i < slides.length; i++)
             slides[i].removeEventListener("wheel", fps.onSlideWheel, { passive: false });
     }
 
     reScrollSlides() {
-        let slides = document.getElementsByClassName("slide");
+        let slides = document.getElementsByTagName("b-slide");
         let currentSlideIndex;
         let minDelta = 50000;
 
-        for (var i = 0; i < slides.length; i++) {
+        for (let i = 0; i < slides.length; i++) {
             let delta = Math.abs(slides[i].getBoundingClientRect().y);
             if (delta < minDelta) {
                 currentSlideIndex = i;
@@ -34,7 +34,7 @@
             }
         }
 
-        for (var i = 0; i < slides.length; i++) {
+        for (let i = 0; i < slides.length; i++) {
             if (i < currentSlideIndex)
                 slides[i].scrollTop = 9999;
             else if (i > currentSlideIndex)
@@ -52,10 +52,10 @@
         if (wid.isInertia)
             return;
 
-        let slides = document.getElementsByClassName("slide");
+        let slides = document.getElementsByTagName("b-slide");
         let currentSlideIndex;
         let minDelta = 50000;
-        for (var i = 0; i < slides.length; i++) {
+        for (let i = 0; i < slides.length; i++) {
             let delta = Math.abs(slides[i].getBoundingClientRect().y);
             if (delta < minDelta) {
                 currentSlideIndex = i;
@@ -66,15 +66,17 @@
         if (currentSlideIndex === undefined)
             return;
 
-        if (e.deltaY > 0 && currentSlideIndex != slides.length - 1) {
+        if (e.deltaY > 0 && currentSlideIndex !== slides.length - 1) {
             wid.reset();
             wid.feed(e);
-            document.getElementById("page").scrollTo({ top: slides[currentSlideIndex + 1].offsetTop, behavior: "instant" });
+            document.getElementsByTagName("b-viewport")[0]
+                .scrollTo({ top: slides[currentSlideIndex + 1].offsetTop, behavior: "instant" });
         }
-        else if (e.deltaY < 0 && currentSlideIndex != 0) {
+        else if (e.deltaY < 0 && currentSlideIndex !== 0) {
             wid.reset();
             wid.feed(e);
-            document.getElementById("page").scrollTo({ top: slides[currentSlideIndex - 1].offsetTop, behavior: "instant"});
+            document.getElementsByTagName("b-viewport")[0]
+                .scrollTo({ top: slides[currentSlideIndex - 1].offsetTop, behavior: "instant"});
         }
     }
 
@@ -82,7 +84,7 @@
         if (e.ctrlKey)
             return;
 
-        var element = e.currentTarget;
+        let element = e.currentTarget;
         let atBottom = (element.scrollHeight - element.scrollTop - element.clientHeight) < 1;
         let atTop = element.scrollTop < 1;
 
@@ -106,7 +108,7 @@ class WheelInertiaDetector {
     swipeStarted;
     swipePositive;
     swipeDurationStopwatch;
-    debouceTimer;
+    debounceTimer;
 
     isInertia;
 
@@ -139,14 +141,14 @@ class WheelInertiaDetector {
     }
 
     reset() {
-        clearTimeout(wid.debouceTimer);
+        clearTimeout(wid.debounceTimer);
         wid.swipeDurationStopwatch = null;
         wid.swipeStarted = false;
     }
 
     resetDebouncerTimer() {
-        clearTimeout(wid.debouceTimer);
-        wid.debouceTimer = setTimeout(wid.endSwipe, wid.debounceTime)
+        clearTimeout(wid.debounceTimer);
+        wid.debounceTimer = setTimeout(wid.endSwipe, wid.debounceTime)
     }
 
     startSwipe(delta) {
@@ -165,8 +167,11 @@ var fps = new FullPageScrolling();
 var wid = new WheelInertiaDetector();
 
 window.onNavigated = () => {
-    document.getElementById("page").scrollTo(0, 0);
+    document.getElementsByTagName("b-viewport")[0].scrollTo(0, 0);
     collapseHamburger();
+
+    if (document.activeElement)
+        document.activeElement.blur();
 };
 
 window.collapseHamburger = () => {

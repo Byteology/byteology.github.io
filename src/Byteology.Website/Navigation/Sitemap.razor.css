@@ -1,0 +1,44 @@
+nav {
+    @apply flex;
+}
+
+@media (max-width: 46rem) {
+    nav {
+        @apply flex-col;
+        @apply flex-wrap;
+        @apply content-center;
+        @apply gap-8;
+    }
+
+    nav > a > img {
+        @apply h-16;
+    }
+}
+
+@media not all and (max-width: 46rem) {
+    nav:not(.detached) {
+        @apply flex-1;
+        @apply items-center;
+        @apply justify-end;
+        @apply gap-8;
+    }
+
+    nav:not(.detached) > a{
+        @apply hidden;
+    }
+
+    nav.detached {
+        @apply flex-nowrap;
+        @apply justify-center;
+        @apply gap-8;
+    }
+
+    nav.detached > a {
+        @apply mr-8;
+    }
+
+    nav.detached > a > img {
+        @apply h-24;
+        content: url("/images/logo-portrait.svg");
+    }
+}

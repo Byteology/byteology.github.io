@@ -1,0 +1,6 @@
+b-paper {
+    @apply block;
+    @apply max-w-3xl;
+    @apply mx-auto;
+    @apply space-y-10;
+}

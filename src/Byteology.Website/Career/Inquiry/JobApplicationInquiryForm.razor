@@ -1,0 +1,19 @@
+@inherits InquiryForm<InquiryDataJobApplication>
+
+@using Byteology.Website.Inquiry
+@using Byteology.Website.Inquiry.Service
+@using Byteology.Website.Shared.Input
+@using Microsoft.AspNetCore.Components.Forms
+
+<b-inquiry-form>
+    <EditForm Model="InquiryData" OnValidSubmit="Submit">
+        <DataAnnotationsValidator />
+        <TextInput Label="Name" Placeholder="John Doe" @bind-Value="InquiryData.Name" autocomplete="name" />
+        <TextInput Label="Email" Placeholder="example@mail.com" @bind-Value="InquiryData.Email" autocomplete="email"/>
+        <FileInput Label="CV" Placeholder="Attach your CV (pdf only)" ButtonText="Attach" AcceptedFiles=".pdf" @bind-Value="InquiryData.File" />
+        <Checkbox Label="I freely give my consent to have my personal information processed for the purpose of receiving feedback or solicited content." @bind-Value="InquiryData.Consent" />
+
+        <TextInput Label="Honeycomb" Placeholder="Honeycomb" @bind-Value=InquiryData.Honeycomb class="hidden" />
+        <button type="submit">Let's talk</button>
+    </EditForm>
+</b-inquiry-form>

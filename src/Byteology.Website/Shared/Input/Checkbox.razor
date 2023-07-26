@@ -1,36 +1,9 @@
-﻿@using Microsoft.AspNetCore.Components.Forms
+﻿@inherits Microsoft.AspNetCore.Components.Forms.InputCheckbox
 
-@inherits InputCheckbox
-
-<div @attributes=AdditionalAttributes class="flex gap-4 @CssClass" >
-    <input 
+<b-checkbox @attributes="AdditionalAttributes" class="@CssClass">
+    <input id="@_id" type="checkbox"
         @bind="CurrentValue"
-        @bind:event="onchange"
-        id="@_id"
-        type="checkbox"
-        class="
-            appearance-none text-base
-            flex-none self-center w-6 h-6 
-            transition-fast
-            border-2 border-primary
-            hover:border-primary-300 focus:!border-primary-300 [.invalid_>_&]:border-error
-            before:inline-block before:w-[40%] before:h-[60%]
-            checked:before:border-b-2 checked:before:border-r-2 
-            before:border-neutral-100
-            before:left-[30%] before:-top-[15%] before:relative 
-            before:rotate-45 
-            cursor-pointer" />
+        @bind:event="onchange"/>
 
-    <label 
-        for="@_id"
-        class="cursor-pointer">
-            @Label
-    </label>
-</div>
-
-@code {
-    private readonly Guid _id = Guid.NewGuid();
-
-    [Parameter]
-    public string? Label { get; set; }
-}
+    <label for="@_id">@Label</label>
+</b-checkbox>

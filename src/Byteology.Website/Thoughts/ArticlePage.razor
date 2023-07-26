@@ -1,0 +1,10 @@
+@using Byteology.Website.Shared.MarkdownRendering
+
+@page "/articles/{handle}"
+@page "/thoughts/{handle}"
+
+<Paper PapersRepository="_articlesRepository"
+       Handle="@Handle"
+       NotFoundUrl="/thoughts"
+       IndexEnabled="true"
+       NavigationEnabled="true" />

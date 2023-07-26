@@ -1,50 +1,10 @@
 @layer components {
 
     .card {
-        @apply surface-2;
-        @apply elevation;
-        @apply p-8;
-        @apply -mx-8;
-        @apply sm:mx-0;
+        @apply block surface-2 elevation p-4 text-sm styled-content space-y-2;
     }
 
-    .card-sm {
-        @apply surface-2;
-        @apply elevation;
-        @apply p-4;
-        @apply text-sm;
+    .card > *:first-child {
+        @apply icon-title-sm;
     }
-
-    .card-title {
-        @apply surface-2;
-        @apply py-4;
-        @apply elevation;
-        @apply border-x-0;
-        @apply border-t-0;
-    }
-
-    .card > .card-title {
-        @apply px-8;
-        @apply -m-8;
-        @apply mb-0;
-    }
-
-    .card-sm > .card-title {
-        @apply px-4;
-        @apply -m-4;
-        @apply mb-0;
-    }
-
-    .card-title {
-        @apply flex;
-        @apply items-center;
-        @apply gap-4;
-    }
-
-    .card-title > .counter {
-        @apply text-[1.5em];
-        @apply text-primary;
-        @apply font-bold;
-    }
-
 }

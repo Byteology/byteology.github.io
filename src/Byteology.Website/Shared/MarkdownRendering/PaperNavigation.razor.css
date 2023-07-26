@@ -1,0 +1,33 @@
+b-paper-nav {
+    @apply grid;
+    @apply grid-cols-1;
+    @apply md:grid-cols-2;
+    @apply panel;
+    @apply gap-8;
+}
+
+b-paper-nav p {
+    @apply text-sm;
+    @apply text-accent;
+    @apply font-bold;
+}
+
+b-paper-nav a {
+    @apply link;
+}
+
+b-prev,
+b-next {
+    @apply flex;
+    @apply flex-col;
+    @apply gap-1;
+    @apply md:gap-2;
+}
+
+b-next {
+    @apply md:items-end;
+}
+
+b-next > a {
+    @apply md:text-end;
+}

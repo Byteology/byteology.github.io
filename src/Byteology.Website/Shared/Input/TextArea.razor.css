@@ -1,0 +1,61 @@
+label {
+    @apply font-bold;
+    @apply text-sm;
+    @apply lg:text-base;
+}
+
+b-textarea {
+    @apply block;
+}
+
+b-textarea-wrapper {
+    @apply grid;
+    @apply mt-2;
+}
+
+b-textarea-wrapper:after {
+    @apply whitespace-pre-wrap;
+    @apply invisible;
+    @apply pl-4;
+    @apply row-start-1;
+    @apply row-end-2;
+    @apply col-start-1;
+    @apply col-end-1;
+    @apply text-sm;
+    @apply md:text-base;
+    @apply border-b-2;
+    content: attr(data-replicated-value) ' ';
+}
+
+textarea {
+    @apply resize-none;
+    @apply overflow-hidden;
+    @apply pl-4;
+    @apply transition-fast;
+    @apply row-start-1;
+    @apply row-end-2;
+    @apply col-start-1;
+    @apply col-end-1;
+    @apply bg-transparent;
+    @apply text-sm;
+    @apply md:text-base;
+    @apply border-b-2;
+    @apply border-primary;
+}
+
+textarea:hover {
+    @apply border-primary-300;
+}
+
+textarea:focus {
+    @apply !border-primary-300;
+}
+
+b-textarea.invalid textarea {
+    @apply border-error;
+}
+
+textarea::placeholder {
+    @apply italic;
+    @apply text-neutral-200;
+}

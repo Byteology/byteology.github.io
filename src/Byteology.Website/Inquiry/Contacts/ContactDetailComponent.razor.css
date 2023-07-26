@@ -1,0 +1,11 @@
+* {
+    @apply block text-xs md:text-sm break-all;
+}
+
+a {
+    @apply link;
+}
+
+*:first-child {
+    @apply break-words;
+}

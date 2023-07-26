@@ -1,0 +1,51 @@
+b-checkbox {
+    @apply flex;
+    @apply gap-4;
+}
+
+b-checkbox > input {
+    @apply appearance-none;
+    @apply text-base;
+    @apply flex-none;
+    @apply self-center;
+    @apply w-6;
+    @apply h-6;
+    @apply transition-fast;
+    @apply border-2;
+    @apply border-primary;
+    @apply cursor-pointer;
+}
+
+b-checkbox > input:hover {
+    @apply border-primary-300;
+
+}
+
+b-checkbox > input:focus {
+    @apply !border-primary-300;
+}
+
+b-checkbox.invalid > input {
+    @apply border-error;
+}
+
+b-checkbox > input:before {
+    content: "";
+    @apply inline-block;
+    @apply w-[40%];
+    @apply h-[60%];
+    @apply border-neutral-100;
+    @apply left-[30%];
+    @apply -top-[15%];
+    @apply relative;
+    @apply rotate-45;
+}
+
+b-checkbox > input:checked:before {
+    @apply border-b-2;
+    @apply border-r-2;
+}
+
+b-checkbox > label {
+    @apply cursor-pointer;
+}

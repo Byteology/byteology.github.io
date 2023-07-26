@@ -1,0 +1,58 @@
+b-person-intro {
+    @apply panel;
+    @apply p-0;
+    @apply max-w-md;
+    @apply md:max-w-4xl;
+    @apply grid;
+    @apply md:grid-cols-[3fr_7fr];
+}
+
+aside {
+    @apply flex;
+    @apply md:flex-col;
+    @apply md:h-full;
+    @apply md:justify-evenly;
+    @apply surface-2;
+    @apply order-2;
+    @apply md:order-none;
+}
+
+aside > img {
+    @apply w-16;
+    @apply md:w-auto;
+    @apply flex-1;
+    @apply md:flex-none;
+    @apply object-center;
+    @apply object-contain;
+    @apply grayscale;
+    @apply scale-x-[-1];
+}
+
+aside > p {
+    @apply px-8;
+    @apply md:px-4;
+    @apply py-4;
+    @apply self-center;
+    @apply flex-auto;
+    @apply md:flex-none;
+    @apply md:text-center;
+}
+
+aside > p > span {
+    @apply block;
+    @apply font-bold;
+    @apply uppercase;
+}
+
+aside > p > span:first-child {
+    @apply text-accent;
+}
+
+aside > p > span:last-child {
+    @apply text-sm;
+}
+
+article {
+    @apply styled-content;
+    @apply p-8;
+}

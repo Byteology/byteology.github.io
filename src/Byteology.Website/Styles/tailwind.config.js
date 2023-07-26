@@ -1,7 +1,7 @@
 let plugin = require('tailwindcss/plugin')
 
 module.exports = {
-    content: ["../**/*.{razor,html,cshtml}"],
+    content: ["../**/*.{razor,html,cshtml,md}"],
 
     theme: {
         screens: {

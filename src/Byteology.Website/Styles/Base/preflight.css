@@ -45,4 +45,8 @@
     blockquote:after {
         content: close-quote;
     }
+
+    hr {
+        border: 0;
+    }
 }

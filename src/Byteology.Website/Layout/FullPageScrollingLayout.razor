@@ -2,24 +2,11 @@
 
 @using Byteology.Website.Navigation
 
-<div id="page"
-     tabindex="0"
-     class="page w-full h-full overflow-x-hidden overflow-y-scroll
-            snap-y snap-mandatory space-y-32 no-scrollbar
-            @(_fadeIn ? getAnimationClass() : "")"
-     style="@(_state.InitialRender == true ? "overflow: hidden;" : "")">
+<b-viewport class="@_fadeInAnimationClass">
 
     @Body
 
     <Slide IncludeFooter="true">
-        <div class="w-full p-6 md:p-8 flex justify-center
-                    bg-dark-900/70 border-y border-dark-100 shadow-md">
-            <Sitemap RemoveHomeLink="true"/>
-        </div>
+        <Sitemap Detached="true" />
     </Slide>
-
-</div>
-
-@code {
-    private string getAnimationClass() => _altFadeInAnimation ? "animate-fade-in-fast-alt" : "animate-fade-in-fast";
-}
+</b-viewport>

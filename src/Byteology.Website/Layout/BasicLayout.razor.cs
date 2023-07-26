@@ -4,9 +4,7 @@ using Microsoft.JSInterop;
 
 public partial class BasicLayout : LayoutComponentBase
 {
-	private bool _comesFromFullPageScrolling;
-	private bool _fadeIn;
-	private bool _altFadeInAnimation;
+	private string? _fadeInAnimationClass;
 
 	[Inject]
 	private LayoutStateContainer _state { get; set; } = default!;
@@ -15,19 +13,12 @@ public partial class BasicLayout : LayoutComponentBase
 	private IJSRuntime _jsRuntimeAsync { get; set; } = default!;
 	private IJSInProcessRuntime _jsRuntime => (IJSInProcessRuntime)_jsRuntimeAsync;
 
-	protected override void OnParametersSet()
-	{
-		base.OnParametersSet();
-		_comesFromFullPageScrolling = false;
-	}
-
 	protected override void OnInitialized()
 	{
 		base.OnInitialized();
-		_state.InitialRender = _state.InitialRender == null;
-		_fadeIn = !_state.InitialRender.Value;
-		_comesFromFullPageScrolling = _state.FullPageScrolling;
-		_state.FullPageScrolling = false;
+
+		if (!_state.Prerendering)
+			_fadeInAnimationClass = "fade-in";
 	}
 
 	protected override void OnAfterRender(bool firstRender)
@@ -36,15 +27,19 @@ public partial class BasicLayout : LayoutComponentBase
 
 		_jsRuntime.InvokeVoid("onNavigated");
 
-		if (_state.InitialRender == true)
-		{
-			_state.InitialRender = false;
+		bool shouldRerender = _state.Prerendering;
+		_state.OnLayoutChanged(true);
+
+		if (shouldRerender)
 			StateHasChanged();
-		}
 		else
 		{
-			_fadeIn = true;
-			_altFadeInAnimation = !_altFadeInAnimation;
+			_fadeInAnimationClass = _fadeInAnimationClass switch
+			{
+				"fade-in" => "fade-in-alt",
+				"fade-in-alt" => "fade-in",
+				_ => "fade-in"
+			};
 		}
 	}
 }

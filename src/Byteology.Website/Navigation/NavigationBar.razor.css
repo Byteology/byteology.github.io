@@ -1,0 +1,175 @@
+@media (max-width: 46rem) {
+    header {
+        @apply sticky;
+        @apply z-10;
+        @apply top-0;
+        @apply h-12;
+        @apply bg-dark-900;
+        @apply border-b;
+        @apply border-dark-100;
+        @apply shadow-md;
+        @apply font-bold;
+        @apply whitespace-nowrap;
+        @apply select-none;
+
+        @apply flex;
+        @apply items-center;
+        @apply justify-between;
+        @apply px-4;
+    }
+
+    header > a:first-child {
+        @apply hidden;
+    }
+
+    header > a:last-child {
+        @apply button;
+        @apply p-1;
+        @apply px-4;
+        @apply text-sm;
+    }
+
+    #hamburger {
+        @apply hidden;
+    }
+
+    #hamburger + label {
+        @apply inline-block;
+        @apply w-[1.8rem];
+    }
+
+    #hamburger + label ::deep > svg {
+        @apply transition-normal;
+    }
+
+    #hamburger:not(:checked) + label ::deep > svg:first-child {
+        @apply opacity-100;
+    }
+
+    #hamburger:checked + label ::deep > svg:first-child {
+        @apply opacity-0;
+        @apply invisible;
+    }
+
+    #hamburger + label ::deep > svg:last-child {
+        @apply absolute;
+        @apply top-0;
+        @apply left-0;
+        @apply scale-125;
+    }
+
+    #hamburger:not(:checked) + label ::deep > svg:last-child {
+        @apply opacity-0;
+        @apply invisible;
+    }
+
+    #hamburger:checked + label ::deep > svg:last-child {
+        @apply opacity-100;
+    }
+
+    b-sitemap-overlay {
+        @apply fixed;
+        @apply left-0;
+        @apply top-12;
+        @apply w-full;
+        height: calc(100% - 3rem);
+        @apply transition-normal;
+    }
+
+    #hamburger:not(:checked) ~ b-sitemap-overlay {
+        @apply backdrop-blur-none;
+        @apply invisible;
+    }
+
+    #hamburger:checked ~ b-sitemap-overlay {
+        @apply backdrop-blur-sm;
+        @apply visible;
+    }
+
+    b-sitemap-overlay ::deep > nav {
+        @apply inline-flex;
+        @apply h-full;
+        @apply bg-dark-900;
+        @apply border-r;
+        @apply border-dark-100;
+        @apply shadow-md;
+        @apply p-8;
+        @apply overflow-x-hidden;
+        @apply overflow-y-auto;
+        @apply no-scrollbar;
+    }
+
+    #hamburger:not(:checked) ~ b-sitemap-overlay ::deep > nav {
+        @apply -translate-x-full;
+    }
+
+    #hamburger:checked ~ b-sitemap-overlay ::deep > nav {
+        @apply transition-normal;
+        @apply translate-x-0;
+    }
+}
+
+@media not all and (max-width: 46rem) {
+    header {
+        @apply sticky;
+        @apply z-10;
+        @apply top-0;
+        @apply h-12;
+
+        @apply w-full;
+        @apply max-w-[52rem]; /* max-w-3xl + the padding */
+        @apply mx-auto;
+        @apply px-8;
+
+        @apply font-bold;
+        @apply whitespace-nowrap;
+        @apply select-none;
+
+        @apply flex;
+        @apply items-center;
+        @apply justify-between;
+        @apply gap-8;
+    }
+
+    header:before {
+        content: "";
+        @apply absolute;
+        @apply w-[10000rem];
+        @apply -left-[5000rem];
+        @apply h-12;
+        @apply bg-dark-900;
+        @apply border-b;
+        @apply border-dark-100;
+        @apply shadow-md;
+    }
+
+    header > a:first-child,
+    header > a:first-child > img {
+        @apply h-full;
+        @apply aspect-square;
+    }
+
+    header > a:last-child {
+        @apply button;
+        @apply p-1;
+        @apply px-4;
+        @apply text-sm;
+    }
+
+    #hamburger {
+        @apply hidden;
+    }
+
+    #hamburger + label {
+        @apply hidden;
+    }
+
+    b-sitemap-overlay {
+        @apply block;
+        @apply flex-1;
+    }
+
+    b-sitemap-overlay ::deep > nav {
+        @apply visible;
+    }
+}

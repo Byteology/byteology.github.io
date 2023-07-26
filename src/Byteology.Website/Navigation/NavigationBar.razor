@@ -1,0 +1,20 @@
+<header>
+    <a href="/" tabindex="-1"><img src="/images/icon.png" alt="Byteology"></a>
+
+    <input id="hamburger" type="checkbox" title="menu">
+    <label for="hamburger">
+        <HamburgerIcon/>
+        <CloseIcon/>
+    </label>
+
+    <b-sitemap-overlay
+         @onclick=onClickOutside
+         @ontouchstart=onTouchStart
+         @ontouchmove=onTouchMove>
+
+        <Sitemap />
+
+    </b-sitemap-overlay>
+
+    <a href="/contacts">Contact Us</a>
+</header>

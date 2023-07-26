@@ -1,42 +1,28 @@
-@inherits StylableComponent
-
 @using Microsoft.AspNetCore.Components.Routing
 
-<div @attributes="@AdditionalAttributes"
-     class="flex flex-col md:flex-row justify-center gap-8 md:gap-16 lg:gap-32 @CssClass">
+<nav @onclick:stopPropagation="true" class="@(Detached ? "detached" : "")">
 
-    <!--suppress RequiredAttributes -->
-    <img
-        class="flex-none w-auto md:w-32 h-16 md:h-auto md:self-start
-               bg-center bg-contain
-               content-[url(/images/logo-landscape.svg)]
-               md:content-[url(/images/logo-portrait.svg)]"
-        alt="Byteology"/>
+    <a href="/"><img src="/images/logo-landscape.svg" alt="Byteology"></a>
 
-    <div class="flex flex-col md:flex-row flex-none justify-evenly gap-8 md:gap-16">
-        @foreach (SitemapData.Section section in SitemapData.Sections)
-        {
-            <div class="flex flex-col text-base gap-1 items-start">
-                <p class="uppercase font-bold text-accent text-base mb-2">@(section.Title)</p>
+    <NavGroup SitemapVisible="true" NavBarBehaviour="NavGroup.NavBarBehaviourType.Hidden" Name="Company" UrlPrefix="/">
+        <NavLink Match="NavLinkMatch.All" href="/mission">Mission</NavLink>
+        <NavLink Match="NavLinkMatch.Prefix" href="/career">Career</NavLink>
+        <NavLink Match="NavLinkMatch.Prefix" href="/thoughts">Thoughts</NavLink>
+        <NavLink Match="NavLinkMatch.All" href="/contacts">Contacts</NavLink>
+    </NavGroup>
 
-                @foreach (SitemapData.Link item in section.Items)
-                {
-                    @if (item.IsHome() && RemoveHomeLink)
-                        continue;
+    <NavGroup NavBarBehaviour="NavGroup.NavBarBehaviourType.Expanded">
+        <NavLink Match="NavLinkMatch.All" href="/mission">Mission</NavLink>
+    </NavGroup>
 
-                    <NavLink class="transition-fast hocus:text-accent-300"
-                             href="@item.Url"
-                             Match="NavLinkMatch.All">
-                        @item.Title
-                    </NavLink>
-                }
-            </div>
-        }
-    </div>
+    <NavGroup SitemapVisible="true" NavBarBehaviour="NavGroup.NavBarBehaviourType.Collapsed" Name="Services" UrlPrefix="/services">
+        <NavLink Match="NavLinkMatch.All" href="/services/software-engineering">Software Engineering</NavLink>
+        <NavLink Match="NavLinkMatch.All" href="/services/education-and-training">Education and Training</NavLink>
+        <NavLink Match="NavLinkMatch.All" href="/services/staff-selection">Staff Selection</NavLink>
+    </NavGroup>
 
-</div>
-
-@code {
-    [Parameter]
-    public bool RemoveHomeLink { get; set; }
-}
+    <NavGroup NavBarBehaviour="NavGroup.NavBarBehaviourType.Expanded">
+        <NavLink Match="NavLinkMatch.Prefix" href="/career">Career</NavLink>
+        <NavLink Match="NavLinkMatch.Prefix" href="/thoughts">Thoughts</NavLink>
+    </NavGroup>
+</nav>
