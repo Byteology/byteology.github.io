@@ -1,16 +1,16 @@
 [
 	{
-		"handle": "software-development",
+		"handle": "software-engineering",
 		"icon": "cogwheel",
-		"title": "Software Development",
-		"description": "We will develop your application or minimum viable product (MVP) by applying scientific generalization and domain-driven design principles.",
-		"keywords": [ "software", "development", "software development", "domain", "design", "domain design", "programming", "architecture", "skills", "thinking deeply about simple things" ]
+		"title": "Software Engineering",
+		"description": "Software engineering is a complex process that spans many fields of study. We have spent decades on improving each of them and are ready to help you in every aspect of your next software development endeavor.",
+		"keywords": [ "Software Engineering", "Programming", "Outsourcing", "Software development", "Project Management", "Design and Architecture", "Software design", "Software Architecture", "Quality Assurance", "Proof of concept", "PoC", "Minimum Viable Product", "MVP" ]
 	},
 	{
 		"handle": "interviewing-as-a-service",
 		"icon": "cv",
 		"title": "Interviewing as a Service",
-		"description": "We've been studying the process of identifying great software engineers for over a decade. Our team will conduct technical and social interviews on your behalf so you can focus of your core business.",
+		"description": "We've been studying the process of identifying great software engineers for over 10 years. Our team will conduct technical and social interviews on your behalf so you can focus of your core business.",
 		"keywords": [ "interviewing", "hiring", "interviewing as a service", "iaas", "guide", "job application", "job adverts" ]
 	},
 	{

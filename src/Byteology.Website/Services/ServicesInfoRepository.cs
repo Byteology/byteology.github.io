@@ -8,7 +8,8 @@ public class ServicesInfoRepository : PapersRepository
 			paperList: getPapersMetadata(),
 			urlPrefix: "services",
 			papersNamespace: getArticlesNamespace(),
-			defaultIcon: typeof(Icons.CogwheelIcon))
+			defaultIcon: typeof(Icons.CogwheelIcon),
+			legacyHandles: getLegacyHandles())
 	{ }
 
 	private static PaperMetadata[] getPapersMetadata()
@@ -23,5 +24,10 @@ public class ServicesInfoRepository : PapersRepository
 	private static string getArticlesNamespace()
 	{
 		return $"{typeof(ServicesInfoRepository).Namespace}.Data";
+	}
+
+	private static IEnumerable<(string legacyHandle, string newHandle)>? getLegacyHandles()
+	{
+		yield return new("software-development", "software-engineering");
 	}
 }

@@ -48,6 +48,10 @@
         @apply space-y-4 pl-[0.5em];
     }
 
+    .styled-content li > *:first-child {
+        @apply mt-4;
+    }
+
     .styled-content h1 {
         @apply text-xl;
         @apply font-bold;
