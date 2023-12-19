@@ -1,4 +1,4 @@
-# Concise Guide to Specialized Recruitment - Part 5: Screening Techniques
+# Concise Guide to Strategic Recruitment - Part 5: Screening Techniques
 Screening is widely considered the most challenging aspect of the entire recruitment process. It is during this phase that the most valuable insights about a candidate are acquired. Typically, screening involves one or multiple interviews, but it is essential to minimize their number for the sake of brevity as discussed in previous chapters.
 
 ---

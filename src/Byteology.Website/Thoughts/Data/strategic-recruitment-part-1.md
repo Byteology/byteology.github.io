@@ -1,4 +1,4 @@
-# Concise Guide to Specialized Recruitment - Part 1: Creating a Skill Canvas
+# Concise Guide to Strategic Recruitment - Part 1: Creating a Skill Canvas
 Employees serve as the driving force behind a company's success, fueling product development, service provision, and fostering growth and innovation. Thus, meticulous care must be taken when selecting individuals to join the organization.
 
 This guide aims to provide insights into the challenges of identifying exceptional candidates and offers a systematic approach to specialized recruitment.

@@ -1,4 +1,4 @@
-# Staff Selection
+# Strategic Recruitment
 Employees are the lifeblood of every company. They are the ones creating our products, providing our services driving our growth and innovation. Because of this, it is of utmost importance to choose them with care.
 
 Unfortunately, hiring the right person for a position is a long process full of pitfalls. It starts as soon as someone in the company identifies a need for another position and ends when a person is hired and integrated within the team.

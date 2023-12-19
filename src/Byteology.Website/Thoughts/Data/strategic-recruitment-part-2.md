@@ -1,4 +1,4 @@
-# Concise Guide to Specialized Recruitment - Part 2: Formulating a Strategic Approach
+# Concise Guide to Strategic Recruitment - Part 2: Formulating a Strategic Approach
 With the skill canvas completed, it is now time to progress to the next step of the process: evaluating the constraints that will shape the recruitment strategy.
 
 ---

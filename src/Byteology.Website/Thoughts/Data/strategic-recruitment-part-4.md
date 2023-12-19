@@ -1,4 +1,4 @@
-# Concise Guide to Specialized Recruitment - Part 4: Pre-screening Techniques
+# Concise Guide to Strategic Recruitment - Part 4: Pre-screening Techniques
 Pre-screening, the process of evaluating candidates based on their application alone, is a cost-effective method compared to full screening. Although it may not be as comprehensive, pre-screening helps identify potential candidates who are likely to be a good fit for the position. It also allows screeners to focus on evaluating more challenging skills by providing an initial assessment of certain skills outlined in the skill canvas.
 
 ---

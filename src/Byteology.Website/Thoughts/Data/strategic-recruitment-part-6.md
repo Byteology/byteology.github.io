@@ -1,4 +1,4 @@
-# Concise Guide to Specialized Recruitment - Part 6: Onboarding and Training
+# Concise Guide to Strategic Recruitment - Part 6: Onboarding and Training
 The recruitment process extends beyond the act of hiring and concludes when a new employee becomes fully integrated into the team. This crucial phase is achieved through effective onboarding and training methods.
 
 ---

@@ -1,4 +1,4 @@
-# Concise Guide to Specialized Recruitment - Part 3: Crafting an Effective Job Description
+# Concise Guide to Strategic Recruitment - Part 3: Crafting an Effective Job Description
 In the pursuit of finding the ideal candidate for an open position, a well-crafted job description becomes paramount. A meticulously designed job description significantly increases the likelihood of both attracting and identifying suitable candidates. However, to achieve this, we must first grasp a few fundamental concepts.
 
 ---
