@@ -1,5 +1,5 @@
 b-inquiry-form {
-    @apply block;
+    @apply flex items-center;
 }
 
 b-inquiry-form ::deep > form {

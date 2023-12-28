@@ -45,9 +45,7 @@ b-inquiry-content > aside {
 }
 
 b-inquiry-content ::deep > *:last-child {
-    @apply flex;
     @apply p-8;
-    @apply items-center;
     flex: 4 0 0;
 }
 

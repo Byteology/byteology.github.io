@@ -1,0 +1,19 @@
+b-inquiry-form {
+    @apply flex flex-col items-stretch gap-8;
+}
+
+b-inquiry-form > b-schedule-item {
+    @apply flex flex-col grow justify-center gap-2;
+}
+
+b-inquiry-form > b-schedule-item > a {
+	@apply button;
+}
+
+b-inquiry-form > b-schedule-item > b-title {
+	@apply font-bold text-accent;
+}
+
+b-inquiry-form > b-schedule-item > b-text {
+	@apply text-sm italic text-neutral-200;
+}
