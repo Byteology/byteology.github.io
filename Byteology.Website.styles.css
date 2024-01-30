@@ -188,6 +188,26 @@ section[b-guwrpvggmr] {
 	@apply panel;
 	@apply styled-content;
 }
+/* /Inquiry/CalendlyForm.razor.rz.scp.css */
+b-inquiry-form[b-ywse1kzkbn] {
+    @apply flex flex-col items-stretch gap-8;
+}
+
+b-inquiry-form > b-schedule-item[b-ywse1kzkbn] {
+    @apply flex flex-col grow justify-center gap-2;
+}
+
+b-inquiry-form > b-schedule-item > a[b-ywse1kzkbn] {
+	@apply button;
+}
+
+b-inquiry-form > b-schedule-item > b-title[b-ywse1kzkbn] {
+	@apply font-bold text-accent;
+}
+
+b-inquiry-form > b-schedule-item > b-text[b-ywse1kzkbn] {
+	@apply text-sm italic text-neutral-200;
+}
 /* /Inquiry/Contacts/ContactDetailComponent.razor.rz.scp.css */
 *[b-ve6i45dk6k] {
     @apply block text-xs md:text-sm break-all;
@@ -244,7 +264,7 @@ b-title[b-le22vd3hmh] {
 }
 /* /Inquiry/DefaultInquiryForm.razor.rz.scp.css */
 b-inquiry-form[b-1wa9yb2svd] {
-    @apply block;
+    @apply flex items-center;
 }
 
 b-inquiry-form[b-1wa9yb2svd]  > form {
@@ -329,9 +349,7 @@ b-inquiry-content > aside[b-9in3c4f9dm] {
 }
 
 b-inquiry-content[b-9in3c4f9dm]  > *:last-child {
-    @apply flex;
     @apply p-8;
-    @apply items-center;
     flex: 4 0 0;
 }
 
