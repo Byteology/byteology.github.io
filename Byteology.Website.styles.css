@@ -189,11 +189,6 @@ section[b-guwrpvggmr] {
 	@apply styled-content;
 }
 /* /Company/ScheduleMeeting.razor.rz.scp.css */
-#calendly-embed[b-pu1yvogvwy]   > .calendly-spinner
-{
-	@apply panel;
-}
-
 #calendly-embed[b-pu1yvogvwy] {
 	@apply w-full h-[50rem];
 }
