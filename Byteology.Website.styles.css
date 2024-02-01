@@ -188,6 +188,15 @@ section[b-guwrpvggmr] {
 	@apply panel;
 	@apply styled-content;
 }
+/* /Company/ScheduleMeeting.razor.rz.scp.css */
+#calendly-embed[b-pu1yvogvwy]   > .calendly-spinner
+{
+	@apply panel;
+}
+
+#calendly-embed[b-pu1yvogvwy] {
+	@apply w-full h-[50rem];
+}
 /* /Inquiry/CalendlyForm.razor.rz.scp.css */
 b-inquiry-form[b-ywse1kzkbn] {
     @apply flex flex-col items-stretch gap-8;
