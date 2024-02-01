@@ -1,7 +1,7 @@
 {
   "entryAssembly": "Byteology.Website",
   "resources": {
-    "hash": "sha256-dib4Mqg6rFpRbMYOZGJ9Al1tVuNkLqLIs8bLEkZ8Vc8=",
+    "hash": "sha256-g8cYeDadz/usyb6sYnoxA4Exoja/XOiI3A7pIft4nso=",
     "runtime": {
       "dotnet.7.0.15.fo7mxnm13t.js": "sha256-MHuxwxeVFybuBBTAWeZrvoStZpW+H4ThSaRcFvrfqXM=",
       "dotnet.timezones.blat": "sha256-aHk3Pm2JXopn6UPLJtovAqIdIk8GyIMzGm450cli9UE=",
@@ -11,7 +11,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "Byteology.Website.dll": "sha256-87x5rrU0LckFIuErt58/J19vrHR1Kh/Ua/WFgDEPYgs=",
+      "Byteology.Website.dll": "sha256-xjtr6H/S7AY93fDBtVOQuOLJ+0VqGvvcxaM6w3icVwc=",
       "Ljbc1994.Blazor.IntersectionObserver.dll": "sha256-Ai8SJ+xq/zjyaWJOTluL+XT3p5XFHziMafx7fLVut0I=",
       "Markdig.dll": "sha256-iKKz5I0C1crIJpaE817LsfaIGinS7O1szh3CsTyQ8Bc=",
       "Microsoft.AspNetCore.Components.CustomElements.dll": "sha256-BSVvG0cSO1wvihMxm18g9+iLK6fljGw7gUZCk3Ez9Zk=",
