@@ -13,7 +13,6 @@ public partial class ScheduleMeeting : ComponentBase
 
 	protected override void OnAfterRender(bool firstRender)
 	{
-		string link = $"https://calendly.com/tsvetan-igov/{Link}?background_color=090326&text_color=ffffff&primary_color=573ce2";
-		_jsRuntime.InvokeVoid("initCalendly", link);
+		_jsRuntime.InvokeVoid("initCalendly", Link);
 	}
 }
