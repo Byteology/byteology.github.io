@@ -1,13 +1,10 @@
-﻿@page "/contacts"
-@page "/schedule-meeting"
+﻿@page "/schedule-meeting/{link}"
 
 @layout BasicLayout
-
-@using Byteology.Website.Inquiry
-@using Byteology.Website.Layout
 
 <Metadata Title="Schedule a Meeting"
           Description="Don't hesitate to schedule a meeting at your convenience, specifying your preferred time and duration."
           Keywords="@(new string[] { "schedule", "meeting" })" />
 
-<DefaultInquiryComponent />
+
+<div id="calendly-embed" class="w-full h-[50rem]"></div>
