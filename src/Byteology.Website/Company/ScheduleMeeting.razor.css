@@ -1,0 +1,8 @@
+#calendly-embed ::deep  > .calendly-spinner
+{
+	@apply panel;
+}
+
+#calendly-embed {
+	@apply w-full h-[50rem];
+}

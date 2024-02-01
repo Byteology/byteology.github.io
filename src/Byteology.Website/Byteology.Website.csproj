@@ -12,6 +12,10 @@
     <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <BlazorWasmPrerenderingUrlPathToExplicitFetch>/schedule-meeting/explore-a-service;/schedule-meeting/introductory-meeting;/schedule-meeting/free-consultation</BlazorWasmPrerenderingUrlPathToExplicitFetch>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="BlazorIntersectionObserver" Version="3.1.0" />
     <PackageReference Include="BlazorWasmPreRendering.Build" Version="2.0.0-preview.9" />
