@@ -426,7 +426,7 @@ b-graph-paper:first-child[b-2bs5jy54na] {
     clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
-b-graph-paper:last-child[b-2bs5jy54na] {
+b-graph-paper:nth-child(2)[b-2bs5jy54na] {
     @apply bottom-0;
     @apply right-0;
     @apply bg-gradient-to-tl;
