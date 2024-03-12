@@ -39,7 +39,7 @@ b-graph-paper:first-child {
     clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
-b-graph-paper:last-child {
+b-graph-paper:nth-child(2) {
     @apply bottom-0;
     @apply right-0;
     @apply bg-gradient-to-tl;
