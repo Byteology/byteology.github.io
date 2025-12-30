@@ -192,6 +192,26 @@ section[b-guwrpvggmr] {
 #calendly-embed[b-pu1yvogvwy] {
 	@apply w-full h-[50rem];
 }
+/* /Inquiry/CalDotComForm.razor.rz.scp.css */
+b-inquiry-form[b-4qk32gvclm] {
+    @apply flex flex-col items-stretch gap-8;
+}
+
+b-inquiry-form > b-schedule-item[b-4qk32gvclm] {
+    @apply flex flex-col grow justify-center gap-2;
+}
+
+b-inquiry-form > b-schedule-item > a[b-4qk32gvclm] {
+	@apply button;
+}
+
+b-inquiry-form > b-schedule-item > b-title[b-4qk32gvclm] {
+	@apply font-bold text-accent;
+}
+
+b-inquiry-form > b-schedule-item > b-text[b-4qk32gvclm] {
+	@apply text-sm italic text-neutral-200;
+}
 /* /Inquiry/CalendlyForm.razor.rz.scp.css */
 b-inquiry-form[b-ywse1kzkbn] {
     @apply flex flex-col items-stretch gap-8;
