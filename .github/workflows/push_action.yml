@@ -26,7 +26,7 @@ jobs:
           node-version: 18
 
       - name: Install Tailwind CSS
-        run: npm install -D tailwindcss postcss postcss-cli autoprefixer postcss-minify postcss-import-ext-glob
+        run: npm install -D tailwindcss postcss postcss-cli autoprefixer postcss-minify postcss-import-ext-glob postcss-import
 
       - name: Restore
         working-directory: src
